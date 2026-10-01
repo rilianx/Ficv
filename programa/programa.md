@@ -4,18 +4,11 @@ Fuente: https://33.ficvaldivia.cl/programacion
 
 ## Lunes 12 de octubre
 
-### Actividades Paralelas
-
-| Hora | Película | Sala | Notas |
-|---|---|---|---|
-| 11:45 | [Aula Lorca: Masterclass Dirección de Fotografía con Alfredo Altamirano.](https://33.ficvaldivia.cl/ficha?recordId=xkWUZ8TSrY6gXh) | Cine Club UACh | Aula · Con Entrada o Acreditación |
-| 11:45 | [Volver a escribir: entre el papel, archivos y pantallas.](https://33.ficvaldivia.cl/ficha?recordId=zERjkPFSRpwVND) | Cine Club UACh | Voces · Con Entrada o Acreditación |
-
 ### Ceremonias
 
 | Hora | Película | Sala | Notas |
 |---|---|---|---|
-| 11:45 | [Selección Noticiero Chile al Día](https://33.ficvaldivia.cl/ficha?recordId=yEEmF0RRUSiaEl) | Cine Club UACh | Cortometraje Ceremonia de Inauguración · Con Entrada o Acreditación |
+| 20:00 | [Selección Noticiero Chile al Día](https://33.ficvaldivia.cl/ficha?recordId=yEEmF0RRUSiaEl) | Teatro Cervantes | Cortometraje Ceremonia de Inauguración · Solo con Invitación |
 | 20:00 | [Thémes et variations](https://33.ficvaldivia.cl/ficha?recordId=nmY9KrJqPLUUiP) | Teatro Cervantes | Cortometraje Ceremonia de Inauguración · Solo con Invitación |
 
 ### Competencia Largometraje
@@ -48,21 +41,15 @@ Fuente: https://33.ficvaldivia.cl/programacion
 | 20:30 | [Ghazal-e Sorkh](https://33.ficvaldivia.cl/ficha?recordId=VoeZr2JY9zAyZb) | Felix Martinez UACh | Gala · Con Entrada o Acreditación |
 | 20:30 | [Masao Adachi Takes a Passport Photo](https://33.ficvaldivia.cl/ficha?recordId=Y5jZiwVLA6AmHe) | Felix Martinez UACh | Gala · Con Entrada o Acreditación |
 
-### Gala Chilena
-
-| Hora | Película | Sala | Notas |
-|---|---|---|---|
-| 11:45 | [Detrás de la lluvia](https://33.ficvaldivia.cl/ficha?recordId=xBkVP5fRzDZ6hE) | Cine Club UACh | Gala Chilena · Con Entrada o Acreditación |
-
 ### Muestra Contraplanos de la Historia
 
 | Hora | Película | Sala | Notas |
 |---|---|---|---|
 | 11:30 | [Muerte de un ciclista](https://33.ficvaldivia.cl/ficha?recordId=DABkgoHehFPdyY) | Sala Hugo Campos | Clásicos · Entrada Liberada |
-| 11:45 | [Kamikaze 1989](https://33.ficvaldivia.cl/ficha?recordId=xcyBFZo0LX1okC) | Cine Club UACh | Totalmente Salvaje · Con Entrada o Acreditación |
 | 11:45 | [Los bajos fondos](https://33.ficvaldivia.cl/ficha?recordId=i9ye3dG44XlTcq) | Sala Paraninfo UACh | La Lección de Cine · Entrada Liberada |
 | 14:30 | [Wan Pipel](https://33.ficvaldivia.cl/ficha?recordId=qbh3VzfRjicgbc) | Sala Hugo Campos | Mapa del Cine de Latinoamérica y el Caribe · Entrada Liberada |
 | 14:45 | [Kaddu Beykat, Carta campesina](https://33.ficvaldivia.cl/ficha?recordId=Xceu3l9kR1Dpa7) | Felix Martinez UACh | Homenaje 50 Años · Entrada Liberada |
+| 17:30 | [Kamikaze 1989](https://33.ficvaldivia.cl/ficha?recordId=xcyBFZo0LX1okC) | Sala Paraninfo UACh | Totalmente Salvaje · Entrada Liberada |
 | 17:30 | [The Harder They Come](https://33.ficvaldivia.cl/ficha?recordId=5BMwqrXdWzOnMM) | Sala Hugo Campos | Mapa del Cine de Latinoamérica y el Caribe · Entrada Liberada |
 | 20:15 | [Canaguaro](https://33.ficvaldivia.cl/ficha?recordId=QONODkHiO3t78J) | Sala Hugo Campos | Homenaje Cine Chileno · Entrada Liberada |
 
@@ -70,7 +57,6 @@ Fuente: https://33.ficvaldivia.cl/programacion
 
 | Hora | Película | Sala | Notas |
 |---|---|---|---|
-| 11:45 | [The wind, one brilliant day](https://33.ficvaldivia.cl/ficha?recordId=yiWOr3Gm0NA0vC) | Cine Club UACh | Nuevos Caminos · Con Entrada o Acreditación |
 | 15:15 | [Chorégraphie](https://33.ficvaldivia.cl/ficha?recordId=HRhncnTKZPnTTU) | Sala Paraninfo UACh | Tramas · Con Entrada o Acreditación |
 | 15:15 | [FORYANNFROMROSE - HAIR REMOVED](https://33.ficvaldivia.cl/ficha?recordId=rA5l4QbtvexLGH) | Sala Paraninfo UACh | Tramas · Con Entrada o Acreditación |
 | 15:15 | [Fugues d'été: La Fague](https://33.ficvaldivia.cl/ficha?recordId=14PLyaBj4hMWJb) | Sala Paraninfo UACh | Tramas · Con Entrada o Acreditación |
@@ -83,24 +69,12 @@ Fuente: https://33.ficvaldivia.cl/programacion
 
 | Hora | Película | Sala | Notas |
 |---|---|---|---|
-| 11:45 | [21-22 CHINA](https://33.ficvaldivia.cl/ficha?recordId=nZiR4HTTqUs7iS) | Cine Club UACh | Simbiosis Inmersiva · Con Entrada o Acreditación |
-| 11:45 | [David Attenborough’s First Life](https://33.ficvaldivia.cl/ficha?recordId=ZIUUNcCQ8WnyLf) | Cine Club UACh | Simbiosis Inmersiva · Con Entrada o Acreditación |
-| 11:45 | [El nido vacio](https://33.ficvaldivia.cl/ficha?recordId=5WsahTPTDUtb1Q) | Cine Club UACh | Simbiosis Inmersiva · Con Entrada o Acreditación |
-| 11:45 | [En un lugar aparte. Memoria cinéfila de Germán Arestizábal](https://33.ficvaldivia.cl/ficha?recordId=2MKxb6Dkxw1Kfd) | Cine Club UACh | Cine Expandido · Con Entrada o Acreditación |
-| 11:45 | [Genesis](https://33.ficvaldivia.cl/ficha?recordId=TNTfGpZhqZwqs9) | Cine Club UACh | Simbiosis Inmersiva · Con Entrada o Acreditación |
-| 11:45 | [Lady Sapiens](https://33.ficvaldivia.cl/ficha?recordId=m1UihisHqVZtg1) | Cine Club UACh | Simbiosis Inmersiva · Con Entrada o Acreditación |
-| 11:45 | [NEORE(AI)LISMO](https://33.ficvaldivia.cl/ficha?recordId=z2ECFt0wG3M6xM) | Cine Club UACh | Cine Expandido · Con Entrada o Acreditación |
-| 11:45 | [Origen - Journey To The Heart Of The Amazon](https://33.ficvaldivia.cl/ficha?recordId=CN9CIuIkFBlMiV) | Cine Club UACh | Simbiosis Inmersiva · Con Entrada o Acreditación |
-| 11:45 | [Performance Chicas Terremoto: no movemos la tierra pero la cambiamos](https://33.ficvaldivia.cl/ficha?recordId=yffbmYBB5AUbGI) | Cine Club UACh | Cine Expandido · Con Entrada o Acreditación |
-| 11:45 | [Recoding entropia](https://33.ficvaldivia.cl/ficha?recordId=n2bKP6eS9uE69N) | Cine Club UACh | Simbiosis Inmersiva · Con Entrada o Acreditación |
-| 11:45 | [The Dawn Of Art](https://33.ficvaldivia.cl/ficha?recordId=VnwVzVajhRd0DM) | Cine Club UACh | Simbiosis Inmersiva · Con Entrada o Acreditación |
+| 17:00 | [Performance Chicas Terremoto: no movemos la tierra pero la cambiamos](https://33.ficvaldivia.cl/ficha?recordId=yffbmYBB5AUbGI) | Galería Replica | Cine Expandido · Entrada Liberada |
 
 ### Pásate una Película
 
 | Hora | Película | Sala | Notas |
 |---|---|---|---|
-| 11:45 | [Piccolo Piccolo](https://33.ficvaldivia.cl/ficha?recordId=yQoLDoOwOyl0Ci) | Cine Club UACh | Muestra Cortometraje Infantil Primera Infancia (3 a 6 años), Muestra Cortometraje Infantil +7 años · Con Entrada o Acreditación |
-| 11:45 | [Serendipia](https://33.ficvaldivia.cl/ficha?recordId=xDblFGQfaArRD2) | Cine Club UACh | Concurso de micrometrajes · Con Entrada o Acreditación |
 | 16:00 | [Mi amigo el sol](https://33.ficvaldivia.cl/ficha?recordId=Ih4dOWiG2kbROO) | Aula Magna UACh | Largometrajes Familiares · Entrada Liberada |
 
 ## Martes 13 de octubre
@@ -195,6 +169,7 @@ Fuente: https://33.ficvaldivia.cl/programacion
 | 15:00 | [Pleurotus](https://33.ficvaldivia.cl/ficha?recordId=V4c2LHxjodsEot) | Felix Martinez UACh | Nuevos Caminos · Con Entrada o Acreditación |
 | 15:00 | [Pure Reason](https://33.ficvaldivia.cl/ficha?recordId=suF4vMTrTvRSkK) | Felix Martinez UACh | Nuevos Caminos · Con Entrada o Acreditación |
 | 15:00 | [See Through the Hollowed Blue Hellebore](https://33.ficvaldivia.cl/ficha?recordId=nPVOCUHFEOExTt) | Felix Martinez UACh | Nuevos Caminos · Con Entrada o Acreditación |
+| 15:00 | [The wind, one brilliant day](https://33.ficvaldivia.cl/ficha?recordId=yiWOr3Gm0NA0vC) | Felix Martinez UACh | Nuevos Caminos · Con Entrada o Acreditación |
 | 19:30 | [EXP.MASC.AD](https://33.ficvaldivia.cl/ficha?recordId=nKjZLJlkZEawXI) | Felix Martinez UACh | Disidencias · Con Entrada o Acreditación |
 | 19:30 | [La Gorra](https://33.ficvaldivia.cl/ficha?recordId=dkVguTq9Fchm4q) | Felix Martinez UACh | Disidencias · Con Entrada o Acreditación |
 | 19:30 | [Le Garage](https://33.ficvaldivia.cl/ficha?recordId=t7pahjYCf86jP4) | Felix Martinez UACh | Disidencias · Con Entrada o Acreditación |
@@ -206,7 +181,24 @@ Fuente: https://33.ficvaldivia.cl/programacion
 | Hora | Película | Sala | Notas |
 |---|---|---|---|
 | 10:30 | [Exposición Colectivo Fílmica. Un Cine Vivo De Chicas En Acción](https://33.ficvaldivia.cl/ficha?recordId=atC3S5CvPrR7C2) | Galería Replica | Cine Expandido · Entrada Liberada |
+| 11:00 | [21-22 CHINA](https://33.ficvaldivia.cl/ficha?recordId=nZiR4HTTqUs7iS) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 11:00 | [David Attenborough’s First Life](https://33.ficvaldivia.cl/ficha?recordId=ZIUUNcCQ8WnyLf) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 11:00 | [El nido vacio](https://33.ficvaldivia.cl/ficha?recordId=5WsahTPTDUtb1Q) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 11:00 | [Genesis](https://33.ficvaldivia.cl/ficha?recordId=TNTfGpZhqZwqs9) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 11:00 | [Lady Sapiens](https://33.ficvaldivia.cl/ficha?recordId=m1UihisHqVZtg1) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 11:00 | [Origen - Journey To The Heart Of The Amazon](https://33.ficvaldivia.cl/ficha?recordId=CN9CIuIkFBlMiV) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 11:00 | [Recoding entropia](https://33.ficvaldivia.cl/ficha?recordId=n2bKP6eS9uE69N) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 11:00 | [The Dawn Of Art](https://33.ficvaldivia.cl/ficha?recordId=VnwVzVajhRd0DM) | MUT | Simbiosis Inmersiva · Entrada Liberada |
 | 15:00 | [Exposición Colectivo Fílmica. Un Cine Vivo De Chicas En Acción](https://33.ficvaldivia.cl/ficha?recordId=atC3S5CvPrR7C2) | Galería Replica | Cine Expandido · Entrada Liberada |
+| 15:30 | [21-22 CHINA](https://33.ficvaldivia.cl/ficha?recordId=nZiR4HTTqUs7iS) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 15:30 | [David Attenborough’s First Life](https://33.ficvaldivia.cl/ficha?recordId=ZIUUNcCQ8WnyLf) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 15:30 | [El nido vacio](https://33.ficvaldivia.cl/ficha?recordId=5WsahTPTDUtb1Q) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 15:30 | [Genesis](https://33.ficvaldivia.cl/ficha?recordId=TNTfGpZhqZwqs9) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 15:30 | [Lady Sapiens](https://33.ficvaldivia.cl/ficha?recordId=m1UihisHqVZtg1) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 15:30 | [Origen - Journey To The Heart Of The Amazon](https://33.ficvaldivia.cl/ficha?recordId=CN9CIuIkFBlMiV) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 15:30 | [Recoding entropia](https://33.ficvaldivia.cl/ficha?recordId=n2bKP6eS9uE69N) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 15:30 | [The Dawn Of Art](https://33.ficvaldivia.cl/ficha?recordId=VnwVzVajhRd0DM) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 18:00 | [En un lugar aparte. Memoria cinéfila de Germán Arestizábal](https://33.ficvaldivia.cl/ficha?recordId=2MKxb6Dkxw1Kfd) | Museo Histórico UACh | Cine Expandido · Entrada Liberada |
 
 ### Pásate una Película
 
@@ -215,6 +207,7 @@ Fuente: https://33.ficvaldivia.cl/programacion
 | 10:00 | [El pajarito y la hoja](https://33.ficvaldivia.cl/ficha?recordId=PZkeC8APqrJeTX) | Teatro Cervantes | Muestra Cortometraje Infantil Primera Infancia (3 a 6 años) · Entrada Liberada |
 | 10:00 | [Gato y pajaro](https://33.ficvaldivia.cl/ficha?recordId=FNhK6z2zHfp9oF) | Teatro Cervantes | Muestra Cortometraje Infantil Primera Infancia (3 a 6 años) · Entrada Liberada |
 | 10:00 | [Kiwi & Strit : El amigo imaginario](https://33.ficvaldivia.cl/ficha?recordId=buZ7pnMXOoE6zE) | Teatro Cervantes | Muestra Cortometraje Infantil Primera Infancia (3 a 6 años) · Entrada Liberada |
+| 10:00 | [Piccolo Piccolo](https://33.ficvaldivia.cl/ficha?recordId=yQoLDoOwOyl0Ci) | Teatro Cervantes | Muestra Cortometraje Infantil Primera Infancia (3 a 6 años), Muestra Cortometraje Infantil +7 años · Entrada Liberada |
 | 10:00 | [Spin y Ella](https://33.ficvaldivia.cl/ficha?recordId=LxkJZCx5XQGmoG) | Teatro Cervantes | Muestra Cortometraje Infantil Primera Infancia (3 a 6 años) · Entrada Liberada |
 
 ## Miércoles 14 de octubre
@@ -321,6 +314,24 @@ Fuente: https://33.ficvaldivia.cl/programacion
 | Hora | Película | Sala | Notas |
 |---|---|---|---|
 | 10:30 | [Exposición Colectivo Fílmica. Un Cine Vivo De Chicas En Acción](https://33.ficvaldivia.cl/ficha?recordId=atC3S5CvPrR7C2) | Galería Replica | Cine Expandido · Entrada Liberada |
+| 11:00 | [21-22 CHINA](https://33.ficvaldivia.cl/ficha?recordId=nZiR4HTTqUs7iS) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 11:00 | [David Attenborough’s First Life](https://33.ficvaldivia.cl/ficha?recordId=ZIUUNcCQ8WnyLf) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 11:00 | [El nido vacio](https://33.ficvaldivia.cl/ficha?recordId=5WsahTPTDUtb1Q) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 11:00 | [Genesis](https://33.ficvaldivia.cl/ficha?recordId=TNTfGpZhqZwqs9) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 11:00 | [Lady Sapiens](https://33.ficvaldivia.cl/ficha?recordId=m1UihisHqVZtg1) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 11:00 | [Origen - Journey To The Heart Of The Amazon](https://33.ficvaldivia.cl/ficha?recordId=CN9CIuIkFBlMiV) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 11:00 | [Recoding entropia](https://33.ficvaldivia.cl/ficha?recordId=n2bKP6eS9uE69N) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 11:00 | [The Dawn Of Art](https://33.ficvaldivia.cl/ficha?recordId=VnwVzVajhRd0DM) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 14:30 | [En un lugar aparte. Memoria cinéfila de Germán Arestizábal](https://33.ficvaldivia.cl/ficha?recordId=2MKxb6Dkxw1Kfd) | Museo Histórico UACh | Cine Expandido · Entrada Liberada |
+| 15:30 | [21-22 CHINA](https://33.ficvaldivia.cl/ficha?recordId=nZiR4HTTqUs7iS) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 15:30 | [David Attenborough’s First Life](https://33.ficvaldivia.cl/ficha?recordId=ZIUUNcCQ8WnyLf) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 15:30 | [El nido vacio](https://33.ficvaldivia.cl/ficha?recordId=5WsahTPTDUtb1Q) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 15:30 | [Genesis](https://33.ficvaldivia.cl/ficha?recordId=TNTfGpZhqZwqs9) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 15:30 | [Lady Sapiens](https://33.ficvaldivia.cl/ficha?recordId=m1UihisHqVZtg1) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 15:30 | [Origen - Journey To The Heart Of The Amazon](https://33.ficvaldivia.cl/ficha?recordId=CN9CIuIkFBlMiV) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 15:30 | [Recoding entropia](https://33.ficvaldivia.cl/ficha?recordId=n2bKP6eS9uE69N) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 15:30 | [The Dawn Of Art](https://33.ficvaldivia.cl/ficha?recordId=VnwVzVajhRd0DM) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 18:00 | [Performance Chicas Terremoto: no movemos la tierra pero la cambiamos](https://33.ficvaldivia.cl/ficha?recordId=yffbmYBB5AUbGI) | Galería Replica | Cine Expandido · Entrada Liberada |
 
 ### Pásate una Película
 
@@ -331,6 +342,7 @@ Fuente: https://33.ficvaldivia.cl/programacion
 | 10:00 | [Murcielagos y bichos](https://33.ficvaldivia.cl/ficha?recordId=HjbwVpR4CFdGIk) | Teatro Cervantes | Muestra Cortometraje Infantil +7 años · Entrada Liberada |
 | 10:00 | [Nutissimo](https://33.ficvaldivia.cl/ficha?recordId=L1OPCFlpmWI2zf) | Teatro Cervantes | Muestra Cortometraje Infantil +7 años · Entrada Liberada |
 | 10:00 | [Oveja](https://33.ficvaldivia.cl/ficha?recordId=JOojvnHnoOowOA) | Teatro Cervantes | Muestra Cortometraje Infantil +7 años · Entrada Liberada |
+| 10:00 | [Piccolo Piccolo](https://33.ficvaldivia.cl/ficha?recordId=yQoLDoOwOyl0Ci) | Teatro Cervantes | Muestra Cortometraje Infantil Primera Infancia (3 a 6 años), Muestra Cortometraje Infantil +7 años · Entrada Liberada |
 | 11:00 | [Conectados con el mar](https://33.ficvaldivia.cl/ficha?recordId=Sg6jjolZjE1Qwr) | Aula Magna UACh | Concurso de micrometrajes · Con Entrada o Acreditación |
 | 11:00 | [Daños colaterales](https://33.ficvaldivia.cl/ficha?recordId=EMAYIf3Pd0bKXO) | Aula Magna UACh | Concurso de micrometrajes · Con Entrada o Acreditación |
 | 11:00 | [El mar comienza aquí](https://33.ficvaldivia.cl/ficha?recordId=U9ptOtUGCEVO2Q) | Aula Magna UACh | Concurso de micrometrajes · Con Entrada o Acreditación |
@@ -340,6 +352,7 @@ Fuente: https://33.ficvaldivia.cl/programacion
 | 11:00 | [Nacidos del agua ( La Marmadre)](https://33.ficvaldivia.cl/ficha?recordId=wH7ENTysLPq9F0) | Aula Magna UACh | Concurso de micrometrajes · Con Entrada o Acreditación |
 | 11:00 | [Niños del Agua: Senegal](https://33.ficvaldivia.cl/ficha?recordId=PQGIgKP4AyRK3d) | Aula Magna UACh | Concurso de micrometrajes · Con Entrada o Acreditación |
 | 11:00 | [Rayo verde en el mar](https://33.ficvaldivia.cl/ficha?recordId=FMxfB0XudU2ycj) | Aula Magna UACh | Concurso de micrometrajes · Con Entrada o Acreditación |
+| 11:00 | [Serendipia](https://33.ficvaldivia.cl/ficha?recordId=xDblFGQfaArRD2) | Aula Magna UACh | Concurso de micrometrajes · Con Entrada o Acreditación |
 | 11:00 | [Wiñol Lafken](https://33.ficvaldivia.cl/ficha?recordId=una4MW49VpUukM) | Aula Magna UACh | Concurso de micrometrajes · Con Entrada o Acreditación |
 | 11:00 | [¿Por qué el agua del mar es salada?](https://33.ficvaldivia.cl/ficha?recordId=iyc0g9mpjUjm09) | Aula Magna UACh | Concurso de Micrometrajes: Cine y Ciencia · Con Entrada o Acreditación |
 | 11:00 | [¿Qué pasaría cuando dejes de escuchar el sonido del Mar?](https://33.ficvaldivia.cl/ficha?recordId=4k49UWMud33SS1) | Aula Magna UACh | Concurso de micrometrajes · Con Entrada o Acreditación |
@@ -350,6 +363,7 @@ Fuente: https://33.ficvaldivia.cl/programacion
 
 | Hora | Película | Sala | Notas |
 |---|---|---|---|
+| 11:00 | [Volver a escribir: entre el papel, archivos y pantallas.](https://33.ficvaldivia.cl/ficha?recordId=zERjkPFSRpwVND) | Carpa de La Ciencia | Voces · Entrada Liberada |
 | 15:30 | [Se está arrimando un día feliz. Estrategias de acompañamiento para la transición al mundo del trabajo](https://33.ficvaldivia.cl/ficha?recordId=umjzI6vSDIwNG4) | Carpa de La Ciencia | Aula · Entrada Liberada |
 | 18:30 | [¿Qué sostiene nuestra alimentación?](https://33.ficvaldivia.cl/ficha?recordId=sEyoEbkewJs6qa) | Carpa de La Ciencia | Kawin · Entrada Liberada |
 
@@ -459,6 +473,31 @@ Fuente: https://33.ficvaldivia.cl/programacion
 | 22:15 | [Pleurotus](https://33.ficvaldivia.cl/ficha?recordId=V4c2LHxjodsEot) | Felix Martinez UACh | Nuevos Caminos · Con Entrada o Acreditación |
 | 22:15 | [Pure Reason](https://33.ficvaldivia.cl/ficha?recordId=suF4vMTrTvRSkK) | Felix Martinez UACh | Nuevos Caminos · Con Entrada o Acreditación |
 | 22:15 | [See Through the Hollowed Blue Hellebore](https://33.ficvaldivia.cl/ficha?recordId=nPVOCUHFEOExTt) | Felix Martinez UACh | Nuevos Caminos · Con Entrada o Acreditación |
+| 22:15 | [The wind, one brilliant day](https://33.ficvaldivia.cl/ficha?recordId=yiWOr3Gm0NA0vC) | Felix Martinez UACh | Nuevos Caminos · Con Entrada o Acreditación |
+
+### Nuevas Narrativas
+
+| Hora | Película | Sala | Notas |
+|---|---|---|---|
+| 10:30 | [En un lugar aparte. Memoria cinéfila de Germán Arestizábal](https://33.ficvaldivia.cl/ficha?recordId=2MKxb6Dkxw1Kfd) | Museo Histórico UACh | Cine Expandido · Entrada Liberada |
+| 11:00 | [21-22 CHINA](https://33.ficvaldivia.cl/ficha?recordId=nZiR4HTTqUs7iS) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 11:00 | [David Attenborough’s First Life](https://33.ficvaldivia.cl/ficha?recordId=ZIUUNcCQ8WnyLf) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 11:00 | [El nido vacio](https://33.ficvaldivia.cl/ficha?recordId=5WsahTPTDUtb1Q) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 11:00 | [Genesis](https://33.ficvaldivia.cl/ficha?recordId=TNTfGpZhqZwqs9) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 11:00 | [Lady Sapiens](https://33.ficvaldivia.cl/ficha?recordId=m1UihisHqVZtg1) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 11:00 | [Origen - Journey To The Heart Of The Amazon](https://33.ficvaldivia.cl/ficha?recordId=CN9CIuIkFBlMiV) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 11:00 | [Recoding entropia](https://33.ficvaldivia.cl/ficha?recordId=n2bKP6eS9uE69N) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 11:00 | [The Dawn Of Art](https://33.ficvaldivia.cl/ficha?recordId=VnwVzVajhRd0DM) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 14:30 | [En un lugar aparte. Memoria cinéfila de Germán Arestizábal](https://33.ficvaldivia.cl/ficha?recordId=2MKxb6Dkxw1Kfd) | Museo Histórico UACh | Cine Expandido · Entrada Liberada |
+| 15:30 | [21-22 CHINA](https://33.ficvaldivia.cl/ficha?recordId=nZiR4HTTqUs7iS) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 15:30 | [David Attenborough’s First Life](https://33.ficvaldivia.cl/ficha?recordId=ZIUUNcCQ8WnyLf) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 15:30 | [El nido vacio](https://33.ficvaldivia.cl/ficha?recordId=5WsahTPTDUtb1Q) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 15:30 | [Genesis](https://33.ficvaldivia.cl/ficha?recordId=TNTfGpZhqZwqs9) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 15:30 | [Lady Sapiens](https://33.ficvaldivia.cl/ficha?recordId=m1UihisHqVZtg1) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 15:30 | [Origen - Journey To The Heart Of The Amazon](https://33.ficvaldivia.cl/ficha?recordId=CN9CIuIkFBlMiV) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 15:30 | [Recoding entropia](https://33.ficvaldivia.cl/ficha?recordId=n2bKP6eS9uE69N) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 15:30 | [The Dawn Of Art](https://33.ficvaldivia.cl/ficha?recordId=VnwVzVajhRd0DM) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 18:00 | [NEORE(AI)LISMO](https://33.ficvaldivia.cl/ficha?recordId=z2ECFt0wG3M6xM) | Galería Replica | Cine Expandido · Entrada Liberada |
 
 ## Viernes 16 de octubre
 
@@ -469,14 +508,7 @@ Fuente: https://33.ficvaldivia.cl/programacion
 | 10:30 | [Clearance de propiedad intelectual en la cadena de valor del cine de autor.](https://33.ficvaldivia.cl/ficha?recordId=Vl5QAnBo9uJ8VO) | Centro de Extensión Los Canelos UACh | Aula · Entrada Liberada |
 | 11:00 | [Foro de estudiantes RUCA](https://33.ficvaldivia.cl/ficha?recordId=viLFNwTnriSsKl) | Carpa de La Ciencia | Aula · Entrada Liberada |
 | 15:30 | [Mediación y exhibición: metodologías y experiencias desde el cineclubismo](https://33.ficvaldivia.cl/ficha?recordId=Nxsrf4wxvTrXDo) | Carpa de La Ciencia | Voces · Entrada Liberada |
-| 22:00 | [Aula Lorca: Masterclass Dirección de Fotografía con Alfredo Altamirano.](https://33.ficvaldivia.cl/ficha?recordId=xkWUZ8TSrY6gXh) | Cine Club UACh | Aula · Con Entrada o Acreditación |
-| 22:00 | [Volver a escribir: entre el papel, archivos y pantallas.](https://33.ficvaldivia.cl/ficha?recordId=zERjkPFSRpwVND) | Cine Club UACh | Voces · Con Entrada o Acreditación |
-
-### Ceremonias
-
-| Hora | Película | Sala | Notas |
-|---|---|---|---|
-| 22:00 | [Selección Noticiero Chile al Día](https://33.ficvaldivia.cl/ficha?recordId=yEEmF0RRUSiaEl) | Cine Club UACh | Cortometraje Ceremonia de Inauguración · Con Entrada o Acreditación |
+| 17:30 | [Aula Lorca: Masterclass Dirección de Fotografía con Alfredo Altamirano.](https://33.ficvaldivia.cl/ficha?recordId=xkWUZ8TSrY6gXh) | Sala Hugo Campos | Aula · Entrada Liberada |
 
 ### Cineastas en Foco
 
@@ -523,7 +555,7 @@ Fuente: https://33.ficvaldivia.cl/programacion
 
 | Hora | Película | Sala | Notas |
 |---|---|---|---|
-| 22:00 | [Detrás de la lluvia](https://33.ficvaldivia.cl/ficha?recordId=xBkVP5fRzDZ6hE) | Cine Club UACh | Gala Chilena · Con Entrada o Acreditación |
+| 19:30 | [Detrás de la lluvia](https://33.ficvaldivia.cl/ficha?recordId=xBkVP5fRzDZ6hE) | Aula Magna UACh | Gala Chilena · Con Entrada o Acreditación |
 
 ### Muestra Contraplanos de la Historia
 
@@ -537,7 +569,6 @@ Fuente: https://33.ficvaldivia.cl/programacion
 | 17:30 | [Rien que les heures](https://33.ficvaldivia.cl/ficha?recordId=PJqYObfwYvcMZ5) | Teatro Cervantes | Homenaje Musicalizado en Vivo · Entrada Liberada |
 | 19:15 | [El planeta de los vampiros](https://33.ficvaldivia.cl/ficha?recordId=Z0IH087AW8pwZS) | Sala Paraninfo UACh | Totalmente Salvaje · Entrada Liberada |
 | 19:15 | [Rue cases nègres](https://33.ficvaldivia.cl/ficha?recordId=LLciymkoz4S8lx) | Sala Hugo Campos | Mapa del Cine de Latinoamérica y el Caribe · Entrada Liberada |
-| 22:00 | [Kamikaze 1989](https://33.ficvaldivia.cl/ficha?recordId=xcyBFZo0LX1okC) | Cine Club UACh | Totalmente Salvaje · Con Entrada o Acreditación |
 | 22:15 | [Instintos animales](https://33.ficvaldivia.cl/ficha?recordId=iFqi6BmsBFwGj3) | Sala Paraninfo UACh | VHS Erótico · Entrada Liberada |
 
 ### Muestra de Cine Contemporáneo
@@ -563,23 +594,33 @@ Fuente: https://33.ficvaldivia.cl/programacion
 | 19:45 | [Morgenkreis](https://33.ficvaldivia.cl/ficha?recordId=bxUP1yUvF0R32e) | Felix Martinez UACh | Disidencias · Con Entrada o Acreditación |
 | 22:00 | [Motherwitch](https://33.ficvaldivia.cl/ficha?recordId=2H7TWYwSRo6PFu) | Felix Martinez UACh | Nocturama · Con Entrada o Acreditación |
 | 22:00 | [She Keeps Me Young](https://33.ficvaldivia.cl/ficha?recordId=dAZEZmv7Wfq1oF) | Teatro Cervantes | Con Ánimo de Humor · Entrada Liberada |
-| 22:00 | [The wind, one brilliant day](https://33.ficvaldivia.cl/ficha?recordId=yiWOr3Gm0NA0vC) | Cine Club UACh | Nuevos Caminos · Con Entrada o Acreditación |
 
 ### Nuevas Narrativas
 
 | Hora | Película | Sala | Notas |
 |---|---|---|---|
-| 22:00 | [21-22 CHINA](https://33.ficvaldivia.cl/ficha?recordId=nZiR4HTTqUs7iS) | Cine Club UACh | Simbiosis Inmersiva · Con Entrada o Acreditación |
-| 22:00 | [David Attenborough’s First Life](https://33.ficvaldivia.cl/ficha?recordId=ZIUUNcCQ8WnyLf) | Cine Club UACh | Simbiosis Inmersiva · Con Entrada o Acreditación |
-| 22:00 | [El nido vacio](https://33.ficvaldivia.cl/ficha?recordId=5WsahTPTDUtb1Q) | Cine Club UACh | Simbiosis Inmersiva · Con Entrada o Acreditación |
-| 22:00 | [En un lugar aparte. Memoria cinéfila de Germán Arestizábal](https://33.ficvaldivia.cl/ficha?recordId=2MKxb6Dkxw1Kfd) | Cine Club UACh | Cine Expandido · Con Entrada o Acreditación |
-| 22:00 | [Genesis](https://33.ficvaldivia.cl/ficha?recordId=TNTfGpZhqZwqs9) | Cine Club UACh | Simbiosis Inmersiva · Con Entrada o Acreditación |
-| 22:00 | [Lady Sapiens](https://33.ficvaldivia.cl/ficha?recordId=m1UihisHqVZtg1) | Cine Club UACh | Simbiosis Inmersiva · Con Entrada o Acreditación |
-| 22:00 | [NEORE(AI)LISMO](https://33.ficvaldivia.cl/ficha?recordId=z2ECFt0wG3M6xM) | Cine Club UACh | Cine Expandido · Con Entrada o Acreditación |
-| 22:00 | [Origen - Journey To The Heart Of The Amazon](https://33.ficvaldivia.cl/ficha?recordId=CN9CIuIkFBlMiV) | Cine Club UACh | Simbiosis Inmersiva · Con Entrada o Acreditación |
-| 22:00 | [Performance Chicas Terremoto: no movemos la tierra pero la cambiamos](https://33.ficvaldivia.cl/ficha?recordId=yffbmYBB5AUbGI) | Cine Club UACh | Cine Expandido · Con Entrada o Acreditación |
-| 22:00 | [Recoding entropia](https://33.ficvaldivia.cl/ficha?recordId=n2bKP6eS9uE69N) | Cine Club UACh | Simbiosis Inmersiva · Con Entrada o Acreditación |
-| 22:00 | [The Dawn Of Art](https://33.ficvaldivia.cl/ficha?recordId=VnwVzVajhRd0DM) | Cine Club UACh | Simbiosis Inmersiva · Con Entrada o Acreditación |
+| 10:30 | [En un lugar aparte. Memoria cinéfila de Germán Arestizábal](https://33.ficvaldivia.cl/ficha?recordId=2MKxb6Dkxw1Kfd) | Museo Histórico UACh | Cine Expandido · Entrada Liberada |
+| 11:00 | [21-22 CHINA](https://33.ficvaldivia.cl/ficha?recordId=nZiR4HTTqUs7iS) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 11:00 | [David Attenborough’s First Life](https://33.ficvaldivia.cl/ficha?recordId=ZIUUNcCQ8WnyLf) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 11:00 | [El nido vacio](https://33.ficvaldivia.cl/ficha?recordId=5WsahTPTDUtb1Q) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 11:00 | [Genesis](https://33.ficvaldivia.cl/ficha?recordId=TNTfGpZhqZwqs9) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 11:00 | [Lady Sapiens](https://33.ficvaldivia.cl/ficha?recordId=m1UihisHqVZtg1) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 11:00 | [NEORE(AI)LISMO](https://33.ficvaldivia.cl/ficha?recordId=z2ECFt0wG3M6xM) | Galería Replica | Cine Expandido · Entrada Liberada |
+| 11:00 | [Origen - Journey To The Heart Of The Amazon](https://33.ficvaldivia.cl/ficha?recordId=CN9CIuIkFBlMiV) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 11:00 | [Recoding entropia](https://33.ficvaldivia.cl/ficha?recordId=n2bKP6eS9uE69N) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 11:00 | [The Dawn Of Art](https://33.ficvaldivia.cl/ficha?recordId=VnwVzVajhRd0DM) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 12:45 | [NEORE(AI)LISMO](https://33.ficvaldivia.cl/ficha?recordId=z2ECFt0wG3M6xM) | Galería Replica | Cine Expandido · Entrada Liberada |
+| 14:30 | [En un lugar aparte. Memoria cinéfila de Germán Arestizábal](https://33.ficvaldivia.cl/ficha?recordId=2MKxb6Dkxw1Kfd) | Museo Histórico UACh | Cine Expandido · Entrada Liberada |
+| 15:30 | [21-22 CHINA](https://33.ficvaldivia.cl/ficha?recordId=nZiR4HTTqUs7iS) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 15:30 | [David Attenborough’s First Life](https://33.ficvaldivia.cl/ficha?recordId=ZIUUNcCQ8WnyLf) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 15:30 | [El nido vacio](https://33.ficvaldivia.cl/ficha?recordId=5WsahTPTDUtb1Q) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 15:30 | [Genesis](https://33.ficvaldivia.cl/ficha?recordId=TNTfGpZhqZwqs9) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 15:30 | [Lady Sapiens](https://33.ficvaldivia.cl/ficha?recordId=m1UihisHqVZtg1) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 15:30 | [NEORE(AI)LISMO](https://33.ficvaldivia.cl/ficha?recordId=z2ECFt0wG3M6xM) | Galería Replica | Cine Expandido · Entrada Liberada |
+| 15:30 | [Origen - Journey To The Heart Of The Amazon](https://33.ficvaldivia.cl/ficha?recordId=CN9CIuIkFBlMiV) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 15:30 | [Recoding entropia](https://33.ficvaldivia.cl/ficha?recordId=n2bKP6eS9uE69N) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 15:30 | [The Dawn Of Art](https://33.ficvaldivia.cl/ficha?recordId=VnwVzVajhRd0DM) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 17:00 | [NEORE(AI)LISMO](https://33.ficvaldivia.cl/ficha?recordId=z2ECFt0wG3M6xM) | Galería Replica | Cine Expandido · Entrada Liberada |
 
 ### Pásate una Película
 
@@ -588,6 +629,7 @@ Fuente: https://33.ficvaldivia.cl/programacion
 | 10:00 | [El pajarito y la hoja](https://33.ficvaldivia.cl/ficha?recordId=PZkeC8APqrJeTX) | Teatro Cervantes | Muestra Cortometraje Infantil Primera Infancia (3 a 6 años) · Entrada Liberada |
 | 10:00 | [Gato y pajaro](https://33.ficvaldivia.cl/ficha?recordId=FNhK6z2zHfp9oF) | Teatro Cervantes | Muestra Cortometraje Infantil Primera Infancia (3 a 6 años) · Entrada Liberada |
 | 10:00 | [Kiwi & Strit : El amigo imaginario](https://33.ficvaldivia.cl/ficha?recordId=buZ7pnMXOoE6zE) | Teatro Cervantes | Muestra Cortometraje Infantil Primera Infancia (3 a 6 años) · Entrada Liberada |
+| 10:00 | [Piccolo Piccolo](https://33.ficvaldivia.cl/ficha?recordId=yQoLDoOwOyl0Ci) | Teatro Cervantes | Muestra Cortometraje Infantil Primera Infancia (3 a 6 años), Muestra Cortometraje Infantil +7 años · Entrada Liberada |
 | 10:00 | [Spin y Ella](https://33.ficvaldivia.cl/ficha?recordId=LxkJZCx5XQGmoG) | Teatro Cervantes | Muestra Cortometraje Infantil Primera Infancia (3 a 6 años) · Entrada Liberada |
 | 12:00 | [A la sombra de la garza](https://33.ficvaldivia.cl/ficha?recordId=k3rvyYJYMubR39) | Teatro Cervantes | Muestra Cortometraje Infantil  +10 años · Entrada Liberada |
 | 12:00 | [Astral](https://33.ficvaldivia.cl/ficha?recordId=eL3dwK63kzNtCm) | Teatro Cervantes | Muestra Cortometraje Infantil  +10 años · Entrada Liberada |
@@ -595,8 +637,6 @@ Fuente: https://33.ficvaldivia.cl/programacion
 | 12:00 | [IA La aparente realidad](https://33.ficvaldivia.cl/ficha?recordId=T0Wc7mQ80fwl2a) | Teatro Cervantes | Muestra Cortometraje Infantil  +10 años · Entrada Liberada |
 | 12:00 | [Inflorescencia](https://33.ficvaldivia.cl/ficha?recordId=j9wAv01krX6Bdm) | Teatro Cervantes | Muestra Cortometraje Infantil  +10 años · Entrada Liberada |
 | 12:00 | [Kai-Kai Treng-Treng Filu](https://33.ficvaldivia.cl/ficha?recordId=A9QSZd2vdF2itV) | Teatro Cervantes | Muestra Cortometraje Infantil  +10 años · Entrada Liberada |
-| 22:00 | [Piccolo Piccolo](https://33.ficvaldivia.cl/ficha?recordId=yQoLDoOwOyl0Ci) | Cine Club UACh | Muestra Cortometraje Infantil Primera Infancia (3 a 6 años), Muestra Cortometraje Infantil +7 años · Con Entrada o Acreditación |
-| 22:00 | [Serendipia](https://33.ficvaldivia.cl/ficha?recordId=xDblFGQfaArRD2) | Cine Club UACh | Concurso de micrometrajes · Con Entrada o Acreditación |
 
 ## Sábado 17 de octubre
 
@@ -704,6 +744,7 @@ Fuente: https://33.ficvaldivia.cl/programacion
 | 17:45 | [Los Sures](https://33.ficvaldivia.cl/ficha?recordId=gLSqzJP0pAA2zh) | Felix Martinez UACh | Homenaje Cine Chileno · Con Entrada o Acreditación |
 | 17:45 | [Tomorrow Always Comes](https://33.ficvaldivia.cl/ficha?recordId=Rbz7fLl6b1XTKf) | Felix Martinez UACh | Homenaje Cine Chileno · Con Entrada o Acreditación |
 | 19:45 | [Muerte de un ciclista](https://33.ficvaldivia.cl/ficha?recordId=DABkgoHehFPdyY) | Sala Hugo Campos | Clásicos · Entrada Liberada |
+| 20:00 | [Kamikaze 1989](https://33.ficvaldivia.cl/ficha?recordId=xcyBFZo0LX1okC) | Sala Paraninfo UACh | Totalmente Salvaje · Entrada Liberada |
 
 ### Muestra de Cine Chileno
 
@@ -727,6 +768,33 @@ Fuente: https://33.ficvaldivia.cl/programacion
 | 19:30 | [Las Piedras Que Se Esconden En El Río](https://33.ficvaldivia.cl/ficha?recordId=4NWOKJe4bs3udN) | Aula Magna UACh | Ventana Cine Austral · Entrada Liberada |
 | 19:30 | [Receta Para Un Desastre, El Caso Queque](https://33.ficvaldivia.cl/ficha?recordId=PbHvxhC8IzDrtn) | Aula Magna UACh | Ventana Cine Austral · Entrada Liberada |
 | 19:30 | [Una Orilla Para Jugar](https://33.ficvaldivia.cl/ficha?recordId=FRsGRKthhZRcBX) | Aula Magna UACh | Ventana Cine Austral · Entrada Liberada |
+
+### Nuevas Narrativas
+
+| Hora | Película | Sala | Notas |
+|---|---|---|---|
+| 10:00 | [21-22 CHINA](https://33.ficvaldivia.cl/ficha?recordId=nZiR4HTTqUs7iS) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 10:00 | [David Attenborough’s First Life](https://33.ficvaldivia.cl/ficha?recordId=ZIUUNcCQ8WnyLf) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 10:00 | [El nido vacio](https://33.ficvaldivia.cl/ficha?recordId=5WsahTPTDUtb1Q) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 10:00 | [Genesis](https://33.ficvaldivia.cl/ficha?recordId=TNTfGpZhqZwqs9) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 10:00 | [Lady Sapiens](https://33.ficvaldivia.cl/ficha?recordId=m1UihisHqVZtg1) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 10:00 | [Origen - Journey To The Heart Of The Amazon](https://33.ficvaldivia.cl/ficha?recordId=CN9CIuIkFBlMiV) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 10:00 | [Recoding entropia](https://33.ficvaldivia.cl/ficha?recordId=n2bKP6eS9uE69N) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 10:00 | [The Dawn Of Art](https://33.ficvaldivia.cl/ficha?recordId=VnwVzVajhRd0DM) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 10:30 | [En un lugar aparte. Memoria cinéfila de Germán Arestizábal](https://33.ficvaldivia.cl/ficha?recordId=2MKxb6Dkxw1Kfd) | Museo Histórico UACh | Cine Expandido · Entrada Liberada |
+| 11:00 | [NEORE(AI)LISMO](https://33.ficvaldivia.cl/ficha?recordId=z2ECFt0wG3M6xM) | Galería Replica | Cine Expandido · Entrada Liberada |
+| 12:45 | [NEORE(AI)LISMO](https://33.ficvaldivia.cl/ficha?recordId=z2ECFt0wG3M6xM) | Galería Replica | Cine Expandido · Entrada Liberada |
+| 14:30 | [21-22 CHINA](https://33.ficvaldivia.cl/ficha?recordId=nZiR4HTTqUs7iS) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 14:30 | [David Attenborough’s First Life](https://33.ficvaldivia.cl/ficha?recordId=ZIUUNcCQ8WnyLf) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 14:30 | [El nido vacio](https://33.ficvaldivia.cl/ficha?recordId=5WsahTPTDUtb1Q) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 14:30 | [En un lugar aparte. Memoria cinéfila de Germán Arestizábal](https://33.ficvaldivia.cl/ficha?recordId=2MKxb6Dkxw1Kfd) | Museo Histórico UACh | Cine Expandido · Entrada Liberada |
+| 14:30 | [Genesis](https://33.ficvaldivia.cl/ficha?recordId=TNTfGpZhqZwqs9) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 14:30 | [Lady Sapiens](https://33.ficvaldivia.cl/ficha?recordId=m1UihisHqVZtg1) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 14:30 | [Origen - Journey To The Heart Of The Amazon](https://33.ficvaldivia.cl/ficha?recordId=CN9CIuIkFBlMiV) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 14:30 | [Recoding entropia](https://33.ficvaldivia.cl/ficha?recordId=n2bKP6eS9uE69N) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 14:30 | [The Dawn Of Art](https://33.ficvaldivia.cl/ficha?recordId=VnwVzVajhRd0DM) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 15:00 | [NEORE(AI)LISMO](https://33.ficvaldivia.cl/ficha?recordId=z2ECFt0wG3M6xM) | Galería Replica | Cine Expandido · Entrada Liberada |
+| 17:00 | [NEORE(AI)LISMO](https://33.ficvaldivia.cl/ficha?recordId=z2ECFt0wG3M6xM) | Galería Replica | Cine Expandido · Entrada Liberada |
 
 ### Pásate una Película
 
@@ -758,6 +826,7 @@ Fuente: https://33.ficvaldivia.cl/programacion
 
 | Hora | Película | Sala | Notas |
 |---|---|---|---|
+| 11:00 | [Detrás de la lluvia](https://33.ficvaldivia.cl/ficha?recordId=xBkVP5fRzDZ6hE) | Aula Magna UACh | Gala Chilena · Con Entrada o Acreditación |
 | 11:00 | [La tierra invisible](https://33.ficvaldivia.cl/ficha?recordId=y7pXCazXozdQX9) | Felix Martinez UACh | Gala Chilena · Con Entrada o Acreditación |
 | 14:30 | [La perra](https://33.ficvaldivia.cl/ficha?recordId=bKiVpr3P7Cv2Xd) | Aula Magna UACh | Gala Chilena · Con Entrada o Acreditación |
 | 15:00 | [Cocaina Negra](https://33.ficvaldivia.cl/ficha?recordId=UNzH69f9lgH3cW) | Felix Martinez UACh | Gala Chilena · Con Entrada o Acreditación |
@@ -771,6 +840,29 @@ Fuente: https://33.ficvaldivia.cl/programacion
 | 12:45 | [La Baraja de Myriam](https://33.ficvaldivia.cl/ficha?recordId=L0DIbAyFU7dwwb) | Felix Martinez UACh | Animamundi · Con Entrada o Acreditación |
 | 12:45 | [Noize](https://33.ficvaldivia.cl/ficha?recordId=O8rAt33p6tRBTG) | Felix Martinez UACh | Animamundi · Con Entrada o Acreditación |
 | 12:45 | [Ánima Del Amanecer](https://33.ficvaldivia.cl/ficha?recordId=i4jS2bKI7ex6bF) | Felix Martinez UACh | Animamundi · Con Entrada o Acreditación |
+
+### Nuevas Narrativas
+
+| Hora | Película | Sala | Notas |
+|---|---|---|---|
+| 10:00 | [21-22 CHINA](https://33.ficvaldivia.cl/ficha?recordId=nZiR4HTTqUs7iS) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 10:00 | [David Attenborough’s First Life](https://33.ficvaldivia.cl/ficha?recordId=ZIUUNcCQ8WnyLf) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 10:00 | [El nido vacio](https://33.ficvaldivia.cl/ficha?recordId=5WsahTPTDUtb1Q) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 10:00 | [Genesis](https://33.ficvaldivia.cl/ficha?recordId=TNTfGpZhqZwqs9) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 10:00 | [Lady Sapiens](https://33.ficvaldivia.cl/ficha?recordId=m1UihisHqVZtg1) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 10:00 | [Origen - Journey To The Heart Of The Amazon](https://33.ficvaldivia.cl/ficha?recordId=CN9CIuIkFBlMiV) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 10:00 | [Recoding entropia](https://33.ficvaldivia.cl/ficha?recordId=n2bKP6eS9uE69N) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 10:00 | [The Dawn Of Art](https://33.ficvaldivia.cl/ficha?recordId=VnwVzVajhRd0DM) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 10:30 | [En un lugar aparte. Memoria cinéfila de Germán Arestizábal](https://33.ficvaldivia.cl/ficha?recordId=2MKxb6Dkxw1Kfd) | Museo Histórico UACh | Cine Expandido · Entrada Liberada |
+| 14:30 | [21-22 CHINA](https://33.ficvaldivia.cl/ficha?recordId=nZiR4HTTqUs7iS) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 14:30 | [David Attenborough’s First Life](https://33.ficvaldivia.cl/ficha?recordId=ZIUUNcCQ8WnyLf) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 14:30 | [El nido vacio](https://33.ficvaldivia.cl/ficha?recordId=5WsahTPTDUtb1Q) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 14:30 | [En un lugar aparte. Memoria cinéfila de Germán Arestizábal](https://33.ficvaldivia.cl/ficha?recordId=2MKxb6Dkxw1Kfd) | Museo Histórico UACh | Cine Expandido · Entrada Liberada |
+| 14:30 | [Genesis](https://33.ficvaldivia.cl/ficha?recordId=TNTfGpZhqZwqs9) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 14:30 | [Lady Sapiens](https://33.ficvaldivia.cl/ficha?recordId=m1UihisHqVZtg1) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 14:30 | [Origen - Journey To The Heart Of The Amazon](https://33.ficvaldivia.cl/ficha?recordId=CN9CIuIkFBlMiV) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 14:30 | [Recoding entropia](https://33.ficvaldivia.cl/ficha?recordId=n2bKP6eS9uE69N) | MUT | Simbiosis Inmersiva · Entrada Liberada |
+| 14:30 | [The Dawn Of Art](https://33.ficvaldivia.cl/ficha?recordId=VnwVzVajhRd0DM) | MUT | Simbiosis Inmersiva · Entrada Liberada |
 
 ### Pásate una Película
 
