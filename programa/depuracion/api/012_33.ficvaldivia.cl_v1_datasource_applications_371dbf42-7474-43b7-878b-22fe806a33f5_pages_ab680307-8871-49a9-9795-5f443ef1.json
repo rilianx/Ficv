@@ -4,7 +4,367 @@
  "offset": "132",
  "items": [
   {
-   "id": "SWvURpbaIUJa6v",
+   "id": "GIMnpOBJS2aJox",
+   "fields": {
+    "EguiE": [
+     {
+      "id": "W4ixXhQNWUbof4",
+      "label": "Sala Hugo Campos"
+     }
+    ],
+    "9tf35": {
+     "id": "ece5904a-6a76-45d1-8c43-995c6d9f08da",
+     "label": "Muestra Contraplanos de la Historia"
+    },
+    "cIddG": [
+     {
+      "id": "2ccd4b09-e8ca-4d5e-8d5c-b5ed246bd27b",
+      "label": "BRASIL"
+     }
+    ],
+    "6A3kv": 5,
+    "EOkFi": [
+     {
+      "id": "2fe8d99b-a94f-4814-8031-cd08772dda34",
+      "label": "Jueves 15"
+     }
+    ],
+    "LVmhF": [
+     "Jueves 15 - 12:45 - Sala Hugo Campos"
+    ],
+    "mllcQ": [
+     {
+      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/GIMnpOBJS2aJox/mllcQ/4c085e8f-e8b8-4945-89db-c539999600f1/499d70a3-49df-4a14-9f8c-2ffaf340378c",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/GIMnpOBJS2aJox/mllcQ/4c085e8f-e8b8-4945-89db-c539999600f1/499d70a3-49df-4a14-9f8c-2ffaf340378c?response-content-disposition=inline%3B%20filename%3D%22santo_e_jesus_metalurgicos_1.jpg%22%3B%20filename%2A%3DUTF-8%27%27santo_e_jesus_metalurgicos_1.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261001T134256Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELNDQECAUO%2F20261001%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=4cb6063a6eea91f76edc7890284fe2aa3ed41a15046755b38ac823a542d40f18",
+      "filename": "santo_e_jesus_metalurgicos_1.jpg",
+      "type": "image/jpeg",
+      "size": 96442,
+      "thumbnails": [
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/b4SUZUiC2F0FnDge5eOATSxLqNO5ZSEAPLOFHq2wkOQ/rs:fit:200:0/exp:1790869500/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvR0lNbnBPQkpTMmFKb3gvbWxsY1EvNGMwODVlOGYtZThiOC00OTQ1LTg5ZGItYzUzOTk5OTYwMGYxLzQ5OWQ3MGEzLTQ5ZGYtNGExNC05ZjhjLTJmZmFmMzQwMzc4Yw",
+        "size": "small"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/2Uag2LOfrOKZsSbubYoAJokkjXP62Ao3p7dORNk2Tq0/rs:fit:600:0/exp:1790869500/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvR0lNbnBPQkpTMmFKb3gvbWxsY1EvNGMwODVlOGYtZThiOC00OTQ1LTg5ZGItYzUzOTk5OTYwMGYxLzQ5OWQ3MGEzLTQ5ZGYtNGExNC05ZjhjLTJmZmFmMzQwMzc4Yw",
+        "size": "medium"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/nURK7wrT0ZkV8P9w3gSAqr9JF-SigpMhnyoZYx7XWCo/rs:fit:1200:0/exp:1790869500/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvR0lNbnBPQkpTMmFKb3gvbWxsY1EvNGMwODVlOGYtZThiOC00OTQ1LTg5ZGItYzUzOTk5OTYwMGYxLzQ5OWQ3MGEzLTQ5ZGYtNGExNC05ZjhjLTJmZmFmMzQwMzc4Yw",
+        "size": "large"
+       }
+      ],
+      "expiresAt": null
+     }
+    ],
+    "VWKRF": [
+     {
+      "id": "bdb761a5-9133-45e0-9770-4337f63a8a82",
+      "label": "Homenaje Ciclo de Huelgas"
+     }
+    ],
+    "tgI6Y": "Santo e Jesus, Metalúrgicos",
+    "EStWy": "Cláudio Kahns y Antonio Paulo Ferraz",
+    "U11RE": [
+     {
+      "id": "7c019120-12db-4c05-9987-5f016b00911a",
+      "label": "Entrada Liberada"
+     }
+    ]
+   }
+  },
+  {
+   "id": "ieJY5gAQwB917a",
+   "fields": {
+    "EguiE": [
+     {
+      "id": "W4ixXhQNWUbof4",
+      "label": "Sala Hugo Campos"
+     }
+    ],
+    "9tf35": {
+     "id": "ece5904a-6a76-45d1-8c43-995c6d9f08da",
+     "label": "Muestra Contraplanos de la Historia"
+    },
+    "cIddG": [
+     {
+      "id": "2ccd4b09-e8ca-4d5e-8d5c-b5ed246bd27b",
+      "label": "BRASIL"
+     }
+    ],
+    "6A3kv": 5,
+    "EOkFi": [
+     {
+      "id": "2fe8d99b-a94f-4814-8031-cd08772dda34",
+      "label": "Jueves 15"
+     }
+    ],
+    "LVmhF": [
+     "Jueves 15 - 12:45 - Sala Hugo Campos"
+    ],
+    "mllcQ": [
+     {
+      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/ieJY5gAQwB917a/mllcQ/01c8ed6a-96a9-469b-b44d-b5d3e90e8302/afbfdc8d-b55c-44bf-87ed-5eb44e648048",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/ieJY5gAQwB917a/mllcQ/01c8ed6a-96a9-469b-b44d-b5d3e90e8302/afbfdc8d-b55c-44bf-87ed-5eb44e648048?response-content-disposition=inline%3B%20filename%3D%22Still_1.jpg%22%3B%20filename%2A%3DUTF-8%27%27Still_1.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261001T134256Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELNDQECAUO%2F20261001%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=1ee62baceda0a6528157ff0779ce8a232bb97e9d0a284c3b99b15c5818ccf51d",
+      "filename": "Still_1.jpg",
+      "type": "image/jpeg",
+      "size": 40234,
+      "thumbnails": [
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/MmDxA5SJ5_ycZT3jRhMorbue8vUuWVTtqaw0rwhp3zk/rs:fit:200:0/exp:1790869500/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvaWVKWTVnQVF3QjkxN2EvbWxsY1EvMDFjOGVkNmEtOTZhOS00NjliLWI0NGQtYjVkM2U5MGU4MzAyL2FmYmZkYzhkLWI1NWMtNDRiZi04N2VkLTVlYjQ0ZTY0ODA0OA",
+        "size": "small"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/vMr0Ih-nqvGGFRKtXvwU9pg-YmC9-KLvP2aJlviXIN4/rs:fit:600:0/exp:1790869500/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvaWVKWTVnQVF3QjkxN2EvbWxsY1EvMDFjOGVkNmEtOTZhOS00NjliLWI0NGQtYjVkM2U5MGU4MzAyL2FmYmZkYzhkLWI1NWMtNDRiZi04N2VkLTVlYjQ0ZTY0ODA0OA",
+        "size": "medium"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/5uVAtDA8GA2LhLQKEVMpzQ9zeHaSH-4HRYViw4WM9Vk/rs:fit:1200:0/exp:1790869500/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvaWVKWTVnQVF3QjkxN2EvbWxsY1EvMDFjOGVkNmEtOTZhOS00NjliLWI0NGQtYjVkM2U5MGU4MzAyL2FmYmZkYzhkLWI1NWMtNDRiZi04N2VkLTVlYjQ0ZTY0ODA0OA",
+        "size": "large"
+       }
+      ],
+      "expiresAt": null
+     }
+    ],
+    "VWKRF": [
+     {
+      "id": "bdb761a5-9133-45e0-9770-4337f63a8a82",
+      "label": "Homenaje Ciclo de Huelgas"
+     }
+    ],
+    "tgI6Y": "Trabalhadoras Metalúrgicas",
+    "EStWy": "Olga Futemma y Renato Tapajós",
+    "U11RE": [
+     {
+      "id": "7c019120-12db-4c05-9987-5f016b00911a",
+      "label": "Entrada Liberada"
+     }
+    ]
+   }
+  },
+  {
+   "id": "1VQfBwU06VP58h",
+   "fields": {
+    "EguiE": [
+     {
+      "id": "lmVc7gXQa9HpMh",
+      "label": "Felix Martinez UACh"
+     }
+    ],
+    "9tf35": {
+     "id": "ece5904a-6a76-45d1-8c43-995c6d9f08da",
+     "label": "Muestra Contraplanos de la Historia"
+    },
+    "cIddG": [
+     {
+      "id": "2586b1ec-b9d4-4588-a3aa-261be7e28100",
+      "label": "ARGENTINA"
+     }
+    ],
+    "6A3kv": 5,
+    "EOkFi": [
+     {
+      "id": "011a78b2-dd9f-4829-aefa-9922656c2c99",
+      "label": "Miércoles 14"
+     },
+     {
+      "id": "2fe8d99b-a94f-4814-8031-cd08772dda34",
+      "label": "Jueves 15"
+     }
+    ],
+    "LVmhF": [
+     "Miércoles 14 - 11:00 - Felix Martinez UACh",
+     "Jueves 15 - 17:15 - Felix Martinez UACh"
+    ],
+    "mllcQ": [
+     {
+      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/1VQfBwU06VP58h/mllcQ/1739a71a-028a-4ba7-b6b9-9c76c5ff73fe/80bd3ed4-b178-4b92-aeb4-d5d03e9204ac",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/1VQfBwU06VP58h/mllcQ/1739a71a-028a-4ba7-b6b9-9c76c5ff73fe/80bd3ed4-b178-4b92-aeb4-d5d03e9204ac?response-content-disposition=inline%3B%20filename%3D%22Alias_Gardelito_1.jpg%22%3B%20filename%2A%3DUTF-8%27%27Alias_Gardelito_1.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261001T134256Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELNDQECAUO%2F20261001%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=91ecc5906cbb2afdb5d4bce9b9774eb2b7bc2189a174917c19f9341d82de8acc",
+      "filename": "Alias_Gardelito_1.jpg",
+      "type": "image/jpeg",
+      "size": 33632,
+      "thumbnails": [
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/D3WImgoIX4KfHapgYKmWbT-hCy3ibpAIl_Ltv64gpZg/rs:fit:200:0/exp:1790869500/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvMVZRZkJ3VTA2VlA1OGgvbWxsY1EvMTczOWE3MWEtMDI4YS00YmE3LWI2YjktOWM3NmM1ZmY3M2ZlLzgwYmQzZWQ0LWIxNzgtNGI5Mi1hZWI0LWQ1ZDAzZTkyMDRhYw",
+        "size": "small"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/z9x8cLrm5asAPd7A8ojz5I8qnoVMkXBIPH1FUuea5iA/rs:fit:600:0/exp:1790869500/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvMVZRZkJ3VTA2VlA1OGgvbWxsY1EvMTczOWE3MWEtMDI4YS00YmE3LWI2YjktOWM3NmM1ZmY3M2ZlLzgwYmQzZWQ0LWIxNzgtNGI5Mi1hZWI0LWQ1ZDAzZTkyMDRhYw",
+        "size": "medium"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/i2fD3jlF2dqQ2K7Be-W9kn37Rf0d1gIKaCr3BbP9C0M/rs:fit:1200:0/exp:1790869500/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvMVZRZkJ3VTA2VlA1OGgvbWxsY1EvMTczOWE3MWEtMDI4YS00YmE3LWI2YjktOWM3NmM1ZmY3M2ZlLzgwYmQzZWQ0LWIxNzgtNGI5Mi1hZWI0LWQ1ZDAzZTkyMDRhYw",
+        "size": "large"
+       }
+      ],
+      "expiresAt": null
+     }
+    ],
+    "VWKRF": [
+     {
+      "id": "55565daf-8736-447c-923a-afc9df9ba7de",
+      "label": "Homenaje Cine Chileno"
+     }
+    ],
+    "tgI6Y": "Alias Gardelito",
+    "EStWy": "Lautaro Murua",
+    "U11RE": [
+     {
+      "id": "7c019120-12db-4c05-9987-5f016b00911a",
+      "label": "Entrada Liberada"
+     }
+    ]
+   }
+  },
+  {
+   "id": "QONODkHiO3t78J",
+   "fields": {
+    "EguiE": [
+     {
+      "id": "W4ixXhQNWUbof4",
+      "label": "Sala Hugo Campos"
+     }
+    ],
+    "9tf35": {
+     "id": "ece5904a-6a76-45d1-8c43-995c6d9f08da",
+     "label": "Muestra Contraplanos de la Historia"
+    },
+    "cIddG": [
+     {
+      "id": "c1730ef4-202a-4a5c-99a4-18369c72e0f1",
+      "label": "COLOMBIA"
+     }
+    ],
+    "6A3kv": 5,
+    "EOkFi": [
+     {
+      "id": "7b70cbd2-d47b-4b96-95cc-db59c04100ed",
+      "label": "Lunes 12"
+     },
+     {
+      "id": "2fe8d99b-a94f-4814-8031-cd08772dda34",
+      "label": "Jueves 15"
+     }
+    ],
+    "LVmhF": [
+     "Lunes 12 - 20:15 - Sala Hugo Campos",
+     "Jueves 15 - 15:15 - Sala Hugo Campos"
+    ],
+    "mllcQ": [
+     {
+      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/QONODkHiO3t78J/mllcQ/025e15c0-ec96-4649-9545-298844b89c26/dc741c79-f1a9-4a6b-a347-ba0a86a37f41",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/QONODkHiO3t78J/mllcQ/025e15c0-ec96-4649-9545-298844b89c26/dc741c79-f1a9-4a6b-a347-ba0a86a37f41?response-content-disposition=inline%3B%20filename%3D%22Captura_de_pantalla_2026-08-06_a_las_1.35.12_p.m..jpg%22%3B%20filename%2A%3DUTF-8%27%27Captura_de_pantalla_2026-08-06_a_las_1.35.12_p.m..jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261001T134256Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELNDQECAUO%2F20261001%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=78e01a95f5c46e596c68d34aa5510722392e90d018e2c94c9266a00ca26f1a16",
+      "filename": "Captura_de_pantalla_2026-08-06_a_las_1.35.12_p.m..jpg",
+      "type": "image/jpeg",
+      "size": 60705,
+      "thumbnails": [
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/SQHzdDPw4aUFm0IBjYWsEmiagRBzMn7eqp-V-RCxCK4/rs:fit:200:0/exp:1790869500/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvUU9OT0RrSGlPM3Q3OEovbWxsY1EvMDI1ZTE1YzAtZWM5Ni00NjQ5LTk1NDUtMjk4ODQ0Yjg5YzI2L2RjNzQxYzc5LWYxYTktNGE2Yi1hMzQ3LWJhMGE4NmEzN2Y0MQ",
+        "size": "small"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/kAjYssXfjN49pUAt6NYa_ldceoxj8SYZA9smih44kh0/rs:fit:600:0/exp:1790869500/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvUU9OT0RrSGlPM3Q3OEovbWxsY1EvMDI1ZTE1YzAtZWM5Ni00NjQ5LTk1NDUtMjk4ODQ0Yjg5YzI2L2RjNzQxYzc5LWYxYTktNGE2Yi1hMzQ3LWJhMGE4NmEzN2Y0MQ",
+        "size": "medium"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/5B2UkTugBwWT_RaHZqODRyaDkWkpg0kRGg_KcFtm2Qs/rs:fit:1200:0/exp:1790869500/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvUU9OT0RrSGlPM3Q3OEovbWxsY1EvMDI1ZTE1YzAtZWM5Ni00NjQ5LTk1NDUtMjk4ODQ0Yjg5YzI2L2RjNzQxYzc5LWYxYTktNGE2Yi1hMzQ3LWJhMGE4NmEzN2Y0MQ",
+        "size": "large"
+       }
+      ],
+      "expiresAt": null
+     }
+    ],
+    "VWKRF": [
+     {
+      "id": "55565daf-8736-447c-923a-afc9df9ba7de",
+      "label": "Homenaje Cine Chileno"
+     }
+    ],
+    "tgI6Y": "Canaguaro",
+    "EStWy": "Dunav Kuzmanich",
+    "U11RE": [
+     {
+      "id": "7c019120-12db-4c05-9987-5f016b00911a",
+      "label": "Entrada Liberada"
+     }
+    ]
+   }
+  },
+  {
+   "id": "pGh2kqEoea85N4",
+   "fields": {
+    "EguiE": [
+     {
+      "id": "6pbnSviMdULlih",
+      "label": "Sala Paraninfo UACh"
+     }
+    ],
+    "9tf35": {
+     "id": "ece5904a-6a76-45d1-8c43-995c6d9f08da",
+     "label": "Muestra Contraplanos de la Historia"
+    },
+    "cIddG": [
+     {
+      "id": "5cb661e2-8adb-4f77-b124-051dcdd67d92",
+      "label": "ITALIA"
+     }
+    ],
+    "6A3kv": 5,
+    "EOkFi": [
+     {
+      "id": "011a78b2-dd9f-4829-aefa-9922656c2c99",
+      "label": "Miércoles 14"
+     },
+     {
+      "id": "6f3c7cdb-b681-451b-ad15-e38bde0dfcce",
+      "label": "Viernes 16"
+     }
+    ],
+    "LVmhF": [
+     "Miércoles 14 - 15:15 - Sala Paraninfo UACh",
+     "Viernes 16 - 12:45 - Sala Paraninfo UACh"
+    ],
+    "mllcQ": [
+     {
+      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/pGh2kqEoea85N4/mllcQ/42441942-d08b-4ea1-8dae-6d45ad2b4317/bef5d57e-4939-4eb1-a7fe-ec1bee47203b",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/pGh2kqEoea85N4/mllcQ/42441942-d08b-4ea1-8dae-6d45ad2b4317/bef5d57e-4939-4eb1-a7fe-ec1bee47203b?response-content-disposition=inline%3B%20filename%3D%22En_el_nombre_de_la_Mamma_del_Hijo_del_Espiritu_Santo_Amen.jpg%22%3B%20filename%2A%3DUTF-8%27%27En_el_nombre_de_la_Mamma_del_Hijo_del_Espiritu_Santo_Amen.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261001T134256Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELNDQECAUO%2F20261001%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=53ff973ac4ec8a1a40b9e3633bdc347e7be923a7bdc87e27fd74aeabd8f842a7",
+      "filename": "En_el_nombre_de_la_Mamma_del_Hijo_del_Espiritu_Santo_Amen.jpg",
+      "type": "image/jpeg",
+      "size": 46907,
+      "thumbnails": [
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/yaeOKqXsgVvq-d0uv9MT6KKcD5PTliRMPt506OgjRJo/rs:fit:200:0/exp:1790869500/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvcEdoMmtxRW9lYTg1TjQvbWxsY1EvNDI0NDE5NDItZDA4Yi00ZWExLThkYWUtNmQ0NWFkMmI0MzE3L2JlZjVkNTdlLTQ5MzktNGViMS1hN2ZlLWVjMWJlZTQ3MjAzYg",
+        "size": "small"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/M9fHOnQPOZpfOcfbSMd7R_tPQiLFJg4-QArf57LiT3Q/rs:fit:600:0/exp:1790869500/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvcEdoMmtxRW9lYTg1TjQvbWxsY1EvNDI0NDE5NDItZDA4Yi00ZWExLThkYWUtNmQ0NWFkMmI0MzE3L2JlZjVkNTdlLTQ5MzktNGViMS1hN2ZlLWVjMWJlZTQ3MjAzYg",
+        "size": "medium"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/guvHmtBYgiLYS2a3FAmHjogXC5_7u_6b3iPTrJv_Z-k/rs:fit:1200:0/exp:1790869500/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvcEdoMmtxRW9lYTg1TjQvbWxsY1EvNDI0NDE5NDItZDA4Yi00ZWExLThkYWUtNmQ0NWFkMmI0MzE3L2JlZjVkNTdlLTQ5MzktNGViMS1hN2ZlLWVjMWJlZTQ3MjAzYg",
+        "size": "large"
+       }
+      ],
+      "expiresAt": null
+     }
+    ],
+    "VWKRF": [
+     {
+      "id": "55565daf-8736-447c-923a-afc9df9ba7de",
+      "label": "Homenaje Cine Chileno"
+     }
+    ],
+    "tgI6Y": "En el nombre de la Mamma, del Hijo y del Espíritu Santo, Amén.",
+    "EStWy": "Ximena Prieto",
+    "U11RE": [
+     {
+      "id": "36d33921-53ea-4c41-9ba6-df8242bd14db",
+      "label": "Con Entrada o Acreditación"
+     }
+    ]
+   }
+  },
+  {
+   "id": "gCokeg9gzA0dbv",
    "fields": {
     "EguiE": [
      {
@@ -22,34 +382,39 @@
       "label": "FRANCIA"
      }
     ],
+    "6A3kv": 5,
     "EOkFi": [
      {
-      "id": "2fe8d99b-a94f-4814-8031-cd08772dda34",
-      "label": "Jueves 15"
+      "id": "011a78b2-dd9f-4829-aefa-9922656c2c99",
+      "label": "Miércoles 14"
      },
      {
-      "id": "da5c68dc-fcde-422a-8c01-42876a9d8611",
-      "label": "Sábado 17"
+      "id": "6f3c7cdb-b681-451b-ad15-e38bde0dfcce",
+      "label": "Viernes 16"
      }
+    ],
+    "LVmhF": [
+     "Miércoles 14 - 15:15 - Sala Paraninfo UACh",
+     "Viernes 16 - 12:45 - Sala Paraninfo UACh"
     ],
     "mllcQ": [
      {
-      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/SWvURpbaIUJa6v/mllcQ/14f41f10-3506-4e6a-885c-cc1f53fc935b/adf75521-bdda-406b-9894-869bbb0b8505",
-      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/SWvURpbaIUJa6v/mllcQ/14f41f10-3506-4e6a-885c-cc1f53fc935b/adf75521-bdda-406b-9894-869bbb0b8505?response-content-disposition=inline%3B%20filename%3D%22Still_Los_Primos_1.jpg%22%3B%20filename%2A%3DUTF-8%27%27Still_Los_Primos_1.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261001T132759Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELNDQECAUO%2F20261001%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=3a4d7951eb82b335c875f4c2e723b5b2daabc410abd21906efff3389cfa8a51e",
-      "filename": "Still_Los_Primos_1.jpg",
+      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/gCokeg9gzA0dbv/mllcQ/dcbb35de-8e53-4aac-8602-2e45dde0c125/5efd948c-9578-4f2d-9c6f-b62852deea31",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/gCokeg9gzA0dbv/mllcQ/dcbb35de-8e53-4aac-8602-2e45dde0c125/5efd948c-9578-4f2d-9c6f-b62852deea31?response-content-disposition=inline%3B%20filename%3D%22La_trace_Francia_1989_20_minutos.jpg%22%3B%20filename%2A%3DUTF-8%27%27La_trace_Francia_1989_20_minutos.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261001T134256Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELNDQECAUO%2F20261001%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=b0d7a430fe2505ba6ce4eaaa6297cc763a005888e7ac670aa373afe3eefbd2b9",
+      "filename": "La_trace_Francia_1989_20_minutos.jpg",
       "type": "image/jpeg",
-      "size": 65722,
+      "size": 38901,
       "thumbnails": [
        {
-        "url": "https://d2nmodil6do74b.cloudfront.net/StVyvhpCru5DIk2As19Wxgb8c7gs_EC7Y7fBwrawhBU/rs:fit:200:0/exp:1790868600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvU1d2VVJwYmFJVUphNnYvbWxsY1EvMTRmNDFmMTAtMzUwNi00ZTZhLTg4NWMtY2MxZjUzZmM5MzViL2FkZjc1NTIxLWJkZGEtNDA2Yi05ODk0LTg2OWJiYjBiODUwNQ",
+        "url": "https://d2nmodil6do74b.cloudfront.net/r2c84sThkGmyIJ3N3iHe1rKP4lb0FDDzPf6b8pFKuUE/rs:fit:200:0/exp:1790869500/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvZ0Nva2VnOWd6QTBkYnYvbWxsY1EvZGNiYjM1ZGUtOGU1My00YWFjLTg2MDItMmU0NWRkZTBjMTI1LzVlZmQ5NDhjLTk1NzgtNGYyZC05YzZmLWI2Mjg1MmRlZWEzMQ",
         "size": "small"
        },
        {
-        "url": "https://d2nmodil6do74b.cloudfront.net/XH1B5QWqUX_fTbBNwv7pnO_RuC-XoKfJZtYTzBokj1c/rs:fit:600:0/exp:1790868600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvU1d2VVJwYmFJVUphNnYvbWxsY1EvMTRmNDFmMTAtMzUwNi00ZTZhLTg4NWMtY2MxZjUzZmM5MzViL2FkZjc1NTIxLWJkZGEtNDA2Yi05ODk0LTg2OWJiYjBiODUwNQ",
+        "url": "https://d2nmodil6do74b.cloudfront.net/3IgIRZ8QOXJ5_yK5yez9NSzokNa1sHIwBwrEbNalwYc/rs:fit:600:0/exp:1790869500/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvZ0Nva2VnOWd6QTBkYnYvbWxsY1EvZGNiYjM1ZGUtOGU1My00YWFjLTg2MDItMmU0NWRkZTBjMTI1LzVlZmQ5NDhjLTk1NzgtNGYyZC05YzZmLWI2Mjg1MmRlZWEzMQ",
         "size": "medium"
        },
        {
-        "url": "https://d2nmodil6do74b.cloudfront.net/SqvLVWmOt2WCOeQkD6kOGFwOSqq4FIMQX29cXAhGbc0/rs:fit:1200:0/exp:1790868600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvU1d2VVJwYmFJVUphNnYvbWxsY1EvMTRmNDFmMTAtMzUwNi00ZTZhLTg4NWMtY2MxZjUzZmM5MzViL2FkZjc1NTIxLWJkZGEtNDA2Yi05ODk0LTg2OWJiYjBiODUwNQ",
+        "url": "https://d2nmodil6do74b.cloudfront.net/rVU_BkGeVUI9uEhUA2wGxNRARcfbSiazVMq4TqxkTLM/rs:fit:1200:0/exp:1790869500/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvZ0Nva2VnOWd6QTBkYnYvbWxsY1EvZGNiYjM1ZGUtOGU1My00YWFjLTg2MDItMmU0NWRkZTBjMTI1LzVlZmQ5NDhjLTk1NzgtNGYyZC05YzZmLWI2Mjg1MmRlZWEzMQ",
         "size": "large"
        }
       ],
@@ -58,20 +423,16 @@
     ],
     "VWKRF": [
      {
-      "id": "144e3cee-fb15-4b3d-a478-68d42e8c5370",
-      "label": "La Lección de Cine"
+      "id": "55565daf-8736-447c-923a-afc9df9ba7de",
+      "label": "Homenaje Cine Chileno"
      }
     ],
-    "tgI6Y": "Los primos",
-    "EStWy": "Claude Chabrol",
-    "xb0jW": [
-     "Jueves 15 - 15:00",
-     "Sábado 17 - 17:30"
-    ],
+    "tgI6Y": "La Trace",
+    "EStWy": "Ximena Prieto",
     "U11RE": [
      {
-      "id": "7c019120-12db-4c05-9987-5f016b00911a",
-      "label": "Entrada Liberada"
+      "id": "36d33921-53ea-4c41-9ba6-df8242bd14db",
+      "label": "Con Entrada o Acreditación"
      }
     ]
    }
@@ -95,6 +456,7 @@
       "label": "ESTADOS UNIDOS"
      }
     ],
+    "6A3kv": 5,
     "EOkFi": [
      {
       "id": "8ceb5fef-3658-4464-8ee5-e9dcf51eb741",
@@ -105,24 +467,28 @@
       "label": "Sábado 17"
      }
     ],
+    "LVmhF": [
+     "Martes 13 - 11:00 - Felix Martinez UACh",
+     "Sábado 17 - 17:45 - Felix Martinez UACh"
+    ],
     "mllcQ": [
      {
       "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/gLSqzJP0pAA2zh/mllcQ/243bd39b-7cb8-4c1d-a496-02a6b6dd44ba/7fd78eed-a71d-4c69-8c78-449258dc56dd",
-      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/gLSqzJP0pAA2zh/mllcQ/243bd39b-7cb8-4c1d-a496-02a6b6dd44ba/7fd78eed-a71d-4c69-8c78-449258dc56dd?response-content-disposition=inline%3B%20filename%3D%22PRINCIPAL_SURES_09_1.jpg%22%3B%20filename%2A%3DUTF-8%27%27PRINCIPAL_SURES_09_1.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261001T132759Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELNDQECAUO%2F20261001%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=1cd7953e20ca30e1064c1095b663bc69c899615490b79854549addc0d8608f48",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/gLSqzJP0pAA2zh/mllcQ/243bd39b-7cb8-4c1d-a496-02a6b6dd44ba/7fd78eed-a71d-4c69-8c78-449258dc56dd?response-content-disposition=inline%3B%20filename%3D%22PRINCIPAL_SURES_09_1.jpg%22%3B%20filename%2A%3DUTF-8%27%27PRINCIPAL_SURES_09_1.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261001T134256Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELNDQECAUO%2F20261001%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=0613a364538ec78c3f35f85a8d030a0d341c09cb73339880bce2886ea36ed0b3",
       "filename": "PRINCIPAL_SURES_09_1.jpg",
       "type": "image/jpeg",
       "size": 157207,
       "thumbnails": [
        {
-        "url": "https://d2nmodil6do74b.cloudfront.net/4UmwUwYuj3mkAm9y4AZxlEGHsnilktx-R6G6VvZWNlw/rs:fit:200:0/exp:1790868600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvZ0xTcXpKUDBwQUEyemgvbWxsY1EvMjQzYmQzOWItN2NiOC00YzFkLWE0OTYtMDJhNmI2ZGQ0NGJhLzdmZDc4ZWVkLWE3MWQtNGM2OS04Yzc4LTQ0OTI1OGRjNTZkZA",
+        "url": "https://d2nmodil6do74b.cloudfront.net/Kj-9DuBZGq__S9HTuk9Ao6T84LatjPrnCxBfWJoKjD8/rs:fit:200:0/exp:1790869500/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvZ0xTcXpKUDBwQUEyemgvbWxsY1EvMjQzYmQzOWItN2NiOC00YzFkLWE0OTYtMDJhNmI2ZGQ0NGJhLzdmZDc4ZWVkLWE3MWQtNGM2OS04Yzc4LTQ0OTI1OGRjNTZkZA",
         "size": "small"
        },
        {
-        "url": "https://d2nmodil6do74b.cloudfront.net/9mB5XSuo4zjdtOZUBO-mi1AhDJsOcvpoi21YRZj3k9U/rs:fit:600:0/exp:1790868600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvZ0xTcXpKUDBwQUEyemgvbWxsY1EvMjQzYmQzOWItN2NiOC00YzFkLWE0OTYtMDJhNmI2ZGQ0NGJhLzdmZDc4ZWVkLWE3MWQtNGM2OS04Yzc4LTQ0OTI1OGRjNTZkZA",
+        "url": "https://d2nmodil6do74b.cloudfront.net/C-5GTAfaU_xoFB0Ws5yha9Ecz18hVPj9AKuOaI7e7AI/rs:fit:600:0/exp:1790869500/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvZ0xTcXpKUDBwQUEyemgvbWxsY1EvMjQzYmQzOWItN2NiOC00YzFkLWE0OTYtMDJhNmI2ZGQ0NGJhLzdmZDc4ZWVkLWE3MWQtNGM2OS04Yzc4LTQ0OTI1OGRjNTZkZA",
         "size": "medium"
        },
        {
-        "url": "https://d2nmodil6do74b.cloudfront.net/QN7WAThFVQVuTX1mj_K_y8WB-e7ISzYZcv8jnp1woXg/rs:fit:1200:0/exp:1790868600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvZ0xTcXpKUDBwQUEyemgvbWxsY1EvMjQzYmQzOWItN2NiOC00YzFkLWE0OTYtMDJhNmI2ZGQ0NGJhLzdmZDc4ZWVkLWE3MWQtNGM2OS04Yzc4LTQ0OTI1OGRjNTZkZA",
+        "url": "https://d2nmodil6do74b.cloudfront.net/3AFV3t682Ry4FVCuPo7ryw0g-Dm6RPPVARr6mHF8cAU/rs:fit:1200:0/exp:1790869500/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvZ0xTcXpKUDBwQUEyemgvbWxsY1EvMjQzYmQzOWItN2NiOC00YzFkLWE0OTYtMDJhNmI2ZGQ0NGJhLzdmZDc4ZWVkLWE3MWQtNGM2OS04Yzc4LTQ0OTI1OGRjNTZkZA",
         "size": "large"
        }
       ],
@@ -137,10 +503,6 @@
     ],
     "tgI6Y": "Los Sures",
     "EStWy": "Diego Echeverría",
-    "xb0jW": [
-     "Martes 13 - 11:00",
-     "Sábado 17 - 17:45"
-    ],
     "U11RE": [
      {
       "id": "7c019120-12db-4c05-9987-5f016b00911a",
@@ -154,505 +516,7 @@
    }
   },
   {
-   "id": "0ky84DBKamQpZc",
-   "fields": {
-    "EguiE": [
-     {
-      "id": "xhTnT4OzknPaoY",
-      "label": "Teatro Cervantes"
-     }
-    ],
-    "9tf35": {
-     "id": "2ed0d591-3e59-428c-94ba-5a572ede59a1",
-     "label": "Muestra de Cine Contemporáneo"
-    },
-    "cIddG": [
-     {
-      "id": "d4c256b9-0895-48e6-8d48-06dbb69fb765",
-      "label": "ESTADOS UNIDOS"
-     }
-    ],
-    "EOkFi": [
-     {
-      "id": "011a78b2-dd9f-4829-aefa-9922656c2c99",
-      "label": "Miércoles 14"
-     },
-     {
-      "id": "6f3c7cdb-b681-451b-ad15-e38bde0dfcce",
-      "label": "Viernes 16"
-     }
-    ],
-    "mllcQ": [
-     {
-      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/0ky84DBKamQpZc/mllcQ/9e358f0c-6416-4d9a-87d9-e4912c65d27b/52030a6c-8ca3-4525-9ff9-295e82a0cbe2",
-      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/0ky84DBKamQpZc/mllcQ/9e358f0c-6416-4d9a-87d9-e4912c65d27b/52030a6c-8ca3-4525-9ff9-295e82a0cbe2?response-content-disposition=inline%3B%20filename%3D%22MaddiesSecret_FTR_HD23_185_EN20_Txt_v2.00_30_42_10.Still106_PRINCIPAL_1.jpg%22%3B%20filename%2A%3DUTF-8%27%27MaddiesSecret_FTR_HD23_185_EN20_Txt_v2.00_30_42_10.Still106_PRINCIPAL_1.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261001T132759Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELNDQECAUO%2F20261001%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=5157866b677fffe566ca14e57c33f34275645dab25e2a9931a679d55b9d73d27",
-      "filename": "MaddiesSecret_FTR_HD23_185_EN20_Txt_v2.00_30_42_10.Still106_PRINCIPAL_1.jpg",
-      "type": "image/jpeg",
-      "size": 38274,
-      "thumbnails": [
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/OxPcRQE34ZnWvornH22Ezs3TUEsRCyKYbHBijBF4kFk/rs:fit:200:0/exp:1790868600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvMGt5ODREQkthbVFwWmMvbWxsY1EvOWUzNThmMGMtNjQxNi00ZDlhLTg3ZDktZTQ5MTJjNjVkMjdiLzUyMDMwYTZjLThjYTMtNDUyNS05ZmY5LTI5NWU4MmEwY2JlMg",
-        "size": "small"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/_xB3L2IIgapRoNpub17Kc14bLPRQhozYkyuyb98OQEQ/rs:fit:600:0/exp:1790868600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvMGt5ODREQkthbVFwWmMvbWxsY1EvOWUzNThmMGMtNjQxNi00ZDlhLTg3ZDktZTQ5MTJjNjVkMjdiLzUyMDMwYTZjLThjYTMtNDUyNS05ZmY5LTI5NWU4MmEwY2JlMg",
-        "size": "medium"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/FvBsNtD2qD-Rg7MrxoCW_cvAwblV8MA84ycSWD9TMbE/rs:fit:1200:0/exp:1790868600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvMGt5ODREQkthbVFwWmMvbWxsY1EvOWUzNThmMGMtNjQxNi00ZDlhLTg3ZDktZTQ5MTJjNjVkMjdiLzUyMDMwYTZjLThjYTMtNDUyNS05ZmY5LTI5NWU4MmEwY2JlMg",
-        "size": "large"
-       }
-      ],
-      "expiresAt": null
-     }
-    ],
-    "VWKRF": [
-     {
-      "id": "5e00ded1-821a-42ce-a2b3-2fd238939e88",
-      "label": "Con Ánimo de Humor"
-     }
-    ],
-    "tgI6Y": "Maddie's Secret",
-    "EStWy": "John Early",
-    "xb0jW": [
-     "Miércoles 14 - 22:00",
-     "Viernes 16 - 19:30"
-    ],
-    "U11RE": [
-     {
-      "id": "7c019120-12db-4c05-9987-5f016b00911a",
-      "label": "Entrada Liberada"
-     }
-    ]
-   }
-  },
-  {
-   "id": "14vaA0P9ufEozr",
-   "fields": {
-    "EguiE": [
-     {
-      "id": "ZP7w6AqDWkpTa7",
-      "label": "Aula Magna UACh"
-     }
-    ],
-    "9tf35": {
-     "id": "303d5bc5-0132-46c6-b392-adaa6e501cb9",
-     "label": "Pásate una Película"
-    },
-    "cIddG": [
-     {
-      "id": "f1a64ccb-9a66-42d0-a413-01b558961ee4",
-      "label": "CHILE"
-     }
-    ],
-    "EOkFi": [
-     {
-      "id": "011a78b2-dd9f-4829-aefa-9922656c2c99",
-      "label": "Miércoles 14"
-     }
-    ],
-    "mllcQ": [
-     {
-      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/14vaA0P9ufEozr/mllcQ/4df1ec10-b717-410d-a2e3-cacb80d4bdb1/bfe0d2e4-d524-4ebe-907c-14c86ce53cbf",
-      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/14vaA0P9ufEozr/mllcQ/4df1ec10-b717-410d-a2e3-cacb80d4bdb1/bfe0d2e4-d524-4ebe-907c-14c86ce53cbf?response-content-disposition=inline%3B%20filename%3D%22Marea.jpg%22%3B%20filename%2A%3DUTF-8%27%27Marea.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261001T132759Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELNDQECAUO%2F20261001%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=2fc9ec88afad564973688b341a7189ee3c727276721c7c82e015c020eecd3292",
-      "filename": "Marea.jpg",
-      "type": "image/jpeg",
-      "size": 38643,
-      "thumbnails": [
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/uFGas0DkuzI2ovxxEPTHmg2IQ35ONsQWfK7SCTYu-GI/rs:fit:200:0/exp:1790868600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvMTR2YUEwUDl1ZkVvenIvbWxsY1EvNGRmMWVjMTAtYjcxNy00MTBkLWEyZTMtY2FjYjgwZDRiZGIxL2JmZTBkMmU0LWQ1MjQtNGViZS05MDdjLTE0Yzg2Y2U1M2NiZg",
-        "size": "small"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/ruV_E4uck_mvNBmMPWkymsR5_MIL67w1yL6457oipeI/rs:fit:600:0/exp:1790868600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvMTR2YUEwUDl1ZkVvenIvbWxsY1EvNGRmMWVjMTAtYjcxNy00MTBkLWEyZTMtY2FjYjgwZDRiZGIxL2JmZTBkMmU0LWQ1MjQtNGViZS05MDdjLTE0Yzg2Y2U1M2NiZg",
-        "size": "medium"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/MTkx9BYsIpX5sgY_jEcP8MHn8_K4-3OiE4zXs1fdJKE/rs:fit:1200:0/exp:1790868600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvMTR2YUEwUDl1ZkVvenIvbWxsY1EvNGRmMWVjMTAtYjcxNy00MTBkLWEyZTMtY2FjYjgwZDRiZGIxL2JmZTBkMmU0LWQ1MjQtNGViZS05MDdjLTE0Yzg2Y2U1M2NiZg",
-        "size": "large"
-       }
-      ],
-      "expiresAt": null
-     }
-    ],
-    "VWKRF": [
-     {
-      "id": "741e61d1-85a5-4e9f-9c4f-38c0bf6f1b1c",
-      "label": "Concurso de micrometrajes"
-     }
-    ],
-    "tgI6Y": "Marea",
-    "EStWy": "Benjamín Nikola Gatica San Martín",
-    "xb0jW": [
-     "Miércoles 14 - 11:00"
-    ],
-    "U11RE": [
-     {
-      "id": "36d33921-53ea-4c41-9ba6-df8242bd14db",
-      "label": "Con Entrada o Acreditación"
-     }
-    ]
-   }
-  },
-  {
-   "id": "Y5jZiwVLA6AmHe",
-   "fields": {
-    "EguiE": [
-     {
-      "id": "lmVc7gXQa9HpMh",
-      "label": "Felix Martinez UACh"
-     }
-    ],
-    "9tf35": {
-     "id": "2ed0d591-3e59-428c-94ba-5a572ede59a1",
-     "label": "Muestra de Cine Contemporáneo"
-    },
-    "cIddG": [
-     {
-      "id": "c097dcc7-b629-40bb-966e-c7d05bf7598a",
-      "label": "ALEMANIA"
-     },
-     {
-      "id": "07c81853-a969-41fe-9c2d-feab54280f8a",
-      "label": "FRANCIA"
-     },
-     {
-      "id": "871e0e8b-277d-49f2-9ac1-b054a281425a",
-      "label": "JAPÓN"
-     }
-    ],
-    "EOkFi": [
-     {
-      "id": "7b70cbd2-d47b-4b96-95cc-db59c04100ed",
-      "label": "Lunes 12"
-     },
-     {
-      "id": "da5c68dc-fcde-422a-8c01-42876a9d8611",
-      "label": "Sábado 17"
-     }
-    ],
-    "mllcQ": [
-     {
-      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/Y5jZiwVLA6AmHe/mllcQ/6e239741-dbfd-4b33-a381-08dae3aec6b1/b5762113-d3dc-492a-97ff-9b40b19f7097",
-      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/Y5jZiwVLA6AmHe/mllcQ/6e239741-dbfd-4b33-a381-08dae3aec6b1/b5762113-d3dc-492a-97ff-9b40b19f7097?response-content-disposition=inline%3B%20filename%3D%22Screenshot_2026-06-16_at_18.51.34_PRINCIPAL.jpg%22%3B%20filename%2A%3DUTF-8%27%27Screenshot_2026-06-16_at_18.51.34_PRINCIPAL.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261001T132759Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELNDQECAUO%2F20261001%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=163499b94a265c5070ec4991322cd919441d581a7c3a44694688c32fa72fe6b4",
-      "filename": "Screenshot_2026-06-16_at_18.51.34_PRINCIPAL.jpg",
-      "type": "image/jpeg",
-      "size": 38763,
-      "thumbnails": [
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/PQ1nU3ZyEhXUuZUo73KKs41nDaSzawrpYevKLfgWju4/rs:fit:200:0/exp:1790868600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvWTVqWml3VkxBNkFtSGUvbWxsY1EvNmUyMzk3NDEtZGJmZC00YjMzLWEzODEtMDhkYWUzYWVjNmIxL2I1NzYyMTEzLWQzZGMtNDkyYS05N2ZmLTliNDBiMTlmNzA5Nw",
-        "size": "small"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/N8IsKrifNkjp5MZuSjCUEXa4JRU49MdkZtaV4sc_uR4/rs:fit:600:0/exp:1790868600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvWTVqWml3VkxBNkFtSGUvbWxsY1EvNmUyMzk3NDEtZGJmZC00YjMzLWEzODEtMDhkYWUzYWVjNmIxL2I1NzYyMTEzLWQzZGMtNDkyYS05N2ZmLTliNDBiMTlmNzA5Nw",
-        "size": "medium"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/a9-3HvjxSaCIIiZT0JtfBQ8QfB1bjDceJF5SVPHl0LI/rs:fit:1200:0/exp:1790868600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvWTVqWml3VkxBNkFtSGUvbWxsY1EvNmUyMzk3NDEtZGJmZC00YjMzLWEzODEtMDhkYWUzYWVjNmIxL2I1NzYyMTEzLWQzZGMtNDkyYS05N2ZmLTliNDBiMTlmNzA5Nw",
-        "size": "large"
-       }
-      ],
-      "expiresAt": null
-     }
-    ],
-    "VWKRF": [
-     {
-      "id": "5d037b34-9bc0-40ea-877a-db455887c99e",
-      "label": "Gala"
-     }
-    ],
-    "tgI6Y": "Masao Adachi Takes a Passport Photo",
-    "EStWy": "Kamal Aljafari",
-    "xb0jW": [
-     "Lunes 12 - 20:30",
-     "Sábado 17 - 22:00"
-    ],
-    "U11RE": [
-     {
-      "id": "36d33921-53ea-4c41-9ba6-df8242bd14db",
-      "label": "Con Entrada o Acreditación"
-     }
-    ]
-   }
-  },
-  {
-   "id": "YLj9f2mxqs7ks2",
-   "fields": {
-    "EguiE": [
-     {
-      "id": "3EEU0hTZD7o2Hm",
-      "label": "UST"
-     }
-    ],
-    "9tf35": {
-     "id": "5b49243c-99a4-4b66-950e-d98d5254fafa",
-     "label": "Actividades Paralelas"
-    },
-    "cIddG": [],
-    "EOkFi": [
-     {
-      "id": "8ceb5fef-3658-4464-8ee5-e9dcf51eb741",
-      "label": "Martes 13"
-     }
-    ],
-    "mllcQ": [
-     {
-      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/YLj9f2mxqs7ks2/mllcQ/4ecb27f0-129d-4c00-95a7-253304f7da90/2cc8a07f-0c33-4eda-bf00-0dab69457c93",
-      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/YLj9f2mxqs7ks2/mllcQ/4ecb27f0-129d-4c00-95a7-253304f7da90/2cc8a07f-0c33-4eda-bf00-0dab69457c93?response-content-disposition=inline%3B%20filename%3D%22Negro%20-%20rojo%20a.png%22%3B%20filename%2A%3DUTF-8%27%27Negro%2520-%2520rojo%2520a.png&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261001T132759Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELNDQECAUO%2F20261001%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=5671100ff24703aa0897c862589bff994874c1975b408115bef27c9485353a9b",
-      "filename": "Negro - rojo a.png",
-      "type": "image/png",
-      "size": 33061,
-      "thumbnails": [
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/Sgi4kkiCALy5A4cQpkP0AX-WzXYXUIK82DXO9zY4JrY/rs:fit:200:0/exp:1790868600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvWUxqOWYybXhxczdrczIvbWxsY1EvNGVjYjI3ZjAtMTI5ZC00YzAwLTk1YTctMjUzMzA0ZjdkYTkwLzJjYzhhMDdmLTBjMzMtNGVkYS1iZjAwLTBkYWI2OTQ1N2M5Mw",
-        "size": "small"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/GbIxqhl63uOHUsUy14AF5ufr8yss6t6Y_rQ2v0I04RI/rs:fit:600:0/exp:1790868600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvWUxqOWYybXhxczdrczIvbWxsY1EvNGVjYjI3ZjAtMTI5ZC00YzAwLTk1YTctMjUzMzA0ZjdkYTkwLzJjYzhhMDdmLTBjMzMtNGVkYS1iZjAwLTBkYWI2OTQ1N2M5Mw",
-        "size": "medium"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/RTxMkJU2Eku1zOuOqVWAwoMj8_Jqzj1f2kjsJDhlcBg/rs:fit:1200:0/exp:1790868600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvWUxqOWYybXhxczdrczIvbWxsY1EvNGVjYjI3ZjAtMTI5ZC00YzAwLTk1YTctMjUzMzA0ZjdkYTkwLzJjYzhhMDdmLTBjMzMtNGVkYS1iZjAwLTBkYWI2OTQ1N2M5Mw",
-        "size": "large"
-       }
-      ],
-      "expiresAt": null
-     }
-    ],
-    "VWKRF": [
-     {
-      "id": "0a15c425-1ee4-4bfe-b02d-7d8ad183986b",
-      "label": "Aula"
-     }
-    ],
-    "tgI6Y": "Master Class: Ampliando la visión de lo posible",
-    "EStWy": null,
-    "xb0jW": [
-     "Martes 13 - 10:00"
-    ],
-    "U11RE": [
-     {
-      "id": "7c019120-12db-4c05-9987-5f016b00911a",
-      "label": "Entrada Liberada"
-     }
-    ]
-   }
-  },
-  {
-   "id": "KKrXJ9OixD1xCm",
-   "fields": {
-    "EguiE": [
-     {
-      "id": "ZP7w6AqDWkpTa7",
-      "label": "Aula Magna UACh"
-     },
-     {
-      "id": "lmVc7gXQa9HpMh",
-      "label": "Felix Martinez UACh"
-     }
-    ],
-    "9tf35": {
-     "id": "766e36a0-5bf9-4391-a846-406298911fb6",
-     "label": "En Competencia"
-    },
-    "cIddG": [
-     {
-      "id": "f1a64ccb-9a66-42d0-a413-01b558961ee4",
-      "label": "CHILE"
-     }
-    ],
-    "EOkFi": [
-     {
-      "id": "6f3c7cdb-b681-451b-ad15-e38bde0dfcce",
-      "label": "Viernes 16"
-     },
-     {
-      "id": "da5c68dc-fcde-422a-8c01-42876a9d8611",
-      "label": "Sábado 17"
-     }
-    ],
-    "mllcQ": [
-     {
-      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/KKrXJ9OixD1xCm/mllcQ/02760b8e-cd52-4778-9a95-d857cb52e15c/09103157-568e-4bd6-9c99-f43b6762bf7a",
-      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/KKrXJ9OixD1xCm/mllcQ/02760b8e-cd52-4778-9a95-d857cb52e15c/09103157-568e-4bd6-9c99-f43b6762bf7a?response-content-disposition=inline%3B%20filename%3D%22Fotograma_PRINCIPAL.jpg%22%3B%20filename%2A%3DUTF-8%27%27Fotograma_PRINCIPAL.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261001T132759Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELNDQECAUO%2F20261001%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=e23eb656bbec71f85a69e67730c67bc08a0dbfa95b39680d52aed10c08464c2d",
-      "filename": "Fotograma_PRINCIPAL.jpg",
-      "type": "image/jpeg",
-      "size": 69908,
-      "thumbnails": [
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/qChxE5UpQ9z2TG8YGlY4bap_5h3krvPM6uu1amcZ52k/rs:fit:200:0/exp:1790868600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvS0tyWEo5T2l4RDF4Q20vbWxsY1EvMDI3NjBiOGUtY2Q1Mi00Nzc4LTlhOTUtZDg1N2NiNTJlMTVjLzA5MTAzMTU3LTU2OGUtNGJkNi05Yzk5LWY0M2I2NzYyYmY3YQ",
-        "size": "small"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/ONi9xiMP1dpBpyJDDuLCSJiBtEky5oFxCu2obcenFt0/rs:fit:600:0/exp:1790868600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvS0tyWEo5T2l4RDF4Q20vbWxsY1EvMDI3NjBiOGUtY2Q1Mi00Nzc4LTlhOTUtZDg1N2NiNTJlMTVjLzA5MTAzMTU3LTU2OGUtNGJkNi05Yzk5LWY0M2I2NzYyYmY3YQ",
-        "size": "medium"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/QGNHL4AwbuwefIZAnb9fl11w1UbtdzIcJLQU4Nzyey0/rs:fit:1200:0/exp:1790868600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvS0tyWEo5T2l4RDF4Q20vbWxsY1EvMDI3NjBiOGUtY2Q1Mi00Nzc4LTlhOTUtZDg1N2NiNTJlMTVjLzA5MTAzMTU3LTU2OGUtNGJkNi05Yzk5LWY0M2I2NzYyYmY3YQ",
-        "size": "large"
-       }
-      ],
-      "expiresAt": null
-     }
-    ],
-    "VWKRF": [
-     {
-      "id": "2c9ae8ce-c5c6-482d-ad13-aad3fb8516cf",
-      "label": "Selección Oficial Cortometraje Chileno de Estudiantes de Cine y Audiovisual"
-     }
-    ],
-    "tgI6Y": "Mañana vendrá el silencio",
-    "EStWy": "Matía Lorenzo",
-    "xb0jW": [
-     "Viernes 16 - 14:30",
-     "Sábado 17 - 12:45"
-    ],
-    "U11RE": [
-     {
-      "id": "36d33921-53ea-4c41-9ba6-df8242bd14db",
-      "label": "Con Entrada o Acreditación"
-     }
-    ]
-   }
-  },
-  {
-   "id": "Nxsrf4wxvTrXDo",
-   "fields": {
-    "EguiE": [
-     {
-      "id": "SgSpB81pgB6MoH",
-      "label": "Carpa de La Ciencia"
-     }
-    ],
-    "9tf35": {
-     "id": "5b49243c-99a4-4b66-950e-d98d5254fafa",
-     "label": "Actividades Paralelas"
-    },
-    "cIddG": [],
-    "EOkFi": [
-     {
-      "id": "6f3c7cdb-b681-451b-ad15-e38bde0dfcce",
-      "label": "Viernes 16"
-     }
-    ],
-    "mllcQ": [
-     {
-      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/Nxsrf4wxvTrXDo/mllcQ/e9c8ebf5-1160-4dac-9917-c2f531d6be34/1045770c-3443-4524-a091-72aa6d32ca90",
-      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/Nxsrf4wxvTrXDo/mllcQ/e9c8ebf5-1160-4dac-9917-c2f531d6be34/1045770c-3443-4524-a091-72aa6d32ca90?response-content-disposition=inline%3B%20filename%3D%22Negro%20-%20rojo%20a.png%22%3B%20filename%2A%3DUTF-8%27%27Negro%2520-%2520rojo%2520a.png&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261001T132759Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELNDQECAUO%2F20261001%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=15ae16ebc5b0166c66ea11a86f4313f0e19174665d18a6c6a145701e36a7dfa8",
-      "filename": "Negro - rojo a.png",
-      "type": "image/png",
-      "size": 33061,
-      "thumbnails": [
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/NwZFio5qKXLnl4e9rzMdBwTg-6FwBylV5eqVo5zQOLA/rs:fit:200:0/exp:1790868600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvTnhzcmY0d3h2VHJYRG8vbWxsY1EvZTljOGViZjUtMTE2MC00ZGFjLTk5MTctYzJmNTMxZDZiZTM0LzEwNDU3NzBjLTM0NDMtNDUyNC1hMDkxLTcyYWE2ZDMyY2E5MA",
-        "size": "small"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/VO0HLY91mdcNQcY8PVaLJCo-xjKP50vYC_k8Jgq9aWw/rs:fit:600:0/exp:1790868600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvTnhzcmY0d3h2VHJYRG8vbWxsY1EvZTljOGViZjUtMTE2MC00ZGFjLTk5MTctYzJmNTMxZDZiZTM0LzEwNDU3NzBjLTM0NDMtNDUyNC1hMDkxLTcyYWE2ZDMyY2E5MA",
-        "size": "medium"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/1qr4FFdQWv3v0_G-fuzuKoBu-o_5es0rZEe6BVA0eOw/rs:fit:1200:0/exp:1790868600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvTnhzcmY0d3h2VHJYRG8vbWxsY1EvZTljOGViZjUtMTE2MC00ZGFjLTk5MTctYzJmNTMxZDZiZTM0LzEwNDU3NzBjLTM0NDMtNDUyNC1hMDkxLTcyYWE2ZDMyY2E5MA",
-        "size": "large"
-       }
-      ],
-      "expiresAt": null
-     }
-    ],
-    "VWKRF": [
-     {
-      "id": "c9b4436f-38f2-4005-890b-3c29b8e9bf20",
-      "label": "Voces"
-     }
-    ],
-    "tgI6Y": "Mediación y exhibición: metodologías y experiencias desde el cineclubismo",
-    "EStWy": null,
-    "xb0jW": [
-     "Viernes 16 - 15:30"
-    ],
-    "U11RE": [
-     {
-      "id": "7c019120-12db-4c05-9987-5f016b00911a",
-      "label": "Entrada Liberada"
-     }
-    ]
-   }
-  },
-  {
-   "id": "LR2bv1B278zMWY",
-   "fields": {
-    "EguiE": [
-     {
-      "id": "lmVc7gXQa9HpMh",
-      "label": "Felix Martinez UACh"
-     }
-    ],
-    "9tf35": {
-     "id": "2ed0d591-3e59-428c-94ba-5a572ede59a1",
-     "label": "Muestra de Cine Contemporáneo"
-    },
-    "cIddG": [
-     {
-      "id": "2ccd4b09-e8ca-4d5e-8d5c-b5ed246bd27b",
-      "label": "BRASIL"
-     }
-    ],
-    "EOkFi": [
-     {
-      "id": "011a78b2-dd9f-4829-aefa-9922656c2c99",
-      "label": "Miércoles 14"
-     },
-     {
-      "id": "6f3c7cdb-b681-451b-ad15-e38bde0dfcce",
-      "label": "Viernes 16"
-     }
-    ],
-    "mllcQ": [
-     {
-      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/LR2bv1B278zMWY/mllcQ/cbd1e742-8457-4198-b185-dd56518c752f/74ba35e8-4faa-4cf4-b17a-9e3353c1f695",
-      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/LR2bv1B278zMWY/mllcQ/cbd1e742-8457-4198-b185-dd56518c752f/74ba35e8-4faa-4cf4-b17a-9e3353c1f695?response-content-disposition=inline%3B%20filename%3D%226_Meio_Dia_PRICIPAL.jpg%22%3B%20filename%2A%3DUTF-8%27%276_Meio_Dia_PRICIPAL.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261001T132759Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELNDQECAUO%2F20261001%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=9874b4403b4b9bb621fbe99014577420137944b2880b52cef1e5fb6ff1cca96e",
-      "filename": "6_Meio_Dia_PRICIPAL.jpg",
-      "type": "image/jpeg",
-      "size": 49035,
-      "thumbnails": [
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/RHHO2WTH9XA6A8e2ScP9s8NfNApnFmplcZpUhd-4Kt4/rs:fit:200:0/exp:1790868600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvTFIyYnYxQjI3OHpNV1kvbWxsY1EvY2JkMWU3NDItODQ1Ny00MTk4LWIxODUtZGQ1NjUxOGM3NTJmLzc0YmEzNWU4LTRmYWEtNGNmNC1iMTdhLTllMzM1M2MxZjY5NQ",
-        "size": "small"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/gSFytAfKfIGtWfMFiIXPkFUrwRR6PcONiThXNFpAIHs/rs:fit:600:0/exp:1790868600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvTFIyYnYxQjI3OHpNV1kvbWxsY1EvY2JkMWU3NDItODQ1Ny00MTk4LWIxODUtZGQ1NjUxOGM3NTJmLzc0YmEzNWU4LTRmYWEtNGNmNC1iMTdhLTllMzM1M2MxZjY5NQ",
-        "size": "medium"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/QzyzFxgKH03WZAEOrrdi56Sf2tj6hh7Vgxl86S7YfxA/rs:fit:1200:0/exp:1790868600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvTFIyYnYxQjI3OHpNV1kvbWxsY1EvY2JkMWU3NDItODQ1Ny00MTk4LWIxODUtZGQ1NjUxOGM3NTJmLzc0YmEzNWU4LTRmYWEtNGNmNC1iMTdhLTllMzM1M2MxZjY5NQ",
-        "size": "large"
-       }
-      ],
-      "expiresAt": null
-     }
-    ],
-    "VWKRF": [
-     {
-      "id": "41f74fe2-02aa-4fe3-8f26-e66fed684799",
-      "label": "Disidencias"
-     }
-    ],
-    "tgI6Y": "Meio-Dia",
-    "EStWy": "Helena Solberg",
-    "xb0jW": [
-     "Miércoles 14 - 15:00",
-     "Viernes 16 - 19:45"
-    ],
-    "U11RE": [
-     {
-      "id": "36d33921-53ea-4c41-9ba6-df8242bd14db",
-      "label": "Con Entrada o Acreditación"
-     }
-    ]
-   }
-  },
-  {
-   "id": "Gt4jCu4yBn7ErQ",
+   "id": "r49tq2TIbAC9qx",
    "fields": {
     "EguiE": [
      {
@@ -661,173 +525,16 @@
      }
     ],
     "9tf35": {
-     "id": "2ed0d591-3e59-428c-94ba-5a572ede59a1",
-     "label": "Muestra de Cine Contemporáneo"
+     "id": "ece5904a-6a76-45d1-8c43-995c6d9f08da",
+     "label": "Muestra Contraplanos de la Historia"
     },
     "cIddG": [
      {
-      "id": "07c81853-a969-41fe-9c2d-feab54280f8a",
-      "label": "FRANCIA"
+      "id": "f1a64ccb-9a66-42d0-a413-01b558961ee4",
+      "label": "CHILE"
      }
     ],
-    "EOkFi": [
-     {
-      "id": "7b70cbd2-d47b-4b96-95cc-db59c04100ed",
-      "label": "Lunes 12"
-     },
-     {
-      "id": "2fe8d99b-a94f-4814-8031-cd08772dda34",
-      "label": "Jueves 15"
-     }
-    ],
-    "mllcQ": [
-     {
-      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/Gt4jCu4yBn7ErQ/mllcQ/9fa99407-e46e-44f0-a6c1-da758f41b198/82466b26-2543-4d40-8de5-a1bed80f8ac9",
-      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/Gt4jCu4yBn7ErQ/mllcQ/9fa99407-e46e-44f0-a6c1-da758f41b198/82466b26-2543-4d40-8de5-a1bed80f8ac9?response-content-disposition=inline%3B%20filename%3D%22MER_copia_1.jpg%22%3B%20filename%2A%3DUTF-8%27%27MER_copia_1.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261001T132759Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELNDQECAUO%2F20261001%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=3104209db8ac8139099f67deb0bcd71cf36237d39fc3dc607b310bd4eefef83c",
-      "filename": "MER_copia_1.jpg",
-      "type": "image/jpeg",
-      "size": 80405,
-      "thumbnails": [
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/_98C_PEDgOLrOwnxAQ4jRYR7-wovm60f9R651P4QKs4/rs:fit:200:0/exp:1790868600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvR3Q0akN1NHlCbjdFclEvbWxsY1EvOWZhOTk0MDctZTQ2ZS00NGYwLWE2YzEtZGE3NThmNDFiMTk4LzgyNDY2YjI2LTI1NDMtNGQ0MC04ZGU1LWExYmVkODBmOGFjOQ",
-        "size": "small"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/3hRjn2Qt-tNov-uD6TFajWf8ZFto9nf6ajI2-I42D2Y/rs:fit:600:0/exp:1790868600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvR3Q0akN1NHlCbjdFclEvbWxsY1EvOWZhOTk0MDctZTQ2ZS00NGYwLWE2YzEtZGE3NThmNDFiMTk4LzgyNDY2YjI2LTI1NDMtNGQ0MC04ZGU1LWExYmVkODBmOGFjOQ",
-        "size": "medium"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/KKEiGjNO8vqn54hWVwPt6UYpQtKTlTmw509e5OxlbJs/rs:fit:1200:0/exp:1790868600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvR3Q0akN1NHlCbjdFclEvbWxsY1EvOWZhOTk0MDctZTQ2ZS00NGYwLWE2YzEtZGE3NThmNDFiMTk4LzgyNDY2YjI2LTI1NDMtNGQ0MC04ZGU1LWExYmVkODBmOGFjOQ",
-        "size": "large"
-       }
-      ],
-      "expiresAt": null
-     }
-    ],
-    "VWKRF": [
-     {
-      "id": "fd764d71-18bc-4b59-9f42-0a5e73460a85",
-      "label": "Tramas"
-     }
-    ],
-    "tgI6Y": "Mer",
-    "EStWy": "Martine Rousset",
-    "xb0jW": [
-     "Lunes 12 - 15:15",
-     "Jueves 15 - 12:45"
-    ],
-    "U11RE": [
-     {
-      "id": "36d33921-53ea-4c41-9ba6-df8242bd14db",
-      "label": "Con Entrada o Acreditación"
-     }
-    ]
-   }
-  },
-  {
-   "id": "Ih4dOWiG2kbROO",
-   "fields": {
-    "EguiE": [
-     {
-      "id": "ZP7w6AqDWkpTa7",
-      "label": "Aula Magna UACh"
-     },
-     {
-      "id": "xhTnT4OzknPaoY",
-      "label": "Teatro Cervantes"
-     }
-    ],
-    "9tf35": {
-     "id": "303d5bc5-0132-46c6-b392-adaa6e501cb9",
-     "label": "Pásate una Película"
-    },
-    "cIddG": [
-     {
-      "id": "2ccd4b09-e8ca-4d5e-8d5c-b5ed246bd27b",
-      "label": "BRASIL"
-     },
-     {
-      "id": "8c9e9ac1-44c3-499b-8e7c-f0da39143d0d",
-      "label": "MÉXICO"
-     }
-    ],
-    "EOkFi": [
-     {
-      "id": "7b70cbd2-d47b-4b96-95cc-db59c04100ed",
-      "label": "Lunes 12"
-     },
-     {
-      "id": "39087da7-575f-4a76-bbd2-471064cafe50",
-      "label": "Domingo 18"
-     }
-    ],
-    "mllcQ": [
-     {
-      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/Ih4dOWiG2kbROO/mllcQ/794d4040-7f7a-476c-bbde-99f4c5edea81/c2e715b7-5047-4229-ab59-b3b6452ec3b9",
-      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/Ih4dOWiG2kbROO/mllcQ/794d4040-7f7a-476c-bbde-99f4c5edea81/c2e715b7-5047-4229-ab59-b3b6452ec3b9?response-content-disposition=inline%3B%20filename%3D%22MI_AMIGO_EL_SOL_PRINCIPAL_1.jpg%22%3B%20filename%2A%3DUTF-8%27%27MI_AMIGO_EL_SOL_PRINCIPAL_1.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261001T132759Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELNDQECAUO%2F20261001%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=7a193b4655f8558059cd7ef956d7a457669fff2cc397a795b52bc0c0dcdbfeac",
-      "filename": "MI_AMIGO_EL_SOL_PRINCIPAL_1.jpg",
-      "type": "image/jpeg",
-      "size": 109378,
-      "thumbnails": [
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/3m1QDP8xJHMip5KReUjuR8SlgWZTWFljMH-HDxxoDeg/rs:fit:200:0/exp:1790868600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvSWg0ZE9XaUcya2JST08vbWxsY1EvNzk0ZDQwNDAtN2Y3YS00NzZjLWJiZGUtOTlmNGM1ZWRlYTgxL2MyZTcxNWI3LTUwNDctNDIyOS1hYjU5LWIzYjY0NTJlYzNiOQ",
-        "size": "small"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/IW-amzHZ9WYNuCkLT2QYut0Yq4Wxoqp36PEsYzFq0zU/rs:fit:600:0/exp:1790868600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvSWg0ZE9XaUcya2JST08vbWxsY1EvNzk0ZDQwNDAtN2Y3YS00NzZjLWJiZGUtOTlmNGM1ZWRlYTgxL2MyZTcxNWI3LTUwNDctNDIyOS1hYjU5LWIzYjY0NTJlYzNiOQ",
-        "size": "medium"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/2Eo_aKiGjBa4pY49wmQL2qgJ4on8-Q-evk1xQQLR8kk/rs:fit:1200:0/exp:1790868600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvSWg0ZE9XaUcya2JST08vbWxsY1EvNzk0ZDQwNDAtN2Y3YS00NzZjLWJiZGUtOTlmNGM1ZWRlYTgxL2MyZTcxNWI3LTUwNDctNDIyOS1hYjU5LWIzYjY0NTJlYzNiOQ",
-        "size": "large"
-       }
-      ],
-      "expiresAt": null
-     }
-    ],
-    "VWKRF": [
-     {
-      "id": "ab969870-9e96-4b9b-890e-f54eb53f4808",
-      "label": "Largometrajes Familiares"
-     }
-    ],
-    "tgI6Y": "Mi amigo el sol",
-    "EStWy": "Alejandra Pérez",
-    "xb0jW": [
-     "Lunes 12 - 16:00",
-     "Domingo 18 - 15:00"
-    ],
-    "U11RE": [
-     {
-      "id": "7c019120-12db-4c05-9987-5f016b00911a",
-      "label": "Entrada Liberada"
-     }
-    ]
-   }
-  },
-  {
-   "id": "bxUP1yUvF0R32e",
-   "fields": {
-    "EguiE": [
-     {
-      "id": "lmVc7gXQa9HpMh",
-      "label": "Felix Martinez UACh"
-     }
-    ],
-    "9tf35": {
-     "id": "2ed0d591-3e59-428c-94ba-5a572ede59a1",
-     "label": "Muestra de Cine Contemporáneo"
-    },
-    "cIddG": [
-     {
-      "id": "0f440f11-56ab-4411-9d3e-e172fa2ae6fd",
-      "label": "CANADÁ"
-     },
-     {
-      "id": "3a1472f4-4bf6-4937-8e3b-8384d4d41bf4",
-      "label": "EMIRATOS ÁRABES UNIDOS"
-     }
-    ],
+    "6A3kv": 5,
     "EOkFi": [
      {
       "id": "011a78b2-dd9f-4829-aefa-9922656c2c99",
@@ -838,24 +545,28 @@
       "label": "Viernes 16"
      }
     ],
+    "LVmhF": [
+     "Miércoles 14 - 15:15 - Sala Paraninfo UACh",
+     "Viernes 16 - 12:45 - Sala Paraninfo UACh"
+    ],
     "mllcQ": [
      {
-      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/bxUP1yUvF0R32e/mllcQ/4a665a16-b587-4580-a13c-328fda545049/bc05cb8b-d9e4-499c-8f12-98844af48292",
-      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/bxUP1yUvF0R32e/mllcQ/4a665a16-b587-4580-a13c-328fda545049/bc05cb8b-d9e4-499c-8f12-98844af48292?response-content-disposition=inline%3B%20filename%3D%22MORGENKREIS_FILMSTILL04.jpg%22%3B%20filename%2A%3DUTF-8%27%27MORGENKREIS_FILMSTILL04.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261001T132759Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELNDQECAUO%2F20261001%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=169b5348e9750b2ebcd19e308c12402f3a52ab0384a8f533b68e8716e1b2ccfe",
-      "filename": "MORGENKREIS_FILMSTILL04.jpg",
+      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/r49tq2TIbAC9qx/mllcQ/7ac9bad8-8299-48f6-9e1e-6378fba22d31/dcf1341b-2557-4c82-886b-31366dfda8ba",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/r49tq2TIbAC9qx/mllcQ/7ac9bad8-8299-48f6-9e1e-6378fba22d31/dcf1341b-2557-4c82-886b-31366dfda8ba?response-content-disposition=inline%3B%20filename%3D%22Operacion_tormenta_en_el_mar.jpg%22%3B%20filename%2A%3DUTF-8%27%27Operacion_tormenta_en_el_mar.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261001T134256Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELNDQECAUO%2F20261001%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=3671b58e249a90611a0f04ead8dfc76c0dabf39ece0d938972b9179a08a7556d",
+      "filename": "Operacion_tormenta_en_el_mar.jpg",
       "type": "image/jpeg",
-      "size": 26853,
+      "size": 42974,
       "thumbnails": [
        {
-        "url": "https://d2nmodil6do74b.cloudfront.net/828H_xnQltRSbkA5rcFKJ1_2AtFxABcEqOVzK6hEXYY/rs:fit:200:0/exp:1790868600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvYnhVUDF5VXZGMFIzMmUvbWxsY1EvNGE2NjVhMTYtYjU4Ny00NTgwLWExM2MtMzI4ZmRhNTQ1MDQ5L2JjMDVjYjhiLWQ5ZTQtNDk5Yy04ZjEyLTk4ODQ0YWY0ODI5Mg",
+        "url": "https://d2nmodil6do74b.cloudfront.net/aCaL3NMwlJnE03uGbJuXyrTwsmtQdiAQB8HTlXUFQZg/rs:fit:200:0/exp:1790869500/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvcjQ5dHEyVEliQUM5cXgvbWxsY1EvN2FjOWJhZDgtODI5OS00OGY2LTllMWUtNjM3OGZiYTIyZDMxL2RjZjEzNDFiLTI1NTctNGM4Mi04ODZiLTMxMzY2ZGZkYThiYQ",
         "size": "small"
        },
        {
-        "url": "https://d2nmodil6do74b.cloudfront.net/5aCrDIwMKHQF4R_JV_bPp7RBoIDM5eXtPSfIwhhMOS4/rs:fit:600:0/exp:1790868600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvYnhVUDF5VXZGMFIzMmUvbWxsY1EvNGE2NjVhMTYtYjU4Ny00NTgwLWExM2MtMzI4ZmRhNTQ1MDQ5L2JjMDVjYjhiLWQ5ZTQtNDk5Yy04ZjEyLTk4ODQ0YWY0ODI5Mg",
+        "url": "https://d2nmodil6do74b.cloudfront.net/VkOiy3LtIh3fdPeb87FDB8nfGJnCfAnCvGHglpsbpw8/rs:fit:600:0/exp:1790869500/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvcjQ5dHEyVEliQUM5cXgvbWxsY1EvN2FjOWJhZDgtODI5OS00OGY2LTllMWUtNjM3OGZiYTIyZDMxL2RjZjEzNDFiLTI1NTctNGM4Mi04ODZiLTMxMzY2ZGZkYThiYQ",
         "size": "medium"
        },
        {
-        "url": "https://d2nmodil6do74b.cloudfront.net/FqclP8UB84mTrM2VgilHMXJJY-CjK7JvHYmYzo57FTg/rs:fit:1200:0/exp:1790868600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvYnhVUDF5VXZGMFIzMmUvbWxsY1EvNGE2NjVhMTYtYjU4Ny00NTgwLWExM2MtMzI4ZmRhNTQ1MDQ5L2JjMDVjYjhiLWQ5ZTQtNDk5Yy04ZjEyLTk4ODQ0YWY0ODI5Mg",
+        "url": "https://d2nmodil6do74b.cloudfront.net/IFcaAJDia4WBOPlkfzu0k-jlMpdbf8tpumBq4pzE1hk/rs:fit:1200:0/exp:1790869500/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvcjQ5dHEyVEliQUM5cXgvbWxsY1EvN2FjOWJhZDgtODI5OS00OGY2LTllMWUtNjM3OGZiYTIyZDMxL2RjZjEzNDFiLTI1NTctNGM4Mi04ODZiLTMxMzY2ZGZkYThiYQ",
         "size": "large"
        }
       ],
@@ -864,20 +575,316 @@
     ],
     "VWKRF": [
      {
-      "id": "41f74fe2-02aa-4fe3-8f26-e66fed684799",
-      "label": "Disidencias"
+      "id": "55565daf-8736-447c-923a-afc9df9ba7de",
+      "label": "Homenaje Cine Chileno"
      }
     ],
-    "tgI6Y": "Morgenkreis",
-    "EStWy": "Basma al-Sharif",
-    "xb0jW": [
-     "Miércoles 14 - 15:00",
-     "Viernes 16 - 19:45"
-    ],
+    "tgI6Y": "Operación Tormenta en el mar",
+    "EStWy": "Ximena Prieto",
     "U11RE": [
      {
       "id": "36d33921-53ea-4c41-9ba6-df8242bd14db",
       "label": "Con Entrada o Acreditación"
+     }
+    ]
+   }
+  },
+  {
+   "id": "FCuuPcZUsTKaUT",
+   "fields": {
+    "EguiE": [
+     {
+      "id": "6pbnSviMdULlih",
+      "label": "Sala Paraninfo UACh"
+     }
+    ],
+    "9tf35": {
+     "id": "ece5904a-6a76-45d1-8c43-995c6d9f08da",
+     "label": "Muestra Contraplanos de la Historia"
+    },
+    "cIddG": [
+     {
+      "id": "07c81853-a969-41fe-9c2d-feab54280f8a",
+      "label": "FRANCIA"
+     }
+    ],
+    "6A3kv": 5,
+    "EOkFi": [
+     {
+      "id": "011a78b2-dd9f-4829-aefa-9922656c2c99",
+      "label": "Miércoles 14"
+     },
+     {
+      "id": "6f3c7cdb-b681-451b-ad15-e38bde0dfcce",
+      "label": "Viernes 16"
+     }
+    ],
+    "LVmhF": [
+     "Miércoles 14 - 15:15 - Sala Paraninfo UACh",
+     "Viernes 16 - 12:45 - Sala Paraninfo UACh"
+    ],
+    "mllcQ": [
+     {
+      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/FCuuPcZUsTKaUT/mllcQ/cc007801-2451-43b3-99a4-b412a71d8be0/6f0a2fdf-af95-4f7b-8047-9c21c27af4e3",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/FCuuPcZUsTKaUT/mllcQ/cc007801-2451-43b3-99a4-b412a71d8be0/6f0a2fdf-af95-4f7b-8047-9c21c27af4e3?response-content-disposition=inline%3B%20filename%3D%22Reflect_Francia_1996_7_minutos.jpg%22%3B%20filename%2A%3DUTF-8%27%27Reflect_Francia_1996_7_minutos.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261001T134256Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELNDQECAUO%2F20261001%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=dd98711eb5b16201cfc21b3e742b9fc12762d603f06e3423793bcb6aa75bf345",
+      "filename": "Reflect_Francia_1996_7_minutos.jpg",
+      "type": "image/jpeg",
+      "size": 25930,
+      "thumbnails": [
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/q5i0hFBvuRw3hjMssGiTm8vuGA450fgeKxVRbevotGw/rs:fit:200:0/exp:1790869500/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvRkN1dVBjWlVzVEthVVQvbWxsY1EvY2MwMDc4MDEtMjQ1MS00M2IzLTk5YTQtYjQxMmE3MWQ4YmUwLzZmMGEyZmRmLWFmOTUtNGY3Yi04MDQ3LTljMjFjMjdhZjRlMw",
+        "size": "small"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/yIrIAZR0UYYJCLymZ20jNQuF3Y3U5OkYYPRjUnEhrQA/rs:fit:600:0/exp:1790869500/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvRkN1dVBjWlVzVEthVVQvbWxsY1EvY2MwMDc4MDEtMjQ1MS00M2IzLTk5YTQtYjQxMmE3MWQ4YmUwLzZmMGEyZmRmLWFmOTUtNGY3Yi04MDQ3LTljMjFjMjdhZjRlMw",
+        "size": "medium"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/SdBXo4WgwaxxH3ZipIRtPmGheRw-nXtXedEGHAwzDZo/rs:fit:1200:0/exp:1790869500/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvRkN1dVBjWlVzVEthVVQvbWxsY1EvY2MwMDc4MDEtMjQ1MS00M2IzLTk5YTQtYjQxMmE3MWQ4YmUwLzZmMGEyZmRmLWFmOTUtNGY3Yi04MDQ3LTljMjFjMjdhZjRlMw",
+        "size": "large"
+       }
+      ],
+      "expiresAt": null
+     }
+    ],
+    "VWKRF": [
+     {
+      "id": "55565daf-8736-447c-923a-afc9df9ba7de",
+      "label": "Homenaje Cine Chileno"
+     }
+    ],
+    "tgI6Y": "Reflect",
+    "EStWy": "Ximena Prieto",
+    "U11RE": [
+     {
+      "id": "36d33921-53ea-4c41-9ba6-df8242bd14db",
+      "label": "Con Entrada o Acreditación"
+     }
+    ]
+   }
+  },
+  {
+   "id": "Rbz7fLl6b1XTKf",
+   "fields": {
+    "EguiE": [
+     {
+      "id": "lmVc7gXQa9HpMh",
+      "label": "Felix Martinez UACh"
+     }
+    ],
+    "9tf35": {
+     "id": "ece5904a-6a76-45d1-8c43-995c6d9f08da",
+     "label": "Muestra Contraplanos de la Historia"
+    },
+    "cIddG": [
+     {
+      "id": "d4c256b9-0895-48e6-8d48-06dbb69fb765",
+      "label": "ESTADOS UNIDOS"
+     }
+    ],
+    "6A3kv": 5,
+    "EOkFi": [
+     {
+      "id": "8ceb5fef-3658-4464-8ee5-e9dcf51eb741",
+      "label": "Martes 13"
+     },
+     {
+      "id": "da5c68dc-fcde-422a-8c01-42876a9d8611",
+      "label": "Sábado 17"
+     }
+    ],
+    "LVmhF": [
+     "Martes 13 - 11:00 - Felix Martinez UACh",
+     "Sábado 17 - 17:45 - Felix Martinez UACh"
+    ],
+    "mllcQ": [
+     {
+      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/Rbz7fLl6b1XTKf/mllcQ/14436602-ceae-4556-b675-ee84ad913e67/a8002661-4bc1-4a46-af4c-c1234c97d326",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/Rbz7fLl6b1XTKf/mllcQ/14436602-ceae-4556-b675-ee84ad913e67/a8002661-4bc1-4a46-af4c-c1234c97d326?response-content-disposition=inline%3B%20filename%3D%22Tomorrow_Always_Comes_PRINCIPAL.jpg%22%3B%20filename%2A%3DUTF-8%27%27Tomorrow_Always_Comes_PRINCIPAL.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261001T134256Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELNDQECAUO%2F20261001%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=d552896270a1744dc808c19560e6fb588138f9570f5b26f0b329fac2673e80ec",
+      "filename": "Tomorrow_Always_Comes_PRINCIPAL.jpg",
+      "type": "image/jpeg",
+      "size": 56594,
+      "thumbnails": [
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/IuJzM8fXspk7QI-juiyOPmz7hguIZHMlKOQ1qzwWEjU/rs:fit:200:0/exp:1790869500/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvUmJ6N2ZMbDZiMVhUS2YvbWxsY1EvMTQ0MzY2MDItY2VhZS00NTU2LWI2NzUtZWU4NGFkOTEzZTY3L2E4MDAyNjYxLTRiYzEtNGE0Ni1hZjRjLWMxMjM0Yzk3ZDMyNg",
+        "size": "small"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/hIFlfZjVBIbYFc-h10gMj_0JfCQbPhj0yO11MQexBdA/rs:fit:600:0/exp:1790869500/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvUmJ6N2ZMbDZiMVhUS2YvbWxsY1EvMTQ0MzY2MDItY2VhZS00NTU2LWI2NzUtZWU4NGFkOTEzZTY3L2E4MDAyNjYxLTRiYzEtNGE0Ni1hZjRjLWMxMjM0Yzk3ZDMyNg",
+        "size": "medium"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/HhyOIKCJhDePemrSUFcRa-ilFidT17drHuWi8PtVi3o/rs:fit:1200:0/exp:1790869500/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvUmJ6N2ZMbDZiMVhUS2YvbWxsY1EvMTQ0MzY2MDItY2VhZS00NTU2LWI2NzUtZWU4NGFkOTEzZTY3L2E4MDAyNjYxLTRiYzEtNGE0Ni1hZjRjLWMxMjM0Yzk3ZDMyNg",
+        "size": "large"
+       }
+      ],
+      "expiresAt": null
+     }
+    ],
+    "VWKRF": [
+     {
+      "id": "55565daf-8736-447c-923a-afc9df9ba7de",
+      "label": "Homenaje Cine Chileno"
+     }
+    ],
+    "tgI6Y": "Tomorrow Always Comes",
+    "EStWy": "Diego Echeverría",
+    "U11RE": [
+     {
+      "id": "7c019120-12db-4c05-9987-5f016b00911a",
+      "label": "Entrada Liberada"
+     },
+     {
+      "id": "36d33921-53ea-4c41-9ba6-df8242bd14db",
+      "label": "Con Entrada o Acreditación"
+     }
+    ]
+   }
+  },
+  {
+   "id": "PJqYObfwYvcMZ5",
+   "fields": {
+    "EguiE": [
+     {
+      "id": "xhTnT4OzknPaoY",
+      "label": "Teatro Cervantes"
+     }
+    ],
+    "9tf35": {
+     "id": "ece5904a-6a76-45d1-8c43-995c6d9f08da",
+     "label": "Muestra Contraplanos de la Historia"
+    },
+    "cIddG": [
+     {
+      "id": "07c81853-a969-41fe-9c2d-feab54280f8a",
+      "label": "FRANCIA"
+     }
+    ],
+    "6A3kv": 5,
+    "EOkFi": [
+     {
+      "id": "011a78b2-dd9f-4829-aefa-9922656c2c99",
+      "label": "Miércoles 14"
+     },
+     {
+      "id": "6f3c7cdb-b681-451b-ad15-e38bde0dfcce",
+      "label": "Viernes 16"
+     }
+    ],
+    "LVmhF": [
+     "Miércoles 14 - 15:00 - Teatro Cervantes",
+     "Viernes 16 - 17:30 - Teatro Cervantes"
+    ],
+    "mllcQ": [
+     {
+      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/PJqYObfwYvcMZ5/mllcQ/e20de6f2-0527-44f6-9cde-8f67c7ab5bea/abb53542-d14a-40cb-955f-73177e096456",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/PJqYObfwYvcMZ5/mllcQ/e20de6f2-0527-44f6-9cde-8f67c7ab5bea/abb53542-d14a-40cb-955f-73177e096456?response-content-disposition=inline%3B%20filename%3D%22Rien_que_les_heures_11_PRINCIPAL_1.jpg%22%3B%20filename%2A%3DUTF-8%27%27Rien_que_les_heures_11_PRINCIPAL_1.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261001T134256Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELNDQECAUO%2F20261001%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=e803a13f86b848be1ebe6ec3a32574aa59330e5e18ee15f3567c54bdd549f0d0",
+      "filename": "Rien_que_les_heures_11_PRINCIPAL_1.jpg",
+      "type": "image/jpeg",
+      "size": 40166,
+      "thumbnails": [
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/UuB3EIYrbaSNKVCvsGcHU-5B70GpB2CVCPji_WpnM_0/rs:fit:200:0/exp:1790869500/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvUEpxWU9iZndZdmNNWjUvbWxsY1EvZTIwZGU2ZjItMDUyNy00NGY2LTljZGUtOGY2N2M3YWI1YmVhL2FiYjUzNTQyLWQxNGEtNDBjYi05NTVmLTczMTc3ZTA5NjQ1Ng",
+        "size": "small"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/riNozTZCVS5kmB8IyBwHITeX8J4OsfUn29ErCgSiGmc/rs:fit:600:0/exp:1790869500/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvUEpxWU9iZndZdmNNWjUvbWxsY1EvZTIwZGU2ZjItMDUyNy00NGY2LTljZGUtOGY2N2M3YWI1YmVhL2FiYjUzNTQyLWQxNGEtNDBjYi05NTVmLTczMTc3ZTA5NjQ1Ng",
+        "size": "medium"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/mJNlashrYA5-d17DGALdqQlhW5eZsbFT-Eb-0Xo0OEM/rs:fit:1200:0/exp:1790869500/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvUEpxWU9iZndZdmNNWjUvbWxsY1EvZTIwZGU2ZjItMDUyNy00NGY2LTljZGUtOGY2N2M3YWI1YmVhL2FiYjUzNTQyLWQxNGEtNDBjYi05NTVmLTczMTc3ZTA5NjQ1Ng",
+        "size": "large"
+       }
+      ],
+      "expiresAt": null
+     }
+    ],
+    "VWKRF": [
+     {
+      "id": "1298f2b5-302b-480a-abb5-3b21fad2791e",
+      "label": "Homenaje Musicalizado en Vivo"
+     }
+    ],
+    "tgI6Y": "Rien que les heures",
+    "EStWy": "Alberto Cavalcanti",
+    "U11RE": [
+     {
+      "id": "7c019120-12db-4c05-9987-5f016b00911a",
+      "label": "Entrada Liberada"
+     }
+    ]
+   }
+  },
+  {
+   "id": "9EfU3zJLyTjWI8",
+   "fields": {
+    "EguiE": [
+     {
+      "id": "xhTnT4OzknPaoY",
+      "label": "Teatro Cervantes"
+     }
+    ],
+    "9tf35": {
+     "id": "ece5904a-6a76-45d1-8c43-995c6d9f08da",
+     "label": "Muestra Contraplanos de la Historia"
+    },
+    "cIddG": [
+     {
+      "id": "d4c256b9-0895-48e6-8d48-06dbb69fb765",
+      "label": "ESTADOS UNIDOS"
+     }
+    ],
+    "6A3kv": 5,
+    "EOkFi": [
+     {
+      "id": "8ceb5fef-3658-4464-8ee5-e9dcf51eb741",
+      "label": "Martes 13"
+     },
+     {
+      "id": "2fe8d99b-a94f-4814-8031-cd08772dda34",
+      "label": "Jueves 15"
+     }
+    ],
+    "LVmhF": [
+     "Martes 13 - 17:30 - Teatro Cervantes",
+     "Jueves 15 - 15:00 - Teatro Cervantes"
+    ],
+    "mllcQ": [
+     {
+      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/9EfU3zJLyTjWI8/mllcQ/65df8d30-b19c-4821-aaa5-0792e6288616/f1ba5294-7b75-4582-b2df-1f36be030579",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/9EfU3zJLyTjWI8/mllcQ/65df8d30-b19c-4821-aaa5-0792e6288616/f1ba5294-7b75-4582-b2df-1f36be030579?response-content-disposition=inline%3B%20filename%3D%2249_17_still1.jpg%22%3B%20filename%2A%3DUTF-8%27%2749_17_still1.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261001T134256Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELNDQECAUO%2F20261001%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=85a053ee35c60e9c2c9d9f99a3946884ffae15e8416e895b1a5a9af1efd8f7ed",
+      "filename": "49_17_still1.jpg",
+      "type": "image/jpeg",
+      "size": 59894,
+      "thumbnails": [
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/9r1wIRxBB0Znv9j-dWiFX0-16pbNEOXW49QV2V2ofRU/rs:fit:200:0/exp:1790869500/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvOUVmVTN6Skx5VGpXSTgvbWxsY1EvNjVkZjhkMzAtYjE5Yy00ODIxLWFhYTUtMDc5MmU2Mjg4NjE2L2YxYmE1Mjk0LTdiNzUtNDU4Mi1iMmRmLTFmMzZiZTAzMDU3OQ",
+        "size": "small"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/Foln4LSmBwx6foWpFyPEC2LOkkQq04PS5gax66KnIdU/rs:fit:600:0/exp:1790869500/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvOUVmVTN6Skx5VGpXSTgvbWxsY1EvNjVkZjhkMzAtYjE5Yy00ODIxLWFhYTUtMDc5MmU2Mjg4NjE2L2YxYmE1Mjk0LTdiNzUtNDU4Mi1iMmRmLTFmMzZiZTAzMDU3OQ",
+        "size": "medium"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/DitHhICNusmP6Vg5pyZcFuZX__STyzNCSQXLbyUTL48/rs:fit:1200:0/exp:1790869500/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvOUVmVTN6Skx5VGpXSTgvbWxsY1EvNjVkZjhkMzAtYjE5Yy00ODIxLWFhYTUtMDc5MmU2Mjg4NjE2L2YxYmE1Mjk0LTdiNzUtNDU4Mi1iMmRmLTFmMzZiZTAzMDU3OQ",
+        "size": "large"
+       }
+      ],
+      "expiresAt": null
+     }
+    ],
+    "VWKRF": [
+     {
+      "id": "1298f2b5-302b-480a-abb5-3b21fad2791e",
+      "label": "Homenaje Musicalizado en Vivo"
+     }
+    ],
+    "tgI6Y": "’49-’17",
+    "EStWy": "Ruth Ann Baldwin",
+    "U11RE": [
+     {
+      "id": "7c019120-12db-4c05-9987-5f016b00911a",
+      "label": "Entrada Liberada"
      }
     ]
    }

@@ -85,6 +85,27 @@
    "defaultValue": null
   },
   {
+   "id": "6A3kv",
+   "name": "Orden",
+   "type": "NUMBER",
+   "vendorSideFieldType": null,
+   "options": {
+    "precision": 0,
+    "min": null,
+    "max": null,
+    "showThousandSeparator": false,
+    "thousandSeparatorLocale": "DEFAULT",
+    "largeNumberAbbreviation": "NONE",
+    "prefix": null,
+    "suffix": null
+   },
+   "allowMultipleEntries": false,
+   "readonly": false,
+   "required": false,
+   "createOnly": false,
+   "defaultValue": null
+  },
+  {
    "id": "VWKRF",
    "name": "Sub Categoría",
    "type": "SELECT",
@@ -847,6 +868,42 @@
    "defaultValue": null
   },
   {
+   "id": "LVmhF",
+   "name": "AgendaPrograma",
+   "type": "LOOKUP",
+   "vendorSideFieldType": null,
+   "options": {
+    "linkedRecordFieldId": "w7UBo",
+    "lookupFieldId": "EUjyx",
+    "returnedField": {
+     "type": "FORMULA",
+     "vendorSideFieldType": null,
+     "options": {
+      "formula": "{Día} & \" - \" & DATETIME_FORMAT(SET_TIMEZONE({Inicia}, 'America/Santiago'), 'H:mm')& \" - \" & {Dónde}",
+      "referencedFieldIds": [
+       "O0C6l",
+       "yQUbl",
+       "CZFe9"
+      ],
+      "returnedField": {
+       "type": "SINGLE_LINE_TEXT",
+       "vendorSideFieldType": null,
+       "options": {
+        "minLength": 0,
+        "maxLength": 2147483647
+       }
+      },
+      "valid": true
+     }
+    }
+   },
+   "allowMultipleEntries": true,
+   "readonly": true,
+   "required": false,
+   "createOnly": false,
+   "defaultValue": null
+  },
+  {
    "id": "EOkFi",
    "name": "QueDiasLaDan",
    "type": "ROLLUP",
@@ -974,41 +1031,6 @@
         "color": "#1c487e"
        }
       ]
-     }
-    }
-   },
-   "allowMultipleEntries": true,
-   "readonly": true,
-   "required": false,
-   "createOnly": false,
-   "defaultValue": null
-  },
-  {
-   "id": "xb0jW",
-   "name": "Agenda",
-   "type": "LOOKUP",
-   "vendorSideFieldType": null,
-   "options": {
-    "linkedRecordFieldId": "w7UBo",
-    "lookupFieldId": "FILBc",
-    "returnedField": {
-     "type": "FORMULA",
-     "vendorSideFieldType": null,
-     "options": {
-      "formula": "{Día} & \" - \" & DATETIME_FORMAT(SET_TIMEZONE({Inicia}, 'America/Santiago'), 'H:mm')",
-      "referencedFieldIds": [
-       "O0C6l",
-       "CZFe9"
-      ],
-      "returnedField": {
-       "type": "SINGLE_LINE_TEXT",
-       "vendorSideFieldType": null,
-       "options": {
-        "minLength": 0,
-        "maxLength": 2147483647
-       }
-      },
-      "valid": true
      }
     }
    },
