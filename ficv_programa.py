@@ -476,16 +476,22 @@ def extraer_dom(page, dia_pestana, dump=None):
 # Detalle de cada película (opcional): precisa sección y sala
 # --------------------------------------------------------------------------
 
-def visitar_fichas(context, ids, out):
+def visitar_fichas(context, ids, out, limite_s=1500):
     """Abre /ficha?recordId=<id> y guarda las respuestas JSON de la ficha en out/fichas/<id>.json.
 
     La ficha carga la tabla "Funciones": día, hora, sala, acceso, duración y estado de cada función.
     """
     d = out / "fichas"
     d.mkdir(parents=True, exist_ok=True)
+    import time
+    inicio = time.monotonic()
     page = context.new_page()
     for i, rid in enumerate(ids, 1):
+        if time.monotonic() - inicio > limite_s:
+            print(f"  Tiempo agotado: quedan {len(ids) - i + 1} fichas para la próxima ejecución", file=sys.stderr)
+            break
         datos = []
+        tope = time.monotonic() + 20
 
         def cap(resp):
             try:
@@ -509,12 +515,12 @@ def visitar_fichas(context, ids, out):
             print(f"  fichas {i}-{min(i + 19, len(ids))} de {len(ids)}", file=sys.stderr)
         try:
             page.goto(url, wait_until="domcontentloaded", timeout=45000)
-            for _ in range(40):
+            for _ in range(30):
                 page.wait_for_timeout(500)
-                if any("/records" in x["url"] for x in datos) and len(datos) >= 4:
+                if funciones_completas():
                     break
             for _ in range(10):  # funciones paginadas: pulsar "cargar más" hasta tenerlas todas
-                if funciones_completas():
+                if funciones_completas() or time.monotonic() > tope:
                     break
                 btn = page.get_by_text(re.compile(r"Cargar m[aá]s|Load more|Ver m[aá]s|Mostrar m[aá]s", re.I)).last
                 try:
@@ -528,6 +534,31 @@ def visitar_fichas(context, ids, out):
             print(f"    {rid}: error {e}", file=sys.stderr)
         page.remove_listener("response", cap)
     page.close()
+
+
+def fichas_pendientes(funciones, ids, carpeta, cache):
+    """Ids cuya ficha falta o ya no coincide con la agenda. Reutiliza fichas guardadas (cache).
+
+    Primero las películas con varias salas, que son las que más necesitan la ficha.
+    """
+    import shutil
+    carpeta.mkdir(parents=True, exist_ok=True)
+    if cache.is_dir():
+        for p in cache.glob("*.json"):
+            if not (carpeta / p.name).exists():
+                shutil.copy(p, carpeta / p.name)
+    agenda = defaultdict(set)
+    varias = set()
+    for f in funciones:
+        agenda[f["id"]].add((f["dia"], f["hora"]))
+        if " / " in f.get("sala", ""):
+            varias.add(f["id"])
+    hechas = funciones_desde_fichas(carpeta)
+    al_dia = {rid for rid, fi in hechas.items()
+              if fi["completa"] and {(x["dia"], x["hora"]) for x in fi["funciones"]} == agenda.get(rid)}
+    for rid in set(hechas) - al_dia:
+        (carpeta / f"{rid}.json").unlink(missing_ok=True)
+    return sorted(ids - al_dia, key=lambda r: (r not in varias, r))
 
 
 def funciones_desde_fichas(carpeta):
@@ -701,6 +732,8 @@ def main():
     ap.add_argument("--dump", action="store_true", help="guardar el HTML de cada día en salida/html/")
     ap.add_argument("--salida", default=str(OUT))
     ap.add_argument("--sin-fichas", action="store_true", help="no visitar la ficha de cada película")
+    ap.add_argument("--limite-fichas", type=int, default=25, metavar="MIN",
+                    help="minutos máximos visitando fichas (las demás quedan para la próxima vez)")
     ap.add_argument("--desde-json", metavar="DIR",
                     help="no navegar: reprocesar respuestas JSON guardadas (p. ej. salida/api)")
     a = ap.parse_args()
@@ -827,10 +860,11 @@ def main():
                 f["url"] = urljoin(a.url, f["url"])
 
         funciones = deduplicar(funciones)
-        ids_softr = sorted({f["id"] for f in funciones if f.get("fuente") == "softr" and f.get("id")})
+        ids_softr = {f["id"] for f in funciones if f.get("fuente") == "softr" and f.get("id")}
         if ids_softr and not a.sin_fichas:
-            print(f"Visitando {len(ids_softr)} fichas de películas…", file=sys.stderr)
-            visitar_fichas(context, ids_softr, out)
+            pendientes = fichas_pendientes(funciones, ids_softr, out / "fichas", Path("programa/depuracion/fichas"))
+            print(f"Fichas: {len(ids_softr) - len(pendientes)} al día, {len(pendientes)} por visitar", file=sys.stderr)
+            visitar_fichas(context, pendientes, out, limite_s=a.limite_fichas * 60)
             funciones = aplicar_fichas(funciones, funciones_desde_fichas(out / "fichas"))
         if a.detalles and not desde_softr:
             print("Visitando fichas de películas…", file=sys.stderr)
