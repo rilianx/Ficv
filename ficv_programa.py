@@ -500,12 +500,12 @@ def visitar_fichas(context, ids, out, limite_s=1500):
             print(f"  Tiempo agotado: quedan {len(ids) - i + 1} fichas para la próxima ejecución", file=sys.stderr)
             break
         datos = []
-        tope = time.monotonic() + 20
 
         def cap(resp):
             try:
                 if "json" in (resp.headers.get("content-type") or "") and "/v1/datasource/" in resp.url:
-                    datos.append({"url": resp.url, "body": resp.json()})
+                    datos.append({"url": resp.url, "metodo": resp.request.method,
+                                  "envio": resp.request.post_data, "body": resp.json()})
             except Exception:
                 pass
 
@@ -522,30 +522,36 @@ def visitar_fichas(context, ids, out, limite_s=1500):
         url = f"https://33.ficvaldivia.cl/ficha?recordId={rid}"
         if i % 20 == 1:
             print(f"  fichas {i}-{min(i + 19, len(ids))} de {len(ids)}", file=sys.stderr)
-        try:
-            page.goto(url, wait_until="domcontentloaded", timeout=45000)
-            for _ in range(30):  # el bloque Funciones carga al llegar a él: bajar por la página
-                page.wait_for_timeout(500)
-                if funciones_completas():
-                    break
-                try:
-                    page.get_by_text("Funciones", exact=True).first.scroll_into_view_if_needed(timeout=500)
-                except Exception:
-                    pass
-                page.mouse.wheel(0, 1200)
-            for _ in range(10):  # funciones paginadas: pulsar "cargar más" hasta tenerlas todas
-                if funciones_completas() or time.monotonic() > tope:
-                    break
-                btn = page.get_by_text(re.compile(r"Cargar m[aá]s|Load more|Ver m[aá]s|Mostrar m[aá]s", re.I)).last
-                try:
-                    btn.scroll_into_view_if_needed(timeout=2000)
-                    btn.click(timeout=3000)
-                except Exception:
-                    page.mouse.wheel(0, 3000)
-                page.wait_for_timeout(1200)
-            (d / f"{rid}.json").write_text(json.dumps(datos, ensure_ascii=False), encoding="utf-8")
-        except Exception as e:
-            print(f"    {rid}: error {e}", file=sys.stderr)
+        for intento in range(3):  # la web a veces no entrega las funciones: reintentar
+            datos.clear()
+            tope = time.monotonic() + 25
+            try:
+                page.goto(url, wait_until="domcontentloaded", timeout=45000)
+                for _ in range(30):  # el bloque Funciones carga al llegar a él: bajar por la página
+                    page.wait_for_timeout(500)
+                    if funciones_completas() or time.monotonic() > tope:
+                        break
+                    try:
+                        page.get_by_text("Funciones", exact=True).first.scroll_into_view_if_needed(timeout=500)
+                    except Exception:
+                        pass
+                    page.mouse.wheel(0, 1200)
+                for _ in range(10):  # funciones paginadas: pulsar "cargar más" hasta tenerlas todas
+                    if funciones_completas() or time.monotonic() > tope:
+                        break
+                    btn = page.get_by_text(re.compile(r"Cargar m[aá]s|Load more|Ver m[aá]s|Mostrar m[aá]s", re.I)).last
+                    try:
+                        btn.scroll_into_view_if_needed(timeout=2000)
+                        btn.click(timeout=3000)
+                    except Exception:
+                        page.mouse.wheel(0, 3000)
+                    page.wait_for_timeout(1200)
+            except Exception as e:
+                print(f"    {rid}: error {e}", file=sys.stderr)
+            if funciones_completas():
+                break
+            page.wait_for_timeout(2000 * (intento + 1))
+        (d / f"{rid}.json").write_text(json.dumps(datos, ensure_ascii=False), encoding="utf-8")
         page.remove_listener("response", cap)
     page.close()
 
