@@ -137,6 +137,12 @@ section.sec h2 i:not(.dot){font-style:normal;font-size:10.5px;padding:1px 7px;bo
 .seenbtn{font:700 11.5px var(--f-body);padding:2px 9px;border-radius:999px;border:1px dashed var(--muted);background:none;color:var(--muted);cursor:pointer;white-space:nowrap}
 .seenbtn[aria-pressed="true"]{border-style:solid;border-color:var(--ink);background:var(--ink);color:var(--surface)}
 .pop-fa{display:flex;gap:8px;align-items:center}
+.pop-films li{flex-wrap:wrap}
+.pop-films li>div:first-child{min-width:0;flex:1 1 240px}
+.pop-det{display:block;font-size:12px;color:var(--muted)}
+.pop-sin{margin-top:6px;font-size:13px}
+.pop-sin summary{cursor:pointer;color:var(--river);font-weight:700;font-size:12.5px}
+.pop-sin p{margin:6px 0 0;line-height:1.5;color:var(--ink);white-space:pre-line}
 .btn.seen-on{background:var(--ink);border-color:var(--ink);color:var(--surface)}
 .dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--c);flex:0 0 auto}
 section.sec h2 .dot{align-self:center}
@@ -349,6 +355,7 @@ function pintarDias(lista){
   $("days").innerHTML=[["todos","Todos","★"],...dias.map(d=>{const l=lbl(d);return [d,l.w.slice(0,3),l.n]})]
     .map(([d,w,num])=>`<button type="button" data-d="${d}" aria-pressed="${d===dia}"><small>${w}</small><b>${num}</b><em>${n(d)}</em></button>`).join("");
 }
+const quienF=f=>[f.direccion,f.pais,f.anio].filter(Boolean).join(" · ");
 const titulos=s=>s.n===1?s.films[0].titulo:`Sesión de ${s.n} películas`;
 
 // ---------- vista lista ----------
@@ -359,9 +366,9 @@ function fila(s,cl,el){
     ya.length?`<span class="pill">${s.n===1?"Ya elegida: "+esc(corto(ya[0])):ya.length+" de "+s.n+" ya elegidas en otra función"}</span>`:"",
     s.estado?`<span class="pill clash">${esc(s.estado)}</span>`:"",
     cl.has(s.key)?'<span class="pill clash">Choca con otra marcada</span>':""].join("");
-  const f0=s.films[0], quien=s.n===1?[f0.direccion,f0.pais].filter(Boolean).join(" · "):"";
+  const f0=s.films[0], quien=s.n===1?quienF(f0):"";
   const titulo=s.n===1?`<a href="${esc(f0.url)}" target="_blank" rel="noopener">${esc(f0.titulo)}</a>`:esc(titulos(s));
-  const lista=s.n>1?`<ul class="films">${s.films.map(f=>`<li><a href="${esc(f.url)}" target="_blank" rel="noopener">${esc(f.titulo)}</a>${[f.direccion,f.pais].filter(Boolean).length?` <span>${esc([f.direccion,f.pais].filter(Boolean).join(" · "))}</span>`:""}</li>`).join("")}</ul>`:"";
+  const lista=s.n>1?`<ul class="films">${s.films.map(f=>`<li><a href="${esc(f.url)}" target="_blank" rel="noopener">${esc(f.titulo)}</a>${quienF(f)?` <span>${esc(quienF(f))}</span>`:""}</li>`).join("")}</ul>`:"";
   return `<div class="row${m?" on":""}${ya.length?" ya":""}${vistaS(s)?" vista":""}"><span class="t">${esc(s.hora)}</span>
     <span class="ttl">${titulo}</span>
     <button type="button" class="mark" data-k="${esc(s.key)}" aria-pressed="${m}" aria-label="${m?"Quitar de":"Agregar a"} mi calendario: ${esc(titulos(s))}, ${esc(s.hora)}">${m?"✓":"+"}</button>
@@ -413,8 +420,8 @@ function pintarCal(ver,cl){
     h+=`<div class="col" style="height:${alto}px">`+c.items.map(({s,lane,n})=>{
       const m=on(s),ya=!m&&yaEn(s,el).length, w=100/n;
       return `<button type="button" class="it${m?" on":""}${ya?" ya":""}${cl.has(s.key)?" clash":""}${n>=3?" angosta":""}${vistaS(s)?" vista":""}" data-s="${esc(s.key)}" aria-haspopup="dialog"
-        title="${esc(s.hora+"–"+finH(s)+" · "+s.films.map(f=>f.titulo+(f.direccion?" ("+f.direccion+")":"")).join(" · ")+" · "+s.sala)}"
-        style="--c:${col(s.sec)};top:${y(s.min)+1}px;height:${s.ocupa*PPM-2}px;left:calc(${lane*w}% + 2px);width:calc(${w}% - 4px)"><b>${esc(s.hora)}–${finH(s)}${s.est?"*":""}</b><strong>${esc(titulos(s))}</strong>${s.n===1&&s.films[0].direccion?`<span class="dir">${esc(s.films[0].direccion)}</span>`:""}${s.n>1?`<span class="cortos">${esc(s.films.map(f=>f.titulo).join(" · "))}</span>`:""}<span>${esc(s.sec)}</span><span>${esc(s.sala)}</span></button>`;
+        title="${esc(s.hora+"–"+finH(s)+" · "+s.films.map(f=>f.titulo+([f.direccion,f.anio].filter(Boolean).length?" ("+[f.direccion,f.anio].filter(Boolean).join(", ")+")":"")).join(" · ")+" · "+s.sala)}"
+        style="--c:${col(s.sec)};top:${y(s.min)+1}px;height:${s.ocupa*PPM-2}px;left:calc(${lane*w}% + 2px);width:calc(${w}% - 4px)"><b>${esc(s.hora)}–${finH(s)}${s.est?"*":""}</b><strong>${esc(titulos(s))}</strong>${s.n===1&&(s.films[0].direccion||s.films[0].anio)?`<span class="dir">${esc([s.films[0].direccion,s.films[0].anio].filter(Boolean).join(" · "))}</span>`:""}${s.n>1?`<span class="cortos">${esc(s.films.map(f=>f.titulo).join(" · "))}</span>`:""}<span>${esc(s.sec)}</span><span>${esc(s.sala)}</span></button>`;
     }).join("")+`</div>`;
   }
   return h+`</div></div><div class="legend"><span><i class="on"></i>★ Marcada (bloque relleno)</span><span><i class="vi"></i>✔ Vista</span><span><i></i>Sin marcar · el color indica la sección · clic para ver detalles</span><span><i class="cl"></i>Choca con otra marcada</span><span>El alto del bloque es la duración + ${MARGEN} min de margen</span><span>* duración estimada en 90 min</span></div>`;
@@ -445,8 +452,10 @@ let abierta=null;
 function pintarPop(){
   const s=porClave.get(abierta); if(!s) return;
   const m=on(s), el=elegidas(), ya=!m?yaEn(s,el):[], cl=choques(), l=lbl(s.dia);
-  const films=s.films.map(f=>`<li><div><b>${esc(f.titulo)}</b><span>${esc([f.direccion,f.pais].filter(Boolean).join(" · "))}</span></div>
-    <div class="pop-fa">${s.n>1?`<button type="button" class="seenbtn" data-vf="${esc(f.id)}" aria-pressed="${vistas.has(f.id)}">${vistas.has(f.id)?"✔ Vista":"Vista"}</button>`:""}${f.url?`<a href="${esc(f.url)}" target="_blank" rel="noopener">Ver ficha ↗</a>`:""}</div></li>`).join("");
+  const det=f=>[f.premiere,f.idioma,f.formato,f.duracion_film&&("Duración "+f.duracion_film)].filter(Boolean).join(" · ");
+  const films=s.films.map(f=>`<li><div><b>${esc(f.titulo)}</b><span>${esc(quienF(f))}</span>${det(f)?`<span class="pop-det">${esc(det(f))}</span>`:""}
+    ${f.sinopsis?`<details class="pop-sin"${s.n===1?" open":""}><summary>Sinopsis</summary><p>${esc(f.sinopsis)}</p></details>`:""}</div>
+    <div class="pop-fa">${s.n>1?`<button type="button" class="seenbtn" data-vf="${esc(f.id)}" aria-pressed="${vistas.has(f.id)}">${vistas.has(f.id)?"✔ Vista":"Vista"}</button>`:""}${f.url&&s.n>1?`<a href="${esc(f.url)}" target="_blank" rel="noopener">Ver ficha ↗</a>`:""}</div></li>`).join("");
   $("pop-in").innerHTML=`<p class="pop-h">${l.w} ${l.n} de octubre · ${esc(s.hora)}–${finH(s)}</p>
     <h3 id="pop-t">${esc(titulos(s))}</h3>
     <div class="pop-meta"><span class="pill" style="display:inline-flex;gap:6px;align-items:center;--c:${col(s.sec)}"><i class="dot"></i>${esc(s.sec)}</span>${s.sub.map(x=>`<span class="pill">${esc(x)}</span>`).join("")}

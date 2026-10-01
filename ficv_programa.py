@@ -542,7 +542,22 @@ def plantilla_funciones(datos):
             cab = {k: v for k, v in (x.get("cabeceras") or {}).items()
                    if k.lower() in ("content-type", "accept") or k.lower().startswith(("softr", "x-"))}
             return {"url": x["url"], "envio": envio, "cabeceras": cab,
-                    "meta": {"url": meta["url"], "body": meta["body"]}}
+                    "meta": {"url": meta["url"], "body": meta["body"]}, "registro": plantilla_registro(datos)}
+    return None
+
+
+def plantilla_registro(datos):
+    """La consulta que trae el registro de la película (año, sinopsis…): .../records/<id>."""
+    meta = next((x for x in datos if isinstance(x.get("body"), dict) and x["body"].get("name") == "Películas"
+                 and isinstance(x["body"].get("fields"), list)), None)
+    for x in datos:
+        b = x.get("body")
+        if meta and isinstance(b, dict) and b.get("id") and isinstance(b.get("fields"), dict) \
+                and x.get("url", "").endswith("/records/" + b["id"]):
+            return {"url": x["url"][: -len(b["id"])], "metodo": x.get("metodo") or "GET", "envio": x.get("envio"),
+                    "rid": b["id"], "meta": {"url": meta["url"], "body": meta["body"]},
+                    "cabeceras": {k: v for k, v in (x.get("cabeceras") or {}).items()
+                                  if k.lower() in ("content-type", "accept") or k.lower().startswith(("softr", "x-"))}}
     return None
 
 
@@ -568,11 +583,32 @@ def repetir_consulta(page, plantilla, rid):
             if r.ok:
                 body = r.json()
                 if isinstance(body, dict) and isinstance(body.get("items"), list):
-                    return [plantilla["meta"], {"url": plantilla["url"], "metodo": "POST", "body": body}]
+                    return [plantilla["meta"], {"url": plantilla["url"], "metodo": "POST", "body": body}] \
+                        + repetir_registro(page, plantilla.get("registro"), rid)
         except Exception:
             pass
         page.wait_for_timeout(1500 * (intento + 1))
     return None
+
+
+def repetir_registro(page, reg, rid):
+    """Pide el registro de la película rid (año, sinopsis…). [] si no se puede o no es esa película."""
+    if not reg:
+        return []
+    url = reg["url"] + rid
+    cab = {**reg["cabeceras"], "referer": f"https://33.ficvaldivia.cl/ficha?recordId={rid}"}
+    try:
+        if reg["metodo"] == "POST":
+            envio = (reg.get("envio") or "{}").replace(reg["rid"], rid)
+            r = page.request.post(url, data=envio, headers=cab, timeout=20000)
+        else:
+            r = page.request.get(url, headers=cab, timeout=20000)
+        body = r.json() if r.ok else None
+    except Exception:
+        body = None
+    if isinstance(body, dict) and body.get("id") == rid and isinstance(body.get("fields"), dict):
+        return [reg["meta"], {"url": url, "body": body}]
+    return []
 
 
 def visitar_fichas(context, ids, out, limite_s=1500, agenda=None):
@@ -680,8 +716,10 @@ def fichas_pendientes(funciones, ids, carpeta, cache):
         if " / " in f.get("sala", ""):
             varias.add(f["id"])
     hechas = funciones_desde_fichas(carpeta)
+    con_registro = set(peliculas_desde_fichas(carpeta))
     al_dia = {rid for rid, fi in hechas.items()
-              if fi["completa"] and {(x["dia"], x["hora"]) for x in fi["funciones"]} == agenda.get(rid)}
+              if fi["completa"] and {(x["dia"], x["hora"]) for x in fi["funciones"]} == agenda.get(rid)
+              and rid in con_registro}
     for rid in (set(hechas) - al_dia) & set(agenda):  # solo fichas desactualizadas de películas vigentes
         (carpeta / f"{rid}.json").unlink(missing_ok=True)
     return sorted(ids - al_dia, key=lambda r: (r not in varias, r))
@@ -734,7 +772,32 @@ def funciones_desde_fichas(carpeta):
     return res
 
 
-def aplicar_fichas(funciones, fichas):
+def peliculas_desde_fichas(carpeta):
+    """{id_película: {año, duración, premiere, idioma, formato, sinopsis}} desde el registro de cada ficha."""
+    res = {}
+    for p in sorted(Path(carpeta).glob("*.json")):
+        rid = p.stem
+        try:
+            datos = json.loads(p.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        nombres = {}
+        for x in datos:
+            b = x.get("body")
+            if isinstance(b, dict) and b.get("name") == "Películas" and isinstance(b.get("fields"), list):
+                nombres = {f["id"]: f["name"] for f in b["fields"]}
+        reg = next((x["body"] for x in datos if isinstance(x.get("body"), dict) and x["body"].get("id") == rid
+                    and isinstance(x["body"].get("fields"), dict)), None)
+        if not reg or not nombres:
+            continue
+        inv = {norm(v): k for k, v in nombres.items()}
+        g = lambda n: _texto(reg["fields"].get(inv.get(norm(n), ""))).strip()
+        res[rid] = {"anio": g("Año"), "duracion_film": g("Duración Film"), "premiere": g("Premiere"),
+                    "idioma": g("Idioma Original"), "formato": g("Formato"), "sinopsis": g("Sinopsis")}
+    return res
+
+
+def aplicar_fichas(funciones, fichas, pelis=None):
     """Reemplaza las funciones de cada película por las de su ficha (sala, acceso y duración exactas)."""
     if not fichas:
         return funciones
@@ -752,6 +815,10 @@ def aplicar_fichas(funciones, fichas):
         base = {k: v for k, v in fs[0].items() if k not in ("dia", "hora", "sala", "acceso")}
         out += [{**base, **x, "fuente": "ficha"} for x in fi["funciones"]]
     print(f"  Fichas: sala, acceso y duración exactas para {usadas} de {len(por_id)} películas", file=sys.stderr)
+    if pelis:
+        for f in out:
+            f.update(pelis.get(f.get("id"), {}))
+        print(f"  Fichas: año y sinopsis para {len(set(pelis) & set(por_id))} películas", file=sys.stderr)
     return out
 
 
@@ -838,7 +905,7 @@ def escribir_html(funciones, ruta):
     """Página navegable (plantilla.html): lista por día y sección, y calendario con marcadas."""
     import datetime
     claves = ["dia", "hora", "titulo", "sala", "seccion", "subseccion", "acceso", "direccion", "pais", "url", "id",
-              "duracion", "estado", "sesion"]
+              "duracion", "estado", "sesion", "anio", "duracion_film", "premiere", "idioma", "formato", "sinopsis"]
     datos = [{k: f.get(k, "") for k in claves} for f in funciones if f.get("dia") and f.get("hora")]
     plantilla = (Path(__file__).parent / "plantilla.html").read_text(encoding="utf-8")
     hoy = datetime.date.today()
@@ -872,7 +939,7 @@ def main():
         funciones = funciones_desde_softr(payloads, {}, a.url) or funciones_desde_api(payloads)
         fichas = Path(a.desde_json).parent / "fichas"
         if fichas.is_dir():
-            funciones = aplicar_fichas(funciones, funciones_desde_fichas(fichas))
+            funciones = aplicar_fichas(funciones, funciones_desde_fichas(fichas), peliculas_desde_fichas(fichas))
         if not funciones:
             sys.exit("No se encontraron funciones en esos JSON.")
         Path(a.salida).mkdir(parents=True, exist_ok=True)
@@ -1012,7 +1079,7 @@ def main():
             for f in funciones:
                 agenda[f["id"]].add((f["dia"], f["hora"]))
             visitar_fichas(context, pendientes, out, limite_s=a.limite_fichas * 60, agenda=agenda)
-            funciones = aplicar_fichas(funciones, funciones_desde_fichas(out / "fichas"))
+            funciones = aplicar_fichas(funciones, funciones_desde_fichas(out / "fichas"), peliculas_desde_fichas(out / "fichas"))
         if a.detalles and not desde_softr:
             print("Visitando fichas de películas…", file=sys.stderr)
             completar_detalles(context, funciones)
