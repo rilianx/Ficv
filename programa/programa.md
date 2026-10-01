@@ -36,7 +36,7 @@ Fuente: https://33.ficvaldivia.cl/programacion
 | Hora | Película | Sala | Notas |
 |---|---|---|---|
 | 12:00 | [A veces me entra tristeza, otras veces rebelión](https://33.ficvaldivia.cl/ficha?recordId=TBHWa8Z8WIAdSl) | Aula Magna UACh | Gala · Con Entrada o Acreditación |
-| 20:00 | [Se eu fosse vivo... vivia](https://33.ficvaldivia.cl/ficha?recordId=oWlrbiGRdN85of) | Aula Magna UACh / Felix Martinez UACh | Gala · Con Entrada o Acreditación |
+| 20:00 | [Se eu fosse vivo... vivia](https://33.ficvaldivia.cl/ficha?recordId=oWlrbiGRdN85of) | Aula Magna UACh | Gala · Con Entrada o Acreditación |
 | 20:30 | [Elegy for the Forgotten, on an Endless War](https://33.ficvaldivia.cl/ficha?recordId=Sx3qladAWf2lj7) | Felix Martinez UACh | Gala · Con Entrada o Acreditación |
 | 20:30 | [Ghazal-e Sorkh](https://33.ficvaldivia.cl/ficha?recordId=VoeZr2JY9zAyZb) | Felix Martinez UACh | Gala · Con Entrada o Acreditación |
 | 20:30 | [Masao Adachi Takes a Passport Photo](https://33.ficvaldivia.cl/ficha?recordId=Y5jZiwVLA6AmHe) | Felix Martinez UACh | Gala · Con Entrada o Acreditación |
@@ -75,7 +75,7 @@ Fuente: https://33.ficvaldivia.cl/programacion
 
 | Hora | Película | Sala | Notas |
 |---|---|---|---|
-| 16:00 | [Mi amigo el sol](https://33.ficvaldivia.cl/ficha?recordId=Ih4dOWiG2kbROO) | Aula Magna UACh / Teatro Cervantes | Largometrajes Familiares · Entrada Liberada |
+| 16:00 | [Mi amigo el sol](https://33.ficvaldivia.cl/ficha?recordId=Ih4dOWiG2kbROO) | Aula Magna UACh | Largometrajes Familiares · Entrada Liberada |
 
 ## Martes 13 de octubre
 
@@ -122,7 +122,7 @@ Fuente: https://33.ficvaldivia.cl/programacion
 
 | Hora | Película | Sala | Notas |
 |---|---|---|---|
-| 11:00 | [Lo demás es ruido](https://33.ficvaldivia.cl/ficha?recordId=YtwjDyIJ2Qj4Dw) | Aula Magna UACh / Cine Club UACh | Gala · Con Entrada o Acreditación |
+| 11:00 | [Lo demás es ruido](https://33.ficvaldivia.cl/ficha?recordId=YtwjDyIJ2Qj4Dw) | Aula Magna UACh | Gala · Con Entrada o Acreditación |
 | 14:30 | [Le Journal d'une femme de chambre](https://33.ficvaldivia.cl/ficha?recordId=U6QXPLzVo0OKZG) | Teatro Cervantes | Gala · Entrada Liberada |
 | 22:00 | [My Wife Cries](https://33.ficvaldivia.cl/ficha?recordId=lo7SSrXejoiHeJ) | Teatro Cervantes | Gala · Entrada Liberada |
 
@@ -152,7 +152,7 @@ Fuente: https://33.ficvaldivia.cl/programacion
 |---|---|---|---|
 | 16:45 | [Gacela Gazette](https://33.ficvaldivia.cl/ficha?recordId=W5mp8UrsQMznaw) | Aula Magna UACh / Felix Martinez UACh | Animamundi · Con Entrada o Acreditación |
 | 16:45 | [La Baraja de Myriam](https://33.ficvaldivia.cl/ficha?recordId=L0DIbAyFU7dwwb) | Aula Magna UACh / Felix Martinez UACh | Animamundi · Con Entrada o Acreditación |
-| 16:45 | [Noize](https://33.ficvaldivia.cl/ficha?recordId=O8rAt33p6tRBTG) | Aula Magna UACh / Felix Martinez UACh | Animamundi · Con Entrada o Acreditación |
+| 16:45 | [Noize](https://33.ficvaldivia.cl/ficha?recordId=O8rAt33p6tRBTG) | Aula Magna UACh | Animamundi · Con Entrada o Acreditación |
 | 16:45 | [Ánima Del Amanecer](https://33.ficvaldivia.cl/ficha?recordId=i4jS2bKI7ex6bF) | Aula Magna UACh / Felix Martinez UACh | Animamundi · Con Entrada o Acreditación |
 
 ### Muestra de Cine Contemporáneo
@@ -244,10 +244,10 @@ Fuente: https://33.ficvaldivia.cl/programacion
 | Hora | Película | Sala | Notas |
 |---|---|---|---|
 | 14:30 | [Banano, Banano](https://33.ficvaldivia.cl/ficha?recordId=EpFg3BcCFfnQjQ) | Aula Magna UACh | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación |
-| 14:30 | [Filhos da Cana](https://33.ficvaldivia.cl/ficha?recordId=pUO36m2kaOmsxN) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
-| 14:30 | [Futuros luminosos](https://33.ficvaldivia.cl/ficha?recordId=jLgyHVwG1fVqgu) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
+| 14:30 | [Filhos da Cana](https://33.ficvaldivia.cl/ficha?recordId=pUO36m2kaOmsxN) | Aula Magna UACh | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación |
+| 14:30 | [Futuros luminosos](https://33.ficvaldivia.cl/ficha?recordId=jLgyHVwG1fVqgu) | Aula Magna UACh | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación |
 | 14:30 | [Gestos para romper una imagen](https://33.ficvaldivia.cl/ficha?recordId=3HN0svEgEPa4Ff) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
-| 14:30 | [Isla Flotante](https://33.ficvaldivia.cl/ficha?recordId=cTB9MFhdglA0Xv) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
+| 14:30 | [Isla Flotante](https://33.ficvaldivia.cl/ficha?recordId=cTB9MFhdglA0Xv) | Aula Magna UACh | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación |
 | 14:30 | [Uma Fonte](https://33.ficvaldivia.cl/ficha?recordId=6qxk0qhPaETMDM) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
 
 ### Competencia Largometraje
@@ -263,7 +263,7 @@ Fuente: https://33.ficvaldivia.cl/programacion
 | Hora | Película | Sala | Notas |
 |---|---|---|---|
 | 12:00 | [I Heard That They are Not Going to See Each Other Anymore](https://33.ficvaldivia.cl/ficha?recordId=KsHZaYL8kHGhlo) | Teatro Cervantes | Selección Oficial Largometraje Juvenil · Entrada Liberada |
-| 17:15 | [Nunkui](https://33.ficvaldivia.cl/ficha?recordId=A71NaE2YdduGjf) | Teatro Cervantes / Felix Martinez UACh | Selección Oficial Largometraje Juvenil · Entrada Liberada / Con Entrada o Acreditación |
+| 17:15 | [Nunkui](https://33.ficvaldivia.cl/ficha?recordId=A71NaE2YdduGjf) | Teatro Cervantes | Selección Oficial Largometraje Juvenil · Entrada Liberada |
 
 ### Gala
 
@@ -276,7 +276,7 @@ Fuente: https://33.ficvaldivia.cl/programacion
 | Hora | Película | Sala | Notas |
 |---|---|---|---|
 | 17:00 | [Cocaina Negra](https://33.ficvaldivia.cl/ficha?recordId=UNzH69f9lgH3cW) | Aula Magna UACh / Felix Martinez UACh | Gala Chilena · Con Entrada o Acreditación |
-| 22:15 | [Il Cileno](https://33.ficvaldivia.cl/ficha?recordId=YzJZp2CrfTU1Cc) | Aula Magna UACh / Felix Martinez UACh | Gala Chilena · Con Entrada o Acreditación |
+| 22:15 | [Il Cileno](https://33.ficvaldivia.cl/ficha?recordId=YzJZp2CrfTU1Cc) | Aula Magna UACh | Gala Chilena · Con Entrada o Acreditación |
 
 ### Muestra Contraplanos de la Historia
 
@@ -383,22 +383,22 @@ Fuente: https://33.ficvaldivia.cl/programacion
 
 | Hora | Película | Sala | Notas |
 |---|---|---|---|
-| 10:00 | [El día que aprendí a volar](https://33.ficvaldivia.cl/ficha?recordId=HZywlc3EM6zlCx) | Teatro Cervantes / Sala Hugo Campos | Selección Oficial Cortometraje Infantil Latinoamericano · Entrada Liberada |
+| 10:00 | [El día que aprendí a volar](https://33.ficvaldivia.cl/ficha?recordId=HZywlc3EM6zlCx) | Teatro Cervantes | Selección Oficial Cortometraje Infantil Latinoamericano · Entrada Liberada |
 | 10:00 | [Kintsugi](https://33.ficvaldivia.cl/ficha?recordId=wF4TWOv7Ogsvjc) | Teatro Cervantes / Sala Hugo Campos | Selección Oficial Cortometraje Infantil Latinoamericano · Entrada Liberada |
-| 10:00 | [La niña que quería ser piedra](https://33.ficvaldivia.cl/ficha?recordId=m4pbnKCpUdnbDh) | Teatro Cervantes / Sala Hugo Campos | Selección Oficial Cortometraje Infantil Latinoamericano · Entrada Liberada |
-| 10:00 | [¿A dónde se fue el jambato?](https://33.ficvaldivia.cl/ficha?recordId=RbFse8D3scAeON) | Teatro Cervantes / Sala Hugo Campos | Selección Oficial Cortometraje Infantil Latinoamericano · Entrada Liberada |
-| 10:00 | [¿Para qué sirven las cosas?](https://33.ficvaldivia.cl/ficha?recordId=kLIEsruIKnC7IW) | Teatro Cervantes / Sala Hugo Campos | Selección Oficial Cortometraje Infantil Latinoamericano · Entrada Liberada |
+| 10:00 | [La niña que quería ser piedra](https://33.ficvaldivia.cl/ficha?recordId=m4pbnKCpUdnbDh) | Teatro Cervantes | Selección Oficial Cortometraje Infantil Latinoamericano · Entrada Liberada |
+| 10:00 | [¿A dónde se fue el jambato?](https://33.ficvaldivia.cl/ficha?recordId=RbFse8D3scAeON) | Teatro Cervantes | Selección Oficial Cortometraje Infantil Latinoamericano · Entrada Liberada |
+| 10:00 | [¿Para qué sirven las cosas?](https://33.ficvaldivia.cl/ficha?recordId=kLIEsruIKnC7IW) | Teatro Cervantes | Selección Oficial Cortometraje Infantil Latinoamericano · Entrada Liberada |
 
 ### Competencia Cortometraje de Latinoamérica y el Caribe
 
 | Hora | Película | Sala | Notas |
 |---|---|---|---|
-| 14:30 | [Día de sacrificio](https://33.ficvaldivia.cl/ficha?recordId=wkQNCjk7ibYNUL) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
+| 14:30 | [Día de sacrificio](https://33.ficvaldivia.cl/ficha?recordId=wkQNCjk7ibYNUL) | Aula Magna UACh | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación |
 | 14:30 | [La hora de irse](https://33.ficvaldivia.cl/ficha?recordId=RcxQ0FSbiHVkc0) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
-| 14:30 | [Lima](https://33.ficvaldivia.cl/ficha?recordId=L3j5vIAH21q7dZ) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
+| 14:30 | [Lima](https://33.ficvaldivia.cl/ficha?recordId=L3j5vIAH21q7dZ) | Aula Magna UACh | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación |
 | 14:30 | [Partículas Inconmensurables](https://33.ficvaldivia.cl/ficha?recordId=V8DbFrdrmbpxlB) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
 | 14:30 | [Toda la Quietud Posible](https://33.ficvaldivia.cl/ficha?recordId=eEi3AyrvBq6Zt5) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
-| 14:30 | [Una Fortaleza](https://33.ficvaldivia.cl/ficha?recordId=rShSFAWvdVX36O) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
+| 14:30 | [Una Fortaleza](https://33.ficvaldivia.cl/ficha?recordId=rShSFAWvdVX36O) | Aula Magna UACh | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación |
 
 ### Competencia Largometraje
 
@@ -523,9 +523,9 @@ Fuente: https://33.ficvaldivia.cl/programacion
 |---|---|---|---|
 | 14:30 | [Caerá el Morro y marcharán sus hijos](https://33.ficvaldivia.cl/ficha?recordId=LBOsJjJYSq9Auh) | Aula Magna UACh | Selección Oficial Cortometraje Chileno de Estudiantes de Cine y Audiovisual · Con Entrada o Acreditación |
 | 14:30 | [Casa propia](https://33.ficvaldivia.cl/ficha?recordId=vavIrTTWJ3GpX0) | Aula Magna UACh | Selección Oficial Cortometraje Chileno de Estudiantes de Cine y Audiovisual · Con Entrada o Acreditación |
-| 14:30 | [Como cortarse el pelo](https://33.ficvaldivia.cl/ficha?recordId=SYW3TzzCLdecS5) | Felix Martinez UACh / Aula Magna UACh | Selección Oficial Cortometraje Chileno de Estudiantes de Cine y Audiovisual · Con Entrada o Acreditación |
+| 14:30 | [Como cortarse el pelo](https://33.ficvaldivia.cl/ficha?recordId=SYW3TzzCLdecS5) | Aula Magna UACh | Selección Oficial Cortometraje Chileno de Estudiantes de Cine y Audiovisual · Con Entrada o Acreditación |
 | 14:30 | [Donde anida la lluvia](https://33.ficvaldivia.cl/ficha?recordId=WIufznY9J2QKjx) | Felix Martinez UACh / Aula Magna UACh | Selección Oficial Cortometraje Chileno de Estudiantes de Cine y Audiovisual · Con Entrada o Acreditación |
-| 14:30 | [Mañana vendrá el silencio](https://33.ficvaldivia.cl/ficha?recordId=KKrXJ9OixD1xCm) | Felix Martinez UACh / Aula Magna UACh | Selección Oficial Cortometraje Chileno de Estudiantes de Cine y Audiovisual · Con Entrada o Acreditación |
+| 14:30 | [Mañana vendrá el silencio](https://33.ficvaldivia.cl/ficha?recordId=KKrXJ9OixD1xCm) | Aula Magna UACh | Selección Oficial Cortometraje Chileno de Estudiantes de Cine y Audiovisual · Con Entrada o Acreditación |
 
 ### Competencia Largometraje
 
@@ -542,7 +542,7 @@ Fuente: https://33.ficvaldivia.cl/programacion
 
 | Hora | Película | Sala | Notas |
 |---|---|---|---|
-| 12:00 | [Nunkui](https://33.ficvaldivia.cl/ficha?recordId=A71NaE2YdduGjf) | Teatro Cervantes / Felix Martinez UACh | Selección Oficial Largometraje Juvenil · Entrada Liberada / Con Entrada o Acreditación |
+| 12:00 | [Nunkui](https://33.ficvaldivia.cl/ficha?recordId=A71NaE2YdduGjf) | Felix Martinez UACh | Selección Oficial Largometraje Juvenil · Con Entrada o Acreditación |
 | 17:15 | [Nuestro cuerpo es una estrella que se expande](https://33.ficvaldivia.cl/ficha?recordId=gKMP2KScuRWTWt) | Teatro Cervantes / Felix Martinez UACh | Selección Oficial Largometraje Juvenil · Entrada Liberada / Con Entrada o Acreditación |
 
 ### Gala
@@ -664,36 +664,36 @@ Fuente: https://33.ficvaldivia.cl/programacion
 |---|---|---|---|
 | 12:45 | [Caerá el Morro y marcharán sus hijos](https://33.ficvaldivia.cl/ficha?recordId=LBOsJjJYSq9Auh) | Felix Martinez UACh | Selección Oficial Cortometraje Chileno de Estudiantes de Cine y Audiovisual · Con Entrada o Acreditación |
 | 12:45 | [Casa propia](https://33.ficvaldivia.cl/ficha?recordId=vavIrTTWJ3GpX0) | Felix Martinez UACh | Selección Oficial Cortometraje Chileno de Estudiantes de Cine y Audiovisual · Con Entrada o Acreditación |
-| 12:45 | [Como cortarse el pelo](https://33.ficvaldivia.cl/ficha?recordId=SYW3TzzCLdecS5) | Felix Martinez UACh / Aula Magna UACh | Selección Oficial Cortometraje Chileno de Estudiantes de Cine y Audiovisual · Con Entrada o Acreditación |
+| 12:45 | [Como cortarse el pelo](https://33.ficvaldivia.cl/ficha?recordId=SYW3TzzCLdecS5) | Felix Martinez UACh | Selección Oficial Cortometraje Chileno de Estudiantes de Cine y Audiovisual · Con Entrada o Acreditación |
 | 12:45 | [Donde anida la lluvia](https://33.ficvaldivia.cl/ficha?recordId=WIufznY9J2QKjx) | Felix Martinez UACh / Aula Magna UACh | Selección Oficial Cortometraje Chileno de Estudiantes de Cine y Audiovisual · Con Entrada o Acreditación |
-| 12:45 | [Mañana vendrá el silencio](https://33.ficvaldivia.cl/ficha?recordId=KKrXJ9OixD1xCm) | Felix Martinez UACh / Aula Magna UACh | Selección Oficial Cortometraje Chileno de Estudiantes de Cine y Audiovisual · Con Entrada o Acreditación |
+| 12:45 | [Mañana vendrá el silencio](https://33.ficvaldivia.cl/ficha?recordId=KKrXJ9OixD1xCm) | Felix Martinez UACh | Selección Oficial Cortometraje Chileno de Estudiantes de Cine y Audiovisual · Con Entrada o Acreditación |
 
 ### Competencia Cortometraje Infantil Latinoamericano
 
 | Hora | Película | Sala | Notas |
 |---|---|---|---|
-| 11:00 | [El día que aprendí a volar](https://33.ficvaldivia.cl/ficha?recordId=HZywlc3EM6zlCx) | Teatro Cervantes / Sala Hugo Campos | Selección Oficial Cortometraje Infantil Latinoamericano · Entrada Liberada |
+| 11:00 | [El día que aprendí a volar](https://33.ficvaldivia.cl/ficha?recordId=HZywlc3EM6zlCx) | Sala Hugo Campos | Selección Oficial Cortometraje Infantil Latinoamericano · Entrada Liberada |
 | 11:00 | [Kintsugi](https://33.ficvaldivia.cl/ficha?recordId=wF4TWOv7Ogsvjc) | Teatro Cervantes / Sala Hugo Campos | Selección Oficial Cortometraje Infantil Latinoamericano · Entrada Liberada |
-| 11:00 | [La niña que quería ser piedra](https://33.ficvaldivia.cl/ficha?recordId=m4pbnKCpUdnbDh) | Teatro Cervantes / Sala Hugo Campos | Selección Oficial Cortometraje Infantil Latinoamericano · Entrada Liberada |
-| 11:00 | [¿A dónde se fue el jambato?](https://33.ficvaldivia.cl/ficha?recordId=RbFse8D3scAeON) | Teatro Cervantes / Sala Hugo Campos | Selección Oficial Cortometraje Infantil Latinoamericano · Entrada Liberada |
-| 11:00 | [¿Para qué sirven las cosas?](https://33.ficvaldivia.cl/ficha?recordId=kLIEsruIKnC7IW) | Teatro Cervantes / Sala Hugo Campos | Selección Oficial Cortometraje Infantil Latinoamericano · Entrada Liberada |
+| 11:00 | [La niña que quería ser piedra](https://33.ficvaldivia.cl/ficha?recordId=m4pbnKCpUdnbDh) | Sala Hugo Campos | Selección Oficial Cortometraje Infantil Latinoamericano · Entrada Liberada |
+| 11:00 | [¿A dónde se fue el jambato?](https://33.ficvaldivia.cl/ficha?recordId=RbFse8D3scAeON) | Sala Hugo Campos | Selección Oficial Cortometraje Infantil Latinoamericano · Entrada Liberada |
+| 11:00 | [¿Para qué sirven las cosas?](https://33.ficvaldivia.cl/ficha?recordId=kLIEsruIKnC7IW) | Sala Hugo Campos | Selección Oficial Cortometraje Infantil Latinoamericano · Entrada Liberada |
 
 ### Competencia Cortometraje de Latinoamérica y el Caribe
 
 | Hora | Película | Sala | Notas |
 |---|---|---|---|
 | 14:30 | [Banano, Banano](https://33.ficvaldivia.cl/ficha?recordId=EpFg3BcCFfnQjQ) | Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Entrada Liberada |
-| 14:30 | [Filhos da Cana](https://33.ficvaldivia.cl/ficha?recordId=pUO36m2kaOmsxN) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
-| 14:30 | [Futuros luminosos](https://33.ficvaldivia.cl/ficha?recordId=jLgyHVwG1fVqgu) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
+| 14:30 | [Filhos da Cana](https://33.ficvaldivia.cl/ficha?recordId=pUO36m2kaOmsxN) | Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Entrada Liberada |
+| 14:30 | [Futuros luminosos](https://33.ficvaldivia.cl/ficha?recordId=jLgyHVwG1fVqgu) | Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Entrada Liberada |
 | 14:30 | [Gestos para romper una imagen](https://33.ficvaldivia.cl/ficha?recordId=3HN0svEgEPa4Ff) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
-| 14:30 | [Isla Flotante](https://33.ficvaldivia.cl/ficha?recordId=cTB9MFhdglA0Xv) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
+| 14:30 | [Isla Flotante](https://33.ficvaldivia.cl/ficha?recordId=cTB9MFhdglA0Xv) | Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Entrada Liberada |
 | 14:30 | [Uma Fonte](https://33.ficvaldivia.cl/ficha?recordId=6qxk0qhPaETMDM) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
-| 17:00 | [Día de sacrificio](https://33.ficvaldivia.cl/ficha?recordId=wkQNCjk7ibYNUL) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
+| 17:00 | [Día de sacrificio](https://33.ficvaldivia.cl/ficha?recordId=wkQNCjk7ibYNUL) | Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Entrada Liberada |
 | 17:00 | [La hora de irse](https://33.ficvaldivia.cl/ficha?recordId=RcxQ0FSbiHVkc0) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
-| 17:00 | [Lima](https://33.ficvaldivia.cl/ficha?recordId=L3j5vIAH21q7dZ) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
+| 17:00 | [Lima](https://33.ficvaldivia.cl/ficha?recordId=L3j5vIAH21q7dZ) | Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Entrada Liberada |
 | 17:00 | [Partículas Inconmensurables](https://33.ficvaldivia.cl/ficha?recordId=V8DbFrdrmbpxlB) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
 | 17:00 | [Toda la Quietud Posible](https://33.ficvaldivia.cl/ficha?recordId=eEi3AyrvBq6Zt5) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
-| 17:00 | [Una Fortaleza](https://33.ficvaldivia.cl/ficha?recordId=rShSFAWvdVX36O) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
+| 17:00 | [Una Fortaleza](https://33.ficvaldivia.cl/ficha?recordId=rShSFAWvdVX36O) | Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Entrada Liberada |
 
 ### Competencia Largometraje
 
@@ -722,9 +722,9 @@ Fuente: https://33.ficvaldivia.cl/programacion
 | Hora | Película | Sala | Notas |
 |---|---|---|---|
 | 11:15 | [La Gradiva](https://33.ficvaldivia.cl/ficha?recordId=DQ5uoX4FFP7YD3) | Teatro Cervantes | Gala · Entrada Liberada |
-| 15:00 | [Se eu fosse vivo... vivia](https://33.ficvaldivia.cl/ficha?recordId=oWlrbiGRdN85of) | Aula Magna UACh / Felix Martinez UACh | Gala · Con Entrada o Acreditación |
+| 15:00 | [Se eu fosse vivo... vivia](https://33.ficvaldivia.cl/ficha?recordId=oWlrbiGRdN85of) | Felix Martinez UACh | Gala · Con Entrada o Acreditación |
 | 17:15 | [A veces me entra tristeza, otras veces rebelión](https://33.ficvaldivia.cl/ficha?recordId=TBHWa8Z8WIAdSl) | Cine Club UACh | Gala · Con Entrada o Acreditación |
-| 20:00 | [Lo demás es ruido](https://33.ficvaldivia.cl/ficha?recordId=YtwjDyIJ2Qj4Dw) | Aula Magna UACh / Cine Club UACh | Gala · Con Entrada o Acreditación |
+| 20:00 | [Lo demás es ruido](https://33.ficvaldivia.cl/ficha?recordId=YtwjDyIJ2Qj4Dw) | Cine Club UACh | Gala · Con Entrada o Acreditación |
 | 22:00 | [Elegy for the Forgotten, on an Endless War](https://33.ficvaldivia.cl/ficha?recordId=Sx3qladAWf2lj7) | Felix Martinez UACh | Gala · Con Entrada o Acreditación |
 | 22:00 | [Ghazal-e Sorkh](https://33.ficvaldivia.cl/ficha?recordId=VoeZr2JY9zAyZb) | Felix Martinez UACh | Gala · Con Entrada o Acreditación |
 | 22:00 | [Masao Adachi Takes a Passport Photo](https://33.ficvaldivia.cl/ficha?recordId=Y5jZiwVLA6AmHe) | Felix Martinez UACh | Gala · Con Entrada o Acreditación |
@@ -830,7 +830,7 @@ Fuente: https://33.ficvaldivia.cl/programacion
 | 11:00 | [La tierra invisible](https://33.ficvaldivia.cl/ficha?recordId=y7pXCazXozdQX9) | Aula Magna UACh / Felix Martinez UACh | Gala Chilena · Con Entrada o Acreditación |
 | 14:30 | [La perra](https://33.ficvaldivia.cl/ficha?recordId=bKiVpr3P7Cv2Xd) | Aula Magna UACh | Gala Chilena · Con Entrada o Acreditación |
 | 15:00 | [Cocaina Negra](https://33.ficvaldivia.cl/ficha?recordId=UNzH69f9lgH3cW) | Aula Magna UACh / Felix Martinez UACh | Gala Chilena · Con Entrada o Acreditación |
-| 17:15 | [Il Cileno](https://33.ficvaldivia.cl/ficha?recordId=YzJZp2CrfTU1Cc) | Aula Magna UACh / Felix Martinez UACh | Gala Chilena · Con Entrada o Acreditación |
+| 17:15 | [Il Cileno](https://33.ficvaldivia.cl/ficha?recordId=YzJZp2CrfTU1Cc) | Felix Martinez UACh | Gala Chilena · Con Entrada o Acreditación |
 
 ### Muestra de Cine Chileno
 
@@ -838,7 +838,7 @@ Fuente: https://33.ficvaldivia.cl/programacion
 |---|---|---|---|
 | 12:45 | [Gacela Gazette](https://33.ficvaldivia.cl/ficha?recordId=W5mp8UrsQMznaw) | Aula Magna UACh / Felix Martinez UACh | Animamundi · Con Entrada o Acreditación |
 | 12:45 | [La Baraja de Myriam](https://33.ficvaldivia.cl/ficha?recordId=L0DIbAyFU7dwwb) | Aula Magna UACh / Felix Martinez UACh | Animamundi · Con Entrada o Acreditación |
-| 12:45 | [Noize](https://33.ficvaldivia.cl/ficha?recordId=O8rAt33p6tRBTG) | Aula Magna UACh / Felix Martinez UACh | Animamundi · Con Entrada o Acreditación |
+| 12:45 | [Noize](https://33.ficvaldivia.cl/ficha?recordId=O8rAt33p6tRBTG) | Felix Martinez UACh | Animamundi · Con Entrada o Acreditación |
 | 12:45 | [Ánima Del Amanecer](https://33.ficvaldivia.cl/ficha?recordId=i4jS2bKI7ex6bF) | Aula Magna UACh / Felix Martinez UACh | Animamundi · Con Entrada o Acreditación |
 
 ### Nuevas Narrativas
@@ -869,4 +869,4 @@ Fuente: https://33.ficvaldivia.cl/programacion
 | Hora | Película | Sala | Notas |
 |---|---|---|---|
 | 12:00 | [Papaya](https://33.ficvaldivia.cl/ficha?recordId=D7NCbUpL5rcGOA) | Teatro Cervantes | Largometrajes Familiares · Entrada Liberada |
-| 15:00 | [Mi amigo el sol](https://33.ficvaldivia.cl/ficha?recordId=Ih4dOWiG2kbROO) | Aula Magna UACh / Teatro Cervantes | Largometrajes Familiares · Entrada Liberada |
+| 15:00 | [Mi amigo el sol](https://33.ficvaldivia.cl/ficha?recordId=Ih4dOWiG2kbROO) | Teatro Cervantes | Largometrajes Familiares · Entrada Liberada |
