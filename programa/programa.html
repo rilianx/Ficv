@@ -71,7 +71,12 @@ section.sec h2 i{font-style:normal;font-size:10.5px;padding:1px 7px;border-radiu
 .mark{grid-column:3;grid-row:1 / span 2;align-self:center;width:38px;height:38px;border-radius:50%;border:1.5px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer;font-size:18px;line-height:1;display:grid;place-items:center}
 .mark:hover{border-color:var(--pick);color:var(--pick)}
 .mark[aria-pressed="true"]{background:var(--pick);border-color:var(--pick);color:var(--bg)}
-.ses{flex-basis:100%;font-size:12.5px}
+.films{flex-basis:100%;margin:2px 0 0;padding-left:18px;color:var(--ink);font-size:13.5px}
+.films li{margin:1px 0}
+.films a{color:inherit;text-decoration:none}
+.films a:hover{text-decoration:underline;text-decoration-color:var(--river)}
+.films span{color:var(--muted);font-size:12.5px}
+.it .cortos{color:var(--ink);font-size:11px}
 .empty{padding:40px 0;text-align:center;color:var(--muted)}
 
 /* calendario: días en columnas, horas en filas */
@@ -145,6 +150,24 @@ F.forEach(f=>{
   f.dur=f.duracion||DUR; f.est=!f.duracion;
   f.otros=f.sesion&&f.sesion.trim()!==f.titulo.trim()?f.sesion.trim():"";
 });
+// Sesión = misma sala, día y hora (p. ej. un programa de cortos): se muestra y se marca como un solo bloque
+const S=[], porClave=new Map();
+for(const f of F){
+  const k=f.dia+"|"+f.hora+"|"+f.sala;
+  let s=porClave.get(k);
+  if(!s){s={key:k,dia:f.dia,hora:f.hora,min:f.min,sala:f.sala,salas:f.salas,films:[]};porClave.set(k,s);S.push(s);}
+  s.films.push(f); f.ses=s;
+}
+for(const s of S){
+  s.films.sort((a,b)=>cmp(a.titulo,b.titulo));
+  const c={}; s.films.forEach(f=>c[f.sec]=(c[f.sec]||0)+1);
+  s.sec=Object.keys(c).sort((a,b)=>c[b]-c[a])[0]; s.comp=s.films.some(f=>f.comp);
+  s.dur=Math.max(...s.films.map(f=>f.dur)); s.est=s.films.every(f=>f.est);
+  s.acceso=[...new Set(s.films.flatMap(f=>f.acceso?f.acceso.split(" / "):[]))];
+  s.estado=s.films.map(f=>f.estado).find(e=>e&&e!=="Confirmada")||"";
+  s.sub=[...new Set(s.films.map(f=>f.subseccion).filter(x=>x&&x!==s.sec&&!s.comp))];
+  s.n=s.films.length;
+}
 const dias=[...new Set(F.map(f=>f.dia))].sort();
 const lbl=d=>{const x=new Date(d+"T12:00:00");return {w:DN[x.getDay()],n:x.getDate()}};
 const orden=s=>s.startsWith("Competencia")?0:s.startsWith("Gala")?1:2;
@@ -152,7 +175,7 @@ const secs=[...new Set(F.map(f=>f.sec))].sort((a,b)=>orden(a)-orden(b)||cmp(a,b)
 const salas=[...new Set(F.flatMap(f=>f.salas))].sort(cmp);
 $("sec").innerHTML='<option value="">Todas las secciones</option><option value="*comp">Todas las competencias</option>'+secs.map(s=>`<option>${esc(s)}</option>`).join("");
 $("sala").innerHTML='<option value="">Todas las salas</option>'+salas.map(s=>`<option>${esc(s)}</option>`).join("");
-$("tot").textContent=`${new Set(F.map(f=>f.id)).size} películas · ${F.length} funciones`;
+$("tot").textContent=`${new Set(F.map(f=>f.id)).size} películas · ${S.length} funciones`;
 
 let vista="list", dia="todos";
 try{const h=location.hash.slice(1);if(h==="calendario")vista="cal";else if(dias.includes(h))dia=h;}catch(e){}
@@ -198,81 +221,92 @@ async function flush(){
   },()=>{ref=null;setSync("Tus marcadas se guardan en este navegador.");});
 })();
 
-// película → función elegida (la primera marcada, si hay varias)
-function elegidas(){const m=new Map();for(const f of F)if(picks.has(f.key)&&!m.has(f.id))m.set(f.id,f);return m}
-const corto=f=>{const l=lbl(f.dia);return l.w.slice(0,3)+" "+l.n+" · "+f.hora};
-function toggle(k){picks.has(k)?picks.delete(k):picks.add(k);guardar();render();}
+// sesión marcada si alguna de sus películas lo está (al marcar se marcan todas)
+const on=s=>s.films.some(f=>picks.has(f.key));
+// película → sesión donde quedó elegida
+function elegidas(){const m=new Map();for(const s of S)if(on(s))for(const f of s.films)if(!m.has(f.id))m.set(f.id,s);return m}
+const corto=s=>{const l=lbl(s.dia);return l.w.slice(0,3)+" "+l.n+" · "+s.hora};
+function toggle(k){const s=porClave.get(k);if(!s)return;const v=on(s);
+  s.films.forEach(f=>v?picks.delete(f.key):picks.add(f.key));guardar();render();}
+// películas de la sesión ya elegidas en otra
+const yaEn=(s,el)=>s.films.map(f=>el.get(f.id)).filter(x=>x&&x!==s);
 
-// ---------- choques entre marcadas ----------
+// ---------- choques entre sesiones marcadas ----------
 function choques(){
-  const m=F.filter(f=>picks.has(f.key)), c=new Set();
+  const c=new Set();
   for(const d of dias){
-    const x=m.filter(f=>f.dia===d).sort((a,b)=>a.min-b.min);
-    for(let i=0;i<x.length;i++)for(let j=i+1;j<x.length&&x[j].min<x[i].min+x[i].dur;j++){
-      // misma sala y misma hora = mismo programa de cortos, no es choque
-      if(x[j].min===x[i].min&&x[j].sala===x[i].sala) continue;
-      c.add(x[i].key);c.add(x[j].key);
-    }
+    const x=S.filter(s=>s.dia===d&&on(s)).sort((a,b)=>a.min-b.min);
+    for(let i=0;i<x.length;i++)for(let j=i+1;j<x.length&&x[j].min<x[i].min+x[i].dur;j++){c.add(x[i].key);c.add(x[j].key);}
   }
   return c;
 }
 
 function filtradas(){
-  const q=$("q").value.trim().toLowerCase(),s=$("sec").value,sa=$("sala").value,li=$("libre").checked,so=$("solo").checked;
+  const q=$("q").value.trim().toLowerCase(),sc=$("sec").value,sa=$("sala").value,li=$("libre").checked,so=$("solo").checked;
   const oc=$("ocultar").checked, el=elegidas();
-  return F.filter(f=>!(oc&&el.has(f.id)&&!picks.has(f.key))&&(!s||(s==="*comp"?f.comp:f.sec===s))&&(!sa||f.salas.includes(sa))&&(!li||/liberada/i.test(f.acceso))
-    &&(!so||picks.has(f.key))&&(!q||[f.titulo,f.direccion,f.pais].join(" ").toLowerCase().includes(q)));
+  const pasa=f=>(!sc||(sc==="*comp"?f.comp:f.sec===sc))&&(!li||/liberada/i.test(f.acceso))
+    &&(!q||[f.titulo,f.direccion,f.pais].join(" ").toLowerCase().includes(q));
+  return S.filter(s=>{
+    const m=on(s);
+    if(so&&!m) return false;
+    if(oc&&!m&&s.films.every(f=>el.has(f.id))) return false;   // todo lo de esta sesión ya está elegido en otra
+    return (!sa||s.salas.includes(sa))&&s.films.some(pasa);
+  });
 }
 function pintarDias(lista){
-  const n=d=>lista.filter(f=>d==="todos"||f.dia===d).length;
+  const n=d=>lista.filter(s=>d==="todos"||s.dia===d).length;
   $("days").innerHTML=[["todos","Todos","★"],...dias.map(d=>{const l=lbl(d);return [d,l.w.slice(0,3),l.n]})]
     .map(([d,w,num])=>`<button type="button" data-d="${d}" aria-pressed="${d===dia}"><small>${w}</small><b>${num}</b><em>${n(d)}</em></button>`).join("");
 }
+const titulos=s=>s.n===1?s.films[0].titulo:`Sesión de ${s.n} películas`;
 
 // ---------- vista lista ----------
-function fila(f,cl,el){
-  const on=picks.has(f.key), ya=!on&&el.get(f.id);
-  const pills=[!f.comp&&f.subseccion&&f.subseccion!==f.sec?`<span class="pill">${esc(f.subseccion)}</span>`:"",
-    ...(f.acceso?f.acceso.split(" / "):[]).map(a=>`<span class="pill ${/liberada/i.test(a)?"free":""}">${esc(a)}</span>`),
-    ya?`<span class="pill">Ya elegida: ${esc(corto(ya))}</span>`:"",
-    f.estado&&f.estado!=="Confirmada"?`<span class="pill clash">${esc(f.estado)}</span>`:"",
-    cl.has(f.key)?'<span class="pill clash">Choca con otra marcada</span>':""].join("");
-  const quien=[f.direccion,f.pais].filter(Boolean).join(" · ");
-  return `<div class="row${on?" on":""}${ya?" ya":""}"><span class="t">${esc(f.hora)}</span>
-    <span class="ttl"><a href="${esc(f.url)}" target="_blank" rel="noopener">${esc(f.titulo)}</a></span>
-    <button type="button" class="mark" data-k="${esc(f.key)}" aria-pressed="${on}" aria-label="${on?"Quitar de":"Agregar a"} mi calendario: ${esc(f.titulo)}, ${esc(f.hora)}">${on?"✓":"+"}</button>
-    <span class="sub">${quien?`<span>${esc(quien)}</span>`:""}<span class="venue">${esc(f.sala)}</span><span>${f.est?"":f.dur+" min"}</span>${pills}${f.otros?`<span class="ses">Sesión: ${esc(f.otros)}</span>`:""}</span></div>`;
+function fila(s,cl,el){
+  const m=on(s), ya=!m?yaEn(s,el):[];
+  const pills=[...s.sub.map(x=>`<span class="pill">${esc(x)}</span>`),
+    ...s.acceso.map(a=>`<span class="pill ${/liberada/i.test(a)?"free":""}">${esc(a)}</span>`),
+    ya.length?`<span class="pill">${s.n===1?"Ya elegida: "+esc(corto(ya[0])):ya.length+" de "+s.n+" ya elegidas en otra función"}</span>`:"",
+    s.estado?`<span class="pill clash">${esc(s.estado)}</span>`:"",
+    cl.has(s.key)?'<span class="pill clash">Choca con otra marcada</span>':""].join("");
+  const f0=s.films[0], quien=s.n===1?[f0.direccion,f0.pais].filter(Boolean).join(" · "):"";
+  const titulo=s.n===1?`<a href="${esc(f0.url)}" target="_blank" rel="noopener">${esc(f0.titulo)}</a>`:esc(titulos(s));
+  const lista=s.n>1?`<ul class="films">${s.films.map(f=>`<li><a href="${esc(f.url)}" target="_blank" rel="noopener">${esc(f.titulo)}</a>${[f.direccion,f.pais].filter(Boolean).length?` <span>${esc([f.direccion,f.pais].filter(Boolean).join(" · "))}</span>`:""}</li>`).join("")}</ul>`:"";
+  return `<div class="row${m?" on":""}${ya.length?" ya":""}"><span class="t">${esc(s.hora)}</span>
+    <span class="ttl">${titulo}</span>
+    <button type="button" class="mark" data-k="${esc(s.key)}" aria-pressed="${m}" aria-label="${m?"Quitar de":"Agregar a"} mi calendario: ${esc(titulos(s))}, ${esc(s.hora)}">${m?"✓":"+"}</button>
+    <span class="sub">${quien?`<span>${esc(quien)}</span>`:""}<span class="venue">${esc(s.sala)}</span><span>${s.est?"":s.dur+" min"}</span>${pills}${lista}</span></div>`;
 }
 function pintarLista(ver,cl){
   let h="", el=elegidas();
   for(const d of (dia==="todos"?dias:[dia])){
-    const del=ver.filter(f=>f.dia===d); if(!del.length) continue;
+    const del=ver.filter(s=>s.dia===d); if(!del.length) continue;
     if(dia==="todos"){const l=lbl(d);h+=`<h2 class="dayhead">${l.w} ${l.n} de octubre</h2>`;}
-    const g={}; del.forEach(f=>(g[f.sec]=g[f.sec]||[]).push(f));
-    for(const s of secs.filter(s=>g[s])){
-      const fs=g[s].sort((a,b)=>a.min-b.min||cmp(a.titulo,b.titulo));
-      h+=`<section class="sec"><h2>${s.startsWith("Competencia")?"<i>En competencia</i>":""}${esc(s)} <span>${fs.length}</span></h2>${fs.map(f=>fila(f,cl,el)).join("")}</section>`;
+    const g={}; del.forEach(s=>(g[s.sec]=g[s.sec]||[]).push(s));
+    for(const sc of secs.filter(x=>g[x])){
+      const ss=g[sc].sort((a,b)=>a.min-b.min||cmp(titulos(a),titulos(b)));
+      h+=`<section class="sec"><h2>${sc.startsWith("Competencia")?"<i>En competencia</i>":""}${esc(sc)} <span>${ss.length}</span></h2>${ss.map(s=>fila(s,cl,el)).join("")}</section>`;
     }
   }
   return h||'<p class="empty">No hay funciones con estos filtros. Prueba con otro día o quita algún filtro.</p>';
 }
 
 // ---------- vista calendario: días en columnas, horas en filas ----------
-const finH=f=>{const m=f.min+f.dur;return String(Math.floor(m/60)%24).padStart(2,"0")+":"+String(m%60).padStart(2,"0")};
+const finH=s=>{const m=s.min+s.dur;return String(Math.floor(m/60)%24).padStart(2,"0")+":"+String(m%60).padStart(2,"0")};
 function pintarCal(ver,cl){
-  const vd=dia!=="todos"?[dia]:$("solo").checked?dias.filter(d=>ver.some(f=>f.dia===d)):dias, el=elegidas();
+  const vd=dia!=="todos"?[dia]:$("solo").checked?dias.filter(d=>ver.some(s=>s.dia===d)):dias, el=elegidas();
   if(!ver.length) return `<p class="empty">No hay funciones con estos filtros. ${picks.size?"Quita algún filtro o elige otro día.":"Marca funciones con + en la vista Programa, o desmarca «Solo mis marcadas» para elegir aquí."}</p>`;
-  const horas=[...new Set(ver.map(f=>Math.floor(f.min/60)))].sort((a,b)=>a-b);
+  const horas=[...new Set(ver.map(s=>Math.floor(s.min/60)))].sort((a,b)=>a-b);
   let h=`<div class="wk" style="--nd:${vd.length}"><table><thead><tr><th class="h"></th>`;
-  for(const d of vd){const l=lbl(d),n=ver.filter(f=>f.dia===d).length;h+=`<th>${l.w} ${l.n}<small>${n} ${n===1?"función":"funciones"}</small></th>`;}
+  for(const d of vd){const l=lbl(d),n=ver.filter(s=>s.dia===d).length;h+=`<th>${l.w} ${l.n}<small>${n} ${n===1?"función":"funciones"}</small></th>`;}
   h+="</tr></thead><tbody>";
   for(const hr of horas){
     h+=`<tr><th class="h" scope="row">${hr}:00</th>`;
     for(const d of vd){
-      const fs=ver.filter(f=>f.dia===d&&Math.floor(f.min/60)===hr).sort((a,b)=>a.min-b.min||cmp(a.titulo,b.titulo));
-      h+="<td>"+fs.map(f=>{const on=picks.has(f.key),ya=!on&&el.has(f.id);
-        return `<button type="button" class="it${on?" on":""}${ya?" ya":""}${cl.has(f.key)?" clash":""}" data-k="${esc(f.key)}" aria-pressed="${on}"
-          title="${esc((on?"Quitar":"Marcar")+": "+f.titulo+(f.otros?" · Sesión: "+f.otros:""))}"><b>${esc(f.hora)}–${finH(f)}${f.est?"*":""}</b><strong>${esc(f.titulo)}</strong><span>${esc(f.sec)}</span><span>${esc(f.sala)}</span></button>`;}).join("")+"</td>";
+      const ss=ver.filter(s=>s.dia===d&&Math.floor(s.min/60)===hr).sort((a,b)=>a.min-b.min||cmp(titulos(a),titulos(b)));
+      h+="<td>"+ss.map(s=>{const m=on(s),ya=!m&&yaEn(s,el).length;
+        const nombres=s.films.map(f=>f.titulo).join(" · ");
+        return `<button type="button" class="it${m?" on":""}${ya?" ya":""}${cl.has(s.key)?" clash":""}" data-k="${esc(s.key)}" aria-pressed="${m}"
+          title="${esc((m?"Quitar":"Marcar")+": "+nombres)}"><b>${esc(s.hora)}–${finH(s)}${s.est?"*":""}</b><strong>${esc(titulos(s))}</strong>${s.n>1?`<span class="cortos">${esc(nombres)}</span>`:""}<span>${esc(s.sec)}</span><span>${esc(s.sala)}</span></button>`;}).join("")+"</td>";
     }
     h+="</tr>";
   }
@@ -283,10 +317,11 @@ function render(){
   const cal=vista==="cal";
   document.body.classList.toggle("cal",cal);
   $("v-list").setAttribute("aria-pressed",!cal);$("v-cal").setAttribute("aria-pressed",cal);
-  $("npick").hidden=!picks.size;$("npick").textContent=picks.size;
+  const nm=S.filter(on).length;
+  $("npick").hidden=!nm;$("npick").textContent=nm;
   const lista=filtradas(); pintarDias(lista);
-  const ver=lista.filter(f=>dia==="todos"||f.dia===dia), cl=choques();
-  $("count").textContent=`${ver.length} funciones · ${picks.size} marcadas`;
+  const ver=lista.filter(s=>dia==="todos"||s.dia===dia), cl=choques();
+  $("count").textContent=`${ver.length} funciones · ${nm} marcadas`;
   $("clashes").innerHTML=cl.size?`<span class="warn">${cl.size} marcadas chocan en horario</span>`:"";
   const sx=cal&&document.querySelector(".wk")?document.querySelector(".wk").scrollLeft:0;
   $("m").innerHTML=cal?pintarCal(ver,cl):pintarLista(ver,cl);
