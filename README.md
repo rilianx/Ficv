@@ -10,7 +10,7 @@ python ficv_programa.py --detalles   # visita cada ficha para precisar la secci�
 python ficv_programa.py --ver --dump # ver el navegador y guardar el HTML (depuración)
 ```
 
-Abre `salida/programa.html`: pestañas por día, filtro por sección y buscador.
+Abre `salida/programa.html`: pestañas por día, una sección por competencia, filtros, botón **+** para marcar funciones y vista **Mi calendario** (días y horas a lo ancho, salas en filas, con aviso de choques). Las marcadas se guardan en el navegador.
 
 El script usa dos estrategias: intercepta la API JSON si la web carga la programación así,
 y si no, lee el DOM haciendo clic en cada pestaña de día y detectando las funciones por su hora.

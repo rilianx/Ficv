@@ -334,7 +334,7 @@ def generar(funciones, out):
     prog = agrupar(funciones)
     (out / "programa.json").write_text(json.dumps(funciones, ensure_ascii=False, indent=1), encoding="utf-8")
     escribir_md(prog, out / "programa.md")
-    escribir_html(prog, out / "programa.html")
+    escribir_html(funciones, out / "programa.html")
     print(f"\n{len(funciones)} funciones en {len(prog)} días:", file=sys.stderr)
     for dia, secs in prog.items():
         print(f"  {nombre_dia(dia)}: " + ", ".join(f"{s} ({len(v)})" for s, v in secs.items()), file=sys.stderr)
@@ -515,7 +515,10 @@ def deduplicar(funciones):
 def agrupar(funciones):
     prog = defaultdict(lambda: defaultdict(list))
     for f in funciones:
-        prog[f["dia"] or "Sin fecha"][f["seccion"] or "Sin sección"].append(f)
+        sec = f["seccion"] or "Sin sección"
+        if sec == "En Competencia" and f.get("subseccion"):  # una sección por competencia
+            sec = re.sub(r"^Selección Oficial ", "Competencia ", f["subseccion"])
+        prog[f["dia"] or "Sin fecha"][sec].append(f)
     ordenado = OrderedDict()
     for dia in sorted(prog):
         ordenado[dia] = OrderedDict(
@@ -550,57 +553,21 @@ def escribir_md(prog, ruta):
     ruta.write_text("\n".join(l), encoding="utf-8")
 
 
-def escribir_html(prog, ruta):
-    datos = json.dumps(prog, ensure_ascii=False)
-    nombres = json.dumps({d: nombre_dia(d) for d in prog}, ensure_ascii=False)
-    ruta.write_text(f"""<!doctype html>
-<html lang="es"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Programa FICValdivia</title>
-<style>
-:root{{--bg:#fafaf7;--fg:#1b1b1b;--mut:#666;--acc:#b3261e;--card:#fff;--line:#e4e2dc}}
-@media (prefers-color-scheme:dark){{:root{{--bg:#151515;--fg:#eee;--mut:#9a9a9a;--acc:#ff7a6e;--card:#1f1f1f;--line:#333}}}}
-*{{box-sizing:border-box}} body{{margin:0;font:15px/1.45 system-ui,sans-serif;background:var(--bg);color:var(--fg)}}
-header{{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);padding:12px 16px;z-index:1}}
-h1{{font-size:18px;margin:0 0 8px}} .tabs{{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px}}
-.tabs button{{border:1px solid var(--line);background:var(--card);color:var(--fg);border-radius:999px;padding:6px 12px;white-space:nowrap;cursor:pointer}}
-.tabs button.on{{background:var(--acc);border-color:var(--acc);color:#fff}}
-.ctl{{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}} select,input{{padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--fg);flex:1;min-width:140px}}
-main{{max-width:900px;margin:0 auto;padding:8px 16px 40px}} h2{{font-size:16px;color:var(--acc);margin:22px 0 6px}}
-.f{{display:grid;grid-template-columns:56px 1fr;gap:2px 12px;padding:8px 0;border-bottom:1px solid var(--line)}}
-.h{{font-variant-numeric:tabular-nums;font-weight:600}} .t a{{color:inherit}} .s{{grid-column:2;color:var(--mut);font-size:13px}}
-.vacio{{color:var(--mut);padding:30px 0;text-align:center}}
-</style></head><body>
-<header><h1>33° FICValdivia · Programa</h1><div class="tabs" id="tabs"></div>
-<div class="ctl"><select id="sec"></select><input id="q" placeholder="Buscar película, dirección, país o sala…"></div></header>
-<main id="m"></main>
-<script>
-const P={datos}, N={nombres}; const dias=Object.keys(P); let dia=dias[0];
-const tabs=document.getElementById('tabs'), sel=document.getElementById('sec'), q=document.getElementById('q'), m=document.getElementById('m');
-const secs=[...new Set(dias.flatMap(d=>Object.keys(P[d])))].sort();
-sel.innerHTML='<option value="">Todas las secciones</option>'+secs.map(s=>`<option>${{s}}</option>`).join('');
-const esc=s=>(s||'').replace(/[&<>"]/g,c=>({{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}}[c]));
-function pintar(){{
-  tabs.innerHTML=['Todos',...dias].map(d=>`<button class="${{d===dia?'on':''}}" data-d="${{d}}">${{d==='Todos'?'Todos':N[d]}}</button>`).join('');
-  const texto=q.value.toLowerCase(), s=sel.value; let html='';
-  for(const d of (dia==='Todos'?dias:[dia])){{
-    let bloque='';
-    for(const [sec,fs] of Object.entries(P[d])){{
-      if(s&&sec!==s) continue;
-      const v=fs.filter(f=>!texto||(f.titulo+' '+f.sala+' '+(f.direccion||'')+' '+(f.pais||'')).toLowerCase().includes(texto));
-      if(!v.length) continue;
-      bloque+=`<h2>${{esc(sec)}}</h2>`+v.map(f=>`<div class="f"><span class="h">${{esc(f.hora)}}</span>
-        <span class="t">${{f.url?`<a href="${{esc(f.url)}}" target="_blank">${{esc(f.titulo)}}</a>`:esc(f.titulo)}}</span>
-        <span class="s">${{esc([[f.direccion,f.pais].filter(Boolean).join(', '),f.sala,f.subseccion,f.acceso].filter(Boolean).join(' · '))}}</span></div>`).join('');
-    }}
-    if(bloque) html+=(dia==='Todos'?`<h1 style="margin-top:28px">${{esc(N[d])}}</h1>`:'')+bloque;
-  }}
-  m.innerHTML=html||'<p class="vacio">Sin funciones para este filtro.</p>';
-}}
-tabs.onclick=e=>{{if(e.target.dataset.d){{dia=e.target.dataset.d;pintar();}}}};
-sel.onchange=pintar; q.oninput=pintar; pintar();
-</script></body></html>""", encoding="utf-8")
-
+def escribir_html(funciones, ruta):
+    """Página navegable (plantilla.html): lista por día y sección, y calendario con marcadas."""
+    import datetime
+    claves = ["dia", "hora", "titulo", "sala", "seccion", "subseccion", "acceso", "direccion", "pais", "url", "id"]
+    datos = [{k: f.get(k, "") for k in claves} for f in funciones if f.get("dia") and f.get("hora")]
+    plantilla = (Path(__file__).parent / "plantilla.html").read_text(encoding="utf-8")
+    hoy = datetime.date.today()
+    meses = ["", "enero", "febrero", "marzo", "abril", "mayo", "junio", "julio",
+             "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
+    html_ = (plantilla
+             .replace("__DATA__", json.dumps(datos, ensure_ascii=False).replace("</", "<\\/"))
+             .replace("__FECHA__", f"{hoy.day} de {meses[hoy.month]} de {hoy.year}"))
+    ruta.write_text("<!doctype html>\n<meta charset=\"utf-8\">\n"
+                    "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n" + html_,
+                    encoding="utf-8")
 
 # --------------------------------------------------------------------------
 

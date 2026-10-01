@@ -1,0 +1,299 @@
+<title>Programa 33° FICValdivia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: sticky control bar over two views — a time-sorted list grouped by section, and a timeline (days × hours across, venues down) */
+:root{
+  --bg:#f3f5f3; --surface:#ffffff; --ink:#18221f; --muted:#5d6b66; --line:#d9e0dc; --grid:#e8edea;
+  --river:#0f5c55; --river-soft:#d7ebe7; --free:#7a5a00; --free-bg:#fbefc8;
+  --pick:#c2410c; --pick-soft:#fde3d3; --clash:#b91c1c;
+  --f-display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body:"Atkinson Hyperlegible", system-ui, sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1513; --surface:#161e1b; --ink:#e4ebe8; --muted:#93a39d; --line:#26322e; --grid:#1d2724;
+  --river:#5ec4b6; --river-soft:#173a35; --free:#f1cf6b; --free-bg:#3a3014;
+  --pick:#fb923c; --pick-soft:#4a2511; --clash:#f87171; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1513; --surface:#161e1b; --ink:#e4ebe8; --muted:#93a39d; --line:#26322e; --grid:#1d2724;
+  --river:#5ec4b6; --river-soft:#173a35; --free:#f1cf6b; --free-bg:#3a3014;
+  --pick:#fb923c; --pick-soft:#4a2511; --clash:#f87171; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.45 var(--f-body);padding-inline:16px;padding-block:0 48px}
+.wrap{max-width:920px;margin:0 auto}
+body.cal .wrap{max-width:none}
+header.top{padding-block:24px 10px;display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 20px}
+h1{font:700 clamp(26px,5vw,38px)/1.05 var(--f-display);margin:0;letter-spacing:-.01em;text-wrap:balance}
+h1 span{color:var(--river)}
+.meta{color:var(--muted);font-size:13px}
+.views{display:flex;gap:4px;padding:3px;background:var(--surface);border:1px solid var(--line);border-radius:10px;width:max-content;max-width:100%}
+.views button{font:700 14px var(--f-body);border:0;background:none;color:var(--muted);padding:7px 14px;border-radius:7px;cursor:pointer}
+.views button[aria-pressed="true"]{background:var(--river);color:var(--bg)}
+.views .n{display:inline-block;min-width:20px;margin-left:6px;padding:0 6px;border-radius:999px;background:var(--pick);color:var(--bg);font-size:12px}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px;border-bottom:1px solid var(--line);display:grid;gap:10px}
+.days{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.days button{flex:0 0 auto;display:grid;justify-items:center;min-width:58px;padding:6px 10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;cursor:pointer;font:inherit}
+.days button b{font:700 20px/1 var(--f-display)}
+.days button small{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.days button em{font-style:normal;font-size:11px;color:var(--muted)}
+.days button[aria-pressed="true"]{background:var(--river);border-color:var(--river);color:var(--bg)}
+.days button[aria-pressed="true"] small,.days button[aria-pressed="true"] em{color:var(--bg);opacity:.85}
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.filters select,.filters input[type=search]{font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);flex:1 1 170px;min-width:0}
+.filters label{display:flex;align-items:center;gap:6px;font-size:14px;color:var(--muted);white-space:nowrap}
+button:focus-visible,select:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--river);outline-offset:2px}
+.status{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--muted)}
+.status .warn{color:var(--clash);font-weight:700}
+
+/* list */
+section.sec{margin-top:26px}
+section.sec h2{font:700 13px/1.25 var(--f-body);text-transform:uppercase;letter-spacing:.09em;color:var(--river);margin:0 0 4px;display:flex;gap:8px;align-items:baseline;text-wrap:balance}
+section.sec h2 span{color:var(--muted);font-weight:400;letter-spacing:0;text-transform:none}
+section.sec h2 i{font-style:normal;font-size:10.5px;padding:1px 7px;border-radius:999px;background:var(--river-soft);letter-spacing:.06em}
+.dayhead{font:700 22px/1.2 var(--f-display);margin:34px 0 0}
+.row{display:grid;grid-template-columns:62px minmax(0,1fr) auto;gap:2px 12px;padding-block:11px;border-bottom:1px solid var(--line);align-items:start}
+.row.on{background:linear-gradient(90deg,var(--pick-soft),transparent 70%)}
+.t{font:500 15px/1.4 var(--f-mono);font-variant-numeric:tabular-nums}
+.ttl{font-weight:700;font-size:16px;min-width:0}
+.ttl a{color:inherit;text-decoration:none}
+.ttl a:hover{text-decoration:underline;text-decoration-color:var(--river)}
+.sub{grid-column:2;color:var(--muted);font-size:13.5px;display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center;min-width:0}
+.venue{color:var(--ink)}
+.pill{font-size:11.5px;padding:1px 8px;border-radius:999px;background:var(--river-soft);color:var(--river);white-space:nowrap}
+.pill.free{background:var(--free-bg);color:var(--free)}
+.pill.clash{background:none;border:1px solid var(--clash);color:var(--clash)}
+.mark{grid-column:3;grid-row:1 / span 2;align-self:center;width:38px;height:38px;border-radius:50%;border:1.5px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer;font-size:18px;line-height:1;display:grid;place-items:center}
+.mark:hover{border-color:var(--pick);color:var(--pick)}
+.mark[aria-pressed="true"]{background:var(--pick);border-color:var(--pick);color:var(--bg)}
+.empty{padding:40px 0;text-align:center;color:var(--muted)}
+
+/* timeline */
+.tl{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface);margin-top:14px;position:relative}
+.tl-in{position:relative}
+.tl-head{display:flex;position:sticky;top:0;z-index:3;background:var(--surface);border-bottom:1px solid var(--line)}
+.corner{position:sticky;left:0;z-index:4;background:var(--surface);flex:0 0 var(--lw);border-right:1px solid var(--line)}
+.dcol{flex:0 0 auto;border-left:2px solid var(--line)}
+.dcol .dl{font:700 14px var(--f-display);padding:6px 8px 2px;position:sticky;left:var(--lw);width:max-content}
+.hours{position:relative;height:18px}
+.hours span{position:absolute;top:0;font:500 10.5px var(--f-mono);color:var(--muted);transform:translateX(3px)}
+.lane-row{display:flex;border-bottom:1px solid var(--line)}
+.lane-row:last-child{border-bottom:0}
+.rl{position:sticky;left:0;z-index:2;flex:0 0 var(--lw);background:var(--surface);border-right:1px solid var(--line);padding:8px 10px;font-size:12.5px;font-weight:700;line-height:1.25}
+.rl small{display:block;font-weight:400;color:var(--muted)}
+.track{position:relative;flex:0 0 auto}
+.track .g{position:absolute;top:0;bottom:0;width:1px;background:var(--grid)}
+.track .g.day{width:2px;background:var(--line)}
+.blk{position:absolute;height:var(--lh);border-radius:6px;padding:3px 6px;font-size:11.5px;line-height:1.2;overflow:hidden;cursor:pointer;border:1px solid var(--line);background:var(--bg);color:var(--muted);text-align:left;font-family:inherit}
+.blk b{font:500 10.5px var(--f-mono);display:block;color:inherit}
+.blk span{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.blk:hover{border-color:var(--pick);color:var(--ink)}
+.blk.on{background:var(--pick-soft);border-color:var(--pick);color:var(--ink);font-weight:700}
+.blk.on b{color:var(--pick)}
+.blk.clash{outline:2px solid var(--clash);outline-offset:-2px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12.5px;color:var(--muted);margin-top:10px}
+.legend i{display:inline-block;width:14px;height:10px;border-radius:3px;vertical-align:-1px;margin-right:5px;border:1px solid var(--line);background:var(--bg)}
+.legend i.on{background:var(--pick-soft);border-color:var(--pick)}
+.legend i.cl{outline:2px solid var(--clash);outline-offset:-2px}
+footer{margin-top:36px;font-size:12.5px;color:var(--muted);max-width:920px}
+footer a{color:var(--river)}
+@media (max-width:480px){.row{grid-template-columns:50px minmax(0,1fr) auto;gap:2px 10px}}
+@media (prefers-reduced-motion:no-preference){.mark,.blk{transition:background .15s,border-color .15s}}
+</style>
+<div class="wrap">
+  <header class="top">
+    <h1>33° <span>FICValdivia</span> · Programa</h1>
+    <div class="meta">12 al 18 de octubre de 2026 · <span id="tot"></span></div>
+  </header>
+  <div class="bar">
+    <div class="views" role="toolbar" aria-label="Vista">
+      <button type="button" id="v-list" aria-pressed="true">Programa</button>
+      <button type="button" id="v-cal" aria-pressed="false">Mi calendario<span class="n" id="npick" hidden></span></button>
+    </div>
+    <div class="days" id="days" role="toolbar" aria-label="Día"></div>
+    <div class="filters">
+      <select id="sec" aria-label="Sección"></select>
+      <select id="sala" aria-label="Sala"></select>
+      <input id="q" type="search" placeholder="Película, dirección o país" aria-label="Buscar">
+      <label><input id="libre" type="checkbox"> Solo entrada liberada</label>
+      <label id="lbl-solo"><input id="solo" type="checkbox"> Solo mis marcadas</label>
+    </div>
+    <div class="status"><span id="count"></span><span id="clashes"></span><span id="sync"></span></div>
+  </div>
+  <main id="m"></main>
+  <footer>Datos de <a href="https://33.ficvaldivia.cl/programacion">33.ficvaldivia.cl/programacion</a>, extraídos el __FECHA__. La web no publica la duración de cada película: en el calendario cada función ocupa 90 minutos estimados, y los choques se calculan con esa duración. Si una película se exhibe en dos salas, la web no indica cuál corresponde a cada función; esas funciones van en la fila "Sala por confirmar".</footer>
+</div>
+<script>
+const F=__DATA__;
+const DUR=90, H0=10, H1=24;           // franja visible por día y duración estimada
+const DN=["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"];
+const $=id=>document.getElementById(id);
+const esc=s=>(s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const cmp=(a,b)=>a.localeCompare(b,"es");
+
+// Cada competencia es su propia sección
+F.forEach(f=>{
+  f.key=f.id+"|"+f.dia+"|"+f.hora;
+  f.min=(+f.hora.slice(0,2))*60+(+f.hora.slice(3));
+  f.comp=f.seccion==="En Competencia";
+  f.sec=f.comp?(f.subseccion||"Competencia").replace(/^Selección Oficial /,"Competencia "):f.seccion;
+  f.salas=f.sala.split(" / ").filter(Boolean);
+});
+const dias=[...new Set(F.map(f=>f.dia))].sort();
+const lbl=d=>{const x=new Date(d+"T12:00:00");return {w:DN[x.getDay()],n:x.getDate()}};
+const secs=[...new Set(F.map(f=>f.sec))].sort((a,b)=>(a.startsWith("Competencia")?0:1)-(b.startsWith("Competencia")?0:1)||cmp(a,b));
+const salas=[...new Set(F.flatMap(f=>f.salas))].sort(cmp);
+$("sec").innerHTML='<option value="">Todas las secciones</option><option value="*comp">Todas las competencias</option>'+secs.map(s=>`<option>${esc(s)}</option>`).join("");
+$("sala").innerHTML='<option value="">Todas las salas</option>'+salas.map(s=>`<option>${esc(s)}</option>`).join("");
+$("tot").textContent=`${new Set(F.map(f=>f.id)).size} películas · ${F.length} funciones`;
+
+let vista="list", dia="todos";
+try{const h=location.hash.slice(1);if(h==="calendario")vista="cal";else if(dias.includes(h))dia=h;}catch(e){}
+
+// ---------- marcadas: base de datos del artifact (privada por persona) o este navegador ----------
+const LS="ficv33-marcadas";
+let picks=new Set();
+try{picks=new Set(JSON.parse(localStorage.getItem(LS)||"[]"))}catch(e){}
+let ref=null, writing=false, dirty=false, timer=null;
+function setSync(t){$("sync").textContent=t}
+setSync("Tus marcadas se guardan en este navegador.");
+function guardar(){
+  try{localStorage.setItem(LS,JSON.stringify([...picks]))}catch(e){}
+  if(!ref) return;
+  dirty=true; clearTimeout(timer); timer=setTimeout(flush,700);
+}
+async function flush(){
+  if(!ref||writing||!dirty) return;
+  writing=true; dirty=false;
+  try{await ref.set({ids:[...picks]}); setSync("Tus marcadas se guardan en tu cuenta.");}
+  catch(e){ref=null; setSync("No se pudo guardar en tu cuenta; quedan en este navegador.");}
+  writing=false; if(dirty) flush();
+}
+(async()=>{
+  if(!window.claude||!claude.use) return;
+  const [db,user]=await Promise.all([claude.use("db"),claude.use("user")]);
+  if(!db||!user) return;
+  const uid=await user.id(); if(!uid) return;
+  const r=db.doc("data/users/"+uid+"/picks");
+  let first=true;
+  ref=r;
+  r.onSnapshot(snap=>{
+    if(snap.metadata.hasPendingWrites) return;
+    if(snap.exists){
+      const ids=(snap.data().ids||[]).filter(k=>typeof k==="string");
+      if(first&&!ids.length&&picks.size){first=false;guardar();return;}
+      picks=new Set(ids);
+      try{localStorage.setItem(LS,JSON.stringify(ids))}catch(e){}
+      render();
+    }else if(first&&picks.size){guardar();}
+    first=false;
+    setSync("Tus marcadas se guardan en tu cuenta.");
+  },()=>{ref=null;setSync("Tus marcadas se guardan en este navegador.");});
+})();
+
+function toggle(k){picks.has(k)?picks.delete(k):picks.add(k);guardar();render();}
+
+// ---------- choques entre marcadas ----------
+function choques(){
+  const m=F.filter(f=>picks.has(f.key)), c=new Set();
+  for(const d of dias){
+    const x=m.filter(f=>f.dia===d).sort((a,b)=>a.min-b.min);
+    for(let i=0;i<x.length;i++)for(let j=i+1;j<x.length&&x[j].min<x[i].min+DUR;j++){
+      // misma sala y misma hora = mismo programa de cortos, no es choque
+      if(x[j].min===x[i].min&&x[j].sala===x[i].sala) continue;
+      c.add(x[i].key);c.add(x[j].key);
+    }
+  }
+  return c;
+}
+
+function filtradas(){
+  const q=$("q").value.trim().toLowerCase(),s=$("sec").value,sa=$("sala").value,li=$("libre").checked,so=$("solo").checked;
+  return F.filter(f=>(!s||(s==="*comp"?f.comp:f.sec===s))&&(!sa||f.salas.includes(sa))&&(!li||/liberada/i.test(f.acceso))
+    &&(!so||picks.has(f.key))&&(!q||[f.titulo,f.direccion,f.pais].join(" ").toLowerCase().includes(q)));
+}
+function pintarDias(lista){
+  const n=d=>lista.filter(f=>d==="todos"||f.dia===d).length;
+  $("days").innerHTML=[["todos","Todos","★"],...dias.map(d=>{const l=lbl(d);return [d,l.w.slice(0,3),l.n]})]
+    .map(([d,w,num])=>`<button type="button" data-d="${d}" aria-pressed="${d===dia}"><small>${w}</small><b>${num}</b><em>${n(d)}</em></button>`).join("");
+}
+
+// ---------- vista lista ----------
+function fila(f,cl){
+  const on=picks.has(f.key);
+  const pills=[!f.comp&&f.subseccion?`<span class="pill">${esc(f.subseccion)}</span>`:"",
+    ...(f.acceso?f.acceso.split(" / "):[]).map(a=>`<span class="pill ${/liberada/i.test(a)?"free":""}">${esc(a)}</span>`),
+    cl.has(f.key)?'<span class="pill clash">Choca con otra marcada</span>':""].join("");
+  const quien=[f.direccion,f.pais].filter(Boolean).join(" · ");
+  return `<div class="row${on?" on":""}"><span class="t">${esc(f.hora)}</span>
+    <span class="ttl"><a href="${esc(f.url)}" target="_blank" rel="noopener">${esc(f.titulo)}</a></span>
+    <button type="button" class="mark" data-k="${esc(f.key)}" aria-pressed="${on}" aria-label="${on?"Quitar de":"Agregar a"} mi calendario: ${esc(f.titulo)}, ${esc(f.hora)}">${on?"✓":"+"}</button>
+    <span class="sub">${quien?`<span>${esc(quien)}</span>`:""}<span class="venue">${esc(f.sala)}</span>${pills}</span></div>`;
+}
+function pintarLista(ver,cl){
+  let h="";
+  for(const d of (dia==="todos"?dias:[dia])){
+    const del=ver.filter(f=>f.dia===d); if(!del.length) continue;
+    if(dia==="todos"){const l=lbl(d);h+=`<h2 class="dayhead">${l.w} ${l.n} de octubre</h2>`;}
+    const g={}; del.forEach(f=>(g[f.sec]=g[f.sec]||[]).push(f));
+    for(const s of secs.filter(s=>g[s])){
+      const fs=g[s].sort((a,b)=>a.min-b.min||cmp(a.titulo,b.titulo));
+      h+=`<section class="sec"><h2>${s.startsWith("Competencia")?"<i>En competencia</i>":""}${esc(s)} <span>${fs.length}</span></h2>${fs.map(f=>fila(f,cl)).join("")}</section>`;
+    }
+  }
+  return h||'<p class="empty">No hay funciones con estos filtros. Prueba con otro día o quita algún filtro.</p>';
+}
+
+// ---------- vista calendario: días y horas a lo ancho, salas en filas ----------
+function pintarCal(ver,cl){
+  const vd=dia==="todos"?dias:[dia];
+  const ppm=vd.length===1?3:1.6, dayW=(H1-H0)*60*ppm, LW=150, LH=34;
+  const x=f=>vd.indexOf(f.dia)*dayW+(f.min-H0*60)*ppm;
+  const visibles=ver.filter(f=>vd.includes(f.dia));
+  const filas=[...salas.map(s=>({s,fs:visibles.filter(f=>f.salas.length===1&&f.salas[0]===s)})),
+    {s:"Sala por confirmar",nota:"película en dos salas",fs:visibles.filter(f=>f.salas.length>1)}].filter(r=>r.fs.length);
+  if(!filas.length) return `<p class="empty">No hay funciones con estos filtros. ${picks.size?"Quita algún filtro o elige otro día.":"Marca películas con + en la vista Programa, o desmarca «Solo mis marcadas» y haz clic en los bloques."}</p>`;
+  let head=`<div class="corner"></div>`;
+  for(const d of vd){const l=lbl(d);
+    let hs="";for(let h=H0;h<H1;h+=(ppm<2?2:1))hs+=`<span style="left:${(h-H0)*60*ppm}px">${h}:00</span>`;
+    head+=`<div class="dcol" style="width:${dayW}px"><div class="dl">${l.w} ${l.n}</div><div class="hours">${hs}</div></div>`;}
+  let body="";
+  for(const r of filas){
+    // carriles: funciones que se superponen en la misma sala van una debajo de otra
+    const lanes=[], pos=[];
+    r.fs.slice().sort((a,b)=>x(a)-x(b)).forEach(f=>{
+      const a=x(f), b=a+DUR*ppm; let i=lanes.findIndex(e=>e<=a+1); if(i<0){i=lanes.length;lanes.push(0)}
+      lanes[i]=b; pos.push([f,a,i]);});
+    const hgt=Math.max(1,lanes.length)*(LH+4)+6;
+    let g="";for(let k=0;k<vd.length;k++)for(let h=H0;h<H1;h++)g+=`<i class="g${h===H0?" day":""}" style="left:${k*dayW+(h-H0)*60*ppm}px"></i>`;
+    const bl=pos.map(([f,a,i])=>{const on=picks.has(f.key);
+      return `<button type="button" class="blk${on?" on":""}${cl.has(f.key)?" clash":""}" data-k="${esc(f.key)}" style="left:${a}px;top:${i*(LH+4)+4}px;width:${DUR*ppm-3}px"
+        title="${esc(f.hora+" · "+f.titulo+" · "+f.sec+" · "+f.sala)}" aria-pressed="${on}"><b>${esc(f.hora)}</b><span>${esc(f.titulo)}</span></button>`;}).join("");
+    body+=`<div class="lane-row"><div class="rl">${esc(r.s)}${r.nota?`<small>${r.nota}</small>`:""}</div><div class="track" style="width:${dayW*vd.length}px;height:${hgt}px">${g}${bl}</div></div>`;
+  }
+  return `<div class="tl" style="--lw:${LW}px;--lh:${LH}px"><div class="tl-in" style="width:${LW+dayW*vd.length}px"><div class="tl-head">${head}</div>${body}</div></div>
+    <div class="legend"><span><i></i>Función (clic para marcar)</span><span><i class="on"></i>Marcada</span><span><i class="cl"></i>Choca con otra marcada</span><span>Cada bloque = 90 min estimados</span></div>`;
+}
+
+function render(){
+  const cal=vista==="cal";
+  document.body.classList.toggle("cal",cal);
+  $("v-list").setAttribute("aria-pressed",!cal);$("v-cal").setAttribute("aria-pressed",cal);
+  $("npick").hidden=!picks.size;$("npick").textContent=picks.size;
+  const lista=filtradas(); pintarDias(lista);
+  const ver=lista.filter(f=>dia==="todos"||f.dia===dia), cl=choques();
+  $("count").textContent=`${ver.length} funciones · ${picks.size} marcadas`;
+  $("clashes").innerHTML=cl.size?`<span class="warn">${cl.size} marcadas chocan en horario</span>`:"";
+  const sx=cal&&document.querySelector(".tl")?document.querySelector(".tl").scrollLeft:0;
+  $("m").innerHTML=cal?pintarCal(ver,cl):pintarLista(ver,cl);
+  if(cal&&document.querySelector(".tl")) document.querySelector(".tl").scrollLeft=sx;
+}
+function irA(){try{history.replaceState(null,"",vista==="cal"?"#calendario":dia==="todos"?location.pathname:"#"+dia)}catch(_){}}
+$("days").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;dia=b.dataset.d;irA();render();
+  const top=document.querySelector(".bar").offsetTop; if(scrollY>top) scrollTo({top});});
+$("v-list").onclick=()=>{vista="list";irA();render()};
+$("v-cal").onclick=()=>{vista="cal";if(picks.size)$("solo").checked=true;irA();render()};
+$("m").addEventListener("click",e=>{const b=e.target.closest("[data-k]");if(b)toggle(b.dataset.k)});
+["sec","sala","q","libre","solo"].forEach(id=>$(id).addEventListener("input",render));
+render();
+</script>
