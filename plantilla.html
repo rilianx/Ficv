@@ -53,6 +53,7 @@ section.sec h2 span{color:var(--muted);font-weight:400;letter-spacing:0;text-tra
 section.sec h2 i{font-style:normal;font-size:10.5px;padding:1px 7px;border-radius:999px;background:var(--river-soft);letter-spacing:.06em}
 .dayhead{font:700 22px/1.2 var(--f-display);margin:34px 0 0}
 .row{display:grid;grid-template-columns:62px minmax(0,1fr) auto;gap:2px 12px;padding-block:11px;border-bottom:1px solid var(--line);align-items:start}
+.row.ya,.blk.ya{opacity:.5}
 .row.on{background:linear-gradient(90deg,var(--pick-soft),transparent 70%)}
 .t{font:500 15px/1.4 var(--f-mono);font-variant-numeric:tabular-nums}
 .ttl{font-weight:700;font-size:16px;min-width:0}
@@ -118,6 +119,7 @@ footer a{color:var(--river)}
       <input id="q" type="search" placeholder="Película, dirección o país" aria-label="Buscar">
       <label><input id="libre" type="checkbox"> Solo entrada liberada</label>
       <label id="lbl-solo"><input id="solo" type="checkbox"> Solo mis marcadas</label>
+      <label><input id="ocultar" type="checkbox" checked> Ocultar otras funciones de lo ya elegido</label>
     </div>
     <div class="status"><span id="count"></span><span id="clashes"></span><span id="sync"></span></div>
   </div>
@@ -140,7 +142,7 @@ F.forEach(f=>{
   f.sec=f.comp?(f.subseccion||"Competencia").replace(/^Selección Oficial /,"Competencia "):f.seccion;
   f.salas=f.sala.split(" / ").filter(Boolean);
   f.dur=f.duracion||DUR; f.est=!f.duracion;
-  f.otros=(f.sesion||"").split(/\s*,\s*(?=[^ ])/).length>1&&f.sesion!==f.titulo?f.sesion:"";
+  f.otros=f.sesion&&f.sesion.trim()!==f.titulo.trim()?f.sesion.trim():"";
 });
 const dias=[...new Set(F.map(f=>f.dia))].sort();
 const lbl=d=>{const x=new Date(d+"T12:00:00");return {w:DN[x.getDay()],n:x.getDate()}};
@@ -194,6 +196,9 @@ async function flush(){
   },()=>{ref=null;setSync("Tus marcadas se guardan en este navegador.");});
 })();
 
+// película → función elegida (la primera marcada, si hay varias)
+function elegidas(){const m=new Map();for(const f of F)if(picks.has(f.key)&&!m.has(f.id))m.set(f.id,f);return m}
+const corto=f=>{const l=lbl(f.dia);return l.w.slice(0,3)+" "+l.n+" · "+f.hora};
 function toggle(k){picks.has(k)?picks.delete(k):picks.add(k);guardar();render();}
 
 // ---------- choques entre marcadas ----------
@@ -212,7 +217,8 @@ function choques(){
 
 function filtradas(){
   const q=$("q").value.trim().toLowerCase(),s=$("sec").value,sa=$("sala").value,li=$("libre").checked,so=$("solo").checked;
-  return F.filter(f=>(!s||(s==="*comp"?f.comp:f.sec===s))&&(!sa||f.salas.includes(sa))&&(!li||/liberada/i.test(f.acceso))
+  const oc=$("ocultar").checked, el=elegidas();
+  return F.filter(f=>!(oc&&el.has(f.id)&&!picks.has(f.key))&&(!s||(s==="*comp"?f.comp:f.sec===s))&&(!sa||f.salas.includes(sa))&&(!li||/liberada/i.test(f.acceso))
     &&(!so||picks.has(f.key))&&(!q||[f.titulo,f.direccion,f.pais].join(" ").toLowerCase().includes(q)));
 }
 function pintarDias(lista){
@@ -222,27 +228,28 @@ function pintarDias(lista){
 }
 
 // ---------- vista lista ----------
-function fila(f,cl){
-  const on=picks.has(f.key);
+function fila(f,cl,el){
+  const on=picks.has(f.key), ya=!on&&el.get(f.id);
   const pills=[!f.comp&&f.subseccion?`<span class="pill">${esc(f.subseccion)}</span>`:"",
     ...(f.acceso?f.acceso.split(" / "):[]).map(a=>`<span class="pill ${/liberada/i.test(a)?"free":""}">${esc(a)}</span>`),
+    ya?`<span class="pill">Ya elegida: ${esc(corto(ya))}</span>`:"",
     f.estado&&f.estado!=="Confirmada"?`<span class="pill clash">${esc(f.estado)}</span>`:"",
     cl.has(f.key)?'<span class="pill clash">Choca con otra marcada</span>':""].join("");
   const quien=[f.direccion,f.pais].filter(Boolean).join(" · ");
-  return `<div class="row${on?" on":""}"><span class="t">${esc(f.hora)}</span>
+  return `<div class="row${on?" on":""}${ya?" ya":""}"><span class="t">${esc(f.hora)}</span>
     <span class="ttl"><a href="${esc(f.url)}" target="_blank" rel="noopener">${esc(f.titulo)}</a></span>
     <button type="button" class="mark" data-k="${esc(f.key)}" aria-pressed="${on}" aria-label="${on?"Quitar de":"Agregar a"} mi calendario: ${esc(f.titulo)}, ${esc(f.hora)}">${on?"✓":"+"}</button>
     <span class="sub">${quien?`<span>${esc(quien)}</span>`:""}<span class="venue">${esc(f.sala)}</span><span>${f.est?"":f.dur+" min"}</span>${pills}${f.otros?`<span class="ses">Sesión: ${esc(f.otros)}</span>`:""}</span></div>`;
 }
 function pintarLista(ver,cl){
-  let h="";
+  let h="", el=elegidas();
   for(const d of (dia==="todos"?dias:[dia])){
     const del=ver.filter(f=>f.dia===d); if(!del.length) continue;
     if(dia==="todos"){const l=lbl(d);h+=`<h2 class="dayhead">${l.w} ${l.n} de octubre</h2>`;}
     const g={}; del.forEach(f=>(g[f.sec]=g[f.sec]||[]).push(f));
     for(const s of secs.filter(s=>g[s])){
       const fs=g[s].sort((a,b)=>a.min-b.min||cmp(a.titulo,b.titulo));
-      h+=`<section class="sec"><h2>${s.startsWith("Competencia")?"<i>En competencia</i>":""}${esc(s)} <span>${fs.length}</span></h2>${fs.map(f=>fila(f,cl)).join("")}</section>`;
+      h+=`<section class="sec"><h2>${s.startsWith("Competencia")?"<i>En competencia</i>":""}${esc(s)} <span>${fs.length}</span></h2>${fs.map(f=>fila(f,cl,el)).join("")}</section>`;
     }
   }
   return h||'<p class="empty">No hay funciones con estos filtros. Prueba con otro día o quita algún filtro.</p>';
@@ -252,7 +259,7 @@ function pintarLista(ver,cl){
 function pintarCal(ver,cl){
   const vd=dia==="todos"?dias:[dia];
   const ppm=vd.length===1?3:1.6, dayW=(H1-H0)*60*ppm, LW=150, LH=34;
-  const x=f=>vd.indexOf(f.dia)*dayW+(f.min-H0*60)*ppm;
+  const x=f=>vd.indexOf(f.dia)*dayW+(f.min-H0*60)*ppm, el=elegidas();
   const visibles=ver.filter(f=>vd.includes(f.dia));
   const filas=[...salas.map(s=>({s,fs:visibles.filter(f=>f.salas.length===1&&f.salas[0]===s)})),
     {s:"Sala por confirmar",nota:"película en dos salas",fs:visibles.filter(f=>f.salas.length>1)}].filter(r=>r.fs.length);
@@ -271,7 +278,8 @@ function pintarCal(ver,cl){
     const hgt=Math.max(1,lanes.length)*(LH+4)+6;
     let g="";for(let k=0;k<vd.length;k++)for(let h=H0;h<H1;h++)g+=`<i class="g${h===H0?" day":""}" style="left:${k*dayW+(h-H0)*60*ppm}px"></i>`;
     const bl=pos.map(([f,a,i])=>{const on=picks.has(f.key);
-      return `<button type="button" class="blk${on?" on":""}${cl.has(f.key)?" clash":""}" data-k="${esc(f.key)}" style="left:${a}px;top:${i*(LH+4)+4}px;width:${f.dur*ppm-3}px"
+      const ya=!on&&el.has(f.id);
+      return `<button type="button" class="blk${on?" on":""}${ya?" ya":""}${cl.has(f.key)?" clash":""}" data-k="${esc(f.key)}" style="left:${a}px;top:${i*(LH+4)+4}px;width:${f.dur*ppm-3}px"
         title="${esc(f.hora+" · "+f.titulo+" · "+f.sec+" · "+f.sala+(f.est?"":" · "+f.dur+" min")+(f.otros?" · Sesión: "+f.otros:""))}" aria-pressed="${on}"><b>${esc(f.hora)}</b><span>${esc(f.titulo)}</span></button>`;}).join("");
     body+=`<div class="lane-row"><div class="rl">${esc(r.s)}${r.nota?`<small>${r.nota}</small>`:""}</div><div class="track" style="width:${dayW*vd.length}px;height:${hgt}px">${g}${bl}</div></div>`;
   }
@@ -298,6 +306,8 @@ $("days").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)
 $("v-list").onclick=()=>{vista="list";irA();render()};
 $("v-cal").onclick=()=>{vista="cal";if(picks.size)$("solo").checked=true;irA();render()};
 $("m").addEventListener("click",e=>{const b=e.target.closest("[data-k]");if(b)toggle(b.dataset.k)});
-["sec","sala","q","libre","solo"].forEach(id=>$(id).addEventListener("input",render));
+try{if(localStorage.getItem("ficv33-ocultar")==="0")$("ocultar").checked=false}catch(e){}
+$("ocultar").addEventListener("input",()=>{try{localStorage.setItem("ficv33-ocultar",$("ocultar").checked?"1":"0")}catch(e){}});
+["sec","sala","q","libre","solo","ocultar"].forEach(id=>$(id).addEventListener("input",render));
 render();
 </script>

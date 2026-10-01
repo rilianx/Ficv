@@ -775,19 +775,21 @@ def main():
                 pass
 
         mapa_softr = esperar_softr(page)
-        # La API de Softr a veces responde 500: si no llegaron registros, recargar (hasta 3 veces)
-        for intento in range(3):
+        # La API de Softr a veces responde 500: si no llegaron registros, recargar (hasta 4 veces)
+        for intento in range(4):
             if not mapa_softr or registros_softr(payloads, {**mapa_softr, **nombres_campos_softr(payloads)}):
                 break
-            print(f"  Sin registros de la API; recargando (intento {intento + 2}/4)…", file=sys.stderr)
+            espera = 10 * 2 ** intento
+            print(f"  Sin registros de la API; reintento {intento + 1}/4 en {espera} s…", file=sys.stderr)
+            page.wait_for_timeout(espera * 1000)
             payloads.clear()
-            page.wait_for_timeout(5000 * (intento + 1))
-            page.reload(wait_until="domcontentloaded", timeout=60000)
+            page.goto(a.url, wait_until="domcontentloaded", timeout=60000)
             try:
-                page.wait_for_load_state("networkidle", timeout=20000)
+                page.wait_for_load_state("networkidle", timeout=30000)
             except PWTimeout:
                 pass
-            mapa_softr = esperar_softr(page)
+            page.wait_for_timeout(3000)
+            mapa_softr = esperar_softr(page) or mapa_softr
         funciones = []
         pestanas = page.evaluate(JS_PESTANAS_DIA, DIAS_RE)
         print(f"Pestañas de día detectadas: {pestanas or 'ninguna'}", file=sys.stderr)
