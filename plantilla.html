@@ -276,10 +276,15 @@ const LS="ficv33-marcadas";
 const LSV="ficv33-vistas";
 let picks=new Set(), vistas=new Set();          // vistas: ids de películas ya vistas
 let dudas=new Set(), notas={};                  // dudas: funciones marcadas con "?"; notas: id película → 0..5
-try{dudas=new Set(JSON.parse(localStorage.getItem("ficv33-dudas")||"[]"))}catch(e){}
-try{notas=JSON.parse(localStorage.getItem("ficv33-notas")||"{}")||{}}catch(e){}
-try{picks=new Set(JSON.parse(localStorage.getItem(LS)||"[]"))}catch(e){}
-try{vistas=new Set(JSON.parse(localStorage.getItem(LSV)||"[]"))}catch(e){}
+// marcas iniciales (opcional): se usan solo si en este navegador todavía no hay nada guardado
+const INICIAL=__INICIAL__;
+let nuevo=true; try{nuevo=localStorage.getItem(LS)===null}catch(e){}
+const leer=(k,d)=>{try{const v=localStorage.getItem(k);return v===null?d:JSON.parse(v)}catch(e){return d}};
+if(INICIAL&&nuevo){
+  picks=new Set(INICIAL.ids||[]); vistas=new Set(INICIAL.vistas||[]); dudas=new Set(INICIAL.dudas||[]); notas={...(INICIAL.notas||{})};
+}else{
+  picks=new Set(leer(LS,[])); vistas=new Set(leer(LSV,[])); dudas=new Set(leer("ficv33-dudas",[])); notas=leer("ficv33-notas",{})||{};
+}
 let ref=null, writing=false, dirty=false, timer=null;
 function setSync(t){$("sync").textContent=t}
 setSync("Tus marcadas se guardan en este navegador.");

@@ -913,7 +913,8 @@ def escribir_html(funciones, ruta):
              "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
     html_ = (plantilla
              .replace("__DATA__", json.dumps(datos, ensure_ascii=False).replace("</", "<\\/"))
-             .replace("__FECHA__", f"{hoy.day} de {meses[hoy.month]} de {hoy.year}"))
+             .replace("__FECHA__", f"{hoy.day} de {meses[hoy.month]} de {hoy.year}")
+             .replace("__INICIAL__", "null"))
     ruta.write_text("<!doctype html>\n<meta charset=\"utf-8\">\n"
                     "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n" + html_,
                     encoding="utf-8")
