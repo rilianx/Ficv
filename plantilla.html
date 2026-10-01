@@ -52,6 +52,7 @@ h1 span{color:var(--river)}
 .chip em{font-style:normal;color:var(--muted);font-size:11.5px}
 .chip.mini{border-style:dashed;color:var(--muted)}
 body.cal .sololista{display:none}
+body.cal .bar{position:static}
 @media (max-width:700px){body.cal .bar{position:static}#chips-in{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}.chip{flex:0 0 auto;white-space:nowrap}}
 dialog#pop{border:1px solid var(--line);border-radius:14px;background:var(--surface);color:var(--ink);padding:20px 20px 18px;width:min(460px,calc(100vw - 32px));max-height:calc(100vh - 48px);overflow:auto;box-shadow:0 18px 50px rgb(0 0 0 / .25)}
 dialog#pop::backdrop{background:rgb(10 20 18 / .45)}
@@ -81,7 +82,7 @@ button:focus-visible,select:focus-visible,input:focus-visible,a:focus-visible{ou
 section.sec{margin-top:26px}
 section.sec h2{font:700 13px/1.25 var(--f-body);text-transform:uppercase;letter-spacing:.09em;color:var(--river);margin:0 0 4px;display:flex;gap:8px;align-items:baseline;text-wrap:balance}
 section.sec h2 span{color:var(--muted);font-weight:400;letter-spacing:0;text-transform:none}
-section.sec h2 i{font-style:normal;font-size:10.5px;padding:1px 7px;border-radius:999px;background:var(--river-soft);letter-spacing:.06em}
+section.sec h2 i:not(.dot){font-style:normal;font-size:10.5px;padding:1px 7px;border-radius:999px;background:var(--river-soft);letter-spacing:.06em}
 .dayhead{font:700 22px/1.2 var(--f-display);margin:34px 0 0}
 .row{display:grid;grid-template-columns:62px minmax(0,1fr) auto;gap:2px 12px;padding-block:11px;border-bottom:1px solid var(--line);align-items:start}
 .row.ya,.blk.ya{opacity:.5}
@@ -106,23 +107,29 @@ section.sec h2 i{font-style:normal;font-size:10.5px;padding:1px 7px;border-radiu
 .it .cortos{color:var(--ink);font-size:11px}
 .empty{padding:40px 0;text-align:center;color:var(--muted)}
 
-/* calendario: días en columnas, horas en filas */
-.wk{overflow-x:auto;margin-top:14px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
-.wk table{border-collapse:separate;border-spacing:0;width:100%;min-width:calc(48px + var(--nd) * 132px);table-layout:fixed}
-.wk th,.wk td{border-bottom:1px solid var(--line);border-left:1px solid var(--line);vertical-align:top;padding:4px}
-.wk thead th{position:sticky;top:0;background:var(--surface);font:700 13px var(--f-display);padding:8px 6px;text-align:left;z-index:1}
-.wk thead th small{display:block;font:400 11px var(--f-body);color:var(--muted)}
-.wk th.h{width:48px;border-left:0;font:500 11px var(--f-mono);color:var(--muted);text-align:right;padding:6px 6px 0 0;background:var(--surface)}
-.wk thead th.h{z-index:2}
-.wk tr:last-child td,.wk tr:last-child th{border-bottom:0}
-.it{display:block;width:100%;text-align:left;font:inherit;font-size:12px;line-height:1.25;padding:4px 6px;margin-bottom:3px;border-radius:6px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
-.it:last-child{margin-bottom:0}
-.it b{font:500 10.5px var(--f-mono);color:var(--muted)}
-.it strong{display:block;font-weight:700;overflow-wrap:anywhere}
+/* calendario: días en columnas, eje de horas vertical; bloques a escala, los simultáneos lado a lado */
+.wk{overflow:auto;max-height:calc(100vh - 40px);overscroll-behavior:contain;margin-top:14px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+.tg{display:grid;position:relative}
+.tg .hd{position:sticky;top:0;z-index:3;background:var(--surface);border-bottom:1px solid var(--line);border-left:1px solid var(--line);padding:8px 6px;font:700 13px var(--f-display)}
+.tg .hd small{display:block;font:400 11px var(--f-body);color:var(--muted)}
+.tg .hd.ax{border-left:0;position:sticky;left:0;z-index:4}
+.axis{position:sticky;left:0;z-index:2;background:var(--surface)}
+.axis span{position:absolute;right:6px;transform:translateY(-50%);font:500 11px var(--f-mono);color:var(--muted)}
+.axis span:first-child{transform:none}
+.col{position:relative;border-left:1px solid var(--line);background-image:linear-gradient(var(--grid) 1px,transparent 1px);background-size:100% var(--hh)}
+.it{position:absolute;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-start;align-items:stretch;text-align:left;font:inherit;font-size:12px;line-height:1.22;padding:3px 5px;border-radius:6px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer;z-index:1}
+.it:hover,.it:focus-visible{z-index:2}
+.it b{font:500 10.5px var(--f-mono);color:color-mix(in srgb,var(--c) 75%,var(--ink))}
+.it strong{display:block;font-weight:700;overflow-wrap:anywhere;hyphens:auto}
 .it span{display:block;color:var(--muted);font-size:11px;overflow-wrap:anywhere}
-.it:hover{border-color:var(--pick)}
-.it.on{background:var(--pick-soft);border-color:var(--pick)}
-.it.on b{color:var(--pick)}
+.it.angosta{padding:3px 3px;font-size:11px}
+.it.angosta span{display:none}
+.it{--c:var(--muted);background:color-mix(in srgb,var(--c) 13%,var(--surface));border-color:color-mix(in srgb,var(--c) 40%,var(--line));border-left:4px solid var(--c)}
+.it:hover{border-color:var(--c)}
+.it.on{background:color-mix(in srgb,var(--c) 36%,var(--surface));border:2px solid var(--c);border-left-width:6px;box-shadow:0 1px 4px color-mix(in srgb,var(--c) 40%,transparent)}
+.it.on b::before{content:"✓ ";font-weight:700}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--c);flex:0 0 auto}
+section.sec h2 .dot{align-self:center}
 .it.clash{outline:2px solid var(--clash);outline-offset:-2px}
 .it.ya{opacity:.5}
 .legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12.5px;color:var(--muted);margin-top:10px}
@@ -207,6 +214,10 @@ const lbl=d=>{const x=new Date(d+"T12:00:00");return {w:DN[x.getDay()],n:x.getDa
 const orden=s=>s.startsWith("Competencia")?0:s.startsWith("Gala")?1:2;
 const secs=[...new Set(F.map(f=>f.sec))].sort((a,b)=>orden(a)-orden(b)||cmp(a,b));
 const salas=[...new Set(F.flatMap(f=>f.salas))].sort(cmp);
+// un color por sección (mismo orden que la lista de secciones)
+const PALETA=["#2563eb","#0891b2","#4f46e5","#0d9488","#7c3aed","#db2777","#c2410c","#ca8a04","#16a34a","#9333ea","#0284c7","#be123c","#65a30d","#a16207","#c026d3","#059669","#475569","#e11d48","#0f766e","#6d28d9"];
+const COLOR=new Map(secs.map((s,i)=>[s,PALETA[i%PALETA.length]]));
+const col=s=>COLOR.get(s)||"#64748b";
 $("sec").innerHTML='<option value="">Todas las secciones</option><option value="*comp">Todas las competencias</option>'+secs.map(s=>`<option>${esc(s)}</option>`).join("");
 $("sala").innerHTML='<option value="">Todas las salas</option>'+salas.map(s=>`<option>${esc(s)}</option>`).join("");
 $("tot").textContent=`${new Set(F.map(f=>f.id)).size} películas · ${S.length} funciones`;
@@ -281,7 +292,7 @@ try{const g=JSON.parse(localStorage.getItem("ficv33-cal")||"null");if(Array.isAr
 const libre=s=>s.acceso.some(a=>/liberada/i.test(a));
 function pintarChips(){
   const n=c=>S.filter(s=>c==="*marcadas"?on(s):c==="*libre"?libre(s):s.films.some(f=>f.sec===c)).length;
-  const chip=(c,txt,cls="")=>`<label class="chip ${cls}"><input type="checkbox" data-c="${esc(c)}"${calSel.has(c)?" checked":""}>${esc(txt)} <em>${n(c)}</em></label>`;
+  const chip=(c,txt,cls="")=>`<label class="chip ${cls}"><input type="checkbox" data-c="${esc(c)}"${calSel.has(c)?" checked":""}>${c.startsWith("*")?"":`<i class="dot" style="--c:${col(c)}"></i>`}${esc(txt)} <em>${n(c)}</em></label>`;
   $("chips-in").innerHTML=chip("*marcadas","Marcadas","esp")+chip("*libre","Entrada liberada","esp")+secs.map(s=>chip(s,s)).join("")
     +'<button type="button" class="chip mini" data-todas="1">Todas las secciones</button><button type="button" class="chip mini" data-todas="0">Ninguna</button>';
 }
@@ -339,7 +350,7 @@ function pintarLista(ver,cl){
     const g={}; del.forEach(s=>(g[s.sec]=g[s.sec]||[]).push(s));
     for(const sc of secs.filter(x=>g[x])){
       const ss=g[sc].sort((a,b)=>a.min-b.min||cmp(titulos(a),titulos(b)));
-      h+=`<section class="sec"><h2>${sc.startsWith("Competencia")?"<i>En competencia</i>":""}${esc(sc)} <span>${ss.length}</span></h2>${ss.map(s=>fila(s,cl,el)).join("")}</section>`;
+      h+=`<section class="sec" style="--c:${col(sc)}"><h2><i class="dot"></i>${sc.startsWith("Competencia")?"<i>En competencia</i>":""}${esc(sc)} <span>${ss.length}</span></h2>${ss.map(s=>fila(s,cl,el)).join("")}</section>`;
     }
   }
   return h||'<p class="empty">No hay funciones con estos filtros. Prueba con otro día o quita algún filtro.</p>';
@@ -350,22 +361,37 @@ const finH=s=>{const m=s.min+s.ocupa;return String(Math.floor(m/60)%24).padStart
 function pintarCal(ver,cl){
   const vd=dia!=="todos"?[dia]:dias.filter(d=>ver.some(s=>s.dia===d)), el=elegidas();
   if(!ver.length) return `<p class="empty">No hay funciones con estos filtros. ${picks.size?"Quita algún filtro o elige otro día.":"Marca funciones con + en la vista Programa, o activa arriba alguna sección para elegir aquí."}</p>`;
-  const horas=[...new Set(ver.map(s=>Math.floor(s.min/60)))].sort((a,b)=>a-b);
-  let h=`<div class="wk" style="--nd:${vd.length}"><table><thead><tr><th class="h"></th>`;
-  for(const d of vd){const l=lbl(d),n=ver.filter(s=>s.dia===d).length;h+=`<th>${l.w} ${l.n}<small>${n} ${n===1?"función":"funciones"}</small></th>`;}
-  h+="</tr></thead><tbody>";
-  for(const hr of horas){
-    h+=`<tr><th class="h" scope="row">${hr}:00</th>`;
-    for(const d of vd){
-      const ss=ver.filter(s=>s.dia===d&&Math.floor(s.min/60)===hr).sort((a,b)=>a.min-b.min||cmp(titulos(a),titulos(b)));
-      h+="<td>"+ss.map(s=>{const m=on(s),ya=!m&&yaEn(s,el).length;
-        const nombres=s.films.map(f=>f.titulo).join(" · ");
-        return `<button type="button" class="it${m?" on":""}${ya?" ya":""}${cl.has(s.key)?" clash":""}" data-s="${esc(s.key)}" aria-haspopup="dialog"
-          title="${esc(nombres)}"><b>${esc(s.hora)}–${finH(s)}${s.est?"*":""}</b><strong>${esc(titulos(s))}</strong>${s.n>1?`<span class="cortos">${esc(nombres)}</span>`:""}<span>${esc(s.sec)}</span><span>${esc(s.sala)}</span></button>`;}).join("")+"</td>";
+  const PPM=1.15;                                           // píxeles por minuto
+  const h0=Math.floor(Math.min(...ver.map(s=>s.min))/60), h1=Math.ceil(Math.max(...ver.map(s=>s.min+s.ocupa))/60);
+  const alto=(h1-h0)*60*PPM, y=m=>(m-h0*60)*PPM;
+  // carriles: funciones que se superponen se reparten el ancho del día
+  const cols=vd.map(d=>{
+    const ss=ver.filter(s=>s.dia===d).sort((a,b)=>a.min-b.min||b.ocupa-a.ocupa);
+    const out=[]; let grupo=[], fin=-1;
+    const cerrar=()=>{const n=Math.max(...grupo.map(g=>g.lane))+1;grupo.forEach(g=>g.n=n);grupo=[]};
+    for(const s of ss){
+      if(grupo.length&&s.min>=fin) cerrar();
+      const usados=new Set(grupo.filter(g=>g.s.min+g.s.ocupa>s.min).map(g=>g.lane));
+      let lane=0; while(usados.has(lane)) lane++;
+      const g={s,lane}; grupo.push(g); out.push(g); fin=Math.max(fin,s.min+s.ocupa);
     }
-    h+="</tr>";
+    if(grupo.length) cerrar();
+    const maxN=Math.max(1,...out.map(g=>g.n));
+    return {d,items:out,ancho:Math.max(140,maxN*78)};
+  });
+  let h=`<div class="wk"><div class="tg" style="grid-template-columns:52px ${cols.map(c=>`minmax(${c.ancho}px,1fr)`).join(" ")};--hh:${60*PPM}px">`;
+  h+=`<div class="hd ax"></div>`+cols.map(c=>{const l=lbl(c.d),n=c.items.length;return `<div class="hd">${l.w} ${l.n}<small>${n} ${n===1?"función":"funciones"}</small></div>`}).join("");
+  let ax=""; for(let hr=h0;hr<h1;hr++) ax+=`<span style="top:${y(hr*60)}px">${hr}:00</span>`;
+  h+=`<div class="axis" style="height:${alto}px">${ax}</div>`;
+  for(const c of cols){
+    h+=`<div class="col" style="height:${alto}px">`+c.items.map(({s,lane,n})=>{
+      const m=on(s),ya=!m&&yaEn(s,el).length, w=100/n;
+      return `<button type="button" class="it${m?" on":""}${ya?" ya":""}${cl.has(s.key)?" clash":""}${n>=3?" angosta":""}" data-s="${esc(s.key)}" aria-haspopup="dialog"
+        title="${esc(s.hora+"–"+finH(s)+" · "+s.films.map(f=>f.titulo).join(" · ")+" · "+s.sala)}"
+        style="--c:${col(s.sec)};top:${y(s.min)+1}px;height:${s.ocupa*PPM-2}px;left:calc(${lane*w}% + 2px);width:calc(${w}% - 4px)"><b>${esc(s.hora)}–${finH(s)}${s.est?"*":""}</b><strong>${esc(titulos(s))}</strong>${s.n>1?`<span class="cortos">${esc(s.films.map(f=>f.titulo).join(" · "))}</span>`:""}<span>${esc(s.sec)}</span><span>${esc(s.sala)}</span></button>`;
+    }).join("")+`</div>`;
   }
-  return h+`</tbody></table></div><div class="legend"><span><i class="on"></i>Marcada</span><span><i></i>Sin marcar · clic en un bloque para ver detalles</span><span><i class="cl"></i>Choca con otra marcada</span><span>Cada bloque incluye ${MARGEN} min de margen (demora o foro)</span><span>* duración estimada en 90 min</span></div>`;
+  return h+`</div></div><div class="legend"><span><i class="on"></i>Marcada (✓, color intenso)</span><span><i></i>Sin marcar · el color indica la sección · clic para ver detalles</span><span><i class="cl"></i>Choca con otra marcada</span><span>El alto del bloque es la duración + ${MARGEN} min de margen</span><span>* duración estimada en 90 min</span></div>`;
 }
 
 function render(){
@@ -397,7 +423,7 @@ function pintarPop(){
     ${f.url?`<a href="${esc(f.url)}" target="_blank" rel="noopener">Ver ficha ↗</a>`:""}</li>`).join("");
   $("pop-in").innerHTML=`<p class="pop-h">${l.w} ${l.n} de octubre · ${esc(s.hora)}–${finH(s)}</p>
     <h3 id="pop-t">${esc(titulos(s))}</h3>
-    <div class="pop-meta"><span class="pill">${esc(s.sec)}</span>${s.sub.map(x=>`<span class="pill">${esc(x)}</span>`).join("")}
+    <div class="pop-meta"><span class="pill" style="display:inline-flex;gap:6px;align-items:center;--c:${col(s.sec)}"><i class="dot"></i>${esc(s.sec)}</span>${s.sub.map(x=>`<span class="pill">${esc(x)}</span>`).join("")}
       ${s.acceso.map(a=>`<span class="pill ${/liberada/i.test(a)?"free":""}">${esc(a)}</span>`).join("")}
       <span>${esc(s.sala)}</span><span>${s.est?"Duración no informada (90 min estimados)":s.dur+" min"} + ${MARGEN} min de margen</span></div>
     ${m&&cl.has(s.key)?'<p class="pop-warn">Choca con otra función marcada.</p>':""}
