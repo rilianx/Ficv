@@ -32,6 +32,7 @@ h1 span{color:var(--river)}
 .views button[aria-pressed="true"]{background:var(--river);color:var(--bg)}
 .views .n{display:inline-block;min-width:20px;margin-left:6px;padding:0 6px;border-radius:999px;background:var(--pick);color:var(--bg);font-size:12px}
 .bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px;border-bottom:1px solid var(--line);display:grid;gap:10px}
+.bar>*{min-width:0}
 .days{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
 .days button{flex:0 0 auto;display:grid;justify-items:center;min-width:58px;padding:6px 10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;cursor:pointer;font:inherit}
 .days button b{font:700 20px/1 var(--f-display)}
@@ -70,29 +71,25 @@ section.sec h2 i{font-style:normal;font-size:10.5px;padding:1px 7px;border-radiu
 .ses{flex-basis:100%;font-size:12.5px}
 .empty{padding:40px 0;text-align:center;color:var(--muted)}
 
-/* timeline */
-.tl{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface);margin-top:14px;position:relative}
-.tl-in{position:relative}
-.tl-head{display:flex;position:sticky;top:0;z-index:3;background:var(--surface);border-bottom:1px solid var(--line)}
-.corner{position:sticky;left:0;z-index:4;background:var(--surface);flex:0 0 var(--lw);border-right:1px solid var(--line)}
-.dcol{flex:0 0 auto;border-left:2px solid var(--line)}
-.dcol .dl{font:700 14px var(--f-display);padding:6px 8px 2px;position:sticky;left:var(--lw);width:max-content}
-.hours{position:relative;height:18px}
-.hours span{position:absolute;top:0;font:500 10.5px var(--f-mono);color:var(--muted);transform:translateX(3px)}
-.lane-row{display:flex;border-bottom:1px solid var(--line)}
-.lane-row:last-child{border-bottom:0}
-.rl{position:sticky;left:0;z-index:2;flex:0 0 var(--lw);background:var(--surface);border-right:1px solid var(--line);padding:8px 10px;font-size:12.5px;font-weight:700;line-height:1.25}
-.rl small{display:block;font-weight:400;color:var(--muted)}
-.track{position:relative;flex:0 0 auto}
-.track .g{position:absolute;top:0;bottom:0;width:1px;background:var(--grid)}
-.track .g.day{width:2px;background:var(--line)}
-.blk{position:absolute;height:var(--lh);border-radius:6px;padding:3px 6px;font-size:11.5px;line-height:1.2;overflow:hidden;cursor:pointer;border:1px solid var(--line);background:var(--bg);color:var(--muted);text-align:left;font-family:inherit}
-.blk b{font:500 10.5px var(--f-mono);display:block;color:inherit}
-.blk span{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.blk:hover{border-color:var(--pick);color:var(--ink)}
-.blk.on{background:var(--pick-soft);border-color:var(--pick);color:var(--ink);font-weight:700}
-.blk.on b{color:var(--pick)}
-.blk.clash{outline:2px solid var(--clash);outline-offset:-2px}
+/* calendario: días en columnas, horas en filas */
+.wk{overflow-x:auto;margin-top:14px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+.wk table{border-collapse:separate;border-spacing:0;width:100%;min-width:calc(48px + var(--nd) * 132px);table-layout:fixed}
+.wk th,.wk td{border-bottom:1px solid var(--line);border-left:1px solid var(--line);vertical-align:top;padding:4px}
+.wk thead th{position:sticky;top:0;background:var(--surface);font:700 13px var(--f-display);padding:8px 6px;text-align:left;z-index:1}
+.wk thead th small{display:block;font:400 11px var(--f-body);color:var(--muted)}
+.wk th.h{width:48px;border-left:0;font:500 11px var(--f-mono);color:var(--muted);text-align:right;padding:6px 6px 0 0;background:var(--surface)}
+.wk thead th.h{z-index:2}
+.wk tr:last-child td,.wk tr:last-child th{border-bottom:0}
+.it{display:block;width:100%;text-align:left;font:inherit;font-size:12px;line-height:1.25;padding:4px 6px;margin-bottom:3px;border-radius:6px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.it:last-child{margin-bottom:0}
+.it b{font:500 10.5px var(--f-mono);color:var(--muted)}
+.it strong{display:block;font-weight:700;overflow-wrap:anywhere}
+.it span{display:block;color:var(--muted);font-size:11px;overflow-wrap:anywhere}
+.it:hover{border-color:var(--pick)}
+.it.on{background:var(--pick-soft);border-color:var(--pick)}
+.it.on b{color:var(--pick)}
+.it.clash{outline:2px solid var(--clash);outline-offset:-2px}
+.it.ya{opacity:.5}
 .legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12.5px;color:var(--muted);margin-top:10px}
 .legend i{display:inline-block;width:14px;height:10px;border-radius:3px;vertical-align:-1px;margin-right:5px;border:1px solid var(--line);background:var(--bg)}
 .legend i.on{background:var(--pick-soft);border-color:var(--pick)}
@@ -139,14 +136,16 @@ F.forEach(f=>{
   f.key=f.id+"|"+f.dia+"|"+f.hora;
   f.min=(+f.hora.slice(0,2))*60+(+f.hora.slice(3));
   f.comp=f.seccion==="En Competencia";
-  f.sec=f.comp?(f.subseccion||"Competencia").replace(/^Selección Oficial /,"Competencia "):f.seccion;
+  f.sec=f.comp?(f.subseccion||"Competencia").replace(/^Selección Oficial /,"Competencia ")
+    :/^Gala( Chilena)?$/.test(f.subseccion)?f.subseccion:f.seccion;   // Gala y Gala Chilena, secciones propias
   f.salas=f.sala.split(" / ").filter(Boolean);
   f.dur=f.duracion||DUR; f.est=!f.duracion;
   f.otros=f.sesion&&f.sesion.trim()!==f.titulo.trim()?f.sesion.trim():"";
 });
 const dias=[...new Set(F.map(f=>f.dia))].sort();
 const lbl=d=>{const x=new Date(d+"T12:00:00");return {w:DN[x.getDay()],n:x.getDate()}};
-const secs=[...new Set(F.map(f=>f.sec))].sort((a,b)=>(a.startsWith("Competencia")?0:1)-(b.startsWith("Competencia")?0:1)||cmp(a,b));
+const orden=s=>s.startsWith("Competencia")?0:s.startsWith("Gala")?1:2;
+const secs=[...new Set(F.map(f=>f.sec))].sort((a,b)=>orden(a)-orden(b)||cmp(a,b));
 const salas=[...new Set(F.flatMap(f=>f.salas))].sort(cmp);
 $("sec").innerHTML='<option value="">Todas las secciones</option><option value="*comp">Todas las competencias</option>'+secs.map(s=>`<option>${esc(s)}</option>`).join("");
 $("sala").innerHTML='<option value="">Todas las salas</option>'+salas.map(s=>`<option>${esc(s)}</option>`).join("");
@@ -230,7 +229,7 @@ function pintarDias(lista){
 // ---------- vista lista ----------
 function fila(f,cl,el){
   const on=picks.has(f.key), ya=!on&&el.get(f.id);
-  const pills=[!f.comp&&f.subseccion?`<span class="pill">${esc(f.subseccion)}</span>`:"",
+  const pills=[!f.comp&&f.subseccion&&f.subseccion!==f.sec?`<span class="pill">${esc(f.subseccion)}</span>`:"",
     ...(f.acceso?f.acceso.split(" / "):[]).map(a=>`<span class="pill ${/liberada/i.test(a)?"free":""}">${esc(a)}</span>`),
     ya?`<span class="pill">Ya elegida: ${esc(corto(ya))}</span>`:"",
     f.estado&&f.estado!=="Confirmada"?`<span class="pill clash">${esc(f.estado)}</span>`:"",
@@ -255,36 +254,26 @@ function pintarLista(ver,cl){
   return h||'<p class="empty">No hay funciones con estos filtros. Prueba con otro día o quita algún filtro.</p>';
 }
 
-// ---------- vista calendario: días y horas a lo ancho, salas en filas ----------
+// ---------- vista calendario: días en columnas, horas en filas ----------
+const finH=f=>{const m=f.min+f.dur;return String(Math.floor(m/60)%24).padStart(2,"0")+":"+String(m%60).padStart(2,"0")};
 function pintarCal(ver,cl){
-  const vd=dia==="todos"?dias:[dia];
-  const ppm=vd.length===1?3:1.6, dayW=(H1-H0)*60*ppm, LW=150, LH=34;
-  const x=f=>vd.indexOf(f.dia)*dayW+(f.min-H0*60)*ppm, el=elegidas();
-  const visibles=ver.filter(f=>vd.includes(f.dia));
-  const filas=[...salas.map(s=>({s,fs:visibles.filter(f=>f.salas.length===1&&f.salas[0]===s)})),
-    {s:"Sala por confirmar",nota:"película en dos salas",fs:visibles.filter(f=>f.salas.length>1)}].filter(r=>r.fs.length);
-  if(!filas.length) return `<p class="empty">No hay funciones con estos filtros. ${picks.size?"Quita algún filtro o elige otro día.":"Marca películas con + en la vista Programa, o desmarca «Solo mis marcadas» y haz clic en los bloques."}</p>`;
-  let head=`<div class="corner"></div>`;
-  for(const d of vd){const l=lbl(d);
-    let hs="";for(let h=H0;h<H1;h+=(ppm<2?2:1))hs+=`<span style="left:${(h-H0)*60*ppm}px">${h}:00</span>`;
-    head+=`<div class="dcol" style="width:${dayW}px"><div class="dl">${l.w} ${l.n}</div><div class="hours">${hs}</div></div>`;}
-  let body="";
-  for(const r of filas){
-    // carriles: funciones que se superponen en la misma sala van una debajo de otra
-    const lanes=[], pos=[];
-    r.fs.slice().sort((a,b)=>x(a)-x(b)).forEach(f=>{
-      const a=x(f), b=a+f.dur*ppm; let i=lanes.findIndex(e=>e<=a+1); if(i<0){i=lanes.length;lanes.push(0)}
-      lanes[i]=b; pos.push([f,a,i]);});
-    const hgt=Math.max(1,lanes.length)*(LH+4)+6;
-    let g="";for(let k=0;k<vd.length;k++)for(let h=H0;h<H1;h++)g+=`<i class="g${h===H0?" day":""}" style="left:${k*dayW+(h-H0)*60*ppm}px"></i>`;
-    const bl=pos.map(([f,a,i])=>{const on=picks.has(f.key);
-      const ya=!on&&el.has(f.id);
-      return `<button type="button" class="blk${on?" on":""}${ya?" ya":""}${cl.has(f.key)?" clash":""}" data-k="${esc(f.key)}" style="left:${a}px;top:${i*(LH+4)+4}px;width:${f.dur*ppm-3}px"
-        title="${esc(f.hora+" · "+f.titulo+" · "+f.sec+" · "+f.sala+(f.est?"":" · "+f.dur+" min")+(f.otros?" · Sesión: "+f.otros:""))}" aria-pressed="${on}"><b>${esc(f.hora)}</b><span>${esc(f.titulo)}</span></button>`;}).join("");
-    body+=`<div class="lane-row"><div class="rl">${esc(r.s)}${r.nota?`<small>${r.nota}</small>`:""}</div><div class="track" style="width:${dayW*vd.length}px;height:${hgt}px">${g}${bl}</div></div>`;
+  const vd=dia!=="todos"?[dia]:$("solo").checked?dias.filter(d=>ver.some(f=>f.dia===d)):dias, el=elegidas();
+  if(!ver.length) return `<p class="empty">No hay funciones con estos filtros. ${picks.size?"Quita algún filtro o elige otro día.":"Marca funciones con + en la vista Programa, o desmarca «Solo mis marcadas» para elegir aquí."}</p>`;
+  const horas=[...new Set(ver.map(f=>Math.floor(f.min/60)))].sort((a,b)=>a-b);
+  let h=`<div class="wk" style="--nd:${vd.length}"><table><thead><tr><th class="h"></th>`;
+  for(const d of vd){const l=lbl(d),n=ver.filter(f=>f.dia===d).length;h+=`<th>${l.w} ${l.n}<small>${n} ${n===1?"función":"funciones"}</small></th>`;}
+  h+="</tr></thead><tbody>";
+  for(const hr of horas){
+    h+=`<tr><th class="h" scope="row">${hr}:00</th>`;
+    for(const d of vd){
+      const fs=ver.filter(f=>f.dia===d&&Math.floor(f.min/60)===hr).sort((a,b)=>a.min-b.min||cmp(a.titulo,b.titulo));
+      h+="<td>"+fs.map(f=>{const on=picks.has(f.key),ya=!on&&el.has(f.id);
+        return `<button type="button" class="it${on?" on":""}${ya?" ya":""}${cl.has(f.key)?" clash":""}" data-k="${esc(f.key)}" aria-pressed="${on}"
+          title="${esc((on?"Quitar":"Marcar")+": "+f.titulo+(f.otros?" · Sesión: "+f.otros:""))}"><b>${esc(f.hora)}–${finH(f)}${f.est?"*":""}</b><strong>${esc(f.titulo)}</strong><span>${esc(f.sec)}</span><span>${esc(f.sala)}</span></button>`;}).join("")+"</td>";
+    }
+    h+="</tr>";
   }
-  return `<div class="tl" style="--lw:${LW}px;--lh:${LH}px"><div class="tl-in" style="width:${LW+dayW*vd.length}px"><div class="tl-head">${head}</div>${body}</div></div>
-    <div class="legend"><span><i></i>Función (clic para marcar)</span><span><i class="on"></i>Marcada</span><span><i class="cl"></i>Choca con otra marcada</span><span>El largo del bloque es la duración de la sesión (90 min si la ficha no la indica)</span></div>`;
+  return h+`</tbody></table></div><div class="legend"><span><i class="on"></i>Marcada (clic para quitar)</span><span><i></i>Sin marcar (clic para marcar)</span><span><i class="cl"></i>Choca con otra marcada</span><span>* duración estimada en 90 min</span></div>`;
 }
 
 function render(){
@@ -296,9 +285,9 @@ function render(){
   const ver=lista.filter(f=>dia==="todos"||f.dia===dia), cl=choques();
   $("count").textContent=`${ver.length} funciones · ${picks.size} marcadas`;
   $("clashes").innerHTML=cl.size?`<span class="warn">${cl.size} marcadas chocan en horario</span>`:"";
-  const sx=cal&&document.querySelector(".tl")?document.querySelector(".tl").scrollLeft:0;
+  const sx=cal&&document.querySelector(".wk")?document.querySelector(".wk").scrollLeft:0;
   $("m").innerHTML=cal?pintarCal(ver,cl):pintarLista(ver,cl);
-  if(cal&&document.querySelector(".tl")) document.querySelector(".tl").scrollLeft=sx;
+  if(cal&&document.querySelector(".wk")) document.querySelector(".wk").scrollLeft=sx;
 }
 function irA(){try{history.replaceState(null,"",vista==="cal"?"#calendario":dia==="todos"?location.pathname:"#"+dia)}catch(_){}}
 $("days").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;dia=b.dataset.d;irA();render();

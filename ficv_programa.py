@@ -670,6 +670,8 @@ def agrupar(funciones):
         sec = f["seccion"] or "Sin sección"
         if sec == "En Competencia" and f.get("subseccion"):  # una sección por competencia
             sec = re.sub(r"^Selección Oficial ", "Competencia ", f["subseccion"])
+        elif f.get("subseccion") in ("Gala", "Gala Chilena"):  # galas como secciones propias
+            sec = f["subseccion"]
         prog[f["dia"] or "Sin fecha"][sec].append(f)
     ordenado = OrderedDict()
     for dia in sorted(prog):
