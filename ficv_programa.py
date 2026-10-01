@@ -485,6 +485,48 @@ def extraer_dom(page, dia_pestana, dump=None):
 # Detalle de cada película (opcional): precisa sección y sala
 # --------------------------------------------------------------------------
 
+def plantilla_funciones(datos):
+    """De las respuestas de una ficha, toma la consulta POST que trae la tabla Funciones."""
+    meta = next((x for x in datos if isinstance(x.get("body"), dict) and x["body"].get("name") == "Funciones"
+                 and isinstance(x["body"].get("fields"), list)), None)
+    if not meta:
+        return None
+    ids_meta = {f["id"] for f in meta["body"]["fields"]}
+    for x in datos:
+        b = x.get("body")
+        if (x.get("metodo") == "POST" and x.get("envio") and isinstance(b, dict) and b.get("items")
+                and set(b["items"][0].get("fields", {})) & ids_meta):
+            try:
+                envio = json.loads(x["envio"])
+                envio["pageContext"]["context"]["pageContextId"]
+            except Exception:
+                return None
+            cab = {k: v for k, v in (x.get("cabeceras") or {}).items()
+                   if k.lower() in ("content-type", "accept") or k.lower().startswith(("softr", "x-"))}
+            return {"url": x["url"], "envio": envio, "cabeceras": cab,
+                    "meta": {"url": meta["url"], "body": meta["body"]}}
+    return None
+
+
+def repetir_consulta(page, plantilla, rid):
+    """Pide las funciones de la película rid con la consulta aprendida. None si falla."""
+    envio = json.loads(json.dumps(plantilla["envio"]))
+    envio["pageContext"]["context"]["pageContextId"] = rid
+    envio["pagingOption"] = {"offset": None, "count": 100}
+    for intento in range(3):
+        try:
+            r = page.request.post(plantilla["url"], data=json.dumps(envio), headers=plantilla["cabeceras"],
+                                  timeout=20000)
+            if r.ok:
+                body = r.json()
+                if isinstance(body, dict) and isinstance(body.get("items"), list):
+                    return [plantilla["meta"], {"url": plantilla["url"], "metodo": "POST", "body": body}]
+        except Exception:
+            pass
+        page.wait_for_timeout(1500 * (intento + 1))
+    return None
+
+
 def visitar_fichas(context, ids, out, limite_s=1500):
     """Abre /ficha?recordId=<id> y guarda las respuestas JSON de la ficha en out/fichas/<id>.json.
 
@@ -495,7 +537,13 @@ def visitar_fichas(context, ids, out, limite_s=1500):
     import time
     inicio = time.monotonic()
     page = context.new_page()
+    plantilla = None  # consulta de "Funciones" aprendida de una ficha: se repite cambiando el id
     for i, rid in enumerate(ids, 1):
+        if plantilla:
+            datos_r = repetir_consulta(page, plantilla, rid)
+            if datos_r:
+                (d / f"{rid}.json").write_text(json.dumps(datos_r, ensure_ascii=False), encoding="utf-8")
+                continue
         if time.monotonic() - inicio > limite_s:
             print(f"  Tiempo agotado: quedan {len(ids) - i + 1} fichas para la próxima ejecución", file=sys.stderr)
             break
@@ -505,7 +553,8 @@ def visitar_fichas(context, ids, out, limite_s=1500):
             try:
                 if "json" in (resp.headers.get("content-type") or "") and "/v1/datasource/" in resp.url:
                     datos.append({"url": resp.url, "metodo": resp.request.method,
-                                  "envio": resp.request.post_data, "body": resp.json()})
+                                  "envio": resp.request.post_data, "cabeceras": resp.request.headers,
+                                  "body": resp.json()})
             except Exception:
                 pass
 
@@ -552,6 +601,10 @@ def visitar_fichas(context, ids, out, limite_s=1500):
                 break
             page.wait_for_timeout(2000 * (intento + 1))
         (d / f"{rid}.json").write_text(json.dumps(datos, ensure_ascii=False), encoding="utf-8")
+        if funciones_completas() and not plantilla:
+            plantilla = plantilla_funciones(datos)
+            if plantilla:
+                print("  Consulta de funciones aprendida: el resto se pide directamente", file=sys.stderr)
         page.remove_listener("response", cap)
     page.close()
 
