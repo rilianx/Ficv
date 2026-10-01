@@ -524,10 +524,15 @@ def visitar_fichas(context, ids, out, limite_s=1500):
             print(f"  fichas {i}-{min(i + 19, len(ids))} de {len(ids)}", file=sys.stderr)
         try:
             page.goto(url, wait_until="domcontentloaded", timeout=45000)
-            for _ in range(30):
+            for _ in range(30):  # el bloque Funciones carga al llegar a él: bajar por la página
                 page.wait_for_timeout(500)
                 if funciones_completas():
                     break
+                try:
+                    page.get_by_text("Funciones", exact=True).first.scroll_into_view_if_needed(timeout=500)
+                except Exception:
+                    pass
+                page.mouse.wheel(0, 1200)
             for _ in range(10):  # funciones paginadas: pulsar "cargar más" hasta tenerlas todas
                 if funciones_completas() or time.monotonic() > tope:
                     break
@@ -565,7 +570,7 @@ def fichas_pendientes(funciones, ids, carpeta, cache):
     hechas = funciones_desde_fichas(carpeta)
     al_dia = {rid for rid, fi in hechas.items()
               if fi["completa"] and {(x["dia"], x["hora"]) for x in fi["funciones"]} == agenda.get(rid)}
-    for rid in set(hechas) - al_dia:
+    for rid in (set(hechas) - al_dia) & set(agenda):  # solo fichas desactualizadas de películas vigentes
         (carpeta / f"{rid}.json").unlink(missing_ok=True)
     return sorted(ids - al_dia, key=lambda r: (r not in varias, r))
 
