@@ -38,7 +38,7 @@ jobs:
         run: |
           rm -rf programa && mkdir -p programa/depuracion
           cp salida/programa.* programa/ 2>/dev/null || true
-          cp -r salida/html salida/api programa/depuracion/ 2>/dev/null || true
+          cp -r salida/html salida/api salida/fichas programa/depuracion/ 2>/dev/null || true
           git config user.name "github-actions[bot]"
           git config user.email "41898341+github-actions[bot]@users.noreply.github.com"
           git add programa

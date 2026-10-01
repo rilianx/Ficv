@@ -476,6 +476,41 @@ def extraer_dom(page, dia_pestana, dump=None):
 # Detalle de cada película (opcional): precisa sección y sala
 # --------------------------------------------------------------------------
 
+def visitar_fichas(context, ids, out):
+    """Abre /ficha?recordId=<id> y guarda el texto de la página y las respuestas JSON en out/fichas/."""
+    d = out / "fichas"
+    d.mkdir(parents=True, exist_ok=True)
+    page = context.new_page()
+    for i, rid in enumerate(ids, 1):
+        datos = []
+
+        def cap(resp):
+            try:
+                if "json" in (resp.headers.get("content-type") or "") and "/v1/datasource/" in resp.url:
+                    datos.append({"url": resp.url, "body": resp.json()})
+            except Exception:
+                pass
+
+        page.on("response", cap)
+        url = f"https://33.ficvaldivia.cl/ficha?recordId={rid}"
+        print(f"  ficha [{i}/{len(ids)}] {url}", file=sys.stderr)
+        try:
+            page.goto(url, wait_until="domcontentloaded", timeout=45000)
+            for _ in range(40):  # esperar a que carguen los bloques
+                page.wait_for_timeout(750)
+                txt = page.inner_text("body")
+                if "Loading" not in txt and len(datos) >= 1:
+                    break
+            page.mouse.wheel(0, 20000)
+            page.wait_for_timeout(2500)
+            (d / f"{rid}.txt").write_text(page.inner_text("body"), encoding="utf-8")
+            (d / f"{rid}.json").write_text(json.dumps(datos, ensure_ascii=False, indent=1), encoding="utf-8")
+        except Exception as e:
+            print(f"    error: {e}", file=sys.stderr)
+        page.remove_listener("response", cap)
+    page.close()
+
+
 def completar_detalles(context, funciones):
     urls = sorted({f["url"] for f in funciones if f["url"] and not f["seccion"]} |
                   {f["url"] for f in funciones if f["url"]})
@@ -686,6 +721,11 @@ def main():
                 f["url"] = urljoin(a.url, f["url"])
 
         funciones = deduplicar(funciones)
+        # películas en más de una sala: la ficha dice qué sala corresponde a cada función
+        varias = sorted({f["id"] for f in funciones if f.get("fuente") == "softr" and " / " in f["sala"]})
+        if varias:
+            print(f"Visitando {len(varias)} fichas de películas con varias salas…", file=sys.stderr)
+            visitar_fichas(context, varias, out)
         if a.detalles and not desde_softr:
             print("Visitando fichas de películas…", file=sys.stderr)
             completar_detalles(context, funciones)
