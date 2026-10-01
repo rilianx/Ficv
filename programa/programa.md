@@ -320,25 +320,25 @@ Fuente: https://33.ficvaldivia.cl/programacion
 
 | Hora | Película | Sala | Notas |
 |---|---|---|---|
-|  | [Conectados con el mar](https://33.ficvaldivia.cl/ficha?recordId=Sg6jjolZjE1Qwr) | Aula Magna UACh | Concurso de micrometrajes · Con Entrada o Acreditación |
-|  | [Daños colaterales](https://33.ficvaldivia.cl/ficha?recordId=EMAYIf3Pd0bKXO) | Aula Magna UACh | Concurso de micrometrajes · Con Entrada o Acreditación |
-|  | [El mar comienza aquí](https://33.ficvaldivia.cl/ficha?recordId=U9ptOtUGCEVO2Q) | Aula Magna UACh | Concurso de micrometrajes · Con Entrada o Acreditación |
+|  | [Conectados con el mar](https://33.ficvaldivia.cl/ficha?recordId=Sg6jjolZjE1Qwr) | Aula Magna UACh | Concurso de micrometrajes · Con Inscripción Previa |
+|  | [Daños colaterales](https://33.ficvaldivia.cl/ficha?recordId=EMAYIf3Pd0bKXO) | Aula Magna UACh | Concurso de micrometrajes · Con Inscripción Previa |
+|  | [El mar comienza aquí](https://33.ficvaldivia.cl/ficha?recordId=U9ptOtUGCEVO2Q) | Aula Magna UACh | Concurso de micrometrajes · Con Inscripción Previa |
 |  | [Estanque](https://33.ficvaldivia.cl/ficha?recordId=eENchWgbngAdIX) | Teatro Cervantes | Muestra Cortometraje Infantil +7 años · Entrada Liberada |
-|  | [Fütra weichan](https://33.ficvaldivia.cl/ficha?recordId=l1IiJw2uvzimnb) | Aula Magna UACh | Concurso de micrometrajes · Con Entrada o Acreditación |
+|  | [Fütra weichan](https://33.ficvaldivia.cl/ficha?recordId=l1IiJw2uvzimnb) | Aula Magna UACh | Concurso de micrometrajes · Con Inscripción Previa |
 |  | [Hacia el bosque](https://33.ficvaldivia.cl/ficha?recordId=9CQBQbsREY3v1p) | Teatro Cervantes | Muestra Cortometraje Infantil +7 años, Muestra Cortometraje Infantil  +10 años · Entrada Liberada |
-|  | [Marea](https://33.ficvaldivia.cl/ficha?recordId=14vaA0P9ufEozr) | Aula Magna UACh | Concurso de micrometrajes · Con Entrada o Acreditación |
+|  | [Marea](https://33.ficvaldivia.cl/ficha?recordId=14vaA0P9ufEozr) | Aula Magna UACh | Concurso de micrometrajes · Con Inscripción Previa |
 |  | [Murcielagos y bichos](https://33.ficvaldivia.cl/ficha?recordId=HjbwVpR4CFdGIk) | Teatro Cervantes | Muestra Cortometraje Infantil +7 años · Entrada Liberada |
-|  | [Más allá de las olas](https://33.ficvaldivia.cl/ficha?recordId=o6HoKVAINLNtoA) | Aula Magna UACh | Concurso de micrometrajes · Con Entrada o Acreditación |
-|  | [Nacidos del agua ( La Marmadre)](https://33.ficvaldivia.cl/ficha?recordId=wH7ENTysLPq9F0) | Aula Magna UACh | Concurso de micrometrajes · Con Entrada o Acreditación |
-|  | [Niños del Agua: Senegal](https://33.ficvaldivia.cl/ficha?recordId=PQGIgKP4AyRK3d) | Aula Magna UACh | Concurso de micrometrajes · Con Entrada o Acreditación |
+|  | [Más allá de las olas](https://33.ficvaldivia.cl/ficha?recordId=o6HoKVAINLNtoA) | Aula Magna UACh | Concurso de micrometrajes · Con Inscripción Previa |
+|  | [Nacidos del agua ( La Marmadre)](https://33.ficvaldivia.cl/ficha?recordId=wH7ENTysLPq9F0) | Aula Magna UACh | Concurso de micrometrajes · Con Inscripción Previa |
+|  | [Niños del Agua: Senegal](https://33.ficvaldivia.cl/ficha?recordId=PQGIgKP4AyRK3d) | Aula Magna UACh | Concurso de micrometrajes · Con Inscripción Previa |
 |  | [Nutissimo](https://33.ficvaldivia.cl/ficha?recordId=L1OPCFlpmWI2zf) | Teatro Cervantes | Muestra Cortometraje Infantil +7 años · Entrada Liberada |
 |  | [Oveja](https://33.ficvaldivia.cl/ficha?recordId=JOojvnHnoOowOA) | Teatro Cervantes | Muestra Cortometraje Infantil +7 años · Entrada Liberada |
 |  | [Piccolo Piccolo](https://33.ficvaldivia.cl/ficha?recordId=yQoLDoOwOyl0Ci) | Teatro Cervantes | Muestra Cortometraje Infantil Primera Infancia (3 a 6 años), Muestra Cortometraje Infantil +7 años · Entrada Liberada |
-|  | [Rayo verde en el mar](https://33.ficvaldivia.cl/ficha?recordId=FMxfB0XudU2ycj) | Aula Magna UACh | Concurso de micrometrajes · Con Entrada o Acreditación |
-|  | [Serendipia](https://33.ficvaldivia.cl/ficha?recordId=xDblFGQfaArRD2) | Aula Magna UACh | Concurso de micrometrajes · Con Entrada o Acreditación |
-|  | [Wiñol Lafken](https://33.ficvaldivia.cl/ficha?recordId=una4MW49VpUukM) | Aula Magna UACh | Concurso de micrometrajes · Con Entrada o Acreditación |
-|  | [¿Por qué el agua del mar es salada?](https://33.ficvaldivia.cl/ficha?recordId=iyc0g9mpjUjm09) | Aula Magna UACh | Concurso de Micrometrajes: Cine y Ciencia · Con Entrada o Acreditación |
-|  | [¿Qué pasaría cuando dejes de escuchar el sonido del Mar?](https://33.ficvaldivia.cl/ficha?recordId=4k49UWMud33SS1) | Aula Magna UACh | Concurso de micrometrajes · Con Entrada o Acreditación |
+|  | [Rayo verde en el mar](https://33.ficvaldivia.cl/ficha?recordId=FMxfB0XudU2ycj) | Aula Magna UACh | Concurso de micrometrajes · Con Inscripción Previa |
+|  | [Serendipia](https://33.ficvaldivia.cl/ficha?recordId=xDblFGQfaArRD2) | Aula Magna UACh | Concurso de micrometrajes · Con Inscripción Previa |
+|  | [Wiñol Lafken](https://33.ficvaldivia.cl/ficha?recordId=una4MW49VpUukM) | Aula Magna UACh | Concurso de micrometrajes · Con Inscripción Previa |
+|  | [¿Por qué el agua del mar es salada?](https://33.ficvaldivia.cl/ficha?recordId=iyc0g9mpjUjm09) | Aula Magna UACh | Concurso de Micrometrajes: Cine y Ciencia · Con Inscripción Previa |
+|  | [¿Qué pasaría cuando dejes de escuchar el sonido del Mar?](https://33.ficvaldivia.cl/ficha?recordId=4k49UWMud33SS1) | Aula Magna UACh | Concurso de micrometrajes · Con Inscripción Previa |
 
 ## Jueves 15 de octubre
 
