@@ -156,6 +156,11 @@ section.sec h2 i:not(.dot){font-style:normal;font-size:10.5px;padding:1px 7px;bo
 .stars em{font-style:normal;margin-left:6px}
 .stars button.lit{color:#d97706}
 .stars button:first-of-type[aria-pressed="true"]{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.it .tras{display:block;font:700 9.5px/1.2 var(--f-body);color:var(--free);background:var(--free-bg);border-radius:3px;padding:1px 4px;margin:-1px 0 2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.it .tras.lejos{color:#fff;background:#b45309}
+.it .tras.mal{color:#fff;background:var(--clash)}
+.it.on .tras{color:#fff}
+.pill.lejos{background:var(--free-bg);color:var(--free)}
 .seenbtn{font:700 11.5px var(--f-body);padding:2px 9px;border-radius:999px;border:1px dashed var(--muted);background:none;color:var(--muted);cursor:pointer;white-space:nowrap}
 .seenbtn[aria-pressed="true"]{border-style:solid;border-color:var(--ink);background:var(--ink);color:var(--surface)}
 .pop-fa{display:flex;gap:8px;align-items:center}
@@ -345,6 +350,27 @@ const enVistas=(s,el)=>s.films.some(f=>vistas.has(f.id)&&(on(s)||!el.has(f.id)))
 const yaEn=(s,el)=>s.films.map(f=>el.get(f.id)).filter(x=>x&&x!==s);
 
 // ---------- choques entre sesiones marcadas ----------
+// ---------- traslados entre funciones seguidas ----------
+// Zonas: todo lo de la UACh queda cerca entre sí; Teatro Cervantes está lejos del resto.
+// Las salas sin zona conocida cuentan como "otro lugar" (aviso suave).
+const ZONAS=[[/UACh/i,"UACh"],[/Teatro Cervantes/i,"Centro (Teatro Cervantes)"]];
+const LEJOS=new Set(["Centro (Teatro Cervantes)"]);
+const zona=sala=>{for(const [re,z] of ZONAS) if(re.test(sala)) return z; return sala};
+function traslados(){
+  const r=new Map();
+  for(const d of dias){
+    const x=S.filter(s=>s.dia===d&&(on(s)||duda(s))).sort((a,b)=>a.min-b.min);
+    for(let i=1;i<x.length;i++){
+      const a=x[i-1], b=x[i], za=zona(a.sala), zb=zona(b.sala);
+      if(za===zb) continue;
+      const libre=b.min-(a.min+a.dur);                 // minutos entre el fin de una y el inicio de la otra
+      const lejos=LEJOS.has(za)||LEJOS.has(zb);
+      r.set(b.key,{desde:a,libre,lejos,apurado:lejos?libre<40:libre<20});
+    }
+  }
+  return r;
+}
+const textoTras=t=>`${t.lejos?"Lejos":"Otro lugar"}: viene de ${t.desde.sala} · ${t.libre>=0?t.libre+" min libres":"se superpone"}`;
 function choques(){
   const c=new Set();
   for(const d of dias){
@@ -406,7 +432,8 @@ function fila(s,cl,el){
     ...s.acceso.map(a=>`<span class="pill ${/liberada/i.test(a)?"free":""}">${esc(a)}</span>`),
     ya.length?`<span class="pill">${s.n===1?"Ya elegida: "+esc(corto(ya[0])):ya.length+" de "+s.n+" ya elegidas en otra función"}</span>`:"",
     s.estado?`<span class="pill clash">${esc(s.estado)}</span>`:"",
-    cl.has(s.key)?'<span class="pill clash">Choca con otra marcada</span>':""].join("");
+    cl.has(s.key)?'<span class="pill clash">Choca con otra marcada</span>':"",
+    trL.has(s.key)?`<span class="pill ${trL.get(s.key).apurado?"clash":"lejos"}">⇄ ${esc(textoTras(trL.get(s.key)))}</span>`:""].join("");
   const f0=s.films[0], quien=s.n===1?quienF(f0):"";
   const titulo=s.n===1?`<a href="${esc(f0.url)}" target="_blank" rel="noopener">${esc(f0.titulo)}</a>`:esc(titulos(s));
   const lista=s.n>1?`<ul class="films">${s.films.map(f=>`<li><a href="${esc(f.url)}" target="_blank" rel="noopener">${esc(f.titulo)}</a>${quienF(f)?` <span>${esc(quienF(f))}</span>`:""}</li>`).join("")}</ul>`:"";
@@ -417,7 +444,9 @@ function fila(s,cl,el){
     <span class="sub">${quien?`<span>${esc(quien)}</span>`:""}<span class="venue">${esc(s.sala)}</span><span>${s.est?"":s.dur+" min"}</span>${pills}
       <button type="button" class="seenbtn" data-v="${esc(s.key)}" aria-pressed="${vistaS(s)}">${vistaS(s)?"✔ Vista":algunaV(s)?"Vista en parte":"Marcar como vista"}</button>${notaS(s)!=null?`<span class="nota">${estrellas(notaS(s))}</span>`:""}${lista}</span></div>`;
 }
+let trL=new Map();
 function pintarLista(ver,cl){
+  trL=traslados();
   let h="", el=elegidas();
   for(const d of (dia==="todos"?dias:[dia])){
     const del=ver.filter(s=>s.dia===d); if(!del.length) continue;
@@ -451,6 +480,7 @@ function carriles(ver,vd){
   });
 }
 function pintarCal(ver,cl){
+  const tras=traslados();
   const vd=dia!=="todos"?[dia]:dias.filter(d=>ver.some(s=>s.dia===d)), el=elegidas();
   if(!ver.length) return `<p class="empty">No hay funciones con estos filtros. ${picks.size?"Quita algún filtro o elige otro día.":"Marca funciones con + en la vista Programa, o activa arriba alguna sección para elegir aquí."}</p>`;
   const PPM=1.15;                                           // píxeles por minuto
@@ -464,13 +494,14 @@ function pintarCal(ver,cl){
   for(const c of cols){
     h+=`<div class="col" style="height:${alto}px">`+c.items.map(({s,lane,n})=>{
       const m=on(s),ya=!m&&yaEn(s,el).length, w=100/n;
+      const tr=tras.get(s.key);
       const badge=vistaS(s)?(notaS(s)!=null?"✔ "+estrellas(notaS(s)):"✔ VISTA"):"";
       return `<button type="button" class="it${m?" on":""}${duda(s)?" duda":""}${ya?" ya":""}${cl.has(s.key)?" clash":""}${n>=3?" angosta":""}${vistaS(s)?" vista":""}" data-s="${esc(s.key)}" data-ids="${esc(s.films.map(f=>f.id).join(" "))}" data-badge="${badge}" aria-haspopup="dialog"
-        title="${esc(s.hora+"–"+finH(s)+" · "+s.films.map(f=>f.titulo+(quienF(f)?" ("+quienF(f)+")":"")).join(" · ")+" · "+s.sala)}"
-        style="--c:${col(s.sec)};top:${y(s.min)+1}px;height:${s.ocupa*PPM-2}px;left:calc(${lane*w}% + 2px);width:calc(${w}% - 4px)"><b>${esc(s.hora)}–${finH(s)}${s.est?"*":""}</b><strong>${esc(titulos(s))}</strong>${s.n===1&&quienF(s.films[0])?`<span class="dir">${esc(quienF(s.films[0]))}</span>`:""}${s.n>1?`<span class="cortos">${esc(s.films.map(f=>f.titulo).join(" · "))}</span>`:""}<span>${esc(s.sec)}</span><span>${esc(s.sala)}</span></button>`;
+        title="${esc((tr?textoTras(tr)+" · ":"")+s.hora+"–"+finH(s)+" · "+s.films.map(f=>f.titulo+(quienF(f)?" ("+quienF(f)+")":"")).join(" · ")+" · "+s.sala)}"
+        style="--c:${col(s.sec)};top:${y(s.min)+1}px;height:${s.ocupa*PPM-2}px;left:calc(${lane*w}% + 2px);width:calc(${w}% - 4px)">${tr?`<span class="tras ${tr.apurado?"mal":tr.lejos?"lejos":""}">${tr.lejos?"⇄ Lejos":"⇄ Otro lugar"} · ${tr.libre>=0?tr.libre+" min":"!"}</span>`:""}<b>${esc(s.hora)}–${finH(s)}${s.est?"*":""}</b><strong>${esc(titulos(s))}</strong>${s.n===1&&quienF(s.films[0])?`<span class="dir">${esc(quienF(s.films[0]))}</span>`:""}${s.n>1?`<span class="cortos">${esc(s.films.map(f=>f.titulo).join(" · "))}</span>`:""}<span>${esc(s.sec)}</span><span>${esc(s.sala)}</span></button>`;
     }).join("")+`</div>`;
   }
-  return h+`</div></div><div class="legend"><span><i class="on"></i>★ Marcada (bloque relleno)</span><span><i class="du"></i>? Con duda</span><span><i class="vi"></i>✔ Vista (con tu nota)</span><span><i></i>Sin marcar · el color indica la sección · clic para ver detalles</span><span><i class="cl"></i>Choca con otra marcada</span><span>El alto del bloque es la duración + ${MARGEN} min de margen</span><span>* duración estimada en 90 min</span></div>`;
+  return h+`</div></div><div class="legend"><span><i class="on"></i>★ Marcada (bloque relleno)</span><span><i class="du"></i>? Con duda</span><span><i class="vi"></i>✔ Vista (con tu nota)</span><span><i></i>Sin marcar · el color indica la sección · clic para ver detalles</span><span><i class="cl"></i>Choca con otra marcada</span><span>⇄ Traslado: la función anterior es en otra zona (rojo = poco tiempo)</span><span>El alto del bloque es la duración + ${MARGEN} min de margen</span><span>* duración estimada en 90 min</span></div>`;
 }
 
 // ---------- exportar el calendario visible a PDF (jsPDF desde cdnjs, se carga al primer uso) ----------
@@ -507,7 +538,7 @@ async function exportarPDF(){
     doc.setFont("helvetica","normal");doc.setFontSize(6.5);
     for(let hr=h0;hr<=h1;hr++){const yy=y(hr*60);doc.setDrawColor(228,233,230);doc.line(M+AX,yy,W-M,yy);doc.setTextColor(120,130,126);if(hr<h1)doc.text(`${hr}:00`,M+AX-1,yy+2,{align:"right"})}
     // bloques
-    const el=elegidas();
+    const el=elegidas(), trasPDF=traslados();
     carriles(ver,vd).forEach((c,i)=>c.items.forEach(({s,lane,n})=>{
       const w=cw/n, x=M+AX+i*cw+lane*w+0.4, yy=y(s.min)+0.3, h=s.ocupa*mmMin-0.6, ww=w-0.8, m=on(s), base=col(s.sec);
       doc.setFillColor(...(m?rgb(base):mezcla(base,0.85)));doc.setDrawColor(...rgb(base));doc.setLineWidth(m?0.5:0.25);
@@ -522,6 +553,9 @@ async function exportarPDF(){
       linea(s.n===1?quienF(f0):s.films.map(f=>f.titulo).join(" · "),fs-0.5,false,blanco?[240,240,240]:[60,70,66]);
       linea(s.sala,fs-0.5,false,blanco?[235,235,235]:[93,107,102]);
       if(vistaS(s)){doc.setFont("helvetica","bold");doc.setFontSize(5);doc.setTextColor(blanco?255:24);doc.text(notaS(s)!=null?`VISTA ${notaS(s)}/5`:"VISTA",x+ww-1,yy+h-1,{align:"right"})}
+      const trp=trasPDF.get(s.key);
+      if(trp){doc.setFont("helvetica","bold");doc.setFontSize(5);doc.setTextColor(...(trp.apurado?[185,28,28]:[122,90,0]));
+        doc.text(lat(`${trp.lejos?"<> LEJOS":"<> OTRO LUGAR"} ${trp.libre>=0?trp.libre+" min":""}`),x+ww-1,yy+h-(vistaS(s)?3.2:1),{align:"right"})}
       if(duda(s)){doc.setLineDashPattern([1,0.8],0);doc.setDrawColor(24,34,31);doc.setLineWidth(0.4);doc.roundedRect(x,yy,ww,h,0.8,0.8,"S");doc.setLineDashPattern([],0);
         doc.setFont("helvetica","bold");doc.setFontSize(8);doc.setTextColor(24,34,31);doc.text("?",x+ww-1.2,yy+3.2,{align:"right"})}
     }));
@@ -531,7 +565,7 @@ async function exportarPDF(){
       const tw=doc.getTextWidth(lat(sc))+6; if(lx+tw>W-M){lx=M;ly+=4}
       doc.setFillColor(...rgb(col(sc)));doc.rect(lx,ly-2.2,3,2.6,"F");doc.setFont("helvetica","normal");doc.setTextColor(60,70,66);doc.text(lat(sc),lx+4,ly);lx+=tw+2;
     }
-    doc.setTextColor(120,130,126);doc.text(lat("Bloque relleno y * = marcada · borde punteado y ? = con duda · VISTA n/5 = tu nota"),W-M,H-4,{align:"right"});
+    doc.setTextColor(120,130,126);doc.text(lat("Bloque relleno y * = marcada · borde punteado y ? = con duda · VISTA n/5 = tu nota · <> = traslado desde otro lugar (min libres)"),W-M,H-4,{align:"right"});
     const blob=new Blob([doc.output("arraybuffer")],{type:"application/pdf"});
     await descargas.save({filename:"mi-calendario-ficv33.pdf",data:blob});
     btn.textContent="Descargar PDF";
@@ -553,7 +587,9 @@ function render(){
   const lista=filtradas(); pintarDias(lista);
   const ver=lista.filter(s=>dia==="todos"||s.dia===dia), cl=choques();
   $("count").textContent=`${ver.length} funciones · ${nm} marcadas · ${S.filter(duda).length} con duda · ${vistas.size} películas vistas`;
-  $("clashes").innerHTML=cl.size?`<span class="warn">${cl.size} marcadas chocan en horario</span>`:"";
+  const tz=[...traslados().values()];
+  $("clashes").innerHTML=(cl.size?`<span class="warn">${cl.size} marcadas chocan en horario</span> `:"")
+    +(tz.length?`<span class="${tz.some(x=>x.apurado)?"warn":""}">⇄ ${tz.length} traslado${tz.length>1?"s":""} de lugar${tz.some(x=>x.apurado)?` (${tz.filter(x=>x.apurado).length} con poco tiempo)`:""}</span>`:"");
   const sx=cal&&document.querySelector(".wk")?document.querySelector(".wk").scrollLeft:0;
   $("m").innerHTML=cal?pintarCal(ver,cl):pintarLista(ver,cl);
   if(cal&&document.querySelector(".wk")) document.querySelector(".wk").scrollLeft=sx;
@@ -579,6 +615,7 @@ function pintarPop(){
       ${s.acceso.map(a=>`<span class="pill ${/liberada/i.test(a)?"free":""}">${esc(a)}</span>`).join("")}
       <span>${esc(s.sala)}</span><span>${s.est?"Duración no informada (90 min estimados)":s.dur+" min"} + ${MARGEN} min de margen</span></div>
     ${m&&cl.has(s.key)?'<p class="pop-warn">Choca con otra función marcada.</p>':""}
+    ${traslados().has(s.key)?`<p class="pop-warn" style="color:${traslados().get(s.key).apurado?"var(--clash)":"var(--free)"}">⇄ ${esc(textoTras(traslados().get(s.key)))}${traslados().get(s.key).apurado?" — poco tiempo para el traslado":""}.</p>`:""}
     ${ya.length?`<p class="pop-meta">${s.n===1?"Ya la elegiste el "+esc(corto(ya[0]))+".":ya.length+" de "+s.n+" películas ya elegidas en otra función."}</p>`:""}
     <ul class="pop-films">${films}</ul>
     <div class="pop-acc">${m?'<button type="button" class="btn del" data-acc="t">Quitar de mi calendario</button><button type="button" class="btn" data-acc="q">Pasar a «?»</button>'
