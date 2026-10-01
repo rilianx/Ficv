@@ -52,6 +52,26 @@ h1 span{color:var(--river)}
 .chip em{font-style:normal;color:var(--muted);font-size:11.5px}
 .chip.mini{border-style:dashed;color:var(--muted)}
 body.cal .sololista{display:none}
+@media (max-width:700px){body.cal .bar{position:static}#chips-in{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}.chip{flex:0 0 auto;white-space:nowrap}}
+dialog#pop{border:1px solid var(--line);border-radius:14px;background:var(--surface);color:var(--ink);padding:20px 20px 18px;width:min(460px,calc(100vw - 32px));max-height:calc(100vh - 48px);overflow:auto;box-shadow:0 18px 50px rgb(0 0 0 / .25)}
+dialog#pop::backdrop{background:rgb(10 20 18 / .45)}
+.pop-x{position:absolute;top:8px;right:8px;margin:0}
+.pop-x button{border:0;background:none;color:var(--muted);font-size:24px;line-height:1;width:36px;height:36px;border-radius:50%;cursor:pointer}
+.pop-x button:hover{background:var(--bg);color:var(--ink)}
+.pop-h{font:500 13px var(--f-mono);color:var(--river);margin:0 36px 4px 0}
+#pop h3{font:700 20px/1.2 var(--f-display);margin:0 36px 8px 0;text-wrap:balance}
+.pop-meta{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;font-size:13px;color:var(--muted)}
+.pop-films{list-style:none;margin:0 0 16px;padding:0;display:grid;gap:8px}
+.pop-films li{display:flex;justify-content:space-between;gap:10px;align-items:baseline;border-top:1px solid var(--line);padding-top:8px}
+.pop-films b{display:block}
+.pop-films span{font-size:12.5px;color:var(--muted)}
+.pop-films a{white-space:nowrap;font-size:13px;color:var(--river);font-weight:700}
+.pop-acc{display:flex;flex-wrap:wrap;gap:8px}
+.btn{font:700 14px var(--f-body);padding:9px 16px;border-radius:9px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center}
+.btn.pri{background:var(--river);border-color:var(--river);color:var(--bg)}
+.btn.del{background:var(--pick);border-color:var(--pick);color:var(--bg)}
+.pop-meta .pill{white-space:normal}
+.pop-warn{color:var(--clash);font-size:13px;font-weight:700;margin:0 0 12px}
 .filters label{display:flex;align-items:center;gap:6px;font-size:14px;color:var(--muted);white-space:nowrap}
 button:focus-visible,select:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--river);outline-offset:2px}
 .status{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--muted)}
@@ -137,6 +157,10 @@ footer a{color:var(--river)}
     <div class="status"><span id="count"></span><span id="clashes"></span><span id="sync"></span></div>
   </div>
   <main id="m"></main>
+  <dialog id="pop" aria-labelledby="pop-t">
+    <form method="dialog" class="pop-x"><button aria-label="Cerrar">×</button></form>
+    <div id="pop-in"></div>
+  </dialog>
   <footer>Datos de <a href="https://33.ficvaldivia.cl/programacion">33.ficvaldivia.cl/programacion</a>, extraídos el __FECHA__. La sala, el acceso y la duración de cada función salen de la ficha de cada película; si una ficha no la indica, se usan 90 minutos. Los choques se calculan con esa duración.</footer>
 </div>
 <script>
@@ -336,12 +360,12 @@ function pintarCal(ver,cl){
       const ss=ver.filter(s=>s.dia===d&&Math.floor(s.min/60)===hr).sort((a,b)=>a.min-b.min||cmp(titulos(a),titulos(b)));
       h+="<td>"+ss.map(s=>{const m=on(s),ya=!m&&yaEn(s,el).length;
         const nombres=s.films.map(f=>f.titulo).join(" · ");
-        return `<button type="button" class="it${m?" on":""}${ya?" ya":""}${cl.has(s.key)?" clash":""}" data-k="${esc(s.key)}" aria-pressed="${m}"
-          title="${esc((m?"Quitar":"Marcar")+": "+nombres)}"><b>${esc(s.hora)}–${finH(s)}${s.est?"*":""}</b><strong>${esc(titulos(s))}</strong>${s.n>1?`<span class="cortos">${esc(nombres)}</span>`:""}<span>${esc(s.sec)}</span><span>${esc(s.sala)}</span></button>`;}).join("")+"</td>";
+        return `<button type="button" class="it${m?" on":""}${ya?" ya":""}${cl.has(s.key)?" clash":""}" data-s="${esc(s.key)}" aria-haspopup="dialog"
+          title="${esc(nombres)}"><b>${esc(s.hora)}–${finH(s)}${s.est?"*":""}</b><strong>${esc(titulos(s))}</strong>${s.n>1?`<span class="cortos">${esc(nombres)}</span>`:""}<span>${esc(s.sec)}</span><span>${esc(s.sala)}</span></button>`;}).join("")+"</td>";
     }
     h+="</tr>";
   }
-  return h+`</tbody></table></div><div class="legend"><span><i class="on"></i>Marcada (clic para quitar)</span><span><i></i>Sin marcar (clic para marcar)</span><span><i class="cl"></i>Choca con otra marcada</span><span>Cada bloque incluye ${MARGEN} min de margen (demora o foro)</span><span>* duración estimada en 90 min</span></div>`;
+  return h+`</tbody></table></div><div class="legend"><span><i class="on"></i>Marcada</span><span><i></i>Sin marcar · clic en un bloque para ver detalles</span><span><i class="cl"></i>Choca con otra marcada</span><span>Cada bloque incluye ${MARGEN} min de margen (demora o foro)</span><span>* duración estimada en 90 min</span></div>`;
 }
 
 function render(){
@@ -364,7 +388,34 @@ $("days").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)
   const top=document.querySelector(".bar").offsetTop; if(scrollY>top) scrollTo({top});});
 $("v-list").onclick=()=>{vista="list";irA();render()};
 $("v-cal").onclick=()=>{vista="cal";irA();render()};
-$("m").addEventListener("click",e=>{const b=e.target.closest("[data-k]");if(b)toggle(b.dataset.k)});
+// ---------- ventana con la información de una sesión ----------
+let abierta=null;
+function pintarPop(){
+  const s=porClave.get(abierta); if(!s) return;
+  const m=on(s), el=elegidas(), ya=!m?yaEn(s,el):[], cl=choques(), l=lbl(s.dia);
+  const films=s.films.map(f=>`<li><div><b>${esc(f.titulo)}</b><span>${esc([f.direccion,f.pais].filter(Boolean).join(" · "))}</span></div>
+    ${f.url?`<a href="${esc(f.url)}" target="_blank" rel="noopener">Ver ficha ↗</a>`:""}</li>`).join("");
+  $("pop-in").innerHTML=`<p class="pop-h">${l.w} ${l.n} de octubre · ${esc(s.hora)}–${finH(s)}</p>
+    <h3 id="pop-t">${esc(titulos(s))}</h3>
+    <div class="pop-meta"><span class="pill">${esc(s.sec)}</span>${s.sub.map(x=>`<span class="pill">${esc(x)}</span>`).join("")}
+      ${s.acceso.map(a=>`<span class="pill ${/liberada/i.test(a)?"free":""}">${esc(a)}</span>`).join("")}
+      <span>${esc(s.sala)}</span><span>${s.est?"Duración no informada (90 min estimados)":s.dur+" min"} + ${MARGEN} min de margen</span></div>
+    ${m&&cl.has(s.key)?'<p class="pop-warn">Choca con otra función marcada.</p>':""}
+    ${ya.length?`<p class="pop-meta">${s.n===1?"Ya la elegiste el "+esc(corto(ya[0]))+".":ya.length+" de "+s.n+" películas ya elegidas en otra función."}</p>`:""}
+    <ul class="pop-films">${films}</ul>
+    <div class="pop-acc">${m?'<button type="button" class="btn del" data-acc="t">Quitar de mi calendario</button>':'<button type="button" class="btn pri" data-acc="t">Agregar a mi calendario</button>'}
+      ${s.n===1&&s.films[0].url?`<a class="btn" href="${esc(s.films[0].url)}" target="_blank" rel="noopener">Ver ficha en el festival ↗</a>`:""}
+      <button type="button" class="btn" data-acc="c">Cerrar</button></div>`;
+}
+function abrir(k){abierta=k;pintarPop();try{$("pop").showModal()}catch(e){$("pop").setAttribute("open","")}}
+$("pop").addEventListener("click",e=>{
+  if(e.target===$("pop")){$("pop").close();return}          // clic fuera del cuadro
+  const a=e.target.closest("[data-acc]"); if(!a) return;
+  if(a.dataset.acc==="t"){toggle(abierta);pintarPop()} else $("pop").close();
+});
+$("pop").addEventListener("close",()=>{abierta=null});
+$("m").addEventListener("click",e=>{const c=e.target.closest("[data-s]");if(c){abrir(c.dataset.s);return}
+  const b=e.target.closest("[data-k]");if(b)toggle(b.dataset.k)});
 try{if(localStorage.getItem("ficv33-ocultar")==="0")$("ocultar").checked=false}catch(e){}
 $("ocultar").addEventListener("input",()=>{try{localStorage.setItem("ficv33-ocultar",$("ocultar").checked?"1":"0")}catch(e){}});
 ["sec","sala","q","libre","solo","ocultar"].forEach(id=>$(id).addEventListener("input",render));
