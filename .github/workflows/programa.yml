@@ -1,0 +1,43 @@
+name: Programa FICValdivia
+
+on:
+  push:
+    paths:
+      - ficv_programa.py
+      - .github/workflows/programa.yml
+  workflow_dispatch:
+  schedule:
+    - cron: "17 11 * 10 *"   # diario en octubre (08:17 Chile) para captar cambios
+
+permissions:
+  contents: write
+
+concurrency:
+  group: programa-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  extraer:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt && playwright install --with-deps chromium
+      - name: Extraer programa
+        run: python ficv_programa.py --detalles --dump
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: salida
+          path: salida/
+      - name: Guardar resultado en el repositorio
+        run: |
+          rm -rf programa && mkdir programa
+          cp salida/programa.* programa/
+          git config user.name "github-actions[bot]"
+          git config user.email "41898341+github-actions[bot]@users.noreply.github.com"
+          git add programa
+          git diff --cached --quiet || git commit -m "Actualizar programa FICValdivia"
+          git push
