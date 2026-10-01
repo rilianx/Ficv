@@ -173,6 +173,135 @@ def funciones_desde_api(payloads):
 
 
 # --------------------------------------------------------------------------
+# Softr (la web del festival está hecha en Softr, con una tabla "Películas")
+# --------------------------------------------------------------------------
+
+# Lee window.softrBlocks y devuelve {id_campo: nombre} del bloque de lista.
+JS_MAPA_SOFTR = r"""
+() => {
+  const bs = (window.softrBlocks || []).filter(b => b.type === 'dynamic' && b.elements && b.elements.filters);
+  if (!bs.length) return null;
+  const b = bs[0], mapa = {};
+  for (const it of (b.elements.fields && b.elements.fields.items) || []) {
+    const f = it.field || {};
+    if (f.mappedTo) mapa[f.mappedTo] = f.type === 'heading' ? 'titulo' : (f.type || f.mappedTo);
+  }
+  for (const it of b.elements.filters.items || [])
+    if (it.mappedTo) mapa[it.mappedTo] = it.label && it.label.value || it.mappedTo;
+  return {hrid: b.hrid, mapa};
+}
+"""
+
+
+def esperar_softr(page):
+    """Si la página es Softr: espera a que cargue la lista y pulsa 'Cargar más' hasta el final."""
+    try:
+        info = page.evaluate(JS_MAPA_SOFTR)
+    except Exception:
+        info = None
+    if not info:
+        return None
+    print(f"Página Softr detectada (bloque '{info['hrid']}'): campos {info['mapa']}", file=sys.stderr)
+    bloque = page.locator(f"#{info['hrid']}")
+    try:
+        bloque.scroll_into_view_if_needed(timeout=5000)
+    except Exception:
+        pass
+    for _ in range(90):  # hasta ~90 s
+        try:
+            if "Loading" not in bloque.inner_text(timeout=2000):
+                break
+        except Exception:
+            pass
+        page.mouse.wheel(0, 600)
+        page.wait_for_timeout(1000)
+    clics = 0
+    for _ in range(300):
+        btn = bloque.get_by_text(re.compile(r"Cargar m[aá]s|Load more", re.I)).first
+        try:
+            if not btn.is_visible(timeout=3000):
+                break
+            btn.scroll_into_view_if_needed(timeout=3000)
+            btn.click(timeout=5000)
+            clics += 1
+            page.wait_for_timeout(1500)
+        except Exception:
+            break
+    print(f"  'Cargar más' pulsado {clics} veces", file=sys.stderr)
+    return info["mapa"]
+
+
+def _texto(v):
+    if v is None:
+        return ""
+    if isinstance(v, list):
+        return ", ".join(t for t in (_texto(x) for x in v) if t)
+    if isinstance(v, dict):
+        for k in ("label", "name", "value", "text", "title", "url"):
+            if k in v:
+                return _texto(v[k])
+        return ""
+    return str(v).strip()
+
+
+def registros_softr(payloads, mapa):
+    """Busca en las respuestas JSON registros {id, fields:{...}} con los campos del bloque."""
+    vistos, out = set(), []
+
+    def visitar(o):
+        if isinstance(o, list):
+            for x in o:
+                visitar(x)
+        elif isinstance(o, dict):
+            campos = o.get("fields") if isinstance(o.get("fields"), dict) else None
+            if campos and any(k in mapa for k in campos):
+                rid = o.get("id") or json.dumps(campos, sort_keys=True)[:200]
+                if rid not in vistos:
+                    vistos.add(rid)
+                    out.append(o)
+                return
+            for v in o.values():
+                if isinstance(v, (list, dict)):
+                    visitar(v)
+
+    for p in payloads:
+        visitar(p)
+    return out
+
+
+def funciones_desde_softr(payloads, mapa, base_url):
+    inv = {v: k for k, v in mapa.items()}
+    def campo(f, nombre):
+        k = inv.get(nombre)
+        return _texto(f.get(k)) if k else ""
+
+    out = []
+    for r in registros_softr(payloads, mapa):
+        f = r["fields"]
+        titulo = campo(f, "titulo")
+        texto = " · ".join(_texto(f.get(k)) for k, n in mapa.items() if n == "text" and f.get(k))
+        dias = [d.strip() for d in re.split(r"[;,]", campo(f, "Día de exhibición")) if d.strip()] or [""]
+        hora = HORA_RE.search(texto)
+        cat, sub = campo(f, "Categoría"), campo(f, "Sub categoría")
+        for d in dias:
+            out.append({
+                "dia": normalizar_dia(d) if d else "",
+                "hora": f"{int(hora.group(1)):02d}:{hora.group(2)}" if hora else "",
+                "titulo": titulo,
+                "sala": campo(f, "Lugar"),
+                "seccion": cat or sub,
+                "subseccion": sub if cat else "",
+                "acceso": campo(f, "Tipo de acceso"),
+                "url": urljoin(base_url, r.get("url") or "") if r.get("url") else "",
+                "detalle": texto,
+                "id": r.get("id", ""),
+                "fuente": "softr",
+            })
+    print(f"  Softr: {len(out)} funciones desde la API", file=sys.stderr)
+    return out
+
+
+# --------------------------------------------------------------------------
 # Estrategia 2: DOM
 # --------------------------------------------------------------------------
 
@@ -372,10 +501,11 @@ def escribir_md(prog, ruta):
     for dia, secciones in prog.items():
         l += [f"## {nombre_dia(dia)}", ""]
         for sec, fs in secciones.items():
-            l += [f"### {sec}", "", "| Hora | Película | Sala |", "|---|---|---|"]
+            l += [f"### {sec}", "", "| Hora | Película | Sala | Notas |", "|---|---|---|---|"]
             for f in fs:
                 t = f"[{f['titulo']}]({f['url']})" if f["url"] else f["titulo"]
-                l.append(f"| {f['hora']} | {t.replace('|', '/')} | {f['sala'].replace('|', '/')} |")
+                notas = " · ".join(x for x in (f.get("subseccion"), f.get("acceso")) if x)
+                l.append(f"| {f['hora']} | {t.replace('|', '/')} | {f['sala'].replace('|', '/')} | {notas.replace('|', '/')} |")
             l.append("")
     ruta.write_text("\n".join(l), encoding="utf-8")
 
@@ -421,7 +551,7 @@ function pintar(){{
       if(!v.length) continue;
       bloque+=`<h2>${{esc(sec)}}</h2>`+v.map(f=>`<div class="f"><span class="h">${{esc(f.hora)}}</span>
         <span class="t">${{f.url?`<a href="${{esc(f.url)}}" target="_blank">${{esc(f.titulo)}}</a>`:esc(f.titulo)}}</span>
-        <span class="s">${{esc(f.sala)}}</span></div>`).join('');
+        <span class="s">${{esc([f.sala,f.subseccion,f.acceso].filter(Boolean).join(' · '))}}</span></div>`).join('');
     }}
     if(bloque) html+=(dia==='Todos'?`<h1 style="margin-top:28px">${{esc(N[d])}}</h1>`:'')+bloque;
   }}
@@ -450,14 +580,22 @@ def main():
 
     payloads = []
 
+    log_urls = []
+
     def capturar(resp):
         try:
-            if "json" in (resp.headers.get("content-type") or "") and resp.request.resource_type in ("xhr", "fetch"):
-                data = resp.json()
-                payloads.append(data)
-                nombre = re.sub(r"[^\w.-]+", "_", resp.url.split("://", 1)[-1])[:120]
-                (out / "api" / f"{len(payloads):03d}_{nombre}.json").write_text(
-                    json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
+            rt = resp.request.resource_type
+            if rt in ("image", "font", "stylesheet", "media"):
+                return
+            log_urls.append(f"{resp.status} {resp.request.method} {rt} {resp.url}")
+            ct = resp.headers.get("content-type") or ""
+            if "json" not in ct or "manifest.json" in resp.url:
+                return
+            data = resp.json()
+            payloads.append(data)
+            nombre = re.sub(r"[^\w.-]+", "_", resp.url.split("://", 1)[-1])[:120]
+            (out / "api" / f"{len(payloads):03d}_{nombre}.json").write_text(
+                json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
         except Exception:
             pass
 
@@ -481,6 +619,7 @@ def main():
             except Exception:
                 pass
 
+        mapa_softr = esperar_softr(page)
         funciones = []
         pestanas = page.evaluate(JS_PESTANAS_DIA, DIAS_RE)
         print(f"Pestañas de día detectadas: {pestanas or 'ninguna'}", file=sys.stderr)
@@ -507,7 +646,8 @@ def main():
             funciones = extraer_dom(page, "", dump)
             print(f"  {len(funciones)} funciones en la página", file=sys.stderr)
 
-        desde_api = funciones_desde_api(payloads)
+        desde_softr = funciones_desde_softr(payloads, mapa_softr, a.url) if mapa_softr else []
+        desde_api = desde_softr or funciones_desde_api(payloads)
         if len(desde_api) > len(funciones) * 0.8 and desde_api:
             print(f"Usando datos de la API ({len(desde_api)} funciones) en vez del DOM ({len(funciones)}).",
                   file=sys.stderr)
@@ -521,6 +661,7 @@ def main():
             print("Visitando fichas de películas…", file=sys.stderr)
             completar_detalles(context, funciones)
         browser.close()
+    (out / "api" / "urls.txt").write_text("\n".join(log_urls), encoding="utf-8")
 
     if not funciones:
         print("No se encontraron funciones. Prueba con --ver --dump y revisa salida/html/ y salida/api/.",
