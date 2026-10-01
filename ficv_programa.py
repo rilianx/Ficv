@@ -485,6 +485,44 @@ def extraer_dom(page, dia_pestana, dump=None):
 # Detalle de cada película (opcional): precisa sección y sala
 # --------------------------------------------------------------------------
 
+JS_PAGINA = r"""
+async ([url, cab, cuerpo]) => {
+  const r = await fetch(url, {method: "POST", headers: cab, body: cuerpo, credentials: "include"});
+  return r.ok ? await r.json() : null;
+}
+"""
+
+
+def paginas_restantes(page, datos):
+    """Pide desde la propia ficha las páginas de Funciones que el bloque no cargó (offset 6, 12…)."""
+    pedidos = [x for x in datos if x.get("metodo") == "POST" and x.get("envio") and isinstance(x.get("body"), dict)
+               and isinstance(x["body"].get("items"), list) and x["body"].get("total", 0) > len(x["body"]["items"])]
+    if not pedidos:
+        return
+    x = pedidos[0]
+    total = x["body"]["total"]
+    cab = {k: v for k, v in (x.get("cabeceras") or {}).items()
+           if k.lower() in ("content-type", "accept") or k.lower().startswith(("softr", "x-"))}
+    try:
+        envio = json.loads(x["envio"])
+    except Exception:
+        return
+    ya = {it["id"] for y in datos if isinstance(y.get("body"), dict) and isinstance(y["body"].get("items"), list)
+          for it in y["body"]["items"]}
+    offset = len(x["body"]["items"])
+    while len(ya) < total and offset < total + 50:
+        envio["pagingOption"] = {"offset": str(offset), "count": 50}
+        try:
+            body = page.evaluate(JS_PAGINA, [x["url"], cab, json.dumps(envio)])
+        except Exception:
+            body = None
+        if not isinstance(body, dict) or not body.get("items"):
+            break
+        datos.append({"url": x["url"], "metodo": "POST", "envio": json.dumps(envio), "body": body})
+        ya |= {it["id"] for it in body["items"]}
+        offset += len(body["items"])
+
+
 def plantilla_funciones(datos):
     """De las respuestas de una ficha, toma la consulta POST que trae la tabla Funciones."""
     meta = next((x for x in datos if isinstance(x.get("body"), dict) and x["body"].get("name") == "Funciones"
@@ -610,6 +648,8 @@ def visitar_fichas(context, ids, out, limite_s=1500, agenda=None):
                     page.wait_for_timeout(1200)
             except Exception as e:
                 print(f"    {rid}: error {e}", file=sys.stderr)
+            if not funciones_completas():
+                paginas_restantes(page, datos)
             if funciones_completas():
                 break
             page.wait_for_timeout(2000 * (intento + 1))
