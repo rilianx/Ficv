@@ -600,10 +600,21 @@ def main():
             pass
 
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=not a.ver,
-                                    executable_path=os.environ.get("CHROMIUM_PATH") or None)
-        context = browser.new_context(locale="es-CL", viewport={"width": 1366, "height": 900})
+        opciones = dict(headless=not a.ver, args=["--disable-blink-features=AutomationControlled"])
+        if os.environ.get("CHROMIUM_PATH"):
+            opciones["executable_path"] = os.environ["CHROMIUM_PATH"]
+        else:
+            opciones["channel"] = "chromium"  # headless "nuevo": se comporta como un Chrome normal
+        browser = p.chromium.launch(**opciones)
+        context = browser.new_context(
+            locale="es-CL", timezone_id="America/Santiago", viewport={"width": 1366, "height": 900},
+            user_agent=("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                        "(KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"))
+        context.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
         page = context.new_page()
+        page.on("console", lambda m: m.type in ("error", "warning") and log_urls.append(f"CONSOLE {m.type}: {m.text[:300]}"))
+        page.on("pageerror", lambda e: log_urls.append(f"PAGEERROR {str(e)[:300]}"))
+        page.on("requestfailed", lambda r: log_urls.append(f"FAILED {r.method} {r.url} {r.failure}"))
         page.on("response", capturar)
 
         print(f"Abriendo {a.url}", file=sys.stderr)
