@@ -335,7 +335,7 @@ function estado(k,e){const s=porClave.get(k);if(!s)return;          // e: "si" |
   s.films.forEach(f=>{picks.delete(f.key);dudas.delete(f.key);if(e==="si")picks.add(f.key);if(e==="duda")dudas.add(f.key)});guardar();render();}
 function toggle(k){const s=porClave.get(k);if(s)estado(k,on(s)?"no":"si")}
 function toggleDuda(k){const s=porClave.get(k);if(s)estado(k,duda(s)?"no":"duda")}
-const estrellas=n=>"★".repeat(n)+"☆".repeat(5-n);
+const estrellas=n=>n>0?"★".repeat(n):"0 ★";   // solo las estrellas marcadas
 const notaS=s=>s.n===1&&vistas.has(s.films[0].id)&&notas[s.films[0].id]!=null?notas[s.films[0].id]:null;
 function ponerNota(id,n){notas[id]===n?delete notas[id]:notas[id]=n;guardar();render();}
 // vistas: por película; una sesión está vista si todas sus películas lo están
