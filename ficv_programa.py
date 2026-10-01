@@ -269,36 +269,76 @@ def registros_softr(payloads, mapa):
     return out
 
 
+def nombres_campos_softr(payloads):
+    """La respuesta /metadata trae {fields:[{id, name}]}: id de campo → nombre real en la tabla."""
+    for p in payloads:
+        if isinstance(p, dict) and isinstance(p.get("fields"), list) and p.get("primaryFieldId"):
+            return {f["id"]: f.get("name", f["id"]) for f in p["fields"] if isinstance(f, dict) and "id" in f}
+    return {}
+
+
+# "Viernes 16 - 11:00"
+AGENDA_RE = re.compile(DIAS_RE + r"\s*(\d{1,2})\s*[-–·,]?\s*([01]?\d|2[0-3])[:.]([0-5]\d)", re.I)
+
+
 def funciones_desde_softr(payloads, mapa, base_url):
-    inv = {v: k for k, v in mapa.items()}
-    def campo(f, nombre):
-        k = inv.get(nombre)
-        return _texto(f.get(k)) if k else ""
+    nombres = {**(mapa or {}), **nombres_campos_softr(payloads)}
+    inv = defaultdict(list)
+    for k, v in nombres.items():
+        inv[norm(v)].append(k)
+
+    def lista(f, *candidatos):
+        for c in candidatos:
+            for k in inv.get(norm(c), []):
+                v = f.get(k)
+                if v not in (None, "", []):
+                    return [t for t in (_texto(x) for x in (v if isinstance(v, list) else [v])) if t]
+        return []
+
+    def campo(f, *candidatos):
+        return ", ".join(lista(f, *candidatos))
 
     out = []
-    for r in registros_softr(payloads, mapa):
+    registros = registros_softr(payloads, nombres)
+    for r in registros:
         f = r["fields"]
-        titulo = campo(f, "titulo")
-        texto = " · ".join(_texto(f.get(k)) for k, n in mapa.items() if n == "text" and f.get(k))
-        dias = [d.strip() for d in re.split(r"[;,]", campo(f, "Día de exhibición")) if d.strip()] or [""]
-        hora = HORA_RE.search(texto)
-        cat, sub = campo(f, "Categoría"), campo(f, "Sub categoría")
-        for d in dias:
-            out.append({
-                "dia": normalizar_dia(d) if d else "",
-                "hora": f"{int(hora.group(1)):02d}:{hora.group(2)}" if hora else "",
-                "titulo": titulo,
-                "sala": campo(f, "Lugar"),
-                "seccion": cat or sub,
-                "subseccion": sub if cat else "",
-                "acceso": campo(f, "Tipo de acceso"),
-                "url": urljoin(base_url, r.get("url") or "") if r.get("url") else "",
-                "detalle": texto,
-                "id": r.get("id", ""),
-                "fuente": "softr",
-            })
-    print(f"  Softr: {len(out)} funciones desde la API", file=sys.stderr)
+        cat, sub = campo(f, "Categoría"), campo(f, "Sub Categoría", "Sub categoría")
+        base = {
+            "titulo": campo(f, "Título", "titulo").strip(),
+            # si la película se da en varias salas, la API no dice cuál corresponde a cada función
+            "sala": " / ".join(dict.fromkeys(lista(f, "DondeEs", "Lugar"))),
+            "seccion": cat or sub,
+            "subseccion": sub if cat else "",
+            "acceso": " / ".join(dict.fromkeys(lista(f, "TipoAcceso", "Tipo de acceso"))),
+            "direccion": campo(f, "Dirección"),
+            "pais": campo(f, "País/es"),
+            "url": f"{base_url}?recordId={r['id']}" if r.get("id") else "",
+            "id": r.get("id", ""),
+            "fuente": "softr",
+        }
+        pares = [m for item in lista(f, "Agenda", "text") for m in AGENDA_RE.finditer(item)]
+        if pares:
+            for m in pares:
+                out.append({**base, "dia": f"2026-10-{int(m.group(2)):02d}",
+                            "hora": f"{int(m.group(3)):02d}:{m.group(4)}"})
+        else:  # sin horario: un registro por día
+            for d in lista(f, "QueDiasLaDan", "Día de exhibición") or [""]:
+                out.append({**base, "dia": normalizar_dia(d) if d else "", "hora": ""})
+    if registros:
+        print(f"  Softr: {len(registros)} películas → {len(out)} funciones", file=sys.stderr)
     return out
+
+
+def generar(funciones, out):
+    funciones = deduplicar(funciones)
+    prog = agrupar(funciones)
+    (out / "programa.json").write_text(json.dumps(funciones, ensure_ascii=False, indent=1), encoding="utf-8")
+    escribir_md(prog, out / "programa.md")
+    escribir_html(prog, out / "programa.html")
+    print(f"\n{len(funciones)} funciones en {len(prog)} días:", file=sys.stderr)
+    for dia, secs in prog.items():
+        print(f"  {nombre_dia(dia)}: " + ", ".join(f"{s} ({len(v)})" for s, v in secs.items()), file=sys.stderr)
+    print(f"\nListo → {out/'programa.html'}, {out/'programa.md'}, {out/'programa.json'}", file=sys.stderr)
 
 
 # --------------------------------------------------------------------------
@@ -465,7 +505,7 @@ def completar_detalles(context, funciones):
 def deduplicar(funciones):
     vistos, out = set(), []
     for f in funciones:
-        k = (f["dia"], f["hora"], norm(f["titulo"]), norm(f["sala"]))
+        k = (f["dia"], f["hora"], norm(f["titulo"]), norm(f["sala"]), f.get("id", ""))
         if k not in vistos:
             vistos.add(k)
             out.append(f)
@@ -532,7 +572,7 @@ main{{max-width:900px;margin:0 auto;padding:8px 16px 40px}} h2{{font-size:16px;c
 .vacio{{color:var(--mut);padding:30px 0;text-align:center}}
 </style></head><body>
 <header><h1>33° FICValdivia · Programa</h1><div class="tabs" id="tabs"></div>
-<div class="ctl"><select id="sec"></select><input id="q" placeholder="Buscar película o sala…"></div></header>
+<div class="ctl"><select id="sec"></select><input id="q" placeholder="Buscar película, dirección, país o sala…"></div></header>
 <main id="m"></main>
 <script>
 const P={datos}, N={nombres}; const dias=Object.keys(P); let dia=dias[0];
@@ -547,11 +587,11 @@ function pintar(){{
     let bloque='';
     for(const [sec,fs] of Object.entries(P[d])){{
       if(s&&sec!==s) continue;
-      const v=fs.filter(f=>!texto||(f.titulo+' '+f.sala).toLowerCase().includes(texto));
+      const v=fs.filter(f=>!texto||(f.titulo+' '+f.sala+' '+(f.direccion||'')+' '+(f.pais||'')).toLowerCase().includes(texto));
       if(!v.length) continue;
       bloque+=`<h2>${{esc(sec)}}</h2>`+v.map(f=>`<div class="f"><span class="h">${{esc(f.hora)}}</span>
         <span class="t">${{f.url?`<a href="${{esc(f.url)}}" target="_blank">${{esc(f.titulo)}}</a>`:esc(f.titulo)}}</span>
-        <span class="s">${{esc([f.sala,f.subseccion,f.acceso].filter(Boolean).join(' · '))}}</span></div>`).join('');
+        <span class="s">${{esc([[f.direccion,f.pais].filter(Boolean).join(', '),f.sala,f.subseccion,f.acceso].filter(Boolean).join(' · '))}}</span></div>`).join('');
     }}
     if(bloque) html+=(dia==='Todos'?`<h1 style="margin-top:28px">${{esc(N[d])}}</h1>`:'')+bloque;
   }}
@@ -571,7 +611,18 @@ def main():
     ap.add_argument("--detalles", action="store_true", help="visitar cada película para precisar la sección")
     ap.add_argument("--dump", action="store_true", help="guardar el HTML de cada día en salida/html/")
     ap.add_argument("--salida", default=str(OUT))
+    ap.add_argument("--desde-json", metavar="DIR",
+                    help="no navegar: reprocesar respuestas JSON guardadas (p. ej. salida/api)")
     a = ap.parse_args()
+
+    if a.desde_json:
+        payloads = [json.loads(p.read_text(encoding="utf-8")) for p in sorted(Path(a.desde_json).glob("*.json"))]
+        funciones = funciones_desde_softr(payloads, {}, a.url) or funciones_desde_api(payloads)
+        if not funciones:
+            sys.exit("No se encontraron funciones en esos JSON.")
+        Path(a.salida).mkdir(parents=True, exist_ok=True)
+        generar(funciones, Path(a.salida))
+        return
 
     out = Path(a.salida)
     (out / "api").mkdir(parents=True, exist_ok=True)
@@ -657,7 +708,7 @@ def main():
             funciones = extraer_dom(page, "", dump)
             print(f"  {len(funciones)} funciones en la página", file=sys.stderr)
 
-        desde_softr = funciones_desde_softr(payloads, mapa_softr, a.url) if mapa_softr else []
+        desde_softr = funciones_desde_softr(payloads, mapa_softr or {}, a.url)
         desde_api = desde_softr or funciones_desde_api(payloads)
         if len(desde_api) > len(funciones) * 0.8 and desde_api:
             print(f"Usando datos de la API ({len(desde_api)} funciones) en vez del DOM ({len(funciones)}).",
@@ -668,7 +719,7 @@ def main():
                 f["url"] = urljoin(a.url, f["url"])
 
         funciones = deduplicar(funciones)
-        if a.detalles:
+        if a.detalles and not desde_softr:
             print("Visitando fichas de películas…", file=sys.stderr)
             completar_detalles(context, funciones)
         browser.close()
@@ -679,16 +730,7 @@ def main():
               file=sys.stderr)
         sys.exit(1)
 
-    prog = agrupar(funciones)
-    (out / "programa.json").write_text(json.dumps(funciones, ensure_ascii=False, indent=1), encoding="utf-8")
-    escribir_md(prog, out / "programa.md")
-    escribir_html(prog, out / "programa.html")
-
-    print(f"\n{len(funciones)} funciones en {len(prog)} días:", file=sys.stderr)
-    for dia, secs in prog.items():
-        print(f"  {nombre_dia(dia)}: " + ", ".join(f"{s} ({len(v)})" for s, v in secs.items()), file=sys.stderr)
-    print(f"\nListo → {out/'programa.html'}, {out/'programa.md'}, {out/'programa.json'}", file=sys.stderr)
-
+    generar(funciones, out)
 
 if __name__ == "__main__":
     main()

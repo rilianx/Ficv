@@ -26,7 +26,7 @@ jobs:
           python-version: "3.12"
       - run: pip install -r requirements.txt && playwright install --with-deps chromium
       - name: Extraer programa
-        run: python ficv_programa.py --detalles --dump
+        run: python ficv_programa.py --dump
         continue-on-error: true
       - uses: actions/upload-artifact@v4
         if: always()
