@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - ficv_programa.py
+      - plantilla.html
       - .github/workflows/programa.yml
   workflow_dispatch:
   schedule:
