@@ -506,7 +506,10 @@ function pintarCal(ver,cl){
 
 // ---------- exportar el calendario visible a PDF (jsPDF desde cdnjs, se carga al primer uso) ----------
 let descargas=null;
-(async()=>{try{if(window.claude&&claude.use) descargas=await claude.use("downloads")}catch(e){} render()})();
+// fuera del visor de Claude (archivo abierto en el navegador) se descarga con un enlace normal
+const descargaLocal={save:async({filename,data})=>{const u=URL.createObjectURL(data),a=document.createElement("a");
+  a.href=u;a.download=filename;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),5000)}};
+(async()=>{try{descargas=window.claude&&claude.use?await claude.use("downloads"):descargaLocal}catch(e){} render()})();
 function cargarJsPDF(){
   if(window.jspdf) return Promise.resolve();
   return new Promise((ok,mal)=>{const s=document.createElement("script");

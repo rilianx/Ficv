@@ -338,7 +338,7 @@ function estado(k,e){const s=porClave.get(k);if(!s)return;          // e: "si" |
   s.films.forEach(f=>{picks.delete(f.key);dudas.delete(f.key);if(e==="si")picks.add(f.key);if(e==="duda")dudas.add(f.key)});guardar();render();}
 function toggle(k){const s=porClave.get(k);if(s)estado(k,on(s)?"no":"si")}
 function toggleDuda(k){const s=porClave.get(k);if(s)estado(k,duda(s)?"no":"duda")}
-const estrellas=n=>"★".repeat(n)+"☆".repeat(5-n);
+const estrellas=n=>n>0?"★".repeat(n):"0 ★";   // solo las estrellas marcadas
 const notaS=s=>s.n===1&&vistas.has(s.films[0].id)&&notas[s.films[0].id]!=null?notas[s.films[0].id]:null;
 function ponerNota(id,n){notas[id]===n?delete notas[id]:notas[id]=n;guardar();render();}
 // vistas: por película; una sesión está vista si todas sus películas lo están
@@ -509,7 +509,10 @@ function pintarCal(ver,cl){
 
 // ---------- exportar el calendario visible a PDF (jsPDF desde cdnjs, se carga al primer uso) ----------
 let descargas=null;
-(async()=>{try{if(window.claude&&claude.use) descargas=await claude.use("downloads")}catch(e){} render()})();
+// fuera del visor de Claude (archivo abierto en el navegador) se descarga con un enlace normal
+const descargaLocal={save:async({filename,data})=>{const u=URL.createObjectURL(data),a=document.createElement("a");
+  a.href=u;a.download=filename;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),5000)}};
+(async()=>{try{descargas=window.claude&&claude.use?await claude.use("downloads"):descargaLocal}catch(e){} render()})();
 function cargarJsPDF(){
   if(window.jspdf) return Promise.resolve();
   return new Promise((ok,mal)=>{const s=document.createElement("script");
