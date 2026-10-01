@@ -11,13 +11,18 @@ Fuente: https://33.ficvaldivia.cl/programacion
 | 20:00 | [Selección Noticiero Chile al Día](https://33.ficvaldivia.cl/programacion?recordId=yEEmF0RRUSiaEl) | Teatro Cervantes | Cortometraje Ceremonia de Inauguración · Solo con Invitación |
 | 20:00 | [Thémes et variations](https://33.ficvaldivia.cl/programacion?recordId=nmY9KrJqPLUUiP) | Teatro Cervantes | Cortometraje Ceremonia de Inauguración · Solo con Invitación |
 
-### En Competencia
+### Competencia Largometraje
 
 | Hora | Película | Sala | Notas |
 |---|---|---|---|
 | 11:45 | [El hogar fue sepultado en esa tierra que nunca pudimos encontrar](https://33.ficvaldivia.cl/programacion?recordId=YxTx1Q7ntgsGeP) | Cine Club UACh | Selección Oficial Largometraje · Con Entrada o Acreditación |
-| 12:00 | [Chicas tristes](https://33.ficvaldivia.cl/programacion?recordId=E5wc7wtRUmURgb) | Felix Martinez UACh / Teatro Cervantes | Selección Oficial Largometraje Juvenil · Con Entrada o Acreditación / Entrada Liberada |
 | 15:00 | [Let Them Be Seen](https://33.ficvaldivia.cl/programacion?recordId=gY4pHKFGzA87pP) | Cine Club UACh | Selección Oficial Largometraje · Con Entrada o Acreditación |
+
+### Competencia Largometraje Juvenil
+
+| Hora | Película | Sala | Notas |
+|---|---|---|---|
+| 12:00 | [Chicas tristes](https://33.ficvaldivia.cl/programacion?recordId=E5wc7wtRUmURgb) | Felix Martinez UACh / Teatro Cervantes | Selección Oficial Largometraje Juvenil · Con Entrada o Acreditación / Entrada Liberada |
 | 17:15 | [Inoue!](https://33.ficvaldivia.cl/programacion?recordId=MAmqaBKEqokhl0) | Felix Martinez UACh | Selección Oficial Largometraje Juvenil · Con Entrada o Acreditación |
 
 ### Filmes de Apertura y Clausura
@@ -91,17 +96,22 @@ Fuente: https://33.ficvaldivia.cl/programacion
 | 17:30 | [Voilers Et Coquelicots](https://33.ficvaldivia.cl/programacion?recordId=f1WFTiwG998Fti) | Sala Paraninfo UACh | Rose Lowder · Con Entrada o Acreditación |
 | 19:30 | [Los muertos](https://33.ficvaldivia.cl/programacion?recordId=1RJkJP1BwWrDRW) | Cine Club UACh | Lisandro Alonso · Con Entrada o Acreditación |
 
-### En Competencia
+### Competencia Largometraje
 
 | Hora | Película | Sala | Notas |
 |---|---|---|---|
 | 10:45 | [La ilusión de un verano sin fin](https://33.ficvaldivia.cl/programacion?recordId=ARN6NaPoPW3vKR) | Cine Club UACh | Selección Oficial Largometraje · Con Entrada o Acreditación |
-| 12:00 | [Nuestro cuerpo es una estrella que se expande](https://33.ficvaldivia.cl/programacion?recordId=gKMP2KScuRWTWt) | Teatro Cervantes / Felix Martinez UACh | Selección Oficial Largometraje Juvenil · Entrada Liberada / Con Entrada o Acreditación |
 | 14:30 | [Tycoon](https://33.ficvaldivia.cl/programacion?recordId=5j7iNOQtGwdm71) | Cine Club UACh | Selección Oficial Largometraje · Con Entrada o Acreditación |
 | 17:00 | [Sabes de mim, agora esqueça](https://33.ficvaldivia.cl/programacion?recordId=TemjKhkRjMUXaO) | Cine Club UACh | Selección Oficial Largometraje · Con Entrada o Acreditación |
-| 17:15 | [Handy girl](https://33.ficvaldivia.cl/programacion?recordId=ukDxcwczk2ZFqH) | Felix Martinez UACh / Teatro Cervantes | Selección Oficial Largometraje Juvenil · Con Entrada o Acreditación / Entrada Liberada |
 | 19:00 | [Los niños sin tierra](https://33.ficvaldivia.cl/programacion?recordId=O8FPN5shd7lp0P) | Aula Magna UACh | Selección Oficial Largometraje · Con Entrada o Acreditación |
 | 21:45 | [London](https://33.ficvaldivia.cl/programacion?recordId=1npeuwfVhyd0mf) | Cine Club UACh | Selección Oficial Largometraje · Con Entrada o Acreditación |
+
+### Competencia Largometraje Juvenil
+
+| Hora | Película | Sala | Notas |
+|---|---|---|---|
+| 12:00 | [Nuestro cuerpo es una estrella que se expande](https://33.ficvaldivia.cl/programacion?recordId=gKMP2KScuRWTWt) | Teatro Cervantes / Felix Martinez UACh | Selección Oficial Largometraje Juvenil · Entrada Liberada / Con Entrada o Acreditación |
+| 17:15 | [Handy girl](https://33.ficvaldivia.cl/programacion?recordId=ukDxcwczk2ZFqH) | Felix Martinez UACh / Teatro Cervantes | Selección Oficial Largometraje Juvenil · Con Entrada o Acreditación / Entrada Liberada |
 
 ### Muestra Contraplanos de la Historia
 
@@ -214,21 +224,31 @@ Fuente: https://33.ficvaldivia.cl/programacion
 | 16:45 | [Video Epistolar 1](https://33.ficvaldivia.cl/programacion?recordId=QfDSXRnnMFvfka) | Cine Club UACh | Daniela Delgado Viteri · Con Entrada o Acreditación |
 | 19:15 | [La libertad](https://33.ficvaldivia.cl/programacion?recordId=bq1dMMFtSbEDlo) | Cine Club UACh | Lisandro Alonso · Con Entrada o Acreditación |
 
-### En Competencia
+### Competencia Cortometraje de Latinoamérica y el Caribe
 
 | Hora | Película | Sala | Notas |
 |---|---|---|---|
-| 10:45 | [Tomorrow a long time ago](https://33.ficvaldivia.cl/programacion?recordId=Kv48worJl8k1rv) | Cine Club UACh | Selección Oficial Largometraje · Con Entrada o Acreditación |
-| 12:00 | [I Heard That They are Not Going to See Each Other Anymore](https://33.ficvaldivia.cl/programacion?recordId=KsHZaYL8kHGhlo) | Teatro Cervantes | Selección Oficial Largometraje Juvenil · Entrada Liberada |
 | 14:30 | [Banano, Banano](https://33.ficvaldivia.cl/programacion?recordId=EpFg3BcCFfnQjQ) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
 | 14:30 | [Filhos da Cana](https://33.ficvaldivia.cl/programacion?recordId=pUO36m2kaOmsxN) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
 | 14:30 | [Futuros luminosos](https://33.ficvaldivia.cl/programacion?recordId=jLgyHVwG1fVqgu) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
 | 14:30 | [Gestos para romper una imagen](https://33.ficvaldivia.cl/programacion?recordId=3HN0svEgEPa4Ff) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
 | 14:30 | [Isla Flotante](https://33.ficvaldivia.cl/programacion?recordId=cTB9MFhdglA0Xv) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
 | 14:30 | [Uma Fonte](https://33.ficvaldivia.cl/programacion?recordId=6qxk0qhPaETMDM) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
-| 17:15 | [Nunkui](https://33.ficvaldivia.cl/programacion?recordId=A71NaE2YdduGjf) | Teatro Cervantes / Felix Martinez UACh | Selección Oficial Largometraje Juvenil · Entrada Liberada / Con Entrada o Acreditación |
+
+### Competencia Largometraje
+
+| Hora | Película | Sala | Notas |
+|---|---|---|---|
+| 10:45 | [Tomorrow a long time ago](https://33.ficvaldivia.cl/programacion?recordId=Kv48worJl8k1rv) | Cine Club UACh | Selección Oficial Largometraje · Con Entrada o Acreditación |
 | 19:45 | [Lo que nos une](https://33.ficvaldivia.cl/programacion?recordId=r4dMVP5UT75y41) | Aula Magna UACh | Selección Oficial Largometraje · Con Entrada o Acreditación |
 | 21:30 | [Para hacer una película solo hace falta un arma](https://33.ficvaldivia.cl/programacion?recordId=eTYEdUZ9UbcKgJ) | Cine Club UACh | Selección Oficial Largometraje · Con Entrada o Acreditación |
+
+### Competencia Largometraje Juvenil
+
+| Hora | Película | Sala | Notas |
+|---|---|---|---|
+| 12:00 | [I Heard That They are Not Going to See Each Other Anymore](https://33.ficvaldivia.cl/programacion?recordId=KsHZaYL8kHGhlo) | Teatro Cervantes | Selección Oficial Largometraje Juvenil · Entrada Liberada |
+| 17:15 | [Nunkui](https://33.ficvaldivia.cl/programacion?recordId=A71NaE2YdduGjf) | Teatro Cervantes / Felix Martinez UACh | Selección Oficial Largometraje Juvenil · Entrada Liberada / Con Entrada o Acreditación |
 
 ### Muestra Contraplanos de la Historia
 
@@ -339,7 +359,7 @@ Fuente: https://33.ficvaldivia.cl/programacion
 | 17:30 | [Tartarughe d'Acqua](https://33.ficvaldivia.cl/programacion?recordId=rlE47HXMYl4m6z) | Sala Paraninfo UACh | Rose Lowder · Con Entrada o Acreditación |
 | 19:15 | [Jauja](https://33.ficvaldivia.cl/programacion?recordId=p3x6QSISRSxAmM) | Cine Club UACh | Lisandro Alonso · Con Entrada o Acreditación |
 
-### En Competencia
+### Competencia Cortometraje Infantil Latinoamericano
 
 | Hora | Película | Sala | Notas |
 |---|---|---|---|
@@ -348,19 +368,34 @@ Fuente: https://33.ficvaldivia.cl/programacion
 | 10:00 | [La niña que quería ser piedra](https://33.ficvaldivia.cl/programacion?recordId=m4pbnKCpUdnbDh) | Teatro Cervantes / Sala Hugo Campos | Selección Oficial Cortometraje Infantil Latinoamericano · Entrada Liberada |
 | 10:00 | [¿A dónde se fue el jambato?](https://33.ficvaldivia.cl/programacion?recordId=RbFse8D3scAeON) | Teatro Cervantes / Sala Hugo Campos | Selección Oficial Cortometraje Infantil Latinoamericano · Entrada Liberada |
 | 10:00 | [¿Para qué sirven las cosas?](https://33.ficvaldivia.cl/programacion?recordId=kLIEsruIKnC7IW) | Teatro Cervantes / Sala Hugo Campos | Selección Oficial Cortometraje Infantil Latinoamericano · Entrada Liberada |
-| 10:45 | [Los niños sin tierra](https://33.ficvaldivia.cl/programacion?recordId=O8FPN5shd7lp0P) | Aula Magna UACh | Selección Oficial Largometraje · Con Entrada o Acreditación |
-| 11:00 | [London](https://33.ficvaldivia.cl/programacion?recordId=1npeuwfVhyd0mf) | Cine Club UACh | Selección Oficial Largometraje · Con Entrada o Acreditación |
-| 12:00 | [Handy girl](https://33.ficvaldivia.cl/programacion?recordId=ukDxcwczk2ZFqH) | Felix Martinez UACh / Teatro Cervantes | Selección Oficial Largometraje Juvenil · Con Entrada o Acreditación / Entrada Liberada |
+
+### Competencia Cortometraje de Latinoamérica y el Caribe
+
+| Hora | Película | Sala | Notas |
+|---|---|---|---|
 | 14:30 | [Día de sacrificio](https://33.ficvaldivia.cl/programacion?recordId=wkQNCjk7ibYNUL) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
 | 14:30 | [La hora de irse](https://33.ficvaldivia.cl/programacion?recordId=RcxQ0FSbiHVkc0) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
 | 14:30 | [Lima](https://33.ficvaldivia.cl/programacion?recordId=L3j5vIAH21q7dZ) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
 | 14:30 | [Partículas Inconmensurables](https://33.ficvaldivia.cl/programacion?recordId=V8DbFrdrmbpxlB) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
-| 14:30 | [Sabes de mim, agora esqueça](https://33.ficvaldivia.cl/programacion?recordId=TemjKhkRjMUXaO) | Cine Club UACh | Selección Oficial Largometraje · Con Entrada o Acreditación |
 | 14:30 | [Toda la Quietud Posible](https://33.ficvaldivia.cl/programacion?recordId=eEi3AyrvBq6Zt5) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
 | 14:30 | [Una Fortaleza](https://33.ficvaldivia.cl/programacion?recordId=rShSFAWvdVX36O) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
+
+### Competencia Largometraje
+
+| Hora | Película | Sala | Notas |
+|---|---|---|---|
+| 10:45 | [Los niños sin tierra](https://33.ficvaldivia.cl/programacion?recordId=O8FPN5shd7lp0P) | Aula Magna UACh | Selección Oficial Largometraje · Con Entrada o Acreditación |
+| 11:00 | [London](https://33.ficvaldivia.cl/programacion?recordId=1npeuwfVhyd0mf) | Cine Club UACh | Selección Oficial Largometraje · Con Entrada o Acreditación |
+| 14:30 | [Sabes de mim, agora esqueça](https://33.ficvaldivia.cl/programacion?recordId=TemjKhkRjMUXaO) | Cine Club UACh | Selección Oficial Largometraje · Con Entrada o Acreditación |
 | 17:00 | [Let Them Be Seen](https://33.ficvaldivia.cl/programacion?recordId=gY4pHKFGzA87pP) | Cine Club UACh | Selección Oficial Largometraje · Con Entrada o Acreditación |
-| 17:15 | [Chicas tristes](https://33.ficvaldivia.cl/programacion?recordId=E5wc7wtRUmURgb) | Felix Martinez UACh / Teatro Cervantes | Selección Oficial Largometraje Juvenil · Con Entrada o Acreditación / Entrada Liberada |
 | 19:30 | [Hijas Unikas](https://33.ficvaldivia.cl/programacion?recordId=GOzPs1ReB3ACmT) | Aula Magna UACh | Selección Oficial Largometraje · Con Entrada o Acreditación |
+
+### Competencia Largometraje Juvenil
+
+| Hora | Película | Sala | Notas |
+|---|---|---|---|
+| 12:00 | [Handy girl](https://33.ficvaldivia.cl/programacion?recordId=ukDxcwczk2ZFqH) | Felix Martinez UACh / Teatro Cervantes | Selección Oficial Largometraje Juvenil · Con Entrada o Acreditación / Entrada Liberada |
+| 17:15 | [Chicas tristes](https://33.ficvaldivia.cl/programacion?recordId=E5wc7wtRUmURgb) | Felix Martinez UACh / Teatro Cervantes | Selección Oficial Largometraje Juvenil · Con Entrada o Acreditación / Entrada Liberada |
 
 ### Filmes de Apertura y Clausura
 
@@ -457,23 +492,33 @@ Fuente: https://33.ficvaldivia.cl/programacion
 | 17:15 | [Sin Título (Carta para Serra)](https://33.ficvaldivia.cl/programacion?recordId=BiNrO4J0KD2QAE) | Cine Club UACh | Lisandro Alonso · Con Entrada o Acreditación |
 | 22:15 | [La libertad doble](https://33.ficvaldivia.cl/programacion?recordId=jQ61rfUXbCkhxN) | Cine Club UACh / Aula Magna UACh | Lisandro Alonso · Con Entrada o Acreditación |
 
-### En Competencia
+### Competencia Cortometraje Chileno de Estudiantes de Cine y Audiovisual
 
 | Hora | Película | Sala | Notas |
 |---|---|---|---|
-| 10:45 | [Lo que nos une](https://33.ficvaldivia.cl/programacion?recordId=r4dMVP5UT75y41) | Aula Magna UACh | Selección Oficial Largometraje · Con Entrada o Acreditación |
-| 11:00 | [Para hacer una película solo hace falta un arma](https://33.ficvaldivia.cl/programacion?recordId=eTYEdUZ9UbcKgJ) | Cine Club UACh | Selección Oficial Largometraje · Con Entrada o Acreditación |
-| 12:00 | [Nunkui](https://33.ficvaldivia.cl/programacion?recordId=A71NaE2YdduGjf) | Teatro Cervantes / Felix Martinez UACh | Selección Oficial Largometraje Juvenil · Entrada Liberada / Con Entrada o Acreditación |
 | 14:30 | [Caerá el Morro y marcharán sus hijos](https://33.ficvaldivia.cl/programacion?recordId=LBOsJjJYSq9Auh) | Felix Martinez UACh / Aula Magna UACh | Selección Oficial Cortometraje Chileno de Estudiantes de Cine y Audiovisual · Con Entrada o Acreditación |
 | 14:30 | [Casa propia](https://33.ficvaldivia.cl/programacion?recordId=vavIrTTWJ3GpX0) | Felix Martinez UACh / Aula Magna UACh | Selección Oficial Cortometraje Chileno de Estudiantes de Cine y Audiovisual · Con Entrada o Acreditación |
 | 14:30 | [Como cortarse el pelo](https://33.ficvaldivia.cl/programacion?recordId=SYW3TzzCLdecS5) | Felix Martinez UACh / Aula Magna UACh | Selección Oficial Cortometraje Chileno de Estudiantes de Cine y Audiovisual · Con Entrada o Acreditación |
 | 14:30 | [Donde anida la lluvia](https://33.ficvaldivia.cl/programacion?recordId=WIufznY9J2QKjx) | Felix Martinez UACh / Aula Magna UACh | Selección Oficial Cortometraje Chileno de Estudiantes de Cine y Audiovisual · Con Entrada o Acreditación |
 | 14:30 | [Mañana vendrá el silencio](https://33.ficvaldivia.cl/programacion?recordId=KKrXJ9OixD1xCm) | Felix Martinez UACh / Aula Magna UACh | Selección Oficial Cortometraje Chileno de Estudiantes de Cine y Audiovisual · Con Entrada o Acreditación |
+
+### Competencia Largometraje
+
+| Hora | Película | Sala | Notas |
+|---|---|---|---|
+| 10:45 | [Lo que nos une](https://33.ficvaldivia.cl/programacion?recordId=r4dMVP5UT75y41) | Aula Magna UACh | Selección Oficial Largometraje · Con Entrada o Acreditación |
+| 11:00 | [Para hacer una película solo hace falta un arma](https://33.ficvaldivia.cl/programacion?recordId=eTYEdUZ9UbcKgJ) | Cine Club UACh | Selección Oficial Largometraje · Con Entrada o Acreditación |
 | 14:45 | [La ilusión de un verano sin fin](https://33.ficvaldivia.cl/programacion?recordId=ARN6NaPoPW3vKR) | Cine Club UACh | Selección Oficial Largometraje · Con Entrada o Acreditación |
 | 17:00 | [No money no honey](https://33.ficvaldivia.cl/programacion?recordId=J9o0hkRnoINwLc) | Aula Magna UACh | Selección Oficial Largometraje · Con Entrada o Acreditación |
-| 17:15 | [Nuestro cuerpo es una estrella que se expande](https://33.ficvaldivia.cl/programacion?recordId=gKMP2KScuRWTWt) | Teatro Cervantes / Felix Martinez UACh | Selección Oficial Largometraje Juvenil · Entrada Liberada / Con Entrada o Acreditación |
 | 19:30 | [Tycoon](https://33.ficvaldivia.cl/programacion?recordId=5j7iNOQtGwdm71) | Cine Club UACh | Selección Oficial Largometraje · Con Entrada o Acreditación |
 | 22:00 | [El hogar fue sepultado en esa tierra que nunca pudimos encontrar](https://33.ficvaldivia.cl/programacion?recordId=YxTx1Q7ntgsGeP) | Cine Club UACh | Selección Oficial Largometraje · Con Entrada o Acreditación |
+
+### Competencia Largometraje Juvenil
+
+| Hora | Película | Sala | Notas |
+|---|---|---|---|
+| 12:00 | [Nunkui](https://33.ficvaldivia.cl/programacion?recordId=A71NaE2YdduGjf) | Teatro Cervantes / Felix Martinez UACh | Selección Oficial Largometraje Juvenil · Entrada Liberada / Con Entrada o Acreditación |
+| 17:15 | [Nuestro cuerpo es una estrella que se expande](https://33.ficvaldivia.cl/programacion?recordId=gKMP2KScuRWTWt) | Teatro Cervantes / Felix Martinez UACh | Selección Oficial Largometraje Juvenil · Entrada Liberada / Con Entrada o Acreditación |
 
 ### Muestra Contraplanos de la Historia
 
@@ -583,36 +628,56 @@ Fuente: https://33.ficvaldivia.cl/programacion
 | 15:15 | [Habitat](https://33.ficvaldivia.cl/programacion?recordId=mcAAYfdG74qVj3) | Sala Paraninfo UACh | Rose Lowder · Con Entrada o Acreditación |
 | 15:15 | [Impromptu](https://33.ficvaldivia.cl/programacion?recordId=d3kjC7RSRIIxpx) | Sala Paraninfo UACh | Rose Lowder · Con Entrada o Acreditación |
 
-### En Competencia
+### Competencia Cortometraje Chileno de Estudiantes de Cine y Audiovisual
 
 | Hora | Película | Sala | Notas |
 |---|---|---|---|
-| 11:00 | [El día que aprendí a volar](https://33.ficvaldivia.cl/programacion?recordId=HZywlc3EM6zlCx) | Teatro Cervantes / Sala Hugo Campos | Selección Oficial Cortometraje Infantil Latinoamericano · Entrada Liberada |
-| 11:00 | [Hijas Unikas](https://33.ficvaldivia.cl/programacion?recordId=GOzPs1ReB3ACmT) | Aula Magna UACh | Selección Oficial Largometraje · Con Entrada o Acreditación |
-| 11:00 | [Inoue!](https://33.ficvaldivia.cl/programacion?recordId=MAmqaBKEqokhl0) | Felix Martinez UACh | Selección Oficial Largometraje Juvenil · Con Entrada o Acreditación |
-| 11:00 | [Kintsugi](https://33.ficvaldivia.cl/programacion?recordId=wF4TWOv7Ogsvjc) | Teatro Cervantes / Sala Hugo Campos | Selección Oficial Cortometraje Infantil Latinoamericano · Entrada Liberada |
-| 11:00 | [La niña que quería ser piedra](https://33.ficvaldivia.cl/programacion?recordId=m4pbnKCpUdnbDh) | Teatro Cervantes / Sala Hugo Campos | Selección Oficial Cortometraje Infantil Latinoamericano · Entrada Liberada |
-| 11:00 | [¿A dónde se fue el jambato?](https://33.ficvaldivia.cl/programacion?recordId=RbFse8D3scAeON) | Teatro Cervantes / Sala Hugo Campos | Selección Oficial Cortometraje Infantil Latinoamericano · Entrada Liberada |
-| 11:00 | [¿Para qué sirven las cosas?](https://33.ficvaldivia.cl/programacion?recordId=kLIEsruIKnC7IW) | Teatro Cervantes / Sala Hugo Campos | Selección Oficial Cortometraje Infantil Latinoamericano · Entrada Liberada |
 | 12:45 | [Caerá el Morro y marcharán sus hijos](https://33.ficvaldivia.cl/programacion?recordId=LBOsJjJYSq9Auh) | Felix Martinez UACh / Aula Magna UACh | Selección Oficial Cortometraje Chileno de Estudiantes de Cine y Audiovisual · Con Entrada o Acreditación |
 | 12:45 | [Casa propia](https://33.ficvaldivia.cl/programacion?recordId=vavIrTTWJ3GpX0) | Felix Martinez UACh / Aula Magna UACh | Selección Oficial Cortometraje Chileno de Estudiantes de Cine y Audiovisual · Con Entrada o Acreditación |
 | 12:45 | [Como cortarse el pelo](https://33.ficvaldivia.cl/programacion?recordId=SYW3TzzCLdecS5) | Felix Martinez UACh / Aula Magna UACh | Selección Oficial Cortometraje Chileno de Estudiantes de Cine y Audiovisual · Con Entrada o Acreditación |
 | 12:45 | [Donde anida la lluvia](https://33.ficvaldivia.cl/programacion?recordId=WIufznY9J2QKjx) | Felix Martinez UACh / Aula Magna UACh | Selección Oficial Cortometraje Chileno de Estudiantes de Cine y Audiovisual · Con Entrada o Acreditación |
 | 12:45 | [Mañana vendrá el silencio](https://33.ficvaldivia.cl/programacion?recordId=KKrXJ9OixD1xCm) | Felix Martinez UACh / Aula Magna UACh | Selección Oficial Cortometraje Chileno de Estudiantes de Cine y Audiovisual · Con Entrada o Acreditación |
+
+### Competencia Cortometraje Infantil Latinoamericano
+
+| Hora | Película | Sala | Notas |
+|---|---|---|---|
+| 11:00 | [El día que aprendí a volar](https://33.ficvaldivia.cl/programacion?recordId=HZywlc3EM6zlCx) | Teatro Cervantes / Sala Hugo Campos | Selección Oficial Cortometraje Infantil Latinoamericano · Entrada Liberada |
+| 11:00 | [Kintsugi](https://33.ficvaldivia.cl/programacion?recordId=wF4TWOv7Ogsvjc) | Teatro Cervantes / Sala Hugo Campos | Selección Oficial Cortometraje Infantil Latinoamericano · Entrada Liberada |
+| 11:00 | [La niña que quería ser piedra](https://33.ficvaldivia.cl/programacion?recordId=m4pbnKCpUdnbDh) | Teatro Cervantes / Sala Hugo Campos | Selección Oficial Cortometraje Infantil Latinoamericano · Entrada Liberada |
+| 11:00 | [¿A dónde se fue el jambato?](https://33.ficvaldivia.cl/programacion?recordId=RbFse8D3scAeON) | Teatro Cervantes / Sala Hugo Campos | Selección Oficial Cortometraje Infantil Latinoamericano · Entrada Liberada |
+| 11:00 | [¿Para qué sirven las cosas?](https://33.ficvaldivia.cl/programacion?recordId=kLIEsruIKnC7IW) | Teatro Cervantes / Sala Hugo Campos | Selección Oficial Cortometraje Infantil Latinoamericano · Entrada Liberada |
+
+### Competencia Cortometraje de Latinoamérica y el Caribe
+
+| Hora | Película | Sala | Notas |
+|---|---|---|---|
 | 14:30 | [Banano, Banano](https://33.ficvaldivia.cl/programacion?recordId=EpFg3BcCFfnQjQ) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
 | 14:30 | [Filhos da Cana](https://33.ficvaldivia.cl/programacion?recordId=pUO36m2kaOmsxN) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
 | 14:30 | [Futuros luminosos](https://33.ficvaldivia.cl/programacion?recordId=jLgyHVwG1fVqgu) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
 | 14:30 | [Gestos para romper una imagen](https://33.ficvaldivia.cl/programacion?recordId=3HN0svEgEPa4Ff) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
 | 14:30 | [Isla Flotante](https://33.ficvaldivia.cl/programacion?recordId=cTB9MFhdglA0Xv) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
-| 14:30 | [No money no honey](https://33.ficvaldivia.cl/programacion?recordId=J9o0hkRnoINwLc) | Aula Magna UACh | Selección Oficial Largometraje · Con Entrada o Acreditación |
 | 14:30 | [Uma Fonte](https://33.ficvaldivia.cl/programacion?recordId=6qxk0qhPaETMDM) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
-| 14:45 | [Tomorrow a long time ago](https://33.ficvaldivia.cl/programacion?recordId=Kv48worJl8k1rv) | Cine Club UACh | Selección Oficial Largometraje · Con Entrada o Acreditación |
 | 17:00 | [Día de sacrificio](https://33.ficvaldivia.cl/programacion?recordId=wkQNCjk7ibYNUL) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
 | 17:00 | [La hora de irse](https://33.ficvaldivia.cl/programacion?recordId=RcxQ0FSbiHVkc0) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
 | 17:00 | [Lima](https://33.ficvaldivia.cl/programacion?recordId=L3j5vIAH21q7dZ) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
 | 17:00 | [Partículas Inconmensurables](https://33.ficvaldivia.cl/programacion?recordId=V8DbFrdrmbpxlB) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
 | 17:00 | [Toda la Quietud Posible](https://33.ficvaldivia.cl/programacion?recordId=eEi3AyrvBq6Zt5) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
 | 17:00 | [Una Fortaleza](https://33.ficvaldivia.cl/programacion?recordId=rShSFAWvdVX36O) | Aula Magna UACh / Sala Hugo Campos | Selección Oficial Cortometraje de Latinoamérica y el Caribe · Con Entrada o Acreditación / Entrada Liberada |
+
+### Competencia Largometraje
+
+| Hora | Película | Sala | Notas |
+|---|---|---|---|
+| 11:00 | [Hijas Unikas](https://33.ficvaldivia.cl/programacion?recordId=GOzPs1ReB3ACmT) | Aula Magna UACh | Selección Oficial Largometraje · Con Entrada o Acreditación |
+| 14:30 | [No money no honey](https://33.ficvaldivia.cl/programacion?recordId=J9o0hkRnoINwLc) | Aula Magna UACh | Selección Oficial Largometraje · Con Entrada o Acreditación |
+| 14:45 | [Tomorrow a long time ago](https://33.ficvaldivia.cl/programacion?recordId=Kv48worJl8k1rv) | Cine Club UACh | Selección Oficial Largometraje · Con Entrada o Acreditación |
+
+### Competencia Largometraje Juvenil
+
+| Hora | Película | Sala | Notas |
+|---|---|---|---|
+| 11:00 | [Inoue!](https://33.ficvaldivia.cl/programacion?recordId=MAmqaBKEqokhl0) | Felix Martinez UACh | Selección Oficial Largometraje Juvenil · Con Entrada o Acreditación |
 | 17:15 | [I Heard That They are Not Going to See Each Other Anymore](https://33.ficvaldivia.cl/programacion?recordId=KsHZaYL8kHGhlo) | Teatro Cervantes | Selección Oficial Largometraje Juvenil · Entrada Liberada |
 
 ### Filmes de Apertura y Clausura
