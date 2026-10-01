@@ -152,8 +152,8 @@ def funciones_desde_api(payloads):
             hora = _valor(o, CLAVES_HORA)
             if titulo and (fecha or hora):
                 if not hora and fecha:
-                    m = HORA_RE.search(fecha)
-                    hora = m.group(0).replace(".", ":").replace("h", ":") if m else ""
+                    m = re.search(r"([01]?\d|2[0-3]):([0-5]\d)", fecha)
+                    hora = f"{int(m.group(1)):02d}:{m.group(2)}" if m else ""
                 out.append({
                     "dia": normalizar_dia(fecha or ""),
                     "hora": hora or "",
