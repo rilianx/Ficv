@@ -126,15 +126,26 @@ section.sec h2 i:not(.dot){font-style:normal;font-size:10.5px;padding:1px 7px;bo
 .it.angosta span{display:none}
 .it{--c:var(--muted);background:color-mix(in srgb,var(--c) 13%,var(--surface));border-color:color-mix(in srgb,var(--c) 40%,var(--line));border-left:4px solid var(--c)}
 .it:hover{border-color:var(--c)}
-.it.on{background:color-mix(in srgb,var(--c) 36%,var(--surface));border:2px solid var(--c);border-left-width:6px;box-shadow:0 1px 4px color-mix(in srgb,var(--c) 40%,transparent)}
-.it.on b::before{content:"✓ ";font-weight:700}
+/* marcada: bloque relleno con el color de la sección, texto claro y estrella */
+.it.on{background:color-mix(in srgb,var(--c) 82%,#000);border:2px solid color-mix(in srgb,var(--c) 60%,#000);color:#fff;box-shadow:0 2px 8px color-mix(in srgb,var(--c) 45%,transparent)}
+.it.on b,.it.on span,.it.on .dir,.it.on .cortos{color:rgb(255 255 255 / .88)}
+.it.on b::before{content:"★ ";color:#ffd54a}
+.it .dir{color:var(--ink);font-style:italic;font-size:11px}
+/* vista: etiqueta y textura */
+.it.vista{background-image:repeating-linear-gradient(135deg,transparent 0 7px,color-mix(in srgb,var(--c) 18%,transparent) 7px 9px)}
+.it.vista::after{content:"✔ VISTA";position:absolute;right:3px;bottom:3px;font:700 9px/1 var(--f-body);letter-spacing:.06em;padding:3px 5px;border-radius:4px;background:var(--ink);color:var(--surface)}
+.seenbtn{font:700 11.5px var(--f-body);padding:2px 9px;border-radius:999px;border:1px dashed var(--muted);background:none;color:var(--muted);cursor:pointer;white-space:nowrap}
+.seenbtn[aria-pressed="true"]{border-style:solid;border-color:var(--ink);background:var(--ink);color:var(--surface)}
+.pop-fa{display:flex;gap:8px;align-items:center}
+.btn.seen-on{background:var(--ink);border-color:var(--ink);color:var(--surface)}
 .dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--c);flex:0 0 auto}
 section.sec h2 .dot{align-self:center}
 .it.clash{outline:2px solid var(--clash);outline-offset:-2px}
 .it.ya{opacity:.5}
 .legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12.5px;color:var(--muted);margin-top:10px}
 .legend i{display:inline-block;width:14px;height:10px;border-radius:3px;vertical-align:-1px;margin-right:5px;border:1px solid var(--line);background:var(--bg)}
-.legend i.on{background:var(--pick-soft);border-color:var(--pick)}
+.legend i.on{background:var(--river);border-color:var(--river)}
+.legend i.vi{background:repeating-linear-gradient(135deg,var(--bg) 0 3px,var(--muted) 3px 4px)}
 .legend i.cl{outline:2px solid var(--clash);outline-offset:-2px}
 footer{margin-top:36px;font-size:12.5px;color:var(--muted);max-width:920px}
 footer a{color:var(--river)}
@@ -158,6 +169,7 @@ footer a{color:var(--river)}
       <input id="q" type="search" placeholder="Película, dirección o país" aria-label="Buscar">
       <label class="sololista"><input id="libre" type="checkbox"> Solo entrada liberada</label>
       <label class="sololista" id="lbl-solo"><input id="solo" type="checkbox"> Solo mis marcadas</label>
+      <label class="sololista"><input id="solovistas" type="checkbox"> Solo vistas</label>
       <label><input id="ocultar" type="checkbox" checked> Ocultar otras funciones de lo ya elegido</label>
     </div>
     <fieldset class="chips" id="chips" hidden><legend>Mostrar en el calendario</legend><div id="chips-in"></div></fieldset>
@@ -227,20 +239,22 @@ try{const h=location.hash.slice(1);if(h==="calendario")vista="cal";else if(dias.
 
 // ---------- marcadas: base de datos del artifact (privada por persona) o este navegador ----------
 const LS="ficv33-marcadas";
-let picks=new Set();
+const LSV="ficv33-vistas";
+let picks=new Set(), vistas=new Set();          // vistas: ids de películas ya vistas
 try{picks=new Set(JSON.parse(localStorage.getItem(LS)||"[]"))}catch(e){}
+try{vistas=new Set(JSON.parse(localStorage.getItem(LSV)||"[]"))}catch(e){}
 let ref=null, writing=false, dirty=false, timer=null;
 function setSync(t){$("sync").textContent=t}
 setSync("Tus marcadas se guardan en este navegador.");
 function guardar(){
-  try{localStorage.setItem(LS,JSON.stringify([...picks]))}catch(e){}
+  try{localStorage.setItem(LS,JSON.stringify([...picks]));localStorage.setItem(LSV,JSON.stringify([...vistas]))}catch(e){}
   if(!ref) return;
   dirty=true; clearTimeout(timer); timer=setTimeout(flush,700);
 }
 async function flush(){
   if(!ref||writing||!dirty) return;
   writing=true; dirty=false;
-  try{await ref.set({ids:[...picks]}); setSync("Tus marcadas se guardan en tu cuenta.");}
+  try{await ref.set({ids:[...picks],vistas:[...vistas]}); setSync("Tus marcadas se guardan en tu cuenta.");}
   catch(e){ref=null; setSync("No se pudo guardar en tu cuenta; quedan en este navegador.");}
   writing=false; if(dirty) flush();
 }
@@ -255,12 +269,14 @@ async function flush(){
   r.onSnapshot(snap=>{
     if(snap.metadata.hasPendingWrites) return;
     if(snap.exists){
-      const ids=(snap.data().ids||[]).filter(k=>typeof k==="string");
-      if(first&&!ids.length&&picks.size){first=false;guardar();return;}
-      picks=new Set(ids);
-      try{localStorage.setItem(LS,JSON.stringify(ids))}catch(e){}
+      const d=snap.data()||{};
+      const ids=(d.ids||[]).filter(k=>typeof k==="string");
+      const vs=Array.isArray(d.vistas)?d.vistas.filter(k=>typeof k==="string"):null;
+      if(first&&((!ids.length&&picks.size)||(!vs&&vistas.size))){first=false;guardar();return;}
+      picks=new Set(ids); if(vs) vistas=new Set(vs);
+      try{localStorage.setItem(LS,JSON.stringify(ids));localStorage.setItem(LSV,JSON.stringify([...vistas]))}catch(e){}
       render();
-    }else if(first&&picks.size){guardar();}
+    }else if(first&&(picks.size||vistas.size)){guardar();}
     first=false;
     setSync("Tus marcadas se guardan en tu cuenta.");
   },()=>{ref=null;setSync("Tus marcadas se guardan en este navegador.");});
@@ -273,6 +289,14 @@ function elegidas(){const m=new Map();for(const s of S)if(on(s))for(const f of s
 const corto=s=>{const l=lbl(s.dia);return l.w.slice(0,3)+" "+l.n+" · "+s.hora};
 function toggle(k){const s=porClave.get(k);if(!s)return;const v=on(s);
   s.films.forEach(f=>v?picks.delete(f.key):picks.add(f.key));guardar();render();}
+// vistas: por película; una sesión está vista si todas sus películas lo están
+const vistaS=s=>s.films.every(f=>vistas.has(f.id));
+const algunaV=s=>s.films.some(f=>vistas.has(f.id));
+function toggleVista(k){const s=porClave.get(k);if(!s)return;const v=vistaS(s);
+  s.films.forEach(f=>v?vistas.delete(f.id):vistas.add(f.id));guardar();render();}
+function toggleVistaFilm(id){vistas.has(id)?vistas.delete(id):vistas.add(id);guardar();render();}
+// para "Vistas": la sesión en que se marcó la película (o todas, si no se marcó ninguna)
+const enVistas=(s,el)=>s.films.some(f=>vistas.has(f.id)&&(on(s)||!el.has(f.id)));
 // películas de la sesión ya elegidas en otra
 const yaEn=(s,el)=>s.films.map(f=>el.get(f.id)).filter(x=>x&&x!==s);
 
@@ -291,9 +315,9 @@ let calSel=new Set(["*marcadas"]);
 try{const g=JSON.parse(localStorage.getItem("ficv33-cal")||"null");if(Array.isArray(g))calSel=new Set(g)}catch(e){}
 const libre=s=>s.acceso.some(a=>/liberada/i.test(a));
 function pintarChips(){
-  const n=c=>S.filter(s=>c==="*marcadas"?on(s):c==="*libre"?libre(s):s.films.some(f=>f.sec===c)).length;
+  const el=elegidas(), n=c=>S.filter(s=>c==="*marcadas"?on(s):c==="*libre"?libre(s):c==="*vistas"?enVistas(s,el):s.films.some(f=>f.sec===c)).length;
   const chip=(c,txt,cls="")=>`<label class="chip ${cls}"><input type="checkbox" data-c="${esc(c)}"${calSel.has(c)?" checked":""}>${c.startsWith("*")?"":`<i class="dot" style="--c:${col(c)}"></i>`}${esc(txt)} <em>${n(c)}</em></label>`;
-  $("chips-in").innerHTML=chip("*marcadas","Marcadas","esp")+chip("*libre","Entrada liberada","esp")+secs.map(s=>chip(s,s)).join("")
+  $("chips-in").innerHTML=chip("*marcadas","Marcadas","esp")+chip("*libre","Entrada liberada","esp")+chip("*vistas","Vistas","esp")+secs.map(s=>chip(s,s)).join("")
     +'<button type="button" class="chip mini" data-todas="1">Todas las secciones</button><button type="button" class="chip mini" data-todas="0">Ninguna</button>';
 }
 function guardarCal(){try{localStorage.setItem("ficv33-cal",JSON.stringify([...calSel]))}catch(e){}}
@@ -309,12 +333,13 @@ function filtradas(){
   if(vista==="cal") return S.filter(s=>{
     const m=on(s);
     if(oc&&!m&&s.films.every(f=>el.has(f.id))) return false;
-    const vis=(calSel.has("*marcadas")&&m)||(calSel.has("*libre")&&libre(s))||s.films.some(f=>calSel.has(f.sec));
+    const vis=(calSel.has("*marcadas")&&m)||(calSel.has("*libre")&&libre(s))||(calSel.has("*vistas")&&enVistas(s,el))||s.films.some(f=>calSel.has(f.sec));
     return vis&&(!sa||s.salas.includes(sa))&&(!q||s.films.some(f=>[f.titulo,f.direccion,f.pais].join(" ").toLowerCase().includes(q)));
   });
   return S.filter(s=>{
     const m=on(s);
     if(so&&!m) return false;
+    if($("solovistas").checked&&!enVistas(s,el)) return false;
     if(oc&&!m&&s.films.every(f=>el.has(f.id))) return false;   // todo lo de esta sesión ya está elegido en otra
     return (!sa||s.salas.includes(sa))&&s.films.some(pasa);
   });
@@ -337,10 +362,11 @@ function fila(s,cl,el){
   const f0=s.films[0], quien=s.n===1?[f0.direccion,f0.pais].filter(Boolean).join(" · "):"";
   const titulo=s.n===1?`<a href="${esc(f0.url)}" target="_blank" rel="noopener">${esc(f0.titulo)}</a>`:esc(titulos(s));
   const lista=s.n>1?`<ul class="films">${s.films.map(f=>`<li><a href="${esc(f.url)}" target="_blank" rel="noopener">${esc(f.titulo)}</a>${[f.direccion,f.pais].filter(Boolean).length?` <span>${esc([f.direccion,f.pais].filter(Boolean).join(" · "))}</span>`:""}</li>`).join("")}</ul>`:"";
-  return `<div class="row${m?" on":""}${ya.length?" ya":""}"><span class="t">${esc(s.hora)}</span>
+  return `<div class="row${m?" on":""}${ya.length?" ya":""}${vistaS(s)?" vista":""}"><span class="t">${esc(s.hora)}</span>
     <span class="ttl">${titulo}</span>
     <button type="button" class="mark" data-k="${esc(s.key)}" aria-pressed="${m}" aria-label="${m?"Quitar de":"Agregar a"} mi calendario: ${esc(titulos(s))}, ${esc(s.hora)}">${m?"✓":"+"}</button>
-    <span class="sub">${quien?`<span>${esc(quien)}</span>`:""}<span class="venue">${esc(s.sala)}</span><span>${s.est?"":s.dur+" min"}</span>${pills}${lista}</span></div>`;
+    <span class="sub">${quien?`<span>${esc(quien)}</span>`:""}<span class="venue">${esc(s.sala)}</span><span>${s.est?"":s.dur+" min"}</span>${pills}
+      <button type="button" class="seenbtn" data-v="${esc(s.key)}" aria-pressed="${vistaS(s)}">${vistaS(s)?"✔ Vista":algunaV(s)?"Vista en parte":"Marcar como vista"}</button>${lista}</span></div>`;
 }
 function pintarLista(ver,cl){
   let h="", el=elegidas();
@@ -386,12 +412,12 @@ function pintarCal(ver,cl){
   for(const c of cols){
     h+=`<div class="col" style="height:${alto}px">`+c.items.map(({s,lane,n})=>{
       const m=on(s),ya=!m&&yaEn(s,el).length, w=100/n;
-      return `<button type="button" class="it${m?" on":""}${ya?" ya":""}${cl.has(s.key)?" clash":""}${n>=3?" angosta":""}" data-s="${esc(s.key)}" aria-haspopup="dialog"
-        title="${esc(s.hora+"–"+finH(s)+" · "+s.films.map(f=>f.titulo).join(" · ")+" · "+s.sala)}"
-        style="--c:${col(s.sec)};top:${y(s.min)+1}px;height:${s.ocupa*PPM-2}px;left:calc(${lane*w}% + 2px);width:calc(${w}% - 4px)"><b>${esc(s.hora)}–${finH(s)}${s.est?"*":""}</b><strong>${esc(titulos(s))}</strong>${s.n>1?`<span class="cortos">${esc(s.films.map(f=>f.titulo).join(" · "))}</span>`:""}<span>${esc(s.sec)}</span><span>${esc(s.sala)}</span></button>`;
+      return `<button type="button" class="it${m?" on":""}${ya?" ya":""}${cl.has(s.key)?" clash":""}${n>=3?" angosta":""}${vistaS(s)?" vista":""}" data-s="${esc(s.key)}" aria-haspopup="dialog"
+        title="${esc(s.hora+"–"+finH(s)+" · "+s.films.map(f=>f.titulo+(f.direccion?" ("+f.direccion+")":"")).join(" · ")+" · "+s.sala)}"
+        style="--c:${col(s.sec)};top:${y(s.min)+1}px;height:${s.ocupa*PPM-2}px;left:calc(${lane*w}% + 2px);width:calc(${w}% - 4px)"><b>${esc(s.hora)}–${finH(s)}${s.est?"*":""}</b><strong>${esc(titulos(s))}</strong>${s.n===1&&s.films[0].direccion?`<span class="dir">${esc(s.films[0].direccion)}</span>`:""}${s.n>1?`<span class="cortos">${esc(s.films.map(f=>f.titulo).join(" · "))}</span>`:""}<span>${esc(s.sec)}</span><span>${esc(s.sala)}</span></button>`;
     }).join("")+`</div>`;
   }
-  return h+`</div></div><div class="legend"><span><i class="on"></i>Marcada (✓, color intenso)</span><span><i></i>Sin marcar · el color indica la sección · clic para ver detalles</span><span><i class="cl"></i>Choca con otra marcada</span><span>El alto del bloque es la duración + ${MARGEN} min de margen</span><span>* duración estimada en 90 min</span></div>`;
+  return h+`</div></div><div class="legend"><span><i class="on"></i>★ Marcada (bloque relleno)</span><span><i class="vi"></i>✔ Vista</span><span><i></i>Sin marcar · el color indica la sección · clic para ver detalles</span><span><i class="cl"></i>Choca con otra marcada</span><span>El alto del bloque es la duración + ${MARGEN} min de margen</span><span>* duración estimada en 90 min</span></div>`;
 }
 
 function render(){
@@ -403,7 +429,7 @@ function render(){
   $("npick").hidden=!nm;$("npick").textContent=nm;
   const lista=filtradas(); pintarDias(lista);
   const ver=lista.filter(s=>dia==="todos"||s.dia===dia), cl=choques();
-  $("count").textContent=`${ver.length} funciones · ${nm} marcadas`;
+  $("count").textContent=`${ver.length} funciones · ${nm} marcadas · ${vistas.size} películas vistas`;
   $("clashes").innerHTML=cl.size?`<span class="warn">${cl.size} marcadas chocan en horario</span>`:"";
   const sx=cal&&document.querySelector(".wk")?document.querySelector(".wk").scrollLeft:0;
   $("m").innerHTML=cal?pintarCal(ver,cl):pintarLista(ver,cl);
@@ -420,7 +446,7 @@ function pintarPop(){
   const s=porClave.get(abierta); if(!s) return;
   const m=on(s), el=elegidas(), ya=!m?yaEn(s,el):[], cl=choques(), l=lbl(s.dia);
   const films=s.films.map(f=>`<li><div><b>${esc(f.titulo)}</b><span>${esc([f.direccion,f.pais].filter(Boolean).join(" · "))}</span></div>
-    ${f.url?`<a href="${esc(f.url)}" target="_blank" rel="noopener">Ver ficha ↗</a>`:""}</li>`).join("");
+    <div class="pop-fa">${s.n>1?`<button type="button" class="seenbtn" data-vf="${esc(f.id)}" aria-pressed="${vistas.has(f.id)}">${vistas.has(f.id)?"✔ Vista":"Vista"}</button>`:""}${f.url?`<a href="${esc(f.url)}" target="_blank" rel="noopener">Ver ficha ↗</a>`:""}</div></li>`).join("");
   $("pop-in").innerHTML=`<p class="pop-h">${l.w} ${l.n} de octubre · ${esc(s.hora)}–${finH(s)}</p>
     <h3 id="pop-t">${esc(titulos(s))}</h3>
     <div class="pop-meta"><span class="pill" style="display:inline-flex;gap:6px;align-items:center;--c:${col(s.sec)}"><i class="dot"></i>${esc(s.sec)}</span>${s.sub.map(x=>`<span class="pill">${esc(x)}</span>`).join("")}
@@ -430,20 +456,25 @@ function pintarPop(){
     ${ya.length?`<p class="pop-meta">${s.n===1?"Ya la elegiste el "+esc(corto(ya[0]))+".":ya.length+" de "+s.n+" películas ya elegidas en otra función."}</p>`:""}
     <ul class="pop-films">${films}</ul>
     <div class="pop-acc">${m?'<button type="button" class="btn del" data-acc="t">Quitar de mi calendario</button>':'<button type="button" class="btn pri" data-acc="t">Agregar a mi calendario</button>'}
+      <button type="button" class="btn${vistaS(s)?" seen-on":""}" data-acc="v">${vistaS(s)?"✔ Vista · desmarcar":"Marcar como vista"}</button>
       ${s.n===1&&s.films[0].url?`<a class="btn" href="${esc(s.films[0].url)}" target="_blank" rel="noopener">Ver ficha en el festival ↗</a>`:""}
       <button type="button" class="btn" data-acc="c">Cerrar</button></div>`;
 }
 function abrir(k){abierta=k;pintarPop();try{$("pop").showModal()}catch(e){$("pop").setAttribute("open","")}}
 $("pop").addEventListener("click",e=>{
   if(e.target===$("pop")){$("pop").close();return}          // clic fuera del cuadro
+  const vf=e.target.closest("[data-vf]"); if(vf){toggleVistaFilm(vf.dataset.vf);pintarPop();return}
   const a=e.target.closest("[data-acc]"); if(!a) return;
-  if(a.dataset.acc==="t"){toggle(abierta);pintarPop()} else $("pop").close();
+  if(a.dataset.acc==="t"){toggle(abierta);pintarPop()}
+  else if(a.dataset.acc==="v"){toggleVista(abierta);pintarPop()}
+  else $("pop").close();
 });
 $("pop").addEventListener("close",()=>{abierta=null});
 $("m").addEventListener("click",e=>{const c=e.target.closest("[data-s]");if(c){abrir(c.dataset.s);return}
+  const v=e.target.closest("[data-v]");if(v){toggleVista(v.dataset.v);return}
   const b=e.target.closest("[data-k]");if(b)toggle(b.dataset.k)});
 try{if(localStorage.getItem("ficv33-ocultar")==="0")$("ocultar").checked=false}catch(e){}
 $("ocultar").addEventListener("input",()=>{try{localStorage.setItem("ficv33-ocultar",$("ocultar").checked?"1":"0")}catch(e){}});
-["sec","sala","q","libre","solo","ocultar"].forEach(id=>$(id).addEventListener("input",render));
+["sec","sala","q","libre","solo","solovistas","ocultar"].forEach(id=>$(id).addEventListener("input",render));
 render();
 </script>
