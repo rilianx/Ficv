@@ -481,7 +481,7 @@ $("pop").addEventListener("click",e=>{
   if(e.target===$("pop")){$("pop").close();return}          // clic fuera del cuadro
   const vf=e.target.closest("[data-vf]"); if(vf){toggleVistaFilm(vf.dataset.vf);pintarPop();return}
   const a=e.target.closest("[data-acc]"); if(!a) return;
-  if(a.dataset.acc==="t"){toggle(abierta);pintarPop()}
+  if(a.dataset.acc==="t"){toggle(abierta);$("pop").close()}   // agregar o quitar cierra la ventana
   else if(a.dataset.acc==="v"){toggleVista(abierta);pintarPop()}
   else $("pop").close();
 });
