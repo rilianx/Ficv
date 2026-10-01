@@ -27,6 +27,7 @@ jobs:
       - run: pip install -r requirements.txt && playwright install --with-deps chromium
       - name: Extraer programa
         run: python ficv_programa.py --detalles --dump
+        continue-on-error: true
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -34,10 +35,12 @@ jobs:
           path: salida/
       - name: Guardar resultado en el repositorio
         run: |
-          rm -rf programa && mkdir programa
-          cp salida/programa.* programa/
+          rm -rf programa && mkdir -p programa/depuracion
+          cp salida/programa.* programa/ 2>/dev/null || true
+          cp -r salida/html salida/api programa/depuracion/ 2>/dev/null || true
           git config user.name "github-actions[bot]"
           git config user.email "41898341+github-actions[bot]@users.noreply.github.com"
           git add programa
           git diff --cached --quiet || git commit -m "Actualizar programa FICValdivia"
+          git pull --rebase -q || true
           git push
