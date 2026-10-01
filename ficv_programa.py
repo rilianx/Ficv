@@ -312,7 +312,7 @@ def funciones_desde_softr(payloads, mapa, base_url):
             "acceso": " / ".join(dict.fromkeys(lista(f, "TipoAcceso", "Tipo de acceso"))),
             "direccion": campo(f, "Dirección"),
             "pais": campo(f, "País/es"),
-            "url": f"{base_url}?recordId={r['id']}" if r.get("id") else "",
+            "url": urljoin(base_url, f"/ficha?recordId={r['id']}") if r.get("id") else "",
             "id": r.get("id", ""),
             "fuente": "softr",
         }
@@ -477,7 +477,10 @@ def extraer_dom(page, dia_pestana, dump=None):
 # --------------------------------------------------------------------------
 
 def visitar_fichas(context, ids, out):
-    """Abre /ficha?recordId=<id> y guarda el texto de la página y las respuestas JSON en out/fichas/."""
+    """Abre /ficha?recordId=<id> y guarda las respuestas JSON de la ficha en out/fichas/<id>.json.
+
+    La ficha carga la tabla "Funciones": día, hora, sala, acceso, duración y estado de cada función.
+    """
     d = out / "fichas"
     d.mkdir(parents=True, exist_ok=True)
     page = context.new_page()
@@ -491,24 +494,107 @@ def visitar_fichas(context, ids, out):
             except Exception:
                 pass
 
+        def funciones_completas():
+            fs = [x["body"] for x in datos if isinstance(x["body"], dict) and "items" in x["body"]
+                  and any("FILBc" in it.get("fields", {}) or len(it.get("fields", {})) > 6
+                          for it in x["body"]["items"])]
+            if not fs:
+                return False
+            n = len({it["id"] for f in fs for it in f["items"]})
+            return n >= max(f.get("total", 0) for f in fs)
+
         page.on("response", cap)
         url = f"https://33.ficvaldivia.cl/ficha?recordId={rid}"
-        print(f"  ficha [{i}/{len(ids)}] {url}", file=sys.stderr)
+        if i % 20 == 1:
+            print(f"  fichas {i}-{min(i + 19, len(ids))} de {len(ids)}", file=sys.stderr)
         try:
             page.goto(url, wait_until="domcontentloaded", timeout=45000)
-            for _ in range(40):  # esperar a que carguen los bloques
-                page.wait_for_timeout(750)
-                txt = page.inner_text("body")
-                if "Loading" not in txt and len(datos) >= 1:
+            for _ in range(40):
+                page.wait_for_timeout(500)
+                if any("/records" in x["url"] for x in datos) and len(datos) >= 4:
                     break
-            page.mouse.wheel(0, 20000)
-            page.wait_for_timeout(2500)
-            (d / f"{rid}.txt").write_text(page.inner_text("body"), encoding="utf-8")
-            (d / f"{rid}.json").write_text(json.dumps(datos, ensure_ascii=False, indent=1), encoding="utf-8")
+            for _ in range(10):  # funciones paginadas: pulsar "cargar más" hasta tenerlas todas
+                if funciones_completas():
+                    break
+                btn = page.get_by_text(re.compile(r"Cargar m[aá]s|Load more|Ver m[aá]s|Mostrar m[aá]s", re.I)).last
+                try:
+                    btn.scroll_into_view_if_needed(timeout=2000)
+                    btn.click(timeout=3000)
+                except Exception:
+                    page.mouse.wheel(0, 3000)
+                page.wait_for_timeout(1200)
+            (d / f"{rid}.json").write_text(json.dumps(datos, ensure_ascii=False), encoding="utf-8")
         except Exception as e:
-            print(f"    error: {e}", file=sys.stderr)
+            print(f"    {rid}: error {e}", file=sys.stderr)
         page.remove_listener("response", cap)
     page.close()
+
+
+def funciones_desde_fichas(carpeta):
+    """{id_película: [funciones]} leyendo out/fichas/*.json (tabla Funciones de cada ficha)."""
+    res = {}
+    for p in sorted(Path(carpeta).glob("*.json")):
+        try:
+            datos = json.loads(p.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        nombres = {}
+        for x in datos:
+            b = x.get("body")
+            if isinstance(b, dict) and b.get("name") == "Funciones" and isinstance(b.get("fields"), list):
+                nombres = {f["id"]: f["name"] for f in b["fields"]}
+        if not nombres:
+            continue
+        inv = {norm(v): k for k, v in nombres.items()}
+        items, total = {}, 0
+        for x in datos:
+            b = x.get("body")
+            if isinstance(b, dict) and isinstance(b.get("items"), list) and "/records" in x.get("url", ""):
+                for it in b["items"]:
+                    f = it.get("fields", {})
+                    if inv.get("inicioagenda") in f or inv.get("donde") in f:
+                        items[it["id"]] = f
+                        total = max(total, b.get("total", 0))
+        if not items:
+            continue
+        g = lambda f, n: _texto(f.get(inv.get(norm(n), "")))
+        fs = []
+        for f in items.values():
+            m = AGENDA_RE.search(g(f, "InicioAgenda"))
+            if not m:
+                continue
+            dur = f.get(inv.get("duracion", ""))
+            fs.append({
+                "dia": f"2026-10-{int(m.group(2)):02d}",
+                "hora": f"{int(m.group(3)):02d}:{m.group(4)}",
+                "sala": g(f, "Dónde"),
+                "acceso": g(f, "Tipo Acceso"),
+                "duracion": int(dur) if isinstance(dur, (int, float)) else None,
+                "estado": g(f, "Estado"),
+                "sesion": g(f, "Films en Funcion"),
+            })
+        res[p.stem] = {"funciones": fs, "completa": len(items) >= total}
+    return res
+
+
+def aplicar_fichas(funciones, fichas):
+    """Reemplaza las funciones de cada película por las de su ficha (sala, acceso y duración exactas)."""
+    if not fichas:
+        return funciones
+    out, usadas = [], 0
+    por_id = defaultdict(list)
+    for f in funciones:
+        por_id[f.get("id", "")].append(f)
+    for rid, fs in por_id.items():
+        fi = fichas.get(rid)
+        if not rid or not fi or not fi["funciones"] or (not fi["completa"] and len(fi["funciones"]) < len(fs)):
+            out += fs
+            continue
+        usadas += 1
+        base = {k: v for k, v in fs[0].items() if k not in ("dia", "hora", "sala", "acceso")}
+        out += [{**base, **x, "fuente": "ficha"} for x in fi["funciones"]]
+    print(f"  Fichas: sala, acceso y duración exactas para {usadas} de {len(por_id)} películas", file=sys.stderr)
+    return out
 
 
 def completar_detalles(context, funciones):
@@ -591,7 +677,8 @@ def escribir_md(prog, ruta):
 def escribir_html(funciones, ruta):
     """Página navegable (plantilla.html): lista por día y sección, y calendario con marcadas."""
     import datetime
-    claves = ["dia", "hora", "titulo", "sala", "seccion", "subseccion", "acceso", "direccion", "pais", "url", "id"]
+    claves = ["dia", "hora", "titulo", "sala", "seccion", "subseccion", "acceso", "direccion", "pais", "url", "id",
+              "duracion", "estado", "sesion"]
     datos = [{k: f.get(k, "") for k in claves} for f in funciones if f.get("dia") and f.get("hora")]
     plantilla = (Path(__file__).parent / "plantilla.html").read_text(encoding="utf-8")
     hoy = datetime.date.today()
@@ -613,6 +700,7 @@ def main():
     ap.add_argument("--detalles", action="store_true", help="visitar cada película para precisar la sección")
     ap.add_argument("--dump", action="store_true", help="guardar el HTML de cada día en salida/html/")
     ap.add_argument("--salida", default=str(OUT))
+    ap.add_argument("--sin-fichas", action="store_true", help="no visitar la ficha de cada película")
     ap.add_argument("--desde-json", metavar="DIR",
                     help="no navegar: reprocesar respuestas JSON guardadas (p. ej. salida/api)")
     a = ap.parse_args()
@@ -620,6 +708,9 @@ def main():
     if a.desde_json:
         payloads = [json.loads(p.read_text(encoding="utf-8")) for p in sorted(Path(a.desde_json).glob("*.json"))]
         funciones = funciones_desde_softr(payloads, {}, a.url) or funciones_desde_api(payloads)
+        fichas = Path(a.desde_json).parent / "fichas"
+        if fichas.is_dir():
+            funciones = aplicar_fichas(funciones, funciones_desde_fichas(fichas))
         if not funciones:
             sys.exit("No se encontraron funciones en esos JSON.")
         Path(a.salida).mkdir(parents=True, exist_ok=True)
@@ -734,11 +825,11 @@ def main():
                 f["url"] = urljoin(a.url, f["url"])
 
         funciones = deduplicar(funciones)
-        # películas en más de una sala: la ficha dice qué sala corresponde a cada función
-        varias = sorted({f["id"] for f in funciones if f.get("fuente") == "softr" and " / " in f["sala"]})
-        if varias:
-            print(f"Visitando {len(varias)} fichas de películas con varias salas…", file=sys.stderr)
-            visitar_fichas(context, varias, out)
+        ids_softr = sorted({f["id"] for f in funciones if f.get("fuente") == "softr" and f.get("id")})
+        if ids_softr and not a.sin_fichas:
+            print(f"Visitando {len(ids_softr)} fichas de películas…", file=sys.stderr)
+            visitar_fichas(context, ids_softr, out)
+            funciones = aplicar_fichas(funciones, funciones_desde_fichas(out / "fichas"))
         if a.detalles and not desde_softr:
             print("Visitando fichas de películas…", file=sys.stderr)
             completar_detalles(context, funciones)

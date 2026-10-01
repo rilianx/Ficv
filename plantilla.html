@@ -66,6 +66,7 @@ section.sec h2 i{font-style:normal;font-size:10.5px;padding:1px 7px;border-radiu
 .mark{grid-column:3;grid-row:1 / span 2;align-self:center;width:38px;height:38px;border-radius:50%;border:1.5px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer;font-size:18px;line-height:1;display:grid;place-items:center}
 .mark:hover{border-color:var(--pick);color:var(--pick)}
 .mark[aria-pressed="true"]{background:var(--pick);border-color:var(--pick);color:var(--bg)}
+.ses{flex-basis:100%;font-size:12.5px}
 .empty{padding:40px 0;text-align:center;color:var(--muted)}
 
 /* timeline */
@@ -121,11 +122,11 @@ footer a{color:var(--river)}
     <div class="status"><span id="count"></span><span id="clashes"></span><span id="sync"></span></div>
   </div>
   <main id="m"></main>
-  <footer>Datos de <a href="https://33.ficvaldivia.cl/programacion">33.ficvaldivia.cl/programacion</a>, extraídos el __FECHA__. La web no publica la duración de cada película: en el calendario cada función ocupa 90 minutos estimados, y los choques se calculan con esa duración. Si una película se exhibe en dos salas, la web no indica cuál corresponde a cada función; esas funciones van en la fila "Sala por confirmar".</footer>
+  <footer>Datos de <a href="https://33.ficvaldivia.cl/programacion">33.ficvaldivia.cl/programacion</a>, extraídos el __FECHA__. La sala, el acceso y la duración de cada función salen de la ficha de cada película; si una ficha no la indica, se usan 90 minutos. Los choques se calculan con esa duración.</footer>
 </div>
 <script>
 const F=__DATA__;
-const DUR=90, H0=10, H1=24;           // franja visible por día y duración estimada
+const DUR=90, H0=10, H1=24;           // franja visible por día; duración si la ficha no la trae
 const DN=["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"];
 const $=id=>document.getElementById(id);
 const esc=s=>(s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
@@ -138,6 +139,8 @@ F.forEach(f=>{
   f.comp=f.seccion==="En Competencia";
   f.sec=f.comp?(f.subseccion||"Competencia").replace(/^Selección Oficial /,"Competencia "):f.seccion;
   f.salas=f.sala.split(" / ").filter(Boolean);
+  f.dur=f.duracion||DUR; f.est=!f.duracion;
+  f.otros=(f.sesion||"").split(/\s*,\s*(?=[^ ])/).length>1&&f.sesion!==f.titulo?f.sesion:"";
 });
 const dias=[...new Set(F.map(f=>f.dia))].sort();
 const lbl=d=>{const x=new Date(d+"T12:00:00");return {w:DN[x.getDay()],n:x.getDate()}};
@@ -198,7 +201,7 @@ function choques(){
   const m=F.filter(f=>picks.has(f.key)), c=new Set();
   for(const d of dias){
     const x=m.filter(f=>f.dia===d).sort((a,b)=>a.min-b.min);
-    for(let i=0;i<x.length;i++)for(let j=i+1;j<x.length&&x[j].min<x[i].min+DUR;j++){
+    for(let i=0;i<x.length;i++)for(let j=i+1;j<x.length&&x[j].min<x[i].min+x[i].dur;j++){
       // misma sala y misma hora = mismo programa de cortos, no es choque
       if(x[j].min===x[i].min&&x[j].sala===x[i].sala) continue;
       c.add(x[i].key);c.add(x[j].key);
@@ -223,12 +226,13 @@ function fila(f,cl){
   const on=picks.has(f.key);
   const pills=[!f.comp&&f.subseccion?`<span class="pill">${esc(f.subseccion)}</span>`:"",
     ...(f.acceso?f.acceso.split(" / "):[]).map(a=>`<span class="pill ${/liberada/i.test(a)?"free":""}">${esc(a)}</span>`),
+    f.estado&&f.estado!=="Confirmada"?`<span class="pill clash">${esc(f.estado)}</span>`:"",
     cl.has(f.key)?'<span class="pill clash">Choca con otra marcada</span>':""].join("");
   const quien=[f.direccion,f.pais].filter(Boolean).join(" · ");
   return `<div class="row${on?" on":""}"><span class="t">${esc(f.hora)}</span>
     <span class="ttl"><a href="${esc(f.url)}" target="_blank" rel="noopener">${esc(f.titulo)}</a></span>
     <button type="button" class="mark" data-k="${esc(f.key)}" aria-pressed="${on}" aria-label="${on?"Quitar de":"Agregar a"} mi calendario: ${esc(f.titulo)}, ${esc(f.hora)}">${on?"✓":"+"}</button>
-    <span class="sub">${quien?`<span>${esc(quien)}</span>`:""}<span class="venue">${esc(f.sala)}</span>${pills}</span></div>`;
+    <span class="sub">${quien?`<span>${esc(quien)}</span>`:""}<span class="venue">${esc(f.sala)}</span><span>${f.est?"":f.dur+" min"}</span>${pills}${f.otros?`<span class="ses">Sesión: ${esc(f.otros)}</span>`:""}</span></div>`;
 }
 function pintarLista(ver,cl){
   let h="";
@@ -262,17 +266,17 @@ function pintarCal(ver,cl){
     // carriles: funciones que se superponen en la misma sala van una debajo de otra
     const lanes=[], pos=[];
     r.fs.slice().sort((a,b)=>x(a)-x(b)).forEach(f=>{
-      const a=x(f), b=a+DUR*ppm; let i=lanes.findIndex(e=>e<=a+1); if(i<0){i=lanes.length;lanes.push(0)}
+      const a=x(f), b=a+f.dur*ppm; let i=lanes.findIndex(e=>e<=a+1); if(i<0){i=lanes.length;lanes.push(0)}
       lanes[i]=b; pos.push([f,a,i]);});
     const hgt=Math.max(1,lanes.length)*(LH+4)+6;
     let g="";for(let k=0;k<vd.length;k++)for(let h=H0;h<H1;h++)g+=`<i class="g${h===H0?" day":""}" style="left:${k*dayW+(h-H0)*60*ppm}px"></i>`;
     const bl=pos.map(([f,a,i])=>{const on=picks.has(f.key);
-      return `<button type="button" class="blk${on?" on":""}${cl.has(f.key)?" clash":""}" data-k="${esc(f.key)}" style="left:${a}px;top:${i*(LH+4)+4}px;width:${DUR*ppm-3}px"
-        title="${esc(f.hora+" · "+f.titulo+" · "+f.sec+" · "+f.sala)}" aria-pressed="${on}"><b>${esc(f.hora)}</b><span>${esc(f.titulo)}</span></button>`;}).join("");
+      return `<button type="button" class="blk${on?" on":""}${cl.has(f.key)?" clash":""}" data-k="${esc(f.key)}" style="left:${a}px;top:${i*(LH+4)+4}px;width:${f.dur*ppm-3}px"
+        title="${esc(f.hora+" · "+f.titulo+" · "+f.sec+" · "+f.sala+(f.est?"":" · "+f.dur+" min")+(f.otros?" · Sesión: "+f.otros:""))}" aria-pressed="${on}"><b>${esc(f.hora)}</b><span>${esc(f.titulo)}</span></button>`;}).join("");
     body+=`<div class="lane-row"><div class="rl">${esc(r.s)}${r.nota?`<small>${r.nota}</small>`:""}</div><div class="track" style="width:${dayW*vd.length}px;height:${hgt}px">${g}${bl}</div></div>`;
   }
   return `<div class="tl" style="--lw:${LW}px;--lh:${LH}px"><div class="tl-in" style="width:${LW+dayW*vd.length}px"><div class="tl-head">${head}</div>${body}</div></div>
-    <div class="legend"><span><i></i>Función (clic para marcar)</span><span><i class="on"></i>Marcada</span><span><i class="cl"></i>Choca con otra marcada</span><span>Cada bloque = 90 min estimados</span></div>`;
+    <div class="legend"><span><i></i>Función (clic para marcar)</span><span><i class="on"></i>Marcada</span><span><i class="cl"></i>Choca con otra marcada</span><span>El largo del bloque es la duración de la sesión (90 min si la ficha no la indica)</span></div>`;
 }
 
 function render(){
