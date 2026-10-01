@@ -42,6 +42,16 @@ h1 span{color:var(--river)}
 .days button[aria-pressed="true"] small,.days button[aria-pressed="true"] em{color:var(--bg);opacity:.85}
 .filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .filters select,.filters input[type=search]{font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);flex:1 1 170px;min-width:0}
+.chips{border:0;margin:0;padding:0;min-width:0}
+.chips legend{font-size:12px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);padding:0;margin-bottom:6px}
+#chips-in{display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:4px 10px 4px 8px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-size:13px;cursor:pointer;color:var(--ink)}
+.chip input{margin:0;accent-color:var(--river)}
+.chip:has(input:checked){border-color:var(--river);background:var(--river-soft)}
+.chip.esp{font-weight:700}
+.chip em{font-style:normal;color:var(--muted);font-size:11.5px}
+.chip.mini{border-style:dashed;color:var(--muted)}
+body.cal .sololista{display:none}
 .filters label{display:flex;align-items:center;gap:6px;font-size:14px;color:var(--muted);white-space:nowrap}
 button:focus-visible,select:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--river);outline-offset:2px}
 .status{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--muted)}
@@ -116,13 +126,14 @@ footer a{color:var(--river)}
     </div>
     <div class="days" id="days" role="toolbar" aria-label="Día"></div>
     <div class="filters">
-      <select id="sec" aria-label="Sección"></select>
+      <select id="sec" class="sololista" aria-label="Sección"></select>
       <select id="sala" aria-label="Sala"></select>
       <input id="q" type="search" placeholder="Película, dirección o país" aria-label="Buscar">
-      <label><input id="libre" type="checkbox"> Solo entrada liberada</label>
-      <label id="lbl-solo"><input id="solo" type="checkbox"> Solo mis marcadas</label>
+      <label class="sololista"><input id="libre" type="checkbox"> Solo entrada liberada</label>
+      <label class="sololista" id="lbl-solo"><input id="solo" type="checkbox"> Solo mis marcadas</label>
       <label><input id="ocultar" type="checkbox" checked> Ocultar otras funciones de lo ya elegido</label>
     </div>
+    <fieldset class="chips" id="chips" hidden><legend>Mostrar en el calendario</legend><div id="chips-in"></div></fieldset>
     <div class="status"><span id="count"></span><span id="clashes"></span><span id="sync"></span></div>
   </div>
   <main id="m"></main>
@@ -130,7 +141,8 @@ footer a{color:var(--river)}
 </div>
 <script>
 const F=__DATA__;
-const DUR=90, H0=10, H1=24;           // franja visible por día; duración si la ficha no la trae
+const DUR=90, MARGEN=15, H0=10, H1=24;   // MARGEN: demora al empezar o foro después de cada función
+           // franja visible por día; duración si la ficha no la trae
 const DN=["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"];
 const $=id=>document.getElementById(id);
 const esc=s=>(s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
@@ -160,6 +172,7 @@ for(const s of S){
   const c={}; s.films.forEach(f=>c[f.sec]=(c[f.sec]||0)+1);
   s.sec=Object.keys(c).sort((a,b)=>c[b]-c[a])[0]; s.comp=s.films.some(f=>f.comp);
   s.dur=Math.max(...s.films.map(f=>f.dur)); s.est=s.films.every(f=>f.est);
+  s.ocupa=s.dur+MARGEN;   // tiempo bloqueado en el calendario
   s.acceso=[...new Set(s.films.flatMap(f=>f.acceso?f.acceso.split(" / "):[]))];
   s.estado=s.films.map(f=>f.estado).find(e=>e&&e!=="Confirmada")||"";
   s.sub=[...new Set(s.films.map(f=>f.subseccion).filter(x=>x&&x!==s.sec&&!s.comp))];
@@ -233,16 +246,37 @@ function choques(){
   const c=new Set();
   for(const d of dias){
     const x=S.filter(s=>s.dia===d&&on(s)).sort((a,b)=>a.min-b.min);
-    for(let i=0;i<x.length;i++)for(let j=i+1;j<x.length&&x[j].min<x[i].min+x[i].dur;j++){c.add(x[i].key);c.add(x[j].key);}
+    for(let i=0;i<x.length;i++)for(let j=i+1;j<x.length&&x[j].min<x[i].min+x[i].ocupa;j++){c.add(x[i].key);c.add(x[j].key);}
   }
   return c;
 }
+
+// casillas del calendario: secciones, "Marcadas" y "Entrada liberada"
+let calSel=new Set(["*marcadas"]);
+try{const g=JSON.parse(localStorage.getItem("ficv33-cal")||"null");if(Array.isArray(g))calSel=new Set(g)}catch(e){}
+const libre=s=>s.acceso.some(a=>/liberada/i.test(a));
+function pintarChips(){
+  const n=c=>S.filter(s=>c==="*marcadas"?on(s):c==="*libre"?libre(s):s.films.some(f=>f.sec===c)).length;
+  const chip=(c,txt,cls="")=>`<label class="chip ${cls}"><input type="checkbox" data-c="${esc(c)}"${calSel.has(c)?" checked":""}>${esc(txt)} <em>${n(c)}</em></label>`;
+  $("chips-in").innerHTML=chip("*marcadas","Marcadas","esp")+chip("*libre","Entrada liberada","esp")+secs.map(s=>chip(s,s)).join("")
+    +'<button type="button" class="chip mini" data-todas="1">Todas las secciones</button><button type="button" class="chip mini" data-todas="0">Ninguna</button>';
+}
+function guardarCal(){try{localStorage.setItem("ficv33-cal",JSON.stringify([...calSel]))}catch(e){}}
+$("chips").addEventListener("change",e=>{const c=e.target.dataset.c;if(c==null)return;e.target.checked?calSel.add(c):calSel.delete(c);guardarCal();render()});
+$("chips").addEventListener("click",e=>{const b=e.target.closest("[data-todas]");if(!b)return;
+  secs.forEach(s=>b.dataset.todas==="1"?calSel.add(s):calSel.delete(s));guardarCal();render()});
 
 function filtradas(){
   const q=$("q").value.trim().toLowerCase(),sc=$("sec").value,sa=$("sala").value,li=$("libre").checked,so=$("solo").checked;
   const oc=$("ocultar").checked, el=elegidas();
   const pasa=f=>(!sc||(sc==="*comp"?f.comp:f.sec===sc))&&(!li||/liberada/i.test(f.acceso))
     &&(!q||[f.titulo,f.direccion,f.pais].join(" ").toLowerCase().includes(q));
+  if(vista==="cal") return S.filter(s=>{
+    const m=on(s);
+    if(oc&&!m&&s.films.every(f=>el.has(f.id))) return false;
+    const vis=(calSel.has("*marcadas")&&m)||(calSel.has("*libre")&&libre(s))||s.films.some(f=>calSel.has(f.sec));
+    return vis&&(!sa||s.salas.includes(sa))&&(!q||s.films.some(f=>[f.titulo,f.direccion,f.pais].join(" ").toLowerCase().includes(q)));
+  });
   return S.filter(s=>{
     const m=on(s);
     if(so&&!m) return false;
@@ -288,10 +322,10 @@ function pintarLista(ver,cl){
 }
 
 // ---------- vista calendario: días en columnas, horas en filas ----------
-const finH=s=>{const m=s.min+s.dur;return String(Math.floor(m/60)%24).padStart(2,"0")+":"+String(m%60).padStart(2,"0")};
+const finH=s=>{const m=s.min+s.ocupa;return String(Math.floor(m/60)%24).padStart(2,"0")+":"+String(m%60).padStart(2,"0")};
 function pintarCal(ver,cl){
-  const vd=dia!=="todos"?[dia]:$("solo").checked?dias.filter(d=>ver.some(s=>s.dia===d)):dias, el=elegidas();
-  if(!ver.length) return `<p class="empty">No hay funciones con estos filtros. ${picks.size?"Quita algún filtro o elige otro día.":"Marca funciones con + en la vista Programa, o desmarca «Solo mis marcadas» para elegir aquí."}</p>`;
+  const vd=dia!=="todos"?[dia]:dias.filter(d=>ver.some(s=>s.dia===d)), el=elegidas();
+  if(!ver.length) return `<p class="empty">No hay funciones con estos filtros. ${picks.size?"Quita algún filtro o elige otro día.":"Marca funciones con + en la vista Programa, o activa arriba alguna sección para elegir aquí."}</p>`;
   const horas=[...new Set(ver.map(s=>Math.floor(s.min/60)))].sort((a,b)=>a-b);
   let h=`<div class="wk" style="--nd:${vd.length}"><table><thead><tr><th class="h"></th>`;
   for(const d of vd){const l=lbl(d),n=ver.filter(s=>s.dia===d).length;h+=`<th>${l.w} ${l.n}<small>${n} ${n===1?"función":"funciones"}</small></th>`;}
@@ -307,7 +341,7 @@ function pintarCal(ver,cl){
     }
     h+="</tr>";
   }
-  return h+`</tbody></table></div><div class="legend"><span><i class="on"></i>Marcada (clic para quitar)</span><span><i></i>Sin marcar (clic para marcar)</span><span><i class="cl"></i>Choca con otra marcada</span><span>* duración estimada en 90 min</span></div>`;
+  return h+`</tbody></table></div><div class="legend"><span><i class="on"></i>Marcada (clic para quitar)</span><span><i></i>Sin marcar (clic para marcar)</span><span><i class="cl"></i>Choca con otra marcada</span><span>Cada bloque incluye ${MARGEN} min de margen (demora o foro)</span><span>* duración estimada en 90 min</span></div>`;
 }
 
 function render(){
@@ -315,6 +349,7 @@ function render(){
   document.body.classList.toggle("cal",cal);
   $("v-list").setAttribute("aria-pressed",!cal);$("v-cal").setAttribute("aria-pressed",cal);
   const nm=S.filter(on).length;
+  $("chips").hidden=!cal; if(cal) pintarChips();
   $("npick").hidden=!nm;$("npick").textContent=nm;
   const lista=filtradas(); pintarDias(lista);
   const ver=lista.filter(s=>dia==="todos"||s.dia===dia), cl=choques();
@@ -328,7 +363,7 @@ function irA(){try{history.replaceState(null,"",vista==="cal"?"#calendario":dia=
 $("days").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;dia=b.dataset.d;irA();render();
   const top=document.querySelector(".bar").offsetTop; if(scrollY>top) scrollTo({top});});
 $("v-list").onclick=()=>{vista="list";irA();render()};
-$("v-cal").onclick=()=>{vista="cal";if(picks.size)$("solo").checked=true;irA();render()};
+$("v-cal").onclick=()=>{vista="cal";irA();render()};
 $("m").addEventListener("click",e=>{const b=e.target.closest("[data-k]");if(b)toggle(b.dataset.k)});
 try{if(localStorage.getItem("ficv33-ocultar")==="0")$("ocultar").checked=false}catch(e){}
 $("ocultar").addEventListener("input",()=>{try{localStorage.setItem("ficv33-ocultar",$("ocultar").checked?"1":"0")}catch(e){}});
