@@ -36,12 +36,17 @@ jobs:
           path: salida/
       - name: Guardar resultado en el repositorio
         run: |
+          # no borrar un programa bueno si esta ejecución no obtuvo datos
+          if [ ! -s salida/programa.json ]; then
+            echo "::error::No se obtuvo el programa; se mantiene la versión anterior"
+            exit 1
+          fi
           rm -rf programa && mkdir -p programa/depuracion
-          cp salida/programa.* programa/ 2>/dev/null || true
+          cp salida/programa.* programa/
           cp -r salida/html salida/api salida/fichas programa/depuracion/ 2>/dev/null || true
           git config user.name "github-actions[bot]"
           git config user.email "41898341+github-actions[bot]@users.noreply.github.com"
-          git add programa
+          git add -A programa
           git diff --cached --quiet || git commit -m "Actualizar programa FICValdivia"
           git pull --rebase -q || true
           git push
