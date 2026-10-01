@@ -508,14 +508,24 @@ def plantilla_funciones(datos):
     return None
 
 
+def coincide(datos, esperado):
+    """¿Las funciones de esta ficha son las de la agenda de la película (mismos días y horas)?"""
+    import tempfile
+    with tempfile.TemporaryDirectory() as t:
+        (Path(t) / "x.json").write_text(json.dumps(datos), encoding="utf-8")
+        fi = funciones_desde_fichas(t).get("x")
+    return bool(fi) and {(x["dia"], x["hora"]) for x in fi["funciones"]} == (esperado or set())
+
+
 def repetir_consulta(page, plantilla, rid):
     """Pide las funciones de la película rid con la consulta aprendida. None si falla."""
     envio = json.loads(json.dumps(plantilla["envio"]))
     envio["pageContext"]["context"]["pageContextId"] = rid
     envio["pagingOption"] = {"offset": None, "count": 100}
+    cab = {**plantilla["cabeceras"], "referer": f"https://33.ficvaldivia.cl/ficha?recordId={rid}"}
     for intento in range(3):
         try:
-            r = page.request.post(plantilla["url"], data=json.dumps(envio), headers=plantilla["cabeceras"],
+            r = page.request.post(plantilla["url"], data=json.dumps(envio), headers=cab,
                                   timeout=20000)
             if r.ok:
                 body = r.json()
@@ -527,7 +537,7 @@ def repetir_consulta(page, plantilla, rid):
     return None
 
 
-def visitar_fichas(context, ids, out, limite_s=1500):
+def visitar_fichas(context, ids, out, limite_s=1500, agenda=None):
     """Abre /ficha?recordId=<id> y guarda las respuestas JSON de la ficha en out/fichas/<id>.json.
 
     La ficha carga la tabla "Funciones": día, hora, sala, acceso, duración y estado de cada función.
@@ -541,6 +551,9 @@ def visitar_fichas(context, ids, out, limite_s=1500):
     for i, rid in enumerate(ids, 1):
         if plantilla:
             datos_r = repetir_consulta(page, plantilla, rid)
+            if datos_r and agenda is not None and not coincide(datos_r, agenda.get(rid)):
+                print("  La consulta directa no sirve para otras películas; se abre cada ficha", file=sys.stderr)
+                plantilla, datos_r = None, None
             if datos_r:
                 (d / f"{rid}.json").write_text(json.dumps(datos_r, ensure_ascii=False), encoding="utf-8")
                 continue
@@ -691,8 +704,9 @@ def aplicar_fichas(funciones, fichas):
         por_id[f.get("id", "")].append(f)
     for rid, fs in por_id.items():
         fi = fichas.get(rid)
-        if not rid or not fi or not fi["funciones"] or (not fi["completa"] and len(fi["funciones"]) < len(fs)):
-            out += fs
+        agenda = {(f["dia"], f["hora"]) for f in fs}
+        if not rid or not fi or {(x["dia"], x["hora"]) for x in fi["funciones"]} != agenda:
+            out += fs  # sin ficha o no coincide con la agenda de la lista: no se usa
             continue
         usadas += 1
         base = {k: v for k, v in fs[0].items() if k not in ("dia", "hora", "sala", "acceso")}
@@ -954,7 +968,10 @@ def main():
         if ids_softr and not a.sin_fichas:
             pendientes = fichas_pendientes(funciones, ids_softr, out / "fichas", Path("programa/depuracion/fichas"))
             print(f"Fichas: {len(ids_softr) - len(pendientes)} al día, {len(pendientes)} por visitar", file=sys.stderr)
-            visitar_fichas(context, pendientes, out, limite_s=a.limite_fichas * 60)
+            agenda = defaultdict(set)
+            for f in funciones:
+                agenda[f["id"]].add((f["dia"], f["hora"]))
+            visitar_fichas(context, pendientes, out, limite_s=a.limite_fichas * 60, agenda=agenda)
             funciones = aplicar_fichas(funciones, funciones_desde_fichas(out / "fichas"))
         if a.detalles and not desde_softr:
             print("Visitando fichas de películas…", file=sys.stderr)
