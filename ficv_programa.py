@@ -193,7 +193,7 @@ JS_MAPA_SOFTR = r"""
 """
 
 
-def esperar_softr(page):
+def esperar_softr(page, progreso=lambda: (0, 0)):
     """Si la página es Softr: espera a que cargue la lista y pulsa 'Cargar más' hasta el final."""
     try:
         info = page.evaluate(JS_MAPA_SOFTR)
@@ -215,19 +215,28 @@ def esperar_softr(page):
             pass
         page.mouse.wheel(0, 600)
         page.wait_for_timeout(1000)
-    clics = 0
-    for _ in range(300):
+    # pulsar "Cargar más" hasta que la API haya entregado todos los registros
+    clics, sin_avance, ultimo = 0, 0, -1
+    for _ in range(400):
+        n, total = progreso()
+        if total and n >= total:
+            break
+        if n == ultimo:
+            sin_avance += 1
+            if sin_avance > 40 or (not total and sin_avance > 6):  # ~60 s sin registros nuevos
+                break
+        else:
+            sin_avance, ultimo = 0, n
         btn = bloque.get_by_text(re.compile(r"Cargar m[aá]s|Load more", re.I)).first
         try:
-            if not btn.is_visible(timeout=3000):
-                break
-            btn.scroll_into_view_if_needed(timeout=3000)
-            btn.click(timeout=5000)
+            btn.scroll_into_view_if_needed(timeout=1500)
+            btn.click(timeout=1500)
             clics += 1
-            page.wait_for_timeout(1500)
         except Exception:
-            break
-    print(f"  'Cargar más' pulsado {clics} veces", file=sys.stderr)
+            page.mouse.wheel(0, 1500)
+        page.wait_for_timeout(1500)
+    n, total = progreso()
+    print(f"  'Cargar más' pulsado {clics} veces: {n} de {total or '?'} registros", file=sys.stderr)
     return info["mapa"]
 
 
@@ -809,10 +818,20 @@ def main():
             except Exception:
                 pass
 
-        mapa_softr = esperar_softr(page)
+        def progreso():
+            regs = {r.get("id") for r in registros_softr(payloads, {**(mapa_softr_vivo or {}), **nombres_campos_softr(payloads)})}
+            total = max((p.get("total", 0) for p in payloads if isinstance(p, dict) and "items" in p), default=0)
+            return len(regs), total
+
+        try:
+            mapa_softr_vivo = (page.evaluate(JS_MAPA_SOFTR) or {}).get("mapa")
+        except Exception:
+            mapa_softr_vivo = None
+        mapa_softr = esperar_softr(page, progreso)
         # La API de Softr a veces responde 500: si no llegaron registros, recargar (hasta 4 veces)
         for intento in range(4):
-            if not mapa_softr or registros_softr(payloads, {**mapa_softr, **nombres_campos_softr(payloads)}):
+            n, total = progreso()
+            if not mapa_softr or (n and (not total or n >= total)):
                 break
             espera = 10 * 2 ** intento
             print(f"  Sin registros de la API; reintento {intento + 1}/4 en {espera} s…", file=sys.stderr)
@@ -824,7 +843,7 @@ def main():
             except PWTimeout:
                 pass
             page.wait_for_timeout(3000)
-            mapa_softr = esperar_softr(page) or mapa_softr
+            mapa_softr = esperar_softr(page, progreso) or mapa_softr
         funciones = []
         pestanas = page.evaluate(JS_PESTANAS_DIA, DIAS_RE)
         print(f"Pestañas de día detectadas: {pestanas or 'ninguna'}", file=sys.stderr)
@@ -851,6 +870,11 @@ def main():
             funciones = extraer_dom(page, "", dump)
             print(f"  {len(funciones)} funciones en la página", file=sys.stderr)
 
+        n, total = progreso() if mapa_softr else (0, 0)
+        if total and n < total:
+            print(f"ERROR: la lista quedó incompleta ({n} de {total} películas); no se genera el programa.",
+                  file=sys.stderr)
+            sys.exit(3)
         desde_softr = funciones_desde_softr(payloads, mapa_softr or {}, a.url)
         desde_api = desde_softr or funciones_desde_api(payloads)
         if len(desde_api) > len(funciones) * 0.8 and desde_api:
