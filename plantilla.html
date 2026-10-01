@@ -355,7 +355,10 @@ function pintarDias(lista){
   $("days").innerHTML=[["todos","Todos","★"],...dias.map(d=>{const l=lbl(d);return [d,l.w.slice(0,3),l.n]})]
     .map(([d,w,num])=>`<button type="button" data-d="${d}" aria-pressed="${d===dia}"><small>${w}</small><b>${num}</b><em>${n(d)}</em></button>`).join("");
 }
-const quienF=f=>[f.direccion,f.pais,f.anio].filter(Boolean).join(" · ");
+// países vienen en mayúsculas: "ESTADOS UNIDOS" → "Estados Unidos"
+const MIN=new Set(["de","del","la","las","los","y","e"]);
+const pais=p=>(p||"").toLowerCase().replace(/\p{L}+/gu,(w,i)=>i&&MIN.has(w)?w:w[0].toUpperCase()+w.slice(1));
+const quienF=f=>[f.direccion,pais(f.pais),f.anio].filter(Boolean).join(" · ");
 const titulos=s=>s.n===1?s.films[0].titulo:`Sesión de ${s.n} películas`;
 
 // ---------- vista lista ----------
@@ -420,8 +423,8 @@ function pintarCal(ver,cl){
     h+=`<div class="col" style="height:${alto}px">`+c.items.map(({s,lane,n})=>{
       const m=on(s),ya=!m&&yaEn(s,el).length, w=100/n;
       return `<button type="button" class="it${m?" on":""}${ya?" ya":""}${cl.has(s.key)?" clash":""}${n>=3?" angosta":""}${vistaS(s)?" vista":""}" data-s="${esc(s.key)}" aria-haspopup="dialog"
-        title="${esc(s.hora+"–"+finH(s)+" · "+s.films.map(f=>f.titulo+([f.direccion,f.anio].filter(Boolean).length?" ("+[f.direccion,f.anio].filter(Boolean).join(", ")+")":"")).join(" · ")+" · "+s.sala)}"
-        style="--c:${col(s.sec)};top:${y(s.min)+1}px;height:${s.ocupa*PPM-2}px;left:calc(${lane*w}% + 2px);width:calc(${w}% - 4px)"><b>${esc(s.hora)}–${finH(s)}${s.est?"*":""}</b><strong>${esc(titulos(s))}</strong>${s.n===1&&(s.films[0].direccion||s.films[0].anio)?`<span class="dir">${esc([s.films[0].direccion,s.films[0].anio].filter(Boolean).join(" · "))}</span>`:""}${s.n>1?`<span class="cortos">${esc(s.films.map(f=>f.titulo).join(" · "))}</span>`:""}<span>${esc(s.sec)}</span><span>${esc(s.sala)}</span></button>`;
+        title="${esc(s.hora+"–"+finH(s)+" · "+s.films.map(f=>f.titulo+(quienF(f)?" ("+quienF(f)+")":"")).join(" · ")+" · "+s.sala)}"
+        style="--c:${col(s.sec)};top:${y(s.min)+1}px;height:${s.ocupa*PPM-2}px;left:calc(${lane*w}% + 2px);width:calc(${w}% - 4px)"><b>${esc(s.hora)}–${finH(s)}${s.est?"*":""}</b><strong>${esc(titulos(s))}</strong>${s.n===1&&quienF(s.films[0])?`<span class="dir">${esc(quienF(s.films[0]))}</span>`:""}${s.n>1?`<span class="cortos">${esc(s.films.map(f=>f.titulo).join(" · "))}</span>`:""}<span>${esc(s.sec)}</span><span>${esc(s.sala)}</span></button>`;
     }).join("")+`</div>`;
   }
   return h+`</div></div><div class="legend"><span><i class="on"></i>★ Marcada (bloque relleno)</span><span><i class="vi"></i>✔ Vista</span><span><i></i>Sin marcar · el color indica la sección · clic para ver detalles</span><span><i class="cl"></i>Choca con otra marcada</span><span>El alto del bloque es la duración + ${MARGEN} min de margen</span><span>* duración estimada en 90 min</span></div>`;
