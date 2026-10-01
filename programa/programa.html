@@ -122,6 +122,10 @@ section.sec h2 i:not(.dot){font-style:normal;font-size:10.5px;padding:1px 7px;bo
 .col{position:relative;border-left:1px solid var(--line);background-image:linear-gradient(var(--grid) 1px,transparent 1px);background-size:100% var(--hh)}
 .it{position:absolute;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-start;align-items:stretch;text-align:left;font:inherit;font-size:12px;line-height:1.22;padding:3px 5px;border-radius:6px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer;z-index:1}
 .it:hover,.it:focus-visible{z-index:2}
+/* otra función de la misma película que la que está bajo el puntero */
+.it.par{z-index:3;outline:3px solid var(--ink);outline-offset:1px;box-shadow:0 0 0 6px color-mix(in srgb,var(--c) 35%,transparent)}
+.it.par::before{content:"otra función";position:absolute;top:2px;right:3px;font:700 9px/1 var(--f-body);padding:3px 5px;border-radius:4px;background:var(--ink);color:var(--surface)}
+.row.par{outline:2px solid var(--ink);outline-offset:-2px;background:color-mix(in srgb,var(--c,var(--river)) 12%,transparent)}
 .it b{font:500 10.5px var(--f-mono);color:color-mix(in srgb,var(--c) 75%,var(--ink))}
 .it strong{display:block;font-weight:700;overflow-wrap:anywhere;hyphens:auto}
 .it span{display:block;color:var(--muted);font-size:11px;overflow-wrap:anywhere}
@@ -375,7 +379,7 @@ function fila(s,cl,el){
   const f0=s.films[0], quien=s.n===1?quienF(f0):"";
   const titulo=s.n===1?`<a href="${esc(f0.url)}" target="_blank" rel="noopener">${esc(f0.titulo)}</a>`:esc(titulos(s));
   const lista=s.n>1?`<ul class="films">${s.films.map(f=>`<li><a href="${esc(f.url)}" target="_blank" rel="noopener">${esc(f.titulo)}</a>${quienF(f)?` <span>${esc(quienF(f))}</span>`:""}</li>`).join("")}</ul>`:"";
-  return `<div class="row${m?" on":""}${ya.length?" ya":""}${vistaS(s)?" vista":""}"><span class="t">${esc(s.hora)}</span>
+  return `<div class="row${m?" on":""}${ya.length?" ya":""}${vistaS(s)?" vista":""}" data-ids="${esc(s.films.map(f=>f.id).join(" "))}"><span class="t">${esc(s.hora)}</span>
     <span class="ttl">${titulo}</span>
     <button type="button" class="mark" data-k="${esc(s.key)}" aria-pressed="${m}" aria-label="${m?"Quitar de":"Agregar a"} mi calendario: ${esc(titulos(s))}, ${esc(s.hora)}">${m?"✓":"+"}</button>
     <span class="sub">${quien?`<span>${esc(quien)}</span>`:""}<span class="venue">${esc(s.sala)}</span><span>${s.est?"":s.dur+" min"}</span>${pills}
@@ -425,7 +429,7 @@ function pintarCal(ver,cl){
   for(const c of cols){
     h+=`<div class="col" style="height:${alto}px">`+c.items.map(({s,lane,n})=>{
       const m=on(s),ya=!m&&yaEn(s,el).length, w=100/n;
-      return `<button type="button" class="it${m?" on":""}${ya?" ya":""}${cl.has(s.key)?" clash":""}${n>=3?" angosta":""}${vistaS(s)?" vista":""}" data-s="${esc(s.key)}" aria-haspopup="dialog"
+      return `<button type="button" class="it${m?" on":""}${ya?" ya":""}${cl.has(s.key)?" clash":""}${n>=3?" angosta":""}${vistaS(s)?" vista":""}" data-s="${esc(s.key)}" data-ids="${esc(s.films.map(f=>f.id).join(" "))}" aria-haspopup="dialog"
         title="${esc(s.hora+"–"+finH(s)+" · "+s.films.map(f=>f.titulo+(quienF(f)?" ("+quienF(f)+")":"")).join(" · ")+" · "+s.sala)}"
         style="--c:${col(s.sec)};top:${y(s.min)+1}px;height:${s.ocupa*PPM-2}px;left:calc(${lane*w}% + 2px);width:calc(${w}% - 4px)"><b>${esc(s.hora)}–${finH(s)}${s.est?"*":""}</b><strong>${esc(titulos(s))}</strong>${s.n===1&&quienF(s.films[0])?`<span class="dir">${esc(quienF(s.films[0]))}</span>`:""}${s.n>1?`<span class="cortos">${esc(s.films.map(f=>f.titulo).join(" · "))}</span>`:""}<span>${esc(s.sec)}</span><span>${esc(s.sala)}</span></button>`;
     }).join("")+`</div>`;
@@ -475,7 +479,7 @@ function pintarPop(){
       ${s.n===1&&s.films[0].url?`<a class="btn" href="${esc(s.films[0].url)}" target="_blank" rel="noopener">Ver ficha en el festival ↗</a>`:""}
       <button type="button" class="btn" data-acc="c">Cerrar</button></div>`;
 }
-function abrir(k){abierta=k;pintarPop();try{$("pop").showModal()}catch(e){$("pop").setAttribute("open","")}}
+function abrir(k){abierta=k;pintarPop();resaltar(document.querySelector(`#m [data-s="${CSS.escape(k)}"]`));try{$("pop").showModal()}catch(e){$("pop").setAttribute("open","")}}
 $("pop").addEventListener("click",e=>{
   if(e.target===$("pop")){$("pop").close();return}          // clic fuera del cuadro
   const vf=e.target.closest("[data-vf]"); if(vf){toggleVistaFilm(vf.dataset.vf);pintarPop();return}
@@ -484,7 +488,21 @@ $("pop").addEventListener("click",e=>{
   else if(a.dataset.acc==="v"){toggleVista(abierta);pintarPop()}
   else $("pop").close();
 });
-$("pop").addEventListener("close",()=>{abierta=null});
+$("pop").addEventListener("close",()=>{abierta=null;resaltar(null)});
+// al pasar sobre una función, resaltar las otras funciones de las mismas películas
+let parActual=null;
+function resaltar(el){
+  if(el===parActual) return;
+  document.querySelectorAll(".par").forEach(x=>x.classList.remove("par"));
+  parActual=el; if(!el) return;
+  const ids=new Set(el.dataset.ids.split(" "));
+  document.querySelectorAll("#m [data-ids]").forEach(x=>{
+    if(x!==el&&x.dataset.ids.split(" ").some(i=>ids.has(i))) x.classList.add("par");
+  });
+}
+$("m").addEventListener("pointerover",e=>resaltar(e.target.closest("[data-ids]")));
+$("m").addEventListener("pointerleave",()=>resaltar(null));
+$("m").addEventListener("focusin",e=>resaltar(e.target.closest("[data-ids]")));
 $("m").addEventListener("click",e=>{const c=e.target.closest("[data-s]");if(c){abrir(c.dataset.s);return}
   const v=e.target.closest("[data-v]");if(v){toggleVista(v.dataset.v);return}
   const b=e.target.closest("[data-k]");if(b)toggle(b.dataset.k)});
