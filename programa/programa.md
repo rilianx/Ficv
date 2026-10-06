@@ -483,6 +483,9 @@ Fuente: https://33.ficvaldivia.cl/programacion
 |  | [Clearance de propiedad intelectual en la cadena de valor del cine de autor.](https://33.ficvaldivia.cl/ficha?recordId=Vl5QAnBo9uJ8VO) | Centro de Extensión Los Canelos UACh | Aula · Entrada Liberada |
 |  | [Foro de estudiantes RUCA](https://33.ficvaldivia.cl/ficha?recordId=viLFNwTnriSsKl) | Carpa de La Ciencia | Aula · Entrada Liberada |
 |  | [Mediación y exhibición: metodologías y experiencias desde el cineclubismo](https://33.ficvaldivia.cl/ficha?recordId=Nxsrf4wxvTrXDo) | Carpa de La Ciencia | Voces · Entrada Liberada |
+|  | [Presentación Libro: Cinema Pinochet
+Los dictadores como espectadores
+Libro investigación de Yanko González (Editorial Hueders).](https://33.ficvaldivia.cl/ficha?recordId=GUUw54lCF34L5V) | Librería Gato Caulle | Voces · Entrada Liberada |
 
 ### Cineastas en Foco
 
