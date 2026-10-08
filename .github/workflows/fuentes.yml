@@ -1,0 +1,30 @@
+name: Descargar PDF del programa
+
+on:
+  push:
+    paths:
+      - scripts/descargar_fuentes.py
+      - .github/workflows/fuentes.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  descargar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/descargar_fuentes.py
+      - name: Guardar en el repositorio
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898341+github-actions[bot]@users.noreply.github.com"
+          git add fuentes
+          git diff --cached --quiet || git commit -m "Descargar PDF del programa FICValdivia"
+          git pull --rebase -q || true
+          git push
