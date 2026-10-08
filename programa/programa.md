@@ -83,9 +83,8 @@ Fuente: https://33.ficvaldivia.cl/programacion
 
 | Hora | Película | Sala | Notas |
 |---|---|---|---|
-|  | [Accesibilidad audiovisual: una realidad más que una ficción](https://33.ficvaldivia.cl/ficha?recordId=1vU4hLxafirZLm) | Carpa de La Ciencia | Aula · Entrada Liberada |
 |  | [Desafíos y propuestas Valdivia Ciudad Creativa de la UNESCO](https://33.ficvaldivia.cl/ficha?recordId=S7fhbLJBd5n273) | Carpa de La Ciencia | Kawin · Entrada Liberada |
-|  | [Master Class: Ampliando la visión de lo posible](https://33.ficvaldivia.cl/ficha?recordId=YLj9f2mxqs7ks2) | UST | Aula · Entrada Liberada |
+|  | [Masterclass: Accesibilidad audiovisual: una realidad más que una ficción](https://33.ficvaldivia.cl/ficha?recordId=1vU4hLxafirZLm) | Carpa de La Ciencia | Aula · Entrada Liberada |
 |  | [¿Cuántas historias necesitamos para #NarrarElFuturo?](https://33.ficvaldivia.cl/ficha?recordId=OuBcOeBOXPSifY) | CFT Los Ríos | Aula · Entrada Liberada |
 
 ### Cineastas en Foco
@@ -207,7 +206,8 @@ Fuente: https://33.ficvaldivia.cl/programacion
 
 | Hora | Película | Sala | Notas |
 |---|---|---|---|
-|  | [Lanzamientos: Investigación "Caliche, Nitrato" (1897-1907) y Web Mapa del Cine de Latinoamérica y el Caribe (1896-1930)](https://33.ficvaldivia.cl/ficha?recordId=vbOEDbuw1y1zq1) | Carpa de La Ciencia | Voces · Entrada Liberada |
+|  | [Lanzamientos: Investigación “Caliche, nitrato: una arqueología del cine pionero chileno (1897-1907)” y Web Mapa del Cine de Latinoamérica y el Caribe (1896-1930)](https://33.ficvaldivia.cl/ficha?recordId=vbOEDbuw1y1zq1) | Carpa de La Ciencia | Voces · Entrada Liberada |
+|  | [Master Class: Ampliando la visión de lo posible](https://33.ficvaldivia.cl/ficha?recordId=YLj9f2mxqs7ks2) | UST | Aula · Entrada Liberada |
 |  | [Naturaleza, bienestar social y derechos humanos](https://33.ficvaldivia.cl/ficha?recordId=Gi25rSOGZB951j) | Carpa de La Ciencia | Kawin · Entrada Liberada |
 |  | [¿De quién es el mapa? Producción y circulación del cine latinoamericano hoy](https://33.ficvaldivia.cl/ficha?recordId=Y1IiBpoUW3RDxJ) | Carpa de La Ciencia | Aula · Entrada Liberada |
 
@@ -483,9 +483,7 @@ Fuente: https://33.ficvaldivia.cl/programacion
 |  | [Clearance de propiedad intelectual en la cadena de valor del cine de autor.](https://33.ficvaldivia.cl/ficha?recordId=Vl5QAnBo9uJ8VO) | Centro de Extensión Los Canelos UACh | Aula · Entrada Liberada |
 |  | [Foro de estudiantes RUCA](https://33.ficvaldivia.cl/ficha?recordId=viLFNwTnriSsKl) | Carpa de La Ciencia | Aula · Entrada Liberada |
 |  | [Mediación y exhibición: metodologías y experiencias desde el cineclubismo](https://33.ficvaldivia.cl/ficha?recordId=Nxsrf4wxvTrXDo) | Carpa de La Ciencia | Voces · Entrada Liberada |
-|  | [Presentación Libro: Cinema Pinochet
-Los dictadores como espectadores
-Libro investigación de Yanko González (Editorial Hueders).](https://33.ficvaldivia.cl/ficha?recordId=GUUw54lCF34L5V) | Librería Gato Caulle | Voces · Entrada Liberada |
+|  | [Presentación Libro: Cinema Pinochet Los dictadores como espectadores Libro investigación de Yanko González (Editorial Hueders)](https://33.ficvaldivia.cl/ficha?recordId=GUUw54lCF34L5V) | Librería Gato Caulle | Voces · Entrada Liberada |
 
 ### Cineastas en Foco
 

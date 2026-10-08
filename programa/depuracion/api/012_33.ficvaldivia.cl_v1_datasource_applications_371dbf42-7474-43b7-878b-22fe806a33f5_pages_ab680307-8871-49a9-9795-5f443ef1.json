@@ -4,75 +4,6 @@
  "offset": "132",
  "items": [
   {
-   "id": "C3lLXRKeT4l92W",
-   "fields": {
-    "EguiE": [
-     {
-      "id": "W4ixXhQNWUbof4",
-      "label": "Sala Hugo Campos"
-     }
-    ],
-    "9tf35": {
-     "id": "ece5904a-6a76-45d1-8c43-995c6d9f08da",
-     "label": "Muestra Contraplanos de la Historia"
-    },
-    "cIddG": [
-     {
-      "id": "2ccd4b09-e8ca-4d5e-8d5c-b5ed246bd27b",
-      "label": "BRASIL"
-     }
-    ],
-    "6A3kv": 5,
-    "EOkFi": [
-     {
-      "id": "8ceb5fef-3658-4464-8ee5-e9dcf51eb741",
-      "label": "Martes 13"
-     }
-    ],
-    "LVmhF": [
-     "Martes 13 - 12:45 - Sala Hugo Campos"
-    ],
-    "mllcQ": [
-     {
-      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/C3lLXRKeT4l92W/mllcQ/98b4c729-64ad-4991-a928-9e8ac2d8aab2/60d0d187-be46-4488-826a-d56b3f9f689e",
-      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/C3lLXRKeT4l92W/mllcQ/98b4c729-64ad-4991-a928-9e8ac2d8aab2/60d0d187-be46-4488-826a-d56b3f9f689e?response-content-disposition=inline%3B%20filename%3D%22Os_queixadas_1.jpg%22%3B%20filename%2A%3DUTF-8%27%27Os_queixadas_1.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261007T175210Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261007%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=2f790c6b2ea644517e9cef251c60465c77d5ee6ffd8b6e75a931fff19c6af3a1",
-      "filename": "Os_queixadas_1.jpg",
-      "type": "image/jpeg",
-      "size": 36905,
-      "thumbnails": [
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/jQpniQattSsgarJjztpvFT-CX_a6t18sknI2mzjvmB0/rs:fit:200:0/exp:1791403200/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvQzNsTFhSS2VUNGw5MlcvbWxsY1EvOThiNGM3MjktNjRhZC00OTkxLWE5MjgtOWU4YWMyZDhhYWIyLzYwZDBkMTg3LWJlNDYtNDQ4OC04MjZhLWQ1NmIzZjlmNjg5ZQ",
-        "size": "small"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/mCxyK0SC2m94oVbDh20hyACR3NSDBBGtKvJzW6kdGBg/rs:fit:600:0/exp:1791403200/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvQzNsTFhSS2VUNGw5MlcvbWxsY1EvOThiNGM3MjktNjRhZC00OTkxLWE5MjgtOWU4YWMyZDhhYWIyLzYwZDBkMTg3LWJlNDYtNDQ4OC04MjZhLWQ1NmIzZjlmNjg5ZQ",
-        "size": "medium"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/QHDaQwVbFWc3Keft5eD5ldkJfFhZX5tmtlSpEaNuoDo/rs:fit:1200:0/exp:1791403200/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvQzNsTFhSS2VUNGw5MlcvbWxsY1EvOThiNGM3MjktNjRhZC00OTkxLWE5MjgtOWU4YWMyZDhhYWIyLzYwZDBkMTg3LWJlNDYtNDQ4OC04MjZhLWQ1NmIzZjlmNjg5ZQ",
-        "size": "large"
-       }
-      ],
-      "expiresAt": null
-     }
-    ],
-    "VWKRF": [
-     {
-      "id": "bdb761a5-9133-45e0-9770-4337f63a8a82",
-      "label": "Homenaje Ciclo de Huelgas"
-     }
-    ],
-    "tgI6Y": "Os Queixadas",
-    "EStWy": "Rogério Corrêa",
-    "U11RE": [
-     {
-      "id": "7c019120-12db-4c05-9987-5f016b00911a",
-      "label": "Entrada Liberada"
-     }
-    ]
-   }
-  },
-  {
    "id": "GIMnpOBJS2aJox",
    "fields": {
     "EguiE": [
@@ -104,21 +35,21 @@
     "mllcQ": [
      {
       "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/GIMnpOBJS2aJox/mllcQ/4c085e8f-e8b8-4945-89db-c539999600f1/499d70a3-49df-4a14-9f8c-2ffaf340378c",
-      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/GIMnpOBJS2aJox/mllcQ/4c085e8f-e8b8-4945-89db-c539999600f1/499d70a3-49df-4a14-9f8c-2ffaf340378c?response-content-disposition=inline%3B%20filename%3D%22santo_e_jesus_metalurgicos_1.jpg%22%3B%20filename%2A%3DUTF-8%27%27santo_e_jesus_metalurgicos_1.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261007T175210Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261007%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=43ad8e347510e46bc64f57a7ad66ed5af7c480dadba4eb32e0e295b7367c4d31",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/GIMnpOBJS2aJox/mllcQ/4c085e8f-e8b8-4945-89db-c539999600f1/499d70a3-49df-4a14-9f8c-2ffaf340378c?response-content-disposition=inline%3B%20filename%3D%22santo_e_jesus_metalurgicos_1.jpg%22%3B%20filename%2A%3DUTF-8%27%27santo_e_jesus_metalurgicos_1.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261008T175434Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261008%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=2f56fd2fbcc3c3471ed20849d94ad7be86ca277fd3c0900aa9d2f3f52b1282e4",
       "filename": "santo_e_jesus_metalurgicos_1.jpg",
       "type": "image/jpeg",
       "size": 96442,
       "thumbnails": [
        {
-        "url": "https://d2nmodil6do74b.cloudfront.net/OBRi6ujkNtMfav0oKcccU1dFYiVJuV9I6pJiaWwYVjg/rs:fit:200:0/exp:1791403200/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvR0lNbnBPQkpTMmFKb3gvbWxsY1EvNGMwODVlOGYtZThiOC00OTQ1LTg5ZGItYzUzOTk5OTYwMGYxLzQ5OWQ3MGEzLTQ5ZGYtNGExNC05ZjhjLTJmZmFmMzQwMzc4Yw",
+        "url": "https://d2nmodil6do74b.cloudfront.net/JhAN1yIZnZ6cWqYAoSXnOMyO2vq47--28SAvnPq_4r4/rs:fit:200:0/exp:1791489600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvR0lNbnBPQkpTMmFKb3gvbWxsY1EvNGMwODVlOGYtZThiOC00OTQ1LTg5ZGItYzUzOTk5OTYwMGYxLzQ5OWQ3MGEzLTQ5ZGYtNGExNC05ZjhjLTJmZmFmMzQwMzc4Yw",
         "size": "small"
        },
        {
-        "url": "https://d2nmodil6do74b.cloudfront.net/E4Yn_mmWe8_O9GwpHuiQAHV2_Y8393hBYGGtKeFhhuI/rs:fit:600:0/exp:1791403200/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvR0lNbnBPQkpTMmFKb3gvbWxsY1EvNGMwODVlOGYtZThiOC00OTQ1LTg5ZGItYzUzOTk5OTYwMGYxLzQ5OWQ3MGEzLTQ5ZGYtNGExNC05ZjhjLTJmZmFmMzQwMzc4Yw",
+        "url": "https://d2nmodil6do74b.cloudfront.net/4EzUDgqxO78PGYmPu3zsSiIroKVN3z_bUGPCwrlJnys/rs:fit:600:0/exp:1791489600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvR0lNbnBPQkpTMmFKb3gvbWxsY1EvNGMwODVlOGYtZThiOC00OTQ1LTg5ZGItYzUzOTk5OTYwMGYxLzQ5OWQ3MGEzLTQ5ZGYtNGExNC05ZjhjLTJmZmFmMzQwMzc4Yw",
         "size": "medium"
        },
        {
-        "url": "https://d2nmodil6do74b.cloudfront.net/PRwY1Hyj1rYe3etjYGaA1-mJLiBl7P58gSmQkh5eP8U/rs:fit:1200:0/exp:1791403200/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvR0lNbnBPQkpTMmFKb3gvbWxsY1EvNGMwODVlOGYtZThiOC00OTQ1LTg5ZGItYzUzOTk5OTYwMGYxLzQ5OWQ3MGEzLTQ5ZGYtNGExNC05ZjhjLTJmZmFmMzQwMzc4Yw",
+        "url": "https://d2nmodil6do74b.cloudfront.net/zAYqicstfjiUoML5IB9suOfk3ejUGi4h_wol_u0SRqs/rs:fit:1200:0/exp:1791489600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvR0lNbnBPQkpTMmFKb3gvbWxsY1EvNGMwODVlOGYtZThiOC00OTQ1LTg5ZGItYzUzOTk5OTYwMGYxLzQ5OWQ3MGEzLTQ5ZGYtNGExNC05ZjhjLTJmZmFmMzQwMzc4Yw",
         "size": "large"
        }
       ],
@@ -173,21 +104,21 @@
     "mllcQ": [
      {
       "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/ieJY5gAQwB917a/mllcQ/01c8ed6a-96a9-469b-b44d-b5d3e90e8302/afbfdc8d-b55c-44bf-87ed-5eb44e648048",
-      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/ieJY5gAQwB917a/mllcQ/01c8ed6a-96a9-469b-b44d-b5d3e90e8302/afbfdc8d-b55c-44bf-87ed-5eb44e648048?response-content-disposition=inline%3B%20filename%3D%22Still_1.jpg%22%3B%20filename%2A%3DUTF-8%27%27Still_1.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261007T175210Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261007%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=988273855f5dda30e6d6a6e81d45e33c9ef6d92a44bce401d2b5b8cd21c59bb2",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/ieJY5gAQwB917a/mllcQ/01c8ed6a-96a9-469b-b44d-b5d3e90e8302/afbfdc8d-b55c-44bf-87ed-5eb44e648048?response-content-disposition=inline%3B%20filename%3D%22Still_1.jpg%22%3B%20filename%2A%3DUTF-8%27%27Still_1.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261008T175434Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261008%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=9f49d33c6c03c61b029f40355f4f730fa9a9fec43ea31595176b6ef92d63f571",
       "filename": "Still_1.jpg",
       "type": "image/jpeg",
       "size": 40234,
       "thumbnails": [
        {
-        "url": "https://d2nmodil6do74b.cloudfront.net/eH3eBxwsLVSUjFBEXbCBxj03VXAJqSdtwCX2fwIkYP8/rs:fit:200:0/exp:1791403200/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvaWVKWTVnQVF3QjkxN2EvbWxsY1EvMDFjOGVkNmEtOTZhOS00NjliLWI0NGQtYjVkM2U5MGU4MzAyL2FmYmZkYzhkLWI1NWMtNDRiZi04N2VkLTVlYjQ0ZTY0ODA0OA",
+        "url": "https://d2nmodil6do74b.cloudfront.net/61VWiZUzl1yCfTGDdIdGLZEx2Xe2_qr0sBoOL9Vd8LA/rs:fit:200:0/exp:1791489600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvaWVKWTVnQVF3QjkxN2EvbWxsY1EvMDFjOGVkNmEtOTZhOS00NjliLWI0NGQtYjVkM2U5MGU4MzAyL2FmYmZkYzhkLWI1NWMtNDRiZi04N2VkLTVlYjQ0ZTY0ODA0OA",
         "size": "small"
        },
        {
-        "url": "https://d2nmodil6do74b.cloudfront.net/pKy3hAK0rO8bF0BOUrC6c1GexQe3jRqQKCNSF7ch1OI/rs:fit:600:0/exp:1791403200/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvaWVKWTVnQVF3QjkxN2EvbWxsY1EvMDFjOGVkNmEtOTZhOS00NjliLWI0NGQtYjVkM2U5MGU4MzAyL2FmYmZkYzhkLWI1NWMtNDRiZi04N2VkLTVlYjQ0ZTY0ODA0OA",
+        "url": "https://d2nmodil6do74b.cloudfront.net/QTreEeeaicy0Ht4U5MwQEXTDwEK2w9KcCeK8xsu3hs8/rs:fit:600:0/exp:1791489600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvaWVKWTVnQVF3QjkxN2EvbWxsY1EvMDFjOGVkNmEtOTZhOS00NjliLWI0NGQtYjVkM2U5MGU4MzAyL2FmYmZkYzhkLWI1NWMtNDRiZi04N2VkLTVlYjQ0ZTY0ODA0OA",
         "size": "medium"
        },
        {
-        "url": "https://d2nmodil6do74b.cloudfront.net/i4WjHyEhJFEDoF75sM4RV-RGZtcsfXMId8h81PGD-Hw/rs:fit:1200:0/exp:1791403200/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvaWVKWTVnQVF3QjkxN2EvbWxsY1EvMDFjOGVkNmEtOTZhOS00NjliLWI0NGQtYjVkM2U5MGU4MzAyL2FmYmZkYzhkLWI1NWMtNDRiZi04N2VkLTVlYjQ0ZTY0ODA0OA",
+        "url": "https://d2nmodil6do74b.cloudfront.net/dZTetJBk-fdL1zajOfF_8CbFLiFowQQNjcDR0wPyJvM/rs:fit:1200:0/exp:1791489600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvaWVKWTVnQVF3QjkxN2EvbWxsY1EvMDFjOGVkNmEtOTZhOS00NjliLWI0NGQtYjVkM2U5MGU4MzAyL2FmYmZkYzhkLWI1NWMtNDRiZi04N2VkLTVlYjQ0ZTY0ODA0OA",
         "size": "large"
        }
       ],
@@ -247,21 +178,21 @@
     "mllcQ": [
      {
       "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/1VQfBwU06VP58h/mllcQ/1739a71a-028a-4ba7-b6b9-9c76c5ff73fe/80bd3ed4-b178-4b92-aeb4-d5d03e9204ac",
-      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/1VQfBwU06VP58h/mllcQ/1739a71a-028a-4ba7-b6b9-9c76c5ff73fe/80bd3ed4-b178-4b92-aeb4-d5d03e9204ac?response-content-disposition=inline%3B%20filename%3D%22Alias_Gardelito_1.jpg%22%3B%20filename%2A%3DUTF-8%27%27Alias_Gardelito_1.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261007T175210Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261007%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=f67f02cd70a3a8944f069f57377d30ea87fc1c02cb94394c90553342742e60a7",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/1VQfBwU06VP58h/mllcQ/1739a71a-028a-4ba7-b6b9-9c76c5ff73fe/80bd3ed4-b178-4b92-aeb4-d5d03e9204ac?response-content-disposition=inline%3B%20filename%3D%22Alias_Gardelito_1.jpg%22%3B%20filename%2A%3DUTF-8%27%27Alias_Gardelito_1.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261008T175434Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261008%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=529ceefc52418f9f86ac538fd5cf63b6a12846cb1e9bbc5d80df4f80e2a5fc97",
       "filename": "Alias_Gardelito_1.jpg",
       "type": "image/jpeg",
       "size": 33632,
       "thumbnails": [
        {
-        "url": "https://d2nmodil6do74b.cloudfront.net/CDzbe1HIYZqFhYjJqw3x2udBC4iOrFF2lp9y1vNZjmU/rs:fit:200:0/exp:1791403200/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvMVZRZkJ3VTA2VlA1OGgvbWxsY1EvMTczOWE3MWEtMDI4YS00YmE3LWI2YjktOWM3NmM1ZmY3M2ZlLzgwYmQzZWQ0LWIxNzgtNGI5Mi1hZWI0LWQ1ZDAzZTkyMDRhYw",
+        "url": "https://d2nmodil6do74b.cloudfront.net/2fLqr-2p-XOo1ucK4DryZ8stXMGYQfyv6sLdFC8iFgI/rs:fit:200:0/exp:1791489600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvMVZRZkJ3VTA2VlA1OGgvbWxsY1EvMTczOWE3MWEtMDI4YS00YmE3LWI2YjktOWM3NmM1ZmY3M2ZlLzgwYmQzZWQ0LWIxNzgtNGI5Mi1hZWI0LWQ1ZDAzZTkyMDRhYw",
         "size": "small"
        },
        {
-        "url": "https://d2nmodil6do74b.cloudfront.net/3nu-eWo7aeIwGsHY1Z9q6B06Pz-u1IVSJCcinMr9C4I/rs:fit:600:0/exp:1791403200/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvMVZRZkJ3VTA2VlA1OGgvbWxsY1EvMTczOWE3MWEtMDI4YS00YmE3LWI2YjktOWM3NmM1ZmY3M2ZlLzgwYmQzZWQ0LWIxNzgtNGI5Mi1hZWI0LWQ1ZDAzZTkyMDRhYw",
+        "url": "https://d2nmodil6do74b.cloudfront.net/s9Foi4EDQhQwFzqIrGhEvh9rJER_ivDU_NklAy5tHaI/rs:fit:600:0/exp:1791489600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvMVZRZkJ3VTA2VlA1OGgvbWxsY1EvMTczOWE3MWEtMDI4YS00YmE3LWI2YjktOWM3NmM1ZmY3M2ZlLzgwYmQzZWQ0LWIxNzgtNGI5Mi1hZWI0LWQ1ZDAzZTkyMDRhYw",
         "size": "medium"
        },
        {
-        "url": "https://d2nmodil6do74b.cloudfront.net/fT_Go3sDuQuBJGA-y5ohiM75l9DXugkov4xG9eL3FOo/rs:fit:1200:0/exp:1791403200/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvMVZRZkJ3VTA2VlA1OGgvbWxsY1EvMTczOWE3MWEtMDI4YS00YmE3LWI2YjktOWM3NmM1ZmY3M2ZlLzgwYmQzZWQ0LWIxNzgtNGI5Mi1hZWI0LWQ1ZDAzZTkyMDRhYw",
+        "url": "https://d2nmodil6do74b.cloudfront.net/_GE3OEtDDzOjR1jt3UVuWTyRDwp0Rk4EuF2EBTG9q2A/rs:fit:1200:0/exp:1791489600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvMVZRZkJ3VTA2VlA1OGgvbWxsY1EvMTczOWE3MWEtMDI4YS00YmE3LWI2YjktOWM3NmM1ZmY3M2ZlLzgwYmQzZWQ0LWIxNzgtNGI5Mi1hZWI0LWQ1ZDAzZTkyMDRhYw",
         "size": "large"
        }
       ],
@@ -321,21 +252,21 @@
     "mllcQ": [
      {
       "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/QONODkHiO3t78J/mllcQ/025e15c0-ec96-4649-9545-298844b89c26/dc741c79-f1a9-4a6b-a347-ba0a86a37f41",
-      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/QONODkHiO3t78J/mllcQ/025e15c0-ec96-4649-9545-298844b89c26/dc741c79-f1a9-4a6b-a347-ba0a86a37f41?response-content-disposition=inline%3B%20filename%3D%22Captura_de_pantalla_2026-08-06_a_las_1.35.12_p.m..jpg%22%3B%20filename%2A%3DUTF-8%27%27Captura_de_pantalla_2026-08-06_a_las_1.35.12_p.m..jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261007T175210Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261007%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=f2b8172ab27c45d986164c072166c3bd4d271f5c7855b23903d9a3c8cfd26f00",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/QONODkHiO3t78J/mllcQ/025e15c0-ec96-4649-9545-298844b89c26/dc741c79-f1a9-4a6b-a347-ba0a86a37f41?response-content-disposition=inline%3B%20filename%3D%22Captura_de_pantalla_2026-08-06_a_las_1.35.12_p.m..jpg%22%3B%20filename%2A%3DUTF-8%27%27Captura_de_pantalla_2026-08-06_a_las_1.35.12_p.m..jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261008T175434Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261008%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=e9565760f02442a7beb8a7486390f5635bb82aba0619f7f2f6ed43e6ece6d9e9",
       "filename": "Captura_de_pantalla_2026-08-06_a_las_1.35.12_p.m..jpg",
       "type": "image/jpeg",
       "size": 60705,
       "thumbnails": [
        {
-        "url": "https://d2nmodil6do74b.cloudfront.net/pWZiO0WF_YZioN7WJOK6kZsV-iJs1Bj5pDXaUoUKS14/rs:fit:200:0/exp:1791403200/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvUU9OT0RrSGlPM3Q3OEovbWxsY1EvMDI1ZTE1YzAtZWM5Ni00NjQ5LTk1NDUtMjk4ODQ0Yjg5YzI2L2RjNzQxYzc5LWYxYTktNGE2Yi1hMzQ3LWJhMGE4NmEzN2Y0MQ",
+        "url": "https://d2nmodil6do74b.cloudfront.net/Jwe-JaWhDMyN9yMjy1RTFOKmKCf78XGi1SgtySHsmb8/rs:fit:200:0/exp:1791489600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvUU9OT0RrSGlPM3Q3OEovbWxsY1EvMDI1ZTE1YzAtZWM5Ni00NjQ5LTk1NDUtMjk4ODQ0Yjg5YzI2L2RjNzQxYzc5LWYxYTktNGE2Yi1hMzQ3LWJhMGE4NmEzN2Y0MQ",
         "size": "small"
        },
        {
-        "url": "https://d2nmodil6do74b.cloudfront.net/JuNPvw_mby3wy-iOE0U-jC6KhAmCiUnJJYd-adPrrfU/rs:fit:600:0/exp:1791403200/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvUU9OT0RrSGlPM3Q3OEovbWxsY1EvMDI1ZTE1YzAtZWM5Ni00NjQ5LTk1NDUtMjk4ODQ0Yjg5YzI2L2RjNzQxYzc5LWYxYTktNGE2Yi1hMzQ3LWJhMGE4NmEzN2Y0MQ",
+        "url": "https://d2nmodil6do74b.cloudfront.net/fSjxSPISqtGA0dElG6RiXY8C2nPuMxI1m_h5eX7xlJo/rs:fit:600:0/exp:1791489600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvUU9OT0RrSGlPM3Q3OEovbWxsY1EvMDI1ZTE1YzAtZWM5Ni00NjQ5LTk1NDUtMjk4ODQ0Yjg5YzI2L2RjNzQxYzc5LWYxYTktNGE2Yi1hMzQ3LWJhMGE4NmEzN2Y0MQ",
         "size": "medium"
        },
        {
-        "url": "https://d2nmodil6do74b.cloudfront.net/XJgTd13KSMWkjfrMGOIVSTA6XWZvcEtPQf9i38O4FJ0/rs:fit:1200:0/exp:1791403200/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvUU9OT0RrSGlPM3Q3OEovbWxsY1EvMDI1ZTE1YzAtZWM5Ni00NjQ5LTk1NDUtMjk4ODQ0Yjg5YzI2L2RjNzQxYzc5LWYxYTktNGE2Yi1hMzQ3LWJhMGE4NmEzN2Y0MQ",
+        "url": "https://d2nmodil6do74b.cloudfront.net/8pqGYZw_qCJAVoG6oMMVm0Lw61z7MdrJYRpX2cS9wPw/rs:fit:1200:0/exp:1791489600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvUU9OT0RrSGlPM3Q3OEovbWxsY1EvMDI1ZTE1YzAtZWM5Ni00NjQ5LTk1NDUtMjk4ODQ0Yjg5YzI2L2RjNzQxYzc5LWYxYTktNGE2Yi1hMzQ3LWJhMGE4NmEzN2Y0MQ",
         "size": "large"
        }
       ],
@@ -395,21 +326,21 @@
     "mllcQ": [
      {
       "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/pGh2kqEoea85N4/mllcQ/42441942-d08b-4ea1-8dae-6d45ad2b4317/bef5d57e-4939-4eb1-a7fe-ec1bee47203b",
-      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/pGh2kqEoea85N4/mllcQ/42441942-d08b-4ea1-8dae-6d45ad2b4317/bef5d57e-4939-4eb1-a7fe-ec1bee47203b?response-content-disposition=inline%3B%20filename%3D%22En_el_nombre_de_la_Mamma_del_Hijo_del_Espiritu_Santo_Amen.jpg%22%3B%20filename%2A%3DUTF-8%27%27En_el_nombre_de_la_Mamma_del_Hijo_del_Espiritu_Santo_Amen.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261007T175210Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261007%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=988c74cd4d136ea1d47cb2dfae34487c02509116c3747bfa9667f83600020cb2",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/pGh2kqEoea85N4/mllcQ/42441942-d08b-4ea1-8dae-6d45ad2b4317/bef5d57e-4939-4eb1-a7fe-ec1bee47203b?response-content-disposition=inline%3B%20filename%3D%22En_el_nombre_de_la_Mamma_del_Hijo_del_Espiritu_Santo_Amen.jpg%22%3B%20filename%2A%3DUTF-8%27%27En_el_nombre_de_la_Mamma_del_Hijo_del_Espiritu_Santo_Amen.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261008T175434Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261008%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=eca4557336915a8a5e6d67710e7ebe798e71b4745b03ffde79d4daad20b92620",
       "filename": "En_el_nombre_de_la_Mamma_del_Hijo_del_Espiritu_Santo_Amen.jpg",
       "type": "image/jpeg",
       "size": 46907,
       "thumbnails": [
        {
-        "url": "https://d2nmodil6do74b.cloudfront.net/pIDdhaw9LNxFXpizrA4rHh0weKHcjry-PLonTMSkp8s/rs:fit:200:0/exp:1791403200/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvcEdoMmtxRW9lYTg1TjQvbWxsY1EvNDI0NDE5NDItZDA4Yi00ZWExLThkYWUtNmQ0NWFkMmI0MzE3L2JlZjVkNTdlLTQ5MzktNGViMS1hN2ZlLWVjMWJlZTQ3MjAzYg",
+        "url": "https://d2nmodil6do74b.cloudfront.net/1oz5Ndu4PGK-eEFxCBfPlvlQnbpc8hptNmufdLRZVvE/rs:fit:200:0/exp:1791489600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvcEdoMmtxRW9lYTg1TjQvbWxsY1EvNDI0NDE5NDItZDA4Yi00ZWExLThkYWUtNmQ0NWFkMmI0MzE3L2JlZjVkNTdlLTQ5MzktNGViMS1hN2ZlLWVjMWJlZTQ3MjAzYg",
         "size": "small"
        },
        {
-        "url": "https://d2nmodil6do74b.cloudfront.net/WeYZYUmnvouba-GdwDPs727HFfb98Y9Sq9PVol3L6Os/rs:fit:600:0/exp:1791403200/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvcEdoMmtxRW9lYTg1TjQvbWxsY1EvNDI0NDE5NDItZDA4Yi00ZWExLThkYWUtNmQ0NWFkMmI0MzE3L2JlZjVkNTdlLTQ5MzktNGViMS1hN2ZlLWVjMWJlZTQ3MjAzYg",
+        "url": "https://d2nmodil6do74b.cloudfront.net/kmOGNzZZ_tYaAQiSzhFXcmMZP260Wx5K_TJGsD91iKk/rs:fit:600:0/exp:1791489600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvcEdoMmtxRW9lYTg1TjQvbWxsY1EvNDI0NDE5NDItZDA4Yi00ZWExLThkYWUtNmQ0NWFkMmI0MzE3L2JlZjVkNTdlLTQ5MzktNGViMS1hN2ZlLWVjMWJlZTQ3MjAzYg",
         "size": "medium"
        },
        {
-        "url": "https://d2nmodil6do74b.cloudfront.net/xspSEnIyS18i3iJJyAPeE8GLve_aU1GnArnSlWpNsws/rs:fit:1200:0/exp:1791403200/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvcEdoMmtxRW9lYTg1TjQvbWxsY1EvNDI0NDE5NDItZDA4Yi00ZWExLThkYWUtNmQ0NWFkMmI0MzE3L2JlZjVkNTdlLTQ5MzktNGViMS1hN2ZlLWVjMWJlZTQ3MjAzYg",
+        "url": "https://d2nmodil6do74b.cloudfront.net/6Rs3oldtugXZPdd5pbWbNfxcnSwS5cEcYPlawOccerE/rs:fit:1200:0/exp:1791489600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvcEdoMmtxRW9lYTg1TjQvbWxsY1EvNDI0NDE5NDItZDA4Yi00ZWExLThkYWUtNmQ0NWFkMmI0MzE3L2JlZjVkNTdlLTQ5MzktNGViMS1hN2ZlLWVjMWJlZTQ3MjAzYg",
         "size": "large"
        }
       ],
@@ -469,21 +400,21 @@
     "mllcQ": [
      {
       "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/gCokeg9gzA0dbv/mllcQ/dcbb35de-8e53-4aac-8602-2e45dde0c125/5efd948c-9578-4f2d-9c6f-b62852deea31",
-      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/gCokeg9gzA0dbv/mllcQ/dcbb35de-8e53-4aac-8602-2e45dde0c125/5efd948c-9578-4f2d-9c6f-b62852deea31?response-content-disposition=inline%3B%20filename%3D%22La_trace_Francia_1989_20_minutos.jpg%22%3B%20filename%2A%3DUTF-8%27%27La_trace_Francia_1989_20_minutos.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261007T175210Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261007%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=d9d3773f3b6fa7ef34d1650e477223bb300d718dc2ea7a5ced6fd718cdc71e78",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/gCokeg9gzA0dbv/mllcQ/dcbb35de-8e53-4aac-8602-2e45dde0c125/5efd948c-9578-4f2d-9c6f-b62852deea31?response-content-disposition=inline%3B%20filename%3D%22La_trace_Francia_1989_20_minutos.jpg%22%3B%20filename%2A%3DUTF-8%27%27La_trace_Francia_1989_20_minutos.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261008T175434Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261008%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=6608389827d522cb582a4c155ba5723f6d44c09c74b4f5b05d59f4f7aa23387d",
       "filename": "La_trace_Francia_1989_20_minutos.jpg",
       "type": "image/jpeg",
       "size": 38901,
       "thumbnails": [
        {
-        "url": "https://d2nmodil6do74b.cloudfront.net/G7nViC_dTAEkDLfqMaBaIpiw7QL7Zo648MIFScieGIY/rs:fit:200:0/exp:1791403200/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvZ0Nva2VnOWd6QTBkYnYvbWxsY1EvZGNiYjM1ZGUtOGU1My00YWFjLTg2MDItMmU0NWRkZTBjMTI1LzVlZmQ5NDhjLTk1NzgtNGYyZC05YzZmLWI2Mjg1MmRlZWEzMQ",
+        "url": "https://d2nmodil6do74b.cloudfront.net/8xQZEoRDs-N3E3xK61W_DnZ5cf0KjhstwsNbykZkQOM/rs:fit:200:0/exp:1791489600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvZ0Nva2VnOWd6QTBkYnYvbWxsY1EvZGNiYjM1ZGUtOGU1My00YWFjLTg2MDItMmU0NWRkZTBjMTI1LzVlZmQ5NDhjLTk1NzgtNGYyZC05YzZmLWI2Mjg1MmRlZWEzMQ",
         "size": "small"
        },
        {
-        "url": "https://d2nmodil6do74b.cloudfront.net/Ljct3W3uHZebVBCv0GxkBn_WEj6HM_IDRVLgSMVjfIE/rs:fit:600:0/exp:1791403200/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvZ0Nva2VnOWd6QTBkYnYvbWxsY1EvZGNiYjM1ZGUtOGU1My00YWFjLTg2MDItMmU0NWRkZTBjMTI1LzVlZmQ5NDhjLTk1NzgtNGYyZC05YzZmLWI2Mjg1MmRlZWEzMQ",
+        "url": "https://d2nmodil6do74b.cloudfront.net/BdSbG1MvRjMi6DEOW6GtWFpHsmGmUEOVpoE42r1dkLc/rs:fit:600:0/exp:1791489600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvZ0Nva2VnOWd6QTBkYnYvbWxsY1EvZGNiYjM1ZGUtOGU1My00YWFjLTg2MDItMmU0NWRkZTBjMTI1LzVlZmQ5NDhjLTk1NzgtNGYyZC05YzZmLWI2Mjg1MmRlZWEzMQ",
         "size": "medium"
        },
        {
-        "url": "https://d2nmodil6do74b.cloudfront.net/9xNQssZYiy1gUb2c9GIka7LBVJjMN0GWO39mx6Xrgqo/rs:fit:1200:0/exp:1791403200/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvZ0Nva2VnOWd6QTBkYnYvbWxsY1EvZGNiYjM1ZGUtOGU1My00YWFjLTg2MDItMmU0NWRkZTBjMTI1LzVlZmQ5NDhjLTk1NzgtNGYyZC05YzZmLWI2Mjg1MmRlZWEzMQ",
+        "url": "https://d2nmodil6do74b.cloudfront.net/O9sR7K6dGcwoUntopvb4GU1VVfzkAv9gFD6z7nDh34o/rs:fit:1200:0/exp:1791489600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvZ0Nva2VnOWd6QTBkYnYvbWxsY1EvZGNiYjM1ZGUtOGU1My00YWFjLTg2MDItMmU0NWRkZTBjMTI1LzVlZmQ5NDhjLTk1NzgtNGYyZC05YzZmLWI2Mjg1MmRlZWEzMQ",
         "size": "large"
        }
       ],
@@ -543,21 +474,21 @@
     "mllcQ": [
      {
       "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/gLSqzJP0pAA2zh/mllcQ/243bd39b-7cb8-4c1d-a496-02a6b6dd44ba/7fd78eed-a71d-4c69-8c78-449258dc56dd",
-      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/gLSqzJP0pAA2zh/mllcQ/243bd39b-7cb8-4c1d-a496-02a6b6dd44ba/7fd78eed-a71d-4c69-8c78-449258dc56dd?response-content-disposition=inline%3B%20filename%3D%22PRINCIPAL_SURES_09_1.jpg%22%3B%20filename%2A%3DUTF-8%27%27PRINCIPAL_SURES_09_1.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261007T175210Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261007%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=37f712a59dac0e7d0a1f028472fd943ac270e8cf611deb80babede9da9a0489b",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/gLSqzJP0pAA2zh/mllcQ/243bd39b-7cb8-4c1d-a496-02a6b6dd44ba/7fd78eed-a71d-4c69-8c78-449258dc56dd?response-content-disposition=inline%3B%20filename%3D%22PRINCIPAL_SURES_09_1.jpg%22%3B%20filename%2A%3DUTF-8%27%27PRINCIPAL_SURES_09_1.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261008T175434Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261008%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=c2a1e4c828fbf3cc8668a5d3bcd6d946ac232f401b110b91fa2c881c26ecdc96",
       "filename": "PRINCIPAL_SURES_09_1.jpg",
       "type": "image/jpeg",
       "size": 157207,
       "thumbnails": [
        {
-        "url": "https://d2nmodil6do74b.cloudfront.net/QGbpl7QrKafHI2BeL-T8x4P_CzwX4wVFsGF4i9hMDTo/rs:fit:200:0/exp:1791403200/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvZ0xTcXpKUDBwQUEyemgvbWxsY1EvMjQzYmQzOWItN2NiOC00YzFkLWE0OTYtMDJhNmI2ZGQ0NGJhLzdmZDc4ZWVkLWE3MWQtNGM2OS04Yzc4LTQ0OTI1OGRjNTZkZA",
+        "url": "https://d2nmodil6do74b.cloudfront.net/eeMv4ICgyRw9HkvUEHPHNp_jAU3coFfXqgpnHk23bCw/rs:fit:200:0/exp:1791489600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvZ0xTcXpKUDBwQUEyemgvbWxsY1EvMjQzYmQzOWItN2NiOC00YzFkLWE0OTYtMDJhNmI2ZGQ0NGJhLzdmZDc4ZWVkLWE3MWQtNGM2OS04Yzc4LTQ0OTI1OGRjNTZkZA",
         "size": "small"
        },
        {
-        "url": "https://d2nmodil6do74b.cloudfront.net/WBxkQ7f51n956xB2Ihw3xYdBqFAfrpqlCEX-ZSxkF3M/rs:fit:600:0/exp:1791403200/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvZ0xTcXpKUDBwQUEyemgvbWxsY1EvMjQzYmQzOWItN2NiOC00YzFkLWE0OTYtMDJhNmI2ZGQ0NGJhLzdmZDc4ZWVkLWE3MWQtNGM2OS04Yzc4LTQ0OTI1OGRjNTZkZA",
+        "url": "https://d2nmodil6do74b.cloudfront.net/RNb2__m2z9pL1vvNzaYgT1gPKCK9sEJM7a6jrs8zWAg/rs:fit:600:0/exp:1791489600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvZ0xTcXpKUDBwQUEyemgvbWxsY1EvMjQzYmQzOWItN2NiOC00YzFkLWE0OTYtMDJhNmI2ZGQ0NGJhLzdmZDc4ZWVkLWE3MWQtNGM2OS04Yzc4LTQ0OTI1OGRjNTZkZA",
         "size": "medium"
        },
        {
-        "url": "https://d2nmodil6do74b.cloudfront.net/RDlEqK-YGZuVXpNPGW6lnezUwMt7Umc31XIkwsWnuhU/rs:fit:1200:0/exp:1791403200/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvZ0xTcXpKUDBwQUEyemgvbWxsY1EvMjQzYmQzOWItN2NiOC00YzFkLWE0OTYtMDJhNmI2ZGQ0NGJhLzdmZDc4ZWVkLWE3MWQtNGM2OS04Yzc4LTQ0OTI1OGRjNTZkZA",
+        "url": "https://d2nmodil6do74b.cloudfront.net/RVCA6Rfw3jPH8vsZAZbPdCjFDZXy6Xr4tZnPqmUCFkQ/rs:fit:1200:0/exp:1791489600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvZ0xTcXpKUDBwQUEyemgvbWxsY1EvMjQzYmQzOWItN2NiOC00YzFkLWE0OTYtMDJhNmI2ZGQ0NGJhLzdmZDc4ZWVkLWE3MWQtNGM2OS04Yzc4LTQ0OTI1OGRjNTZkZA",
         "size": "large"
        }
       ],
@@ -621,21 +552,21 @@
     "mllcQ": [
      {
       "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/r49tq2TIbAC9qx/mllcQ/7ac9bad8-8299-48f6-9e1e-6378fba22d31/dcf1341b-2557-4c82-886b-31366dfda8ba",
-      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/r49tq2TIbAC9qx/mllcQ/7ac9bad8-8299-48f6-9e1e-6378fba22d31/dcf1341b-2557-4c82-886b-31366dfda8ba?response-content-disposition=inline%3B%20filename%3D%22Operacion_tormenta_en_el_mar.jpg%22%3B%20filename%2A%3DUTF-8%27%27Operacion_tormenta_en_el_mar.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261007T175210Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261007%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=0e0369e92a9aec69c8b064ebd63c8b4e548f88d440df41d0db1bbee958daa9d2",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/r49tq2TIbAC9qx/mllcQ/7ac9bad8-8299-48f6-9e1e-6378fba22d31/dcf1341b-2557-4c82-886b-31366dfda8ba?response-content-disposition=inline%3B%20filename%3D%22Operacion_tormenta_en_el_mar.jpg%22%3B%20filename%2A%3DUTF-8%27%27Operacion_tormenta_en_el_mar.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261008T175434Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261008%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=a84b7e143bd76e9fac4ba5606a321589a33477ffea02b6bbc6e7f0c8a8709e92",
       "filename": "Operacion_tormenta_en_el_mar.jpg",
       "type": "image/jpeg",
       "size": 42974,
       "thumbnails": [
        {
-        "url": "https://d2nmodil6do74b.cloudfront.net/rWP3Qh2eQ_v1F5_PlUkzmRu42faIpRtgWGQ2saehr_0/rs:fit:200:0/exp:1791403200/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvcjQ5dHEyVEliQUM5cXgvbWxsY1EvN2FjOWJhZDgtODI5OS00OGY2LTllMWUtNjM3OGZiYTIyZDMxL2RjZjEzNDFiLTI1NTctNGM4Mi04ODZiLTMxMzY2ZGZkYThiYQ",
+        "url": "https://d2nmodil6do74b.cloudfront.net/LxUwPCCYcD4tlkVHhiJ9y2Lzg_LcIAQ5NXAgCJxL2vI/rs:fit:200:0/exp:1791489600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvcjQ5dHEyVEliQUM5cXgvbWxsY1EvN2FjOWJhZDgtODI5OS00OGY2LTllMWUtNjM3OGZiYTIyZDMxL2RjZjEzNDFiLTI1NTctNGM4Mi04ODZiLTMxMzY2ZGZkYThiYQ",
         "size": "small"
        },
        {
-        "url": "https://d2nmodil6do74b.cloudfront.net/SNZfXKoONlXH-qxBsDMot-RK31EwMm2OT3UGdkpzbf8/rs:fit:600:0/exp:1791403200/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvcjQ5dHEyVEliQUM5cXgvbWxsY1EvN2FjOWJhZDgtODI5OS00OGY2LTllMWUtNjM3OGZiYTIyZDMxL2RjZjEzNDFiLTI1NTctNGM4Mi04ODZiLTMxMzY2ZGZkYThiYQ",
+        "url": "https://d2nmodil6do74b.cloudfront.net/awXoP5rgEJt6hFshYg5-q2JH33B2pUmmnQdtuC1O11c/rs:fit:600:0/exp:1791489600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvcjQ5dHEyVEliQUM5cXgvbWxsY1EvN2FjOWJhZDgtODI5OS00OGY2LTllMWUtNjM3OGZiYTIyZDMxL2RjZjEzNDFiLTI1NTctNGM4Mi04ODZiLTMxMzY2ZGZkYThiYQ",
         "size": "medium"
        },
        {
-        "url": "https://d2nmodil6do74b.cloudfront.net/TBdHCAP0YDBJ9zUXFEpvfchoKYXjnAApJV2UHDr1vFk/rs:fit:1200:0/exp:1791403200/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvcjQ5dHEyVEliQUM5cXgvbWxsY1EvN2FjOWJhZDgtODI5OS00OGY2LTllMWUtNjM3OGZiYTIyZDMxL2RjZjEzNDFiLTI1NTctNGM4Mi04ODZiLTMxMzY2ZGZkYThiYQ",
+        "url": "https://d2nmodil6do74b.cloudfront.net/4ec6e4gZ1U7EJUjYAzbZJvlyC0mM8tko1Pw9TG76BEY/rs:fit:1200:0/exp:1791489600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvcjQ5dHEyVEliQUM5cXgvbWxsY1EvN2FjOWJhZDgtODI5OS00OGY2LTllMWUtNjM3OGZiYTIyZDMxL2RjZjEzNDFiLTI1NTctNGM4Mi04ODZiLTMxMzY2ZGZkYThiYQ",
         "size": "large"
        }
       ],
@@ -695,21 +626,21 @@
     "mllcQ": [
      {
       "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/FCuuPcZUsTKaUT/mllcQ/cc007801-2451-43b3-99a4-b412a71d8be0/6f0a2fdf-af95-4f7b-8047-9c21c27af4e3",
-      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/FCuuPcZUsTKaUT/mllcQ/cc007801-2451-43b3-99a4-b412a71d8be0/6f0a2fdf-af95-4f7b-8047-9c21c27af4e3?response-content-disposition=inline%3B%20filename%3D%22Reflect_Francia_1996_7_minutos.jpg%22%3B%20filename%2A%3DUTF-8%27%27Reflect_Francia_1996_7_minutos.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261007T175210Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261007%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=afefdfe1c2216ad700be67d87283cf41cbfba8ee679c9192e2688a62beb0ba7f",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/FCuuPcZUsTKaUT/mllcQ/cc007801-2451-43b3-99a4-b412a71d8be0/6f0a2fdf-af95-4f7b-8047-9c21c27af4e3?response-content-disposition=inline%3B%20filename%3D%22Reflect_Francia_1996_7_minutos.jpg%22%3B%20filename%2A%3DUTF-8%27%27Reflect_Francia_1996_7_minutos.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261008T175434Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261008%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=48d044f4824f3c10e9a1fcd8244c3c1779bf58c3a4790156128c74b123407344",
       "filename": "Reflect_Francia_1996_7_minutos.jpg",
       "type": "image/jpeg",
       "size": 25930,
       "thumbnails": [
        {
-        "url": "https://d2nmodil6do74b.cloudfront.net/RvqRHKv7NVrVdRcMVhIvHNZDqVkvWD6aCyhI4t2hjM0/rs:fit:200:0/exp:1791403200/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvRkN1dVBjWlVzVEthVVQvbWxsY1EvY2MwMDc4MDEtMjQ1MS00M2IzLTk5YTQtYjQxMmE3MWQ4YmUwLzZmMGEyZmRmLWFmOTUtNGY3Yi04MDQ3LTljMjFjMjdhZjRlMw",
+        "url": "https://d2nmodil6do74b.cloudfront.net/Utu0llCcAQYoXOz6r1ZNA46S0w69Xdd4JUSa15mqUwY/rs:fit:200:0/exp:1791489600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvRkN1dVBjWlVzVEthVVQvbWxsY1EvY2MwMDc4MDEtMjQ1MS00M2IzLTk5YTQtYjQxMmE3MWQ4YmUwLzZmMGEyZmRmLWFmOTUtNGY3Yi04MDQ3LTljMjFjMjdhZjRlMw",
         "size": "small"
        },
        {
-        "url": "https://d2nmodil6do74b.cloudfront.net/eczmFVTAGVEM4cYM7_hNTnFjzX1H1DGv2hp7G4sGe_c/rs:fit:600:0/exp:1791403200/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvRkN1dVBjWlVzVEthVVQvbWxsY1EvY2MwMDc4MDEtMjQ1MS00M2IzLTk5YTQtYjQxMmE3MWQ4YmUwLzZmMGEyZmRmLWFmOTUtNGY3Yi04MDQ3LTljMjFjMjdhZjRlMw",
+        "url": "https://d2nmodil6do74b.cloudfront.net/J9dYLQGz_a4TzmYfu3UQLm72zwOwdwYNgX5j_gQgOeI/rs:fit:600:0/exp:1791489600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvRkN1dVBjWlVzVEthVVQvbWxsY1EvY2MwMDc4MDEtMjQ1MS00M2IzLTk5YTQtYjQxMmE3MWQ4YmUwLzZmMGEyZmRmLWFmOTUtNGY3Yi04MDQ3LTljMjFjMjdhZjRlMw",
         "size": "medium"
        },
        {
-        "url": "https://d2nmodil6do74b.cloudfront.net/IuT3wdBO6C5_2rSQvlAd3kBFRx6A5EiDvfjbO2tyfM8/rs:fit:1200:0/exp:1791403200/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvRkN1dVBjWlVzVEthVVQvbWxsY1EvY2MwMDc4MDEtMjQ1MS00M2IzLTk5YTQtYjQxMmE3MWQ4YmUwLzZmMGEyZmRmLWFmOTUtNGY3Yi04MDQ3LTljMjFjMjdhZjRlMw",
+        "url": "https://d2nmodil6do74b.cloudfront.net/mpB9qLyc8GjZy2gZddebwgN4ft9spBF62NrMEX2m-pA/rs:fit:1200:0/exp:1791489600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvRkN1dVBjWlVzVEthVVQvbWxsY1EvY2MwMDc4MDEtMjQ1MS00M2IzLTk5YTQtYjQxMmE3MWQ4YmUwLzZmMGEyZmRmLWFmOTUtNGY3Yi04MDQ3LTljMjFjMjdhZjRlMw",
         "size": "large"
        }
       ],
@@ -769,21 +700,21 @@
     "mllcQ": [
      {
       "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/Rbz7fLl6b1XTKf/mllcQ/14436602-ceae-4556-b675-ee84ad913e67/a8002661-4bc1-4a46-af4c-c1234c97d326",
-      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/Rbz7fLl6b1XTKf/mllcQ/14436602-ceae-4556-b675-ee84ad913e67/a8002661-4bc1-4a46-af4c-c1234c97d326?response-content-disposition=inline%3B%20filename%3D%22Tomorrow_Always_Comes_PRINCIPAL.jpg%22%3B%20filename%2A%3DUTF-8%27%27Tomorrow_Always_Comes_PRINCIPAL.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261007T175210Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261007%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=0aba9bcfa08689449316f419b66c3f82775f96f6f7cb9b40c79454066971d5b6",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/Rbz7fLl6b1XTKf/mllcQ/14436602-ceae-4556-b675-ee84ad913e67/a8002661-4bc1-4a46-af4c-c1234c97d326?response-content-disposition=inline%3B%20filename%3D%22Tomorrow_Always_Comes_PRINCIPAL.jpg%22%3B%20filename%2A%3DUTF-8%27%27Tomorrow_Always_Comes_PRINCIPAL.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261008T175434Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261008%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=cd018c9989be29ae78542f1238285a0925a961d0f88916e9c31589515b4140bc",
       "filename": "Tomorrow_Always_Comes_PRINCIPAL.jpg",
       "type": "image/jpeg",
       "size": 56594,
       "thumbnails": [
        {
-        "url": "https://d2nmodil6do74b.cloudfront.net/xKpon4adDViuhke66Y03na_GX0yIEUoLNE7bYKWkTXk/rs:fit:200:0/exp:1791403200/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvUmJ6N2ZMbDZiMVhUS2YvbWxsY1EvMTQ0MzY2MDItY2VhZS00NTU2LWI2NzUtZWU4NGFkOTEzZTY3L2E4MDAyNjYxLTRiYzEtNGE0Ni1hZjRjLWMxMjM0Yzk3ZDMyNg",
+        "url": "https://d2nmodil6do74b.cloudfront.net/61oAy6jgK2mHZqaOkvHGLDEebcvTX9oWpGIx31karOA/rs:fit:200:0/exp:1791489600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvUmJ6N2ZMbDZiMVhUS2YvbWxsY1EvMTQ0MzY2MDItY2VhZS00NTU2LWI2NzUtZWU4NGFkOTEzZTY3L2E4MDAyNjYxLTRiYzEtNGE0Ni1hZjRjLWMxMjM0Yzk3ZDMyNg",
         "size": "small"
        },
        {
-        "url": "https://d2nmodil6do74b.cloudfront.net/bZ5UVJ7T9SOofDpw9UQY18sOm8hLJ8rQeoxM2R7rvS0/rs:fit:600:0/exp:1791403200/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvUmJ6N2ZMbDZiMVhUS2YvbWxsY1EvMTQ0MzY2MDItY2VhZS00NTU2LWI2NzUtZWU4NGFkOTEzZTY3L2E4MDAyNjYxLTRiYzEtNGE0Ni1hZjRjLWMxMjM0Yzk3ZDMyNg",
+        "url": "https://d2nmodil6do74b.cloudfront.net/NDtbhfcNNkgBxAbomvRIVngRFIFfkh_ZJEZnlFtctQ0/rs:fit:600:0/exp:1791489600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvUmJ6N2ZMbDZiMVhUS2YvbWxsY1EvMTQ0MzY2MDItY2VhZS00NTU2LWI2NzUtZWU4NGFkOTEzZTY3L2E4MDAyNjYxLTRiYzEtNGE0Ni1hZjRjLWMxMjM0Yzk3ZDMyNg",
         "size": "medium"
        },
        {
-        "url": "https://d2nmodil6do74b.cloudfront.net/f2T9-V6WbhzknKqyLjZgjrfzNnPZkE8UidtLY3bsOSQ/rs:fit:1200:0/exp:1791403200/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvUmJ6N2ZMbDZiMVhUS2YvbWxsY1EvMTQ0MzY2MDItY2VhZS00NTU2LWI2NzUtZWU4NGFkOTEzZTY3L2E4MDAyNjYxLTRiYzEtNGE0Ni1hZjRjLWMxMjM0Yzk3ZDMyNg",
+        "url": "https://d2nmodil6do74b.cloudfront.net/V-v_5hqiS4IpACsI6FiehzAxcKtnno0ho5pf_30W3bA/rs:fit:1200:0/exp:1791489600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvUmJ6N2ZMbDZiMVhUS2YvbWxsY1EvMTQ0MzY2MDItY2VhZS00NTU2LWI2NzUtZWU4NGFkOTEzZTY3L2E4MDAyNjYxLTRiYzEtNGE0Ni1hZjRjLWMxMjM0Yzk3ZDMyNg",
         "size": "large"
        }
       ],
@@ -847,21 +778,21 @@
     "mllcQ": [
      {
       "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/PJqYObfwYvcMZ5/mllcQ/e20de6f2-0527-44f6-9cde-8f67c7ab5bea/abb53542-d14a-40cb-955f-73177e096456",
-      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/PJqYObfwYvcMZ5/mllcQ/e20de6f2-0527-44f6-9cde-8f67c7ab5bea/abb53542-d14a-40cb-955f-73177e096456?response-content-disposition=inline%3B%20filename%3D%22Rien_que_les_heures_11_PRINCIPAL_1.jpg%22%3B%20filename%2A%3DUTF-8%27%27Rien_que_les_heures_11_PRINCIPAL_1.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261007T175210Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261007%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=6c5bf5563a0e492d5772bc5bdac0de38152f7e55e261fb3711b86bfe857567eb",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/PJqYObfwYvcMZ5/mllcQ/e20de6f2-0527-44f6-9cde-8f67c7ab5bea/abb53542-d14a-40cb-955f-73177e096456?response-content-disposition=inline%3B%20filename%3D%22Rien_que_les_heures_11_PRINCIPAL_1.jpg%22%3B%20filename%2A%3DUTF-8%27%27Rien_que_les_heures_11_PRINCIPAL_1.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261008T175434Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261008%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=fe66f4a64c9a6c3ed222f50ddc343e5e813c6356a0cf1e107513e50983bc8a86",
       "filename": "Rien_que_les_heures_11_PRINCIPAL_1.jpg",
       "type": "image/jpeg",
       "size": 40166,
       "thumbnails": [
        {
-        "url": "https://d2nmodil6do74b.cloudfront.net/IEzb5HpGZdjzWZFypMtSQAYJ7JVXXyKimwJ_1AkQYG4/rs:fit:200:0/exp:1791403200/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvUEpxWU9iZndZdmNNWjUvbWxsY1EvZTIwZGU2ZjItMDUyNy00NGY2LTljZGUtOGY2N2M3YWI1YmVhL2FiYjUzNTQyLWQxNGEtNDBjYi05NTVmLTczMTc3ZTA5NjQ1Ng",
+        "url": "https://d2nmodil6do74b.cloudfront.net/rN4WViREZ4FOxGsOJdPv7V-pefN4jV--FewLFepPE0k/rs:fit:200:0/exp:1791489600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvUEpxWU9iZndZdmNNWjUvbWxsY1EvZTIwZGU2ZjItMDUyNy00NGY2LTljZGUtOGY2N2M3YWI1YmVhL2FiYjUzNTQyLWQxNGEtNDBjYi05NTVmLTczMTc3ZTA5NjQ1Ng",
         "size": "small"
        },
        {
-        "url": "https://d2nmodil6do74b.cloudfront.net/Hfhi9N0qkn4M82riINSGsExY_7kh-ee1xxOpWH1mAMI/rs:fit:600:0/exp:1791403200/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvUEpxWU9iZndZdmNNWjUvbWxsY1EvZTIwZGU2ZjItMDUyNy00NGY2LTljZGUtOGY2N2M3YWI1YmVhL2FiYjUzNTQyLWQxNGEtNDBjYi05NTVmLTczMTc3ZTA5NjQ1Ng",
+        "url": "https://d2nmodil6do74b.cloudfront.net/GVx0AtLLAgqxcVfMohgS33BWeIKui56VxwIxBIDjlug/rs:fit:600:0/exp:1791489600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvUEpxWU9iZndZdmNNWjUvbWxsY1EvZTIwZGU2ZjItMDUyNy00NGY2LTljZGUtOGY2N2M3YWI1YmVhL2FiYjUzNTQyLWQxNGEtNDBjYi05NTVmLTczMTc3ZTA5NjQ1Ng",
         "size": "medium"
        },
        {
-        "url": "https://d2nmodil6do74b.cloudfront.net/Ij-IuLjqZH2HL0SaXkmsQW7Zs0qK2QRQaDWdAIPmSsY/rs:fit:1200:0/exp:1791403200/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvUEpxWU9iZndZdmNNWjUvbWxsY1EvZTIwZGU2ZjItMDUyNy00NGY2LTljZGUtOGY2N2M3YWI1YmVhL2FiYjUzNTQyLWQxNGEtNDBjYi05NTVmLTczMTc3ZTA5NjQ1Ng",
+        "url": "https://d2nmodil6do74b.cloudfront.net/Y5qpRt_A3zEHUjwGKhLh5RjKapxr8s4_KFPAbO7LsP0/rs:fit:1200:0/exp:1791489600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvUEpxWU9iZndZdmNNWjUvbWxsY1EvZTIwZGU2ZjItMDUyNy00NGY2LTljZGUtOGY2N2M3YWI1YmVhL2FiYjUzNTQyLWQxNGEtNDBjYi05NTVmLTczMTc3ZTA5NjQ1Ng",
         "size": "large"
        }
       ],
@@ -876,6 +807,80 @@
     ],
     "tgI6Y": "Rien que les heures",
     "EStWy": "Alberto Cavalcanti",
+    "U11RE": [
+     {
+      "id": "7c019120-12db-4c05-9987-5f016b00911a",
+      "label": "Entrada Liberada"
+     }
+    ]
+   }
+  },
+  {
+   "id": "9EfU3zJLyTjWI8",
+   "fields": {
+    "EguiE": [
+     {
+      "id": "xhTnT4OzknPaoY",
+      "label": "Teatro Cervantes"
+     }
+    ],
+    "9tf35": {
+     "id": "ece5904a-6a76-45d1-8c43-995c6d9f08da",
+     "label": "Muestra Contraplanos de la Historia"
+    },
+    "cIddG": [
+     {
+      "id": "d4c256b9-0895-48e6-8d48-06dbb69fb765",
+      "label": "ESTADOS UNIDOS"
+     }
+    ],
+    "6A3kv": 5,
+    "EOkFi": [
+     {
+      "id": "8ceb5fef-3658-4464-8ee5-e9dcf51eb741",
+      "label": "Martes 13"
+     },
+     {
+      "id": "2fe8d99b-a94f-4814-8031-cd08772dda34",
+      "label": "Jueves 15"
+     }
+    ],
+    "LVmhF": [
+     "Martes 13 - 17:30 - Teatro Cervantes",
+     "Jueves 15 - 15:00 - Teatro Cervantes"
+    ],
+    "mllcQ": [
+     {
+      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/9EfU3zJLyTjWI8/mllcQ/65df8d30-b19c-4821-aaa5-0792e6288616/f1ba5294-7b75-4582-b2df-1f36be030579",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/9EfU3zJLyTjWI8/mllcQ/65df8d30-b19c-4821-aaa5-0792e6288616/f1ba5294-7b75-4582-b2df-1f36be030579?response-content-disposition=inline%3B%20filename%3D%2249_17_still1.jpg%22%3B%20filename%2A%3DUTF-8%27%2749_17_still1.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261008T175434Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261008%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=b6dfe288bfca1c6ef14dce6b83f920aca7d8362882b425da76caaf159e4047b8",
+      "filename": "49_17_still1.jpg",
+      "type": "image/jpeg",
+      "size": 59894,
+      "thumbnails": [
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/lI0HNvh4yizXsyzsqq_tMNcKLvvLL8o0QyXxRTjnKIQ/rs:fit:200:0/exp:1791489600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvOUVmVTN6Skx5VGpXSTgvbWxsY1EvNjVkZjhkMzAtYjE5Yy00ODIxLWFhYTUtMDc5MmU2Mjg4NjE2L2YxYmE1Mjk0LTdiNzUtNDU4Mi1iMmRmLTFmMzZiZTAzMDU3OQ",
+        "size": "small"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/FoSwk0gtqbpeuWtFnfB_j7Uy_DnWqIbsFsb-_kazipg/rs:fit:600:0/exp:1791489600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvOUVmVTN6Skx5VGpXSTgvbWxsY1EvNjVkZjhkMzAtYjE5Yy00ODIxLWFhYTUtMDc5MmU2Mjg4NjE2L2YxYmE1Mjk0LTdiNzUtNDU4Mi1iMmRmLTFmMzZiZTAzMDU3OQ",
+        "size": "medium"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/npArPP8xK1IYO8fFG_CsRNPnexfoYy5UkC2TZOeboS8/rs:fit:1200:0/exp:1791489600/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvOUVmVTN6Skx5VGpXSTgvbWxsY1EvNjVkZjhkMzAtYjE5Yy00ODIxLWFhYTUtMDc5MmU2Mjg4NjE2L2YxYmE1Mjk0LTdiNzUtNDU4Mi1iMmRmLTFmMzZiZTAzMDU3OQ",
+        "size": "large"
+       }
+      ],
+      "expiresAt": null
+     }
+    ],
+    "VWKRF": [
+     {
+      "id": "1298f2b5-302b-480a-abb5-3b21fad2791e",
+      "label": "Homenaje Musicalizado en Vivo"
+     }
+    ],
+    "tgI6Y": "’49-’17",
+    "EStWy": "Ruth Ann Baldwin",
     "U11RE": [
      {
       "id": "7c019120-12db-4c05-9987-5f016b00911a",
