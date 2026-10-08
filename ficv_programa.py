@@ -325,11 +325,16 @@ def funciones_desde_softr(payloads, mapa, base_url):
             "id": r.get("id", ""),
             "fuente": "softr",
         }
-        pares = [m for item in lista(f, "Agenda", "text") for m in AGENDA_RE.finditer(item)]
+        # "Agenda" = "Viernes 16 - 11:00"; desde el 4 de octubre la web usa "AgendaPrograma",
+        # que además trae la sala: "Lunes 12 - 17:15 - Cine Club UACh"
+        agenda = lista(f, "AgendaPrograma", "Agenda", "text")
+        pares = [(m, item[m.end():]) for item in agenda for m in AGENDA_RE.finditer(item)]
         if pares:
-            for m in pares:
+            for m, resto in pares:
+                sala = re.sub(r"^\s*[-–·,]\s*", "", resto).strip()
                 out.append({**base, "dia": f"2026-10-{int(m.group(2)):02d}",
-                            "hora": f"{int(m.group(3)):02d}:{m.group(4)}"})
+                            "hora": f"{int(m.group(3)):02d}:{m.group(4)}",
+                            **({"sala": sala} if sala else {})})
         else:  # sin horario: un registro por día
             for d in lista(f, "QueDiasLaDan", "Día de exhibición") or [""]:
                 out.append({**base, "dia": normalizar_dia(d) if d else "", "hora": ""})
