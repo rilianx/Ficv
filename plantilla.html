@@ -30,6 +30,42 @@ h1 span{color:var(--river)}
 .views{display:flex;gap:4px;padding:3px;background:var(--surface);border:1px solid var(--line);border-radius:10px;width:max-content;max-width:100%}
 .views button{font:700 14px var(--f-body);border:0;background:none;color:var(--muted);padding:7px 14px;border-radius:7px;cursor:pointer}
 .views button[aria-pressed="true"]{background:var(--river);color:var(--bg)}
+.ghost{position:absolute;left:2px;right:2px;z-index:4;pointer-events:none;font:inherit;text-align:left;border:2px dashed var(--gc,var(--river));border-radius:6px;background:color-mix(in srgb,var(--gc,var(--river)) 12%,transparent);backdrop-filter:blur(1px);padding:3px 5px;font-size:11px;line-height:1.2;color:var(--ink);overflow:hidden}
+.ghost b{display:block;font:700 10.5px var(--f-mono);color:var(--gc,var(--river))}
+.ghost span{display:block;color:var(--muted)}
+.ghost .gbtn{pointer-events:auto;display:inline-block;margin-top:3px;font:700 11px var(--f-body);color:#fff;background:var(--gc,var(--river));border:0;border-radius:5px;padding:3px 8px;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.2)}
+.ghost .gbtn:hover,.ghost .gbtn:focus-visible{filter:brightness(1.15);outline:2px solid var(--ink);outline-offset:1px}
+.toast{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:60;display:flex;gap:12px;align-items:center;background:var(--ink);color:var(--bg);padding:10px 14px;border-radius:10px;box-shadow:0 8px 28px rgba(0,0,0,.25);font-size:14px;max-width:calc(100vw - 24px)}
+.toast button{font:700 14px var(--f-body);background:none;border:0;color:var(--river-soft);cursor:pointer;text-decoration:underline}
+.ghost.mal{--gc:var(--clash)} .ghost.ok{--gc:var(--river)} .ghost.nada{--gc:var(--muted)}
+@media (prefers-reduced-motion:no-preference){.ghost{animation:gfade .15s ease-out}}
+@keyframes gfade{from{opacity:0}to{opacity:1}}
+.tip .sin{margin:0 0 8px;color:var(--ink);font-size:12.5px}
+.tip .fv{color:var(--muted);font-style:italic}
+.tip{position:fixed;z-index:50;max-width:min(340px,calc(100vw - 16px));background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:10px;box-shadow:0 8px 28px rgba(0,0,0,.18);padding:10px 12px;font-size:13px;line-height:1.35;pointer-events:none}
+.tip{transition:opacity .15s}.tip.dim{opacity:.25}
+.tip h4{margin:0 0 2px;font:700 14px var(--f-display)}
+.tip .th{color:var(--muted);margin-bottom:8px}
+.tip ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.tip li{display:grid;grid-template-columns:auto 1fr;gap:2px 8px;align-items:baseline}
+.tip li b{font-family:var(--f-mono);font-size:12px;white-space:nowrap}
+.tip .ok{color:var(--river);font-weight:700}
+.tip .mal{color:var(--clash);font-weight:700}
+.tip .meh{color:var(--free);font-weight:700}
+.tip .nada{color:var(--muted)}
+.pop-otras{margin:12px 0 0;padding:10px 12px;border:1px solid var(--line);border-radius:10px}
+.pop-otras h4{margin:0 0 6px;font:700 14px var(--f-display)}
+.pop-otras ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.pop-otras li{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline}
+.pop-otras li b{font-family:var(--f-mono);font-size:13px}
+.pop-otras .ok{color:var(--river);font-weight:700}.pop-otras .mal{color:var(--clash);font-weight:700}.pop-otras .meh{color:var(--free);font-weight:700}
+.pop-otras button{font:inherit;font-size:13px;border:1px solid var(--line);background:none;color:var(--river);border-radius:6px;padding:2px 8px;cursor:pointer}
+.lb{display:inline-block;margin-left:6px;padding:0 5px;border-radius:4px;font:700 10px/16px var(--f-mono);letter-spacing:.04em;background:#202830;color:#fff!important;text-decoration:none!important;vertical-align:2px}
+.lb:hover{background:#00a85a}
+.perfiles{display:flex;align-items:center;gap:4px;padding:3px;background:var(--surface);border:1px solid var(--line);border-radius:10px;width:max-content;max-width:100%;flex-basis:100%}
+.perfiles .plbl{color:var(--muted);font-size:13px;padding:0 6px 0 8px}
+.perfiles button{font:700 14px var(--f-body);border:0;background:none;color:var(--muted);padding:7px 14px;border-radius:7px;cursor:pointer}
+.perfiles button[aria-pressed="true"]{background:var(--pick);color:#fff}
 .views .n{display:inline-block;min-width:20px;margin-left:6px;padding:0 6px;border-radius:999px;background:var(--pick);color:var(--bg);font-size:12px}
 .bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px;border-bottom:1px solid var(--line);display:grid;gap:10px}
 .bar>*{min-width:0}
@@ -111,11 +147,13 @@ section.sec h2 i:not(.dot){font-style:normal;font-size:10.5px;padding:1px 7px;bo
 
 /* calendario: días en columnas, eje de horas vertical; bloques a escala, los simultáneos lado a lado */
 .wk{overflow:auto;max-height:calc(100vh - 40px);overscroll-behavior:contain;margin-top:14px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
-.tg{display:grid;position:relative}
-.tg .hd{position:sticky;top:0;z-index:3;background:var(--surface);border-bottom:1px solid var(--line);border-left:1px solid var(--line);padding:8px 6px;font:700 13px var(--f-display)}
+.tg{display:flex;position:relative;width:max-content;min-width:100%}
+.axcol{position:sticky;left:0;z-index:5;flex:0 0 52px;background:var(--surface);border-right:1px solid var(--line)}
+.dcol{min-width:0}
+.tg .hd{position:sticky;top:0;z-index:3;height:46px;box-sizing:border-box;overflow:hidden;background:var(--surface);border-bottom:1px solid var(--line);border-left:1px solid var(--line);padding:8px 6px;font:700 13px var(--f-display)}
 .tg .hd small{display:block;font:400 11px var(--f-body);color:var(--muted)}
-.tg .hd.ax{border-left:0;position:sticky;left:0;z-index:4}
-.axis{position:sticky;left:0;z-index:2;background:var(--surface)}
+.tg .hd.ax{border-left:0;z-index:6}
+.axis{position:relative;background:var(--surface)}
 .axis span{position:absolute;right:6px;transform:translateY(-50%);font:500 11px var(--f-mono);color:var(--muted)}
 .axis span:first-child{transform:none}
 .col{position:relative;border-left:1px solid var(--line);background-image:linear-gradient(var(--grid) 1px,transparent 1px);background-size:100% var(--hh)}
@@ -163,6 +201,8 @@ section.sec h2 i:not(.dot){font-style:normal;font-size:10.5px;padding:1px 7px;bo
 .pill.lejos{background:var(--free-bg);color:var(--free)}
 .seenbtn{font:700 11.5px var(--f-body);padding:2px 9px;border-radius:999px;border:1px dashed var(--muted);background:none;color:var(--muted);cursor:pointer;white-space:nowrap}
 .seenbtn[aria-pressed="true"]{border-style:solid;border-color:var(--ink);background:var(--ink);color:var(--surface)}
+.pop-acc .seguro{flex-basis:100%;font-weight:700;color:var(--clash)}
+.mark.seguro{width:auto;border-radius:999px;padding:0 10px;font-size:12px;font-weight:700;background:var(--clash);border-color:var(--clash);color:#fff}
 .pop-fa{display:flex;gap:8px;align-items:center}
 .pop-films li{flex-wrap:wrap}
 .pop-films li>div:first-child{min-width:0;flex:1 1 240px}
@@ -185,11 +225,43 @@ footer{margin-top:36px;font-size:12.5px;color:var(--muted);max-width:920px}
 footer a{color:var(--river)}
 @media (max-width:480px){.row{grid-template-columns:50px minmax(0,1fr) auto;gap:2px 10px}}
 @media (prefers-reduced-motion:no-preference){.mark,.blk{transition:background .15s,border-color .15s}}
+
+/* títulos de los bloques del calendario: máximo dos líneas con puntos suspensivos */
+.it strong{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden;text-overflow:ellipsis;flex-shrink:0;overflow-wrap:break-word;hyphens:auto}
+.it b,.it .tras{flex-shrink:0}
+.pill{max-width:100%}
+/* celular, vista Programa: la barra no queda fija y los botones + / ? van bajo la hora */
+@media (max-width:700px){
+  body:not(.cal) .bar{position:static}
+  .row{grid-template-columns:48px minmax(0,1fr);gap:2px 10px}
+  .row .marks{grid-column:1;grid-row:2 / span 3;flex-direction:column;align-self:start;gap:6px;margin-top:6px}
+  .row .marks .mark{width:34px;height:34px;font-size:16px}
+  .row .pill{white-space:normal}
+  .row .ttl{font-size:15.5px}
+}
+
+
+/* tipo (sección) en una sola línea, para que se alcance a ver la sala */
+.it span.sala1{flex-shrink:0;color:var(--ink)}
+.it.on span.sala1{color:#fff}
+.it span.tipo{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex-shrink:0}
+.it span.dir{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden;flex-shrink:0}
+
+/* cineasta presente (símbolo del programa oficial) */
+.cpi{width:1em;height:1em;vertical-align:-2px;flex:0 0 auto}
+.pill.cp{display:inline-flex;align-items:center;gap:5px;background:var(--ink);color:var(--surface)}
+.it .cpb{position:absolute;top:3px;right:3px;display:grid;place-items:center;width:17px;height:17px;border-radius:50%;background:var(--ink);color:var(--surface);z-index:1}
+.it .cpb .cpi{width:12px;height:12px}
+.it.duda .cpb{top:auto;bottom:3px}
 </style>
 <div class="wrap">
   <header class="top">
     <h1>33° <span>FICValdivia</span> · Programa</h1>
     <div class="meta">12 al 18 de octubre de 2026 · <span id="tot"></span></div>
+    <div class="perfiles" role="toolbar" aria-label="Perfil"><span class="plbl">Calendario de</span>
+      <button type="button" data-p="Ignacio" aria-pressed="true">Ignacio</button>
+      <button type="button" data-p="Marian" aria-pressed="false">Marian</button>
+    </div>
   </header>
   <div class="bar">
     <div class="views" role="toolbar" aria-label="Vista">
@@ -210,15 +282,21 @@ footer a{color:var(--river)}
     <div class="status"><button type="button" id="pdf" class="btn pdfbtn" hidden>Descargar PDF</button><span id="count"></span><span id="clashes"></span><span id="sync"></span></div>
   </div>
   <main id="m"></main>
+  <div id="tip" class="tip" role="tooltip" hidden></div>
+  <div id="toast" class="toast" role="status" hidden></div>
   <dialog id="pop" aria-labelledby="pop-t">
     <form method="dialog" class="pop-x"><button aria-label="Cerrar">×</button></form>
     <div id="pop-in"></div>
   </dialog>
-  <footer>Datos de <a href="https://33.ficvaldivia.cl/programacion">33.ficvaldivia.cl/programacion</a>, extraídos el __FECHA__. La sala, el acceso y la duración de cada función salen de la ficha de cada película; si una ficha no la indica, se usan 90 minutos. Los choques se calculan con esa duración.</footer>
+  <footer>Datos de <a href="https://33.ficvaldivia.cl/programacion">33.ficvaldivia.cl/programacion</a>, extraídos el __FECHA__. La sala, el acceso y la duración de cada función salen de la ficha de cada película; si una ficha no la indica, se usan 90 minutos. Esa duración es el bloque de la función (ya incluye presentación y holgura), y con ella se calculan los choques.</footer>
 </div>
 <script>
 const F=__DATA__;
-const DUR=90, MARGEN=15, H0=10, H1=24;   // MARGEN: demora al empezar o foro después de cada función
+const LB={"k3rvyYJYMubR39": "in-the-shadow-of-the-heron", "N8m8JXmznxGSRw": "a-pure-portion-of-anxiety", "TBHWa8Z8WIAdSl": "sometimes-sadness-sometimes-rebellion", "84LxEOaeCwHL2R": "agua-para-la-vida-la-lucha-de-ayllu-san-agustin", "oN8tQXhsOnqjSh": "air-qui-erre", "1VQfBwU06VP58h": "alias-gardelito", "L3RRZgi1cpHEn3": "an-incomplete-calendar", "jycV3irgxqjhLI": "antonio-valencia", "eL3dwK63kzNtCm": "astral-2025", "VP7rqqX4tXR9P1": "shortcuts", "R9El6aYDJ3F72L": "ava-gabriel-a-love-story", "EpFg3BcCFfnQjQ": "banano-banano", "CA92QfaSzbs1qa": "boucle-loops", "rw90HHsZwgsODW": "bouquets-1-10", "ZB0HSmrsFzWjye": "bouquets-11-20", "gu1xDBH3RMyLen": "bouquets-21-30", "XuqIL48PuwKTtL": "bracos-cruzados-maquinas-paradas", "LBOsJjJYSq9Auh": "children-of-the-falling-hill", "QONODkHiO3t78J": "canaguaro", "E5wc7wtRUmURgb": "sad-girlz", "HRhncnTKZPnTTU": "choregraphie", "UNzH69f9lgH3cW": "black-cocaine-2026", "B5ojb6CtsbgFhy": "like-water-stone-and-foam", "jJhXZkty5ApK1p": "couleurs-mecaniques", "ZzCkrAPHtKkqDL": "chronicle-of-tiredness", "ews0MhmcsWmv8q": "cote-jardin-2007", "xBkVP5fRzDZ6hE": "behind-the-rain", "G69mWCt4oNOA8p": "disciplina-2026", "WIufznY9J2QKjx": "where-the-rain-nests", "HZywlc3EM6zlCx": "el-dia-que-aprendi-a-volar", "5tyNy2EjTwNvCH": "the-great-chamorro-circus", "YxTx1Q7ntgsGeP": "our-home-was-buried-in-a-land-we-could-never", "PZkeC8APqrJeTX": "the-little-bird-and-the-leaf", "Z0IH087AW8pwZS": "planet-of-the-vampires", "Sx3qladAWf2lj7": "elegy-for-the-forgotten-on-an-endless-war", "eENchWgbngAdIX": "pond-2023", "nKjZLJlkZEawXI": "exp-masc-ad", "pUO36m2kaOmsxN": "sons-of-sugar", "rA5l4QbtvexLGH": "foryannfromrose-hair-removed", "14PLyaBj4hMWJb": "fugues-dete-la-fage", "jLgyHVwG1fVqgu": "a-brighter-future", "W5mp8UrsQMznaw": "gacela-gazette", "FNhK6z2zHfp9oF": "cat-and-bird", "3HN0svEgEPa4Ff": "gestures-to-break-an-image", "VoeZr2JY9zAyZb": "ghazal-e-sorkh", "rq53Qk3NKZs2X3": "greve", "mcAAYfdG74qVj3": "habitat-batrachian", "9CQBQbsREY3v1p": "into-the-forest-2026", "GOzPs1ReB3ACmT": "hijas-unikas", "mybJuuL8POdUGV": "i-couldnt-draw-you-a-map", "KsHZaYL8kHGhlo": "i-heard-that-they-are-not-going-to-see-each", "YzJZp2CrfTU1Cc": "the-chilean", "d3kjC7RSRIIxpx": "impromptu-1989", "uiwNlnN1oCMqqI": "inertia-2025-1", "iFqi6BmsBFwGj3": "animal-instincts", "cTB9MFhdglA0Xv": "isla-flotante", "aV5Ybj4d06Flke": "salt-garden", "ekLDiL5hRiVahJ": "jardin-du-soleil", "p3x6QSISRSxAmM": "jauja", "Xceu3l9kR1Dpa7": "letter-from-my-village", "xcyBFZo0LX1okC": "kamikaze-89", "wF4TWOv7Ogsvjc": "kintsugi-4", "buZ7pnMXOoE6zE": "kiwi-strit", "L0DIbAyFU7dwwb": "myriams-deck", "nVH2TaojMkb2US": "la-durmiente", "dkVguTq9Fchm4q": "la-gorra", "DQ5uoX4FFP7YD3": "la-gradiva", "RcxQ0FSbiHVkc0": "time-to-go-2026-1", "ARN6NaPoPW3vKR": "the-illusion-of-an-everlasting-summer", "bq1dMMFtSbEDlo": "la-libertad", "jQ61rfUXbCkhxN": "double-freedom", "m4pbnKCpUdnbDh": "a-menina-que-queria-ser-pedra", "bKiVpr3P7Cv2Xd": "la-perra-2026", "y7pXCazXozdQX9": "the-invisible-land", "4NWOKJe4bs3udN": "las-piedras-que-se-esconden-en-el-rio", "t7pahjYCf86jP4": "le-garage", "U6QXPLzVo0OKZG": "the-diary-of-a-chambermaid-2026", "4Vmbxt7S4G9Ljb": "poppies-2000", "brfcT1o7O8EI8q": "les-tournesols-colores", "gY4pHKFGzA87pP": "let-them-be-seen", "YtwjDyIJ2Qj4Dw": "everything-else-is-noise", "r4dMVP5UT75y41": "lo-que-nos-une-2025", "1npeuwfVhyd0mf": "london-2026", "1RJkJP1BwWrDRW": "los-muertos-2004", "O8FPN5shd7lp0P": "landless-children", "gLSqzJP0pAA2zh": "los-sures", "0ky84DBKamQpZc": "maddies-secret", "Y5jZiwVLA6AmHe": "masao-adachi-takes-a-passport-photo", "LR2bv1B278zMWY": "noon-1969", "Gt4jCu4yBn7ErQ": "mer", "Ih4dOWiG2kbROO": "my-friend-the-sun", "bxUP1yUvF0R32e": "morning-circle", "6oyXiw1sv5aVGe": "motel-paraiso-2026", "2H7TWYwSRo6PFu": "motherwitch", "VrXBmmfnu7CgCV": "mounds-above-the-earth", "DABkgoHehFPdyY": "death-of-a-cyclist", "HjbwVpR4CFdGIk": "bats-bugs", "lo7SSrXejoiHeJ": "my-wife-cries", "J9o0hkRnoINwLc": "no-money-no-honey-2026", "O8rAt33p6tRBTG": "noize", "osepX7zyLxoreB": "nowhere-to-lay-my-eyes", "gKMP2KScuRWTWt": "our-body-is-an-expanding-star", "A71NaE2YdduGjf": "nunkui-2026", "L1OPCFlpmWI2zf": "nutissimo", "tJnRUT35zdPBa6": "eleven-days-eleven-nights", "C3lLXRKeT4l92W": "os-queixadas", "JOojvnHnoOowOA": "sheep-2018", "D7NCbUpL5rcGOA": "papaya-2025", "eTYEdUZ9UbcKgJ": "all-you-need-to-make-a-movie-is-a-gun", "IBa7vzjal7mDcU": "parcelle", "V8DbFrdrmbpxlB": "unmeasurable-particles", "ISFbc1GW43PSjv": "white-palace", "yQoLDoOwOyl0Ci": "piccolo-piccolo", "ndLZ9uIoojpDce": "a-rain-of-roses-to-rose-lowder", "mtzG44eO7V4IMX": "pompa-y-circunstancia", "GiqmtUxtLpinpo": "donkey-princess", "suF4vMTrTvRSkK": "pure-reason-2026", "gBZXf8Z6TDOL0G": "quiproquo", "iAqprIF4IeLmw6": "retour-dun-repere", "PJqYObfwYvcMZ5": "nothing-but-time", "ZB31LIEzc2qTCy": "roulement-rouerie-aubage", "LLciymkoz4S8lx": "sugar-cane-alley", "TemjKhkRjMUXaO": "you-know-me-now-forget-it", "GIMnpOBJS2aJox": "santo-and-jesus-metalworkers", "oWlrbiGRdN85of": "if-i-were-alive", "nPVOCUHFEOExTt": "see-through-the-hollowed-blue-hellebore", "dAZEZmv7Wfq1oF": "she-keeps-me-young-2026", "9kQpYUPDwTAGUN": "simon-of-the-desert", "BiNrO4J0KD2QAE": "untitled-letter-to-serra", "slk1juH3KrmXM2": "sources", "BvyamuhgdeogBG": "under-the-sun-2011", "ul9FA4Z6lxnrAS": "space-adventure-cobra", "LxkJZCx5XQGmoG": "spin-ella", "YaeJaoo3BGWvkq": "sukande-kasaka-terra-doente", "rlE47HXMYl4m6z": "tartarughe-dacqua", "5BMwqrXdWzOnMM": "the-harder-they-come", "IJXK5Ur8rR5mha": "the-invisible-half", "Ed7HUtu6URFB1r": "the-recce-2026", "yiWOr3Gm0NA0vC": "the-wind-one-brilliant-day", "nmY9KrJqPLUUiP": "themes-and-variations", "Wzo70cezEdWyj9": "we-all-want-a-place-to-call-our-own", "Kv48worJl8k1rv": "tomorrow-a-long-time-ago", "ieJY5gAQwB917a": "women-metalworkers", "5j7iNOQtGwdm71": "tycoon-2026", "qTeR7cV9cpw1sg": "un-vent-leger-dans-le-feuillage", "rShSFAWvdVX36O": "a-fortress-2026", "f1WFTiwG998Fti": "poppies-and-sailboats", "qbh3VzfRjicgbc": "one-people", "WSGL6R77sRV05J": "what-cant-be-mentioned", "MjSOnfz6FsexVg": "a-la-recherches-des-amazones", "i4jS2bKI7ex6bF": "anima-of-dawn", "4uA7DJAk6DKMO1": "etude-pour-arbre-seul", "9EfU3zJLyTjWI8": "49-17", "AVLoAjc8KxTax9": "a-river-and-a-queen"};   // id película → slug de Letterboxd
+const lbURL=f=>LB[f.id]?"https://letterboxd.com/film/"+LB[f.id]+"/":"";
+// enlace normal a letterboxd.com: desde Chrome o Safari el teléfono lo abre en la app de Letterboxd si está instalada
+const lbApp=lbURL;
+const DUR=90, MARGEN=0, H0=10, H1=24;   // la duración de la función ya incluye presentación y holgura; MARGEN queda en 0
            // franja visible por día; duración si la ficha no la trae
 const DN=["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"];
 const $=id=>document.getElementById(id);
@@ -255,6 +333,10 @@ for(const s of S){
   s.sub=[...new Set(s.films.map(f=>f.subseccion).filter(x=>x&&x!==s.sec&&!s.comp))];
   s.n=s.films.length;
 }
+// Funciones con "Cineasta Presente" según el símbolo del Programa oficial 2026 (PDF del festival)
+const PRESENTE=new Set(["2026-10-12|17:15|Cine Club UACh", "2026-10-13|15:00|Felix Martinez UACh", "2026-10-13|16:45|Aula Magna UACh", "2026-10-13|17:00|Cine Club UACh", "2026-10-13|17:15|Felix Martinez UACh", "2026-10-13|17:30|Sala Paraninfo UACh", "2026-10-13|19:00|Aula Magna UACh", "2026-10-13|21:45|Cine Club UACh", "2026-10-13|22:00|Aula Magna UACh", "2026-10-14|12:00|Teatro Cervantes", "2026-10-14|12:45|Sala Paraninfo UACh", "2026-10-14|14:30|Aula Magna UACh", "2026-10-14|15:00|Felix Martinez UACh", "2026-10-14|15:15|Sala Paraninfo UACh", "2026-10-14|16:45|Cine Club UACh", "2026-10-14|17:00|Aula Magna UACh", "2026-10-14|17:15|Teatro Cervantes", "2026-10-14|19:15|Cine Club UACh", "2026-10-14|19:45|Aula Magna UACh", "2026-10-14|21:30|Cine Club UACh", "2026-10-14|22:15|Aula Magna UACh", "2026-10-14|22:15|Felix Martinez UACh", "2026-10-15|10:00|Teatro Cervantes", "2026-10-15|10:45|Aula Magna UACh", "2026-10-15|11:00|Cine Club UACh", "2026-10-15|12:00|Teatro Cervantes", "2026-10-15|14:30|Aula Magna UACh", "2026-10-15|14:30|Cine Club UACh", "2026-10-15|17:00|Aula Magna UACh", "2026-10-15|17:30|Sala Paraninfo UACh", "2026-10-15|19:15|Cine Club UACh", "2026-10-15|19:30|Aula Magna UACh", "2026-10-15|19:45|Teatro Cervantes", "2026-10-15|22:00|Cine Club UACh", "2026-10-15|22:15|Aula Magna UACh", "2026-10-15|22:15|Felix Martinez UACh", "2026-10-16|10:45|Aula Magna UACh", "2026-10-16|11:00|Cine Club UACh", "2026-10-16|12:00|Felix Martinez UACh", "2026-10-16|12:45|Sala Paraninfo UACh", "2026-10-16|14:30|Aula Magna UACh", "2026-10-16|15:15|Felix Martinez UACh", "2026-10-16|17:00|Aula Magna UACh", "2026-10-16|17:15|Cine Club UACh", "2026-10-16|19:30|Aula Magna UACh", "2026-10-16|19:45|Felix Martinez UACh", "2026-10-16|22:15|Aula Magna UACh", "2026-10-17|11:00|Aula Magna UACh", "2026-10-17|11:00|Sala Hugo Campos", "2026-10-17|11:30|Cine Club UACh", "2026-10-17|12:45|Felix Martinez UACh", "2026-10-17|14:30|Aula Magna UACh", "2026-10-17|14:30|Sala Hugo Campos", "2026-10-17|15:15|Sala Paraninfo UACh", "2026-10-17|17:00|Sala Hugo Campos", "2026-10-17|17:15|Aula Magna UACh", "2026-10-17|17:15|Teatro Cervantes", "2026-10-17|19:30|Aula Magna UACh", "2026-10-17|20:15|Teatro Cervantes", "2026-10-17|22:00|Aula Magna UACh", "2026-10-17|22:15|Cine Club UACh"]);
+const presente=s=>PRESENTE.has(s.key);
+const ICONO_CP='<svg class="cpi" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="4.6" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M2.5 15c.4-3.4 2.6-5.3 5.5-5.3s5.1 1.9 5.5 5.3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>';
 const dias=[...new Set(F.map(f=>f.dia))].sort();
 const lbl=d=>{const x=new Date(d+"T12:00:00");return {w:DN[x.getDay()],n:x.getDate()}};
 const orden=s=>s.startsWith("Competencia")?0:s.startsWith("Gala")?1:2;
@@ -271,25 +353,33 @@ $("tot").textContent=`${new Set(F.map(f=>f.id)).size} películas · ${S.length} 
 let vista="list", dia="todos";
 try{const h=location.hash.slice(1);if(h==="calendario")vista="cal";else if(dias.includes(h))dia=h;}catch(e){}
 
-// ---------- marcadas: base de datos del artifact (privada por persona) o este navegador ----------
+// ---------- marcadas: por perfil (Ignacio / Marian), en la base de datos del artifact (privada por persona) o en este navegador ----------
+const PERFILES=["Ignacio","Marian"];
 const LS="ficv33-marcadas";
 const LSV="ficv33-vistas";
+const LSD="ficv33-dudas", LSN="ficv33-notas";
 let picks=new Set(), vistas=new Set();          // vistas: ids de películas ya vistas
 let dudas=new Set(), notas={};                  // dudas: funciones marcadas con "?"; notas: id película → 0..5
-// marcas iniciales (opcional): se usan solo si en este navegador todavía no hay nada guardado
-const INICIAL=__INICIAL__;
-let nuevo=true; try{nuevo=localStorage.getItem(LS)===null}catch(e){}
 const leer=(k,d)=>{try{const v=localStorage.getItem(k);return v===null?d:JSON.parse(v)}catch(e){return d}};
-if(INICIAL&&nuevo){
-  picks=new Set(INICIAL.ids||[]); vistas=new Set(INICIAL.vistas||[]); dudas=new Set(INICIAL.dudas||[]); notas={...(INICIAL.notas||{})};
-}else{
-  picks=new Set(leer(LS,[])); vistas=new Set(leer(LSV,[])); dudas=new Set(leer("ficv33-dudas",[])); notas=leer("ficv33-notas",{})||{};
-}
-let ref=null, writing=false, dirty=false, timer=null;
+let perfil=leer("ficv33-perfil","Ignacio"); if(!PERFILES.includes(perfil)) perfil="Ignacio";
+const K=k=>k+":"+perfil;
+// migración: lo que había guardado antes de existir los perfiles pasa a ser el punto de partida de ambos
+(function migrar(){
+  try{
+    if(localStorage.getItem(LS)===null) return;
+    for(const p of PERFILES){
+      if(localStorage.getItem(LS+":"+p)!==null) continue;
+      for(const k of [LS,LSV,LSD,LSN]){const v=localStorage.getItem(k);if(v!==null)localStorage.setItem(k+":"+p,v)}
+    }
+  }catch(e){}
+})();
+function cargarLocal(){picks=new Set(leer(K(LS),[])); vistas=new Set(leer(K(LSV),[])); dudas=new Set(leer(K(LSD),[])); notas=leer(K(LSN),{})||{};}
+cargarLocal();
+let ref=null, writing=false, dirty=false, timer=null, unsub=null, dbRef=null, uidRef=null;
 function setSync(t){$("sync").textContent=t}
-setSync("Tus marcadas se guardan en este navegador.");
-function guardarLocal(){try{localStorage.setItem(LS,JSON.stringify([...picks]));localStorage.setItem(LSV,JSON.stringify([...vistas]));
-  localStorage.setItem("ficv33-dudas",JSON.stringify([...dudas]));localStorage.setItem("ficv33-notas",JSON.stringify(notas))}catch(e){}}
+setSync(`Las marcadas de ${perfil} se guardan en este navegador.`);
+function guardarLocal(){try{localStorage.setItem(K(LS),JSON.stringify([...picks]));localStorage.setItem(K(LSV),JSON.stringify([...vistas]));
+  localStorage.setItem(K(LSD),JSON.stringify([...dudas]));localStorage.setItem(K(LSN),JSON.stringify(notas))}catch(e){}}
 function guardar(){
   guardarLocal();
   if(!ref) return;
@@ -298,36 +388,54 @@ function guardar(){
 async function flush(){
   if(!ref||writing||!dirty) return;
   writing=true; dirty=false;
-  try{await ref.set({ids:[...picks],vistas:[...vistas],dudas:[...dudas],notas}); setSync("Tus marcadas se guardan en tu cuenta.");}
-  catch(e){ref=null; setSync("No se pudo guardar en tu cuenta; quedan en este navegador.");}
+  const r=ref;
+  try{await r.set({ids:[...picks],vistas:[...vistas],dudas:[...dudas],notas}); if(r===ref) setSync(`Calendario de ${perfil} compartido: los cambios se ven en todos los dispositivos.`);}
+  catch(e){if(r===ref){setSync(`No se pudo guardar en el calendario compartido (¿tienes permiso de edición?); tus cambios quedan en este navegador.`);}}
   writing=false; if(dirty) flush();
 }
-(async()=>{
-  if(!window.claude||!claude.use) return;
-  const [db,user]=await Promise.all([claude.use("db"),claude.use("user")]);
-  if(!db||!user) return;
-  const uid=await user.id(); if(!uid) return;
-  const r=db.doc("data/users/"+uid+"/picks");
+// Los perfiles son compartidos: quien abra el enlace ve y edita los mismos calendarios de Ignacio y Marian.
+// La base compartida manda; este navegador solo guarda una copia por si no hay conexión.
+function suscribir(){
+  if(unsub){try{unsub()}catch(e){} unsub=null}
+  ref=null;
+  if(!dbRef) return;
+  const p=perfil;
+  const r=dbRef.doc("perfiles/"+p);
   let first=true;
   ref=r;
-  r.onSnapshot(snap=>{
+  unsub=r.onSnapshot(snap=>{
+    if(p!==perfil) return;
     if(snap.metadata.hasPendingWrites) return;
     if(snap.exists){
       const d=snap.data()||{};
-      const ids=(d.ids||[]).filter(k=>typeof k==="string");
-      const vs=Array.isArray(d.vistas)?d.vistas.filter(k=>typeof k==="string"):null;
-      const du=Array.isArray(d.dudas)?d.dudas.filter(k=>typeof k==="string"):null;
-      const no=d.notas&&typeof d.notas==="object"?d.notas:null;
-      if(first&&((!ids.length&&picks.size)||(!vs&&vistas.size)||(!du&&dudas.size)||(!no&&Object.keys(notas).length))){first=false;guardar();return;}
-      picks=new Set(ids); if(vs) vistas=new Set(vs); if(du) dudas=new Set(du);
-      if(no){notas={};for(const [k,v] of Object.entries(no)) if(Number.isInteger(v)&&v>=0&&v<=5) notas[k]=v;}
+      picks=new Set((Array.isArray(d.ids)?d.ids:[]).filter(k=>typeof k==="string"));
+      vistas=new Set((Array.isArray(d.vistas)?d.vistas:[]).filter(k=>typeof k==="string"));
+      dudas=new Set((Array.isArray(d.dudas)?d.dudas:[]).filter(k=>typeof k==="string"));
+      notas={}; if(d.notas&&typeof d.notas==="object") for(const [k,v] of Object.entries(d.notas)) if(Number.isInteger(v)&&v>=0&&v<=5) notas[k]=v;
       guardarLocal();
       render();
-    }else if(first&&(picks.size||vistas.size||dudas.size)){guardar();}
+    }else if(first&&(picks.size||vistas.size||dudas.size||Object.keys(notas).length)){guardar();}
     first=false;
-    setSync("Tus marcadas se guardan en tu cuenta.");
-  },()=>{ref=null;setSync("Tus marcadas se guardan en este navegador.");});
+    setSync(`Calendario de ${perfil} compartido: los cambios se ven en todos los dispositivos.`);
+  },()=>{if(p===perfil){ref=null;setSync(`Sin conexión a la base compartida; las marcadas de ${perfil} quedan en este navegador.`);}});
+}
+(async()=>{
+  if(!window.claude||!claude.use) return;
+  const db=await claude.use("db");
+  if(!db) return;
+  dbRef=db;
+  suscribir();
 })();
+function pintarPerfil(){document.querySelectorAll(".perfiles button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.p===perfil)))}
+async function cambiarPerfil(p){
+  if(!PERFILES.includes(p)||p===perfil) return;
+  if(dirty){clearTimeout(timer);await flush();}
+  perfil=p; try{localStorage.setItem("ficv33-perfil",JSON.stringify(p))}catch(e){}
+  cargarLocal(); pintarPerfil(); setSync(`Las marcadas de ${perfil} se guardan en este navegador.`);
+  suscribir(); render();
+}
+document.querySelector(".perfiles").addEventListener("click",e=>{const b=e.target.closest("[data-p]");if(b)cambiarPerfil(b.dataset.p)});
+pintarPerfil();
 
 // sesión marcada si alguna de sus películas lo está (al marcar se marcan todas)
 const on=s=>s.films.some(f=>picks.has(f.key));
@@ -354,6 +462,27 @@ const enVistas=(s,el)=>s.films.some(f=>vistas.has(f.id)&&(on(s)||!el.has(f.id)))
 // películas de la sesión ya elegidas en otra
 const yaEn=(s,el)=>s.films.map(f=>el.get(f.id)).filter(x=>x&&x!==s);
 
+
+// ---------- otras funciones de las mismas películas (para evaluar un cambio) ----------
+const solapa=(a,b)=>a.dia===b.dia&&a.min<b.min+b.ocupa&&b.min<a.min+a.ocupa;
+function otrasFunciones(s){
+  const ids=new Set(s.films.map(f=>f.id));
+  const marcadas=S.filter(t=>t!==s&&on(t));
+  return S.filter(t=>t!==s&&t.films.some(f=>ids.has(f.id)))
+    .sort((a,b)=>a.dia.localeCompare(b.dia)||a.min-b.min)
+    .map(t=>{
+      const choca=marcadas.filter(m=>m!==t&&solapa(t,m));
+      const comunes=t.films.filter(f=>ids.has(f.id));
+      return {t,choca,parcial:s.n>1&&comunes.length<s.n?comunes:null,ya:on(t)};
+    });
+}
+const diaCorto=t=>{const l=lbl(t.dia);return l.w.slice(0,3)+" "+l.n};
+function estadoOtra(o){
+  if(o.ya) return {cls:"ok",txt:"Ya marcada"};
+  if(o.choca.length) return {cls:"mal",txt:"Choca con "+o.choca.map(c=>titulos(c)+" ("+c.hora+")").join(", ")};
+  if(o.t.dia<"2026-10-12"||new Date(o.t.dia+"T"+o.t.hora)<new Date()) return {cls:"nada",txt:"Ya pasó"};
+  return {cls:"ok",txt:"Libre en tu calendario"};
+}
 // ---------- choques entre sesiones marcadas ----------
 // ---------- traslados entre funciones seguidas ----------
 // Zonas: todo lo de la UACh queda cerca entre sí; Teatro Cervantes está lejos del resto.
@@ -390,9 +519,9 @@ let calSel=new Set(["*marcadas","*dudas"]);
 try{const g=JSON.parse(localStorage.getItem("ficv33-cal")||"null");if(Array.isArray(g))calSel=new Set(g)}catch(e){}
 const libre=s=>s.acceso.some(a=>/liberada/i.test(a));
 function pintarChips(){
-  const el=elegidas(), n=c=>S.filter(s=>c==="*marcadas"?on(s):c==="*dudas"?duda(s):c==="*libre"?libre(s):c==="*vistas"?enVistas(s,el):s.films.some(f=>f.sec===c)).length;
+  const el=elegidas(), n=c=>S.filter(s=>c==="*marcadas"?on(s):c==="*dudas"?duda(s):c==="*libre"?libre(s):c==="*presente"?presente(s):c==="*vistas"?enVistas(s,el):s.films.some(f=>f.sec===c)).length;
   const chip=(c,txt,cls="")=>`<label class="chip ${cls}"><input type="checkbox" data-c="${esc(c)}"${calSel.has(c)?" checked":""}>${c.startsWith("*")?"":`<i class="dot" style="--c:${col(c)}"></i>`}${esc(txt)} <em>${n(c)}</em></label>`;
-  $("chips-in").innerHTML=chip("*marcadas","Marcadas","esp")+chip("*dudas","Con duda (?)","esp")+chip("*libre","Entrada liberada","esp")+chip("*vistas","Vistas","esp")+secs.map(s=>chip(s,s)).join("")
+  $("chips-in").innerHTML=chip("*marcadas","Marcadas","esp")+chip("*dudas","Con duda (?)","esp")+chip("*libre","Entrada liberada","esp")+chip("*presente","Cineasta presente","esp")+chip("*vistas","Vistas","esp")+secs.map(s=>chip(s,s)).join("")
     +'<button type="button" class="chip mini" data-todas="1">Todas las secciones</button><button type="button" class="chip mini" data-todas="0">Ninguna</button>';
 }
 function guardarCal(){try{localStorage.setItem("ficv33-cal",JSON.stringify([...calSel]))}catch(e){}}
@@ -408,7 +537,7 @@ function filtradas(){
   if(vista==="cal") return S.filter(s=>{
     const m=on(s);
     if(oc&&!m&&s.films.every(f=>el.has(f.id))) return false;
-    const vis=(calSel.has("*marcadas")&&m)||(calSel.has("*dudas")&&duda(s))||(calSel.has("*libre")&&libre(s))||(calSel.has("*vistas")&&enVistas(s,el))||s.films.some(f=>calSel.has(f.sec));
+    const vis=(calSel.has("*marcadas")&&m)||(calSel.has("*dudas")&&duda(s))||(calSel.has("*libre")&&libre(s))||(calSel.has("*presente")&&presente(s))||(calSel.has("*vistas")&&enVistas(s,el))||s.films.some(f=>calSel.has(f.sec));
     return vis&&(!sa||s.salas.includes(sa))&&(!q||s.films.some(f=>[f.titulo,f.direccion,f.pais].join(" ").toLowerCase().includes(q)));
   });
   return S.filter(s=>{
@@ -436,12 +565,14 @@ function fila(s,cl,el){
   const pills=[...s.sub.map(x=>`<span class="pill">${esc(x)}</span>`),
     ...s.acceso.map(a=>`<span class="pill ${/liberada/i.test(a)?"free":""}">${esc(a)}</span>`),
     ya.length?`<span class="pill">${s.n===1?"Ya elegida: "+esc(corto(ya[0])):ya.length+" de "+s.n+" ya elegidas en otra función"}</span>`:"",
+    presente(s)?`<span class="pill cp">${ICONO_CP} Cineasta presente</span>`:"",
     s.estado?`<span class="pill clash">${esc(s.estado)}</span>`:"",
     cl.has(s.key)?'<span class="pill clash">Choca con otra marcada</span>':"",
     trL.has(s.key)?`<span class="pill ${trL.get(s.key).apurado?"clash":"lejos"}">⇄ ${esc(textoTras(trL.get(s.key)))}</span>`:""].join("");
   const f0=s.films[0], quien=s.n===1?quienF(f0):"";
-  const titulo=s.n===1?`<a href="${esc(f0.url)}" target="_blank" rel="noopener">${esc(f0.titulo)}</a>`:esc(titulos(s));
-  const lista=s.n>1?`<ul class="films">${s.films.map(f=>`<li><a href="${esc(f.url)}" target="_blank" rel="noopener">${esc(f.titulo)}</a>${quienF(f)?` <span>${esc(quienF(f))}</span>`:""}</li>`).join("")}</ul>`:"";
+  const lbA=f=>lbURL(f)?` <a class="lb" href="${esc(lbApp(f))}" target="_blank" rel="noopener" title="Ver en Letterboxd" aria-label="Ver ${esc(f.titulo)} en Letterboxd">LB</a>`:"";
+  const titulo=s.n===1?`<a href="${esc(f0.url)}" target="_blank" rel="noopener">${esc(f0.titulo)}</a>${lbA(f0)}`:esc(titulos(s));
+  const lista=s.n>1?`<ul class="films">${s.films.map(f=>`<li><a href="${esc(f.url)}" target="_blank" rel="noopener">${esc(f.titulo)}</a>${lbA(f)}${quienF(f)?` <span>${esc(quienF(f))}</span>`:""}</li>`).join("")}</ul>`:"";
   return `<div class="row${m?" on":""}${duda(s)?" duda":""}${ya.length?" ya":""}${vistaS(s)?" vista":""}" data-ids="${esc(s.films.map(f=>f.id).join(" "))}"><span class="t">${esc(s.hora)}</span>
     <span class="ttl">${titulo}</span>
     <span class="marks"><button type="button" class="mark" data-k="${esc(s.key)}" aria-pressed="${m}" aria-label="${m?"Quitar de":"Agregar a"} mi calendario: ${esc(titulos(s))}, ${esc(s.hora)}">${m?"✓":"+"}</button>
@@ -484,6 +615,7 @@ function carriles(ver,vd){
     return {d,items:out,maxN};
   });
 }
+let calGeo=null;   // geometría del calendario dibujado (para los bloques fantasma)
 function pintarCal(ver,cl){
   const tras=traslados();
   const vd=dia!=="todos"?[dia]:dias.filter(d=>ver.some(s=>s.dia===d)), el=elegidas();
@@ -491,22 +623,26 @@ function pintarCal(ver,cl){
   const PPM=1.15;                                           // píxeles por minuto
   const h0=Math.floor(Math.min(...ver.map(s=>s.min))/60), h1=Math.ceil(Math.max(...ver.map(s=>s.min+s.ocupa))/60);
   const alto=(h1-h0)*60*PPM, y=m=>(m-h0*60)*PPM;
+  calGeo={h0,h1,PPM};
   const cols=carriles(ver,vd).map(c=>({...c,ancho:Math.max(140,c.maxN*78)}));
-  let h=`<div class="wk"><div class="tg" style="grid-template-columns:52px ${cols.map(c=>`minmax(${c.ancho}px,1fr)`).join(" ")};--hh:${60*PPM}px">`;
-  h+=`<div class="hd ax"></div>`+cols.map(c=>{const l=lbl(c.d),n=c.items.length;return `<div class="hd">${l.w} ${l.n}<small>${n} ${n===1?"función":"funciones"}</small></div>`}).join("");
+  // columnas flex (no grilla): así la columna de horas queda fija al desplazar a la derecha
+  // y los nombres de los días quedan fijos al bajar
+  let h=`<div class="wk"><div class="tg" style="--hh:${60*PPM}px">`;
   let ax=""; for(let hr=h0;hr<h1;hr++) ax+=`<span style="top:${y(hr*60)}px">${hr}:00</span>`;
-  h+=`<div class="axis" style="height:${alto}px">${ax}</div>`;
+  h+=`<div class="axcol"><div class="hd ax"></div><div class="axis" style="height:${alto}px">${ax}</div></div>`;
   for(const c of cols){
-    h+=`<div class="col" style="height:${alto}px">`+c.items.map(({s,lane,n})=>{
+    const l=lbl(c.d),nf=c.items.length;
+    h+=`<div class="dcol" style="flex:1 0 ${c.ancho}px"><div class="hd">${l.w} ${l.n}<small>${nf} ${nf===1?"función":"funciones"}</small></div>`;
+    h+=`<div class="col" data-d="${c.d}" style="height:${alto}px">`+c.items.map(({s,lane,n})=>{
       const m=on(s),ya=!m&&yaEn(s,el).length, w=100/n;
       const tr=tras.get(s.key);
       const badge=vistaS(s)?(notaS(s)!=null?"✔ "+estrellas(notaS(s)):"✔ VISTA"):"";
       return `<button type="button" class="it${m?" on":""}${duda(s)?" duda":""}${ya?" ya":""}${cl.has(s.key)?" clash":""}${n>=3?" angosta":""}${vistaS(s)?" vista":""}" data-s="${esc(s.key)}" data-ids="${esc(s.films.map(f=>f.id).join(" "))}" data-badge="${badge}" aria-haspopup="dialog"
-        title="${esc((tr?textoTras(tr)+" · ":"")+s.hora+"–"+finH(s)+" · "+s.films.map(f=>f.titulo+(quienF(f)?" ("+quienF(f)+")":"")).join(" · ")+" · "+s.sala)}"
-        style="--c:${col(s.sec)};top:${y(s.min)+1}px;height:${s.ocupa*PPM-2}px;left:calc(${lane*w}% + 2px);width:calc(${w}% - 4px)">${tr?`<span class="tras ${tr.apurado?"mal":tr.lejos?"lejos":""}">${tr.lejos?"⇄ Lejos":"⇄ Otro lugar"} · ${tr.libre>=0?tr.libre+" min":"!"}</span>`:""}<b>${esc(s.hora)}–${finH(s)}${s.est?"*":""}</b><strong>${esc(titulos(s))}</strong>${s.n===1&&quienF(s.films[0])?`<span class="dir">${esc(quienF(s.films[0]))}</span>`:""}${s.n>1?`<span class="cortos">${esc(s.films.map(f=>f.titulo).join(" · "))}</span>`:""}<span>${esc(s.sec)}</span><span>${esc(s.sala)}</span></button>`;
-    }).join("")+`</div>`;
+        aria-label="${esc((tr?textoTras(tr)+" · ":"")+s.hora+"–"+finH(s)+" · "+s.films.map(f=>f.titulo+(quienF(f)?" ("+quienF(f)+")":"")).join(" · ")+" · "+s.sala)}"
+        style="--c:${col(s.sec)};top:${y(s.min)+1}px;height:${s.ocupa*PPM-2}px;left:calc(${lane*w}% + 2px);width:calc(${w}% - 4px)">${tr?`<span class="tras ${tr.apurado?"mal":tr.lejos?"lejos":""}">${tr.lejos?"⇄ Lejos":"⇄ Otro lugar"} · ${tr.libre>=0?tr.libre+" min":"!"}</span>`:""}${presente(s)?`<span class="cpb" title="Cineasta presente">${ICONO_CP}</span>`:""}<b>${esc(s.hora)}–${finH(s)}${s.est?"*":""}</b><strong>${esc(titulos(s))}</strong>${s.n===1&&quienF(s.films[0])?`<span class="dir">${esc(quienF(s.films[0]))}</span>`:""}${s.n>1?`<span class="cortos">${esc(s.films.map(f=>f.titulo).join(" · "))}</span>`:""}<span class="sala1">${esc(s.sala)}</span><span class="tipo">${esc(s.sec)}</span></button>`;
+    }).join("")+`</div></div>`;
   }
-  return h+`</div></div><div class="legend"><span><i class="on"></i>★ Marcada (bloque relleno)</span><span><i class="du"></i>? Con duda</span><span><i class="vi"></i>✔ Vista (con tu nota)</span><span><i></i>Sin marcar · el color indica la sección · clic para ver detalles</span><span><i class="cl"></i>Choca con otra marcada</span><span>⇄ Traslado: la función anterior es en otra zona (rojo = poco tiempo)</span><span>El alto del bloque es la duración + ${MARGEN} min de margen</span><span>* duración estimada en 90 min</span></div>`;
+  return h+`</div></div><div class="legend"><span><i class="on"></i>★ Marcada (bloque relleno)</span><span>${ICONO_CP} Cineasta presente</span><span><i class="du"></i>? Con duda</span><span><i class="vi"></i>✔ Vista (con tu nota)</span><span><i></i>Sin marcar · el color indica la sección · clic para ver detalles</span><span><i class="cl"></i>Choca con otra marcada</span><span>⇄ Traslado: la función anterior es en otra zona (rojo = poco tiempo)</span><span>El alto del bloque es la duración${MARGEN?` + ${MARGEN} min de margen`:" (bloque de la función)"}</span><span>* duración estimada en 90 min</span></div>`;
 }
 
 // ---------- exportar el calendario visible a PDF (jsPDF desde cdnjs, se carga al primer uso) ----------
@@ -536,10 +672,10 @@ async function exportarPDF(){
     const h0=Math.floor(Math.min(...ver.map(s=>s.min))/60), h1=Math.ceil(Math.max(...ver.map(s=>s.min+s.ocupa))/60);
     const mmMin=(H-TOP-BOT)/((h1-h0)*60), y=m=>TOP+(m-h0*60)*mmMin;
     doc.setFont("helvetica","bold");doc.setFontSize(14);doc.setTextColor(24,34,31);
-    doc.text(lat("33° FICValdivia · Mi calendario"),M,11);
+    doc.text(lat("33° FICValdivia · Calendario de "+perfil),M,11);
     doc.setFont("helvetica","normal");doc.setFontSize(8);doc.setTextColor(93,107,102);
     const mostr=[calSel.has("*marcadas")?"marcadas":"",calSel.has("*vistas")?"vistas":"",calSel.has("*libre")?"entrada liberada":"",...secs.filter(s=>calSel.has(s))].filter(Boolean);
-    doc.text(lat(`${ver.length} funciones · ${S.filter(on).length} marcadas · ${S.filter(duda).length} con duda · Incluye ${MARGEN} min de margen por función · Mostrando: ${mostr.join(", ")||"—"}`),M,16);
+    doc.text(lat(`${ver.length} funciones · ${S.filter(on).length} marcadas · ${S.filter(duda).length} con duda · Mostrando: ${mostr.join(", ")||"—"}`),M,16);
     // encabezados y grilla
     vd.forEach((d,i)=>{const l=lbl(d),x=M+AX+i*cw;doc.setFont("helvetica","bold");doc.setFontSize(9);doc.setTextColor(24,34,31);doc.text(lat(`${l.w} ${l.n}`),x+1.5,TOP-2);
       doc.setDrawColor(200,208,204);doc.setLineWidth(0.2);doc.line(x,TOP-5,x,H-BOT)});
@@ -575,7 +711,7 @@ async function exportarPDF(){
     }
     doc.setTextColor(120,130,126);doc.text(lat("Bloque relleno y * = marcada · borde punteado y ? = con duda · VISTA n/5 = tu nota · <> = traslado desde otro lugar (min libres)"),W-M,H-4,{align:"right"});
     const blob=new Blob([doc.output("arraybuffer")],{type:"application/pdf"});
-    await descargas.save({filename:"mi-calendario-ficv33.pdf",data:blob});
+    await descargas.save({filename:"calendario-"+perfil.toLowerCase()+"-ficv33.pdf",data:blob});
     btn.textContent="Descargar PDF";
   }catch(e){
     btn.textContent=e&&e.code==="declined"?"Descargar PDF":"No se pudo generar el PDF";
@@ -616,30 +752,48 @@ function pintarPop(){
   const films=s.films.map(f=>`<li><div><b>${esc(f.titulo)}</b><span>${esc(quienF(f))}</span>${det(f)?`<span class="pop-det">${esc(det(f))}</span>`:""}
     ${f.sinopsis?`<details class="pop-sin"${s.n===1?" open":""}><summary>Sinopsis</summary><p>${esc(f.sinopsis)}</p></details>`:""}</div>
     ${vistas.has(f.id)?`<div class="stars" role="group" aria-label="Tu nota">Tu nota: ${[0,1,2,3,4,5].map(n=>`<button type="button" class="${n>0&&notas[f.id]>=n?"lit":""}" data-nota="${esc(f.id)}|${n}" aria-pressed="${notas[f.id]===n}" title="${n} de 5">${n===0?"0":"★"}</button>`).join("")}<em>${notas[f.id]!=null?notas[f.id]+"/5":"sin nota"}</em></div>`:""}</div>
-    <div class="pop-fa">${s.n>1?`<button type="button" class="seenbtn" data-vf="${esc(f.id)}" aria-pressed="${vistas.has(f.id)}">${vistas.has(f.id)?"✔ Vista":"Vista"}</button>`:""}${f.url&&s.n>1?`<a href="${esc(f.url)}" target="_blank" rel="noopener">Ver ficha ↗</a>`:""}</div></li>`).join("");
+    <div class="pop-fa">${s.n>1?`<button type="button" class="seenbtn" data-vf="${esc(f.id)}" aria-pressed="${vistas.has(f.id)}">${vistas.has(f.id)?"✔ Vista":"Vista"}</button>`:""}${f.url&&s.n>1?`<a href="${esc(f.url)}" target="_blank" rel="noopener">Ver ficha ↗</a>`:""}${lbURL(f)&&s.n>1?`<a href="${esc(lbApp(f))}" target="_blank" rel="noopener">Letterboxd ↗</a>`:""}</div></li>`).join("");
   $("pop-in").innerHTML=`<p class="pop-h">${l.w} ${l.n} de octubre · ${esc(s.hora)}–${finH(s)}</p>
     <h3 id="pop-t">${esc(titulos(s))}</h3>
-    <div class="pop-meta"><span class="pill" style="display:inline-flex;gap:6px;align-items:center;--c:${col(s.sec)}"><i class="dot"></i>${esc(s.sec)}</span>${s.sub.map(x=>`<span class="pill">${esc(x)}</span>`).join("")}
+    <div class="pop-meta"><span class="pill" style="display:inline-flex;gap:6px;align-items:center;--c:${col(s.sec)}"><i class="dot"></i>${esc(s.sec)}</span>${presente(s)?`<span class="pill cp">${ICONO_CP} Cineasta presente</span>`:""}${s.sub.map(x=>`<span class="pill">${esc(x)}</span>`).join("")}
       ${s.acceso.map(a=>`<span class="pill ${/liberada/i.test(a)?"free":""}">${esc(a)}</span>`).join("")}
-      <span>${esc(s.sala)}</span><span>${s.est?"Duración no informada (90 min estimados)":s.dur+" min"} + ${MARGEN} min de margen</span></div>
+      <span>${esc(s.sala)}</span><span>${s.est?"Duración no informada (90 min estimados)":s.dur+" min"}${MARGEN?` + ${MARGEN} min de margen`:" (bloque de la función)"}</span></div>
     ${m&&cl.has(s.key)?'<p class="pop-warn">Choca con otra función marcada.</p>':""}
     ${traslados().has(s.key)?`<p class="pop-warn" style="color:${traslados().get(s.key).apurado?"var(--clash)":"var(--free)"}">⇄ ${esc(textoTras(traslados().get(s.key)))}${traslados().get(s.key).apurado?" — poco tiempo para el traslado":""}.</p>`:""}
     ${ya.length?`<p class="pop-meta">${s.n===1?"Ya la elegiste el "+esc(corto(ya[0]))+".":ya.length+" de "+s.n+" películas ya elegidas en otra función."}</p>`:""}
     <ul class="pop-films">${films}</ul>
+    ${(()=>{const os=otrasFunciones(s);if(!os.length)return '<p class="pop-meta">No hay otras funciones de esta película.</p>';
+      return `<div class="pop-otras"><h4>Otras funciones</h4><ul>${os.map(o=>{const e=estadoOtra(o);
+        return `<li><b>${esc(diaCorto(o.t))} · ${esc(o.t.hora)}–${finH(o.t)}</b><span>${esc(o.t.sala)}</span>${o.parcial?`<span>(solo ${esc(o.parcial.map(f=>f.titulo).join(", "))})</span>`:""}<span class="${e.cls}">${esc(e.txt)}</span>${!o.ya&&(m||duda(s))?`<button type="button" data-cambio="${esc(o.t.key)}">${m?"Cambiar a esta":"Mover la duda aquí"}</button>`:""}</li>`}).join("")}</ul></div>`})()}
     <div class="pop-acc">${m?'<button type="button" class="btn del" data-acc="t">Quitar de mi calendario</button><button type="button" class="btn" data-acc="q">Pasar a «?»</button>'
       :duda(s)?'<button type="button" class="btn pri" data-acc="t">Confirmar en mi calendario</button><button type="button" class="btn del" data-acc="q">Quitar «?»</button>'
       :'<button type="button" class="btn pri" data-acc="t">Agregar a mi calendario</button><button type="button" class="btn" data-acc="q">Agregar con «?»</button>'}
       <button type="button" class="btn${vistaS(s)?" seen-on":""}" data-acc="v">${vistaS(s)?"✔ Vista · desmarcar":"Marcar como vista"}</button>
       ${s.n===1&&s.films[0].url?`<a class="btn" href="${esc(s.films[0].url)}" target="_blank" rel="noopener">Ver ficha en el festival ↗</a>`:""}
+      ${s.n===1&&lbURL(s.films[0])?`<a class="btn" href="${esc(lbApp(s.films[0]))}" target="_blank" rel="noopener">Ver en Letterboxd ↗</a><button type="button" class="btn" data-copiar="${esc(lbURL(s.films[0]))}">Copiar enlace</button>`:""}
       <button type="button" class="btn" data-acc="c">Cerrar</button></div>`;
 }
 function abrir(k){abierta=k;pintarPop();resaltar(document.querySelector(`#m [data-s="${CSS.escape(k)}"]`));try{$("pop").showModal()}catch(e){$("pop").setAttribute("open","")}}
 $("pop").addEventListener("click",e=>{
-  if(e.target===$("pop")){$("pop").close();return}          // clic fuera del cuadro
+  if(e.target===$("pop")){$("pop").close();return}
+  const cp=e.target.closest("[data-copiar]");
+  if(cp){const u=cp.dataset.copiar,fin=t=>{cp.textContent=t;setTimeout(()=>{cp.textContent="Copiar enlace"},2000)};
+    (navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(()=>fin("Copiado ✓"),()=>{
+      const r=document.createRange(),x=document.createElement("span");x.textContent=" "+u;cp.after(x);r.selectNodeContents(x);
+      const sel=getSelection();sel.removeAllRanges();sel.addRange(r);fin("Selecciona y copia")});return}          // clic fuera del cuadro
   const vf=e.target.closest("[data-vf]"); if(vf){toggleVistaFilm(vf.dataset.vf);pintarPop();return}
   const no=e.target.closest("[data-nota]"); if(no){const [id,n]=no.dataset.nota.split("|");ponerNota(id,+n);pintarPop();return}
   const a=e.target.closest("[data-acc]"); if(!a) return;
-  if(a.dataset.acc==="t"){toggle(abierta);$("pop").close()}   // agregar o quitar cierra la ventana
+  const sa=porClave.get(abierta);
+  // quitar pide confirmación dentro de la ventana (el visor no permite confirm())
+  if((a.dataset.acc==="t"&&on(sa))||(a.dataset.acc==="q"&&duda(sa))){
+    $("pop").querySelector(".pop-acc").innerHTML=`<span class="seguro">¿Seguro que quieres quitar${a.dataset.acc==="q"?" el «?» de":""} esta función?</span>
+      <button type="button" class="btn del" data-acc="si-${a.dataset.acc}">Sí, quitar</button><button type="button" class="btn" data-acc="no">No</button>`;
+    $("pop").querySelector('[data-acc="no"]').focus(); return}
+  if(a.dataset.acc==="si-t"){toggle(abierta);$("pop").close();return}
+  if(a.dataset.acc==="si-q"){estado(abierta,"no");$("pop").close();return}
+  if(a.dataset.acc==="no"){pintarPop();return}
+  if(a.dataset.acc==="t"){toggle(abierta);$("pop").close()}   // agregar cierra la ventana
   else if(a.dataset.acc==="q"){const s=porClave.get(abierta);estado(abierta,duda(s)?"no":"duda");$("pop").close()}
   else if(a.dataset.acc==="v"){toggleVista(abierta);pintarPop()}
   else $("pop").close();
@@ -661,9 +815,114 @@ $("m").addEventListener("pointerleave",()=>resaltar(null));
 $("m").addEventListener("focusin",e=>resaltar(e.target.closest("[data-ids]")));
 $("m").addEventListener("click",e=>{const c=e.target.closest("[data-s]");if(c){abrir(c.dataset.s);return}
   const v=e.target.closest("[data-v]");if(v){toggleVista(v.dataset.v);return}
-  const q=e.target.closest("[data-q]");if(q){toggleDuda(q.dataset.q);return}
-  const b=e.target.closest("[data-k]");if(b)toggle(b.dataset.k)});
+  // en la lista, quitar (✓ o ? activos) pide un segundo toque para confirmar
+  const q=e.target.closest("[data-q]"), b=q?null:e.target.closest("[data-k]"), x=q||b;
+  if(!x) return;
+  if(x.getAttribute("aria-pressed")==="true"&&!x.dataset.seguro){
+    const antes=x.textContent; x.dataset.seguro="1"; x.classList.add("seguro"); x.textContent="¿Quitar?";
+    setTimeout(()=>{if(x.isConnected&&x.dataset.seguro){delete x.dataset.seguro;x.classList.remove("seguro");x.textContent=antes}},3000);
+    return}
+  if(q) toggleDuda(q.dataset.q); else toggle(b.dataset.k)});
 try{if(localStorage.getItem("ficv33-ocultar")==="0")$("ocultar").checked=false}catch(e){}
+
+// tooltip del calendario: muestra las otras funciones de la película al pasar el mouse
+const tip=$("tip"); let tipK=null;
+function mostrarTip(el){
+  const s=porClave.get(el.dataset.s); if(!s){ocultarTip();return}
+  if(tipK!==s.key){
+    tipK=s.key;
+    const os=otrasFunciones(s), tr=traslados().get(s.key);
+    fantasmaDe=s.key; fantasmaMarca=on(s)||duda(s);
+    const vis=fantasmas(os);
+    const f0=s.films[0], sin=s.n===1?recorte(f0.sinopsis,230):"";
+    tip.innerHTML=`<h4>${esc(titulos(s))}</h4><div class="th">${s.n===1&&quienF(f0)?esc(quienF(f0))+" · ":""}${esc(diaCorto(s))} · ${esc(s.hora)}–${finH(s)} · ${esc(s.sala)}${tr?" · ⇄ "+esc(textoTras(tr)):""}</div>`+
+      (sin?`<p class="sin">${esc(sin)}</p>`:s.n>1?`<p class="sin">${esc(s.films.map(f=>f.titulo).join(" · "))}</p>`:"")+
+      (os.length?`<ul>${os.map(o=>{const e=estadoOtra(o);return `<li><b>${esc(diaCorto(o.t))} ${esc(o.t.hora)}</b><span>${esc(o.t.sala)}${o.parcial?" · solo "+esc(o.parcial.map(f=>f.titulo).join(", ")):""}<br><span class="${e.cls}">${esc(e.txt)}</span>${vis.has(o.t.key)?"":' <span class="fv">· fuera de la vista</span>'}</span></li>`}).join("")}</ul>`
+        :`<div class="nada">Única función: no hay otra fecha.</div>`+(os.length&&vis.size?`<div class="th" style="margin:8px 0 0">${on(s)||duda(s)?"Usa «Cambiar aquí» en el bloque punteado para pasarte a esa función.":"Usa «Ver» en el bloque punteado para abrir esa función."}</div>`:""));
+  }
+  tip.hidden=false;
+  const r=el.getBoundingClientRect(), tw=tip.offsetWidth, th=tip.offsetHeight, vw=innerWidth, vh=innerHeight;
+  let x=r.right+8; if(x+tw>vw-8) x=r.left-tw-8; if(x<8) x=Math.max(8,Math.min(vw-tw-8,r.left));
+  let y=r.top; if(y+th>vh-8) y=vh-th-8; if(y<8) y=8;
+  tip.style.left=x+"px"; tip.style.top=y+"px";
+}
+const recorte=(t,n)=>{t=(t||"").replace(/\s+/g," ").trim();if(t.length<=n)return t;const c=t.slice(0,n);return c.slice(0,Math.max(c.lastIndexOf(" "),n-30)).replace(/[,;:.\s]+$/,"")+"…"};
+// bloques fantasma: dibuja las otras funciones en su lugar del calendario mientras dure el hover
+function fantasmas(os){
+  borrarFantasmas(); const vis=new Set();
+  if(vista!=="cal"||!calGeo) return vis;
+  const {h0,h1,PPM}=calGeo;
+  for(const o of os){
+    const t=o.t, colEl=document.querySelector(`#m .col[data-d="${t.dia}"]`);
+    if(!colEl||t.min<h0*60||t.min>=h1*60) continue;
+    const e=estadoOtra(o), g=document.createElement("div");
+    g.className="ghost "+e.cls;
+    g.style.top=((t.min-h0*60)*PPM+1)+"px";
+    g.style.height=Math.max(18,Math.min(t.ocupa,h1*60-t.min)*PPM-2)+"px";
+    const accion=o.ya?"Ver":(fantasmaMarca?"Cambiar aquí":"Ver");
+    g.innerHTML=`<b>${esc(t.hora)}–${finH(t)} · otra función</b><span>${esc(t.sala)}</span><span>${esc(e.txt)}</span><button type="button" class="gbtn" data-g="${esc(t.key)}" data-from="${esc(fantasmaDe||"")}" aria-label="${esc(`${accion}: ${diaCorto(t)} ${t.hora}, ${t.sala}. ${e.txt}`)}">${esc(accion)}</button>`;
+    colEl.appendChild(g); vis.add(t.key);
+  }
+  return vis;
+}
+let fantasmaDe=null, fantasmaMarca=false;
+function accionFantasma(g){
+  const de=porClave.get(g.dataset.from),a=porClave.get(g.dataset.g); ocultarTip();
+  if(!de||!a) return;
+  if(!on(a)&&(on(de)||duda(de))) cambiarFuncion(de,a); else abrir(a.key);
+}
+function borrarFantasmas(){document.querySelectorAll("#m .ghost").forEach(g=>g.remove())}
+function ocultarTip(){clearTimeout(cambioT);tip.hidden=true;tip.classList.remove("dim");tipK=null;borrarFantasmas()}
+// Mientras hay fantasmas a la vista, cruzar otras películas camino al fantasma no los borra:
+// solo se cambia a otra película si el mouse se detiene sobre ella un momento.
+let tipT=null, cambioT=null;
+const ocultarLuego=(ms=450)=>{clearTimeout(tipT);tipT=setTimeout(ocultarTip,ms)};
+$("m").addEventListener("pointerover",e=>{if(e.pointerType==="touch")return;
+  if(e.target.closest(".gbtn")){clearTimeout(tipT);clearTimeout(cambioT);return}
+  const b=e.target.closest(".it[data-s]");
+  if(b){
+    clearTimeout(tipT);
+    if(!tipK||b.dataset.s===tipK||!document.querySelector("#m .ghost")){clearTimeout(cambioT);mostrarTip(b);return}
+    tip.hidden=true;                      // la tarjeta se va de inmediato; los fantasmas esperan un poco
+    clearTimeout(cambioT); cambioT=setTimeout(()=>mostrarTip(b),400);
+  }else if(tipK){clearTimeout(cambioT);tip.hidden=true;ocultarLuego();}});
+$("m").addEventListener("pointerleave",()=>{clearTimeout(cambioT);ocultarLuego(400)});
+$("m").addEventListener("focusin",e=>{if(e.target.closest(".gbtn"))return;const b=e.target.closest(".it[data-s]");b?mostrarTip(b):ocultarTip()});
+// el cambio se ejecuta al presionar (antes de que el foco o el puntero muevan algo)
+$("m").addEventListener("pointerdown",e=>{const g=e.target.closest(".gbtn");if(!g)return;e.preventDefault();e.stopPropagation();accionFantasma(g)},true);
+$("m").addEventListener("focusout",e=>{if(!(e.relatedTarget&&e.relatedTarget.closest&&e.relatedTarget.closest(".gbtn,.it")))ocultarTip()});
+addEventListener("scroll",ocultarTip,{passive:true,capture:true});
+$("m").addEventListener("click",e=>{
+  const g=e.target.closest(".gbtn");
+  if(g){e.stopPropagation();e.preventDefault();if(e.detail===0)accionFantasma(g);return;}   // detail 0 = teclado
+  ocultarTip();},true);
+
+// mueve la marca (o la duda) de una función a otra de la misma película, con opción de deshacer
+let toastT=null;
+function avisar(html,deshacer){
+  const t=$("toast"); t.innerHTML=html+(deshacer?'<button type="button">Deshacer</button>':"");t.hidden=false;
+  if(deshacer) t.querySelector("button").onclick=()=>{deshacer();t.hidden=true};
+  clearTimeout(toastT); toastT=setTimeout(()=>{t.hidden=true},6000);
+}
+function cambiarFuncion(de,a){
+  const antes={p:[...picks],d:[...dudas]};
+  const eraDuda=!on(de)&&duda(de);
+  const ids=new Set(a.films.map(f=>f.id));
+  de.films.forEach(f=>{if(ids.has(f.id)){picks.delete(f.key);dudas.delete(f.key)}});
+  if(!de.films.some(f=>picks.has(f.key))) de.films.forEach(f=>picks.delete(f.key));
+  a.films.forEach(f=>{if(ids.has(f.id)){dudas.delete(f.key);(eraDuda?dudas:picks).add(f.key)}});
+  guardar(); render();
+  const nuevo=document.querySelector(`#m [data-s="${CSS.escape(a.key)}"]`);
+  if(nuevo){resaltar(nuevo);try{nuevo.scrollIntoView({block:"nearest",inline:"nearest",behavior:"smooth"})}catch(e){}}
+  const ch=S.filter(t=>t!==a&&on(t)&&solapa(t,a));
+  avisar(`${esc(titulos(a))}: ${eraDuda?"duda movida":"cambiada"} al ${esc(diaCorto(a))} ${esc(a.hora)}${ch.length?` · <b>choca con ${esc(ch.map(titulos).join(", "))}</b>`:""}`,
+    ()=>{picks=new Set(antes.p);dudas=new Set(antes.d);guardar();render();if(abierta)pintarPop();});
+}
+// "Cambiar a esta": marca la otra función y desmarca la actual
+$("pop").addEventListener("click",e=>{const b=e.target.closest("[data-cambio]");if(!b)return;e.stopPropagation();
+  const de=porClave.get(abierta), a=porClave.get(b.dataset.cambio); if(!de||!a) return;
+  cambiarFuncion(de,a); abierta=a.key; pintarPop();
+},true);
 $("ocultar").addEventListener("input",()=>{try{localStorage.setItem("ficv33-ocultar",$("ocultar").checked?"1":"0")}catch(e){}});
 ["sec","sala","q","libre","solo","solovistas","ocultar"].forEach(id=>$(id).addEventListener("input",render));
 render();
