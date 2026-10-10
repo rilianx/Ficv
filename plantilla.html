@@ -189,11 +189,18 @@ section.sec h2 i:not(.dot){font-style:normal;font-size:10.5px;padding:1px 7px;bo
 .mark.q[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--surface)}
 .nota{color:#d97706;letter-spacing:1px;font-size:13px}
 .stars{display:flex;align-items:center;gap:2px;margin-top:6px;font-size:12.5px;color:var(--muted)}
-.stars button{border:0;background:none;cursor:pointer;font-size:18px;line-height:1;color:var(--line);padding:2px}
-.stars button:first-of-type{font:700 12px var(--f-body);border:1px solid var(--line);border-radius:999px;padding:2px 7px;margin-right:4px;color:var(--muted)}
+.stars .st{position:relative;display:inline-block;font-size:22px;line-height:1;width:1.05em;text-align:center;color:var(--line)}
+.stars .st .g{pointer-events:none}
+.stars .st.lit{color:#d97706}
+.stars .st.half .g{background:linear-gradient(90deg,#d97706 50%,var(--line) 50%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.pop-films .stars .st .g{color:inherit;font-size:inherit;display:inline}
+.pop-films .stars .st.half .g{color:transparent}
+.stars .st .h{position:absolute;top:0;bottom:0;width:50%;border:0;background:none;padding:0;cursor:pointer}
+.stars .st .h.l{left:0}.stars .st .h.r{right:0}
+.stars .st .h:focus-visible{outline:2px solid var(--river);outline-offset:0}
+.stars button.cero{font:700 12px var(--f-body);border:1px solid var(--line);border-radius:999px;padding:2px 7px;margin-right:4px;color:var(--muted)}
 .stars em{font-style:normal;margin-left:6px}
-.stars button.lit{color:#d97706}
-.stars button:first-of-type[aria-pressed="true"]{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.stars button.cero[aria-pressed="true"]{background:var(--ink);color:var(--surface);border-color:var(--ink)}
 .it .tras{display:block;font:700 9.5px/1.2 var(--f-body);color:var(--free);background:var(--free-bg);border-radius:3px;padding:1px 4px;margin:-1px 0 2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .it .tras.lejos{color:#fff;background:#b45309}
 .it .tras.mal{color:#fff;background:var(--clash)}
@@ -411,7 +418,7 @@ function suscribir(){
       picks=new Set((Array.isArray(d.ids)?d.ids:[]).filter(k=>typeof k==="string"));
       vistas=new Set((Array.isArray(d.vistas)?d.vistas:[]).filter(k=>typeof k==="string"));
       dudas=new Set((Array.isArray(d.dudas)?d.dudas:[]).filter(k=>typeof k==="string"));
-      notas={}; if(d.notas&&typeof d.notas==="object") for(const [k,v] of Object.entries(d.notas)) if(Number.isInteger(v)&&v>=0&&v<=5) notas[k]=v;
+      notas={}; if(d.notas&&typeof d.notas==="object") for(const [k,v] of Object.entries(d.notas)) if(Number.isFinite(v)&&v>=0&&v<=5&&Math.round(v*2)===v*2) notas[k]=v;   // medias estrellas: 3.5, 4.5…
       guardarLocal();
       render();
     }else if(first&&(picks.size||vistas.size||dudas.size||Object.keys(notas).length)){guardar();}
@@ -448,7 +455,8 @@ function estado(k,e){const s=porClave.get(k);if(!s)return;          // e: "si" |
   s.films.forEach(f=>{picks.delete(f.key);dudas.delete(f.key);if(e==="si")picks.add(f.key);if(e==="duda")dudas.add(f.key)});guardar();render();}
 function toggle(k){const s=porClave.get(k);if(s)estado(k,on(s)?"no":"si")}
 function toggleDuda(k){const s=porClave.get(k);if(s)estado(k,duda(s)?"no":"duda")}
-const estrellas=n=>n>0?"★".repeat(n):"0 ★";   // solo las estrellas marcadas
+const estrellas=n=>n>0?"★".repeat(Math.floor(n))+(n%1?"½":""):"0 ★";   // solo las estrellas marcadas, con media
+const fmtNota=n=>String(n).replace(".",",");
 const notaS=s=>s.n===1&&vistas.has(s.films[0].id)&&notas[s.films[0].id]!=null?notas[s.films[0].id]:null;
 function ponerNota(id,n){notas[id]===n?delete notas[id]:notas[id]=n;guardar();render();}
 // vistas: por película; una sesión está vista si todas sus películas lo están
@@ -696,7 +704,7 @@ async function exportarPDF(){
       linea(titulos(s),fs+0.5,true,blanco?[255,255,255]:[24,34,31]);
       linea(s.n===1?quienF(f0):s.films.map(f=>f.titulo).join(" · "),fs-0.5,false,blanco?[240,240,240]:[60,70,66]);
       linea(s.sala,fs-0.5,false,blanco?[235,235,235]:[93,107,102]);
-      if(vistaS(s)){doc.setFont("helvetica","bold");doc.setFontSize(5);doc.setTextColor(blanco?255:24);doc.text(notaS(s)!=null?`VISTA ${notaS(s)}/5`:"VISTA",x+ww-1,yy+h-1,{align:"right"})}
+      if(vistaS(s)){doc.setFont("helvetica","bold");doc.setFontSize(5);doc.setTextColor(blanco?255:24);doc.text(notaS(s)!=null?`VISTA ${fmtNota(notaS(s))}/5`:"VISTA",x+ww-1,yy+h-1,{align:"right"})}
       const trp=trasPDF.get(s.key);
       if(trp){doc.setFont("helvetica","bold");doc.setFontSize(5);doc.setTextColor(...(trp.apurado?[185,28,28]:[122,90,0]));
         doc.text(lat(`${trp.lejos?"<> LEJOS":"<> OTRO LUGAR"} ${trp.libre>=0?trp.libre+" min":""}`),x+ww-1,yy+h-(vistaS(s)?3.2:1),{align:"right"})}
@@ -751,7 +759,9 @@ function pintarPop(){
   const det=f=>[f.premiere,f.idioma,f.formato,f.duracion_film&&("Duración "+f.duracion_film)].filter(Boolean).join(" · ");
   const films=s.films.map(f=>`<li><div><b>${esc(f.titulo)}</b><span>${esc(quienF(f))}</span>${det(f)?`<span class="pop-det">${esc(det(f))}</span>`:""}
     ${f.sinopsis?`<details class="pop-sin"${s.n===1?" open":""}><summary>Sinopsis</summary><p>${esc(f.sinopsis)}</p></details>`:""}</div>
-    ${vistas.has(f.id)?`<div class="stars" role="group" aria-label="Tu nota">Tu nota: ${[0,1,2,3,4,5].map(n=>`<button type="button" class="${n>0&&notas[f.id]>=n?"lit":""}" data-nota="${esc(f.id)}|${n}" aria-pressed="${notas[f.id]===n}" title="${n} de 5">${n===0?"0":"★"}</button>`).join("")}<em>${notas[f.id]!=null?notas[f.id]+"/5":"sin nota"}</em></div>`:""}</div>
+    ${vistas.has(f.id)?`<div class="stars" role="group" aria-label="Tu nota">Tu nota: <button type="button" class="cero" data-nota="${esc(f.id)}|0" aria-pressed="${notas[f.id]===0}" title="0 de 5">0</button>${[1,2,3,4,5].map(n=>{const v=notas[f.id];
+      const cls=v>=n?"lit":v===n-0.5?"half":"";
+      return `<span class="st ${cls}"><span class="g" aria-hidden="true">★</span><button type="button" class="h l" data-nota="${esc(f.id)}|${n-0.5}" aria-pressed="${v===n-0.5}" aria-label="${fmtNota(n-0.5)} de 5" title="${fmtNota(n-0.5)}"></button><button type="button" class="h r" data-nota="${esc(f.id)}|${n}" aria-pressed="${v===n}" aria-label="${n} de 5" title="${n}"></button></span>`}).join("")}<em>${notas[f.id]!=null?fmtNota(notas[f.id])+"/5":"sin nota"}</em></div>`:""}</div>
     <div class="pop-fa">${s.n>1?`<button type="button" class="seenbtn" data-vf="${esc(f.id)}" aria-pressed="${vistas.has(f.id)}">${vistas.has(f.id)?"✔ Vista":"Vista"}</button>`:""}${f.url&&s.n>1?`<a href="${esc(f.url)}" target="_blank" rel="noopener">Ver ficha ↗</a>`:""}${lbURL(f)&&s.n>1?`<a href="${esc(lbApp(f))}" target="_blank" rel="noopener">Letterboxd ↗</a>`:""}</div></li>`).join("");
   $("pop-in").innerHTML=`<p class="pop-h">${l.w} ${l.n} de octubre · ${esc(s.hora)}–${finH(s)}</p>
     <h3 id="pop-t">${esc(titulos(s))}</h3>
