@@ -263,6 +263,11 @@ footer a{color:var(--river)}
 .it .cpb{position:absolute;top:3px;right:3px;display:grid;place-items:center;width:17px;height:17px;border-radius:50%;background:var(--ink);color:var(--surface);z-index:1}
 .it .cpb .cpi{width:12px;height:12px}
 .it.duda .cpb{top:auto;bottom:3px}
+
+/* línea de la hora actual */
+.ahora{position:absolute;left:-1px;right:0;height:0;border-top:2px solid #e11d48;z-index:4;pointer-events:none}
+.ahora::before{content:"";position:absolute;left:-5px;top:-6px;width:10px;height:10px;border-radius:50%;background:#e11d48}
+.ahora span{position:absolute;right:2px;top:-17px;font:700 10.5px var(--f-mono);color:#fff;background:#e11d48;border-radius:4px;padding:1px 5px}
 </style>
 <div class="wrap">
   <header class="top">
@@ -748,7 +753,28 @@ function render(){
   const sx=cal&&document.querySelector(".wk")?document.querySelector(".wk").scrollLeft:0;
   $("m").innerHTML=cal?pintarCal(ver,cl):pintarLista(ver,cl);
   if(cal&&document.querySelector(".wk")) document.querySelector(".wk").scrollLeft=sx;
+  if(cal) ponerAhora(true);
 }
+// ---------- línea de la hora actual (hora de Chile) en la columna de hoy ----------
+let yaCentrado=false;
+function ahoraChile(){
+  const p=Object.fromEntries(new Intl.DateTimeFormat("en-CA",{timeZone:"America/Santiago",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",hourCycle:"h23"}).formatToParts(new Date()).map(x=>[x.type,x.value]));
+  return {dia:`${p.year}-${p.month}-${p.day}`,min:(+p.hour)*60+(+p.minute),txt:`${p.hour}:${p.minute}`};
+}
+function ponerAhora(centrar){
+  document.querySelectorAll(".ahora").forEach(x=>x.remove());
+  if(vista!=="cal"||!calGeo) return;
+  const a=ahoraChile(), col=document.querySelector(`.col[data-d="${a.dia}"]`);
+  if(!col) return;
+  const {h0,h1,PPM}=calGeo; if(a.min<h0*60||a.min>h1*60) return;
+  const top=(a.min-h0*60)*PPM, d=document.createElement("div");
+  d.className="ahora"; d.style.top=top+"px"; d.innerHTML=`<span>${a.txt}</span>`; d.setAttribute("aria-label","Hora actual "+a.txt);
+  col.appendChild(d);
+  if(centrar&&!yaCentrado){ yaCentrado=true;                 // la primera vez, llevar la vista a la hora actual
+    const wk=document.querySelector(".wk"); if(wk){ wk.scrollTop=Math.max(0,top-wk.clientHeight/3);
+      wk.scrollLeft=Math.max(0,col.parentElement.offsetLeft-60); } }
+}
+setInterval(()=>ponerAhora(false),60000);
 function irA(){try{history.replaceState(null,"",vista==="cal"?"#calendario":dia==="todos"?location.pathname:"#"+dia)}catch(_){}}
 $("days").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;dia=b.dataset.d;irA();render();
   const top=document.querySelector(".bar").offsetTop; if(scrollY>top) scrollTo({top});});
