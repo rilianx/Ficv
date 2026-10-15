@@ -363,7 +363,16 @@ $("sala").innerHTML='<option value="">Todas las salas</option>'+salas.map(s=>`<o
 $("tot").textContent=`${new Set(F.map(f=>f.id)).size} películas · ${S.length} funciones`;
 
 let vista="list", dia="todos";
+// recordar dónde estaba (vista, día y desplazamiento) por si el navegador recarga la página al volver de otro sitio
+let posGuardada=null;
+try{const g=JSON.parse(localStorage.getItem("ficv33-pos")||"null");
+  if(g&&Date.now()-g.t<6*3600e3){ if(g.vista==="cal"||g.vista==="list") vista=g.vista; if(g.dia==="todos"||dias.includes(g.dia)) dia=g.dia; posGuardada=g; }}catch(e){}
 try{const h=location.hash.slice(1);if(h==="calendario")vista="cal";else if(dias.includes(h))dia=h;}catch(e){}
+function guardarPos(){try{const wk=document.querySelector(".wk");
+  localStorage.setItem("ficv33-pos",JSON.stringify({t:Date.now(),vista,dia,y:scrollY,wx:wk?wk.scrollLeft:0,wy:wk?wk.scrollTop:0}))}catch(e){}}
+addEventListener("pagehide",guardarPos);
+document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="hidden")guardarPos()});
+addEventListener("pageshow",e=>{if(e.persisted) render()});   // volver con "atrás" desde la caché del navegador
 
 // ---------- marcadas: por perfil (Ignacio / Marian), en la base de datos del artifact (privada por persona) o en este navegador ----------
 const PERFILES=["Ignacio","Marian"];
@@ -767,12 +776,12 @@ function ponerAhora(centrar){
   const top=(a.min-h0*60)*PPM, d=document.createElement("div");
   d.className="ahora"; d.style.top=top+"px"; d.innerHTML=`<span>${a.txt}</span>`; d.setAttribute("aria-label","Hora actual "+a.txt);
   col.appendChild(d);
-  if(centrar&&!yaCentrado){ yaCentrado=true;                 // la primera vez, llevar la vista a la hora actual
+  if(centrar&&!yaCentrado&&!posGuardada){ yaCentrado=true;                 // la primera vez, llevar la vista a la hora actual
     const wk=document.querySelector(".wk"); if(wk){ wk.scrollTop=Math.max(0,top-wk.clientHeight/3);
       wk.scrollLeft=Math.max(0,col.parentElement.offsetLeft-60); } }
 }
 setInterval(()=>ponerAhora(false),60000);
-function irA(){try{history.replaceState(null,"",vista==="cal"?"#calendario":dia==="todos"?location.pathname:"#"+dia)}catch(_){}}
+function irA(){guardarPos();try{history.replaceState(null,"",vista==="cal"?"#calendario":dia==="todos"?location.pathname:"#"+dia)}catch(_){}}
 $("days").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;dia=b.dataset.d;irA();render();
   const top=document.querySelector(".bar").offsetTop; if(scrollY>top) scrollTo({top});});
 $("v-list").onclick=()=>{vista="list";irA();render()};
@@ -962,4 +971,6 @@ $("pop").addEventListener("click",e=>{const b=e.target.closest("[data-cambio]");
 $("ocultar").addEventListener("input",()=>{try{localStorage.setItem("ficv33-ocultar",$("ocultar").checked?"1":"0")}catch(e){}});
 ["sec","sala","q","libre","solo","solovistas","ocultar"].forEach(id=>$(id).addEventListener("input",render));
 render();
+if(posGuardada){ requestAnimationFrame(()=>{ const wk=document.querySelector(".wk");
+  if(wk){wk.scrollLeft=posGuardada.wx||0; wk.scrollTop=posGuardada.wy||0;} scrollTo(0,posGuardada.y||0); yaCentrado=true; }); }
 </script>
