@@ -266,8 +266,6 @@ footer a{color:var(--river)}
 .ahora::before{content:"";position:absolute;left:-5px;top:-6px;width:10px;height:10px;border-radius:50%;background:#e11d48}
 .ahora span{position:absolute;right:2px;top:-17px;font:700 10.5px var(--f-mono);color:#fff;background:#e11d48;border-radius:4px;padding:1px 5px}
 
-.btn.lbapp{background:#14181c;border-color:#14181c;color:#fff}
-.btn.lbapp::before{content:"";width:10px;height:10px;border-radius:50%;background:#00e054;box-shadow:12px 0 0 #40bcf4,-12px 0 0 #ff8000;margin:0 16px 0 14px}
 </style>
 <div class="wrap">
   <header class="top">
@@ -311,9 +309,6 @@ const LB={"k3rvyYJYMubR39": "in-the-shadow-of-the-heron", "N8m8JXmznxGSRw": "a-p
 const lbURL=f=>LB[f.id]?"https://letterboxd.com/film/"+LB[f.id]+"/":"";
 // enlace normal a letterboxd.com: desde Chrome o Safari el teléfono lo abre en la app de Letterboxd si está instalada
 const lbApp=lbURL;
-// Android: enlace que pide al sistema abrir la app de Letterboxd sin salir del programa (si no está, abre la web)
-const ANDROID=/Android/i.test(navigator.userAgent);
-const lbIntent=f=>LB[f.id]?"intent://letterboxd.com/film/"+LB[f.id]+"/#Intent;scheme=https;package=com.letterboxd.letterboxd;S.browser_fallback_url="+encodeURIComponent(lbURL(f))+";end":"";
 const DUR=90, MARGEN=0, H0=10, H1=24;   // la duración de la función ya incluye presentación y holgura; MARGEN queda en 0
            // franja visible por día; duración si la ficha no la trae
 const DN=["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"];
@@ -821,7 +816,7 @@ function pintarPop(){
       :'<button type="button" class="btn pri" data-acc="t">Agregar a mi calendario</button><button type="button" class="btn" data-acc="q">Agregar con «?»</button>'}
       <button type="button" class="btn${vistaS(s)?" seen-on":""}" data-acc="v">${vistaS(s)?"✔ Vista · desmarcar":"Marcar como vista"}</button>
       ${s.n===1&&s.films[0].url?`<a class="btn" href="${esc(s.films[0].url)}" target="_blank" rel="noopener">Ver ficha en el festival ↗</a>`:""}
-      ${s.n===1&&lbURL(s.films[0])?`${ANDROID?`<a class="btn lbapp" href="${esc(lbIntent(s.films[0]))}" target="_blank" rel="noopener">Abrir en app Letterboxd</a>`:""}<a class="btn" href="${esc(lbApp(s.films[0]))}" target="_blank" rel="noopener">Ver en Letterboxd ↗</a><button type="button" class="btn" data-copiar="${esc(lbURL(s.films[0]))}">Copiar enlace</button>`:""}
+      ${s.n===1&&lbURL(s.films[0])?`<a class="btn" href="${esc(lbApp(s.films[0]))}" target="_blank" rel="noopener">Ver en Letterboxd ↗</a><button type="button" class="btn" data-copiar="${esc(lbURL(s.films[0]))}">Copiar enlace</button>`:""}
       <button type="button" class="btn" data-acc="c">Cerrar</button></div>`;
 }
 function abrir(k){abierta=k;pintarPop();resaltar(document.querySelector(`#m [data-s="${CSS.escape(k)}"]`));try{$("pop").showModal()}catch(e){$("pop").setAttribute("open","")}}
