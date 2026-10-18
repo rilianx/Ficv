@@ -1,0 +1,713 @@
+{
+ "total": 239,
+ "limit": 12,
+ "offset": "240",
+ "items": [
+  {
+   "id": "1vU4hLxafirZLm",
+   "fields": {
+    "EguiE": [
+     {
+      "id": "SgSpB81pgB6MoH",
+      "label": "Carpa de La Ciencia"
+     }
+    ],
+    "9tf35": {
+     "id": "5b49243c-99a4-4b66-950e-d98d5254fafa",
+     "label": "Actividades Paralelas"
+    },
+    "cIddG": [],
+    "6A3kv": 11,
+    "EOkFi": [
+     {
+      "id": "8ceb5fef-3658-4464-8ee5-e9dcf51eb741",
+      "label": "Martes 13"
+     }
+    ],
+    "LVmhF": [
+     "Martes 13 - 15:30 - Carpa de La Ciencia"
+    ],
+    "mllcQ": [
+     {
+      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/1vU4hLxafirZLm/mllcQ/27454e6a-0461-4ff4-b314-10d90c969f38/48bc2a4d-25b0-445c-8ee7-88282c574480",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/1vU4hLxafirZLm/mllcQ/27454e6a-0461-4ff4-b314-10d90c969f38/48bc2a4d-25b0-445c-8ee7-88282c574480?response-content-disposition=inline%3B%20filename%3D%22MasterClass-AntonioVazquez.jpg%22%3B%20filename%2A%3DUTF-8%27%27MasterClass-AntonioVazquez.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261018T143918Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261018%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=1fc66a616a6b0ba188742c17bb9f91533a19017479ff02a6420e6f30c91e7646",
+      "filename": "MasterClass-AntonioVazquez.jpg",
+      "type": "image/jpeg",
+      "size": 743504,
+      "thumbnails": [
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/NBbY3lpiDWNBdrdyUrr5HqEC8ql6TDrLZOm89PLYiuE/rs:fit:200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvMXZVNGhMeGFmaXJaTG0vbWxsY1EvMjc0NTRlNmEtMDQ2MS00ZmY0LWIzMTQtMTBkOTBjOTY5ZjM4LzQ4YmMyYTRkLTI1YjAtNDQ1Yy04ZWU3LTg4MjgyYzU3NDQ4MA",
+        "size": "small"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/g-mY7xhlWq6CEgTbFku89xte95CQF1_XOb8FHnl9xpY/rs:fit:600:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvMXZVNGhMeGFmaXJaTG0vbWxsY1EvMjc0NTRlNmEtMDQ2MS00ZmY0LWIzMTQtMTBkOTBjOTY5ZjM4LzQ4YmMyYTRkLTI1YjAtNDQ1Yy04ZWU3LTg4MjgyYzU3NDQ4MA",
+        "size": "medium"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/KsI_m6-0wa_njuMLGgRuRT3EyuUdaWh1qZjeZ43PPwQ/rs:fit:1200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvMXZVNGhMeGFmaXJaTG0vbWxsY1EvMjc0NTRlNmEtMDQ2MS00ZmY0LWIzMTQtMTBkOTBjOTY5ZjM4LzQ4YmMyYTRkLTI1YjAtNDQ1Yy04ZWU3LTg4MjgyYzU3NDQ4MA",
+        "size": "large"
+       }
+      ],
+      "expiresAt": null
+     }
+    ],
+    "VWKRF": [
+     {
+      "id": "0a15c425-1ee4-4bfe-b02d-7d8ad183986b",
+      "label": "Aula"
+     }
+    ],
+    "tgI6Y": "Masterclass: Accesibilidad audiovisual: una realidad más que una ficción",
+    "EStWy": null,
+    "U11RE": [
+     {
+      "id": "7c019120-12db-4c05-9987-5f016b00911a",
+      "label": "Entrada Liberada"
+     }
+    ]
+   }
+  },
+  {
+   "id": "umjzI6vSDIwNG4",
+   "fields": {
+    "EguiE": [
+     {
+      "id": "SgSpB81pgB6MoH",
+      "label": "Carpa de La Ciencia"
+     }
+    ],
+    "9tf35": {
+     "id": "5b49243c-99a4-4b66-950e-d98d5254fafa",
+     "label": "Actividades Paralelas"
+    },
+    "cIddG": [],
+    "6A3kv": 11,
+    "EOkFi": [
+     {
+      "id": "2fe8d99b-a94f-4814-8031-cd08772dda34",
+      "label": "Jueves 15"
+     }
+    ],
+    "LVmhF": [
+     "Jueves 15 - 15:30 - Carpa de La Ciencia"
+    ],
+    "mllcQ": [
+     {
+      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/umjzI6vSDIwNG4/mllcQ/b53e71c1-6c00-4f28-a67d-61603e2a7f58/fa238b3e-3b67-41ec-9558-a4fa36fcdade",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/umjzI6vSDIwNG4/mllcQ/b53e71c1-6c00-4f28-a67d-61603e2a7f58/fa238b3e-3b67-41ec-9558-a4fa36fcdade?response-content-disposition=inline%3B%20filename%3D%22Conversatorio-Estrategias-transicion-trabajo.jpg%22%3B%20filename%2A%3DUTF-8%27%27Conversatorio-Estrategias-transicion-trabajo.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261018T143918Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261018%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=312f18f2690397b90eca5207cfc059b966e4fe10a51eaa6d396ceb986699e39a",
+      "filename": "Conversatorio-Estrategias-transicion-trabajo.jpg",
+      "type": "image/jpeg",
+      "size": 406176,
+      "thumbnails": [
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/x_aeHO6PDP3yphlWlWbTiiuCEkr_LDdZNYDUt5e5Mcs/rs:fit:200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvdW1qekk2dlNESXdORzQvbWxsY1EvYjUzZTcxYzEtNmMwMC00ZjI4LWE2N2QtNjE2MDNlMmE3ZjU4L2ZhMjM4YjNlLTNiNjctNDFlYy05NTU4LWE0ZmEzNmZjZGFkZQ",
+        "size": "small"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/p4DlonFr24n9aHNQ-6c8fulX6zdeiXZqMpeLrWPK8vU/rs:fit:600:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvdW1qekk2dlNESXdORzQvbWxsY1EvYjUzZTcxYzEtNmMwMC00ZjI4LWE2N2QtNjE2MDNlMmE3ZjU4L2ZhMjM4YjNlLTNiNjctNDFlYy05NTU4LWE0ZmEzNmZjZGFkZQ",
+        "size": "medium"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/l-yU6I-NVVdn5vW3zR_D3pb5SS3J27UZfePgzmRQJUw/rs:fit:1200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvdW1qekk2dlNESXdORzQvbWxsY1EvYjUzZTcxYzEtNmMwMC00ZjI4LWE2N2QtNjE2MDNlMmE3ZjU4L2ZhMjM4YjNlLTNiNjctNDFlYy05NTU4LWE0ZmEzNmZjZGFkZQ",
+        "size": "large"
+       }
+      ],
+      "expiresAt": null
+     }
+    ],
+    "VWKRF": [
+     {
+      "id": "0a15c425-1ee4-4bfe-b02d-7d8ad183986b",
+      "label": "Aula"
+     }
+    ],
+    "tgI6Y": "Se está arrimando un día feliz. Estrategias de acompañamiento para la transición al mundo del trabajo",
+    "EStWy": null,
+    "U11RE": [
+     {
+      "id": "7c019120-12db-4c05-9987-5f016b00911a",
+      "label": "Entrada Liberada"
+     }
+    ]
+   }
+  },
+  {
+   "id": "OuBcOeBOXPSifY",
+   "fields": {
+    "EguiE": [
+     {
+      "id": "7EN9f2agjwRlty",
+      "label": "CFT Los Ríos"
+     }
+    ],
+    "9tf35": {
+     "id": "5b49243c-99a4-4b66-950e-d98d5254fafa",
+     "label": "Actividades Paralelas"
+    },
+    "cIddG": [],
+    "6A3kv": 11,
+    "EOkFi": [
+     {
+      "id": "8ceb5fef-3658-4464-8ee5-e9dcf51eb741",
+      "label": "Martes 13"
+     }
+    ],
+    "LVmhF": [
+     "Martes 13 - 10:00 - CFT Los Ríos"
+    ],
+    "mllcQ": [
+     {
+      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/OuBcOeBOXPSifY/mllcQ/2d415768-b602-43b6-8d0a-5c59f6e6c50b/e96b6b01-2258-4936-a320-7239c492d66c",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/OuBcOeBOXPSifY/mllcQ/2d415768-b602-43b6-8d0a-5c59f6e6c50b/e96b6b01-2258-4936-a320-7239c492d66c?response-content-disposition=inline%3B%20filename%3D%22MasterClass-Alejandro-Angel.jpg%22%3B%20filename%2A%3DUTF-8%27%27MasterClass-Alejandro-Angel.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261018T143918Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261018%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=1e8f4f3568031a0f6d68e0b9b3915fbf3f53ef14ad4d34fac12168e66cd7ab31",
+      "filename": "MasterClass-Alejandro-Angel.jpg",
+      "type": "image/jpeg",
+      "size": 291522,
+      "thumbnails": [
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/YCqIqmJVCSLrMIhH_DUi-CFzcyzI_E4yYC_0NaE8MBU/rs:fit:200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvT3VCY09lQk9YUFNpZlkvbWxsY1EvMmQ0MTU3NjgtYjYwMi00M2I2LThkMGEtNWM1OWY2ZTZjNTBiL2U5NmI2YjAxLTIyNTgtNDkzNi1hMzIwLTcyMzljNDkyZDY2Yw",
+        "size": "small"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/cJ6UUMs2zPJk8V897bjpZy6OmEokKJYlv8sdGQPshIk/rs:fit:600:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvT3VCY09lQk9YUFNpZlkvbWxsY1EvMmQ0MTU3NjgtYjYwMi00M2I2LThkMGEtNWM1OWY2ZTZjNTBiL2U5NmI2YjAxLTIyNTgtNDkzNi1hMzIwLTcyMzljNDkyZDY2Yw",
+        "size": "medium"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/98vUwO0F4Nz7oXnQGBxswYlBFWCL4hQOBzpE_NFAhYw/rs:fit:1200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvT3VCY09lQk9YUFNpZlkvbWxsY1EvMmQ0MTU3NjgtYjYwMi00M2I2LThkMGEtNWM1OWY2ZTZjNTBiL2U5NmI2YjAxLTIyNTgtNDkzNi1hMzIwLTcyMzljNDkyZDY2Yw",
+        "size": "large"
+       }
+      ],
+      "expiresAt": null
+     }
+    ],
+    "VWKRF": [
+     {
+      "id": "0a15c425-1ee4-4bfe-b02d-7d8ad183986b",
+      "label": "Aula"
+     }
+    ],
+    "tgI6Y": "¿Cuántas historias necesitamos para #NarrarElFuturo?",
+    "EStWy": "CFT Los Ríos  Boettcher S/N°, La Unión",
+    "U11RE": [
+     {
+      "id": "7c019120-12db-4c05-9987-5f016b00911a",
+      "label": "Entrada Liberada"
+     }
+    ]
+   }
+  },
+  {
+   "id": "Y1IiBpoUW3RDxJ",
+   "fields": {
+    "EguiE": [
+     {
+      "id": "SgSpB81pgB6MoH",
+      "label": "Carpa de La Ciencia"
+     }
+    ],
+    "9tf35": {
+     "id": "5b49243c-99a4-4b66-950e-d98d5254fafa",
+     "label": "Actividades Paralelas"
+    },
+    "cIddG": [],
+    "6A3kv": 11,
+    "EOkFi": [
+     {
+      "id": "011a78b2-dd9f-4829-aefa-9922656c2c99",
+      "label": "Miércoles 14"
+     }
+    ],
+    "LVmhF": [
+     "Miércoles 14 - 15:30 - Carpa de La Ciencia"
+    ],
+    "mllcQ": [
+     {
+      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/Y1IiBpoUW3RDxJ/mllcQ/a6c7389b-b92f-461f-93d3-ba3251594719/533f9db7-7ad7-44ad-bebc-020c695b2bab",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/Y1IiBpoUW3RDxJ/mllcQ/a6c7389b-b92f-461f-93d3-ba3251594719/533f9db7-7ad7-44ad-bebc-020c695b2bab?response-content-disposition=inline%3B%20filename%3D%22Conversatorio-Cine-Latinoamericano.jpg%22%3B%20filename%2A%3DUTF-8%27%27Conversatorio-Cine-Latinoamericano.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261018T143918Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261018%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=e3259b600e7abfa099e65467c6beafded19eeee41c1e1ac459008dedd2d76d90",
+      "filename": "Conversatorio-Cine-Latinoamericano.jpg",
+      "type": "image/jpeg",
+      "size": 573028,
+      "thumbnails": [
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/iwnCLHRcgO2oESMmoxgenoMm6sjg8ZfDNieOYlk0HX4/rs:fit:200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvWTFJaUJwb1VXM1JEeEovbWxsY1EvYTZjNzM4OWItYjkyZi00NjFmLTkzZDMtYmEzMjUxNTk0NzE5LzUzM2Y5ZGI3LTdhZDctNDRhZC1iZWJjLTAyMGM2OTViMmJhYg",
+        "size": "small"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/4qqaAnyVgd6MlOjSbZs9LP5V_6-ruyh1t2tShYqLgmc/rs:fit:600:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvWTFJaUJwb1VXM1JEeEovbWxsY1EvYTZjNzM4OWItYjkyZi00NjFmLTkzZDMtYmEzMjUxNTk0NzE5LzUzM2Y5ZGI3LTdhZDctNDRhZC1iZWJjLTAyMGM2OTViMmJhYg",
+        "size": "medium"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/9KDH7vlnbYA3kMCySEptxjsEQoCzrpy6KJrENP8IGe0/rs:fit:1200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvWTFJaUJwb1VXM1JEeEovbWxsY1EvYTZjNzM4OWItYjkyZi00NjFmLTkzZDMtYmEzMjUxNTk0NzE5LzUzM2Y5ZGI3LTdhZDctNDRhZC1iZWJjLTAyMGM2OTViMmJhYg",
+        "size": "large"
+       }
+      ],
+      "expiresAt": null
+     }
+    ],
+    "VWKRF": [
+     {
+      "id": "0a15c425-1ee4-4bfe-b02d-7d8ad183986b",
+      "label": "Aula"
+     }
+    ],
+    "tgI6Y": "¿De quién es el mapa? Producción y circulación del cine latinoamericano hoy",
+    "EStWy": null,
+    "U11RE": [
+     {
+      "id": "7c019120-12db-4c05-9987-5f016b00911a",
+      "label": "Entrada Liberada"
+     }
+    ]
+   }
+  },
+  {
+   "id": "S7fhbLJBd5n273",
+   "fields": {
+    "EguiE": [
+     {
+      "id": "SgSpB81pgB6MoH",
+      "label": "Carpa de La Ciencia"
+     }
+    ],
+    "9tf35": {
+     "id": "5b49243c-99a4-4b66-950e-d98d5254fafa",
+     "label": "Actividades Paralelas"
+    },
+    "cIddG": [],
+    "6A3kv": 11,
+    "EOkFi": [
+     {
+      "id": "8ceb5fef-3658-4464-8ee5-e9dcf51eb741",
+      "label": "Martes 13"
+     }
+    ],
+    "LVmhF": [
+     "Martes 13 - 18:30 - Carpa de La Ciencia"
+    ],
+    "mllcQ": [
+     {
+      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/S7fhbLJBd5n273/mllcQ/47e1c0ee-3aee-47b8-88de-9cb07e0ce651/03d96bac-e3f3-4d44-a8b7-3847dd848ab1",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/S7fhbLJBd5n273/mllcQ/47e1c0ee-3aee-47b8-88de-9cb07e0ce651/03d96bac-e3f3-4d44-a8b7-3847dd848ab1?response-content-disposition=inline%3B%20filename%3D%22KAWIN-Valdivia-Ciudad-Creativa.jpg%22%3B%20filename%2A%3DUTF-8%27%27KAWIN-Valdivia-Ciudad-Creativa.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261018T143918Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261018%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=bddc3ad6c2a91e1383bc608c446229b143bd4ed133df31a141eae3bf2352d02a",
+      "filename": "KAWIN-Valdivia-Ciudad-Creativa.jpg",
+      "type": "image/jpeg",
+      "size": 487720,
+      "thumbnails": [
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/U7Wn2gIglwwQA1wb_1slcC-3uXyDSWcqyv6Z7gOWx9M/rs:fit:200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvUzdmaGJMSkJkNW4yNzMvbWxsY1EvNDdlMWMwZWUtM2FlZS00N2I4LTg4ZGUtOWNiMDdlMGNlNjUxLzAzZDk2YmFjLWUzZjMtNGQ0NC1hOGI3LTM4NDdkZDg0OGFiMQ",
+        "size": "small"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/_WotiZgpSPzhM6cYEoPR5eOSZPuXwk0-G7dljFsDCMc/rs:fit:600:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvUzdmaGJMSkJkNW4yNzMvbWxsY1EvNDdlMWMwZWUtM2FlZS00N2I4LTg4ZGUtOWNiMDdlMGNlNjUxLzAzZDk2YmFjLWUzZjMtNGQ0NC1hOGI3LTM4NDdkZDg0OGFiMQ",
+        "size": "medium"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/Na1GYfmAD41YNVPVQ8-NvfHAF3CVAUkBx80nE_FfkFk/rs:fit:1200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvUzdmaGJMSkJkNW4yNzMvbWxsY1EvNDdlMWMwZWUtM2FlZS00N2I4LTg4ZGUtOWNiMDdlMGNlNjUxLzAzZDk2YmFjLWUzZjMtNGQ0NC1hOGI3LTM4NDdkZDg0OGFiMQ",
+        "size": "large"
+       }
+      ],
+      "expiresAt": null
+     }
+    ],
+    "VWKRF": [
+     {
+      "id": "b746ce85-dec8-4dc5-b2f0-ee4801107a13",
+      "label": "Kawin"
+     }
+    ],
+    "tgI6Y": "Desafíos y propuestas Valdivia Ciudad Creativa de la UNESCO",
+    "EStWy": null,
+    "U11RE": [
+     {
+      "id": "7c019120-12db-4c05-9987-5f016b00911a",
+      "label": "Entrada Liberada"
+     }
+    ]
+   }
+  },
+  {
+   "id": "Gi25rSOGZB951j",
+   "fields": {
+    "EguiE": [
+     {
+      "id": "SgSpB81pgB6MoH",
+      "label": "Carpa de La Ciencia"
+     }
+    ],
+    "9tf35": {
+     "id": "5b49243c-99a4-4b66-950e-d98d5254fafa",
+     "label": "Actividades Paralelas"
+    },
+    "cIddG": [],
+    "6A3kv": 11,
+    "EOkFi": [
+     {
+      "id": "011a78b2-dd9f-4829-aefa-9922656c2c99",
+      "label": "Miércoles 14"
+     }
+    ],
+    "LVmhF": [
+     "Miércoles 14 - 18:30 - Carpa de La Ciencia"
+    ],
+    "mllcQ": [
+     {
+      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/Gi25rSOGZB951j/mllcQ/3d87cdb6-d265-4fdd-b5a3-9df9882763de/38721c7b-0d6c-4d2d-9c07-7a06da95f46d",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/Gi25rSOGZB951j/mllcQ/3d87cdb6-d265-4fdd-b5a3-9df9882763de/38721c7b-0d6c-4d2d-9c07-7a06da95f46d?response-content-disposition=inline%3B%20filename%3D%22KAWIN-Naturaleza-Bienestar-DDHH.jpg%22%3B%20filename%2A%3DUTF-8%27%27KAWIN-Naturaleza-Bienestar-DDHH.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261018T143918Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261018%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=65213da4975aced100c91fb3197bf2ae90abd4424a6da9cb7a228db071fe34cb",
+      "filename": "KAWIN-Naturaleza-Bienestar-DDHH.jpg",
+      "type": "image/jpeg",
+      "size": 489947,
+      "thumbnails": [
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/aLRzDcyLoYaDhVpOz8k8CQuY83ZbYYQBU9hQJ3fmrxs/rs:fit:200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvR2kyNXJTT0daQjk1MWovbWxsY1EvM2Q4N2NkYjYtZDI2NS00ZmRkLWI1YTMtOWRmOTg4Mjc2M2RlLzM4NzIxYzdiLTBkNmMtNGQyZC05YzA3LTdhMDZkYTk1ZjQ2ZA",
+        "size": "small"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/CVvfra4E6kzDXPVN7B_NaodLTpRb7P6b4vh1lXcYhGo/rs:fit:600:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvR2kyNXJTT0daQjk1MWovbWxsY1EvM2Q4N2NkYjYtZDI2NS00ZmRkLWI1YTMtOWRmOTg4Mjc2M2RlLzM4NzIxYzdiLTBkNmMtNGQyZC05YzA3LTdhMDZkYTk1ZjQ2ZA",
+        "size": "medium"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/qpXFipnCZbkRFiJ1BGucx4RfqNrCnow1J3wXHJ__BFo/rs:fit:1200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvR2kyNXJTT0daQjk1MWovbWxsY1EvM2Q4N2NkYjYtZDI2NS00ZmRkLWI1YTMtOWRmOTg4Mjc2M2RlLzM4NzIxYzdiLTBkNmMtNGQyZC05YzA3LTdhMDZkYTk1ZjQ2ZA",
+        "size": "large"
+       }
+      ],
+      "expiresAt": null
+     }
+    ],
+    "VWKRF": [
+     {
+      "id": "b746ce85-dec8-4dc5-b2f0-ee4801107a13",
+      "label": "Kawin"
+     }
+    ],
+    "tgI6Y": "Naturaleza, bienestar social y derechos humanos",
+    "EStWy": null,
+    "U11RE": [
+     {
+      "id": "7c019120-12db-4c05-9987-5f016b00911a",
+      "label": "Entrada Liberada"
+     }
+    ]
+   }
+  },
+  {
+   "id": "sEyoEbkewJs6qa",
+   "fields": {
+    "EguiE": [
+     {
+      "id": "SgSpB81pgB6MoH",
+      "label": "Carpa de La Ciencia"
+     }
+    ],
+    "9tf35": {
+     "id": "5b49243c-99a4-4b66-950e-d98d5254fafa",
+     "label": "Actividades Paralelas"
+    },
+    "cIddG": [],
+    "6A3kv": 11,
+    "EOkFi": [
+     {
+      "id": "2fe8d99b-a94f-4814-8031-cd08772dda34",
+      "label": "Jueves 15"
+     }
+    ],
+    "LVmhF": [
+     "Jueves 15 - 18:30 - Carpa de La Ciencia"
+    ],
+    "mllcQ": [
+     {
+      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/sEyoEbkewJs6qa/mllcQ/04b19ae8-7950-4929-bbc1-478f4037136a/cf410ebf-e362-4c66-bf19-95275e383c63",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/sEyoEbkewJs6qa/mllcQ/04b19ae8-7950-4929-bbc1-478f4037136a/cf410ebf-e362-4c66-bf19-95275e383c63?response-content-disposition=inline%3B%20filename%3D%22KAWIN-Alimentacion.jpg%22%3B%20filename%2A%3DUTF-8%27%27KAWIN-Alimentacion.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261018T143918Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261018%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=d719eb180c225ef437b3a28c5b905a85a0f432f3e8c49f1e8ca29bef744a0744",
+      "filename": "KAWIN-Alimentacion.jpg",
+      "type": "image/jpeg",
+      "size": 511098,
+      "thumbnails": [
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/X2Ano0PxVlAiNBeIz-EPfvQt480vgGTIp6C1fA4cziU/rs:fit:200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvc0V5b0Via2V3SnM2cWEvbWxsY1EvMDRiMTlhZTgtNzk1MC00OTI5LWJiYzEtNDc4ZjQwMzcxMzZhL2NmNDEwZWJmLWUzNjItNGM2Ni1iZjE5LTk1Mjc1ZTM4M2M2Mw",
+        "size": "small"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/GBps4r3B2BUns37B5dj15k68Ekdept---2n2Wj79BoU/rs:fit:600:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvc0V5b0Via2V3SnM2cWEvbWxsY1EvMDRiMTlhZTgtNzk1MC00OTI5LWJiYzEtNDc4ZjQwMzcxMzZhL2NmNDEwZWJmLWUzNjItNGM2Ni1iZjE5LTk1Mjc1ZTM4M2M2Mw",
+        "size": "medium"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/sebRVPXRYjm-GGAXQiGDZ3Ql5jTNJ5j5fmKIQLgE50k/rs:fit:1200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvc0V5b0Via2V3SnM2cWEvbWxsY1EvMDRiMTlhZTgtNzk1MC00OTI5LWJiYzEtNDc4ZjQwMzcxMzZhL2NmNDEwZWJmLWUzNjItNGM2Ni1iZjE5LTk1Mjc1ZTM4M2M2Mw",
+        "size": "large"
+       }
+      ],
+      "expiresAt": null
+     }
+    ],
+    "VWKRF": [
+     {
+      "id": "b746ce85-dec8-4dc5-b2f0-ee4801107a13",
+      "label": "Kawin"
+     }
+    ],
+    "tgI6Y": "¿Qué sostiene nuestra alimentación?",
+    "EStWy": null,
+    "U11RE": [
+     {
+      "id": "7c019120-12db-4c05-9987-5f016b00911a",
+      "label": "Entrada Liberada"
+     }
+    ]
+   }
+  },
+  {
+   "id": "vbOEDbuw1y1zq1",
+   "fields": {
+    "EguiE": [
+     {
+      "id": "SgSpB81pgB6MoH",
+      "label": "Carpa de La Ciencia"
+     }
+    ],
+    "9tf35": {
+     "id": "5b49243c-99a4-4b66-950e-d98d5254fafa",
+     "label": "Actividades Paralelas"
+    },
+    "cIddG": [],
+    "6A3kv": 11,
+    "EOkFi": [
+     {
+      "id": "011a78b2-dd9f-4829-aefa-9922656c2c99",
+      "label": "Miércoles 14"
+     }
+    ],
+    "LVmhF": [
+     "Miércoles 14 - 11:00 - Carpa de La Ciencia"
+    ],
+    "mllcQ": [
+     {
+      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/vbOEDbuw1y1zq1/mllcQ/a48e401e-9508-44b2-9a95-8a34a2c76b0d/91a31382-0b8a-4d96-a272-da31ce2fca45",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/vbOEDbuw1y1zq1/mllcQ/a48e401e-9508-44b2-9a95-8a34a2c76b0d/91a31382-0b8a-4d96-a272-da31ce2fca45?response-content-disposition=inline%3B%20filename%3D%22Voces-CIne-Lanzamientos.jpg%22%3B%20filename%2A%3DUTF-8%27%27Voces-CIne-Lanzamientos.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261018T143918Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261018%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=368077366e027db64c023c0abfd34f06448539977ea475411956243a3613a8e8",
+      "filename": "Voces-CIne-Lanzamientos.jpg",
+      "type": "image/jpeg",
+      "size": 115931,
+      "thumbnails": [
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/tUjF1sUdxVQuilTAHKmK6bRhTPEPhWAFhBqFTDE6xwM/rs:fit:200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvdmJPRURidXcxeTF6cTEvbWxsY1EvYTQ4ZTQwMWUtOTUwOC00NGIyLTlhOTUtOGEzNGEyYzc2YjBkLzkxYTMxMzgyLTBiOGEtNGQ5Ni1hMjcyLWRhMzFjZTJmY2E0NQ",
+        "size": "small"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/3_zAe6LjzR7dvFq2rDDlpi5x-tKsP2ovlaIYvmGMcNI/rs:fit:600:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvdmJPRURidXcxeTF6cTEvbWxsY1EvYTQ4ZTQwMWUtOTUwOC00NGIyLTlhOTUtOGEzNGEyYzc2YjBkLzkxYTMxMzgyLTBiOGEtNGQ5Ni1hMjcyLWRhMzFjZTJmY2E0NQ",
+        "size": "medium"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/mGDOaLDg5TYGTVhdBMDosLCsNCKPsRtx5qZupAys-pw/rs:fit:1200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvdmJPRURidXcxeTF6cTEvbWxsY1EvYTQ4ZTQwMWUtOTUwOC00NGIyLTlhOTUtOGEzNGEyYzc2YjBkLzkxYTMxMzgyLTBiOGEtNGQ5Ni1hMjcyLWRhMzFjZTJmY2E0NQ",
+        "size": "large"
+       }
+      ],
+      "expiresAt": null
+     }
+    ],
+    "VWKRF": [
+     {
+      "id": "c9b4436f-38f2-4005-890b-3c29b8e9bf20",
+      "label": "Voces"
+     }
+    ],
+    "tgI6Y": "Lanzamientos: Investigación “Caliche, nitrato: una arqueología del cine pionero chileno (1897-1907)” y Web Mapa del Cine de Latinoamérica y el Caribe (1896-1930)",
+    "EStWy": null,
+    "U11RE": [
+     {
+      "id": "7c019120-12db-4c05-9987-5f016b00911a",
+      "label": "Entrada Liberada"
+     }
+    ]
+   }
+  },
+  {
+   "id": "Nxsrf4wxvTrXDo",
+   "fields": {
+    "EguiE": [
+     {
+      "id": "SgSpB81pgB6MoH",
+      "label": "Carpa de La Ciencia"
+     }
+    ],
+    "9tf35": {
+     "id": "5b49243c-99a4-4b66-950e-d98d5254fafa",
+     "label": "Actividades Paralelas"
+    },
+    "cIddG": [],
+    "6A3kv": 11,
+    "EOkFi": [
+     {
+      "id": "6f3c7cdb-b681-451b-ad15-e38bde0dfcce",
+      "label": "Viernes 16"
+     }
+    ],
+    "LVmhF": [
+     "Viernes 16 - 15:30 - Carpa de La Ciencia"
+    ],
+    "mllcQ": [
+     {
+      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/Nxsrf4wxvTrXDo/mllcQ/747860f0-8fcc-4679-9f79-3e62ca6a337d/044280c4-4a76-45f8-b7b1-d132f45b5a24",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/Nxsrf4wxvTrXDo/mllcQ/747860f0-8fcc-4679-9f79-3e62ca6a337d/044280c4-4a76-45f8-b7b1-d132f45b5a24?response-content-disposition=inline%3B%20filename%3D%22Voces-Mediacion-Exhibicion.jpg%22%3B%20filename%2A%3DUTF-8%27%27Voces-Mediacion-Exhibicion.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261018T143918Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261018%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=544e436c80302e6012d729611021f70212f89828dc0189f1538c4448ba8bd7c1",
+      "filename": "Voces-Mediacion-Exhibicion.jpg",
+      "type": "image/jpeg",
+      "size": 144122,
+      "thumbnails": [
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/8yTaui-5OeO_I3kkpE8_hA_NYj5u-KGaBDBjpl13XYs/rs:fit:200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvTnhzcmY0d3h2VHJYRG8vbWxsY1EvNzQ3ODYwZjAtOGZjYy00Njc5LTlmNzktM2U2MmNhNmEzMzdkLzA0NDI4MGM0LTRhNzYtNDVmOC1iN2IxLWQxMzJmNDViNWEyNA",
+        "size": "small"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/irCWWg2FgcBWdbNsz5h3u3J6r6imqfykl55nTUhFnyg/rs:fit:600:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvTnhzcmY0d3h2VHJYRG8vbWxsY1EvNzQ3ODYwZjAtOGZjYy00Njc5LTlmNzktM2U2MmNhNmEzMzdkLzA0NDI4MGM0LTRhNzYtNDVmOC1iN2IxLWQxMzJmNDViNWEyNA",
+        "size": "medium"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/7DK7iwKyLsh9RCEf1la0ieHWQ3OSEffqSSpamrM1XUQ/rs:fit:1200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvTnhzcmY0d3h2VHJYRG8vbWxsY1EvNzQ3ODYwZjAtOGZjYy00Njc5LTlmNzktM2U2MmNhNmEzMzdkLzA0NDI4MGM0LTRhNzYtNDVmOC1iN2IxLWQxMzJmNDViNWEyNA",
+        "size": "large"
+       }
+      ],
+      "expiresAt": null
+     }
+    ],
+    "VWKRF": [
+     {
+      "id": "c9b4436f-38f2-4005-890b-3c29b8e9bf20",
+      "label": "Voces"
+     }
+    ],
+    "tgI6Y": "Mediación y exhibición: metodologías y experiencias desde el cineclubismo",
+    "EStWy": null,
+    "U11RE": [
+     {
+      "id": "7c019120-12db-4c05-9987-5f016b00911a",
+      "label": "Entrada Liberada"
+     }
+    ]
+   }
+  },
+  {
+   "id": "GUUw54lCF34L5V",
+   "fields": {
+    "EguiE": [
+     {
+      "id": "Q6UB5ZVDh3fCDf",
+      "label": "Librería Gato Caulle"
+     }
+    ],
+    "9tf35": {
+     "id": "5b49243c-99a4-4b66-950e-d98d5254fafa",
+     "label": "Actividades Paralelas"
+    },
+    "cIddG": [],
+    "6A3kv": 11,
+    "EOkFi": [
+     {
+      "id": "6f3c7cdb-b681-451b-ad15-e38bde0dfcce",
+      "label": "Viernes 16"
+     }
+    ],
+    "LVmhF": [
+     "Viernes 16 - 19:00 - Librería Gato Caulle"
+    ],
+    "mllcQ": [
+     {
+      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/GUUw54lCF34L5V/mllcQ/345f9230-0bfb-45c4-af8c-a481ad9918ec/3f2aa604-28b7-4062-8bd2-c8492c76ecba",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/GUUw54lCF34L5V/mllcQ/345f9230-0bfb-45c4-af8c-a481ad9918ec/3f2aa604-28b7-4062-8bd2-c8492c76ecba?response-content-disposition=inline%3B%20filename%3D%22Negro%20-%20rojo%20a.png%22%3B%20filename%2A%3DUTF-8%27%27Negro%2520-%2520rojo%2520a.png&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261018T143918Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261018%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=f31075a16522aa9e692c74770a7aec46f341902c3a2c87582e756c9f4546c6dd",
+      "filename": "Negro - rojo a.png",
+      "type": "image/png",
+      "size": 33061,
+      "thumbnails": [
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/ieTWYL7ItGbpci5gsxcDevnv2jgZepVI4MRRMgMfSXo/rs:fit:200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvR1VVdzU0bENGMzRMNVYvbWxsY1EvMzQ1ZjkyMzAtMGJmYi00NWM0LWFmOGMtYTQ4MWFkOTkxOGVjLzNmMmFhNjA0LTI4YjctNDA2Mi04YmQyLWM4NDkyYzc2ZWNiYQ",
+        "size": "small"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/rJb4lBanOGtTancbg1-rRQuJwt1R1URHvvcJs4hAo_M/rs:fit:600:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvR1VVdzU0bENGMzRMNVYvbWxsY1EvMzQ1ZjkyMzAtMGJmYi00NWM0LWFmOGMtYTQ4MWFkOTkxOGVjLzNmMmFhNjA0LTI4YjctNDA2Mi04YmQyLWM4NDkyYzc2ZWNiYQ",
+        "size": "medium"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/sqmSVyEGPuvX7XFq4Hb9yKd5angKaC3l2UDB5QTHYNI/rs:fit:1200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvR1VVdzU0bENGMzRMNVYvbWxsY1EvMzQ1ZjkyMzAtMGJmYi00NWM0LWFmOGMtYTQ4MWFkOTkxOGVjLzNmMmFhNjA0LTI4YjctNDA2Mi04YmQyLWM4NDkyYzc2ZWNiYQ",
+        "size": "large"
+       }
+      ],
+      "expiresAt": null
+     }
+    ],
+    "VWKRF": [
+     {
+      "id": "c9b4436f-38f2-4005-890b-3c29b8e9bf20",
+      "label": "Voces"
+     }
+    ],
+    "tgI6Y": "Presentación Libro: Cinema Pinochet Los dictadores como espectadores Libro investigación de Yanko González (Editorial Hueders)",
+    "EStWy": null,
+    "U11RE": [
+     {
+      "id": "7c019120-12db-4c05-9987-5f016b00911a",
+      "label": "Entrada Liberada"
+     }
+    ]
+   }
+  },
+  {
+   "id": "zERjkPFSRpwVND",
+   "fields": {
+    "EguiE": [
+     {
+      "id": "SgSpB81pgB6MoH",
+      "label": "Carpa de La Ciencia"
+     }
+    ],
+    "9tf35": {
+     "id": "5b49243c-99a4-4b66-950e-d98d5254fafa",
+     "label": "Actividades Paralelas"
+    },
+    "cIddG": [],
+    "6A3kv": 11,
+    "EOkFi": [
+     {
+      "id": "2fe8d99b-a94f-4814-8031-cd08772dda34",
+      "label": "Jueves 15"
+     }
+    ],
+    "LVmhF": [
+     "Jueves 15 - 11:00 - Carpa de La Ciencia"
+    ],
+    "mllcQ": [
+     {
+      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/zERjkPFSRpwVND/mllcQ/a57eee9d-23bb-4134-805c-fd7248ae28cb/bbb667fa-95e7-4e43-b331-a3e8253de371",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/zERjkPFSRpwVND/mllcQ/a57eee9d-23bb-4134-805c-fd7248ae28cb/bbb667fa-95e7-4e43-b331-a3e8253de371?response-content-disposition=inline%3B%20filename%3D%22Voces-CIne-Volver-a-escribir.jpg%22%3B%20filename%2A%3DUTF-8%27%27Voces-CIne-Volver-a-escribir.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261018T143918Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261018%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=e2c53ca309726b4238cc6559a143636d8676c365b06cf23cc36f110a2a3158eb",
+      "filename": "Voces-CIne-Volver-a-escribir.jpg",
+      "type": "image/jpeg",
+      "size": 133700,
+      "thumbnails": [
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/6JS8ld6NyyDceUPbijCeEMDaTki70dj0F_naJsg5Th4/rs:fit:200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvekVSamtQRlNScHdWTkQvbWxsY1EvYTU3ZWVlOWQtMjNiYi00MTM0LTgwNWMtZmQ3MjQ4YWUyOGNiL2JiYjY2N2ZhLTk1ZTctNGU0My1iMzMxLWEzZTgyNTNkZTM3MQ",
+        "size": "small"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/qHMT721pQmIRL6zka4FsbzLRHQ1zMGdSq-ovRme6DFQ/rs:fit:600:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvekVSamtQRlNScHdWTkQvbWxsY1EvYTU3ZWVlOWQtMjNiYi00MTM0LTgwNWMtZmQ3MjQ4YWUyOGNiL2JiYjY2N2ZhLTk1ZTctNGU0My1iMzMxLWEzZTgyNTNkZTM3MQ",
+        "size": "medium"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/5ogfK0R3tSxE3u23v4MRw7FKuvk6R5WRGPb2yoQPbtQ/rs:fit:1200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvekVSamtQRlNScHdWTkQvbWxsY1EvYTU3ZWVlOWQtMjNiYi00MTM0LTgwNWMtZmQ3MjQ4YWUyOGNiL2JiYjY2N2ZhLTk1ZTctNGU0My1iMzMxLWEzZTgyNTNkZTM3MQ",
+        "size": "large"
+       }
+      ],
+      "expiresAt": null
+     }
+    ],
+    "VWKRF": [
+     {
+      "id": "c9b4436f-38f2-4005-890b-3c29b8e9bf20",
+      "label": "Voces"
+     }
+    ],
+    "tgI6Y": "Volver a escribir: entre el papel, archivos y pantallas.",
+    "EStWy": null,
+    "U11RE": [
+     {
+      "id": "7c019120-12db-4c05-9987-5f016b00911a",
+      "label": "Entrada Liberada"
+     }
+    ]
+   }
+  }
+ ],
+ "empty": false,
+ "complete": true
+}

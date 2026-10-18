@@ -1,977 +1,1045 @@
 {
- "total": 239,
- "limit": 12,
- "offset": "12",
- "items": [
+ "id": "hf94vtoq7phxzg",
+ "name": "Películas",
+ "fields": [
   {
-   "id": "LBOsJjJYSq9Auh",
-   "fields": {
-    "EguiE": [
-     {
-      "id": "ZP7w6AqDWkpTa7",
-      "label": "Aula Magna UACh"
-     },
-     {
-      "id": "lmVc7gXQa9HpMh",
-      "label": "Felix Martinez UACh"
-     }
-    ],
-    "9tf35": {
-     "id": "766e36a0-5bf9-4391-a846-406298911fb6",
-     "label": "En Competencia"
-    },
-    "cIddG": [
-     {
-      "id": "f1a64ccb-9a66-42d0-a413-01b558961ee4",
-      "label": "CHILE"
-     }
-    ],
-    "6A3kv": 1,
-    "EOkFi": [
-     {
-      "id": "6f3c7cdb-b681-451b-ad15-e38bde0dfcce",
-      "label": "Viernes 16"
-     },
-     {
-      "id": "da5c68dc-fcde-422a-8c01-42876a9d8611",
-      "label": "Sábado 17"
-     }
-    ],
-    "LVmhF": [
-     "Viernes 16 - 14:30 - Aula Magna UACh",
-     "Sábado 17 - 12:45 - Felix Martinez UACh"
-    ],
-    "mllcQ": [
-     {
-      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/LBOsJjJYSq9Auh/mllcQ/c7f9953e-9090-4f0e-9100-d2f2ed9e4f6f/4ef0fabf-7c12-4609-bb74-3f5f64d9a091",
-      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/LBOsJjJYSq9Auh/mllcQ/c7f9953e-9090-4f0e-9100-d2f2ed9e4f6f/4ef0fabf-7c12-4609-bb74-3f5f64d9a091?response-content-disposition=inline%3B%20filename%3D%22MORRO_Still_1_PRINCIPAL.png%22%3B%20filename%2A%3DUTF-8%27%27MORRO_Still_1_PRINCIPAL.png&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261017T141432Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261017%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=e48e22cd29792e9e4bd0d6dd52d06711ffb05c8db1e8562e153e4cbefecce282",
-      "filename": "MORRO_Still_1_PRINCIPAL.png",
-      "type": "image/png",
-      "size": 2273222,
-      "thumbnails": [
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/cTYQGgOgb1miGudxsbUDN030MnY_UGLDJKlc2uRhK0w/rs:fit:200:0/exp:1792253700/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvTEJPc0pqSllTcTlBdWgvbWxsY1EvYzdmOTk1M2UtOTA5MC00ZjBlLTkxMDAtZDJmMmVkOWU0ZjZmLzRlZjBmYWJmLTdjMTItNDYwOS1iYjc0LTNmNWY2NGQ5YTA5MQ",
-        "size": "small"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/0uvwY1a2M3H17XxczKaa-QSo5OKxPfCwnHOdYdajnVE/rs:fit:600:0/exp:1792253700/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvTEJPc0pqSllTcTlBdWgvbWxsY1EvYzdmOTk1M2UtOTA5MC00ZjBlLTkxMDAtZDJmMmVkOWU0ZjZmLzRlZjBmYWJmLTdjMTItNDYwOS1iYjc0LTNmNWY2NGQ5YTA5MQ",
-        "size": "medium"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/vNbfdZCRrnH2mv7fGt67WQzLZQrB-kIQe2FOZ9rq6BM/rs:fit:1200:0/exp:1792253700/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvTEJPc0pqSllTcTlBdWgvbWxsY1EvYzdmOTk1M2UtOTA5MC00ZjBlLTkxMDAtZDJmMmVkOWU0ZjZmLzRlZjBmYWJmLTdjMTItNDYwOS1iYjc0LTNmNWY2NGQ5YTA5MQ",
-        "size": "large"
-       }
-      ],
-      "expiresAt": null
-     }
-    ],
-    "VWKRF": [
-     {
-      "id": "2c9ae8ce-c5c6-482d-ad13-aad3fb8516cf",
-      "label": "Selección Oficial Cortometraje Chileno de Estudiantes de Cine y Audiovisual"
-     }
-    ],
-    "tgI6Y": "Caerá el Morro y marcharán sus hijos ",
-    "EStWy": "Oscar Marín",
-    "U11RE": [
-     {
-      "id": "36d33921-53ea-4c41-9ba6-df8242bd14db",
-      "label": "Con Entrada o Acreditación"
-     }
-    ]
-   }
+   "id": "tgI6Y",
+   "name": "Título",
+   "type": "SINGLE_LINE_TEXT",
+   "vendorSideFieldType": null,
+   "options": {
+    "minLength": 0,
+    "maxLength": 2147483647
+   },
+   "allowMultipleEntries": false,
+   "readonly": false,
+   "required": false,
+   "createOnly": false,
+   "defaultValue": null
   },
   {
-   "id": "vavIrTTWJ3GpX0",
-   "fields": {
-    "EguiE": [
+   "id": "9tf35",
+   "name": "Categoría",
+   "type": "SELECT",
+   "vendorSideFieldType": null,
+   "options": {
+    "allowToAddNewChoice": true,
+    "filters": null,
+    "choices": [
      {
-      "id": "ZP7w6AqDWkpTa7",
-      "label": "Aula Magna UACh"
+      "id": "754a2ce7-3803-4729-b4a6-63978f476065",
+      "label": "Ceremonias",
+      "color": "blueLight2"
      },
      {
-      "id": "lmVc7gXQa9HpMh",
-      "label": "Felix Martinez UACh"
-     }
-    ],
-    "9tf35": {
-     "id": "766e36a0-5bf9-4391-a846-406298911fb6",
-     "label": "En Competencia"
-    },
-    "cIddG": [
-     {
-      "id": "f1a64ccb-9a66-42d0-a413-01b558961ee4",
-      "label": "CHILE"
-     }
-    ],
-    "6A3kv": 1,
-    "EOkFi": [
-     {
-      "id": "6f3c7cdb-b681-451b-ad15-e38bde0dfcce",
-      "label": "Viernes 16"
+      "id": "d45197a3-eda7-4c25-89b3-172300970a76",
+      "label": "Filmes de Apertura y Clausura",
+      "color": "blueLight2"
      },
      {
-      "id": "da5c68dc-fcde-422a-8c01-42876a9d8611",
-      "label": "Sábado 17"
-     }
-    ],
-    "LVmhF": [
-     "Viernes 16 - 14:30 - Aula Magna UACh",
-     "Sábado 17 - 12:45 - Felix Martinez UACh"
-    ],
-    "mllcQ": [
+      "id": "766e36a0-5bf9-4391-a846-406298911fb6",
+      "label": "En Competencia",
+      "color": "blueLight2"
+     },
      {
-      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/vavIrTTWJ3GpX0/mllcQ/7836dd6d-1648-4909-9fb2-962ff5718026/a0ce406a-a170-4def-ae08-f00440c7fec7",
-      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/vavIrTTWJ3GpX0/mllcQ/7836dd6d-1648-4909-9fb2-962ff5718026/a0ce406a-a170-4def-ae08-f00440c7fec7?response-content-disposition=inline%3B%20filename%3D%22PRINCIPAL.jpg%22%3B%20filename%2A%3DUTF-8%27%27PRINCIPAL.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261017T141432Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261017%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=31420261ccaa422fda1cf4218ceea65803eacb7b2b348e2e957ab3e31030753b",
-      "filename": "PRINCIPAL.jpg",
-      "type": "image/jpeg",
-      "size": 38384,
-      "thumbnails": [
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/0MQRbeHXHFRW7R0aQQ09lIYQdmz3cvIH98GeU7shEvE/rs:fit:200:0/exp:1792253700/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvdmF2SXJUVFdKM0dwWDAvbWxsY1EvNzgzNmRkNmQtMTY0OC00OTA5LTlmYjItOTYyZmY1NzE4MDI2L2EwY2U0MDZhLWExNzAtNGRlZi1hZTA4LWYwMDQ0MGM3ZmVjNw",
-        "size": "small"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/IS7v7E5tsYeXz_URFLBkDS91483lDjaXXJr6iaFo76c/rs:fit:600:0/exp:1792253700/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvdmF2SXJUVFdKM0dwWDAvbWxsY1EvNzgzNmRkNmQtMTY0OC00OTA5LTlmYjItOTYyZmY1NzE4MDI2L2EwY2U0MDZhLWExNzAtNGRlZi1hZTA4LWYwMDQ0MGM3ZmVjNw",
-        "size": "medium"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/6rrr5g-4KqmdarNC0sPsb5tX-gn6O-uZbfBvaXeWQKY/rs:fit:1200:0/exp:1792253700/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvdmF2SXJUVFdKM0dwWDAvbWxsY1EvNzgzNmRkNmQtMTY0OC00OTA5LTlmYjItOTYyZmY1NzE4MDI2L2EwY2U0MDZhLWExNzAtNGRlZi1hZTA4LWYwMDQ0MGM3ZmVjNw",
-        "size": "large"
-       }
-      ],
-      "expiresAt": null
-     }
-    ],
-    "VWKRF": [
+      "id": "cf2f1c4d-b809-456a-9137-a1d2e9e3a161",
+      "label": "Cineastas en Foco",
+      "color": "blueLight2"
+     },
      {
-      "id": "2c9ae8ce-c5c6-482d-ad13-aad3fb8516cf",
-      "label": "Selección Oficial Cortometraje Chileno de Estudiantes de Cine y Audiovisual"
-     }
-    ],
-    "tgI6Y": "Casa propia",
-    "EStWy": "Conam Calderón, Alejandra Bravo, María José Rojas ",
-    "U11RE": [
+      "id": "303d5bc5-0132-46c6-b392-adaa6e501cb9",
+      "label": "Pásate una Película",
+      "color": "cyanLight2"
+     },
      {
-      "id": "36d33921-53ea-4c41-9ba6-df8242bd14db",
-      "label": "Con Entrada o Acreditación"
+      "id": "81b67f36-edca-4510-b2e9-3f96d0b5ad1d",
+      "label": "Nuevas Narrativas",
+      "color": "greenLight2"
+     },
+     {
+      "id": "ece5904a-6a76-45d1-8c43-995c6d9f08da",
+      "label": "Muestra Contraplanos de la Historia",
+      "color": "#386af5"
+     },
+     {
+      "id": "2ed0d591-3e59-428c-94ba-5a572ede59a1",
+      "label": "Muestra de Cine Contemporáneo",
+      "color": "#8e4ec6"
+     },
+     {
+      "id": "a23ef44c-ca00-41f2-9a84-75a1d4f355cc",
+      "label": "Muestra de Cine Chileno",
+      "color": "yellowLight2"
+     },
+     {
+      "id": "5b49243c-99a4-4b66-950e-d98d5254fafa",
+      "label": "Actividades Paralelas",
+      "color": "grayLight1"
      }
     ]
-   }
+   },
+   "allowMultipleEntries": false,
+   "readonly": false,
+   "required": false,
+   "createOnly": false,
+   "defaultValue": null
   },
   {
-   "id": "SYW3TzzCLdecS5",
-   "fields": {
-    "EguiE": [
-     {
-      "id": "ZP7w6AqDWkpTa7",
-      "label": "Aula Magna UACh"
-     },
-     {
-      "id": "lmVc7gXQa9HpMh",
-      "label": "Felix Martinez UACh"
-     }
-    ],
-    "9tf35": {
-     "id": "766e36a0-5bf9-4391-a846-406298911fb6",
-     "label": "En Competencia"
-    },
-    "cIddG": [
-     {
-      "id": "f1a64ccb-9a66-42d0-a413-01b558961ee4",
-      "label": "CHILE"
-     }
-    ],
-    "6A3kv": 1,
-    "EOkFi": [
-     {
-      "id": "6f3c7cdb-b681-451b-ad15-e38bde0dfcce",
-      "label": "Viernes 16"
-     },
-     {
-      "id": "da5c68dc-fcde-422a-8c01-42876a9d8611",
-      "label": "Sábado 17"
-     }
-    ],
-    "LVmhF": [
-     "Viernes 16 - 14:30 - Aula Magna UACh",
-     "Sábado 17 - 12:45 - Felix Martinez UACh"
-    ],
-    "mllcQ": [
-     {
-      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/SYW3TzzCLdecS5/mllcQ/061b2407-7fe9-4a25-b07c-12a878e71610/636ed704-0b31-44af-a4fe-4401b346e952",
-      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/SYW3TzzCLdecS5/mllcQ/061b2407-7fe9-4a25-b07c-12a878e71610/636ed704-0b31-44af-a4fe-4401b346e952?response-content-disposition=inline%3B%20filename%3D%22Still_1_PRINCIPAL.jpg%22%3B%20filename%2A%3DUTF-8%27%27Still_1_PRINCIPAL.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261017T141432Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261017%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=9fd17966e0fbd404294997abef3e3206aa0f020f4d829a8a4dca17f306f828ab",
-      "filename": "Still_1_PRINCIPAL.jpg",
-      "type": "image/jpeg",
-      "size": 113404,
-      "thumbnails": [
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/sVezyGPbLesbb9rvieyn6le4SAnRDoQ9Pd6CbUHqjvc/rs:fit:200:0/exp:1792253700/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvU1lXM1R6ekNMZGVjUzUvbWxsY1EvMDYxYjI0MDctN2ZlOS00YTI1LWIwN2MtMTJhODc4ZTcxNjEwLzYzNmVkNzA0LTBiMzEtNDRhZi1hNGZlLTQ0MDFiMzQ2ZTk1Mg",
-        "size": "small"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/OthsvJmXMyZW0np99fEPvTP_Ew9iYFy80qrgZb6NfUs/rs:fit:600:0/exp:1792253700/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvU1lXM1R6ekNMZGVjUzUvbWxsY1EvMDYxYjI0MDctN2ZlOS00YTI1LWIwN2MtMTJhODc4ZTcxNjEwLzYzNmVkNzA0LTBiMzEtNDRhZi1hNGZlLTQ0MDFiMzQ2ZTk1Mg",
-        "size": "medium"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/nOgn0TrJfWlErLeOI3dbFcjGxU6ZF8-EDSnqjkzr_Gc/rs:fit:1200:0/exp:1792253700/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvU1lXM1R6ekNMZGVjUzUvbWxsY1EvMDYxYjI0MDctN2ZlOS00YTI1LWIwN2MtMTJhODc4ZTcxNjEwLzYzNmVkNzA0LTBiMzEtNDRhZi1hNGZlLTQ0MDFiMzQ2ZTk1Mg",
-        "size": "large"
-       }
-      ],
-      "expiresAt": null
-     }
-    ],
-    "VWKRF": [
-     {
-      "id": "2c9ae8ce-c5c6-482d-ad13-aad3fb8516cf",
-      "label": "Selección Oficial Cortometraje Chileno de Estudiantes de Cine y Audiovisual"
-     }
-    ],
-    "tgI6Y": "Como cortarse el pelo",
-    "EStWy": "Sonio Leonelli",
-    "U11RE": [
-     {
-      "id": "36d33921-53ea-4c41-9ba6-df8242bd14db",
-      "label": "Con Entrada o Acreditación"
-     }
-    ]
-   }
+   "id": "6A3kv",
+   "name": "Orden",
+   "type": "NUMBER",
+   "vendorSideFieldType": null,
+   "options": {
+    "precision": 0,
+    "min": null,
+    "max": null,
+    "showThousandSeparator": false,
+    "thousandSeparatorLocale": "DEFAULT",
+    "largeNumberAbbreviation": "NONE",
+    "prefix": null,
+    "suffix": null
+   },
+   "allowMultipleEntries": false,
+   "readonly": false,
+   "required": false,
+   "createOnly": false,
+   "defaultValue": null
   },
   {
-   "id": "WIufznY9J2QKjx",
-   "fields": {
-    "EguiE": [
+   "id": "VWKRF",
+   "name": "Sub Categoría",
+   "type": "SELECT",
+   "vendorSideFieldType": null,
+   "options": {
+    "allowToAddNewChoice": true,
+    "filters": null,
+    "choices": [
      {
-      "id": "ZP7w6AqDWkpTa7",
-      "label": "Aula Magna UACh"
+      "id": "58043690-c129-4bfd-ad69-6cd5e5281726",
+      "label": "Cortometraje Ceremonia de Inauguración",
+      "color": "#386af5"
      },
      {
-      "id": "lmVc7gXQa9HpMh",
-      "label": "Felix Martinez UACh"
-     }
-    ],
-    "9tf35": {
-     "id": "766e36a0-5bf9-4391-a846-406298911fb6",
-     "label": "En Competencia"
-    },
-    "cIddG": [
-     {
-      "id": "f1a64ccb-9a66-42d0-a413-01b558961ee4",
-      "label": "CHILE"
-     }
-    ],
-    "6A3kv": 1,
-    "EOkFi": [
-     {
-      "id": "6f3c7cdb-b681-451b-ad15-e38bde0dfcce",
-      "label": "Viernes 16"
+      "id": "85d76997-90c5-4f97-91d8-e016c9f22629",
+      "label": "Film de Apertura",
+      "color": "#cf3897"
      },
      {
-      "id": "da5c68dc-fcde-422a-8c01-42876a9d8611",
-      "label": "Sábado 17"
-     }
-    ],
-    "LVmhF": [
-     "Viernes 16 - 14:30 - Aula Magna UACh",
-     "Sábado 17 - 12:45 - Felix Martinez UACh"
-    ],
-    "mllcQ": [
-     {
-      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/WIufznY9J2QKjx/mllcQ/2b179126-84eb-4c38-85b0-4e8a235574d7/6567ab38-1825-4d73-8dfc-8ff6e6190de2",
-      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/WIufznY9J2QKjx/mllcQ/2b179126-84eb-4c38-85b0-4e8a235574d7/6567ab38-1825-4d73-8dfc-8ff6e6190de2?response-content-disposition=inline%3B%20filename%3D%22DondeAnidaLaLluvia_Frame01_2026_PRINCIPAL.jpg%22%3B%20filename%2A%3DUTF-8%27%27DondeAnidaLaLluvia_Frame01_2026_PRINCIPAL.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261017T141432Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261017%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=88f6a5596f4ebfa3f7f68dd42fb14fb01396e1f895fde062c612804729b9afe6",
-      "filename": "DondeAnidaLaLluvia_Frame01_2026_PRINCIPAL.jpg",
-      "type": "image/jpeg",
-      "size": 13863,
-      "thumbnails": [
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/6crfw0OUqIAoF0exisy-mN5AGGW2SdB3uT9xis-SQzM/rs:fit:200:0/exp:1792253700/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvV0l1ZnpuWTlKMlFLangvbWxsY1EvMmIxNzkxMjYtODRlYi00YzM4LTg1YjAtNGU4YTIzNTU3NGQ3LzY1NjdhYjM4LTE4MjUtNGQ3My04ZGZjLThmZjZlNjE5MGRlMg",
-        "size": "small"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/p7XtqW3CXkgF1iGS7iUoEzZY8ydcK1GTYKU-c31E2SU/rs:fit:600:0/exp:1792253700/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvV0l1ZnpuWTlKMlFLangvbWxsY1EvMmIxNzkxMjYtODRlYi00YzM4LTg1YjAtNGU4YTIzNTU3NGQ3LzY1NjdhYjM4LTE4MjUtNGQ3My04ZGZjLThmZjZlNjE5MGRlMg",
-        "size": "medium"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/WbNbEvNwRUN2dOSBmtKytULXRisJb3cc0baN8EszrME/rs:fit:1200:0/exp:1792253700/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvV0l1ZnpuWTlKMlFLangvbWxsY1EvMmIxNzkxMjYtODRlYi00YzM4LTg1YjAtNGU4YTIzNTU3NGQ3LzY1NjdhYjM4LTE4MjUtNGQ3My04ZGZjLThmZjZlNjE5MGRlMg",
-        "size": "large"
-       }
-      ],
-      "expiresAt": null
-     }
-    ],
-    "VWKRF": [
-     {
-      "id": "2c9ae8ce-c5c6-482d-ad13-aad3fb8516cf",
-      "label": "Selección Oficial Cortometraje Chileno de Estudiantes de Cine y Audiovisual"
-     }
-    ],
-    "tgI6Y": "Donde anida la lluvia",
-    "EStWy": "Ignacio Durán ",
-    "U11RE": [
-     {
-      "id": "36d33921-53ea-4c41-9ba6-df8242bd14db",
-      "label": "Con Entrada o Acreditación"
-     }
-    ]
-   }
-  },
-  {
-   "id": "KKrXJ9OixD1xCm",
-   "fields": {
-    "EguiE": [
-     {
-      "id": "ZP7w6AqDWkpTa7",
-      "label": "Aula Magna UACh"
+      "id": "64c554f8-c14b-44e7-af4f-02805f3c87df",
+      "label": "Film Central",
+      "color": "#f53878"
      },
      {
-      "id": "lmVc7gXQa9HpMh",
-      "label": "Felix Martinez UACh"
-     }
-    ],
-    "9tf35": {
-     "id": "766e36a0-5bf9-4391-a846-406298911fb6",
-     "label": "En Competencia"
-    },
-    "cIddG": [
-     {
-      "id": "f1a64ccb-9a66-42d0-a413-01b558961ee4",
-      "label": "CHILE"
-     }
-    ],
-    "6A3kv": 1,
-    "EOkFi": [
-     {
-      "id": "6f3c7cdb-b681-451b-ad15-e38bde0dfcce",
-      "label": "Viernes 16"
+      "id": "78fd2bb2-a9ac-4f74-8d37-a1e3492bfa7f",
+      "label": "Film de Clausura",
+      "color": "#d92626"
      },
      {
-      "id": "da5c68dc-fcde-422a-8c01-42876a9d8611",
-      "label": "Sábado 17"
-     }
-    ],
-    "LVmhF": [
-     "Viernes 16 - 14:30 - Aula Magna UACh",
-     "Sábado 17 - 12:45 - Felix Martinez UACh"
-    ],
-    "mllcQ": [
-     {
-      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/KKrXJ9OixD1xCm/mllcQ/02760b8e-cd52-4778-9a95-d857cb52e15c/09103157-568e-4bd6-9c99-f43b6762bf7a",
-      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/KKrXJ9OixD1xCm/mllcQ/02760b8e-cd52-4778-9a95-d857cb52e15c/09103157-568e-4bd6-9c99-f43b6762bf7a?response-content-disposition=inline%3B%20filename%3D%22Fotograma_PRINCIPAL.jpg%22%3B%20filename%2A%3DUTF-8%27%27Fotograma_PRINCIPAL.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261017T141433Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261017%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=e69ab8c67c90312203a04c3bd710558bc70013562293880d2f7e7759f752679c",
-      "filename": "Fotograma_PRINCIPAL.jpg",
-      "type": "image/jpeg",
-      "size": 69908,
-      "thumbnails": [
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/qkTilsDKiO0W9bb_n5Ny-Rs1rP2E2o80R5zBKoVQtFQ/rs:fit:200:0/exp:1792253700/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvS0tyWEo5T2l4RDF4Q20vbWxsY1EvMDI3NjBiOGUtY2Q1Mi00Nzc4LTlhOTUtZDg1N2NiNTJlMTVjLzA5MTAzMTU3LTU2OGUtNGJkNi05Yzk5LWY0M2I2NzYyYmY3YQ",
-        "size": "small"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/vUOTdJYVEWd4vkPgks9Isyu3OHuh7pm4gmktlz2cYZ8/rs:fit:600:0/exp:1792253700/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvS0tyWEo5T2l4RDF4Q20vbWxsY1EvMDI3NjBiOGUtY2Q1Mi00Nzc4LTlhOTUtZDg1N2NiNTJlMTVjLzA5MTAzMTU3LTU2OGUtNGJkNi05Yzk5LWY0M2I2NzYyYmY3YQ",
-        "size": "medium"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/apTvfDXZY9EHObDjw-1HnOPdTijh8Qx7CzGtVGis21o/rs:fit:1200:0/exp:1792253700/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvS0tyWEo5T2l4RDF4Q20vbWxsY1EvMDI3NjBiOGUtY2Q1Mi00Nzc4LTlhOTUtZDg1N2NiNTJlMTVjLzA5MTAzMTU3LTU2OGUtNGJkNi05Yzk5LWY0M2I2NzYyYmY3YQ",
-        "size": "large"
-       }
-      ],
-      "expiresAt": null
-     }
-    ],
-    "VWKRF": [
-     {
-      "id": "2c9ae8ce-c5c6-482d-ad13-aad3fb8516cf",
-      "label": "Selección Oficial Cortometraje Chileno de Estudiantes de Cine y Audiovisual"
-     }
-    ],
-    "tgI6Y": "Mañana vendrá el silencio",
-    "EStWy": "Matía Lorenzo",
-    "U11RE": [
-     {
-      "id": "36d33921-53ea-4c41-9ba6-df8242bd14db",
-      "label": "Con Entrada o Acreditación"
-     }
-    ]
-   }
-  },
-  {
-   "id": "EpFg3BcCFfnQjQ",
-   "fields": {
-    "EguiE": [
-     {
-      "id": "ZP7w6AqDWkpTa7",
-      "label": "Aula Magna UACh"
+      "id": "b050c9d3-9f18-4c57-a8e5-470e2af63c52",
+      "label": "Selección Oficial Largometraje",
+      "color": "#ef5f00"
      },
      {
-      "id": "W4ixXhQNWUbof4",
-      "label": "Sala Hugo Campos"
-     }
-    ],
-    "9tf35": {
-     "id": "766e36a0-5bf9-4391-a846-406298911fb6",
-     "label": "En Competencia"
-    },
-    "cIddG": [
-     {
-      "id": "4cd17382-e50a-476a-a536-216b651b0460",
-      "label": "GUATEMALA"
-     }
-    ],
-    "6A3kv": 1,
-    "EOkFi": [
-     {
-      "id": "011a78b2-dd9f-4829-aefa-9922656c2c99",
-      "label": "Miércoles 14"
+      "id": "2b98d3b4-5b87-4c56-93b0-ed502cfdf543",
+      "label": "Selección Oficial Largometraje Juvenil",
+      "color": "#fcac00"
      },
-     {
-      "id": "da5c68dc-fcde-422a-8c01-42876a9d8611",
-      "label": "Sábado 17"
-     }
-    ],
-    "LVmhF": [
-     "Miércoles 14 - 14:30 - Aula Magna UACh",
-     "Sábado 17 - 14:30 - Sala Hugo Campos"
-    ],
-    "mllcQ": [
-     {
-      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/EpFg3BcCFfnQjQ/mllcQ/7f5799a4-1cb9-48f4-8447-bae9b28337c5/932ea361-543b-4eb1-b82e-a01c6c38d069",
-      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/EpFg3BcCFfnQjQ/mllcQ/7f5799a4-1cb9-48f4-8447-bae9b28337c5/932ea361-543b-4eb1-b82e-a01c6c38d069?response-content-disposition=inline%3B%20filename%3D%22bananostill001_PRINCIPAL.jpg%22%3B%20filename%2A%3DUTF-8%27%27bananostill001_PRINCIPAL.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261017T141433Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261017%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=1f224eb956b32eddeb821ced200a5602a2a27c9ca83d44745f8e49ae3fa2097c",
-      "filename": "bananostill001_PRINCIPAL.jpg",
-      "type": "image/jpeg",
-      "size": 142967,
-      "thumbnails": [
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/HZJKj1bxww2vEbojr2uo3l1rXQBxU-X5DfPPPORxGXY/rs:fit:200:0/exp:1792253700/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvRXBGZzNCY0NGZm5RalEvbWxsY1EvN2Y1Nzk5YTQtMWNiOS00OGY0LTg0NDctYmFlOWIyODMzN2M1LzkzMmVhMzYxLTU0M2ItNGViMS1iODJlLWEwMWM2YzM4ZDA2OQ",
-        "size": "small"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/MKwywGEODfelqghohhy6DEZ-kQKkOvxz9ID35Yulmdo/rs:fit:600:0/exp:1792253700/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvRXBGZzNCY0NGZm5RalEvbWxsY1EvN2Y1Nzk5YTQtMWNiOS00OGY0LTg0NDctYmFlOWIyODMzN2M1LzkzMmVhMzYxLTU0M2ItNGViMS1iODJlLWEwMWM2YzM4ZDA2OQ",
-        "size": "medium"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/HgYQFMknILd4gbtr64ZVHsAde_1ehPm-fkCjefs3XHk/rs:fit:1200:0/exp:1792253700/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvRXBGZzNCY0NGZm5RalEvbWxsY1EvN2Y1Nzk5YTQtMWNiOS00OGY0LTg0NDctYmFlOWIyODMzN2M1LzkzMmVhMzYxLTU0M2ItNGViMS1iODJlLWEwMWM2YzM4ZDA2OQ",
-        "size": "large"
-       }
-      ],
-      "expiresAt": null
-     }
-    ],
-    "VWKRF": [
      {
       "id": "51cd432a-6a73-4bf4-82d4-a529171e03e7",
-      "label": "Selección Oficial Cortometraje de Latinoamérica y el Caribe"
-     }
-    ],
-    "tgI6Y": "Banano, Banano",
-    "EStWy": "Manuel Z. Monterroso",
-    "U11RE": [
-     {
-      "id": "36d33921-53ea-4c41-9ba6-df8242bd14db",
-      "label": "Con Entrada o Acreditación"
+      "label": "Selección Oficial Cortometraje de Latinoamérica y el Caribe",
+      "color": "#ffe629"
      },
      {
-      "id": "7c019120-12db-4c05-9987-5f016b00911a",
-      "label": "Entrada Liberada"
+      "id": "f14f799d-4f7b-45ff-9fc0-dfb04805074e",
+      "label": "Selección Oficial Cortometraje Infantil Latinoamericano",
+      "color": "#b9d2ff"
+     },
+     {
+      "id": "2c9ae8ce-c5c6-482d-ad13-aad3fb8516cf",
+      "label": "Selección Oficial Cortometraje Chileno de Estudiantes de Cine y Audiovisual",
+      "color": "#e0c4f4"
+     },
+     {
+      "id": "5d037b34-9bc0-40ea-877a-db455887c99e",
+      "label": "Gala",
+      "color": "#ffd19a"
+     },
+     {
+      "id": "1d7e417b-e6d1-4d9a-9454-e22c2e99ab40",
+      "label": "Nuevos Caminos",
+      "color": "#ffdc88"
+     },
+     {
+      "id": "41f74fe2-02aa-4fe3-8f26-e66fed684799",
+      "label": "Disidencias",
+      "color": "#fff394"
+     },
+     {
+      "id": "fd764d71-18bc-4b59-9f42-0a5e73460a85",
+      "label": "Tramas",
+      "color": "#20956f"
+     },
+     {
+      "id": "489b4e99-97d2-4911-a108-ea0df61222dd",
+      "label": "Nocturama",
+      "color": "#b0e64c"
+     },
+     {
+      "id": "5e00ded1-821a-42ce-a2b3-2fd238939e88",
+      "label": "Con Ánimo de Humor",
+      "color": "#00a2c7"
+     },
+     {
+      "id": "7550ee4d-dbad-49d7-a4e8-f6ce8d0dc5e9",
+      "label": "Animamundi",
+      "color": "#1c487e"
+     },
+     {
+      "id": "c66fc5b8-25eb-43ab-9f1b-612e76530682",
+      "label": "Primeras Naciones",
+      "color": "#a07553"
+     },
+     {
+      "id": "257b2b15-be5b-4f29-a2a8-44184d692dec",
+      "label": "Cine Expandido",
+      "color": "#723823"
+     },
+     {
+      "id": "dfbbe0cc-1a83-4b5c-b6b8-66b9362d17dd",
+      "label": "Simbiosis Inmersiva",
+      "color": "#5a5d63"
+     },
+     {
+      "id": "1d6b1da0-b1a0-41bc-89d7-0e92af66e8d2",
+      "label": "Gala Chilena",
+      "color": "#211f26"
+     },
+     {
+      "id": "47e79f6e-eb8c-41f3-bd83-b04c59999a41",
+      "label": "Ventana Cine Austral",
+      "color": "#c2e9d7"
+     },
+     {
+      "id": "d34b071a-be45-4692-abb7-b1305c501492",
+      "label": "Cine Inclusivo",
+      "color": "#e2f0bd"
+     },
+     {
+      "id": "f625bcf7-ff1e-4272-be11-4c55f39ca09c",
+      "label": "Muestra especial Red Universitaria de Estudiantes de Cine y Audiovisual RUCA",
+      "color": "#b5e9f0"
+     },
+     {
+      "id": "96ac3a6c-9aba-4046-a03b-b944982ce5f6",
+      "label": "Homenaje 50 Años",
+      "color": "#c9e4ff"
+     },
+     {
+      "id": "144e3cee-fb15-4b3d-a478-68d42e8c5370",
+      "label": "La Lección de Cine",
+      "color": "#cf3897"
+     },
+     {
+      "id": "cdb985a9-6f58-4121-bd91-ec9ccd92a663",
+      "label": "Clásicos",
+      "color": "#f53878"
+     },
+     {
+      "id": "806cf086-00e5-4080-ab6e-41fffeed9524",
+      "label": "Totalmente Salvaje",
+      "color": "#d92626"
+     },
+     {
+      "id": "8a20a44d-d62d-4e68-bb67-05245282c5bc",
+      "label": "VHS Erótico",
+      "color": "#ef5f00"
+     },
+     {
+      "id": "17850f18-0673-4d1f-b81f-9bf9268ba1e8",
+      "label": "VHS Animé",
+      "color": "#fcac00"
+     },
+     {
+      "id": "ab969870-9e96-4b9b-890e-f54eb53f4808",
+      "label": "Largometrajes Familiares",
+      "color": "#ffe629"
+     },
+     {
+      "id": "a395c053-dc94-40e5-8d6d-e24f435ddde0",
+      "label": "Muestra Cortometraje Infantil Primera Infancia (3 a 6 años)",
+      "color": "#b9d2ff"
+     },
+     {
+      "id": "3eed42d8-f51a-4607-8fee-c613674e1202",
+      "label": "Muestra Cortometraje Infantil +7 años",
+      "color": "#e0c4f4"
+     },
+     {
+      "id": "dd51811c-8b84-4048-b9dd-032127839770",
+      "label": "Muestra Cortometraje Infantil  +10 años",
+      "color": "#efbfdd"
+     },
+     {
+      "id": "741e61d1-85a5-4e9f-9c4f-38c0bf6f1b1c",
+      "label": "Concurso de Micrometrajes: Cine y Ciencia",
+      "color": "#ffbcb3"
+     },
+     {
+      "id": "84407e3e-b9f2-403e-aabf-f51fbc065336",
+      "label": "Mapa del Cine de Latinoamérica y el Caribe",
+      "color": "#ffd19a"
+     },
+     {
+      "id": "4d571902-7f0f-4782-88e5-997593f8e1c7",
+      "label": "Rose Lowder",
+      "color": "#efbfdd"
+     },
+     {
+      "id": "adfb662b-7f56-457b-aebc-39059f6f06c5",
+      "label": "Lisandro Alonso",
+      "color": "#ffcdd6"
+     },
+     {
+      "id": "8378edc6-54a7-48f6-9bf8-b8feafdea985",
+      "label": "Daniela Delgado Viteri",
+      "color": "#ffbcb3"
+     },
+     {
+      "id": "1298f2b5-302b-480a-abb5-3b21fad2791e",
+      "label": "Homenaje Musicalizado en Vivo",
+      "color": "#e6ccb9"
+     },
+     {
+      "id": "55565daf-8736-447c-923a-afc9df9ba7de",
+      "label": "Homenaje Cine Chileno",
+      "color": "#e7e8eb"
+     },
+     {
+      "id": "bdb761a5-9133-45e0-9770-4337f63a8a82",
+      "label": "Homenaje Ciclo de Huelgas",
+      "color": "#8e4ec6"
+     },
+     {
+      "id": "b746ce85-dec8-4dc5-b2f0-ee4801107a13",
+      "label": "Kawin",
+      "color": "#fff394"
+     },
+     {
+      "id": "0a15c425-1ee4-4bfe-b02d-7d8ad183986b",
+      "label": "Aula",
+      "color": "#f7c0ad"
+     },
+     {
+      "id": "c9b4436f-38f2-4005-890b-3c29b8e9bf20",
+      "label": "Voces",
+      "color": "#cccfd4"
      }
     ]
-   }
+   },
+   "allowMultipleEntries": true,
+   "readonly": false,
+   "required": false,
+   "createOnly": false,
+   "defaultValue": null
   },
   {
-   "id": "wkQNCjk7ibYNUL",
-   "fields": {
-    "EguiE": [
+   "id": "cIddG",
+   "name": "País/es",
+   "type": "SELECT",
+   "vendorSideFieldType": null,
+   "options": {
+    "allowToAddNewChoice": true,
+    "filters": null,
+    "choices": [
      {
-      "id": "ZP7w6AqDWkpTa7",
-      "label": "Aula Magna UACh"
+      "id": "c097dcc7-b629-40bb-966e-c7d05bf7598a",
+      "label": "ALEMANIA",
+      "color": "#386af5"
      },
      {
-      "id": "W4ixXhQNWUbof4",
-      "label": "Sala Hugo Campos"
-     }
-    ],
-    "9tf35": {
-     "id": "766e36a0-5bf9-4391-a846-406298911fb6",
-     "label": "En Competencia"
-    },
-    "cIddG": [
-     {
-      "id": "f1a64ccb-9a66-42d0-a413-01b558961ee4",
-      "label": "CHILE"
-     }
-    ],
-    "6A3kv": 1,
-    "EOkFi": [
-     {
-      "id": "2fe8d99b-a94f-4814-8031-cd08772dda34",
-      "label": "Jueves 15"
+      "id": "ea62e742-8772-4503-9bc4-94bade5b59f2",
+      "label": "ALEMANIA (RFA)",
+      "color": "#8e4ec6"
      },
      {
-      "id": "da5c68dc-fcde-422a-8c01-42876a9d8611",
-      "label": "Sábado 17"
-     }
-    ],
-    "LVmhF": [
-     "Jueves 15 - 14:30 - Aula Magna UACh",
-     "Sábado 17 - 17:00 - Sala Hugo Campos"
-    ],
-    "mllcQ": [
-     {
-      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/wkQNCjk7ibYNUL/mllcQ/10f0197f-345f-4b24-bfd1-c88146c2ebf0/f33daf60-b184-4738-b436-98b3f6de255a",
-      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/wkQNCjk7ibYNUL/mllcQ/10f0197f-345f-4b24-bfd1-c88146c2ebf0/f33daf60-b184-4738-b436-98b3f6de255a?response-content-disposition=inline%3B%20filename%3D%22Still_Diadesacrificio_01_PRINCIPAL_1.jpg%22%3B%20filename%2A%3DUTF-8%27%27Still_Diadesacrificio_01_PRINCIPAL_1.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261017T141433Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261017%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=bdf70cfa1babc1a053458f107a586eec302100269bb9807302486e39f10c921f",
-      "filename": "Still_Diadesacrificio_01_PRINCIPAL_1.jpg",
-      "type": "image/jpeg",
-      "size": 74795,
-      "thumbnails": [
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/80xtohQpmQ40IHH3mJu_fEaBMRe9IMSwVRpDsiQsvoI/rs:fit:200:0/exp:1792253700/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvd2tRTkNqazdpYllOVUwvbWxsY1EvMTBmMDE5N2YtMzQ1Zi00YjI0LWJmZDEtYzg4MTQ2YzJlYmYwL2YzM2RhZjYwLWIxODQtNDczOC1iNDM2LTk4YjNmNmRlMjU1YQ",
-        "size": "small"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/-T4y8P11UxobTNj3F4hNaWybm5Y50-yiW2zao2_hpVw/rs:fit:600:0/exp:1792253700/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvd2tRTkNqazdpYllOVUwvbWxsY1EvMTBmMDE5N2YtMzQ1Zi00YjI0LWJmZDEtYzg4MTQ2YzJlYmYwL2YzM2RhZjYwLWIxODQtNDczOC1iNDM2LTk4YjNmNmRlMjU1YQ",
-        "size": "medium"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/82-Vr3cGzRSWi9HsSUcUJptx1aP2p3DmhMSuIS_qe_Y/rs:fit:1200:0/exp:1792253700/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvd2tRTkNqazdpYllOVUwvbWxsY1EvMTBmMDE5N2YtMzQ1Zi00YjI0LWJmZDEtYzg4MTQ2YzJlYmYwL2YzM2RhZjYwLWIxODQtNDczOC1iNDM2LTk4YjNmNmRlMjU1YQ",
-        "size": "large"
-       }
-      ],
-      "expiresAt": null
-     }
-    ],
-    "VWKRF": [
-     {
-      "id": "51cd432a-6a73-4bf4-82d4-a529171e03e7",
-      "label": "Selección Oficial Cortometraje de Latinoamérica y el Caribe"
-     }
-    ],
-    "tgI6Y": "Día de sacrificio",
-    "EStWy": "Carolina Gutiérrez, Benjamin Leiter",
-    "U11RE": [
-     {
-      "id": "36d33921-53ea-4c41-9ba6-df8242bd14db",
-      "label": "Con Entrada o Acreditación"
+      "id": "563e3761-e0b8-4f20-9357-242c753f66fa",
+      "label": "ALEMANIA OCCIDENTAL",
+      "color": "#cf3897"
      },
      {
-      "id": "7c019120-12db-4c05-9987-5f016b00911a",
-      "label": "Entrada Liberada"
-     }
-    ]
-   }
-  },
-  {
-   "id": "pUO36m2kaOmsxN",
-   "fields": {
-    "EguiE": [
-     {
-      "id": "ZP7w6AqDWkpTa7",
-      "label": "Aula Magna UACh"
+      "id": "2586b1ec-b9d4-4588-a3aa-261be7e28100",
+      "label": "ARGENTINA",
+      "color": "#f53878"
      },
      {
-      "id": "W4ixXhQNWUbof4",
-      "label": "Sala Hugo Campos"
-     }
-    ],
-    "9tf35": {
-     "id": "766e36a0-5bf9-4391-a846-406298911fb6",
-     "label": "En Competencia"
-    },
-    "cIddG": [
+      "id": "094c0bb0-6fba-4b3d-882f-4d36847f2e1b",
+      "label": "AUSTRALIA",
+      "color": "#d92626"
+     },
+     {
+      "id": "68085a5d-80b3-4acb-9ec5-b4ca3a4cf6ac",
+      "label": "AUSTRIA",
+      "color": "#ef5f00"
+     },
+     {
+      "id": "a258cac8-085e-4785-832f-8da371850c9e",
+      "label": "BÉLGICA",
+      "color": "#fcac00"
+     },
+     {
+      "id": "b1daa63a-0630-4b76-b803-c8a3911e6fdf",
+      "label": "BENÍN",
+      "color": "#ffe629"
+     },
+     {
+      "id": "e20545c6-28ad-42ff-8ce0-20e2b8c2b23e",
+      "label": "BOLIVIA",
+      "color": "#b9d2ff"
+     },
      {
       "id": "2ccd4b09-e8ca-4d5e-8d5c-b5ed246bd27b",
-      "label": "BRASIL"
-     }
-    ],
-    "6A3kv": 1,
-    "EOkFi": [
-     {
-      "id": "011a78b2-dd9f-4829-aefa-9922656c2c99",
-      "label": "Miércoles 14"
+      "label": "BRASIL",
+      "color": "#e0c4f4"
      },
      {
-      "id": "da5c68dc-fcde-422a-8c01-42876a9d8611",
-      "label": "Sábado 17"
-     }
-    ],
-    "LVmhF": [
-     "Miércoles 14 - 14:30 - Aula Magna UACh",
-     "Sábado 17 - 14:30 - Sala Hugo Campos"
-    ],
-    "mllcQ": [
-     {
-      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/pUO36m2kaOmsxN/mllcQ/353f701f-7666-46e5-b093-54c488077d8d/e55bc206-3af2-4c67-a3d6-850e02be8e68",
-      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/pUO36m2kaOmsxN/mllcQ/353f701f-7666-46e5-b093-54c488077d8d/e55bc206-3af2-4c67-a3d6-850e02be8e68?response-content-disposition=inline%3B%20filename%3D%22fdc_still_1_PRINCIPAL_1.jpg%22%3B%20filename%2A%3DUTF-8%27%27fdc_still_1_PRINCIPAL_1.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261017T141433Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261017%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=646c42b632b83a762df330d1994750347c0f56f825143670715b1cb2261a4df1",
-      "filename": "fdc_still_1_PRINCIPAL_1.jpg",
-      "type": "image/jpeg",
-      "size": 135804,
-      "thumbnails": [
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/3GSfG8jb0GmD8_N8VebZaOZQtULWs1F9_ON3QfmkFIg/rs:fit:200:0/exp:1792253700/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvcFVPMzZtMmthT21zeE4vbWxsY1EvMzUzZjcwMWYtNzY2Ni00NmU1LWIwOTMtNTRjNDg4MDc3ZDhkL2U1NWJjMjA2LTNhZjItNGM2Ny1hM2Q2LTg1MGUwMmJlOGU2OA",
-        "size": "small"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/nqZXl4HyobRMqTlgFDEmOfRXEhDQmP800_6444R3sFM/rs:fit:600:0/exp:1792253700/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvcFVPMzZtMmthT21zeE4vbWxsY1EvMzUzZjcwMWYtNzY2Ni00NmU1LWIwOTMtNTRjNDg4MDc3ZDhkL2U1NWJjMjA2LTNhZjItNGM2Ny1hM2Q2LTg1MGUwMmJlOGU2OA",
-        "size": "medium"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/ocr295yZub8HMq4Lz8jls5pTfcdSk7T96m7ThvGqxR0/rs:fit:1200:0/exp:1792253700/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvcFVPMzZtMmthT21zeE4vbWxsY1EvMzUzZjcwMWYtNzY2Ni00NmU1LWIwOTMtNTRjNDg4MDc3ZDhkL2U1NWJjMjA2LTNhZjItNGM2Ny1hM2Q2LTg1MGUwMmJlOGU2OA",
-        "size": "large"
-       }
-      ],
-      "expiresAt": null
-     }
-    ],
-    "VWKRF": [
-     {
-      "id": "51cd432a-6a73-4bf4-82d4-a529171e03e7",
-      "label": "Selección Oficial Cortometraje de Latinoamérica y el Caribe"
-     }
-    ],
-    "tgI6Y": "Filhos da Cana",
-    "EStWy": "Cecília Coêlho",
-    "U11RE": [
-     {
-      "id": "36d33921-53ea-4c41-9ba6-df8242bd14db",
-      "label": "Con Entrada o Acreditación"
+      "id": "0b4b9782-af39-46d5-89e5-77677a8969c0",
+      "label": "CAMERÚN",
+      "color": "#efbfdd"
      },
      {
-      "id": "7c019120-12db-4c05-9987-5f016b00911a",
-      "label": "Entrada Liberada"
-     }
-    ]
-   }
-  },
-  {
-   "id": "jLgyHVwG1fVqgu",
-   "fields": {
-    "EguiE": [
-     {
-      "id": "ZP7w6AqDWkpTa7",
-      "label": "Aula Magna UACh"
+      "id": "0f440f11-56ab-4411-9d3e-e172fa2ae6fd",
+      "label": "CANADÁ",
+      "color": "#ffcdd6"
      },
      {
-      "id": "W4ixXhQNWUbof4",
-      "label": "Sala Hugo Campos"
-     }
-    ],
-    "9tf35": {
-     "id": "766e36a0-5bf9-4391-a846-406298911fb6",
-     "label": "En Competencia"
-    },
-    "cIddG": [
+      "id": "f1a64ccb-9a66-42d0-a413-01b558961ee4",
+      "label": "CHILE",
+      "color": "#ffbcb3"
+     },
+     {
+      "id": "f2538af8-ef06-45df-97aa-14747f983183",
+      "label": "CHINA",
+      "color": "#ffd19a"
+     },
      {
       "id": "c1730ef4-202a-4a5c-99a4-18369c72e0f1",
-      "label": "COLOMBIA"
-     }
-    ],
-    "6A3kv": 1,
-    "EOkFi": [
-     {
-      "id": "011a78b2-dd9f-4829-aefa-9922656c2c99",
-      "label": "Miércoles 14"
+      "label": "COLOMBIA",
+      "color": "#ffdc88"
      },
      {
-      "id": "da5c68dc-fcde-422a-8c01-42876a9d8611",
-      "label": "Sábado 17"
-     }
-    ],
-    "LVmhF": [
-     "Miércoles 14 - 14:30 - Aula Magna UACh",
-     "Sábado 17 - 14:30 - Sala Hugo Campos"
-    ],
-    "mllcQ": [
-     {
-      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/jLgyHVwG1fVqgu/mllcQ/8885184b-6bf9-4f7d-8da9-98e4ddf2a64f/148c3dbf-ab7a-4e98-bdcf-1891465701cd",
-      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/jLgyHVwG1fVqgu/mllcQ/8885184b-6bf9-4f7d-8da9-98e4ddf2a64f/148c3dbf-ab7a-4e98-bdcf-1891465701cd?response-content-disposition=inline%3B%20filename%3D%221_1.4.1_PRINCIPAL_copia_1.jpg%22%3B%20filename%2A%3DUTF-8%27%271_1.4.1_PRINCIPAL_copia_1.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261017T141433Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261017%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=4ebb16fc9b110753d00fa22ff1646910bf4f820cfd35998ccc185ef0bc18684d",
-      "filename": "1_1.4.1_PRINCIPAL_copia_1.jpg",
-      "type": "image/jpeg",
-      "size": 13421,
-      "thumbnails": [
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/1tf-8Jq-ptEGlo6vSzdhxfY0pQR6c5zulxdg-3izZvc/rs:fit:200:0/exp:1792253700/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvakxneUhWd0cxZlZxZ3UvbWxsY1EvODg4NTE4NGItNmJmOS00ZjdkLThkYTktOThlNGRkZjJhNjRmLzE0OGMzZGJmLWFiN2EtNGU5OC1iZGNmLTE4OTE0NjU3MDFjZA",
-        "size": "small"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/l8Ja5D77zQGMlu74FDo0GSekP48subYeODRWr0H6bsw/rs:fit:600:0/exp:1792253700/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvakxneUhWd0cxZlZxZ3UvbWxsY1EvODg4NTE4NGItNmJmOS00ZjdkLThkYTktOThlNGRkZjJhNjRmLzE0OGMzZGJmLWFiN2EtNGU5OC1iZGNmLTE4OTE0NjU3MDFjZA",
-        "size": "medium"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/u9Uaj-UR-_vAcAOqoJlvh394kDCswS21z73SMs3VF-c/rs:fit:1200:0/exp:1792253700/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvakxneUhWd0cxZlZxZ3UvbWxsY1EvODg4NTE4NGItNmJmOS00ZjdkLThkYTktOThlNGRkZjJhNjRmLzE0OGMzZGJmLWFiN2EtNGU5OC1iZGNmLTE4OTE0NjU3MDFjZA",
-        "size": "large"
-       }
-      ],
-      "expiresAt": null
-     }
-    ],
-    "VWKRF": [
-     {
-      "id": "51cd432a-6a73-4bf4-82d4-a529171e03e7",
-      "label": "Selección Oficial Cortometraje de Latinoamérica y el Caribe"
-     }
-    ],
-    "tgI6Y": "Futuros luminosos",
-    "EStWy": "Ismael García Ramírez ",
-    "U11RE": [
-     {
-      "id": "36d33921-53ea-4c41-9ba6-df8242bd14db",
-      "label": "Con Entrada o Acreditación"
+      "id": "2b2b9980-2b96-4abf-b0ff-ad1d523c2ac1",
+      "label": "COREA DEL SUR",
+      "color": "#fff394"
      },
      {
-      "id": "7c019120-12db-4c05-9987-5f016b00911a",
-      "label": "Entrada Liberada"
-     }
-    ]
-   }
-  },
-  {
-   "id": "3HN0svEgEPa4Ff",
-   "fields": {
-    "EguiE": [
-     {
-      "id": "ZP7w6AqDWkpTa7",
-      "label": "Aula Magna UACh"
+      "id": "a42fe50c-286c-426d-949b-89d022a22668",
+      "label": "COSTA RICA",
+      "color": "#20956f"
      },
      {
-      "id": "W4ixXhQNWUbof4",
-      "label": "Sala Hugo Campos"
-     }
-    ],
-    "9tf35": {
-     "id": "766e36a0-5bf9-4391-a846-406298911fb6",
-     "label": "En Competencia"
-    },
-    "cIddG": [
-     {
-      "id": "bcd7407e-5dde-4848-b3fb-882c7afbb59b",
-      "label": "PERÚ"
-     }
-    ],
-    "6A3kv": 1,
-    "EOkFi": [
-     {
-      "id": "011a78b2-dd9f-4829-aefa-9922656c2c99",
-      "label": "Miércoles 14"
+      "id": "3c37bdd6-751c-4cc3-baef-fc4161946176",
+      "label": "CROACIA",
+      "color": "#b0e64c"
      },
      {
-      "id": "da5c68dc-fcde-422a-8c01-42876a9d8611",
-      "label": "Sábado 17"
-     }
-    ],
-    "LVmhF": [
-     "Miércoles 14 - 14:30 - Aula Magna UACh",
-     "Sábado 17 - 14:30 - Sala Hugo Campos"
-    ],
-    "mllcQ": [
-     {
-      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/3HN0svEgEPa4Ff/mllcQ/b522276c-d297-426f-a706-11101b2d494b/45682f91-8524-4899-ae61-1d1fa7ecdd25",
-      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/3HN0svEgEPa4Ff/mllcQ/b522276c-d297-426f-a706-11101b2d494b/45682f91-8524-4899-ae61-1d1fa7ecdd25?response-content-disposition=inline%3B%20filename%3D%22STILL_1_PRINCIPAL.jpg%22%3B%20filename%2A%3DUTF-8%27%27STILL_1_PRINCIPAL.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261017T141433Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261017%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=a638bbdd7073681dc9b232b625b0fd5826ad4b518de672c069a0ac041f2a1dc1",
-      "filename": "STILL_1_PRINCIPAL.jpg",
-      "type": "image/jpeg",
-      "size": 80616,
-      "thumbnails": [
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/5MYNUn8GtiIl93CVkRDN_HxJGYoioTk993DebSj1XHI/rs:fit:200:0/exp:1792253700/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvM0hOMHN2RWdFUGE0RmYvbWxsY1EvYjUyMjI3NmMtZDI5Ny00MjZmLWE3MDYtMTExMDFiMmQ0OTRiLzQ1NjgyZjkxLTg1MjQtNDg5OS1hZTYxLTFkMWZhN2VjZGQyNQ",
-        "size": "small"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/GbEOUR_sWtgAj6C4ofwb2HEPO_afegiOiQQgIzJsCKo/rs:fit:600:0/exp:1792253700/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvM0hOMHN2RWdFUGE0RmYvbWxsY1EvYjUyMjI3NmMtZDI5Ny00MjZmLWE3MDYtMTExMDFiMmQ0OTRiLzQ1NjgyZjkxLTg1MjQtNDg5OS1hZTYxLTFkMWZhN2VjZGQyNQ",
-        "size": "medium"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/0LT3aWv4fA5wt_cDMhR0RgwEITE4eeSa7ShT0DQbowI/rs:fit:1200:0/exp:1792253700/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvM0hOMHN2RWdFUGE0RmYvbWxsY1EvYjUyMjI3NmMtZDI5Ny00MjZmLWE3MDYtMTExMDFiMmQ0OTRiLzQ1NjgyZjkxLTg1MjQtNDg5OS1hZTYxLTFkMWZhN2VjZGQyNQ",
-        "size": "large"
-       }
-      ],
-      "expiresAt": null
-     }
-    ],
-    "VWKRF": [
-     {
-      "id": "51cd432a-6a73-4bf4-82d4-a529171e03e7",
-      "label": "Selección Oficial Cortometraje de Latinoamérica y el Caribe"
-     }
-    ],
-    "tgI6Y": "Gestos para romper una imagen",
-    "EStWy": "Mayra Villavicencio ",
-    "U11RE": [
-     {
-      "id": "36d33921-53ea-4c41-9ba6-df8242bd14db",
-      "label": "Con Entrada o Acreditación"
+      "id": "8245bd0a-18cc-4d07-b1a0-7918e25397cc",
+      "label": "CUBA",
+      "color": "#00a2c7"
      },
      {
-      "id": "7c019120-12db-4c05-9987-5f016b00911a",
-      "label": "Entrada Liberada"
-     }
-    ]
-   }
-  },
-  {
-   "id": "cTB9MFhdglA0Xv",
-   "fields": {
-    "EguiE": [
-     {
-      "id": "ZP7w6AqDWkpTa7",
-      "label": "Aula Magna UACh"
+      "id": "016dec9a-db9f-4180-b83f-57f7a7e50449",
+      "label": "DINAMARCA",
+      "color": "#1c487e"
      },
      {
-      "id": "W4ixXhQNWUbof4",
-      "label": "Sala Hugo Campos"
-     }
-    ],
-    "9tf35": {
-     "id": "766e36a0-5bf9-4391-a846-406298911fb6",
-     "label": "En Competencia"
-    },
-    "cIddG": [
+      "id": "7e135f56-9586-4f3d-b425-3fe44ed9a9ce",
+      "label": "ECUADOR",
+      "color": "#a07553"
+     },
+     {
+      "id": "81241f3d-d2d2-4d44-bfcb-058cb9822a3b",
+      "label": "ESLOVAQUIA",
+      "color": "#723823"
+     },
+     {
+      "id": "34e09090-6606-4457-8575-3f0203b26fab",
+      "label": "ESPAÑA",
+      "color": "#5a5d63"
+     },
      {
       "id": "d4c256b9-0895-48e6-8d48-06dbb69fb765",
-      "label": "ESTADOS UNIDOS"
+      "label": "ESTADOS UNIDOS",
+      "color": "#211f26"
+     },
+     {
+      "id": "9b4ae9cb-b006-420d-ab92-8c065f4ec4fd",
+      "label": "FILIPINAS",
+      "color": "#c2e9d7"
+     },
+     {
+      "id": "c0b3c78c-66c7-44aa-b543-ea6263ac4d40",
+      "label": "FINLANDIA",
+      "color": "#e2f0bd"
+     },
+     {
+      "id": "07c81853-a969-41fe-9c2d-feab54280f8a",
+      "label": "FRANCIA",
+      "color": "#b5e9f0"
+     },
+     {
+      "id": "72da9a57-4f37-41f9-863c-bb8e7c6e84ff",
+      "label": "GEORGIA",
+      "color": "#c9e4ff"
+     },
+     {
+      "id": "ef74fedd-0d31-4998-ad12-f442aae832a3",
+      "label": "GRECIA",
+      "color": "#e6ccb9"
+     },
+     {
+      "id": "bebccc2c-b45f-4422-8c3f-224057b6db6f",
+      "label": "GUYANA",
+      "color": "#f7c0ad"
+     },
+     {
+      "id": "f32a6576-890c-4266-8639-10736cfdc38d",
+      "label": "HOLANDA",
+      "color": "#e7e8eb"
+     },
+     {
+      "id": "e551dba3-82cf-42cf-a500-59b0aca91920",
+      "label": "HONDURAS",
+      "color": "#cccfd4"
+     },
+     {
+      "id": "212242ef-3120-462f-90c8-b8300b5d1d42",
+      "label": "HONG KONG",
+      "color": "#386af5"
+     },
+     {
+      "id": "e41fc8a8-1e0f-4169-9e4e-9fd327830029",
+      "label": "HUNGRÍA",
+      "color": "#8e4ec6"
+     },
+     {
+      "id": "4c174c49-e880-4fce-a330-7a914eb0ea6f",
+      "label": "INDIA",
+      "color": "#cf3897"
+     },
+     {
+      "id": "50aa64a5-de40-40da-97e8-9c22846ffdbb",
+      "label": "INDONESIA",
+      "color": "#f53878"
+     },
+     {
+      "id": "913d3165-e047-4191-8630-01361e465e9d",
+      "label": "IRÁN",
+      "color": "#d92626"
+     },
+     {
+      "id": "b71a2e60-bc3e-48c3-a9b8-864f169634e1",
+      "label": "ISLANDIA",
+      "color": "#ef5f00"
+     },
+     {
+      "id": "5cb661e2-8adb-4f77-b124-051dcdd67d92",
+      "label": "ITALIA",
+      "color": "#fcac00"
+     },
+     {
+      "id": "871e0e8b-277d-49f2-9ac1-b054a281425a",
+      "label": "JAPÓN",
+      "color": "#ffe629"
+     },
+     {
+      "id": "adb7d268-91f3-4ec4-8027-dd0219ea4da5",
+      "label": "LANCO",
+      "color": "#b9d2ff"
+     },
+     {
+      "id": "6a739f1b-7c65-4cb0-b411-fb197396250c",
+      "label": "LÍBANO",
+      "color": "#e0c4f4"
+     },
+     {
+      "id": "86640244-da19-4768-b490-19bd72956027",
+      "label": "LOS LAGOS",
+      "color": "#efbfdd"
+     },
+     {
+      "id": "ceba8721-f6ce-447d-b0d3-8fd6634e5ae5",
+      "label": "LUXEMBURGO",
+      "color": "#ffcdd6"
+     },
+     {
+      "id": "17049eb1-ddf4-478f-8a46-168c8234a23f",
+      "label": "MÁFIL",
+      "color": "#ffbcb3"
+     },
+     {
+      "id": "88527030-450e-4baa-8c9f-f9f3a33d4901",
+      "label": "MALASIA",
+      "color": "#ffd19a"
+     },
+     {
+      "id": "8c9e9ac1-44c3-499b-8e7c-f0da39143d0d",
+      "label": "MÉXICO",
+      "color": "#ffdc88"
+     },
+     {
+      "id": "15bda972-01a4-4e48-9185-b0ccf265bfa7",
+      "label": "NAMIBIA",
+      "color": "#fff394"
+     },
+     {
+      "id": "479cdf28-f120-48ea-87cf-00d5aa4f3732",
+      "label": "PAILLACO",
+      "color": "#20956f"
+     },
+     {
+      "id": "72f33ccc-773b-483d-9be6-0599c3d400f1",
+      "label": "PAÍSES BAJOS",
+      "color": "#b0e64c"
+     },
+     {
+      "id": "978cec90-c2a8-45d9-bfc4-b1eb95d1a73c",
+      "label": "PALESTINA",
+      "color": "#00a2c7"
+     },
+     {
+      "id": "b1d5c2e8-a8f2-4835-9f82-6a0281569286",
+      "label": "PANAMÁ",
+      "color": "#1c487e"
+     },
+     {
+      "id": "bcd7407e-5dde-4848-b3fb-882c7afbb59b",
+      "label": "PERÚ",
+      "color": "#a07553"
+     },
+     {
+      "id": "a5ed398b-b6d2-4044-a2b8-e447697febc2",
+      "label": "POLONIA",
+      "color": "#723823"
+     },
+     {
+      "id": "eb9ce3ed-bce1-416d-ae53-b1da76a307a6",
+      "label": "PORTUGAL",
+      "color": "#5a5d63"
+     },
+     {
+      "id": "ba8ebc20-3d25-4bff-b860-356dc25e3a13",
+      "label": "QATAR",
+      "color": "#211f26"
+     },
+     {
+      "id": "2e22dc1b-78fc-4b95-82d6-01df21b286e9",
+      "label": "RAPA NUI",
+      "color": "#c2e9d7"
+     },
+     {
+      "id": "79782ba7-f15f-472d-bca9-6e19290a8b93",
+      "label": "REINO UNIDO",
+      "color": "#e2f0bd"
+     },
+     {
+      "id": "55480a82-4758-4cdc-87f7-7d63293e2132",
+      "label": "REPÚBLICA CHECA",
+      "color": "#b5e9f0"
+     },
+     {
+      "id": "d411b36a-c743-49a1-bdf2-496483dd5de4",
+      "label": "REPÚBLICA DE COREA",
+      "color": "#c9e4ff"
+     },
+     {
+      "id": "996fa6ce-94fc-4f7f-bf99-1671e8495c0d",
+      "label": "REPÚBLICA DOMINICANA",
+      "color": "#e6ccb9"
+     },
+     {
+      "id": "0d01c55e-fd12-4379-8e1c-6befe1e61d11",
+      "label": "RUMANIA",
+      "color": "#f7c0ad"
+     },
+     {
+      "id": "fa97a45a-23ea-4f63-87fa-f9b6b6071b6f",
+      "label": "RUSIA",
+      "color": "#e7e8eb"
+     },
+     {
+      "id": "35fd004f-63a4-4655-8422-42b0ddf62f87",
+      "label": "SENEGAL",
+      "color": "#cccfd4"
+     },
+     {
+      "id": "ff15bdf0-38ef-4b42-8f1b-d0b26baaa4f1",
+      "label": "SERBIA",
+      "color": "#386af5"
+     },
+     {
+      "id": "d49800ae-812e-4fbb-9e12-a5e4461ed577",
+      "label": "SINGAPUR",
+      "color": "#8e4ec6"
+     },
+     {
+      "id": "8586da77-aa19-4250-9b81-ff022193589f",
+      "label": "SUECIA",
+      "color": "#cf3897"
+     },
+     {
+      "id": "03c31869-d48d-4774-9b01-a9d03bf58657",
+      "label": "SUIZA",
+      "color": "#f53878"
+     },
+     {
+      "id": "9ea6348c-5ead-4c4b-b0a9-70839b42fc6c",
+      "label": "TAILANDIA",
+      "color": "#d92626"
+     },
+     {
+      "id": "a9e025a3-c260-4978-a566-93872eb4823f",
+      "label": "TAIWÁN",
+      "color": "#ef5f00"
+     },
+     {
+      "id": "583f2cfa-c75f-48ca-8630-2ec6551a4f12",
+      "label": "UNIÓN SOVIÉTICA",
+      "color": "#fcac00"
+     },
+     {
+      "id": "6f5edc42-2dbf-4ac9-bc70-93d4e2ad6967",
+      "label": "URUGUAY",
+      "color": "#ffe629"
+     },
+     {
+      "id": "100d1c8f-77fc-4df7-8879-16052cb37773",
+      "label": "VENEZUELA",
+      "color": "#b9d2ff"
+     },
+     {
+      "id": "01649249-795b-4451-b0c6-46637c05d466",
+      "label": "VIETNAM",
+      "color": "#e0c4f4"
+     },
+     {
+      "id": "0c76a773-b6df-4276-8b4d-f88e50be56fc",
+      "label": "WALLMAPU",
+      "color": "#efbfdd"
+     },
+     {
+      "id": "6a8c5b4d-5c67-498e-aa4d-22ac9a6804f0",
+      "label": "PARAGUAY",
+      "color": "#ffcdd6"
+     },
+     {
+      "id": "b921663b-eec6-4bd2-8bc8-e73a77a0a50c",
+      "label": "ESLOVENIA",
+      "color": "#ffbcb3"
+     },
+     {
+      "id": "6c01f1d4-bdf2-4c5d-b1e5-c8ca0c9bfcd0",
+      "label": "REPÚBLICA DEMOCRÁTICA DEL CONGO",
+      "color": "#ffd19a"
+     },
+     {
+      "id": "c00c7ff6-2ddf-476b-9145-158fc90a41fd",
+      "label": "EL SALVADOR",
+      "color": "#ffdc88"
+     },
+     {
+      "id": "ef111426-7ed9-497c-8a29-51a89790ce3a",
+      "label": "CHIPRE",
+      "color": "#fff394"
+     },
+     {
+      "id": "e77ae570-475f-42df-927e-c68a24ed0b7f",
+      "label": "JAMAICA",
+      "color": "#20956f"
+     },
+     {
+      "id": "546f0b0b-0f2e-43e7-916f-2ec52e2a3386",
+      "label": "HAITÍ",
+      "color": "#b0e64c"
+     },
+     {
+      "id": "5f989e42-e76f-4670-bd2e-2e8f75166dc3",
+      "label": "SURINAM",
+      "color": "#00a2c7"
+     },
+     {
+      "id": "015d0852-2c85-4e11-a70b-a1f5df60aa75",
+      "label": "MARTINICA",
+      "color": "#1c487e"
+     },
+     {
+      "id": "c25c74eb-5703-41b7-8134-d1251fab5ed3",
+      "label": "ARGELIA",
+      "color": "#a07553"
+     },
+     {
+      "id": "1e22d121-8b34-4cc2-93b2-628fe826132a",
+      "label": "BULGARIA",
+      "color": "#723823"
+     },
+     {
+      "id": "08079597-1e09-417f-b422-bd6dbcb1daf1",
+      "label": "TÚNEZ",
+      "color": "#5a5d63"
+     },
+     {
+      "id": "01894c7a-c901-47bf-bdd6-e4a326ebca31",
+      "label": "TURQUÍA",
+      "color": "#386af5"
+     },
+     {
+      "id": "4cd17382-e50a-476a-a536-216b651b0460",
+      "label": "GUATEMALA",
+      "color": "#211f26"
      },
      {
       "id": "cc2188b6-856c-425d-baa7-422542f692ae",
-      "label": "PUERTO RICO"
-     }
-    ],
-    "6A3kv": 1,
-    "EOkFi": [
-     {
-      "id": "011a78b2-dd9f-4829-aefa-9922656c2c99",
-      "label": "Miércoles 14"
+      "label": "PUERTO RICO",
+      "color": "#c2e9d7"
      },
      {
-      "id": "da5c68dc-fcde-422a-8c01-42876a9d8611",
-      "label": "Sábado 17"
-     }
-    ],
-    "LVmhF": [
-     "Miércoles 14 - 14:30 - Aula Magna UACh",
-     "Sábado 17 - 14:30 - Sala Hugo Campos"
-    ],
-    "mllcQ": [
-     {
-      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/cTB9MFhdglA0Xv/mllcQ/34af2072-2359-40c5-876c-3fc89e32af79/a00d4a52-124b-4f35-a321-e05206bac913",
-      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/cTB9MFhdglA0Xv/mllcQ/34af2072-2359-40c5-876c-3fc89e32af79/a00d4a52-124b-4f35-a321-e05206bac913?response-content-disposition=inline%3B%20filename%3D%22Jezabeth-Isla-Flotante-03_1_PRINCIPAL_1.jpg%22%3B%20filename%2A%3DUTF-8%27%27Jezabeth-Isla-Flotante-03_1_PRINCIPAL_1.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261017T141433Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261017%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=c9718a8cb4f87c153ffa1f432000560871a3ef095eb40fd6bcd699a3f19c1a80",
-      "filename": "Jezabeth-Isla-Flotante-03_1_PRINCIPAL_1.jpg",
-      "type": "image/jpeg",
-      "size": 43257,
-      "thumbnails": [
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/RD8OiAvIqTeuXp6wXwbQHgcuyw9hMhj4J6cARbPXXW0/rs:fit:200:0/exp:1792253700/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvY1RCOU1GaGRnbEEwWHYvbWxsY1EvMzRhZjIwNzItMjM1OS00MGM1LTg3NmMtM2ZjODllMzJhZjc5L2EwMGQ0YTUyLTEyNGItNGYzNS1hMzIxLWUwNTIwNmJhYzkxMw",
-        "size": "small"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/b0s3f-Kw8Fp2MyQEbkZKG1G5FxpO-dVIGwiXKEvDu0o/rs:fit:600:0/exp:1792253700/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvY1RCOU1GaGRnbEEwWHYvbWxsY1EvMzRhZjIwNzItMjM1OS00MGM1LTg3NmMtM2ZjODllMzJhZjc5L2EwMGQ0YTUyLTEyNGItNGYzNS1hMzIxLWUwNTIwNmJhYzkxMw",
-        "size": "medium"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/R1KceWAj--VdyavPL8m15VV-1cLo7GUva48mOA-f-6o/rs:fit:1200:0/exp:1792253700/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvY1RCOU1GaGRnbEEwWHYvbWxsY1EvMzRhZjIwNzItMjM1OS00MGM1LTg3NmMtM2ZjODllMzJhZjc5L2EwMGQ0YTUyLTEyNGItNGYzNS1hMzIxLWUwNTIwNmJhYzkxMw",
-        "size": "large"
-       }
-      ],
-      "expiresAt": null
-     }
-    ],
-    "VWKRF": [
-     {
-      "id": "51cd432a-6a73-4bf4-82d4-a529171e03e7",
-      "label": "Selección Oficial Cortometraje de Latinoamérica y el Caribe"
-     }
-    ],
-    "tgI6Y": "Isla Flotante ",
-    "EStWy": "Jezabeth Roca Gonzalez",
-    "U11RE": [
-     {
-      "id": "36d33921-53ea-4c41-9ba6-df8242bd14db",
-      "label": "Con Entrada o Acreditación"
+      "id": "27b140e4-b0de-4d11-8ef2-8eea5934f414",
+      "label": "INGLATERRA",
+      "color": "#e2f0bd"
      },
      {
-      "id": "7c019120-12db-4c05-9987-5f016b00911a",
-      "label": "Entrada Liberada"
+      "id": "ce7db0ac-55fe-4bec-b456-792501ff7cc0",
+      "label": "KOSOVO",
+      "color": "#b5e9f0"
+     },
+     {
+      "id": "3a1472f4-4bf6-4937-8e3b-8384d4d41bf4",
+      "label": "EMIRATOS ÁRABES UNIDOS",
+      "color": "#c9e4ff"
+     },
+     {
+      "id": "6d94c904-318b-422e-9ce6-72e4a8302c17",
+      "label": "MACEDONIA DEL NORTE",
+      "color": "#e6ccb9"
+     },
+     {
+      "id": "e7adbde2-77e4-4817-aba9-b57d5c2a39d4",
+      "label": "CURAZAO",
+      "color": "#f7c0ad"
      }
     ]
-   }
+   },
+   "allowMultipleEntries": true,
+   "readonly": false,
+   "required": false,
+   "createOnly": false,
+   "defaultValue": null
   },
   {
-   "id": "RcxQ0FSbiHVkc0",
-   "fields": {
-    "EguiE": [
-     {
-      "id": "ZP7w6AqDWkpTa7",
-      "label": "Aula Magna UACh"
-     },
-     {
-      "id": "W4ixXhQNWUbof4",
-      "label": "Sala Hugo Campos"
-     }
-    ],
-    "9tf35": {
-     "id": "766e36a0-5bf9-4391-a846-406298911fb6",
-     "label": "En Competencia"
-    },
-    "cIddG": [
-     {
-      "id": "2586b1ec-b9d4-4588-a3aa-261be7e28100",
-      "label": "ARGENTINA"
-     }
-    ],
-    "6A3kv": 1,
-    "EOkFi": [
-     {
-      "id": "2fe8d99b-a94f-4814-8031-cd08772dda34",
-      "label": "Jueves 15"
-     },
-     {
-      "id": "da5c68dc-fcde-422a-8c01-42876a9d8611",
-      "label": "Sábado 17"
-     }
-    ],
-    "LVmhF": [
-     "Jueves 15 - 14:30 - Aula Magna UACh",
-     "Sábado 17 - 17:00 - Sala Hugo Campos"
-    ],
-    "mllcQ": [
-     {
-      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/RcxQ0FSbiHVkc0/mllcQ/7cd4faaa-1d67-4890-b0de-2c9044a4802a/d455e648-7474-4498-b5a6-eda494aaa203",
-      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/RcxQ0FSbiHVkc0/mllcQ/7cd4faaa-1d67-4890-b0de-2c9044a4802a/d455e648-7474-4498-b5a6-eda494aaa203?response-content-disposition=inline%3B%20filename%3D%22LHDI_STILL_01_1.1.2_PRINCIPAL.jpg%22%3B%20filename%2A%3DUTF-8%27%27LHDI_STILL_01_1.1.2_PRINCIPAL.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261017T141433Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261017%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=b367c64e77bc135ef1fdaa3bcd3b7f9b3073e0774a3d111959f589e4515050f0",
-      "filename": "LHDI_STILL_01_1.1.2_PRINCIPAL.jpg",
-      "type": "image/jpeg",
-      "size": 15747,
-      "thumbnails": [
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/WAofD43C6wdtwcMfBX86loZM6QhdzgltC1uqKaevgmw/rs:fit:200:0/exp:1792253700/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvUmN4UTBGU2JpSFZrYzAvbWxsY1EvN2NkNGZhYWEtMWQ2Ny00ODkwLWIwZGUtMmM5MDQ0YTQ4MDJhL2Q0NTVlNjQ4LTc0NzQtNDQ5OC1iNWE2LWVkYTQ5NGFhYTIwMw",
-        "size": "small"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/j2ad3u3JXd2vkxib8Ol2EkVJDCXlk7ozlVXBWYjpQLs/rs:fit:600:0/exp:1792253700/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvUmN4UTBGU2JpSFZrYzAvbWxsY1EvN2NkNGZhYWEtMWQ2Ny00ODkwLWIwZGUtMmM5MDQ0YTQ4MDJhL2Q0NTVlNjQ4LTc0NzQtNDQ5OC1iNWE2LWVkYTQ5NGFhYTIwMw",
-        "size": "medium"
-       },
-       {
-        "url": "https://d2nmodil6do74b.cloudfront.net/LsUyTCd44s94fPjoiG5n18kA1FP609CF-JOUYGC432Y/rs:fit:1200:0/exp:1792253700/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvUmN4UTBGU2JpSFZrYzAvbWxsY1EvN2NkNGZhYWEtMWQ2Ny00ODkwLWIwZGUtMmM5MDQ0YTQ4MDJhL2Q0NTVlNjQ4LTc0NzQtNDQ5OC1iNWE2LWVkYTQ5NGFhYTIwMw",
-        "size": "large"
-       }
+   "id": "EStWy",
+   "name": "Dirección",
+   "type": "SINGLE_LINE_TEXT",
+   "vendorSideFieldType": null,
+   "options": {
+    "minLength": 0,
+    "maxLength": 2147483647
+   },
+   "allowMultipleEntries": false,
+   "readonly": false,
+   "required": false,
+   "createOnly": false,
+   "defaultValue": null
+  },
+  {
+   "id": "mllcQ",
+   "name": "Imagen",
+   "type": "ATTACHMENT",
+   "vendorSideFieldType": null,
+   "options": {
+    "showAs": "PREVIEW",
+    "inferredFileType": "IMAGE",
+    "enableFileLinkExpiration": true,
+    "fileLinkExpirationValue": 2,
+    "fileLinkExpirationUnit": "HOURS"
+   },
+   "allowMultipleEntries": true,
+   "readonly": false,
+   "required": false,
+   "createOnly": false,
+   "defaultValue": null
+  },
+  {
+   "id": "LVmhF",
+   "name": "AgendaPrograma",
+   "type": "LOOKUP",
+   "vendorSideFieldType": null,
+   "options": {
+    "linkedRecordFieldId": "w7UBo",
+    "lookupFieldId": "EUjyx",
+    "returnedField": {
+     "type": "FORMULA",
+     "vendorSideFieldType": null,
+     "options": {
+      "formula": "{Día} & \" - \" & DATETIME_FORMAT(SET_TIMEZONE({Inicia}, 'America/Santiago'), 'H:mm')& \" - \" & {Dónde}",
+      "referencedFieldIds": [
+       "O0C6l",
+       "yQUbl",
+       "CZFe9"
       ],
-      "expiresAt": null
+      "returnedField": {
+       "type": "SINGLE_LINE_TEXT",
+       "vendorSideFieldType": null,
+       "options": {
+        "minLength": 0,
+        "maxLength": 2147483647
+       }
+      },
+      "valid": true
      }
-    ],
-    "VWKRF": [
-     {
-      "id": "51cd432a-6a73-4bf4-82d4-a529171e03e7",
-      "label": "Selección Oficial Cortometraje de Latinoamérica y el Caribe"
+    }
+   },
+   "allowMultipleEntries": true,
+   "readonly": true,
+   "required": false,
+   "createOnly": false,
+   "defaultValue": null
+  },
+  {
+   "id": "EOkFi",
+   "name": "QueDiasLaDan",
+   "type": "ROLLUP",
+   "vendorSideFieldType": null,
+   "options": {
+    "linkedRecordFieldId": "w7UBo",
+    "rollupFieldId": "CZFe9",
+    "function": "ARRAYUNIQUE",
+    "returnedField": {
+     "type": "SELECT",
+     "vendorSideFieldType": null,
+     "options": {
+      "allowToAddNewChoice": true,
+      "filters": null,
+      "choices": [
+       {
+        "id": "7b70cbd2-d47b-4b96-95cc-db59c04100ed",
+        "label": "Lunes 12",
+        "color": "blueBright"
+       },
+       {
+        "id": "8ceb5fef-3658-4464-8ee5-e9dcf51eb741",
+        "label": "Martes 13",
+        "color": "#000000"
+       },
+       {
+        "id": "011a78b2-dd9f-4829-aefa-9922656c2c99",
+        "label": "Miércoles 14",
+        "color": "tealBright"
+       },
+       {
+        "id": "2fe8d99b-a94f-4814-8031-cd08772dda34",
+        "label": "Jueves 15",
+        "color": "greenBright"
+       },
+       {
+        "id": "6f3c7cdb-b681-451b-ad15-e38bde0dfcce",
+        "label": "Viernes 16",
+        "color": "yellowBright"
+       },
+       {
+        "id": "da5c68dc-fcde-422a-8c01-42876a9d8611",
+        "label": "Sábado 17",
+        "color": "orangeBright"
+       },
+       {
+        "id": "39087da7-575f-4a76-bbd2-471064cafe50",
+        "label": "Domingo 18",
+        "color": "pinkBright"
+       }
+      ]
      }
-    ],
-    "tgI6Y": "La hora de irse",
-    "EStWy": "Renzo Cozza",
-    "U11RE": [
-     {
-      "id": "36d33921-53ea-4c41-9ba6-df8242bd14db",
-      "label": "Con Entrada o Acreditación"
-     },
-     {
-      "id": "7c019120-12db-4c05-9987-5f016b00911a",
-      "label": "Entrada Liberada"
+    }
+   },
+   "allowMultipleEntries": true,
+   "readonly": true,
+   "required": false,
+   "createOnly": false,
+   "defaultValue": null
+  },
+  {
+   "id": "EguiE",
+   "name": "DondeEs",
+   "type": "ROLLUP",
+   "vendorSideFieldType": null,
+   "options": {
+    "linkedRecordFieldId": "w7UBo",
+    "rollupFieldId": "yQUbl",
+    "function": "ARRAYUNIQUE",
+    "returnedField": {
+     "type": "LINKED_RECORD",
+     "vendorSideFieldType": null,
+     "options": {
+      "linkedTableId": "W1OZN0JAaxnn6x",
+      "category": null,
+      "relationshipName": null
      }
-    ]
-   }
+    }
+   },
+   "allowMultipleEntries": true,
+   "readonly": true,
+   "required": false,
+   "createOnly": false,
+   "defaultValue": null
+  },
+  {
+   "id": "U11RE",
+   "name": "TipoAcceso",
+   "type": "ROLLUP",
+   "vendorSideFieldType": null,
+   "options": {
+    "linkedRecordFieldId": "w7UBo",
+    "rollupFieldId": "8Kjhk",
+    "function": "ARRAYUNIQUE",
+    "returnedField": {
+     "type": "SELECT",
+     "vendorSideFieldType": null,
+     "options": {
+      "allowToAddNewChoice": true,
+      "filters": null,
+      "choices": [
+       {
+        "id": "36d33921-53ea-4c41-9ba6-df8242bd14db",
+        "label": "Con Entrada o Acreditación",
+        "color": "#00a2c7"
+       },
+       {
+        "id": "7c019120-12db-4c05-9987-5f016b00911a",
+        "label": "Entrada Liberada",
+        "color": "#b0e64c"
+       },
+       {
+        "id": "e6212fd1-0f2c-4c30-8817-a0a316e43081",
+        "label": "Solo con Invitación",
+        "color": "#a07553"
+       },
+       {
+        "id": "95e5d0a5-1072-4957-a0de-5f689d533811",
+        "label": "Sólo con Acreditación Profesional",
+        "color": "#5a5d63"
+       },
+       {
+        "id": "e265235d-b02e-41b6-bf44-9c76f11c33e5",
+        "label": "Delegaciones",
+        "color": "#1c487e"
+       }
+      ]
+     }
+    }
+   },
+   "allowMultipleEntries": true,
+   "readonly": true,
+   "required": false,
+   "createOnly": false,
+   "defaultValue": null
   }
  ],
- "empty": false,
- "complete": true
+ "primaryFieldId": "tgI6Y"
 }

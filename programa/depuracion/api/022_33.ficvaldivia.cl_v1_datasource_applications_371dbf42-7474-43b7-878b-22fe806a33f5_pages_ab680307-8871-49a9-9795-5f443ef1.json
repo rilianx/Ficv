@@ -1,0 +1,877 @@
+{
+ "total": 239,
+ "limit": 12,
+ "offset": "228",
+ "items": [
+  {
+   "id": "HjbwVpR4CFdGIk",
+   "fields": {
+    "EguiE": [
+     {
+      "id": "xhTnT4OzknPaoY",
+      "label": "Teatro Cervantes"
+     }
+    ],
+    "9tf35": {
+     "id": "303d5bc5-0132-46c6-b392-adaa6e501cb9",
+     "label": "Pásate una Película"
+    },
+    "cIddG": [
+     {
+      "id": "03c31869-d48d-4774-9b01-a9d03bf58657",
+      "label": "SUIZA"
+     }
+    ],
+    "6A3kv": 10,
+    "EOkFi": [
+     {
+      "id": "011a78b2-dd9f-4829-aefa-9922656c2c99",
+      "label": "Miércoles 14"
+     }
+    ],
+    "LVmhF": [
+     "Miércoles 14 - 10:00 - Teatro Cervantes"
+    ],
+    "mllcQ": [
+     {
+      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/HjbwVpR4CFdGIk/mllcQ/a8ed85b2-b7a6-46db-9f7b-03b784b2a70a/e85b09e4-0ed7-4a72-b1d5-43a4b2635945",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/HjbwVpR4CFdGIk/mllcQ/a8ed85b2-b7a6-46db-9f7b-03b784b2a70a/e85b09e4-0ed7-4a72-b1d5-43a4b2635945?response-content-disposition=inline%3B%20filename%3D%22Murcielagos_y_Bichos_1.jpg%22%3B%20filename%2A%3DUTF-8%27%27Murcielagos_y_Bichos_1.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261018T143916Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261018%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=1fb94f691858ccbebf5fc8a4d40b11d84fbf0049ff4910a93ef1427339c88348",
+      "filename": "Murcielagos_y_Bichos_1.jpg",
+      "type": "image/jpeg",
+      "size": 16995,
+      "thumbnails": [
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/Rm8ebiZaZibPglZdVw7uLdRIg-AOrLAB4UF-Bjzubo0/rs:fit:200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvSGpid1ZwUjRDRmRHSWsvbWxsY1EvYThlZDg1YjItYjdhNi00NmRiLTlmN2ItMDNiNzg0YjJhNzBhL2U4NWIwOWU0LTBlZDctNGE3Mi1iMWQ1LTQzYTRiMjYzNTk0NQ",
+        "size": "small"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/Q_MFA_CutXCQguVcN5rpIFqwiWcgRHDMTUr6HdlsD7I/rs:fit:600:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvSGpid1ZwUjRDRmRHSWsvbWxsY1EvYThlZDg1YjItYjdhNi00NmRiLTlmN2ItMDNiNzg0YjJhNzBhL2U4NWIwOWU0LTBlZDctNGE3Mi1iMWQ1LTQzYTRiMjYzNTk0NQ",
+        "size": "medium"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/f2ShX1Oy8RaHwYCjH-f4BUwA0EB2G5946MDq1g7KsCI/rs:fit:1200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvSGpid1ZwUjRDRmRHSWsvbWxsY1EvYThlZDg1YjItYjdhNi00NmRiLTlmN2ItMDNiNzg0YjJhNzBhL2U4NWIwOWU0LTBlZDctNGE3Mi1iMWQ1LTQzYTRiMjYzNTk0NQ",
+        "size": "large"
+       }
+      ],
+      "expiresAt": null
+     }
+    ],
+    "VWKRF": [
+     {
+      "id": "3eed42d8-f51a-4607-8fee-c613674e1202",
+      "label": "Muestra Cortometraje Infantil +7 años"
+     }
+    ],
+    "tgI6Y": "Murcielagos y bichos",
+    "EStWy": "Lena von Döhren",
+    "U11RE": [
+     {
+      "id": "7c019120-12db-4c05-9987-5f016b00911a",
+      "label": "Entrada Liberada"
+     }
+    ]
+   }
+  },
+  {
+   "id": "L1OPCFlpmWI2zf",
+   "fields": {
+    "EguiE": [
+     {
+      "id": "xhTnT4OzknPaoY",
+      "label": "Teatro Cervantes"
+     }
+    ],
+    "9tf35": {
+     "id": "303d5bc5-0132-46c6-b392-adaa6e501cb9",
+     "label": "Pásate una Película"
+    },
+    "cIddG": [
+     {
+      "id": "07c81853-a969-41fe-9c2d-feab54280f8a",
+      "label": "FRANCIA"
+     }
+    ],
+    "6A3kv": 10,
+    "EOkFi": [
+     {
+      "id": "011a78b2-dd9f-4829-aefa-9922656c2c99",
+      "label": "Miércoles 14"
+     }
+    ],
+    "LVmhF": [
+     "Miércoles 14 - 10:00 - Teatro Cervantes"
+    ],
+    "mllcQ": [
+     {
+      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/L1OPCFlpmWI2zf/mllcQ/915e1690-59f7-4568-b070-0db88674d65a/d0e6e59f-dc0b-4dba-a7aa-2220c83eefab",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/L1OPCFlpmWI2zf/mllcQ/915e1690-59f7-4568-b070-0db88674d65a/d0e6e59f-dc0b-4dba-a7aa-2220c83eefab?response-content-disposition=inline%3B%20filename%3D%22Nutissimo_4_1.jpg%22%3B%20filename%2A%3DUTF-8%27%27Nutissimo_4_1.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261018T143916Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261018%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=41af398b8ba2ea44187e9f3b54afe29fa62e82412f60d5510680632b3ec0223a",
+      "filename": "Nutissimo_4_1.jpg",
+      "type": "image/jpeg",
+      "size": 67608,
+      "thumbnails": [
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/MQWuhQHKPj_pvsl8wAc2cCv-bi-_n4H8QNpSkKNZOU0/rs:fit:200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvTDFPUENGbHBtV0kyemYvbWxsY1EvOTE1ZTE2OTAtNTlmNy00NTY4LWIwNzAtMGRiODg2NzRkNjVhL2QwZTZlNTlmLWRjMGItNGRiYS1hN2FhLTIyMjBjODNlZWZhYg",
+        "size": "small"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/PKdCCgzV_PGT1JfDsRjtWTfEnk3gPcoR_xBhxIfzchk/rs:fit:600:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvTDFPUENGbHBtV0kyemYvbWxsY1EvOTE1ZTE2OTAtNTlmNy00NTY4LWIwNzAtMGRiODg2NzRkNjVhL2QwZTZlNTlmLWRjMGItNGRiYS1hN2FhLTIyMjBjODNlZWZhYg",
+        "size": "medium"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/xy7-RaQA23z7Yx87jyCVU1B_TkNuSYYZImZO2FAw60k/rs:fit:1200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvTDFPUENGbHBtV0kyemYvbWxsY1EvOTE1ZTE2OTAtNTlmNy00NTY4LWIwNzAtMGRiODg2NzRkNjVhL2QwZTZlNTlmLWRjMGItNGRiYS1hN2FhLTIyMjBjODNlZWZhYg",
+        "size": "large"
+       }
+      ],
+      "expiresAt": null
+     }
+    ],
+    "VWKRF": [
+     {
+      "id": "3eed42d8-f51a-4607-8fee-c613674e1202",
+      "label": "Muestra Cortometraje Infantil +7 años"
+     }
+    ],
+    "tgI6Y": "Nutissimo",
+    "EStWy": "Nicolas Bianco-Levrin",
+    "U11RE": [
+     {
+      "id": "7c019120-12db-4c05-9987-5f016b00911a",
+      "label": "Entrada Liberada"
+     }
+    ]
+   }
+  },
+  {
+   "id": "JOojvnHnoOowOA",
+   "fields": {
+    "EguiE": [
+     {
+      "id": "xhTnT4OzknPaoY",
+      "label": "Teatro Cervantes"
+     }
+    ],
+    "9tf35": {
+     "id": "303d5bc5-0132-46c6-b392-adaa6e501cb9",
+     "label": "Pásate una Película"
+    },
+    "cIddG": [
+     {
+      "id": "c097dcc7-b629-40bb-966e-c7d05bf7598a",
+      "label": "ALEMANIA"
+     }
+    ],
+    "6A3kv": 10,
+    "EOkFi": [
+     {
+      "id": "011a78b2-dd9f-4829-aefa-9922656c2c99",
+      "label": "Miércoles 14"
+     }
+    ],
+    "LVmhF": [
+     "Miércoles 14 - 10:00 - Teatro Cervantes"
+    ],
+    "mllcQ": [
+     {
+      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/JOojvnHnoOowOA/mllcQ/927fda81-49c1-4e36-a7a6-e81e0053fd59/807c8ab6-b9fb-4999-943e-c33dc12e98ca",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/JOojvnHnoOowOA/mllcQ/927fda81-49c1-4e36-a7a6-e81e0053fd59/807c8ab6-b9fb-4999-943e-c33dc12e98ca?response-content-disposition=inline%3B%20filename%3D%22Sheep_Still_06.jpg%22%3B%20filename%2A%3DUTF-8%27%27Sheep_Still_06.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261018T143916Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261018%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=fcf73532cbe4ed46689292a19a63a03865f3877787f66545026896d2db7bcc92",
+      "filename": "Sheep_Still_06.jpg",
+      "type": "image/jpeg",
+      "size": 368039,
+      "thumbnails": [
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/0k7_Phwk6cD7DYFDETvc4Ja6NpmLgis5WcD1Q3a87VE/rs:fit:200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvSk9vanZuSG5vT293T0EvbWxsY1EvOTI3ZmRhODEtNDljMS00ZTM2LWE3YTYtZTgxZTAwNTNmZDU5LzgwN2M4YWI2LWI5ZmItNDk5OS05NDNlLWMzM2RjMTJlOThjYQ",
+        "size": "small"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/p13BmrF0N4W0nZU7RgAvskU00zZPgIDGsVZzwbtcamo/rs:fit:600:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvSk9vanZuSG5vT293T0EvbWxsY1EvOTI3ZmRhODEtNDljMS00ZTM2LWE3YTYtZTgxZTAwNTNmZDU5LzgwN2M4YWI2LWI5ZmItNDk5OS05NDNlLWMzM2RjMTJlOThjYQ",
+        "size": "medium"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/MePeBtgzjjy7KX3YayE_cvoL2eWCiqDEyd8Vsfl2ffg/rs:fit:1200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvSk9vanZuSG5vT293T0EvbWxsY1EvOTI3ZmRhODEtNDljMS00ZTM2LWE3YTYtZTgxZTAwNTNmZDU5LzgwN2M4YWI2LWI5ZmItNDk5OS05NDNlLWMzM2RjMTJlOThjYQ",
+        "size": "large"
+       }
+      ],
+      "expiresAt": null
+     },
+     {
+      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/JOojvnHnoOowOA/mllcQ/7c4c4bdc-e476-405f-b34d-d511da9ef154/4d802d0c-0fb6-47d2-91b9-e9bf1cfc8017",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/JOojvnHnoOowOA/mllcQ/7c4c4bdc-e476-405f-b34d-d511da9ef154/4d802d0c-0fb6-47d2-91b9-e9bf1cfc8017?response-content-disposition=inline%3B%20filename%3D%22oveja.jpg%22%3B%20filename%2A%3DUTF-8%27%27oveja.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261018T143916Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261018%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=cfde31805b8f0058af16141e2ca3c500c78ba5f2bb4856b2bb4eb3bd0a1d3e6b",
+      "filename": "oveja.jpg",
+      "type": "image/jpeg",
+      "size": 15971,
+      "thumbnails": [
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/KK_Td0q0ug4zAlFgsS1suwUyeKNBoqdWKwJmb_bTg_0/rs:fit:200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvSk9vanZuSG5vT293T0EvbWxsY1EvN2M0YzRiZGMtZTQ3Ni00MDVmLWIzNGQtZDUxMWRhOWVmMTU0LzRkODAyZDBjLTBmYjYtNDdkMi05MWI5LWU5YmYxY2ZjODAxNw",
+        "size": "small"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/F3nqYrJh3XkBc98zP4gHzsu_jSNgIjn0P2g2Eg2AYPo/rs:fit:600:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvSk9vanZuSG5vT293T0EvbWxsY1EvN2M0YzRiZGMtZTQ3Ni00MDVmLWIzNGQtZDUxMWRhOWVmMTU0LzRkODAyZDBjLTBmYjYtNDdkMi05MWI5LWU5YmYxY2ZjODAxNw",
+        "size": "medium"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/xDCgNwU9hP5w3ZfKybqWQegeRqrh0AIIfaYSPrdxL2Q/rs:fit:1200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvSk9vanZuSG5vT293T0EvbWxsY1EvN2M0YzRiZGMtZTQ3Ni00MDVmLWIzNGQtZDUxMWRhOWVmMTU0LzRkODAyZDBjLTBmYjYtNDdkMi05MWI5LWU5YmYxY2ZjODAxNw",
+        "size": "large"
+       }
+      ],
+      "expiresAt": null
+     }
+    ],
+    "VWKRF": [
+     {
+      "id": "3eed42d8-f51a-4607-8fee-c613674e1202",
+      "label": "Muestra Cortometraje Infantil +7 años"
+     }
+    ],
+    "tgI6Y": "Oveja",
+    "EStWy": "Julia Ocker",
+    "U11RE": [
+     {
+      "id": "7c019120-12db-4c05-9987-5f016b00911a",
+      "label": "Entrada Liberada"
+     }
+    ]
+   }
+  },
+  {
+   "id": "PZkeC8APqrJeTX",
+   "fields": {
+    "EguiE": [
+     {
+      "id": "xhTnT4OzknPaoY",
+      "label": "Teatro Cervantes"
+     }
+    ],
+    "9tf35": {
+     "id": "303d5bc5-0132-46c6-b392-adaa6e501cb9",
+     "label": "Pásate una Película"
+    },
+    "cIddG": [
+     {
+      "id": "03c31869-d48d-4774-9b01-a9d03bf58657",
+      "label": "SUIZA"
+     }
+    ],
+    "6A3kv": 10,
+    "EOkFi": [
+     {
+      "id": "8ceb5fef-3658-4464-8ee5-e9dcf51eb741",
+      "label": "Martes 13"
+     },
+     {
+      "id": "6f3c7cdb-b681-451b-ad15-e38bde0dfcce",
+      "label": "Viernes 16"
+     }
+    ],
+    "LVmhF": [
+     "Martes 13 - 10:00 - Teatro Cervantes",
+     "Viernes 16 - 10:00 - Teatro Cervantes"
+    ],
+    "mllcQ": [
+     {
+      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/PZkeC8APqrJeTX/mllcQ/2dcf8ccb-cb5d-43e2-9e89-87ba31d3ec4f/c4208224-aba9-417e-ae3b-8a4e6789407c",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/PZkeC8APqrJeTX/mllcQ/2dcf8ccb-cb5d-43e2-9e89-87ba31d3ec4f/c4208224-aba9-417e-ae3b-8a4e6789407c?response-content-disposition=inline%3B%20filename%3D%22el_pajarito_y_la_hoja.jpg%22%3B%20filename%2A%3DUTF-8%27%27el_pajarito_y_la_hoja.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261018T143916Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261018%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=2e4fb0a949890c13b446c718cf2540b68e817a62dce7ea77079fb579ec44aff2",
+      "filename": "el_pajarito_y_la_hoja.jpg",
+      "type": "image/jpeg",
+      "size": 46718,
+      "thumbnails": [
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/PMXEN2CbtHNvTwX9uAOWq4h1E9Q8zbGm-29wG9KiuS4/rs:fit:200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvUFprZUM4QVBxckplVFgvbWxsY1EvMmRjZjhjY2ItY2I1ZC00M2UyLTllODktODdiYTMxZDNlYzRmL2M0MjA4MjI0LWFiYTktNDE3ZS1hZTNiLThhNGU2Nzg5NDA3Yw",
+        "size": "small"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/GqMWCswq8zlLo1whzevdQiB50u890oxLKirCiqky5LE/rs:fit:600:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvUFprZUM4QVBxckplVFgvbWxsY1EvMmRjZjhjY2ItY2I1ZC00M2UyLTllODktODdiYTMxZDNlYzRmL2M0MjA4MjI0LWFiYTktNDE3ZS1hZTNiLThhNGU2Nzg5NDA3Yw",
+        "size": "medium"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/BWZE2VRMXUcOAz0CoNg1RTSPsVhENDiu9J9UEWjDJ68/rs:fit:1200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvUFprZUM4QVBxckplVFgvbWxsY1EvMmRjZjhjY2ItY2I1ZC00M2UyLTllODktODdiYTMxZDNlYzRmL2M0MjA4MjI0LWFiYTktNDE3ZS1hZTNiLThhNGU2Nzg5NDA3Yw",
+        "size": "large"
+       }
+      ],
+      "expiresAt": null
+     }
+    ],
+    "VWKRF": [
+     {
+      "id": "a395c053-dc94-40e5-8d6d-e24f435ddde0",
+      "label": "Muestra Cortometraje Infantil Primera Infancia (3 a 6 años)"
+     }
+    ],
+    "tgI6Y": "El pajarito y la hoja ",
+    "EStWy": "Lena von Döhren",
+    "U11RE": [
+     {
+      "id": "7c019120-12db-4c05-9987-5f016b00911a",
+      "label": "Entrada Liberada"
+     }
+    ]
+   }
+  },
+  {
+   "id": "FNhK6z2zHfp9oF",
+   "fields": {
+    "EguiE": [
+     {
+      "id": "xhTnT4OzknPaoY",
+      "label": "Teatro Cervantes"
+     }
+    ],
+    "9tf35": {
+     "id": "303d5bc5-0132-46c6-b392-adaa6e501cb9",
+     "label": "Pásate una Película"
+    },
+    "cIddG": [
+     {
+      "id": "c097dcc7-b629-40bb-966e-c7d05bf7598a",
+      "label": "ALEMANIA"
+     }
+    ],
+    "6A3kv": 10,
+    "EOkFi": [
+     {
+      "id": "8ceb5fef-3658-4464-8ee5-e9dcf51eb741",
+      "label": "Martes 13"
+     },
+     {
+      "id": "6f3c7cdb-b681-451b-ad15-e38bde0dfcce",
+      "label": "Viernes 16"
+     }
+    ],
+    "LVmhF": [
+     "Martes 13 - 10:00 - Teatro Cervantes",
+     "Viernes 16 - 10:00 - Teatro Cervantes"
+    ],
+    "mllcQ": [
+     {
+      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/FNhK6z2zHfp9oF/mllcQ/2c9af702-4057-4cd2-bbf3-bb7f1760c219/ddc01abd-488a-4523-b1c3-8905461fac64",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/FNhK6z2zHfp9oF/mllcQ/2c9af702-4057-4cd2-bbf3-bb7f1760c219/ddc01abd-488a-4523-b1c3-8905461fac64?response-content-disposition=inline%3B%20filename%3D%22gato_y_pajaro_1.jpg%22%3B%20filename%2A%3DUTF-8%27%27gato_y_pajaro_1.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261018T143916Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261018%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=a66fa8208df3911b2205c4deb9bc45240d5ffe64a0ccff5c43941551d876e039",
+      "filename": "gato_y_pajaro_1.jpg",
+      "type": "image/jpeg",
+      "size": 16743,
+      "thumbnails": [
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/ktFaok4fXS9Vcg1ad5V7ai_6wf62rXNj3dDtboXwSps/rs:fit:200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvRk5oSzZ6MnpIZnA5b0YvbWxsY1EvMmM5YWY3MDItNDA1Ny00Y2QyLWJiZjMtYmI3ZjE3NjBjMjE5L2RkYzAxYWJkLTQ4OGEtNDUyMy1iMWMzLTg5MDU0NjFmYWM2NA",
+        "size": "small"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/i_uv8entrcCRnTU6kEiLQz1OqmmA_W-0LPrLK6zD37s/rs:fit:600:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvRk5oSzZ6MnpIZnA5b0YvbWxsY1EvMmM5YWY3MDItNDA1Ny00Y2QyLWJiZjMtYmI3ZjE3NjBjMjE5L2RkYzAxYWJkLTQ4OGEtNDUyMy1iMWMzLTg5MDU0NjFmYWM2NA",
+        "size": "medium"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/VxxlPD2v3ksIwC4BTg1tyo1euEXnH6culdspQAs3K3w/rs:fit:1200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvRk5oSzZ6MnpIZnA5b0YvbWxsY1EvMmM5YWY3MDItNDA1Ny00Y2QyLWJiZjMtYmI3ZjE3NjBjMjE5L2RkYzAxYWJkLTQ4OGEtNDUyMy1iMWMzLTg5MDU0NjFmYWM2NA",
+        "size": "large"
+       }
+      ],
+      "expiresAt": null
+     }
+    ],
+    "VWKRF": [
+     {
+      "id": "a395c053-dc94-40e5-8d6d-e24f435ddde0",
+      "label": "Muestra Cortometraje Infantil Primera Infancia (3 a 6 años)"
+     }
+    ],
+    "tgI6Y": "Gato y pajaro",
+    "EStWy": "Franka Sachse",
+    "U11RE": [
+     {
+      "id": "7c019120-12db-4c05-9987-5f016b00911a",
+      "label": "Entrada Liberada"
+     }
+    ]
+   }
+  },
+  {
+   "id": "buZ7pnMXOoE6zE",
+   "fields": {
+    "EguiE": [
+     {
+      "id": "xhTnT4OzknPaoY",
+      "label": "Teatro Cervantes"
+     }
+    ],
+    "9tf35": {
+     "id": "303d5bc5-0132-46c6-b392-adaa6e501cb9",
+     "label": "Pásate una Película"
+    },
+    "cIddG": [
+     {
+      "id": "016dec9a-db9f-4180-b83f-57f7a7e50449",
+      "label": "DINAMARCA"
+     }
+    ],
+    "6A3kv": 10,
+    "EOkFi": [
+     {
+      "id": "8ceb5fef-3658-4464-8ee5-e9dcf51eb741",
+      "label": "Martes 13"
+     },
+     {
+      "id": "6f3c7cdb-b681-451b-ad15-e38bde0dfcce",
+      "label": "Viernes 16"
+     }
+    ],
+    "LVmhF": [
+     "Martes 13 - 10:00 - Teatro Cervantes",
+     "Viernes 16 - 10:00 - Teatro Cervantes"
+    ],
+    "mllcQ": [
+     {
+      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/buZ7pnMXOoE6zE/mllcQ/dc30ba2f-6035-4695-99c0-c14f6995a8b3/49513afb-ef3d-4117-9b94-9244cd54512d",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/buZ7pnMXOoE6zE/mllcQ/dc30ba2f-6035-4695-99c0-c14f6995a8b3/49513afb-ef3d-4117-9b94-9244cd54512d?response-content-disposition=inline%3B%20filename%3D%22kiwi_strit_el_amigo_imaginario.jpg%22%3B%20filename%2A%3DUTF-8%27%27kiwi_strit_el_amigo_imaginario.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261018T143916Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261018%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=818b819c1557fd31f8d9114eacf377b5aff4f8147540467bd9e43a9a5cb1c14c",
+      "filename": "kiwi_strit_el_amigo_imaginario.jpg",
+      "type": "image/jpeg",
+      "size": 79648,
+      "thumbnails": [
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/14ioq3zEd3Inn4h-RUXA6jPxPdDYFXx6jeW6RAl4iXE/rs:fit:200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvYnVaN3BuTVhPb0U2ekUvbWxsY1EvZGMzMGJhMmYtNjAzNS00Njk1LTk5YzAtYzE0ZjY5OTVhOGIzLzQ5NTEzYWZiLWVmM2QtNDExNy05Yjk0LTkyNDRjZDU0NTEyZA",
+        "size": "small"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/eTVe5xsaCdmEvbOgwPyplPHr6h9Yqok5ua33DW8cg4c/rs:fit:600:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvYnVaN3BuTVhPb0U2ekUvbWxsY1EvZGMzMGJhMmYtNjAzNS00Njk1LTk5YzAtYzE0ZjY5OTVhOGIzLzQ5NTEzYWZiLWVmM2QtNDExNy05Yjk0LTkyNDRjZDU0NTEyZA",
+        "size": "medium"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/UpwNIsmfFDSiv65OIlxU_WRm533SLrjMZsGJ1tKTZbU/rs:fit:1200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvYnVaN3BuTVhPb0U2ekUvbWxsY1EvZGMzMGJhMmYtNjAzNS00Njk1LTk5YzAtYzE0ZjY5OTVhOGIzLzQ5NTEzYWZiLWVmM2QtNDExNy05Yjk0LTkyNDRjZDU0NTEyZA",
+        "size": "large"
+       }
+      ],
+      "expiresAt": null
+     }
+    ],
+    "VWKRF": [
+     {
+      "id": "a395c053-dc94-40e5-8d6d-e24f435ddde0",
+      "label": "Muestra Cortometraje Infantil Primera Infancia (3 a 6 años)"
+     }
+    ],
+    "tgI6Y": "Kiwi & Strit : El amigo imaginario",
+    "EStWy": "Esben Toft Jacobsen",
+    "U11RE": [
+     {
+      "id": "7c019120-12db-4c05-9987-5f016b00911a",
+      "label": "Entrada Liberada"
+     }
+    ]
+   }
+  },
+  {
+   "id": "yQoLDoOwOyl0Ci",
+   "fields": {
+    "EguiE": [
+     {
+      "id": "xhTnT4OzknPaoY",
+      "label": "Teatro Cervantes"
+     }
+    ],
+    "9tf35": {
+     "id": "303d5bc5-0132-46c6-b392-adaa6e501cb9",
+     "label": "Pásate una Película"
+    },
+    "cIddG": [
+     {
+      "id": "07c81853-a969-41fe-9c2d-feab54280f8a",
+      "label": "FRANCIA"
+     },
+     {
+      "id": "03c31869-d48d-4774-9b01-a9d03bf58657",
+      "label": "SUIZA"
+     }
+    ],
+    "6A3kv": 10,
+    "EOkFi": [
+     {
+      "id": "8ceb5fef-3658-4464-8ee5-e9dcf51eb741",
+      "label": "Martes 13"
+     },
+     {
+      "id": "011a78b2-dd9f-4829-aefa-9922656c2c99",
+      "label": "Miércoles 14"
+     },
+     {
+      "id": "6f3c7cdb-b681-451b-ad15-e38bde0dfcce",
+      "label": "Viernes 16"
+     }
+    ],
+    "LVmhF": [
+     "Martes 13 - 10:00 - Teatro Cervantes",
+     "Miércoles 14 - 10:00 - Teatro Cervantes",
+     "Viernes 16 - 10:00 - Teatro Cervantes"
+    ],
+    "mllcQ": [
+     {
+      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/yQoLDoOwOyl0Ci/mllcQ/6ff1206e-f359-47e5-8ffe-1c12a896c043/2c2ea50d-51c0-43ff-9c47-74cb2f2e1261",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/yQoLDoOwOyl0Ci/mllcQ/6ff1206e-f359-47e5-8ffe-1c12a896c043/2c2ea50d-51c0-43ff-9c47-74cb2f2e1261?response-content-disposition=inline%3B%20filename%3D%22PiccoloPiccolo_01_MAIN-STILL_IMAGE-PROMO-PRINCIPALE_1.jpg%22%3B%20filename%2A%3DUTF-8%27%27PiccoloPiccolo_01_MAIN-STILL_IMAGE-PROMO-PRINCIPALE_1.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261018T143916Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261018%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=3a23d3d88b87d16d4170ea2bfaa02a82028378680445358a5003b35314da0859",
+      "filename": "PiccoloPiccolo_01_MAIN-STILL_IMAGE-PROMO-PRINCIPALE_1.jpg",
+      "type": "image/jpeg",
+      "size": 60610,
+      "thumbnails": [
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/alybEHe2sL5ncG13VIC-6YbjErrzynsVdtZJjtLERlQ/rs:fit:200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcveVFvTERvT3dPeWwwQ2kvbWxsY1EvNmZmMTIwNmUtZjM1OS00N2U1LThmZmUtMWMxMmE4OTZjMDQzLzJjMmVhNTBkLTUxYzAtNDNmZi05YzQ3LTc0Y2IyZjJlMTI2MQ",
+        "size": "small"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/DNoXLGBuYvgqZRqt34DgkH-fUAyW4BTrg9Ccg1RFRTw/rs:fit:600:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcveVFvTERvT3dPeWwwQ2kvbWxsY1EvNmZmMTIwNmUtZjM1OS00N2U1LThmZmUtMWMxMmE4OTZjMDQzLzJjMmVhNTBkLTUxYzAtNDNmZi05YzQ3LTc0Y2IyZjJlMTI2MQ",
+        "size": "medium"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/KO1PZHhogelZIGtU9r9pp9tsikoxavzKjzfqFZtbAPE/rs:fit:1200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcveVFvTERvT3dPeWwwQ2kvbWxsY1EvNmZmMTIwNmUtZjM1OS00N2U1LThmZmUtMWMxMmE4OTZjMDQzLzJjMmVhNTBkLTUxYzAtNDNmZi05YzQ3LTc0Y2IyZjJlMTI2MQ",
+        "size": "large"
+       }
+      ],
+      "expiresAt": null
+     }
+    ],
+    "VWKRF": [
+     {
+      "id": "a395c053-dc94-40e5-8d6d-e24f435ddde0",
+      "label": "Muestra Cortometraje Infantil Primera Infancia (3 a 6 años)"
+     },
+     {
+      "id": "3eed42d8-f51a-4607-8fee-c613674e1202",
+      "label": "Muestra Cortometraje Infantil +7 años"
+     }
+    ],
+    "tgI6Y": "Piccolo Piccolo",
+    "EStWy": "Marta Gennari",
+    "U11RE": [
+     {
+      "id": "7c019120-12db-4c05-9987-5f016b00911a",
+      "label": "Entrada Liberada"
+     }
+    ]
+   }
+  },
+  {
+   "id": "LxkJZCx5XQGmoG",
+   "fields": {
+    "EguiE": [
+     {
+      "id": "xhTnT4OzknPaoY",
+      "label": "Teatro Cervantes"
+     }
+    ],
+    "9tf35": {
+     "id": "303d5bc5-0132-46c6-b392-adaa6e501cb9",
+     "label": "Pásate una Película"
+    },
+    "cIddG": [
+     {
+      "id": "a258cac8-085e-4785-832f-8da371850c9e",
+      "label": "BÉLGICA"
+     }
+    ],
+    "6A3kv": 10,
+    "EOkFi": [
+     {
+      "id": "8ceb5fef-3658-4464-8ee5-e9dcf51eb741",
+      "label": "Martes 13"
+     },
+     {
+      "id": "6f3c7cdb-b681-451b-ad15-e38bde0dfcce",
+      "label": "Viernes 16"
+     }
+    ],
+    "LVmhF": [
+     "Martes 13 - 10:00 - Teatro Cervantes",
+     "Viernes 16 - 10:00 - Teatro Cervantes"
+    ],
+    "mllcQ": [
+     {
+      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/LxkJZCx5XQGmoG/mllcQ/8ad9ee03-07f9-451e-a13a-d07dda0c8a61/4b323a98-b6d4-4eb8-9f1c-925d77b5b9f9",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/LxkJZCx5XQGmoG/mllcQ/8ad9ee03-07f9-451e-a13a-d07dda0c8a61/4b323a98-b6d4-4eb8-9f1c-925d77b5b9f9?response-content-disposition=inline%3B%20filename%3D%22spin_y_ella_PRINCIPAL.jpg%22%3B%20filename%2A%3DUTF-8%27%27spin_y_ella_PRINCIPAL.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261018T143916Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261018%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=ce120c90d6b67c9eb1afe39aff830d9fb4e05b92045bb580b73a5c9d3bbf709d",
+      "filename": "spin_y_ella_PRINCIPAL.jpg",
+      "type": "image/jpeg",
+      "size": 64652,
+      "thumbnails": [
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/QZXMM_CT_k5LOepciWaQMMit-G8rDZ9roSufGN3IWzA/rs:fit:200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvTHhrSlpDeDVYUUdtb0cvbWxsY1EvOGFkOWVlMDMtMDdmOS00NTFlLWExM2EtZDA3ZGRhMGM4YTYxLzRiMzIzYTk4LWI2ZDQtNGViOC05ZjFjLTkyNWQ3N2I1YjlmOQ",
+        "size": "small"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/K3FqgKGYL1iuUzNNrvl3a5jvPsvufjHz_F8NA9d_vuI/rs:fit:600:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvTHhrSlpDeDVYUUdtb0cvbWxsY1EvOGFkOWVlMDMtMDdmOS00NTFlLWExM2EtZDA3ZGRhMGM4YTYxLzRiMzIzYTk4LWI2ZDQtNGViOC05ZjFjLTkyNWQ3N2I1YjlmOQ",
+        "size": "medium"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/fUauujdt7FC96GuA-Ty5bfFYlrsimk5FmAvW-Ci6Irw/rs:fit:1200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvTHhrSlpDeDVYUUdtb0cvbWxsY1EvOGFkOWVlMDMtMDdmOS00NTFlLWExM2EtZDA3ZGRhMGM4YTYxLzRiMzIzYTk4LWI2ZDQtNGViOC05ZjFjLTkyNWQ3N2I1YjlmOQ",
+        "size": "large"
+       }
+      ],
+      "expiresAt": null
+     }
+    ],
+    "VWKRF": [
+     {
+      "id": "a395c053-dc94-40e5-8d6d-e24f435ddde0",
+      "label": "Muestra Cortometraje Infantil Primera Infancia (3 a 6 años)"
+     }
+    ],
+    "tgI6Y": "Spin y Ella",
+    "EStWy": "An Vrombaut",
+    "U11RE": [
+     {
+      "id": "7c019120-12db-4c05-9987-5f016b00911a",
+      "label": "Entrada Liberada"
+     }
+    ]
+   }
+  },
+  {
+   "id": "xkWUZ8TSrY6gXh",
+   "fields": {
+    "EguiE": [
+     {
+      "id": "W4ixXhQNWUbof4",
+      "label": "Sala Hugo Campos"
+     }
+    ],
+    "9tf35": {
+     "id": "5b49243c-99a4-4b66-950e-d98d5254fafa",
+     "label": "Actividades Paralelas"
+    },
+    "cIddG": [],
+    "6A3kv": 11,
+    "EOkFi": [
+     {
+      "id": "6f3c7cdb-b681-451b-ad15-e38bde0dfcce",
+      "label": "Viernes 16"
+     }
+    ],
+    "LVmhF": [
+     "Viernes 16 - 17:30 - Sala Hugo Campos"
+    ],
+    "mllcQ": [
+     {
+      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/xkWUZ8TSrY6gXh/mllcQ/fed12790-6c33-43d0-b4e9-b87c85dcddd2/a582ac50-1eff-41cd-9753-2a588be1757f",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/xkWUZ8TSrY6gXh/mllcQ/fed12790-6c33-43d0-b4e9-b87c85dcddd2/a582ac50-1eff-41cd-9753-2a588be1757f?response-content-disposition=inline%3B%20filename%3D%22MasterClass-Alfredo-Altamirano.jpg%22%3B%20filename%2A%3DUTF-8%27%27MasterClass-Alfredo-Altamirano.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261018T143916Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261018%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=6a2b7775c3b52e0d4127006f97e7d7631fa4a20d4e82515e5a45e133184ffd90",
+      "filename": "MasterClass-Alfredo-Altamirano.jpg",
+      "type": "image/jpeg",
+      "size": 373018,
+      "thumbnails": [
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/G2ruYBo02Z0TW0_93zqb655114LCfTFfvjGCNRMyYQ8/rs:fit:200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcveGtXVVo4VFNyWTZnWGgvbWxsY1EvZmVkMTI3OTAtNmMzMy00M2QwLWI0ZTktYjg3Yzg1ZGNkZGQyL2E1ODJhYzUwLTFlZmYtNDFjZC05NzUzLTJhNTg4YmUxNzU3Zg",
+        "size": "small"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/ukwbKJ1vPTL9VCBt6zHvSFGTAD-bpPTQiF6ES7Whofs/rs:fit:600:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcveGtXVVo4VFNyWTZnWGgvbWxsY1EvZmVkMTI3OTAtNmMzMy00M2QwLWI0ZTktYjg3Yzg1ZGNkZGQyL2E1ODJhYzUwLTFlZmYtNDFjZC05NzUzLTJhNTg4YmUxNzU3Zg",
+        "size": "medium"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/pQ6Qn_ASAMTU9Ax_8M5gB0nFojxWkn-MIA2jwvEFUXE/rs:fit:1200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcveGtXVVo4VFNyWTZnWGgvbWxsY1EvZmVkMTI3OTAtNmMzMy00M2QwLWI0ZTktYjg3Yzg1ZGNkZGQyL2E1ODJhYzUwLTFlZmYtNDFjZC05NzUzLTJhNTg4YmUxNzU3Zg",
+        "size": "large"
+       }
+      ],
+      "expiresAt": null
+     }
+    ],
+    "VWKRF": [
+     {
+      "id": "0a15c425-1ee4-4bfe-b02d-7d8ad183986b",
+      "label": "Aula"
+     }
+    ],
+    "tgI6Y": "Aula Lorca: Masterclass Dirección de Fotografía con Alfredo Altamirano.",
+    "EStWy": null,
+    "U11RE": [
+     {
+      "id": "7c019120-12db-4c05-9987-5f016b00911a",
+      "label": "Entrada Liberada"
+     }
+    ]
+   }
+  },
+  {
+   "id": "Vl5QAnBo9uJ8VO",
+   "fields": {
+    "EguiE": [
+     {
+      "id": "rbuLCHAPu1Aq7z",
+      "label": "Centro de Extensión Los Canelos UACh"
+     }
+    ],
+    "9tf35": {
+     "id": "5b49243c-99a4-4b66-950e-d98d5254fafa",
+     "label": "Actividades Paralelas"
+    },
+    "cIddG": [],
+    "6A3kv": 11,
+    "EOkFi": [
+     {
+      "id": "6f3c7cdb-b681-451b-ad15-e38bde0dfcce",
+      "label": "Viernes 16"
+     }
+    ],
+    "LVmhF": [
+     "Viernes 16 - 10:30 - Centro de Extensión Los Canelos UACh"
+    ],
+    "mllcQ": [
+     {
+      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/Vl5QAnBo9uJ8VO/mllcQ/80872e92-7913-4a40-8cb8-378ed0180df8/e7663167-eb9c-4d34-8a30-86d134f40cf5",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/Vl5QAnBo9uJ8VO/mllcQ/80872e92-7913-4a40-8cb8-378ed0180df8/e7663167-eb9c-4d34-8a30-86d134f40cf5?response-content-disposition=inline%3B%20filename%3D%22MasterClass-Gabriel-Pablo.jpg%22%3B%20filename%2A%3DUTF-8%27%27MasterClass-Gabriel-Pablo.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261018T143916Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261018%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=a5e560e17fb3ee93f5a8a68fe3486864176e9ff2af3ab9b75b36840c36d9818c",
+      "filename": "MasterClass-Gabriel-Pablo.jpg",
+      "type": "image/jpeg",
+      "size": 238240,
+      "thumbnails": [
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/9LsCX23yCZPtx_dDr7FHSqQab6hma7cOA4CIkWxGLKI/rs:fit:200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvVmw1UUFuQm85dUo4Vk8vbWxsY1EvODA4NzJlOTItNzkxMy00YTQwLThjYjgtMzc4ZWQwMTgwZGY4L2U3NjYzMTY3LWViOWMtNGQzNC04YTMwLTg2ZDEzNGY0MGNmNQ",
+        "size": "small"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/-PAi2Iu-bcVjh-EBoNoesIbmRWL5Gb3JiyEy5cJX4Og/rs:fit:600:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvVmw1UUFuQm85dUo4Vk8vbWxsY1EvODA4NzJlOTItNzkxMy00YTQwLThjYjgtMzc4ZWQwMTgwZGY4L2U3NjYzMTY3LWViOWMtNGQzNC04YTMwLTg2ZDEzNGY0MGNmNQ",
+        "size": "medium"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/0y1iTSz-kr2c4kHQYi9LCw6uQ-Mkjy54yMA85e_U6NA/rs:fit:1200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvVmw1UUFuQm85dUo4Vk8vbWxsY1EvODA4NzJlOTItNzkxMy00YTQwLThjYjgtMzc4ZWQwMTgwZGY4L2U3NjYzMTY3LWViOWMtNGQzNC04YTMwLTg2ZDEzNGY0MGNmNQ",
+        "size": "large"
+       }
+      ],
+      "expiresAt": null
+     }
+    ],
+    "VWKRF": [
+     {
+      "id": "0a15c425-1ee4-4bfe-b02d-7d8ad183986b",
+      "label": "Aula"
+     }
+    ],
+    "tgI6Y": "Clearance de propiedad intelectual en la cadena de valor del cine de autor.",
+    "EStWy": null,
+    "U11RE": [
+     {
+      "id": "7c019120-12db-4c05-9987-5f016b00911a",
+      "label": "Entrada Liberada"
+     }
+    ]
+   }
+  },
+  {
+   "id": "viLFNwTnriSsKl",
+   "fields": {
+    "EguiE": [
+     {
+      "id": "SgSpB81pgB6MoH",
+      "label": "Carpa de La Ciencia"
+     }
+    ],
+    "9tf35": {
+     "id": "5b49243c-99a4-4b66-950e-d98d5254fafa",
+     "label": "Actividades Paralelas"
+    },
+    "cIddG": [],
+    "6A3kv": 11,
+    "EOkFi": [
+     {
+      "id": "6f3c7cdb-b681-451b-ad15-e38bde0dfcce",
+      "label": "Viernes 16"
+     }
+    ],
+    "LVmhF": [
+     "Viernes 16 - 11:00 - Carpa de La Ciencia"
+    ],
+    "mllcQ": [
+     {
+      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/viLFNwTnriSsKl/mllcQ/5768d19e-39d6-475e-bdbf-ac957a18bee3/06afbe86-48f0-42f1-9438-45c0ecfd6dce",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/viLFNwTnriSsKl/mllcQ/5768d19e-39d6-475e-bdbf-ac957a18bee3/06afbe86-48f0-42f1-9438-45c0ecfd6dce?response-content-disposition=inline%3B%20filename%3D%22Foro-Estudiantes-RUCA.jpg%22%3B%20filename%2A%3DUTF-8%27%27Foro-Estudiantes-RUCA.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261018T143916Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261018%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=88080cc7a19a674715527bc2c0c58718355b1a3d4914c3459be9bbc596a5e6a8",
+      "filename": "Foro-Estudiantes-RUCA.jpg",
+      "type": "image/jpeg",
+      "size": 298427,
+      "thumbnails": [
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/kSgnVGlBryFVacj7zVqdD5xlYqtR7OomREwhdOBe62M/rs:fit:200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvdmlMRk53VG5yaVNzS2wvbWxsY1EvNTc2OGQxOWUtMzlkNi00NzVlLWJkYmYtYWM5NTdhMThiZWUzLzA2YWZiZTg2LTQ4ZjAtNDJmMS05NDM4LTQ1YzBlY2ZkNmRjZQ",
+        "size": "small"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/woQs2rlEjS_jewbbg24lNik9aV7WAjNQrkyVQ6vknzA/rs:fit:600:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvdmlMRk53VG5yaVNzS2wvbWxsY1EvNTc2OGQxOWUtMzlkNi00NzVlLWJkYmYtYWM5NTdhMThiZWUzLzA2YWZiZTg2LTQ4ZjAtNDJmMS05NDM4LTQ1YzBlY2ZkNmRjZQ",
+        "size": "medium"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/XoRw4_MBctDz9dpoZCqEXdITdq_ZjkFn2QjI5w-XdJ8/rs:fit:1200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvdmlMRk53VG5yaVNzS2wvbWxsY1EvNTc2OGQxOWUtMzlkNi00NzVlLWJkYmYtYWM5NTdhMThiZWUzLzA2YWZiZTg2LTQ4ZjAtNDJmMS05NDM4LTQ1YzBlY2ZkNmRjZQ",
+        "size": "large"
+       }
+      ],
+      "expiresAt": null
+     }
+    ],
+    "VWKRF": [
+     {
+      "id": "0a15c425-1ee4-4bfe-b02d-7d8ad183986b",
+      "label": "Aula"
+     }
+    ],
+    "tgI6Y": "Foro de estudiantes RUCA",
+    "EStWy": null,
+    "U11RE": [
+     {
+      "id": "7c019120-12db-4c05-9987-5f016b00911a",
+      "label": "Entrada Liberada"
+     }
+    ]
+   }
+  },
+  {
+   "id": "YLj9f2mxqs7ks2",
+   "fields": {
+    "EguiE": [
+     {
+      "id": "3EEU0hTZD7o2Hm",
+      "label": "UST"
+     }
+    ],
+    "9tf35": {
+     "id": "5b49243c-99a4-4b66-950e-d98d5254fafa",
+     "label": "Actividades Paralelas"
+    },
+    "cIddG": [],
+    "6A3kv": 11,
+    "EOkFi": [
+     {
+      "id": "011a78b2-dd9f-4829-aefa-9922656c2c99",
+      "label": "Miércoles 14"
+     }
+    ],
+    "LVmhF": [
+     "Miércoles 14 - 10:00 - UST"
+    ],
+    "mllcQ": [
+     {
+      "id": "attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/YLj9f2mxqs7ks2/mllcQ/2789dc50-392d-4c3d-b711-273539596b37/7d0d023f-5c61-4594-a06e-d53a98c0aafc",
+      "url": "https://softr-tables-eu-prod-bucket04.s3.eu-central-1.amazonaws.com/attachments/ecac7791-bb0d-45dc-b24d-eddac61e9e1e/hf94vtoq7phxzg/YLj9f2mxqs7ks2/mllcQ/2789dc50-392d-4c3d-b711-273539596b37/7d0d023f-5c61-4594-a06e-d53a98c0aafc?response-content-disposition=inline%3B%20filename%3D%22MasterClass-Ricardo-Tapia.jpg%22%3B%20filename%2A%3DUTF-8%27%27MasterClass-Ricardo-Tapia.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20261018T143916Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIA2Q5PIHELIU6YZC3S%2F20261018%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=7200&X-Amz-Signature=affbb5b707b477f37d2d1e4ab9f535d08f2aa8319dda70b02a153aeb178ec1aa",
+      "filename": "MasterClass-Ricardo-Tapia.jpg",
+      "type": "image/jpeg",
+      "size": 281868,
+      "thumbnails": [
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/mzGFcOSEo3NbFlgBUx7nP_0xawKoZ1lYEUO3aQqTwWQ/rs:fit:200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvWUxqOWYybXhxczdrczIvbWxsY1EvMjc4OWRjNTAtMzkyZC00YzNkLWI3MTEtMjczNTM5NTk2YjM3LzdkMGQwMjNmLTVjNjEtNDU5NC1hMDZlLWQ1M2E5OGMwYWFmYw",
+        "size": "small"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/4DfYhMV9TH_Q-vrtLcxIODdP2lQ3e7ccSn5tcDidtmc/rs:fit:600:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvWUxqOWYybXhxczdrczIvbWxsY1EvMjc4OWRjNTAtMzkyZC00YzNkLWI3MTEtMjczNTM5NTk2YjM3LzdkMGQwMjNmLTVjNjEtNDU5NC1hMDZlLWQ1M2E5OGMwYWFmYw",
+        "size": "medium"
+       },
+       {
+        "url": "https://d2nmodil6do74b.cloudfront.net/93cQ0zmwtM9H02-mZtwBjuok4E5RJkSxV5cCKk1ABP0/rs:fit:1200:0/exp:1792341900/czM6Ly9zb2Z0ci10YWJsZXMtZXUtcHJvZC1idWNrZXQwNC9hdHRhY2htZW50cy9lY2FjNzc5MS1iYjBkLTQ1ZGMtYjI0ZC1lZGRhYzYxZTllMWUvaGY5NHZ0b3E3cGh4emcvWUxqOWYybXhxczdrczIvbWxsY1EvMjc4OWRjNTAtMzkyZC00YzNkLWI3MTEtMjczNTM5NTk2YjM3LzdkMGQwMjNmLTVjNjEtNDU5NC1hMDZlLWQ1M2E5OGMwYWFmYw",
+        "size": "large"
+       }
+      ],
+      "expiresAt": null
+     }
+    ],
+    "VWKRF": [
+     {
+      "id": "0a15c425-1ee4-4bfe-b02d-7d8ad183986b",
+      "label": "Aula"
+     }
+    ],
+    "tgI6Y": "Master Class: Ampliando la visión de lo posible",
+    "EStWy": "Auditorio B, U Santo Tomás",
+    "U11RE": [
+     {
+      "id": "7c019120-12db-4c05-9987-5f016b00911a",
+      "label": "Entrada Liberada"
+     }
+    ]
+   }
+  }
+ ],
+ "empty": false,
+ "complete": true
+}
