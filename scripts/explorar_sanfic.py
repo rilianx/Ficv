@@ -32,6 +32,12 @@ while cola and len(vistos) < 60:
             low = v.lower()
             if re.search(r"program|cartelera|pelicula|film|grilla|horario|funcion|seccion|competencia|catalogo|sitemap|\.pdf|wp-json|api", low):
                 enlaces[v] = 1
-                if len(vistos) + len(cola) < 60 and not re.search(r"\.(jpg|png|webp|css|js)(\?|$)", low): cola.append(v)
+                if re.search(r"2026|sanfic22|sanfic-22|programaci|cartelera|grilla|pelicula|wp-json/wp/v2/types", low) and len(vistos) + len(cola) < 60 and not re.search(r"\.(jpg|png|webp|css|js)(\?|$)", low): cola.append(v)
 (out / "_enlaces.txt").write_text("\n".join(enlaces), encoding="utf-8")
+# todos los enlaces de la portada (para ver dónde está la programación 2026)
+try:
+    t = get("https://sanfic.com/")[0].decode("utf-8", "replace")
+    todos = sorted({urljoin("https://sanfic.com/", h) for h in re.findall(r'href="([^"#]+)"', t)})
+    (out / "_portada_enlaces.txt").write_text("\n".join(todos), encoding="utf-8"); print(len(todos), "enlaces en portada")
+except Exception as e: print("portada", e)
 print(len(enlaces), "enlaces relevantes")
