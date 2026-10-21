@@ -5,6 +5,7 @@ on:
     paths:
       - scripts/explorar_sanfic.py
       - scripts/sanfic.py
+      - scripts/explorar_cinepolis.py
       - .github/workflows/sanfic.yml
   workflow_dispatch:
 
@@ -21,6 +22,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: python scripts/explorar_sanfic.py
+      - run: pip install -q playwright && python -m playwright install --with-deps chromium && python scripts/explorar_cinepolis.py || true
       - run: '[ -f scripts/sanfic.py ] && python scripts/sanfic.py || true'
       - name: Guardar
         run: |
