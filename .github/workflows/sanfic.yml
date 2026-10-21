@@ -1,0 +1,32 @@
+name: Explorar SANFIC
+
+on:
+  push:
+    paths:
+      - scripts/explorar_sanfic.py
+      - scripts/sanfic.py
+      - .github/workflows/sanfic.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  explorar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/explorar_sanfic.py
+      - run: '[ -f scripts/sanfic.py ] && python scripts/sanfic.py || true'
+      - name: Guardar
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898341+github-actions[bot]@users.noreply.github.com"
+          git add fuentes/sanfic programa-sanfic 2>/dev/null || true
+          git diff --cached --quiet || git commit -m "Datos SANFIC"
+          git pull --rebase -q || true
+          git push
