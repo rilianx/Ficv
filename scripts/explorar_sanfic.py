@@ -41,3 +41,29 @@ try:
     (out / "_portada_enlaces.txt").write_text("\n".join(todos), encoding="utf-8"); print(len(todos), "enlaces en portada")
 except Exception as e: print("portada", e)
 print(len(enlaces), "enlaces relevantes")
+
+# --- 2ª pasada: REST de WordPress (películas, edición, actividades, PDFs 2026) y fichas ---
+api = Path("fuentes/sanfic/api"); api.mkdir(parents=True, exist_ok=True)
+def rest(nombre, url, paginas=20):
+    todo = []
+    for p in range(1, paginas + 1):
+        try: data, ct = get(f"{url}{'&' if '?' in url else '?'}per_page=100&page={p}")
+        except Exception as e: print("REST", nombre, p, e); break
+        try: lote = json.loads(data)
+        except Exception: break
+        if not isinstance(lote, list) or not lote: break
+        todo += lote
+        if len(lote) < 100: break
+    (api / f"{nombre}.json").write_text(json.dumps(todo, ensure_ascii=False, indent=1), encoding="utf-8")
+    print("REST", nombre, len(todo)); return todo
+pelis = rest("movies", "https://sanfic.com/wp-json/wp/v2/movies?_embed=1")
+for t in ["this_edition", "activities", "press_functions", "festival"]: rest(t, f"https://sanfic.com/wp-json/wp/v2/{t}?_embed=1", 5)
+rest("media_pdf", "https://sanfic.com/wp-json/wp/v2/media?mime_type=application/pdf&after=2026-06-01T00:00:00", 3)
+rest("pages", "https://sanfic.com/wp-json/wp/v2/pages?after=2026-01-01T00:00:00", 3)
+rest("taxonomias", "https://sanfic.com/wp-json/wp/v2/taxonomies", 1)
+fichas = Path("fuentes/sanfic/fichas"); fichas.mkdir(parents=True, exist_ok=True)
+for m in pelis[:6]:
+    try: fichas.joinpath(f"{m.get('slug','x')}.html").write_bytes(get(m["link"])[0])
+    except Exception as e: print("ficha", e)
+try: (out / "programacion_hoy.html").write_bytes(get("https://sanfic.com/esta-edicion/programacion/")[0])
+except Exception as e: print(e)
