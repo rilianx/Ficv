@@ -1,0 +1,392 @@
+[
+ {
+  "id": 10128,
+  "date": "2020-08-10T18:00:40",
+  "date_gmt": "2020-08-10T22:00:40",
+  "guid": {
+   "rendered": "https://sanfic.com/?post_type=activities&#038;p=10128"
+  },
+  "modified": "2020-08-10T18:00:40",
+  "modified_gmt": "2020-08-10T22:00:40",
+  "slug": "encuentro-con-artistas-alvaro-longoria",
+  "status": "publish",
+  "type": "activities",
+  "link": "https://sanfic.com/activities/encuentro-con-artistas-alvaro-longoria/",
+  "title": {
+   "rendered": "Encuentro con artistas: Álvaro Longoria"
+  },
+  "content": {
+   "rendered": "Este sábado 22 de agosto, a las 20:00H, participa en la conversación que Carlos Núñez, director artístico de SANFIC, tendrá con Álvaro Longoria, realizador español ganador del Goya por su película <em>Hijos de las nubes, la última colonia, </em>y que en esta edición de SANFIC exhibirá su documental <em>Santuario, </em>protagonizado por Javier y Carlos Bardem, y también será parte del jurado de la Competencia Internacional del certamen.\r\n<p class=\"has-normal-font-size\">Conéctate a este encuentro a través de nuestra <a href=\"https://www.facebook.com/SANFIC\" target=\"_blank\" rel=\"noreferrer noopener\">página de Facebook</a> o a través del canal de <a href=\"http://youtube.com/c/FundacionCorpartes\" target=\"_blank\" rel=\"noreferrer noopener\">YouTube de Fundación CorpArtes</a>.<!-- /wp:paragraph --><!-- wp:paragraph {\"fontSize\":\"normal\"} --></p>\r\n<p class=\"has-normal-font-size\">¡No te lo pierdas!</p>",
+   "protected": false
+  },
+  "featured_media": 0,
+  "template": "",
+  "meta": {
+   "_et_pb_use_builder": "",
+   "_et_pb_old_content": "",
+   "_et_gb_content_width": ""
+  },
+  "activity_category": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://sanfic.com/wp-json/wp/v2/activities/10128"
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://sanfic.com/wp-json/wp/v2/activities"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://sanfic.com/wp-json/wp/v2/types/activities"
+    }
+   ],
+   "wp:attachment": [
+    {
+     "href": "https://sanfic.com/wp-json/wp/v2/media?parent=10128"
+    }
+   ],
+   "wp:term": [
+    {
+     "taxonomy": "activity_category",
+     "embeddable": true,
+     "href": "https://sanfic.com/wp-json/wp/v2/activity_category?post=10128"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 10125,
+  "date": "2020-08-10T17:58:05",
+  "date_gmt": "2020-08-10T21:58:05",
+  "guid": {
+   "rendered": "https://sanfic.com/?post_type=activities&#038;p=10125"
+  },
+  "modified": "2020-08-10T17:58:05",
+  "modified_gmt": "2020-08-10T21:58:05",
+  "slug": "encuentro-con-artistas-paulina-garcia",
+  "status": "publish",
+  "type": "activities",
+  "link": "https://sanfic.com/activities/encuentro-con-artistas-paulina-garcia/",
+  "title": {
+   "rendered": "Encuentro con artistas: Paulina García"
+  },
+  "content": {
+   "rendered": "<p class=\"has-normal-font-size\">Este jueves 20 de agosto, a las 20:00H, participa en la conversación que Carlos Núñez, director artístico de SANFIC, tendrá con Paulina García, actriz ganadora del Oso de Plata (2013) y del Premio Platino a la Mejor Interpretación Femenina (2014) por su interpretación en la película <em>Gloria</em>, integrante del jurado de la Competencia Internacional de SANFIC16.</p>\r\n<p class=\"has-normal-font-size\">Conéctate a este encuentro a través de nuestra <a href=\"https://www.facebook.com/SANFIC\" target=\"_blank\" rel=\"noreferrer noopener\">página de Facebook</a> o a través del canal de <a href=\"http://youtube.com/c/FundacionCorpartes\" target=\"_blank\" rel=\"noreferrer noopener\">YouTube de Fundación CorpArtes</a>.<!-- /wp:paragraph --><!-- wp:paragraph {\"fontSize\":\"normal\"} --></p>\r\n<p class=\"has-normal-font-size\">¡No te lo pierdas!</p>\r\n<p class=\"has-normal-font-size\"></p>",
+   "protected": false
+  },
+  "featured_media": 0,
+  "template": "",
+  "meta": {
+   "_et_pb_use_builder": "",
+   "_et_pb_old_content": "",
+   "_et_gb_content_width": ""
+  },
+  "activity_category": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://sanfic.com/wp-json/wp/v2/activities/10125"
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://sanfic.com/wp-json/wp/v2/activities"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://sanfic.com/wp-json/wp/v2/types/activities"
+    }
+   ],
+   "wp:attachment": [
+    {
+     "href": "https://sanfic.com/wp-json/wp/v2/media?parent=10125"
+    }
+   ],
+   "wp:term": [
+    {
+     "taxonomy": "activity_category",
+     "embeddable": true,
+     "href": "https://sanfic.com/wp-json/wp/v2/activity_category?post=10125"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 10120,
+  "date": "2020-08-10T17:52:50",
+  "date_gmt": "2020-08-10T21:52:50",
+  "guid": {
+   "rendered": "https://sanfic.com/?post_type=activities&#038;p=10120"
+  },
+  "modified": "2020-08-10T19:55:34",
+  "modified_gmt": "2020-08-10T23:55:34",
+  "slug": "ruiz-antes-de-ruiz",
+  "status": "publish",
+  "type": "activities",
+  "link": "https://sanfic.com/activities/ruiz-antes-de-ruiz/",
+  "title": {
+   "rendered": "Conversatorio – Ruiz antes de Ruiz"
+  },
+  "content": {
+   "rendered": "<p>Este miércoles 23 de agosto, a las 18:00H, participa junto a nuestras invitadas en la conversación sobre este prolífico y visionario cineasta chileno, quienes dialogarán sobre las diferentes miradas  en torno a la primera etapa de la obra cinematográfica de Raúl Ruíz.</p>\r\n<p>&nbsp;</p>\r\n<h4>PARTICIPAN</h4>\r\n<ul>\r\n<li>Dominga Sotomayor, directora de cine, guionista, productora y fundadora del CCC (Chile).</li>\r\n<li>Yenny Cáceres, periodista y autora del libro <em>Los años chilenos de Raúl Ruiz</em> (Chile).</li>\r\n<li>Alberto Fuguet; escritor y director de cine</li>\r\n</ul>\r\n<p class=\"has-normal-font-size\">El conversatorio será moderado por Loreto Araya, Coordinadora General de SANFIC.</p>\r\n<p>&nbsp;</p>\r\n<p class=\"has-normal-font-size\">Conéctate al conversatorio a través de nuestra <a href=\"https://www.facebook.com/SANFIC\" target=\"_blank\" rel=\"noreferrer noopener\">página de Facebook</a> o a través del canal de <a href=\"http://youtube.com/c/FundacionCorpartes\" target=\"_blank\" rel=\"noreferrer noopener\">YouTube de Fundación CorpArtes</a>.<!-- /wp:paragraph -->\r\n\r\n<!-- wp:paragraph {\"fontSize\":\"normal\"} --></p>\r\n<p class=\"has-normal-font-size\">¡No te lo pierdas!</p>",
+   "protected": false
+  },
+  "featured_media": 0,
+  "template": "",
+  "meta": {
+   "_et_pb_use_builder": "",
+   "_et_pb_old_content": "",
+   "_et_gb_content_width": ""
+  },
+  "activity_category": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://sanfic.com/wp-json/wp/v2/activities/10120"
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://sanfic.com/wp-json/wp/v2/activities"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://sanfic.com/wp-json/wp/v2/types/activities"
+    }
+   ],
+   "wp:attachment": [
+    {
+     "href": "https://sanfic.com/wp-json/wp/v2/media?parent=10120"
+    }
+   ],
+   "wp:term": [
+    {
+     "taxonomy": "activity_category",
+     "embeddable": true,
+     "href": "https://sanfic.com/wp-json/wp/v2/activity_category?post=10120"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 10117,
+  "date": "2020-08-10T17:50:22",
+  "date_gmt": "2020-08-10T21:50:22",
+  "guid": {
+   "rendered": "https://sanfic.com/?post_type=activities&#038;p=10117"
+  },
+  "modified": "2020-08-10T17:55:32",
+  "modified_gmt": "2020-08-10T21:55:32",
+  "slug": "directoras-latinoamericanas-hacer-cine-hoy-en-la-region-a-partir-de-su-experiencia",
+  "status": "publish",
+  "type": "activities",
+  "link": "https://sanfic.com/activities/directoras-latinoamericanas-hacer-cine-hoy-en-la-region-a-partir-de-su-experiencia/",
+  "title": {
+   "rendered": "Conversatorio – Directoras Latinoamericanas:  hacer cine hoy en la región a partir de su experiencia"
+  },
+  "content": {
+   "rendered": "<p class=\"has-normal-font-size\">Este miércoles 19 de agosto, a las 20:00H, te invitamos a que te unas a este diálogo junto a nuestras destacadas invitadas, quienes reflexionarán respecto a lo que significa para ellas hacer cine en la región, así como del panorama de sus países y cómo ven el cine a futuro desde el contexto de pandemia actual.</p>\r\n<p>&nbsp;</p>\r\n<h4>PARTICIPAN</h4>\r\n<ul>\r\n<li>Marité Ugás, directora de la película <em>Contactado (</em>Perú), parte de la Competencia Internacional de SANFIC.</li>\r\n<li>Valentina Reyes, directora de la película <em>Las mujeres de mi casa</em> (Chile), que conforma una de las siete películas de la Competencia de Cine Chileno de SANFIC16.</li>\r\n<li>Sabrina Blanco, directora de la película <em>La botera</em> (Argentina), de la nueva sección de SANFIC16 “Directoras en foco”.</li>\r\n</ul>\r\n<p class=\"has-normal-font-size\">El conversatorio será moderado por Gabriela Sandoval, Directora de SANFIC Industria.</p>\r\n<p>&nbsp;</p>\r\n<p class=\"has-normal-font-size\">Conéctate al conversatorio a través de nuestra <a href=\"https://www.facebook.com/SANFIC\" target=\"_blank\" rel=\"noreferrer noopener\">página de Facebook</a> o a través del canal de <a href=\"http://youtube.com/c/FundacionCorpartes\" target=\"_blank\" rel=\"noreferrer noopener\">YouTube de Fundación CorpArtes</a>.<!-- /wp:paragraph -->\r\n\r\n<!-- wp:paragraph {\"fontSize\":\"normal\"} --></p>\r\n<p class=\"has-normal-font-size\">¡No te lo pierdas!</p>",
+   "protected": false
+  },
+  "featured_media": 0,
+  "template": "",
+  "meta": {
+   "_et_pb_use_builder": "",
+   "_et_pb_old_content": "",
+   "_et_gb_content_width": ""
+  },
+  "activity_category": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://sanfic.com/wp-json/wp/v2/activities/10117"
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://sanfic.com/wp-json/wp/v2/activities"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://sanfic.com/wp-json/wp/v2/types/activities"
+    }
+   ],
+   "wp:attachment": [
+    {
+     "href": "https://sanfic.com/wp-json/wp/v2/media?parent=10117"
+    }
+   ],
+   "wp:term": [
+    {
+     "taxonomy": "activity_category",
+     "embeddable": true,
+     "href": "https://sanfic.com/wp-json/wp/v2/activity_category?post=10117"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 10110,
+  "date": "2020-08-10T17:46:08",
+  "date_gmt": "2020-08-10T21:46:08",
+  "guid": {
+   "rendered": "https://sanfic.com/?post_type=activities&#038;p=10110"
+  },
+  "modified": "2020-08-12T10:16:01",
+  "modified_gmt": "2020-08-12T14:16:01",
+  "slug": "cine-y-educacion-desde-el-quehacer-creacion-y-programacion-de-contenidos",
+  "status": "publish",
+  "type": "activities",
+  "link": "https://sanfic.com/activities/cine-y-educacion-desde-el-quehacer-creacion-y-programacion-de-contenidos/",
+  "title": {
+   "rendered": "Conversatorio – Cine y Educación desde el quehacer: creación y programación de contenidos"
+  },
+  "content": {
+   "rendered": "<p class=\"has-normal-font-size\">Este miércoles 12 de agosto, a las 20:00H, explora junto a nuestros destacados invitados sobre los contenidos que hoy se están creando, así como la brecha considerable que existe en cuanto al acceso del público a películas para niños y jóvenes con un contenido diverso.</p>\r\n<p><strong>Descripción: </strong></p>\r\n<p>Hoy existe una brecha considerable en cuanto al acceso del público a películas para niños y jóvenes con un contenido diverso. La oferta de películas en las salas de cine comerciales es escasa en tipos de lenguajes artísticos y formatos creativos, algo que sin embargo si se ve reflejado en la oferta programática de festivales de cine y en los contenidos digitales, cuyo consumo ha aumentado considerablemente y aún más en el confinamiento. ¿Qué tipo de contenidos se están produciendo hoy? ¿Cómo conectar a las nuevas audiencias con el cine y por qué es importante hacerlo? Nos hacemos la pregunta desde el rol que tienen los creadores y los Festivales de Cine en el desarrollo de nuevas propuestas y formatos que motiven a los jóvenes a preferir contenidos diversos que puedan enriquecer su participación y reflexión cultural.</p>\r\n<h4> </h4>\r\n<h4>PARTICIPAN</h4>\r\n<ul>\r\n<li>Alejandra Fritis, directora del Festival Ojo de Pescado (Chile).</li>\r\n</ul>\r\n<p>Realizadora y productora de cine y televisión, documentalista y Directora del Festival Ojo de Pescado, certamen de carácter anual y nacido en 2012 en la ciudad de Valparaíso, donde se exhibe una exclusiva programación nacional y extranjera, con obras cinematográficas para niños, niñas y jóvenes de reciente producción.</p>\r\n<ul>\r\n<li>Rolando Carileo, director del campamento y festival Pichikeche (Chile).</li>\r\n</ul>\r\n<p>Realizador audiovisual de profesión, se desempeña como director del Festival de Cine Infantil y Campamento de Cine Pichikeche en la región de Los Ríos, uno de los proyectos de la organización Mundolibre desde 2012.</p>\r\n<ul>\r\n<li>Juan Manuel Domínguez, programador del Buenos Aires Festival Internacional de Cine Independiente (BAFICI) y de la sección infantil y juvenil BAFICITO (Argentina).</li>\r\n</ul>\r\n<p>Dedicado al ejercicio del periodismo cultural en varios medios argentinos, es programador del Buenos Aires Festival Internacional de Cine Independiente (BAFICI), además de codirector del BAFICI animado (BAFICITO).</p>\r\n<ul>\r\n<li>Patricio Escala, productor de cine y animación (Chile).</li>\r\n</ul>\r\n<p>Productor de cine y animación nacido en la región del Biobío, fundador de la productora audiovisual Punkrobot responsable de la realización del cortometraje animado “Historia de un Oso” que en 2016 obtuvo el primer Oscar para Chile.</p>\r\n<h4>MODERA</h4>\r\n<ul>\r\n<li class=\"has-normal-font-size\">Loreto Araya, Coordinadora de SANFIC.</li>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<p class=\"has-normal-font-size\">Conéctate al conversatorio a través de nuestra <a href=\"https://www.facebook.com/SANFIC\" target=\"_blank\" rel=\"noreferrer noopener\">página de Facebook</a> o a través del canal de <a href=\"http://youtube.com/c/FundacionCorpartes\" target=\"_blank\" rel=\"noreferrer noopener\">YouTube de Fundación CorpArtes</a>.</p>\r\n<!-- /wp:paragraph -->\r\n\r\n<!-- wp:paragraph {\"fontSize\":\"normal\"} -->\r\n<p class=\"has-normal-font-size\">¡No te lo pierdas!</p>",
+   "protected": false
+  },
+  "featured_media": 0,
+  "template": "",
+  "meta": {
+   "_et_pb_use_builder": "",
+   "_et_pb_old_content": "",
+   "_et_gb_content_width": ""
+  },
+  "activity_category": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://sanfic.com/wp-json/wp/v2/activities/10110"
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://sanfic.com/wp-json/wp/v2/activities"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://sanfic.com/wp-json/wp/v2/types/activities"
+    }
+   ],
+   "wp:attachment": [
+    {
+     "href": "https://sanfic.com/wp-json/wp/v2/media?parent=10110"
+    }
+   ],
+   "wp:term": [
+    {
+     "taxonomy": "activity_category",
+     "embeddable": true,
+     "href": "https://sanfic.com/wp-json/wp/v2/activity_category?post=10110"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 9825,
+  "date": "2020-08-03T18:26:41",
+  "date_gmt": "2020-08-03T22:26:41",
+  "guid": {
+   "rendered": "https://sanfic.com/?post_type=activities&#038;p=9825"
+  },
+  "modified": "2020-08-10T17:54:49",
+  "modified_gmt": "2020-08-10T21:54:49",
+  "slug": "creacion-cinematografica-panorama-actual-en-africa-y-america-latina",
+  "status": "publish",
+  "type": "activities",
+  "link": "https://sanfic.com/activities/creacion-cinematografica-panorama-actual-en-africa-y-america-latina/",
+  "title": {
+   "rendered": "Conversatorio – Creación Cinematográfica: Panorama actual en África y América Latina"
+  },
+  "content": {
+   "rendered": "\r\n<p class=\"has-normal-font-size\">Este miércoles 05 de agosto, a las 12:00H, comenzaremos con las actividades especiales que realizaremos como antesala del inicio de SANFIC16 con el conversatorio “Creación cinematográfica: panorama actual en África y América latina”.</p>\r\n\r\n\r\n\r\n<p class=\"has-normal-font-size\">Participa en este interesante espacio de conversación y explora junto a nuestros destacados invitados sobre las similitudes entre ambos territorios en la industria, analizando la fuerte alza de la producción del continente africano y el actual auge del cine Latinoamericano.</p>\r\n\r\n\r\n\r\n<div class=\"wp-block-spacer\" style=\"height: 30px\" aria-hidden=\"true\"> </div>\r\n\r\n\r\n\r\n<h4>PARTICIPAN</h4>\r\n\r\n\r\n\r\n<div class=\"wp-block-group\">\r\n<div class=\"wp-block-group__inner-container\">\r\n<div class=\"wp-block-group\">\r\n<div class=\"wp-block-group__inner-container\">\r\n<p style=\"font-size: 18px\">– Carlos Núñez | Director Artístico de SANFIC (Chile)</p>\r\n\r\n\r\n\r\n<p style=\"font-size: 18px\">– Gerardo Michelin | Director y fundador de LatAm cinema (Uruguay)</p>\r\n\r\n\r\n\r\n<p style=\"font-size: 18px\">– Javier H. Estrada | Crítico, profesor y programador de cine (España)</p>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n\r\n\r\n\r\n<div class=\"wp-block-spacer\" style=\"height: 50px\" aria-hidden=\"true\"> </div>\r\n\r\n\r\n\r\n<h4>MODERA</h4>\r\n\r\n\r\n\r\n<p style=\"font-size: 18px\">– Christian Ramírez | Periodista y crítico de cine</p>\r\n\r\n\r\n\r\n<div class=\"wp-block-spacer\" style=\"height: 30px\" aria-hidden=\"true\"> </div>\r\n\r\n\r\n\r\n<p class=\"has-normal-font-size\">Conéctate al conversatorio a través de nuestra <a href=\"https://www.facebook.com/SANFIC\" target=\"_blank\" rel=\"noreferrer noopener\">página de Facebook</a> o a través del canal de <a href=\"http://youtube.com/c/FundacionCorpartes\" target=\"_blank\" rel=\"noreferrer noopener\">YouTube de Fundación CorpArtes</a>.</p>\r\n\r\n\r\n\r\n<p class=\"has-normal-font-size\">¡No te lo pierdas!</p>\r\n",
+   "protected": false
+  },
+  "featured_media": 0,
+  "template": "",
+  "meta": {
+   "_et_pb_use_builder": "off",
+   "_et_pb_old_content": "",
+   "_et_gb_content_width": ""
+  },
+  "activity_category": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://sanfic.com/wp-json/wp/v2/activities/9825"
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://sanfic.com/wp-json/wp/v2/activities"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://sanfic.com/wp-json/wp/v2/types/activities"
+    }
+   ],
+   "wp:attachment": [
+    {
+     "href": "https://sanfic.com/wp-json/wp/v2/media?parent=9825"
+    }
+   ],
+   "wp:term": [
+    {
+     "taxonomy": "activity_category",
+     "embeddable": true,
+     "href": "https://sanfic.com/wp-json/wp/v2/activity_category?post=9825"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ }
+]

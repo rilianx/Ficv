@@ -1,0 +1,136 @@
+[
+ {
+  "id": 19436,
+  "date": "2026-07-20T10:24:29",
+  "date_gmt": "2026-07-20T14:24:29",
+  "guid": {
+   "rendered": "https://sanfic.com/wp-content/uploads/2026/07/Bases-SANFIC22-ESP.pdf"
+  },
+  "modified": "2026-07-20T10:24:29",
+  "modified_gmt": "2026-07-20T14:24:29",
+  "slug": "bases-sanfic22-esp",
+  "status": "inherit",
+  "type": "attachment",
+  "link": "https://sanfic.com/bases-sanfic22-esp/",
+  "title": {
+   "rendered": "Bases SANFIC22 ESP"
+  },
+  "author": 9,
+  "comment_status": "",
+  "ping_status": "closed",
+  "template": "",
+  "meta": {
+   "_et_pb_use_builder": "",
+   "_et_pb_old_content": "",
+   "_et_gb_content_width": ""
+  },
+  "description": {
+   "rendered": "<p class=\"attachment\"><a href='https://sanfic.com/wp-content/uploads/2026/07/Bases-SANFIC22-ESP.pdf'>Bases SANFIC22 ESP</a></p>\n"
+  },
+  "caption": {
+   "rendered": "<p>Bases SANFIC22 ESP</p>\n"
+  },
+  "alt_text": "",
+  "media_type": "file",
+  "mime_type": "application/pdf",
+  "media_details": {},
+  "post": null,
+  "source_url": "https://sanfic.com/wp-content/uploads/2026/07/Bases-SANFIC22-ESP.pdf",
+  "_links": {
+   "self": [
+    {
+     "href": "https://sanfic.com/wp-json/wp/v2/media/19436"
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://sanfic.com/wp-json/wp/v2/media"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://sanfic.com/wp-json/wp/v2/types/attachment"
+    }
+   ],
+   "author": [
+    {
+     "embeddable": true,
+     "href": "https://sanfic.com/wp-json/wp/v2/users/9"
+    }
+   ],
+   "replies": [
+    {
+     "embeddable": true,
+     "href": "https://sanfic.com/wp-json/wp/v2/comments?post=19436"
+    }
+   ]
+  }
+ },
+ {
+  "id": 19434,
+  "date": "2026-07-20T10:24:28",
+  "date_gmt": "2026-07-20T14:24:28",
+  "guid": {
+   "rendered": "https://sanfic.com/wp-content/uploads/2026/07/Regulations-SANFIC22.pdf"
+  },
+  "modified": "2026-07-20T10:24:28",
+  "modified_gmt": "2026-07-20T14:24:28",
+  "slug": "regulations-sanfic22",
+  "status": "inherit",
+  "type": "attachment",
+  "link": "https://sanfic.com/regulations-sanfic22/",
+  "title": {
+   "rendered": "Regulations SANFIC22"
+  },
+  "author": 9,
+  "comment_status": "",
+  "ping_status": "closed",
+  "template": "",
+  "meta": {
+   "_et_pb_use_builder": "",
+   "_et_pb_old_content": "",
+   "_et_gb_content_width": ""
+  },
+  "description": {
+   "rendered": "<p class=\"attachment\"><a href='https://sanfic.com/wp-content/uploads/2026/07/Regulations-SANFIC22.pdf'>Regulations SANFIC22</a></p>\n"
+  },
+  "caption": {
+   "rendered": "<p>Regulations SANFIC22</p>\n"
+  },
+  "alt_text": "",
+  "media_type": "file",
+  "mime_type": "application/pdf",
+  "media_details": {},
+  "post": null,
+  "source_url": "https://sanfic.com/wp-content/uploads/2026/07/Regulations-SANFIC22.pdf",
+  "_links": {
+   "self": [
+    {
+     "href": "https://sanfic.com/wp-json/wp/v2/media/19434"
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://sanfic.com/wp-json/wp/v2/media"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://sanfic.com/wp-json/wp/v2/types/attachment"
+    }
+   ],
+   "author": [
+    {
+     "embeddable": true,
+     "href": "https://sanfic.com/wp-json/wp/v2/users/9"
+    }
+   ],
+   "replies": [
+    {
+     "embeddable": true,
+     "href": "https://sanfic.com/wp-json/wp/v2/comments?post=19434"
+    }
+   ]
+  }
+ }
+]

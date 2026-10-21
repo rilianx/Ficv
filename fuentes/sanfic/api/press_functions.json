@@ -1,0 +1,186 @@
+[
+ {
+  "id": 1857,
+  "date": "2019-08-20T13:00:47",
+  "date_gmt": "2019-08-20T16:00:47",
+  "guid": {
+   "rendered": "https://sanfic.com/?post_type=press_functions&amp;p=1857"
+  },
+  "modified": "2019-08-20T13:00:47",
+  "modified_gmt": "2019-08-20T16:00:47",
+  "slug": "funciona-de-prensa-1",
+  "status": "publish",
+  "type": "press_functions",
+  "link": "https://sanfic.com/press_functions/funciona-de-prensa-1/",
+  "title": {
+   "rendered": "Funciona de prensa 1"
+  },
+  "content": {
+   "rendered": "<p>Vivamus luctus at nisl vel ultricies. Morbi et mollis purus. Nam nisl nibh, auctor sed tempus id, volutpat ut neque. Quisque vestibulum libero ac enim maximus, et posuere ipsum vestibulum. Mauris et fermentum ligula. Donec et vulputate ex. Phasellus sed rutrum eros, id sagittis lectus. Vivamus non odio aliquet, egestas sapien sed, blandit enim. Vivamus pellentesque erat nec sem pellentesque, eget efficitur nisl egestas. Cras blandit nibh eget sapien fringilla volutpat. Cras et convallis felis. Nulla aliquam lectus ut faucibus lobortis. Aenean lacus metus, cursus quis facilisis nec, facilisis ac urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam eu elit vitae metus consequat accumsan.</p>\n<p>Morbi lobortis vel risus sit amet euismod. Morbi fringilla dolor pharetra dui tincidunt ornare. Proin vel condimentum lorem, quis venenatis mi. Suspendisse sed imperdiet odio. Pellentesque sit amet accumsan odio. Aenean nec fermentum ligula, vitae efficitur elit. Donec rutrum quis sapien a pharetra. Praesent consequat porta lacus sed suscipit. Morbi condimentum nulla non urna placerat, pellentesque tincidunt odio fermentum. Nulla facilisis sollicitudin massa a tempus. Proin commodo sagittis nisl, vitae tincidunt libero feugiat at. In porta pellentesque tempor. Nullam sit amet nisl non augue rutrum dictum. Sed lorem justo, molestie quis felis eget, posuere elementum turpis. Maecenas condimentum magna in magna ultricies pellentesque. Proin suscipit finibus varius.</p>\n<p>Nunc lobortis sit amet eros quis placerat. Morbi arcu libero, aliquam elementum euismod eget, rhoncus ut quam. Morbi lacinia, turpis vitae gravida ultrices, nibh elit finibus magna, interdum pretium dolor dolor id nisl. Nunc cursus nulla id justo pharetra, eget efficitur arcu condimentum. Duis quis nisl tortor. Donec fringilla erat metus, ut finibus orci bibendum sit amet. Duis turpis dui, fermentum at varius tempus, ultricies ut leo. Duis elementum, tortor vitae sollicitudin molestie, elit diam pretium eros, id pulvinar dui libero et tellus. Integer feugiat mauris augue, ut rhoncus turpis malesuada a. Duis ac urna in enim placerat elementum.</p>\n",
+   "protected": false
+  },
+  "featured_media": 4172,
+  "template": "",
+  "meta": {
+   "_et_pb_use_builder": "",
+   "_et_pb_old_content": "",
+   "_et_gb_content_width": ""
+  },
+  "_links": {
+   "self": [
+    {
+     "href": "https://sanfic.com/wp-json/wp/v2/press_functions/1857"
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://sanfic.com/wp-json/wp/v2/press_functions"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://sanfic.com/wp-json/wp/v2/types/press_functions"
+    }
+   ],
+   "wp:featuredmedia": [
+    {
+     "embeddable": true,
+     "href": "https://sanfic.com/wp-json/wp/v2/media/4172"
+    }
+   ],
+   "wp:attachment": [
+    {
+     "href": "https://sanfic.com/wp-json/wp/v2/media?parent=1857"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  },
+  "_embedded": {
+   "wp:featuredmedia": [
+    {
+     "id": 4172,
+     "date": "2020-06-23T02:51:39",
+     "slug": "activities-int",
+     "type": "attachment",
+     "link": "https://sanfic.com/activities-int/",
+     "title": {
+      "rendered": "activities-int"
+     },
+     "author": 1,
+     "caption": {
+      "rendered": ""
+     },
+     "alt_text": "",
+     "media_type": "image",
+     "mime_type": "image/png",
+     "media_details": {
+      "width": 470,
+      "height": 600,
+      "file": "2019/08/activities-int.png",
+      "sizes": {
+       "medium": {
+        "file": "activities-int-235x300.png",
+        "width": 235,
+        "height": 300,
+        "mime_type": "image/png",
+        "source_url": "https://sanfic.com/wp-content/uploads/2019/08/activities-int-235x300.png"
+       },
+       "thumbnail": {
+        "file": "activities-int-150x150.png",
+        "width": 150,
+        "height": 150,
+        "mime_type": "image/png",
+        "source_url": "https://sanfic.com/wp-content/uploads/2019/08/activities-int-150x150.png"
+       },
+       "et-pb-post-main-image": {
+        "file": "activities-int-400x250.png",
+        "width": 400,
+        "height": 250,
+        "mime_type": "image/png",
+        "source_url": "https://sanfic.com/wp-content/uploads/2019/08/activities-int-400x250.png"
+       },
+       "et-pb-portfolio-image": {
+        "file": "activities-int-400x284.png",
+        "width": 400,
+        "height": 284,
+        "mime_type": "image/png",
+        "source_url": "https://sanfic.com/wp-content/uploads/2019/08/activities-int-400x284.png"
+       },
+       "et-pb-portfolio-module-image": {
+        "file": "activities-int-470x382.png",
+        "width": 470,
+        "height": 382,
+        "mime_type": "image/png",
+        "source_url": "https://sanfic.com/wp-content/uploads/2019/08/activities-int-470x382.png"
+       },
+       "et-pb-gallery-module-image-portrait": {
+        "file": "activities-int-400x516.png",
+        "width": 400,
+        "height": 516,
+        "mime_type": "image/png",
+        "source_url": "https://sanfic.com/wp-content/uploads/2019/08/activities-int-400x516.png"
+       },
+       "full": {
+        "file": "activities-int.png",
+        "width": 470,
+        "height": 600,
+        "mime_type": "image/png",
+        "source_url": "https://sanfic.com/wp-content/uploads/2019/08/activities-int.png"
+       }
+      },
+      "image_meta": {
+       "aperture": "0",
+       "credit": "",
+       "camera": "",
+       "caption": "",
+       "created_timestamp": "0",
+       "copyright": "",
+       "focal_length": "0",
+       "iso": "0",
+       "shutter_speed": "0",
+       "title": "",
+       "orientation": "0",
+       "keywords": []
+      }
+     },
+     "source_url": "https://sanfic.com/wp-content/uploads/2019/08/activities-int.png",
+     "_links": {
+      "self": [
+       {
+        "href": "https://sanfic.com/wp-json/wp/v2/media/4172"
+       }
+      ],
+      "collection": [
+       {
+        "href": "https://sanfic.com/wp-json/wp/v2/media"
+       }
+      ],
+      "about": [
+       {
+        "href": "https://sanfic.com/wp-json/wp/v2/types/attachment"
+       }
+      ],
+      "author": [
+       {
+        "embeddable": true,
+        "href": "https://sanfic.com/wp-json/wp/v2/users/1"
+       }
+      ],
+      "replies": [
+       {
+        "embeddable": true,
+        "href": "https://sanfic.com/wp-json/wp/v2/comments?post=4172"
+       }
+      ]
+     }
+    }
+   ]
+  }
+ }
+]
