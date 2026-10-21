@@ -8,6 +8,9 @@ on:
       - scripts/explorar_cinepolis.py
       - .github/workflows/sanfic.yml
   workflow_dispatch:
+  schedule:
+    - cron: "17 11,23 22-31 10 *"
+    - cron: "17 11,23 1-8 11 *"
 
 permissions:
   contents: write
@@ -22,7 +25,6 @@ jobs:
         with:
           python-version: "3.12"
       - run: python scripts/explorar_sanfic.py
-      - run: pip install -q playwright && python -m playwright install --with-deps chromium && python scripts/explorar_cinepolis.py || true
       - run: '[ -f scripts/sanfic.py ] && python scripts/sanfic.py || true'
       - name: Guardar
         run: |

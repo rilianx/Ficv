@@ -67,3 +67,9 @@ for m in pelis[:6]:
     except Exception as e: print("ficha", e)
 try: (out / "programacion_hoy.html").write_bytes(get("https://sanfic.com/esta-edicion/programacion/")[0])
 except Exception as e: print(e)
+# PDFs 2026 (grilla/catálogo cuando aparezcan)
+for m in json.loads((api / "media_pdf.json").read_text()):
+    u = m.get("source_url", "")
+    if re.search(r"grilla|program|catal|horario", u, re.I):
+        try: (out / Path(urlparse(u).path).name).write_bytes(get(u)[0]); print("PDF", u)
+        except Exception as e: print("PDF", u, e)
