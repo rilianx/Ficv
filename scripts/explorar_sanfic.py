@@ -73,3 +73,10 @@ for m in json.loads((api / "media_pdf.json").read_text()):
     if re.search(r"grilla|program|catal|horario", u, re.I):
         try: (out / Path(urlparse(u).path).name).write_bytes(get(u)[0]); print("PDF", u)
         except Exception as e: print("PDF", u, e)
+# Cinépolis (venta de entradas enlazada desde la portada)
+cin = Path("fuentes/sanfic/cinepolis"); cin.mkdir(parents=True, exist_ok=True)
+for u in ["https://cinepolis.com/cl", "https://cinepolis.com/cl/cartelera", "https://cinepolis.com/cl/sanfic", "https://cinepolis.com/cl/festival/sanfic"]:
+    try:
+        d, ct = get(u); guardar(u, d, ct); (cin / (re.sub(r"\W+", "_", u)[-40:] + ".html")).write_bytes(d)
+        print("CIN", u, len(d), "sanfic" in d.decode("utf-8", "replace").lower())
+    except Exception as e: print("CIN", u, e)
