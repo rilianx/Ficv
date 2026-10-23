@@ -19802,8 +19802,8 @@
   "guid": {
    "rendered": "https://sanfic.com/?post_type=movies&#038;p=19498"
   },
-  "modified": "2026-10-22T14:00:14",
-  "modified_gmt": "2026-10-22T18:00:14",
+  "modified": "2026-10-23T08:28:21",
+  "modified_gmt": "2026-10-23T12:28:21",
   "slug": "cuadro-negro",
   "status": "publish",
   "type": "movies",
@@ -19822,9 +19822,7 @@
    "_et_pb_old_content": "",
    "_et_gb_content_width": ""
   },
-  "gender": [
-   56
-  ],
+  "gender": [],
   "section": [
    155,
    49
@@ -20018,44 +20016,7 @@
     }
    ],
    "wp:term": [
-    [
-     {
-      "id": 56,
-      "link": "https://sanfic.com/gender/documental/",
-      "name": "Documental",
-      "slug": "documental",
-      "taxonomy": "gender",
-      "_links": {
-       "self": [
-        {
-         "href": "https://sanfic.com/wp-json/wp/v2/gender/56"
-        }
-       ],
-       "collection": [
-        {
-         "href": "https://sanfic.com/wp-json/wp/v2/gender"
-        }
-       ],
-       "about": [
-        {
-         "href": "https://sanfic.com/wp-json/wp/v2/taxonomies/gender"
-        }
-       ],
-       "wp:post_type": [
-        {
-         "href": "https://sanfic.com/wp-json/wp/v2/movies?gender=56"
-        }
-       ],
-       "curies": [
-        {
-         "name": "wp",
-         "href": "https://api.w.org/{rel}",
-         "templated": true
-        }
-       ]
-      }
-     }
-    ],
+    [],
     [
      {
       "id": 155,
