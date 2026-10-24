@@ -54,6 +54,8 @@ def rest(nombre, url, paginas=20):
         if not isinstance(lote, list) or not lote: break
         todo += lote
         if len(lote) < 100: break
+    if not todo and (api / f"{nombre}.json").exists():  # caída del sitio: conservar lo anterior
+        print("REST", nombre, "vacío, conservo el anterior"); return json.loads((api / f"{nombre}.json").read_text())
     (api / f"{nombre}.json").write_text(json.dumps(todo, ensure_ascii=False, indent=1), encoding="utf-8")
     print("REST", nombre, len(todo)); return todo
 pelis = rest("movies", "https://sanfic.com/wp-json/wp/v2/movies?_embed=1")
