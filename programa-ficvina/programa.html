@@ -1,0 +1,977 @@
+<title>Programa 38° FICViña</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: sticky control bar over two views — a time-sorted list grouped by section, and a timeline (days × hours across, venues down) */
+:root{
+  --bg:#f3f5f3; --surface:#ffffff; --ink:#18221f; --muted:#5d6b66; --line:#d9e0dc; --grid:#e8edea;
+  --river:#0f5c55; --river-soft:#d7ebe7; --free:#7a5a00; --free-bg:#fbefc8;
+  --pick:#c2410c; --pick-soft:#fde3d3; --clash:#b91c1c;
+  --f-display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body:"Atkinson Hyperlegible", system-ui, sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1513; --surface:#161e1b; --ink:#e4ebe8; --muted:#93a39d; --line:#26322e; --grid:#1d2724;
+  --river:#5ec4b6; --river-soft:#173a35; --free:#f1cf6b; --free-bg:#3a3014;
+  --pick:#fb923c; --pick-soft:#4a2511; --clash:#f87171; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1513; --surface:#161e1b; --ink:#e4ebe8; --muted:#93a39d; --line:#26322e; --grid:#1d2724;
+  --river:#5ec4b6; --river-soft:#173a35; --free:#f1cf6b; --free-bg:#3a3014;
+  --pick:#fb923c; --pick-soft:#4a2511; --clash:#f87171; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.45 var(--f-body);padding-inline:16px;padding-block:0 48px}
+.wrap{max-width:920px;margin:0 auto}
+body.cal .wrap{max-width:none}
+header.top{padding-block:24px 10px;display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 20px}
+h1{font:700 clamp(26px,5vw,38px)/1.05 var(--f-display);margin:0;letter-spacing:-.01em;text-wrap:balance}
+h1 span{color:var(--river)}
+.meta{color:var(--muted);font-size:13px}
+.views{display:flex;gap:4px;padding:3px;background:var(--surface);border:1px solid var(--line);border-radius:10px;width:max-content;max-width:100%}
+.views button{font:700 14px var(--f-body);border:0;background:none;color:var(--muted);padding:7px 14px;border-radius:7px;cursor:pointer}
+.views button[aria-pressed="true"]{background:var(--river);color:var(--bg)}
+.ghost{position:absolute;left:2px;right:2px;z-index:4;pointer-events:none;font:inherit;text-align:left;border:2px dashed var(--gc,var(--river));border-radius:6px;background:color-mix(in srgb,var(--gc,var(--river)) 12%,transparent);backdrop-filter:blur(1px);padding:3px 5px;font-size:11px;line-height:1.2;color:var(--ink);overflow:hidden}
+.ghost b{display:block;font:700 10.5px var(--f-mono);color:var(--gc,var(--river))}
+.ghost span{display:block;color:var(--muted)}
+.ghost .gbtn{pointer-events:auto;display:inline-block;margin-top:3px;font:700 11px var(--f-body);color:#fff;background:var(--gc,var(--river));border:0;border-radius:5px;padding:3px 8px;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.2)}
+.ghost .gbtn:hover,.ghost .gbtn:focus-visible{filter:brightness(1.15);outline:2px solid var(--ink);outline-offset:1px}
+.toast{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:60;display:flex;gap:12px;align-items:center;background:var(--ink);color:var(--bg);padding:10px 14px;border-radius:10px;box-shadow:0 8px 28px rgba(0,0,0,.25);font-size:14px;max-width:calc(100vw - 24px)}
+.toast button{font:700 14px var(--f-body);background:none;border:0;color:var(--river-soft);cursor:pointer;text-decoration:underline}
+.ghost.mal{--gc:var(--clash)} .ghost.ok{--gc:var(--river)} .ghost.nada{--gc:var(--muted)}
+@media (prefers-reduced-motion:no-preference){.ghost{animation:gfade .15s ease-out}}
+@keyframes gfade{from{opacity:0}to{opacity:1}}
+.tip .sin{margin:0 0 8px;color:var(--ink);font-size:12.5px}
+.tip .fv{color:var(--muted);font-style:italic}
+.tip{position:fixed;z-index:50;max-width:min(340px,calc(100vw - 16px));background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:10px;box-shadow:0 8px 28px rgba(0,0,0,.18);padding:10px 12px;font-size:13px;line-height:1.35;pointer-events:none}
+.tip{transition:opacity .15s}.tip.dim{opacity:.25}
+.tip h4{margin:0 0 2px;font:700 14px var(--f-display)}
+.tip .th{color:var(--muted);margin-bottom:8px}
+.tip ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.tip li{display:grid;grid-template-columns:auto 1fr;gap:2px 8px;align-items:baseline}
+.tip li b{font-family:var(--f-mono);font-size:12px;white-space:nowrap}
+.tip .ok{color:var(--river);font-weight:700}
+.tip .mal{color:var(--clash);font-weight:700}
+.tip .meh{color:var(--free);font-weight:700}
+.tip .nada{color:var(--muted)}
+.pop-otras{margin:12px 0 0;padding:10px 12px;border:1px solid var(--line);border-radius:10px}
+.pop-otras h4{margin:0 0 6px;font:700 14px var(--f-display)}
+.pop-otras ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.pop-otras li{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline}
+.pop-otras li b{font-family:var(--f-mono);font-size:13px}
+.pop-otras .ok{color:var(--river);font-weight:700}.pop-otras .mal{color:var(--clash);font-weight:700}.pop-otras .meh{color:var(--free);font-weight:700}
+.pop-otras button{font:inherit;font-size:13px;border:1px solid var(--line);background:none;color:var(--river);border-radius:6px;padding:2px 8px;cursor:pointer}
+.lb{display:inline-block;margin-left:6px;padding:0 5px;border-radius:4px;font:700 10px/16px var(--f-mono);letter-spacing:.04em;background:#202830;color:#fff!important;text-decoration:none!important;vertical-align:2px}
+.lb:hover{background:#00a85a}
+.perfiles{display:flex;align-items:center;gap:4px;padding:3px;background:var(--surface);border:1px solid var(--line);border-radius:10px;width:max-content;max-width:100%;flex-basis:100%}
+.perfiles .plbl{color:var(--muted);font-size:13px;padding:0 6px 0 8px}
+.perfiles button{font:700 14px var(--f-body);border:0;background:none;color:var(--muted);padding:7px 14px;border-radius:7px;cursor:pointer}
+.perfiles button[aria-pressed="true"]{background:var(--pick);color:#fff}
+.views .n{display:inline-block;min-width:20px;margin-left:6px;padding:0 6px;border-radius:999px;background:var(--pick);color:var(--bg);font-size:12px}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px;border-bottom:1px solid var(--line);display:grid;gap:10px}
+.bar>*{min-width:0}
+.days{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.days button{flex:0 0 auto;display:grid;justify-items:center;min-width:58px;padding:6px 10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;cursor:pointer;font:inherit}
+.days button b{font:700 20px/1 var(--f-display)}
+.days button small{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.days button em{font-style:normal;font-size:11px;color:var(--muted)}
+.days button[aria-pressed="true"]{background:var(--river);border-color:var(--river);color:var(--bg)}
+.days button[aria-pressed="true"] small,.days button[aria-pressed="true"] em{color:var(--bg);opacity:.85}
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.filters select,.filters input[type=search]{font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);flex:1 1 170px;min-width:0}
+.chips{border:0;margin:0;padding:0;min-width:0}
+.chips legend{font-size:12px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);padding:0;margin-bottom:6px}
+#chips-in{display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:4px 10px 4px 8px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-size:13px;cursor:pointer;color:var(--ink)}
+.chip input{margin:0;accent-color:var(--river)}
+.chip:has(input:checked){border-color:var(--river);background:var(--river-soft)}
+.chip.esp{font-weight:700}
+.chip em{font-style:normal;color:var(--muted);font-size:11.5px}
+.chip.mini{border-style:dashed;color:var(--muted)}
+body.cal .sololista{display:none}
+body.cal .bar{position:static}
+@media (max-width:700px){body.cal .bar{position:static}#chips-in{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}.chip{flex:0 0 auto;white-space:nowrap}}
+dialog#pop{border:1px solid var(--line);border-radius:14px;background:var(--surface);color:var(--ink);padding:20px 20px 18px;width:min(460px,calc(100vw - 32px));max-height:calc(100vh - 48px);overflow:auto;box-shadow:0 18px 50px rgb(0 0 0 / .25)}
+dialog#pop::backdrop{background:rgb(10 20 18 / .45)}
+.pop-x{position:absolute;top:8px;right:8px;margin:0}
+.pop-x button{border:0;background:none;color:var(--muted);font-size:24px;line-height:1;width:36px;height:36px;border-radius:50%;cursor:pointer}
+.pop-x button:hover{background:var(--bg);color:var(--ink)}
+.pop-h{font:500 13px var(--f-mono);color:var(--river);margin:0 36px 4px 0}
+#pop h3{font:700 20px/1.2 var(--f-display);margin:0 36px 8px 0;text-wrap:balance}
+.pop-meta{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;font-size:13px;color:var(--muted)}
+.pop-films{list-style:none;margin:0 0 16px;padding:0;display:grid;gap:8px}
+.pop-films li{display:flex;justify-content:space-between;gap:10px;align-items:baseline;border-top:1px solid var(--line);padding-top:8px}
+.pop-films b{display:block}
+.pop-films span{font-size:12.5px;color:var(--muted)}
+.pop-films a{white-space:nowrap;font-size:13px;color:var(--river);font-weight:700}
+.pop-acc{display:flex;flex-wrap:wrap;gap:8px}
+.pdfbtn{padding:5px 12px;font-size:13px}
+.status{align-items:center}
+.btn{font:700 14px var(--f-body);padding:9px 16px;border-radius:9px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center}
+.btn.pri{background:var(--river);border-color:var(--river);color:var(--bg)}
+.btn.del{background:var(--pick);border-color:var(--pick);color:var(--bg)}
+.pop-meta .pill{white-space:normal}
+.pop-warn{color:var(--clash);font-size:13px;font-weight:700;margin:0 0 12px}
+.filters label{display:flex;align-items:center;gap:6px;font-size:14px;color:var(--muted);white-space:nowrap}
+button:focus-visible,select:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--river);outline-offset:2px}
+.status{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--muted)}
+.status .warn{color:var(--clash);font-weight:700}
+
+/* list */
+section.sec{margin-top:26px}
+section.sec h2{font:700 13px/1.25 var(--f-body);text-transform:uppercase;letter-spacing:.09em;color:var(--river);margin:0 0 4px;display:flex;gap:8px;align-items:baseline;text-wrap:balance}
+section.sec h2 span{color:var(--muted);font-weight:400;letter-spacing:0;text-transform:none}
+section.sec h2 i:not(.dot){font-style:normal;font-size:10.5px;padding:1px 7px;border-radius:999px;background:var(--river-soft);letter-spacing:.06em}
+.dayhead{font:700 22px/1.2 var(--f-display);margin:34px 0 0}
+.row{display:grid;grid-template-columns:62px minmax(0,1fr) auto;gap:2px 12px;padding-block:11px;border-bottom:1px solid var(--line);align-items:start}
+.row.ya,.blk.ya{opacity:.5}
+.row.on{background:linear-gradient(90deg,var(--pick-soft),transparent 70%)}
+.t{font:500 15px/1.4 var(--f-mono);font-variant-numeric:tabular-nums}
+.ttl{font-weight:700;font-size:16px;min-width:0}
+.ttl a{color:inherit;text-decoration:none}
+.ttl a:hover{text-decoration:underline;text-decoration-color:var(--river)}
+.sub{grid-column:2;color:var(--muted);font-size:13.5px;display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center;min-width:0}
+.venue{color:var(--ink)}
+.pill{font-size:11.5px;padding:1px 8px;border-radius:999px;background:var(--river-soft);color:var(--river);white-space:nowrap}
+.pill.free{background:var(--free-bg);color:var(--free)}
+.pill.clash{background:none;border:1px solid var(--clash);color:var(--clash)}
+.mark{grid-column:3;grid-row:1 / span 2;align-self:center;width:38px;height:38px;border-radius:50%;border:1.5px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer;font-size:18px;line-height:1;display:grid;place-items:center}
+.mark:hover{border-color:var(--pick);color:var(--pick)}
+.mark[aria-pressed="true"]{background:var(--pick);border-color:var(--pick);color:var(--bg)}
+.films{flex-basis:100%;margin:2px 0 0;padding-left:18px;color:var(--ink);font-size:13.5px}
+.films li{margin:1px 0}
+.films a{color:inherit;text-decoration:none}
+.films a:hover{text-decoration:underline;text-decoration-color:var(--river)}
+.films span{color:var(--muted);font-size:12.5px}
+.it .cortos{color:var(--ink);font-size:11px}
+.empty{padding:40px 0;text-align:center;color:var(--muted)}
+
+/* calendario: días en columnas, eje de horas vertical; bloques a escala, los simultáneos lado a lado */
+.wk{overflow:auto;max-height:calc(100vh - 40px);overscroll-behavior:contain;margin-top:14px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+.tg{display:flex;position:relative;width:max-content;min-width:100%}
+.axcol{position:sticky;left:0;z-index:5;flex:0 0 52px;background:var(--surface);border-right:1px solid var(--line)}
+.dcol{min-width:0}
+.tg .hd{position:sticky;top:0;z-index:3;height:46px;box-sizing:border-box;overflow:hidden;background:var(--surface);border-bottom:1px solid var(--line);border-left:1px solid var(--line);padding:8px 6px;font:700 13px var(--f-display)}
+.tg .hd small{display:block;font:400 11px var(--f-body);color:var(--muted)}
+.tg .hd.ax{border-left:0;z-index:6}
+.axis{position:relative;background:var(--surface)}
+.axis span{position:absolute;right:6px;transform:translateY(-50%);font:500 11px var(--f-mono);color:var(--muted)}
+.axis span:first-child{transform:none}
+.col{position:relative;border-left:1px solid var(--line);background-image:linear-gradient(var(--grid) 1px,transparent 1px);background-size:100% var(--hh)}
+.it{position:absolute;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-start;align-items:stretch;text-align:left;font:inherit;font-size:12px;line-height:1.22;padding:3px 5px;border-radius:6px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer;z-index:1}
+.it:hover,.it:focus-visible{z-index:2}
+/* otra función de la misma película que la que está bajo el puntero */
+.it.par{z-index:3;outline:3px solid var(--ink);outline-offset:1px;box-shadow:0 0 0 6px color-mix(in srgb,var(--c) 35%,transparent)}
+.it.par::before{content:"otra función";position:absolute;top:2px;right:3px;font:700 9px/1 var(--f-body);padding:3px 5px;border-radius:4px;background:var(--ink);color:var(--surface)}
+.row.par{outline:2px solid var(--ink);outline-offset:-2px;background:color-mix(in srgb,var(--c,var(--river)) 12%,transparent)}
+.it b{font:500 10.5px var(--f-mono);color:color-mix(in srgb,var(--c) 75%,var(--ink))}
+.it strong{display:block;font-weight:700;overflow-wrap:anywhere;hyphens:auto}
+.it span{display:block;color:var(--muted);font-size:11px;overflow-wrap:anywhere}
+.it.angosta{padding:3px 3px;font-size:11px}
+.it.angosta span{display:none}
+.it{--c:var(--muted);background:color-mix(in srgb,var(--c) 13%,var(--surface));border-color:color-mix(in srgb,var(--c) 40%,var(--line));border-left:4px solid var(--c)}
+.it:hover{border-color:var(--c)}
+/* marcada: bloque relleno con el color de la sección, texto claro y estrella */
+.it.on{background:color-mix(in srgb,var(--c) 82%,#000);border:2px solid color-mix(in srgb,var(--c) 60%,#000);color:#fff;box-shadow:0 2px 8px color-mix(in srgb,var(--c) 45%,transparent)}
+.it.on b,.it.on span,.it.on .dir,.it.on .cortos{color:rgb(255 255 255 / .88)}
+.it.on b::before{content:"★ ";color:#ffd54a}
+.it .dir{color:var(--ink);font-style:italic;font-size:11px}
+/* vista: etiqueta y textura */
+.it.vista{background-image:repeating-linear-gradient(135deg,transparent 0 7px,color-mix(in srgb,var(--c) 18%,transparent) 7px 9px)}
+.it.vista::after{content:attr(data-badge);position:absolute;right:3px;bottom:3px;font:700 9px/1 var(--f-body);letter-spacing:.06em;padding:3px 5px;border-radius:4px;background:var(--ink);color:var(--surface)}
+/* con duda: borde punteado y signo ? */
+.it.duda{background:color-mix(in srgb,var(--c) 24%,var(--surface));border:2px dashed var(--ink);border-left:6px solid var(--c)}
+.it.duda b::before{content:"? ";font-weight:700;color:var(--ink)}
+.it.duda::before{content:"?";position:absolute;top:1px;right:4px;font:700 18px/1 var(--f-display);color:var(--ink);opacity:.8}
+.row.duda{background:linear-gradient(90deg,color-mix(in srgb,var(--muted) 14%,transparent),transparent 70%)}
+.marks{grid-column:3;grid-row:1 / span 2;align-self:center;display:flex;gap:6px}
+.marks .mark{grid-column:auto;grid-row:auto}
+.mark.q{font-weight:700}
+.mark.q[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--surface)}
+.nota{color:#d97706;letter-spacing:1px;font-size:13px}
+.stars{display:flex;align-items:center;gap:2px;margin-top:6px;font-size:12.5px;color:var(--muted)}
+.stars .st{position:relative;display:inline-block;font-size:22px;line-height:1;width:1.05em;text-align:center;color:var(--line)}
+.stars .st .g{pointer-events:none}
+.stars .st.lit{color:#d97706}
+.stars .st.half .g{background:linear-gradient(90deg,#d97706 50%,var(--line) 50%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.pop-films .stars .st .g{color:inherit;font-size:inherit;display:inline}
+.pop-films .stars .st.half .g{color:transparent}
+.stars .st .h{position:absolute;top:0;bottom:0;width:50%;border:0;background:none;padding:0;cursor:pointer}
+.stars .st .h.l{left:0}.stars .st .h.r{right:0}
+.stars .st .h:focus-visible{outline:2px solid var(--river);outline-offset:0}
+.stars button.cero{font:700 12px var(--f-body);border:1px solid var(--line);border-radius:999px;padding:2px 7px;margin-right:4px;color:var(--muted)}
+.stars em{font-style:normal;margin-left:6px}
+.stars button.cero[aria-pressed="true"]{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.it .tras{display:block;font:700 9.5px/1.2 var(--f-body);color:var(--free);background:var(--free-bg);border-radius:3px;padding:1px 4px;margin:-1px 0 2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.it .tras.lejos{color:#fff;background:#b45309}
+.it .tras.mal{color:#fff;background:var(--clash)}
+.it.on .tras{color:#fff}
+.pill.lejos{background:var(--free-bg);color:var(--free)}
+.seenbtn{font:700 11.5px var(--f-body);padding:2px 9px;border-radius:999px;border:1px dashed var(--muted);background:none;color:var(--muted);cursor:pointer;white-space:nowrap}
+.seenbtn[aria-pressed="true"]{border-style:solid;border-color:var(--ink);background:var(--ink);color:var(--surface)}
+.pop-acc .seguro{flex-basis:100%;font-weight:700;color:var(--clash)}
+.mark.seguro{width:auto;border-radius:999px;padding:0 10px;font-size:12px;font-weight:700;background:var(--clash);border-color:var(--clash);color:#fff}
+.pop-fa{display:flex;gap:8px;align-items:center}
+.pop-films li{flex-wrap:wrap}
+.pop-films li>div:first-child{min-width:0;flex:1 1 240px}
+.pop-det{display:block;font-size:12px;color:var(--muted)}
+.pop-sin{margin-top:6px;font-size:13px}
+.pop-sin summary{cursor:pointer;color:var(--river);font-weight:700;font-size:12.5px}
+.pop-sin p{margin:6px 0 0;line-height:1.5;color:var(--ink);white-space:pre-line}
+.btn.seen-on{background:var(--ink);border-color:var(--ink);color:var(--surface)}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--c);flex:0 0 auto}
+section.sec h2 .dot{align-self:center}
+.it.clash{outline:2px solid var(--clash);outline-offset:-2px}
+.it.ya{opacity:.5}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12.5px;color:var(--muted);margin-top:10px}
+.legend i{display:inline-block;width:14px;height:10px;border-radius:3px;vertical-align:-1px;margin-right:5px;border:1px solid var(--line);background:var(--bg)}
+.legend i.on{background:var(--river);border-color:var(--river)}
+.legend i.du{border:2px dashed var(--ink)}
+.legend i.vi{background:repeating-linear-gradient(135deg,var(--bg) 0 3px,var(--muted) 3px 4px)}
+.legend i.cl{outline:2px solid var(--clash);outline-offset:-2px}
+footer{margin-top:36px;font-size:12.5px;color:var(--muted);max-width:920px}
+footer a{color:var(--river)}
+@media (max-width:480px){.row{grid-template-columns:50px minmax(0,1fr) auto;gap:2px 10px}}
+@media (prefers-reduced-motion:no-preference){.mark,.blk{transition:background .15s,border-color .15s}}
+
+/* títulos de los bloques del calendario: máximo dos líneas con puntos suspensivos */
+.it strong{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden;text-overflow:ellipsis;flex-shrink:0;overflow-wrap:break-word;hyphens:auto}
+.it b,.it .tras{flex-shrink:0}
+.pill{max-width:100%}
+/* celular, vista Programa: la barra no queda fija y los botones + / ? van bajo la hora */
+@media (max-width:700px){
+  body:not(.cal) .bar{position:static}
+  .row{grid-template-columns:48px minmax(0,1fr);gap:2px 10px}
+  .row .marks{grid-column:1;grid-row:2 / span 3;flex-direction:column;align-self:start;gap:6px;margin-top:6px}
+  .row .marks .mark{width:34px;height:34px;font-size:16px}
+  .row .pill{white-space:normal}
+  .row .ttl{font-size:15.5px}
+}
+
+
+/* tipo (sección) en una sola línea, para que se alcance a ver la sala */
+.it span.sala1{flex-shrink:0;color:var(--ink)}
+.it.on span.sala1{color:#fff}
+.it span.tipo{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex-shrink:0}
+.it span.dir{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden;flex-shrink:0}
+
+/* cineasta presente (símbolo del programa oficial) */
+.cpi{width:1em;height:1em;vertical-align:-2px;flex:0 0 auto}
+.pill.cp{display:inline-flex;align-items:center;gap:5px;background:var(--ink);color:var(--surface)}
+.it .cpb{position:absolute;top:3px;right:3px;display:grid;place-items:center;width:17px;height:17px;border-radius:50%;background:var(--ink);color:var(--surface);z-index:1}
+.it .cpb .cpi{width:12px;height:12px}
+.it.duda .cpb{top:auto;bottom:3px}
+
+/* línea de la hora actual */
+.ahora{position:absolute;left:-1px;right:0;height:0;border-top:2px solid #e11d48;z-index:4;pointer-events:none}
+.ahora::before{content:"";position:absolute;left:-5px;top:-6px;width:10px;height:10px;border-radius:50%;background:#e11d48}
+.ahora span{position:absolute;right:2px;top:-17px;font:700 10.5px var(--f-mono);color:#fff;background:#e11d48;border-radius:4px;padding:1px 5px}
+
+</style>
+<div class="wrap">
+  <header class="top">
+    <h1>38° <span>FICViña</span> · Programa</h1>
+    <div class="meta">23 al 28 de noviembre de 2026 · entrada liberada · <span id="tot"></span></div>
+    <div class="perfiles" role="toolbar" aria-label="Perfil"><span class="plbl">Calendario de</span>
+      <button type="button" data-p="Ignacio" aria-pressed="true">Ignacio</button>
+      <button type="button" data-p="Marian" aria-pressed="false">Marian</button>
+    </div>
+  </header>
+  <div class="bar">
+    <div class="views" role="toolbar" aria-label="Vista">
+      <button type="button" id="v-list" aria-pressed="true">Programa</button>
+      <button type="button" id="v-cal" aria-pressed="false">Mi calendario<span class="n" id="npick" hidden></span></button>
+    </div>
+    <div class="days" id="days" role="toolbar" aria-label="Día"></div>
+    <div class="filters">
+      <select id="sec" class="sololista" aria-label="Sección"></select>
+      <select id="sala" aria-label="Sala"></select>
+      <input id="q" type="search" placeholder="Película, dirección o país" aria-label="Buscar">
+      <input id="libre" type="checkbox" hidden>
+      <label class="sololista" id="lbl-solo"><input id="solo" type="checkbox"> Solo mis marcadas</label>
+      <label class="sololista"><input id="solovistas" type="checkbox"> Solo vistas</label>
+      <label><input id="ocultar" type="checkbox" checked> Ocultar otras funciones de lo ya elegido</label>
+    </div>
+    <fieldset class="chips" id="chips" hidden><legend>Mostrar en el calendario</legend><div id="chips-in"></div></fieldset>
+    <div class="status"><button type="button" id="pdf" class="btn pdfbtn" hidden>Descargar PDF</button><span id="count"></span><span id="clashes"></span><span id="sync"></span></div>
+  </div>
+  <main id="m"></main>
+  <div id="tip" class="tip" role="tooltip" hidden></div>
+  <div id="toast" class="toast" role="status" hidden></div>
+  <dialog id="pop" aria-labelledby="pop-t">
+    <form method="dialog" class="pop-x"><button aria-label="Cerrar">×</button></form>
+    <div id="pop-in"></div>
+  </dialog>
+  <footer>Datos de la <a href="https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf">grilla oficial del 38° FICViña</a> (cinevina.cl), transcritos el 14 de noviembre de 2026. Todas las funciones son gratuitas con inscripción previa en <a href="https://www.passline.com/sitio/ilustre-municipalidad-de-vina-del-mar">Passline</a>. La duración de cada bloque es la de la película o del programa de cortos (las ceremonias suman unos 30 min); las charlas de Palacio Vergara no traen duración y se cuentan como 90 min.</footer>
+</div>
+<script>
+const F=[{"dia": "2026-11-20", "hora": "19:00", "sala": "Playa Los Marineros", "seccion": "Muestra Joya", "subseccion": "", "acceso": "Entrada liberada · aire libre", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Ciudad Jardín", "direccion": "Javier Zoro", "anio": "2026", "pais": "Chile", "id": "ciudad-jardin", "duracion": 99, "duracion_film": "99'", "formato": "Documental · TE", "sesion": "Ciudad Jardín"}, {"dia": "2026-11-21", "hora": "19:30", "sala": "Muelle Vergara", "seccion": "Muestra Una América Latina", "subseccion": "", "acceso": "Entrada liberada · aire libre", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "31 minutos, la película", "direccion": "Álvaro Díaz y Pedro Peirano", "anio": "2008", "pais": "Chile", "id": "31-minutos-la-pelicula", "duracion": 87, "duracion_film": "87'", "formato": "Ficción · TE", "sesion": "31 minutos, la película"}, {"dia": "2026-11-23", "hora": "19:00", "sala": "Teatro Municipal", "seccion": "Ceremonias", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "Ceremonia y gala de inauguración · película inaugural (35° aniversario)", "titulo": "La frontera", "direccion": "Ricardo Larraín", "anio": "1991", "pais": "Chile", "id": "la-frontera", "duracion": 150, "duracion_film": "118'", "formato": "Ficción · +14", "sesion": "La frontera"}, {"dia": "2026-11-24", "hora": "11:00", "sala": "Palacio Vergara", "seccion": "Diálogos de cine", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "Modera: Miguel Araya y José Miño. Expone: Manuel Claro.", "premiere": "", "titulo": "La imagen imperfecta: Manuel Claro y la dirección de fotografía", "direccion": "", "anio": "", "pais": "", "id": "la-imagen-imperfecta-manuel-claro-y-la-direccion-de-fotografia", "duracion": 0, "duracion_film": "", "formato": "Charla", "sesion": "La imagen imperfecta: Manuel Claro y la dirección de fotografía"}, {"dia": "2026-11-24", "hora": "13:00", "sala": "Palacio Vergara", "seccion": "Diálogos de cine", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "Modera: Marcelo Morales. Expone: Alexandra Galvis y Marisol Águila.", "premiere": "", "titulo": "Retrospectiva: el cine de Patricio Guzmán", "direccion": "", "anio": "", "pais": "", "id": "retrospectiva-el-cine-de-patricio-guzman", "duracion": 0, "duracion_film": "", "formato": "Charla", "sesion": "Retrospectiva: el cine de Patricio Guzmán"}, {"dia": "2026-11-24", "hora": "15:00", "sala": "Cine Arte", "seccion": "En Competencia", "subseccion": "Competencia Largometraje Iberoamericano de Ficción", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "Premiere mundial", "titulo": "Uatana", "direccion": "Claudio Marques", "anio": "2026", "pais": "Brasil", "id": "uatana", "duracion": 100, "duracion_film": "100'", "formato": "Ficción · +16", "sesion": "Uatana"}, {"dia": "2026-11-24", "hora": "15:00", "sala": "Cinemark", "seccion": "En Competencia", "subseccion": "Competencia Pulso Iberoamericano", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Allá en el cielo", "direccion": "Roddy Dextre", "anio": "", "pais": "Perú", "id": "alla-en-el-cielo", "duracion": 119, "duracion_film": "", "formato": "+16", "sesion": "Allá en el cielo, Las visitas de Camilo, Paulina, Tauromaquia, Sol menor, La procesión de los ausentes"}, {"dia": "2026-11-24", "hora": "15:00", "sala": "Cinemark", "seccion": "En Competencia", "subseccion": "Competencia Pulso Iberoamericano", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "La procesión de los ausentes", "direccion": "Jaime Díaz y Mauricio Matusalenes", "anio": "", "pais": "Chile", "id": "la-procesion-de-los-ausentes", "duracion": 119, "duracion_film": "", "formato": "+16", "sesion": "Allá en el cielo, Las visitas de Camilo, Paulina, Tauromaquia, Sol menor, La procesión de los ausentes"}, {"dia": "2026-11-24", "hora": "15:00", "sala": "Cinemark", "seccion": "En Competencia", "subseccion": "Competencia Pulso Iberoamericano", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Las visitas de Camilo", "direccion": "Itatí Olmedo", "anio": "", "pais": "Argentina", "id": "las-visitas-de-camilo", "duracion": 119, "duracion_film": "", "formato": "+16", "sesion": "Allá en el cielo, Las visitas de Camilo, Paulina, Tauromaquia, Sol menor, La procesión de los ausentes"}, {"dia": "2026-11-24", "hora": "15:00", "sala": "Cinemark", "seccion": "En Competencia", "subseccion": "Competencia Pulso Iberoamericano", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Paulina", "direccion": "Marcela Bruna", "anio": "", "pais": "Chile", "id": "paulina", "duracion": 119, "duracion_film": "", "formato": "+16", "sesion": "Allá en el cielo, Las visitas de Camilo, Paulina, Tauromaquia, Sol menor, La procesión de los ausentes"}, {"dia": "2026-11-24", "hora": "15:00", "sala": "Cinemark", "seccion": "En Competencia", "subseccion": "Competencia Pulso Iberoamericano", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Sol menor", "direccion": "André Silva Santos", "anio": "", "pais": "Portugal", "id": "sol-menor", "duracion": 119, "duracion_film": "", "formato": "+16", "sesion": "Allá en el cielo, Las visitas de Camilo, Paulina, Tauromaquia, Sol menor, La procesión de los ausentes"}, {"dia": "2026-11-24", "hora": "15:00", "sala": "Cinemark", "seccion": "En Competencia", "subseccion": "Competencia Pulso Iberoamericano", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Tauromaquia", "direccion": "Christopher Sánchez", "anio": "", "pais": "México", "id": "tauromaquia", "duracion": 119, "duracion_film": "", "formato": "+16", "sesion": "Allá en el cielo, Las visitas de Camilo, Paulina, Tauromaquia, Sol menor, La procesión de los ausentes"}, {"dia": "2026-11-24", "hora": "16:00", "sala": "Palacio Vergara", "seccion": "Diálogos de cine", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "Modera: Lucas Beckett Baeza. Exponen: Marcelo Morales, Verónica Muñoz, Carlos Ovando.", "premiere": "", "titulo": "Simbiosis cinematográfica: cinetecas y cineclubes", "direccion": "", "anio": "", "pais": "", "id": "simbiosis-cinematografica-cinetecas-y-cineclubes", "duracion": 0, "duracion_film": "", "formato": "Charla", "sesion": "Simbiosis cinematográfica: cinetecas y cineclubes"}, {"dia": "2026-11-24", "hora": "16:00", "sala": "Teatro Municipal", "seccion": "Muestra Una América Latina", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "La cordillera de los sueños", "direccion": "Patricio Guzmán", "anio": "2019", "pais": "Chile", "id": "la-cordillera-de-los-suenos", "duracion": 84, "duracion_film": "84'", "formato": "Documental · +7", "sesion": "La cordillera de los sueños"}, {"dia": "2026-11-24", "hora": "17:30", "sala": "Cine Arte", "seccion": "En Competencia", "subseccion": "Competencia Largometraje Iberoamericano Documental", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Plata o mierda", "direccion": "Toia Bonino y Marcos Joubert", "anio": "2026", "pais": "Argentina", "id": "plata-o-mierda", "duracion": 98, "duracion_film": "98'", "formato": "Documental · +14", "sesion": "Plata o mierda"}, {"dia": "2026-11-24", "hora": "17:30", "sala": "Cinemark", "seccion": "En Competencia", "subseccion": "Competencia Creando Universos", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Azul: la última semilla", "direccion": "Aline Romero", "anio": "", "pais": "España", "id": "azul-la-ultima-semilla", "duracion": 96, "duracion_film": "", "formato": "Animación · TE", "sesion": "Lodo, Tinku, Paqarina, O Jardim Mágico, Azul: la última semilla, Garantía de por vida, Pan, Trabajo hecho"}, {"dia": "2026-11-24", "hora": "17:30", "sala": "Cinemark", "seccion": "En Competencia", "subseccion": "Competencia Creando Universos", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Garantía de por vida", "direccion": "Daniel Lobos", "anio": "", "pais": "Chile", "id": "garantia-de-por-vida", "duracion": 96, "duracion_film": "", "formato": "Animación · TE", "sesion": "Lodo, Tinku, Paqarina, O Jardim Mágico, Azul: la última semilla, Garantía de por vida, Pan, Trabajo hecho"}, {"dia": "2026-11-24", "hora": "17:30", "sala": "Cinemark", "seccion": "En Competencia", "subseccion": "Competencia Creando Universos", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Lodo", "direccion": "Joseph Specker Nys", "anio": "", "pais": "Uruguay", "id": "lodo", "duracion": 96, "duracion_film": "", "formato": "Animación · TE", "sesion": "Lodo, Tinku, Paqarina, O Jardim Mágico, Azul: la última semilla, Garantía de por vida, Pan, Trabajo hecho"}, {"dia": "2026-11-24", "hora": "17:30", "sala": "Cinemark", "seccion": "En Competencia", "subseccion": "Competencia Creando Universos", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "O Jardim Mágico", "direccion": "Naira Carneiro", "anio": "", "pais": "Brasil", "id": "o-jardim-magico", "duracion": 96, "duracion_film": "", "formato": "Animación · TE", "sesion": "Lodo, Tinku, Paqarina, O Jardim Mágico, Azul: la última semilla, Garantía de por vida, Pan, Trabajo hecho"}, {"dia": "2026-11-24", "hora": "17:30", "sala": "Cinemark", "seccion": "En Competencia", "subseccion": "Competencia Creando Universos", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Pan", "direccion": "Miguel León", "anio": "", "pais": "Colombia", "id": "pan", "duracion": 96, "duracion_film": "", "formato": "Animación · TE", "sesion": "Lodo, Tinku, Paqarina, O Jardim Mágico, Azul: la última semilla, Garantía de por vida, Pan, Trabajo hecho"}, {"dia": "2026-11-24", "hora": "17:30", "sala": "Cinemark", "seccion": "En Competencia", "subseccion": "Competencia Creando Universos", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Paqarina", "direccion": "Sussan Yerathel Ccorimanya Tinta", "anio": "", "pais": "Perú", "id": "paqarina", "duracion": 96, "duracion_film": "", "formato": "Animación · TE", "sesion": "Lodo, Tinku, Paqarina, O Jardim Mágico, Azul: la última semilla, Garantía de por vida, Pan, Trabajo hecho"}, {"dia": "2026-11-24", "hora": "17:30", "sala": "Cinemark", "seccion": "En Competencia", "subseccion": "Competencia Creando Universos", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Tinku", "direccion": "Román Nina Nina", "anio": "", "pais": "Bolivia", "id": "tinku", "duracion": 96, "duracion_film": "", "formato": "Animación · TE", "sesion": "Lodo, Tinku, Paqarina, O Jardim Mágico, Azul: la última semilla, Garantía de por vida, Pan, Trabajo hecho"}, {"dia": "2026-11-24", "hora": "17:30", "sala": "Cinemark", "seccion": "En Competencia", "subseccion": "Competencia Creando Universos", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Trabajo hecho", "direccion": "Jaime Freire Valenzuela", "anio": "", "pais": "Chile", "id": "trabajo-hecho", "duracion": 96, "duracion_film": "", "formato": "Animación · TE", "sesion": "Lodo, Tinku, Paqarina, O Jardim Mágico, Azul: la última semilla, Garantía de por vida, Pan, Trabajo hecho"}, {"dia": "2026-11-24", "hora": "18:30", "sala": "Teatro Municipal", "seccion": "Muestra Joya", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Siempre soy tu animal materno", "direccion": "Valentina Maurel", "anio": "2026", "pais": "Costa Rica", "id": "siempre-soy-tu-animal-materno", "duracion": 180, "duracion_film": "180'", "formato": "Ficción · +14", "sesion": "Siempre soy tu animal materno"}, {"dia": "2026-11-24", "hora": "20:00", "sala": "Cine Arte", "seccion": "En Competencia", "subseccion": "Competencia Largometraje Iberoamericano de Ficción", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Nunkui", "direccion": "Verenice Benítez", "anio": "2026", "pais": "Ecuador", "id": "nunkui", "duracion": 91, "duracion_film": "91'", "formato": "Ficción · +16", "sesion": "Nunkui"}, {"dia": "2026-11-24", "hora": "20:00", "sala": "Cinemark", "seccion": "En Competencia", "subseccion": "Competencia Desde Aquí", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Cocaína negra", "direccion": "Cristóbal Valenzuela", "anio": "2026", "pais": "Chile", "id": "cocaina-negra", "duracion": 83, "duracion_film": "83'", "formato": "Documental · +14", "sesion": "Cocaína negra"}, {"dia": "2026-11-25", "hora": "11:00", "sala": "Palacio Vergara", "seccion": "Diálogos de cine", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "Modera: Francisca Droppelmann. Exponen: Edward Venero, Mariana Rubio y Sol San Julián.", "premiere": "", "titulo": "El reencuentro: festivales en diálogo", "direccion": "", "anio": "", "pais": "", "id": "el-reencuentro-festivales-en-dialogo", "duracion": 0, "duracion_film": "", "formato": "Charla", "sesion": "El reencuentro: festivales en diálogo"}, {"dia": "2026-11-25", "hora": "13:00", "sala": "Palacio Vergara", "seccion": "Diálogos de cine", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "Modera: Lola Contreras Bustamante. Exponen: Simón González, Javier Andrade, Pilar Colomé, Elena Vilardel, Alejandro Irías, Simón Franco, Lena Fernández, Pablo Dotta.", "premiere": "", "titulo": "El reencuentro: cineastas iberoamericanos en diálogo", "direccion": "", "anio": "", "pais": "", "id": "el-reencuentro-cineastas-iberoamericanos-en-dialogo", "duracion": 0, "duracion_film": "", "formato": "Charla", "sesion": "El reencuentro: cineastas iberoamericanos en diálogo"}, {"dia": "2026-11-25", "hora": "15:00", "sala": "Cine Arte", "seccion": "En Competencia", "subseccion": "Competencia Largometraje Iberoamericano Documental", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "Premiere nacional", "titulo": "El coloquio de los pájaros", "direccion": "Sofía Velázquez Núñez", "anio": "2026", "pais": "Perú", "id": "el-coloquio-de-los-pajaros", "duracion": 60, "duracion_film": "60'", "formato": "Documental · TE", "sesion": "El coloquio de los pájaros"}, {"dia": "2026-11-25", "hora": "15:00", "sala": "Cinemark", "seccion": "En Competencia", "subseccion": "Competencia Creando Universos", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "A menina que queria ser pedra", "direccion": "Jackson Teixeira", "anio": "", "pais": "Brasil", "id": "a-menina-que-queria-ser-pedra", "duracion": 86, "duracion_film": "", "formato": "Animación · +14", "sesion": "El cuerpo de Cristo, Pinchu es así, Mensajeras sin mensaje, No prendas la luz, Decaer, TV Entreaberta, A menina que queria ser pedra, El tamagochi escarlata, Mnema, Emechiche, el renacer de los cabeciblancos"}, {"dia": "2026-11-25", "hora": "15:00", "sala": "Cinemark", "seccion": "En Competencia", "subseccion": "Competencia Creando Universos", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Decaer", "direccion": "Juan Camilo González", "anio": "", "pais": "Colombia", "id": "decaer", "duracion": 86, "duracion_film": "", "formato": "Animación · +14", "sesion": "El cuerpo de Cristo, Pinchu es así, Mensajeras sin mensaje, No prendas la luz, Decaer, TV Entreaberta, A menina que queria ser pedra, El tamagochi escarlata, Mnema, Emechiche, el renacer de los cabeciblancos"}, {"dia": "2026-11-25", "hora": "15:00", "sala": "Cinemark", "seccion": "En Competencia", "subseccion": "Competencia Creando Universos", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "El cuerpo de Cristo", "direccion": "Bea Lema", "anio": "", "pais": "España", "id": "el-cuerpo-de-cristo", "duracion": 86, "duracion_film": "", "formato": "Animación · +14", "sesion": "El cuerpo de Cristo, Pinchu es así, Mensajeras sin mensaje, No prendas la luz, Decaer, TV Entreaberta, A menina que queria ser pedra, El tamagochi escarlata, Mnema, Emechiche, el renacer de los cabeciblancos"}, {"dia": "2026-11-25", "hora": "15:00", "sala": "Cinemark", "seccion": "En Competencia", "subseccion": "Competencia Creando Universos", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "El tamagochi escarlata", "direccion": "Francisco Visceral Rivera", "anio": "", "pais": "Chile", "id": "el-tamagochi-escarlata", "duracion": 86, "duracion_film": "", "formato": "Animación · +14", "sesion": "El cuerpo de Cristo, Pinchu es así, Mensajeras sin mensaje, No prendas la luz, Decaer, TV Entreaberta, A menina que queria ser pedra, El tamagochi escarlata, Mnema, Emechiche, el renacer de los cabeciblancos"}, {"dia": "2026-11-25", "hora": "15:00", "sala": "Cinemark", "seccion": "En Competencia", "subseccion": "Competencia Creando Universos", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Emechiche, el renacer de los cabeciblancos", "direccion": "Juan Camilo González", "anio": "", "pais": "Colombia", "id": "emechiche-el-renacer-de-los-cabeciblancos", "duracion": 86, "duracion_film": "", "formato": "Animación · +14", "sesion": "El cuerpo de Cristo, Pinchu es así, Mensajeras sin mensaje, No prendas la luz, Decaer, TV Entreaberta, A menina que queria ser pedra, El tamagochi escarlata, Mnema, Emechiche, el renacer de los cabeciblancos"}, {"dia": "2026-11-25", "hora": "15:00", "sala": "Cinemark", "seccion": "En Competencia", "subseccion": "Competencia Creando Universos", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Mensajeras sin mensaje", "direccion": "Daniela Maldonado", "anio": "", "pais": "Chile", "id": "mensajeras-sin-mensaje", "duracion": 86, "duracion_film": "", "formato": "Animación · +14", "sesion": "El cuerpo de Cristo, Pinchu es así, Mensajeras sin mensaje, No prendas la luz, Decaer, TV Entreaberta, A menina que queria ser pedra, El tamagochi escarlata, Mnema, Emechiche, el renacer de los cabeciblancos"}, {"dia": "2026-11-25", "hora": "15:00", "sala": "Cinemark", "seccion": "En Competencia", "subseccion": "Competencia Creando Universos", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Mnema", "direccion": "Inês Costa y Carolina Bonzinho", "anio": "", "pais": "Brasil", "id": "mnema", "duracion": 86, "duracion_film": "", "formato": "Animación · +14", "sesion": "El cuerpo de Cristo, Pinchu es así, Mensajeras sin mensaje, No prendas la luz, Decaer, TV Entreaberta, A menina que queria ser pedra, El tamagochi escarlata, Mnema, Emechiche, el renacer de los cabeciblancos"}, {"dia": "2026-11-25", "hora": "15:00", "sala": "Cinemark", "seccion": "En Competencia", "subseccion": "Competencia Creando Universos", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "No prendas la luz", "direccion": "Carina Vanessa Rodríguez", "anio": "", "pais": "México", "id": "no-prendas-la-luz", "duracion": 86, "duracion_film": "", "formato": "Animación · +14", "sesion": "El cuerpo de Cristo, Pinchu es así, Mensajeras sin mensaje, No prendas la luz, Decaer, TV Entreaberta, A menina que queria ser pedra, El tamagochi escarlata, Mnema, Emechiche, el renacer de los cabeciblancos"}, {"dia": "2026-11-25", "hora": "15:00", "sala": "Cinemark", "seccion": "En Competencia", "subseccion": "Competencia Creando Universos", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Pinchu es así", "direccion": "Carmen Córdoba", "anio": "", "pais": "España", "id": "pinchu-es-asi", "duracion": 86, "duracion_film": "", "formato": "Animación · +14", "sesion": "El cuerpo de Cristo, Pinchu es así, Mensajeras sin mensaje, No prendas la luz, Decaer, TV Entreaberta, A menina que queria ser pedra, El tamagochi escarlata, Mnema, Emechiche, el renacer de los cabeciblancos"}, {"dia": "2026-11-25", "hora": "15:00", "sala": "Cinemark", "seccion": "En Competencia", "subseccion": "Competencia Creando Universos", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "TV Entreaberta", "direccion": "Mateus Compart", "anio": "", "pais": "Brasil", "id": "tv-entreaberta", "duracion": 86, "duracion_film": "", "formato": "Animación · +14", "sesion": "El cuerpo de Cristo, Pinchu es así, Mensajeras sin mensaje, No prendas la luz, Decaer, TV Entreaberta, A menina que queria ser pedra, El tamagochi escarlata, Mnema, Emechiche, el renacer de los cabeciblancos"}, {"dia": "2026-11-25", "hora": "15:00", "sala": "Teatro Municipal", "seccion": "Función especial", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Matapanki", "direccion": "Diego \"Mapache\" Fuentes", "anio": "2025", "pais": "Chile", "id": "matapanki", "duracion": 71, "duracion_film": "71'", "formato": "Ficción/Drama · +14", "sesion": "Matapanki"}, {"dia": "2026-11-25", "hora": "17:00", "sala": "Teatro Municipal", "seccion": "Muestra Joya", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Sorda", "direccion": "Eva Libertad", "anio": "2025", "pais": "España", "id": "sorda", "duracion": 100, "duracion_film": "100'", "formato": "Ficción · TE", "sesion": "Sorda"}, {"dia": "2026-11-25", "hora": "17:30", "sala": "Cine Arte", "seccion": "En Competencia", "subseccion": "Competencia Largometraje Iberoamericano de Ficción", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Pin de Fartie", "direccion": "Alejo Moguillansky", "anio": "2025", "pais": "Argentina", "id": "pin-de-fartie", "duracion": 106, "duracion_film": "106'", "formato": "Ficción · TE", "sesion": "Pin de Fartie"}, {"dia": "2026-11-25", "hora": "17:30", "sala": "Cinemark", "seccion": "En Competencia", "subseccion": "Competencia Habitar", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Caerá el Morro y marcharán sus hijos", "direccion": "Oscar Marín Sepúlveda", "anio": "", "pais": "Chile (Arica)", "id": "caera-el-morro-y-marcharan-sus-hijos", "duracion": 86, "duracion_film": "", "formato": "Documental · +14", "sesion": "Norte claro, sur oscuro, La ofrenda, Caudal, Caerá el Morro y marcharán sus hijos, Criaturas que gritan"}, {"dia": "2026-11-25", "hora": "17:30", "sala": "Cinemark", "seccion": "En Competencia", "subseccion": "Competencia Habitar", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Caudal", "direccion": "Develo Colectivo", "anio": "", "pais": "Chile (Valparaíso)", "id": "caudal", "duracion": 86, "duracion_film": "", "formato": "Documental · +14", "sesion": "Norte claro, sur oscuro, La ofrenda, Caudal, Caerá el Morro y marcharán sus hijos, Criaturas que gritan"}, {"dia": "2026-11-25", "hora": "17:30", "sala": "Cinemark", "seccion": "En Competencia", "subseccion": "Competencia Habitar", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Criaturas que gritan", "direccion": "Martín Durán", "anio": "", "pais": "Chile (Valparaíso)", "id": "criaturas-que-gritan", "duracion": 86, "duracion_film": "", "formato": "Documental · +14", "sesion": "Norte claro, sur oscuro, La ofrenda, Caudal, Caerá el Morro y marcharán sus hijos, Criaturas que gritan"}, {"dia": "2026-11-25", "hora": "17:30", "sala": "Cinemark", "seccion": "En Competencia", "subseccion": "Competencia Habitar", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "La ofrenda", "direccion": "Samuel González", "anio": "", "pais": "Chile (Los Ríos)", "id": "la-ofrenda", "duracion": 86, "duracion_film": "", "formato": "Ficción · +14", "sesion": "Norte claro, sur oscuro, La ofrenda, Caudal, Caerá el Morro y marcharán sus hijos, Criaturas que gritan"}, {"dia": "2026-11-25", "hora": "17:30", "sala": "Cinemark", "seccion": "En Competencia", "subseccion": "Competencia Habitar", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Norte claro, sur oscuro", "direccion": "Francisca Amigo Moraga", "anio": "", "pais": "Chile (Maule)", "id": "norte-claro-sur-oscuro", "duracion": 86, "duracion_film": "", "formato": "Documental · +14", "sesion": "Norte claro, sur oscuro, La ofrenda, Caudal, Caerá el Morro y marcharán sus hijos, Criaturas que gritan"}, {"dia": "2026-11-25", "hora": "19:30", "sala": "Teatro Municipal", "seccion": "Muestra Joya", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "La muerte no tiene dueño", "direccion": "Jorge Thielen Armand", "anio": "2025", "pais": "Venezuela", "id": "la-muerte-no-tiene-dueno", "duracion": 106, "duracion_film": "106'", "formato": "Ficción · +14", "sesion": "La muerte no tiene dueño"}, {"dia": "2026-11-25", "hora": "20:00", "sala": "Cine Arte", "seccion": "En Competencia", "subseccion": "Competencia Largometraje Iberoamericano Documental", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Los vencedores", "direccion": "Pablo Aparo", "anio": "2025", "pais": "Argentina", "id": "los-vencedores", "duracion": 96, "duracion_film": "96'", "formato": "Documental · TE", "sesion": "Los vencedores"}, {"dia": "2026-11-25", "hora": "20:00", "sala": "Cinemark", "seccion": "En Competencia", "subseccion": "Competencia Desde Aquí", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Lyn Mía", "direccion": "Camila Aboitiz", "anio": "2026", "pais": "Chile", "id": "lyn-mia", "duracion": 61, "duracion_film": "61'", "formato": "Documental · TE", "sesion": "Lyn Mía"}, {"dia": "2026-11-26", "hora": "11:00", "sala": "Palacio Vergara", "seccion": "Diálogos de cine", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "Modera: Bambú Orellana. Exponen: Kike Ortega, Isidora Fajardo y Alejandra Moffat.", "premiere": "", "titulo": "Animación: más allá del público infantil", "direccion": "", "anio": "", "pais": "", "id": "animacion-mas-alla-del-publico-infantil", "duracion": 0, "duracion_film": "", "formato": "Charla", "sesion": "Animación: más allá del público infantil"}, {"dia": "2026-11-26", "hora": "13:00", "sala": "Palacio Vergara", "seccion": "Diálogos de cine", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "Modera: Verónica Muñoz. Expone: Chema Alba.", "premiere": "", "titulo": "La memoria del color: colorimetría en el cine análogo y digital", "direccion": "", "anio": "", "pais": "", "id": "la-memoria-del-color-colorimetria-en-el-cine-analogo-y-digital", "duracion": 0, "duracion_film": "", "formato": "Charla", "sesion": "La memoria del color: colorimetría en el cine análogo y digital"}, {"dia": "2026-11-26", "hora": "15:00", "sala": "Cine Arte", "seccion": "Muestra RUCA (escuelas de cine)", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Capturar la caída", "direccion": "Erik Alexander (Universidad de los Andes)", "anio": "", "pais": "Chile", "id": "capturar-la-caida", "duracion": 44, "duracion_film": "", "formato": "+14", "sesion": "Me vas a estar esperando, Capturar la caída, Ross, Zozobra, Mi gran noche, H4BLAM#, Ven"}, {"dia": "2026-11-26", "hora": "15:00", "sala": "Cine Arte", "seccion": "Muestra RUCA (escuelas de cine)", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "H4BLAM#", "direccion": "Benjamín Cuevas (Universidad Diego Portales)", "anio": "", "pais": "Chile", "id": "h4blam", "duracion": 44, "duracion_film": "", "formato": "+14", "sesion": "Me vas a estar esperando, Capturar la caída, Ross, Zozobra, Mi gran noche, H4BLAM#, Ven"}, {"dia": "2026-11-26", "hora": "15:00", "sala": "Cine Arte", "seccion": "Muestra RUCA (escuelas de cine)", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Me vas a estar esperando", "direccion": "Conam Calderón (Pontificia Universidad Católica de Chile)", "anio": "", "pais": "Chile", "id": "me-vas-a-estar-esperando", "duracion": 44, "duracion_film": "", "formato": "+14", "sesion": "Me vas a estar esperando, Capturar la caída, Ross, Zozobra, Mi gran noche, H4BLAM#, Ven"}, {"dia": "2026-11-26", "hora": "15:00", "sala": "Cine Arte", "seccion": "Muestra RUCA (escuelas de cine)", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Mi gran noche", "direccion": "Florencia Lucero (Universidad Mayor)", "anio": "", "pais": "Chile", "id": "mi-gran-noche", "duracion": 44, "duracion_film": "", "formato": "+14", "sesion": "Me vas a estar esperando, Capturar la caída, Ross, Zozobra, Mi gran noche, H4BLAM#, Ven"}, {"dia": "2026-11-26", "hora": "15:00", "sala": "Cine Arte", "seccion": "Muestra RUCA (escuelas de cine)", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Ross", "direccion": "Florencia Vega (Universidad de Chile)", "anio": "", "pais": "Chile", "id": "ross", "duracion": 44, "duracion_film": "", "formato": "+14", "sesion": "Me vas a estar esperando, Capturar la caída, Ross, Zozobra, Mi gran noche, H4BLAM#, Ven"}, {"dia": "2026-11-26", "hora": "15:00", "sala": "Cine Arte", "seccion": "Muestra RUCA (escuelas de cine)", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Ven", "direccion": "Facundo Daniel Alexander (Universidad Academia de Humanismo Cristiano)", "anio": "", "pais": "Chile", "id": "ven", "duracion": 44, "duracion_film": "", "formato": "+14", "sesion": "Me vas a estar esperando, Capturar la caída, Ross, Zozobra, Mi gran noche, H4BLAM#, Ven"}, {"dia": "2026-11-26", "hora": "15:00", "sala": "Cine Arte", "seccion": "Muestra RUCA (escuelas de cine)", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Zozobra", "direccion": "Agus Amparo Muñoz (Universidad de Valparaíso)", "anio": "", "pais": "Chile", "id": "zozobra", "duracion": 44, "duracion_film": "", "formato": "+14", "sesion": "Me vas a estar esperando, Capturar la caída, Ross, Zozobra, Mi gran noche, H4BLAM#, Ven"}, {"dia": "2026-11-26", "hora": "15:00", "sala": "Cinemark", "seccion": "En Competencia", "subseccion": "Competencia Pulso Iberoamericano", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Baisanos", "direccion": "Andrés y Francisca Khamis Giacoman", "anio": "", "pais": "Chile", "id": "baisanos", "duracion": 103, "duracion_film": "", "formato": "Documental · +16", "sesion": "Ixquic, Miriam, En otra Palestina, Presépio, Videoclub 2001, Baisanos"}, {"dia": "2026-11-26", "hora": "15:00", "sala": "Cinemark", "seccion": "En Competencia", "subseccion": "Competencia Pulso Iberoamericano", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "En otra Palestina", "direccion": "Yaela Gottlieb", "anio": "", "pais": "Perú", "id": "en-otra-palestina", "duracion": 103, "duracion_film": "", "formato": "Documental · +16", "sesion": "Ixquic, Miriam, En otra Palestina, Presépio, Videoclub 2001, Baisanos"}, {"dia": "2026-11-26", "hora": "15:00", "sala": "Cinemark", "seccion": "En Competencia", "subseccion": "Competencia Pulso Iberoamericano", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Ixquic", "direccion": "Elvis Caj", "anio": "", "pais": "Guatemala", "id": "ixquic", "duracion": 103, "duracion_film": "", "formato": "Ficción · +16", "sesion": "Ixquic, Miriam, En otra Palestina, Presépio, Videoclub 2001, Baisanos"}, {"dia": "2026-11-26", "hora": "15:00", "sala": "Cinemark", "seccion": "En Competencia", "subseccion": "Competencia Pulso Iberoamericano", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Miriam", "direccion": "Karla Condado", "anio": "", "pais": "México", "id": "miriam", "duracion": 103, "duracion_film": "", "formato": "Documental · +16", "sesion": "Ixquic, Miriam, En otra Palestina, Presépio, Videoclub 2001, Baisanos"}, {"dia": "2026-11-26", "hora": "15:00", "sala": "Cinemark", "seccion": "En Competencia", "subseccion": "Competencia Pulso Iberoamericano", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Presépio", "direccion": "Felipe Bibian", "anio": "", "pais": "Brasil", "id": "presepio", "duracion": 103, "duracion_film": "", "formato": "Ficción · +16", "sesion": "Ixquic, Miriam, En otra Palestina, Presépio, Videoclub 2001, Baisanos"}, {"dia": "2026-11-26", "hora": "15:00", "sala": "Cinemark", "seccion": "En Competencia", "subseccion": "Competencia Pulso Iberoamericano", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Videoclub 2001", "direccion": "Guillermo Polo", "anio": "", "pais": "España", "id": "videoclub-2001", "duracion": 103, "duracion_film": "", "formato": "Ficción · +16", "sesion": "Ixquic, Miriam, En otra Palestina, Presépio, Videoclub 2001, Baisanos"}, {"dia": "2026-11-26", "hora": "15:00", "sala": "Palacio Vergara", "seccion": "Real Chile", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "En torno a Cine, Inteligencia Artificial y Realidades extendidas: representación, mitos y desafíos.", "premiere": "", "titulo": "Inauguración y ponencia: Cine, IA y realidades extendidas", "direccion": "", "anio": "", "pais": "", "id": "inauguracion-y-ponencia-cine-ia-y-realidades-extendidas", "duracion": 0, "duracion_film": "", "formato": "Charla", "sesion": "Inauguración y ponencia: Cine, IA y realidades extendidas"}, {"dia": "2026-11-26", "hora": "17:00", "sala": "Palacio Vergara", "seccion": "Diálogos de cine", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "Modera: María Angélica Pacheco.", "premiere": "", "titulo": "Master class: usos, retos y posibilidades de la IA en el relato de no ficción", "direccion": "", "anio": "", "pais": "", "id": "master-class-usos-retos-y-posibilidades-de-la-ia-en-el-relato-de-no-ficcion", "duracion": 0, "duracion_film": "", "formato": "Charla", "sesion": "Master class: usos, retos y posibilidades de la IA en el relato de no ficción"}, {"dia": "2026-11-26", "hora": "17:00", "sala": "Teatro Municipal", "seccion": "Muestra Una América Latina", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "La teta asustada", "direccion": "Claudia Llosa", "anio": "2009", "pais": "Perú", "id": "la-teta-asustada", "duracion": 95, "duracion_film": "95'", "formato": "Ficción/Drama · +14", "sesion": "La teta asustada"}, {"dia": "2026-11-26", "hora": "17:30", "sala": "Cine Arte", "seccion": "En Competencia", "subseccion": "Competencia Largometraje Iberoamericano Documental", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Mailin", "direccion": "María Silvia Esteve", "anio": "2025", "pais": "Argentina", "id": "mailin", "duracion": 87, "duracion_film": "87'", "formato": "Documental · +14", "sesion": "Mailin"}, {"dia": "2026-11-26", "hora": "17:30", "sala": "Cinemark", "seccion": "En Competencia", "subseccion": "Competencia Habitar", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Tres tristes tías", "direccion": "Carlos Villegas Leiva", "anio": "2026", "pais": "Chile", "id": "tres-tristes-tias", "duracion": 72, "duracion_film": "72'", "formato": "Documental · +12", "sesion": "Tres tristes tías"}, {"dia": "2026-11-26", "hora": "19:30", "sala": "Teatro Municipal", "seccion": "Muestra Joya", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "La ilusión de un verano sin fin", "direccion": "Alessandra Sanguinetti", "anio": "2026", "pais": "Argentina", "id": "la-ilusion-de-un-verano-sin-fin", "duracion": 94, "duracion_film": "94'", "formato": "Documental · TE", "sesion": "La ilusión de un verano sin fin"}, {"dia": "2026-11-26", "hora": "20:00", "sala": "Cine Arte", "seccion": "En Competencia", "subseccion": "Competencia Largometraje Iberoamericano de Ficción", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "Premiere nacional", "titulo": "Guerra de verano", "direccion": "Alicia Scherson", "anio": "2026", "pais": "Argentina", "id": "guerra-de-verano", "duracion": 104, "duracion_film": "104'", "formato": "Ficción · +14", "sesion": "Guerra de verano"}, {"dia": "2026-11-26", "hora": "20:00", "sala": "Cinemark", "seccion": "En Competencia", "subseccion": "Competencia Desde Aquí", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "Estreno mundial", "titulo": "Asteroide 2518", "direccion": "Amanda Rutllant", "anio": "2026", "pais": "Chile", "id": "asteroide-2518", "duracion": 63, "duracion_film": "63'", "formato": "Documental · TE", "sesion": "Asteroide 2518"}, {"dia": "2026-11-27", "hora": "11:00", "sala": "Palacio Vergara", "seccion": "Diálogos de cine", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "Modera: Felipe Salinas. Exponen: Gabriela Maire, Alejandra Moffat, Josefina Fernández y Susana Quiroz.", "premiere": "", "titulo": "El guionista hoy: de la página en blanco a la pantalla", "direccion": "", "anio": "", "pais": "", "id": "el-guionista-hoy-de-la-pagina-en-blanco-a-la-pantalla", "duracion": 0, "duracion_film": "", "formato": "Charla", "sesion": "El guionista hoy: de la página en blanco a la pantalla"}, {"dia": "2026-11-27", "hora": "13:00", "sala": "Palacio Vergara", "seccion": "Diálogos de cine", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "Modera: David Guzmán. Expone: Michelle Couttolenc y Jaime Baksht, Astro LX.", "premiere": "", "titulo": "Retrospectiva: Astro LX", "direccion": "", "anio": "", "pais": "", "id": "retrospectiva-astro-lx", "duracion": 0, "duracion_film": "", "formato": "Charla", "sesion": "Retrospectiva: Astro LX"}, {"dia": "2026-11-27", "hora": "15:00", "sala": "Cine Arte", "seccion": "Muestra RUCA (escuelas de cine)", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Captura", "direccion": "Ignacia Manzano Daguerre (Universidad Austral de Chile)", "anio": "", "pais": "Chile", "id": "captura", "duracion": 57, "duracion_film": "", "formato": "+14", "sesion": "¿Quién mató a Gaete?, Herederas del mar, Te quiero lejos, Enajenado, Como chispitas, El pan nuestro de cada día, Captura"}, {"dia": "2026-11-27", "hora": "15:00", "sala": "Cine Arte", "seccion": "Muestra RUCA (escuelas de cine)", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Como chispitas", "direccion": "Amparo Chaparro (UNIACC)", "anio": "", "pais": "Chile", "id": "como-chispitas", "duracion": 57, "duracion_film": "", "formato": "+14", "sesion": "¿Quién mató a Gaete?, Herederas del mar, Te quiero lejos, Enajenado, Como chispitas, El pan nuestro de cada día, Captura"}, {"dia": "2026-11-27", "hora": "15:00", "sala": "Cine Arte", "seccion": "Muestra RUCA (escuelas de cine)", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "El pan nuestro de cada día", "direccion": "Tatiana Farías (Universidad de O'Higgins)", "anio": "", "pais": "Chile", "id": "el-pan-nuestro-de-cada-dia", "duracion": 57, "duracion_film": "", "formato": "+14", "sesion": "¿Quién mató a Gaete?, Herederas del mar, Te quiero lejos, Enajenado, Como chispitas, El pan nuestro de cada día, Captura"}, {"dia": "2026-11-27", "hora": "15:00", "sala": "Cine Arte", "seccion": "Muestra RUCA (escuelas de cine)", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Enajenado", "direccion": "Soledad Jaramillo (Universidad Católica de la Santísima Concepción)", "anio": "", "pais": "Chile", "id": "enajenado", "duracion": 57, "duracion_film": "", "formato": "+14", "sesion": "¿Quién mató a Gaete?, Herederas del mar, Te quiero lejos, Enajenado, Como chispitas, El pan nuestro de cada día, Captura"}, {"dia": "2026-11-27", "hora": "15:00", "sala": "Cine Arte", "seccion": "Muestra RUCA (escuelas de cine)", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Herederas del mar", "direccion": "Trinidad Toledo (Universidad de Viña del Mar)", "anio": "", "pais": "Chile", "id": "herederas-del-mar", "duracion": 57, "duracion_film": "", "formato": "+14", "sesion": "¿Quién mató a Gaete?, Herederas del mar, Te quiero lejos, Enajenado, Como chispitas, El pan nuestro de cada día, Captura"}, {"dia": "2026-11-27", "hora": "15:00", "sala": "Cine Arte", "seccion": "Muestra RUCA (escuelas de cine)", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Te quiero lejos", "direccion": "Romina Espinoza (Universidad de las Américas)", "anio": "", "pais": "Chile", "id": "te-quiero-lejos", "duracion": 57, "duracion_film": "", "formato": "+14", "sesion": "¿Quién mató a Gaete?, Herederas del mar, Te quiero lejos, Enajenado, Como chispitas, El pan nuestro de cada día, Captura"}, {"dia": "2026-11-27", "hora": "15:00", "sala": "Cine Arte", "seccion": "Muestra RUCA (escuelas de cine)", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "¿Quién mató a Gaete?", "direccion": "Pablo E. Alvarado S. (Universidad del Desarrollo)", "anio": "", "pais": "Chile", "id": "quien-mato-a-gaete", "duracion": 57, "duracion_film": "", "formato": "+14", "sesion": "¿Quién mató a Gaete?, Herederas del mar, Te quiero lejos, Enajenado, Como chispitas, El pan nuestro de cada día, Captura"}, {"dia": "2026-11-27", "hora": "15:00", "sala": "Cinemark", "seccion": "Muestra Latinoamérica para Todos", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Olivia y el terremoto invisible", "direccion": "Irene Iborra Rizo", "anio": "2025", "pais": "España", "id": "olivia-y-el-terremoto-invisible", "duracion": 71, "duracion_film": "71'", "formato": "Animación · TE", "sesion": "Olivia y el terremoto invisible"}, {"dia": "2026-11-27", "hora": "15:00", "sala": "Palacio Vergara", "seccion": "Real Chile", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "En torno a Cine, Inteligencia Artificial y Realidades extendidas: representación, mitos y desafíos.", "premiere": "", "titulo": "Ponencias: Cine, IA y realidades extendidas", "direccion": "", "anio": "", "pais": "", "id": "ponencias-cine-ia-y-realidades-extendidas", "duracion": 0, "duracion_film": "", "formato": "Charla", "sesion": "Ponencias: Cine, IA y realidades extendidas"}, {"dia": "2026-11-27", "hora": "16:30", "sala": "Teatro Municipal", "seccion": "Muestra Una América Latina", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "El laberinto del fauno", "direccion": "Guillermo del Toro", "anio": "2006", "pais": "España", "id": "el-laberinto-del-fauno", "duracion": 120, "duracion_film": "120'", "formato": "Ficción · +14", "sesion": "El laberinto del fauno"}, {"dia": "2026-11-27", "hora": "17:00", "sala": "Palacio Vergara", "seccion": "Diálogos de cine", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "Modera: Pepe Rovano.", "premiere": "", "titulo": "Master class Jorge Baradit: riesgos de la IA en la creación artística", "direccion": "", "anio": "", "pais": "", "id": "master-class-jorge-baradit-riesgos-de-la-ia-en-la-creacion-artistica", "duracion": 0, "duracion_film": "", "formato": "Charla", "sesion": "Master class Jorge Baradit: riesgos de la IA en la creación artística"}, {"dia": "2026-11-27", "hora": "17:30", "sala": "Cine Arte", "seccion": "En Competencia", "subseccion": "Competencia Largometraje Iberoamericano de Ficción", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "La anatomía de los caballos", "direccion": "Daniel Vilches Toche", "anio": "2025", "pais": "Perú", "id": "la-anatomia-de-los-caballos", "duracion": 107, "duracion_film": "107'", "formato": "Documental · +12", "sesion": "La anatomía de los caballos"}, {"dia": "2026-11-27", "hora": "17:30", "sala": "Cinemark", "seccion": "En Competencia", "subseccion": "Competencia Habitar", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Réplicas", "direccion": "Diego González-Durney", "anio": "2026", "pais": "Chile", "id": "replicas", "duracion": 87, "duracion_film": "87'", "formato": "Ficción · +12", "sesion": "Réplicas"}, {"dia": "2026-11-27", "hora": "19:30", "sala": "Calle Von Schroeder", "seccion": "Muestra Joya", "subseccion": "", "acceso": "Entrada liberada · aire libre", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "El partido", "direccion": "Juan Cabral y Santiago Franco", "anio": "2026", "pais": "Argentina", "id": "el-partido", "duracion": 91, "duracion_film": "91'", "formato": "Documental · TE", "sesion": "El partido"}, {"dia": "2026-11-27", "hora": "19:30", "sala": "Teatro Municipal", "seccion": "Muestra Joya", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Motel Paraíso", "direccion": "José Eduardo Castilla Ponce", "anio": "2025", "pais": "México", "id": "motel-paraiso", "duracion": 90, "duracion_film": "90'", "formato": "Documental · +12", "sesion": "Motel Paraíso"}, {"dia": "2026-11-27", "hora": "20:00", "sala": "Cine Arte", "seccion": "En Competencia", "subseccion": "Competencia Largometraje Iberoamericano Documental", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Relicto", "direccion": "Guillermo Quintero", "anio": "2026", "pais": "Colombia", "id": "relicto", "duracion": 97, "duracion_film": "97'", "formato": "Documental · TE", "sesion": "Relicto"}, {"dia": "2026-11-27", "hora": "20:00", "sala": "Cinemark", "seccion": "En Competencia", "subseccion": "Competencia Desde Aquí", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Población flotante", "direccion": "Carlos Araya Díaz", "anio": "2026", "pais": "Chile", "id": "poblacion-flotante", "duracion": 66, "duracion_film": "66'", "formato": "Documental · TE", "sesion": "Población flotante"}, {"dia": "2026-11-28", "hora": "12:30", "sala": "Teatro Municipal", "seccion": "Muestra Latinoamérica para Todos", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "La fabulosa máquina del tiempo", "direccion": "Eliza Capai", "anio": "2026", "pais": "Brasil", "id": "la-fabulosa-maquina-del-tiempo", "duracion": 70, "duracion_film": "70'", "formato": "Documental · TE", "sesion": "La fabulosa máquina del tiempo"}, {"dia": "2026-11-28", "hora": "13:00", "sala": "Cine Arte", "seccion": "Muestra Latinoamérica para Todos", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Ogú y Mampato en Rapa Nui", "direccion": "Alejandro Rojas Téllez", "anio": "2002", "pais": "Chile", "id": "ogu-y-mampato-en-rapa-nui", "duracion": 76, "duracion_film": "76'", "formato": "Animación · TE", "sesion": "Ogú y Mampato en Rapa Nui"}, {"dia": "2026-11-28", "hora": "14:30", "sala": "Teatro Municipal", "seccion": "Muestra especial País Vasco", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Karmele", "direccion": "Asier Altuna", "anio": "2026", "pais": "España", "id": "karmele", "duracion": 114, "duracion_film": "114'", "formato": "Ficción · +12", "sesion": "Karmele"}, {"dia": "2026-11-28", "hora": "15:00", "sala": "Cine Arte", "seccion": "Muestra Conmemoración Día del Cine Chileno", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "Detrás de la lluvia", "direccion": "Valeria Sarmiento", "anio": "", "pais": "Chile", "id": "detras-de-la-lluvia", "duracion": 105, "duracion_film": "", "formato": "Ficción · 98 min · +14", "sesion": "El jardín de los pañuelos blancos, Detrás de la lluvia"}, {"dia": "2026-11-28", "hora": "15:00", "sala": "Cine Arte", "seccion": "Muestra Conmemoración Día del Cine Chileno", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "", "titulo": "El jardín de los pañuelos blancos", "direccion": "Álvaro Covacevich", "anio": "", "pais": "Chile", "id": "el-jardin-de-los-panuelos-blancos", "duracion": 105, "duracion_film": "", "formato": "Documental · 7 min · TE", "sesion": "El jardín de los pañuelos blancos, Detrás de la lluvia"}, {"dia": "2026-11-28", "hora": "19:30", "sala": "Teatro Municipal", "seccion": "Ceremonias", "subseccion": "", "acceso": "Entrada liberada (con inscripción previa)", "url": "https://cinevina.cl/wp-content/uploads/2026/11/Programacion-FicVina-2026.pdf", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": "Ceremonia de clausura y premiación · película de clausura · Estreno nacional", "titulo": "La bola negra", "direccion": "Javier Calvo y Javier Ambrossi", "anio": "2026", "pais": "España", "id": "la-bola-negra", "duracion": 185, "duracion_film": "155'", "formato": "Ficción · +16", "sesion": "La bola negra"}];
+const LB={};   // id película → slug de Letterboxd
+const lbURL=f=>LB[f.id]?"https://letterboxd.com/film/"+LB[f.id]+"/":"";
+// enlace normal a letterboxd.com: desde Chrome o Safari el teléfono lo abre en la app de Letterboxd si está instalada
+const lbApp=lbURL;
+const DUR=90, MARGEN=0, H0=10, H1=24;   // la duración de la función ya incluye presentación y holgura; MARGEN queda en 0
+           // franja visible por día; duración si la ficha no la trae
+const DN=["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"];
+const $=id=>document.getElementById(id);
+const esc=s=>(s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const cmp=(a,b)=>a.localeCompare(b,"es");
+
+// Cada competencia es su propia sección
+F.forEach(f=>{
+  f.key=f.id+"|"+f.dia+"|"+f.hora;
+  f.min=(+f.hora.slice(0,2))*60+(+f.hora.slice(3));
+  f.comp=f.seccion==="En Competencia";
+  f.sec=f.comp?(f.subseccion||"Competencia").replace(/^Selección Oficial /,"Competencia ")
+    :/^Gala( Chilena)?$/.test(f.subseccion)?f.subseccion:f.seccion;   // Gala y Gala Chilena, secciones propias
+  f.salas=f.sala.split(" / ").filter(Boolean);
+  f.dur=f.duracion||DUR; f.est=!f.duracion;
+  f.otros=f.sesion&&f.sesion.trim()!==f.titulo.trim()?f.sesion.trim():"";
+});
+// Sesión = misma sala, día y hora (p. ej. un programa de cortos): se muestra y se marca como un solo bloque
+const S=[], porClave=new Map();
+for(const f of F){
+  const k=f.dia+"|"+f.hora+"|"+f.sala;
+  let s=porClave.get(k);
+  if(!s){s={key:k,dia:f.dia,hora:f.hora,min:f.min,sala:f.sala,salas:f.salas,films:[]};porClave.set(k,s);S.push(s);}
+  s.films.push(f); f.ses=s;
+}
+for(const s of S){
+  s.films.sort((a,b)=>cmp(a.titulo,b.titulo));
+  const c={}; s.films.forEach(f=>c[f.sec]=(c[f.sec]||0)+1);
+  s.sec=Object.keys(c).sort((a,b)=>c[b]-c[a])[0]; s.comp=s.films.some(f=>f.comp);
+  s.dur=Math.max(...s.films.map(f=>f.dur)); s.est=s.films.every(f=>f.est);
+  s.ocupa=s.dur+MARGEN;   // tiempo bloqueado en el calendario
+  s.acceso=[...new Set(s.films.flatMap(f=>f.acceso?f.acceso.split(" / "):[]))];
+  s.estado=s.films.map(f=>f.estado).find(e=>e&&e!=="Confirmada")||"";
+  s.sub=[...new Set(s.films.map(f=>f.subseccion).filter(x=>x&&x!==s.sec&&!s.comp))];
+  s.n=s.films.length;
+}
+// Funciones con "Cineasta Presente" según el símbolo del Programa oficial 2026 (PDF del festival)
+const PRESENTE=new Set([]);
+const presente=s=>PRESENTE.has(s.key);
+const ICONO_CP='<svg class="cpi" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="4.6" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M2.5 15c.4-3.4 2.6-5.3 5.5-5.3s5.1 1.9 5.5 5.3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>';
+const dias=[...new Set(F.map(f=>f.dia))].sort();
+const lbl=d=>{const x=new Date(d+"T12:00:00");return {w:DN[x.getDay()],n:x.getDate()}};
+const orden=s=>s.startsWith("Competencia")?0:s.startsWith("Gala")?1:2;
+const secs=[...new Set(F.map(f=>f.sec))].sort((a,b)=>orden(a)-orden(b)||cmp(a,b));
+const salas=[...new Set(F.flatMap(f=>f.salas))].sort(cmp);
+// un color por sección (mismo orden que la lista de secciones)
+const PALETA=["#2563eb","#0891b2","#4f46e5","#0d9488","#7c3aed","#db2777","#c2410c","#ca8a04","#16a34a","#9333ea","#0284c7","#be123c","#65a30d","#a16207","#c026d3","#059669","#475569","#e11d48","#0f766e","#6d28d9"];
+const COLOR=new Map(secs.map((s,i)=>[s,PALETA[i%PALETA.length]]));
+const col=s=>COLOR.get(s)||"#64748b";
+$("sec").innerHTML='<option value="">Todas las secciones</option><option value="*comp">Todas las competencias</option>'+secs.map(s=>`<option>${esc(s)}</option>`).join("");
+$("sala").innerHTML='<option value="">Todas las salas</option>'+salas.map(s=>`<option>${esc(s)}</option>`).join("");
+$("tot").textContent=`${new Set(F.map(f=>f.id)).size} películas · ${S.length} funciones`;
+
+let vista="list", dia="todos";
+// recordar dónde estaba (vista, día y desplazamiento) por si el navegador recarga la página al volver de otro sitio
+let posGuardada=null;
+try{const g=JSON.parse(localStorage.getItem("ficvina38-pos")||"null");
+  if(g&&Date.now()-g.t<6*3600e3){ if(g.vista==="cal"||g.vista==="list") vista=g.vista; if(g.dia==="todos"||dias.includes(g.dia)) dia=g.dia; posGuardada=g; }}catch(e){}
+try{const h=location.hash.slice(1);if(h==="calendario")vista="cal";else if(dias.includes(h))dia=h;}catch(e){}
+function guardarPos(){try{const wk=document.querySelector(".wk");
+  localStorage.setItem("ficvina38-pos",JSON.stringify({t:Date.now(),vista,dia,y:scrollY,wx:wk?wk.scrollLeft:0,wy:wk?wk.scrollTop:0}))}catch(e){}}
+addEventListener("pagehide",guardarPos);
+document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="hidden")guardarPos()});
+addEventListener("pageshow",e=>{if(e.persisted) render()});   // volver con "atrás" desde la caché del navegador
+
+// ---------- marcadas: por perfil (Ignacio / Marian), en la base de datos del artifact (privada por persona) o en este navegador ----------
+const PERFILES=["Ignacio","Marian"];
+const LS="ficvina38-marcadas";
+const LSV="ficvina38-vistas";
+const LSD="ficvina38-dudas", LSN="ficvina38-notas";
+let picks=new Set(), vistas=new Set();          // vistas: ids de películas ya vistas
+let dudas=new Set(), notas={};                  // dudas: funciones marcadas con "?"; notas: id película → 0..5
+const leer=(k,d)=>{try{const v=localStorage.getItem(k);return v===null?d:JSON.parse(v)}catch(e){return d}};
+let perfil=leer("ficvina38-perfil","Ignacio"); if(!PERFILES.includes(perfil)) perfil="Ignacio";
+const K=k=>k+":"+perfil;
+// migración: lo que había guardado antes de existir los perfiles pasa a ser el punto de partida de ambos
+(function migrar(){
+  try{
+    if(localStorage.getItem(LS)===null) return;
+    for(const p of PERFILES){
+      if(localStorage.getItem(LS+":"+p)!==null) continue;
+      for(const k of [LS,LSV,LSD,LSN]){const v=localStorage.getItem(k);if(v!==null)localStorage.setItem(k+":"+p,v)}
+    }
+  }catch(e){}
+})();
+function cargarLocal(){picks=new Set(leer(K(LS),[])); vistas=new Set(leer(K(LSV),[])); dudas=new Set(leer(K(LSD),[])); notas=leer(K(LSN),{})||{};}
+cargarLocal();
+let ref=null, writing=false, dirty=false, timer=null, unsub=null, dbRef=null, uidRef=null;
+function setSync(t){$("sync").textContent=t}
+setSync(`Las marcadas de ${perfil} se guardan en este navegador.`);
+function guardarLocal(){try{localStorage.setItem(K(LS),JSON.stringify([...picks]));localStorage.setItem(K(LSV),JSON.stringify([...vistas]));
+  localStorage.setItem(K(LSD),JSON.stringify([...dudas]));localStorage.setItem(K(LSN),JSON.stringify(notas))}catch(e){}}
+function guardar(){
+  guardarLocal();
+  if(!ref) return;
+  dirty=true; clearTimeout(timer); timer=setTimeout(flush,700);
+}
+async function flush(){
+  if(!ref||writing||!dirty) return;
+  writing=true; dirty=false;
+  const r=ref;
+  try{await r.set({ids:[...picks],vistas:[...vistas],dudas:[...dudas],notas}); if(r===ref) setSync(`Calendario de ${perfil} compartido: los cambios se ven en todos los dispositivos.`);}
+  catch(e){if(r===ref){setSync(`No se pudo guardar en el calendario compartido (¿tienes permiso de edición?); tus cambios quedan en este navegador.`);}}
+  writing=false; if(dirty) flush();
+}
+// Los perfiles son compartidos: quien abra el enlace ve y edita los mismos calendarios de Ignacio y Marian.
+// La base compartida manda; este navegador solo guarda una copia por si no hay conexión.
+function suscribir(){
+  if(unsub){try{unsub()}catch(e){} unsub=null}
+  ref=null;
+  if(!dbRef) return;
+  const p=perfil;
+  const r=dbRef.doc("perfiles/"+p);
+  let first=true;
+  ref=r;
+  unsub=r.onSnapshot(snap=>{
+    if(p!==perfil) return;
+    if(snap.metadata.hasPendingWrites) return;
+    if(snap.exists){
+      const d=snap.data()||{};
+      picks=new Set((Array.isArray(d.ids)?d.ids:[]).filter(k=>typeof k==="string"));
+      vistas=new Set((Array.isArray(d.vistas)?d.vistas:[]).filter(k=>typeof k==="string"));
+      dudas=new Set((Array.isArray(d.dudas)?d.dudas:[]).filter(k=>typeof k==="string"));
+      notas={}; if(d.notas&&typeof d.notas==="object") for(const [k,v] of Object.entries(d.notas)) if(Number.isFinite(v)&&v>=0&&v<=5&&Math.round(v*2)===v*2) notas[k]=v;   // medias estrellas: 3.5, 4.5…
+      guardarLocal();
+      render();
+    }else if(first&&(picks.size||vistas.size||dudas.size||Object.keys(notas).length)){guardar();}
+    first=false;
+    setSync(`Calendario de ${perfil} compartido: los cambios se ven en todos los dispositivos.`);
+  },()=>{if(p===perfil){ref=null;setSync(`Sin conexión a la base compartida; las marcadas de ${perfil} quedan en este navegador.`);}});
+}
+(async()=>{
+  if(!window.claude||!claude.use) return;
+  const db=await claude.use("db");
+  if(!db) return;
+  dbRef=db;
+  suscribir();
+})();
+function pintarPerfil(){document.querySelectorAll(".perfiles button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.p===perfil)))}
+async function cambiarPerfil(p){
+  if(!PERFILES.includes(p)||p===perfil) return;
+  if(dirty){clearTimeout(timer);await flush();}
+  perfil=p; try{localStorage.setItem("ficvina38-perfil",JSON.stringify(p))}catch(e){}
+  cargarLocal(); pintarPerfil(); setSync(`Las marcadas de ${perfil} se guardan en este navegador.`);
+  suscribir(); render();
+}
+document.querySelector(".perfiles").addEventListener("click",e=>{const b=e.target.closest("[data-p]");if(b)cambiarPerfil(b.dataset.p)});
+pintarPerfil();
+
+// sesión marcada si alguna de sus películas lo está (al marcar se marcan todas)
+const on=s=>s.films.some(f=>picks.has(f.key));
+// película → sesión donde quedó elegida
+function elegidas(){const m=new Map();for(const s of S)if(on(s))for(const f of s.films)if(!m.has(f.id))m.set(f.id,s);return m}
+const corto=s=>{const l=lbl(s.dia);return l.w.slice(0,3)+" "+l.n+" · "+s.hora};
+// "?" = me interesa pero no estoy seguro: no oculta las otras funciones
+const duda=s=>!on(s)&&s.films.some(f=>dudas.has(f.key));
+function estado(k,e){const s=porClave.get(k);if(!s)return;          // e: "si" | "duda" | "no"
+  s.films.forEach(f=>{picks.delete(f.key);dudas.delete(f.key);if(e==="si")picks.add(f.key);if(e==="duda")dudas.add(f.key)});guardar();render();}
+function toggle(k){const s=porClave.get(k);if(s)estado(k,on(s)?"no":"si")}
+function toggleDuda(k){const s=porClave.get(k);if(s)estado(k,duda(s)?"no":"duda")}
+const estrellas=n=>n>0?"★".repeat(Math.floor(n))+(n%1?"½":""):"0 ★";   // solo las estrellas marcadas, con media
+const fmtNota=n=>String(n).replace(".",",");
+const notaS=s=>s.n===1&&vistas.has(s.films[0].id)&&notas[s.films[0].id]!=null?notas[s.films[0].id]:null;
+function ponerNota(id,n){notas[id]===n?delete notas[id]:notas[id]=n;guardar();render();}
+// vistas: por película; una sesión está vista si todas sus películas lo están
+const vistaS=s=>s.films.every(f=>vistas.has(f.id));
+const algunaV=s=>s.films.some(f=>vistas.has(f.id));
+function toggleVista(k){const s=porClave.get(k);if(!s)return;const v=vistaS(s);
+  s.films.forEach(f=>v?vistas.delete(f.id):vistas.add(f.id));guardar();render();}
+function toggleVistaFilm(id){vistas.has(id)?vistas.delete(id):vistas.add(id);guardar();render();}
+// para "Vistas": la sesión en que se marcó la película (o todas, si no se marcó ninguna)
+const enVistas=(s,el)=>s.films.some(f=>vistas.has(f.id)&&(on(s)||!el.has(f.id)));
+// películas de la sesión ya elegidas en otra
+const yaEn=(s,el)=>s.films.map(f=>el.get(f.id)).filter(x=>x&&x!==s);
+
+
+// ---------- otras funciones de las mismas películas (para evaluar un cambio) ----------
+const solapa=(a,b)=>a.dia===b.dia&&a.min<b.min+b.ocupa&&b.min<a.min+a.ocupa;
+function otrasFunciones(s){
+  const ids=new Set(s.films.map(f=>f.id));
+  const marcadas=S.filter(t=>t!==s&&on(t));
+  return S.filter(t=>t!==s&&t.films.some(f=>ids.has(f.id)))
+    .sort((a,b)=>a.dia.localeCompare(b.dia)||a.min-b.min)
+    .map(t=>{
+      const choca=marcadas.filter(m=>m!==t&&solapa(t,m));
+      const comunes=t.films.filter(f=>ids.has(f.id));
+      return {t,choca,parcial:s.n>1&&comunes.length<s.n?comunes:null,ya:on(t)};
+    });
+}
+const diaCorto=t=>{const l=lbl(t.dia);return l.w.slice(0,3)+" "+l.n};
+function estadoOtra(o){
+  if(o.ya) return {cls:"ok",txt:"Ya marcada"};
+  if(o.choca.length) return {cls:"mal",txt:"Choca con "+o.choca.map(c=>titulos(c)+" ("+c.hora+")").join(", ")};
+  if(o.t.dia<"2026-11-20"||new Date(o.t.dia+"T"+o.t.hora)<new Date()) return {cls:"nada",txt:"Ya pasó"};
+  return {cls:"ok",txt:"Libre en tu calendario"};
+}
+// ---------- choques entre sesiones marcadas ----------
+// ---------- traslados entre funciones seguidas ----------
+// Zonas: Teatro Municipal, Cine Arte y Palacio Vergara están a pasos; Cinemark (Av. Libertad 1348) queda lejos.
+// Las salas sin zona conocida cuentan como "otro lugar" (aviso suave).
+const ZONAS=[[/Teatro Municipal|Cine Arte|Palacio Vergara/i,"Plaza Vergara"],[/Cinemark/i,"Cinemark (Av. Libertad)"]];
+const LEJOS=new Set(["Cinemark (Av. Libertad)"]);
+const zona=sala=>{for(const [re,z] of ZONAS) if(re.test(sala)) return z; return sala};
+function traslados(){
+  const r=new Map();
+  for(const d of dias){
+    const x=S.filter(s=>s.dia===d&&(on(s)||duda(s))).sort((a,b)=>a.min-b.min);
+    for(let i=1;i<x.length;i++){
+      const a=x[i-1], b=x[i], za=zona(a.sala), zb=zona(b.sala);
+      if(za===zb) continue;
+      const libre=b.min-(a.min+a.dur);                 // minutos entre el fin de una y el inicio de la otra
+      const lejos=LEJOS.has(za)||LEJOS.has(zb);
+      r.set(b.key,{desde:a,libre,lejos,apurado:lejos?libre<40:libre<20});
+    }
+  }
+  return r;
+}
+const textoTras=t=>`${t.lejos?"Lejos":"Otro lugar"}: viene de ${t.desde.sala} · ${t.libre>=0?t.libre+" min libres":"se superpone"}`;
+function choques(){
+  const c=new Set();
+  for(const d of dias){
+    const x=S.filter(s=>s.dia===d&&(on(s)||duda(s))).sort((a,b)=>a.min-b.min);
+    for(let i=0;i<x.length;i++)for(let j=i+1;j<x.length&&x[j].min<x[i].min+x[i].ocupa;j++){c.add(x[i].key);c.add(x[j].key);}
+  }
+  return c;
+}
+
+// casillas del calendario: secciones, "Marcadas" y "Entrada liberada"
+let calSel=new Set(["*marcadas","*dudas"]);
+try{const g=JSON.parse(localStorage.getItem("ficvina38-cal")||"null");if(Array.isArray(g))calSel=new Set(g)}catch(e){}
+const libre=s=>s.acceso.some(a=>/liberada/i.test(a));
+function pintarChips(){
+  const el=elegidas(), n=c=>S.filter(s=>c==="*marcadas"?on(s):c==="*dudas"?duda(s):c==="*libre"?libre(s):c==="*presente"?presente(s):c==="*vistas"?enVistas(s,el):s.films.some(f=>f.sec===c)).length;
+  const chip=(c,txt,cls="")=>`<label class="chip ${cls}"><input type="checkbox" data-c="${esc(c)}"${calSel.has(c)?" checked":""}>${c.startsWith("*")?"":`<i class="dot" style="--c:${col(c)}"></i>`}${esc(txt)} <em>${n(c)}</em></label>`;
+  $("chips-in").innerHTML=chip("*marcadas","Marcadas","esp")+chip("*dudas","Con duda (?)","esp")+chip("*vistas","Vistas","esp")+secs.map(s=>chip(s,s)).join("")
+    +'<button type="button" class="chip mini" data-todas="1">Todas las secciones</button><button type="button" class="chip mini" data-todas="0">Ninguna</button>';
+}
+function guardarCal(){try{localStorage.setItem("ficvina38-cal",JSON.stringify([...calSel]))}catch(e){}}
+$("chips").addEventListener("change",e=>{const c=e.target.dataset.c;if(c==null)return;e.target.checked?calSel.add(c):calSel.delete(c);guardarCal();render()});
+$("chips").addEventListener("click",e=>{const b=e.target.closest("[data-todas]");if(!b)return;
+  secs.forEach(s=>b.dataset.todas==="1"?calSel.add(s):calSel.delete(s));guardarCal();render()});
+
+function filtradas(){
+  const q=$("q").value.trim().toLowerCase(),sc=$("sec").value,sa=$("sala").value,li=$("libre").checked,so=$("solo").checked;
+  const oc=$("ocultar").checked, el=elegidas();
+  const pasa=f=>(!sc||(sc==="*comp"?f.comp:f.sec===sc))&&(!li||/liberada/i.test(f.acceso))
+    &&(!q||[f.titulo,f.direccion,f.pais].join(" ").toLowerCase().includes(q));
+  if(vista==="cal") return S.filter(s=>{
+    const m=on(s);
+    if(oc&&!m&&s.films.every(f=>el.has(f.id))) return false;
+    const vis=(calSel.has("*marcadas")&&m)||(calSel.has("*dudas")&&duda(s))||(calSel.has("*libre")&&libre(s))||(calSel.has("*presente")&&presente(s))||(calSel.has("*vistas")&&enVistas(s,el))||s.films.some(f=>calSel.has(f.sec));
+    return vis&&(!sa||s.salas.includes(sa))&&(!q||s.films.some(f=>[f.titulo,f.direccion,f.pais].join(" ").toLowerCase().includes(q)));
+  });
+  return S.filter(s=>{
+    const m=on(s);
+    if(so&&!m&&!duda(s)) return false;
+    if($("solovistas").checked&&!enVistas(s,el)) return false;
+    if(oc&&!m&&s.films.every(f=>el.has(f.id))) return false;   // todo lo de esta sesión ya está elegido en otra
+    return (!sa||s.salas.includes(sa))&&s.films.some(pasa);
+  });
+}
+function pintarDias(lista){
+  const n=d=>lista.filter(s=>d==="todos"||s.dia===d).length;
+  $("days").innerHTML=[["todos","Todos","★"],...dias.map(d=>{const l=lbl(d);return [d,l.w.slice(0,3),l.n]})]
+    .map(([d,w,num])=>`<button type="button" data-d="${d}" aria-pressed="${d===dia}"><small>${w}</small><b>${num}</b><em>${n(d)}</em></button>`).join("");
+}
+// países vienen en mayúsculas: "ESTADOS UNIDOS" → "Estados Unidos"
+const MIN=new Set(["de","del","la","las","los","y","e"]);
+const pais=p=>(p||"").toLowerCase().replace(/\p{L}+/gu,(w,i)=>i&&MIN.has(w)?w:w[0].toUpperCase()+w.slice(1));
+const quienF=f=>[f.direccion,pais(f.pais),f.anio].filter(Boolean).join(" · ");
+const titulos=s=>s.n===1?s.films[0].titulo:`Sesión de ${s.n} películas`;
+
+// ---------- vista lista ----------
+function fila(s,cl,el){
+  const m=on(s), ya=!m?yaEn(s,el):[];
+  const pills=[...s.sub.map(x=>`<span class="pill">${esc(x)}</span>`),
+    ...s.acceso.map(a=>`<span class="pill ${/liberada/i.test(a)?"free":""}">${esc(a)}</span>`),
+    ya.length?`<span class="pill">${s.n===1?"Ya elegida: "+esc(corto(ya[0])):ya.length+" de "+s.n+" ya elegidas en otra función"}</span>`:"",
+    presente(s)?`<span class="pill cp">${ICONO_CP} Cineasta presente</span>`:"",
+    s.estado?`<span class="pill clash">${esc(s.estado)}</span>`:"",
+    cl.has(s.key)?'<span class="pill clash">Choca con otra marcada</span>':"",
+    trL.has(s.key)?`<span class="pill ${trL.get(s.key).apurado?"clash":"lejos"}">⇄ ${esc(textoTras(trL.get(s.key)))}</span>`:""].join("");
+  const f0=s.films[0], quien=s.n===1?quienF(f0):"";
+  const lbA=f=>lbURL(f)?` <a class="lb" href="${esc(lbApp(f))}" target="_blank" rel="noopener" title="Ver en Letterboxd" aria-label="Ver ${esc(f.titulo)} en Letterboxd">LB</a>`:"";
+  const titulo=s.n===1?`<a href="${esc(f0.url)}" target="_blank" rel="noopener">${esc(f0.titulo)}</a>${lbA(f0)}`:esc(titulos(s));
+  const lista=s.n>1?`<ul class="films">${s.films.map(f=>`<li><a href="${esc(f.url)}" target="_blank" rel="noopener">${esc(f.titulo)}</a>${lbA(f)}${quienF(f)?` <span>${esc(quienF(f))}</span>`:""}</li>`).join("")}</ul>`:"";
+  return `<div class="row${m?" on":""}${duda(s)?" duda":""}${ya.length?" ya":""}${vistaS(s)?" vista":""}" data-ids="${esc(s.films.map(f=>f.id).join(" "))}"><span class="t">${esc(s.hora)}</span>
+    <span class="ttl">${titulo}</span>
+    <span class="marks"><button type="button" class="mark" data-k="${esc(s.key)}" aria-pressed="${m}" aria-label="${m?"Quitar de":"Agregar a"} mi calendario: ${esc(titulos(s))}, ${esc(s.hora)}">${m?"✓":"+"}</button>
+      <button type="button" class="mark q" data-q="${esc(s.key)}" aria-pressed="${duda(s)}" aria-label="Marcar con duda: ${esc(titulos(s))}" title="No estoy seguro">?</button></span>
+    <span class="sub">${quien?`<span>${esc(quien)}</span>`:""}<span class="venue">${esc(s.sala)}</span><span>${s.est?"":s.dur+" min"}</span>${pills}
+      <button type="button" class="seenbtn" data-v="${esc(s.key)}" aria-pressed="${vistaS(s)}">${vistaS(s)?"✔ Vista":algunaV(s)?"Vista en parte":"Marcar como vista"}</button>${notaS(s)!=null?`<span class="nota">${estrellas(notaS(s))}</span>`:""}${lista}</span></div>`;
+}
+let trL=new Map();
+function pintarLista(ver,cl){
+  trL=traslados();
+  let h="", el=elegidas();
+  for(const d of (dia==="todos"?dias:[dia])){
+    const del=ver.filter(s=>s.dia===d); if(!del.length) continue;
+    if(dia==="todos"){const l=lbl(d);h+=`<h2 class="dayhead">${l.w} ${l.n} de noviembre</h2>`;}
+    const g={}; del.forEach(s=>(g[s.sec]=g[s.sec]||[]).push(s));
+    for(const sc of secs.filter(x=>g[x])){
+      const ss=g[sc].sort((a,b)=>a.min-b.min||cmp(titulos(a),titulos(b)));
+      h+=`<section class="sec" style="--c:${col(sc)}"><h2><i class="dot"></i>${sc.startsWith("Competencia")?"<i>En competencia</i>":""}${esc(sc)} <span>${ss.length}</span></h2>${ss.map(s=>fila(s,cl,el)).join("")}</section>`;
+    }
+  }
+  return h||'<p class="empty">No hay funciones con estos filtros. Prueba con otro día o quita algún filtro.</p>';
+}
+
+// ---------- vista calendario: días en columnas, horas en filas ----------
+const finH=s=>{const m=s.min+s.ocupa;return String(Math.floor(m/60)%24).padStart(2,"0")+":"+String(m%60).padStart(2,"0")};
+// carriles: funciones que se superponen se reparten el ancho del día (pantalla y PDF)
+function carriles(ver,vd){
+  return vd.map(d=>{
+    const ss=ver.filter(s=>s.dia===d).sort((a,b)=>a.min-b.min||b.ocupa-a.ocupa);
+    const out=[]; let grupo=[], fin=-1;
+    const cerrar=()=>{const n=Math.max(...grupo.map(g=>g.lane))+1;grupo.forEach(g=>g.n=n);grupo=[]};
+    for(const s of ss){
+      if(grupo.length&&s.min>=fin) cerrar();
+      const usados=new Set(grupo.filter(g=>g.s.min+g.s.ocupa>s.min).map(g=>g.lane));
+      let lane=0; while(usados.has(lane)) lane++;
+      const g={s,lane}; grupo.push(g); out.push(g); fin=Math.max(fin,s.min+s.ocupa);
+    }
+    if(grupo.length) cerrar();
+    const maxN=Math.max(1,...out.map(g=>g.n));
+    return {d,items:out,maxN};
+  });
+}
+let calGeo=null;   // geometría del calendario dibujado (para los bloques fantasma)
+function pintarCal(ver,cl){
+  const tras=traslados();
+  const vd=dia!=="todos"?[dia]:dias.filter(d=>ver.some(s=>s.dia===d)), el=elegidas();
+  if(!ver.length) return `<p class="empty">No hay funciones con estos filtros. ${picks.size?"Quita algún filtro o elige otro día.":"Marca funciones con + en la vista Programa, o activa arriba alguna sección para elegir aquí."}</p>`;
+  const PPM=1.15;                                           // píxeles por minuto
+  const h0=Math.floor(Math.min(...ver.map(s=>s.min))/60), h1=Math.ceil(Math.max(...ver.map(s=>s.min+s.ocupa))/60);
+  const alto=(h1-h0)*60*PPM, y=m=>(m-h0*60)*PPM;
+  calGeo={h0,h1,PPM};
+  const cols=carriles(ver,vd).map(c=>({...c,ancho:Math.max(140,c.maxN*78)}));
+  // columnas flex (no grilla): así la columna de horas queda fija al desplazar a la derecha
+  // y los nombres de los días quedan fijos al bajar
+  let h=`<div class="wk"><div class="tg" style="--hh:${60*PPM}px">`;
+  let ax=""; for(let hr=h0;hr<h1;hr++) ax+=`<span style="top:${y(hr*60)}px">${hr}:00</span>`;
+  h+=`<div class="axcol"><div class="hd ax"></div><div class="axis" style="height:${alto}px">${ax}</div></div>`;
+  for(const c of cols){
+    const l=lbl(c.d),nf=c.items.length;
+    h+=`<div class="dcol" style="flex:1 0 ${c.ancho}px"><div class="hd">${l.w} ${l.n}<small>${nf} ${nf===1?"función":"funciones"}</small></div>`;
+    h+=`<div class="col" data-d="${c.d}" style="height:${alto}px">`+c.items.map(({s,lane,n})=>{
+      const m=on(s),ya=!m&&yaEn(s,el).length, w=100/n;
+      const tr=tras.get(s.key);
+      const badge=vistaS(s)?(notaS(s)!=null?"✔ "+estrellas(notaS(s)):"✔ VISTA"):"";
+      return `<button type="button" class="it${m?" on":""}${duda(s)?" duda":""}${ya?" ya":""}${cl.has(s.key)?" clash":""}${n>=3?" angosta":""}${vistaS(s)?" vista":""}" data-s="${esc(s.key)}" data-ids="${esc(s.films.map(f=>f.id).join(" "))}" data-badge="${badge}" aria-haspopup="dialog"
+        aria-label="${esc((tr?textoTras(tr)+" · ":"")+s.hora+"–"+finH(s)+" · "+s.films.map(f=>f.titulo+(quienF(f)?" ("+quienF(f)+")":"")).join(" · ")+" · "+s.sala)}"
+        style="--c:${col(s.sec)};top:${y(s.min)+1}px;height:${s.ocupa*PPM-2}px;left:calc(${lane*w}% + 2px);width:calc(${w}% - 4px)">${tr?`<span class="tras ${tr.apurado?"mal":tr.lejos?"lejos":""}">${tr.lejos?"⇄ Lejos":"⇄ Otro lugar"} · ${tr.libre>=0?tr.libre+" min":"!"}</span>`:""}${presente(s)?`<span class="cpb" title="Cineasta presente">${ICONO_CP}</span>`:""}<b>${esc(s.hora)}–${finH(s)}${s.est?"*":""}</b><strong>${esc(titulos(s))}</strong>${s.n===1&&quienF(s.films[0])?`<span class="dir">${esc(quienF(s.films[0]))}</span>`:""}${s.n>1?`<span class="cortos">${esc(s.films.map(f=>f.titulo).join(" · "))}</span>`:""}<span class="sala1">${esc(s.sala)}</span><span class="tipo">${esc(s.sec)}</span></button>`;
+    }).join("")+`</div></div>`;
+  }
+  return h+`</div></div><div class="legend"><span><i class="on"></i>★ Marcada (bloque relleno)</span><span>${ICONO_CP} Cineasta presente</span><span><i class="du"></i>? Con duda</span><span><i class="vi"></i>✔ Vista (con tu nota)</span><span><i></i>Sin marcar · el color indica la sección · clic para ver detalles</span><span><i class="cl"></i>Choca con otra marcada</span><span>⇄ Traslado: la función anterior es en otra zona (rojo = poco tiempo)</span><span>El alto del bloque es la duración${MARGEN?` + ${MARGEN} min de margen`:" (bloque de la función)"}</span><span>* duración estimada en 90 min</span></div>`;
+}
+
+// ---------- exportar el calendario visible a PDF (jsPDF desde cdnjs, se carga al primer uso) ----------
+let descargas=null;
+// fuera del visor de Claude (archivo abierto en el navegador) se descarga con un enlace normal
+const descargaLocal={save:async({filename,data})=>{const u=URL.createObjectURL(data),a=document.createElement("a");
+  a.href=u;a.download=filename;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),5000)}};
+(async()=>{try{descargas=window.claude&&claude.use?await claude.use("downloads"):descargaLocal}catch(e){} render()})();
+function cargarJsPDF(){
+  if(window.jspdf) return Promise.resolve();
+  return new Promise((ok,mal)=>{const s=document.createElement("script");
+    s.src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js";s.onload=ok;s.onerror=mal;document.head.appendChild(s)});
+}
+// las fuentes estándar del PDF solo traen Latin-1: quitar lo que no se puede dibujar
+const lat=s=>[...(s||"").normalize("NFC")].map(c=>c.charCodeAt(0)<256||"–—‘’“”…•".includes(c)?c:c.normalize("NFD")[0].charCodeAt(0)<256?c.normalize("NFD")[0]:"").join("");
+const rgb=h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16));
+const mezcla=(h,k)=>rgb(h).map(v=>Math.round(v+(255-v)*k));
+async function exportarPDF(){
+  const btn=$("pdf"); btn.disabled=true; btn.textContent="Generando…";
+  try{
+    await cargarJsPDF();
+    const {jsPDF}=window.jspdf, doc=new jsPDF({orientation:"landscape",unit:"mm",format:"a4"});
+    const lista=filtradas(), ver=lista.filter(s=>dia==="todos"||s.dia===dia);
+    const vd=dia!=="todos"?[dia]:dias.filter(d=>ver.some(s=>s.dia===d));
+    if(!ver.length){btn.textContent="No hay funciones visibles";setTimeout(()=>{btn.textContent="Descargar PDF"},2500);return}
+    const W=297,H=210,M=8,AX=10,TOP=22,BOT=16, cw=(W-2*M-AX)/vd.length;
+    const h0=Math.floor(Math.min(...ver.map(s=>s.min))/60), h1=Math.ceil(Math.max(...ver.map(s=>s.min+s.ocupa))/60);
+    const mmMin=(H-TOP-BOT)/((h1-h0)*60), y=m=>TOP+(m-h0*60)*mmMin;
+    doc.setFont("helvetica","bold");doc.setFontSize(14);doc.setTextColor(24,34,31);
+    doc.text(lat("38° FICViña · Calendario de "+perfil),M,11);
+    doc.setFont("helvetica","normal");doc.setFontSize(8);doc.setTextColor(93,107,102);
+    const mostr=[calSel.has("*marcadas")?"marcadas":"",calSel.has("*vistas")?"vistas":"",calSel.has("*libre")?"entrada liberada":"",...secs.filter(s=>calSel.has(s))].filter(Boolean);
+    doc.text(lat(`${ver.length} funciones · ${S.filter(on).length} marcadas · ${S.filter(duda).length} con duda · Mostrando: ${mostr.join(", ")||"—"}`),M,16);
+    // encabezados y grilla
+    vd.forEach((d,i)=>{const l=lbl(d),x=M+AX+i*cw;doc.setFont("helvetica","bold");doc.setFontSize(9);doc.setTextColor(24,34,31);doc.text(lat(`${l.w} ${l.n}`),x+1.5,TOP-2);
+      doc.setDrawColor(200,208,204);doc.setLineWidth(0.2);doc.line(x,TOP-5,x,H-BOT)});
+    doc.setFont("helvetica","normal");doc.setFontSize(6.5);
+    for(let hr=h0;hr<=h1;hr++){const yy=y(hr*60);doc.setDrawColor(228,233,230);doc.line(M+AX,yy,W-M,yy);doc.setTextColor(120,130,126);if(hr<h1)doc.text(`${hr}:00`,M+AX-1,yy+2,{align:"right"})}
+    // bloques
+    const el=elegidas(), trasPDF=traslados();
+    carriles(ver,vd).forEach((c,i)=>c.items.forEach(({s,lane,n})=>{
+      const w=cw/n, x=M+AX+i*cw+lane*w+0.4, yy=y(s.min)+0.3, h=s.ocupa*mmMin-0.6, ww=w-0.8, m=on(s), base=col(s.sec);
+      doc.setFillColor(...(m?rgb(base):mezcla(base,0.85)));doc.setDrawColor(...rgb(base));doc.setLineWidth(m?0.5:0.25);
+      doc.roundedRect(x,yy,ww,h,0.8,0.8,"FD");
+      doc.setFillColor(...rgb(base));doc.rect(x,yy,0.9,h,"F");
+      const blanco=m, tx=x+1.6, ancho=ww-2.4; let ty=yy+2.6;
+      const linea=(txt,size,bold,color)=>{if(!txt)return;doc.setFont("helvetica",bold?"bold":"normal");doc.setFontSize(size);doc.setTextColor(...color);
+        for(const ln of doc.splitTextToSize(lat(txt),ancho)){if(ty>yy+h-0.8)return;doc.text(ln,tx,ty);ty+=size*0.38}};
+      const f0=s.films[0], fs=n>=4?5:6;
+      linea(`${m?"* ":duda(s)?"? ":""}${n>=3?s.hora:s.hora+"–"+finH(s)}`,fs-0.5,false,blanco?[255,255,255]:rgb(base));
+      linea(titulos(s),fs+0.5,true,blanco?[255,255,255]:[24,34,31]);
+      linea(s.n===1?quienF(f0):s.films.map(f=>f.titulo).join(" · "),fs-0.5,false,blanco?[240,240,240]:[60,70,66]);
+      linea(s.sala,fs-0.5,false,blanco?[235,235,235]:[93,107,102]);
+      if(vistaS(s)){doc.setFont("helvetica","bold");doc.setFontSize(5);doc.setTextColor(blanco?255:24);doc.text(notaS(s)!=null?`VISTA ${fmtNota(notaS(s))}/5`:"VISTA",x+ww-1,yy+h-1,{align:"right"})}
+      const trp=trasPDF.get(s.key);
+      if(trp){doc.setFont("helvetica","bold");doc.setFontSize(5);doc.setTextColor(...(trp.apurado?[185,28,28]:[122,90,0]));
+        doc.text(lat(`${trp.lejos?"<> LEJOS":"<> OTRO LUGAR"} ${trp.libre>=0?trp.libre+" min":""}`),x+ww-1,yy+h-(vistaS(s)?3.2:1),{align:"right"})}
+      if(duda(s)){doc.setLineDashPattern([1,0.8],0);doc.setDrawColor(24,34,31);doc.setLineWidth(0.4);doc.roundedRect(x,yy,ww,h,0.8,0.8,"S");doc.setLineDashPattern([],0);
+        doc.setFont("helvetica","bold");doc.setFontSize(8);doc.setTextColor(24,34,31);doc.text("?",x+ww-1.2,yy+3.2,{align:"right"})}
+    }));
+    // leyenda de secciones
+    let lx=M, ly=H-BOT+6; doc.setFontSize(6.5);
+    for(const sc of secs.filter(sc=>ver.some(s=>s.sec===sc))){
+      const tw=doc.getTextWidth(lat(sc))+6; if(lx+tw>W-M){lx=M;ly+=4}
+      doc.setFillColor(...rgb(col(sc)));doc.rect(lx,ly-2.2,3,2.6,"F");doc.setFont("helvetica","normal");doc.setTextColor(60,70,66);doc.text(lat(sc),lx+4,ly);lx+=tw+2;
+    }
+    doc.setTextColor(120,130,126);doc.text(lat("Bloque relleno y * = marcada · borde punteado y ? = con duda · VISTA n/5 = tu nota · <> = traslado desde otro lugar (min libres)"),W-M,H-4,{align:"right"});
+    const blob=new Blob([doc.output("arraybuffer")],{type:"application/pdf"});
+    await descargas.save({filename:"calendario-"+perfil.toLowerCase()+"-ficvina38.pdf",data:blob});
+    btn.textContent="Descargar PDF";
+  }catch(e){
+    btn.textContent=e&&e.code==="declined"?"Descargar PDF":"No se pudo generar el PDF";
+    if(!(e&&e.code==="declined")) setTimeout(()=>{btn.textContent="Descargar PDF"},3000);
+  }finally{btn.disabled=false}
+}
+$("pdf").addEventListener("click",exportarPDF);
+
+function render(){
+  const cal=vista==="cal";
+  document.body.classList.toggle("cal",cal);
+  $("v-list").setAttribute("aria-pressed",!cal);$("v-cal").setAttribute("aria-pressed",cal);
+  const nm=S.filter(on).length;
+  $("chips").hidden=!cal; if(cal) pintarChips();
+  $("pdf").hidden=!(cal&&descargas);
+  $("npick").hidden=!nm;$("npick").textContent=nm;
+  const lista=filtradas(); pintarDias(lista);
+  const ver=lista.filter(s=>dia==="todos"||s.dia===dia), cl=choques();
+  $("count").textContent=`${ver.length} funciones · ${nm} marcadas · ${S.filter(duda).length} con duda · ${vistas.size} películas vistas`;
+  const tz=[...traslados().values()];
+  $("clashes").innerHTML=(cl.size?`<span class="warn">${cl.size} marcadas chocan en horario</span> `:"")
+    +(tz.length?`<span class="${tz.some(x=>x.apurado)?"warn":""}">⇄ ${tz.length} traslado${tz.length>1?"s":""} de lugar${tz.some(x=>x.apurado)?` (${tz.filter(x=>x.apurado).length} con poco tiempo)`:""}</span>`:"");
+  const sx=cal&&document.querySelector(".wk")?document.querySelector(".wk").scrollLeft:0;
+  $("m").innerHTML=cal?pintarCal(ver,cl):pintarLista(ver,cl);
+  if(cal&&document.querySelector(".wk")) document.querySelector(".wk").scrollLeft=sx;
+  if(cal) ponerAhora(true);
+}
+// ---------- línea de la hora actual (hora de Chile) en la columna de hoy ----------
+let yaCentrado=false;
+function ahoraChile(){
+  const p=Object.fromEntries(new Intl.DateTimeFormat("en-CA",{timeZone:"America/Santiago",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",hourCycle:"h23"}).formatToParts(new Date()).map(x=>[x.type,x.value]));
+  return {dia:`${p.year}-${p.month}-${p.day}`,min:(+p.hour)*60+(+p.minute),txt:`${p.hour}:${p.minute}`};
+}
+function ponerAhora(centrar){
+  document.querySelectorAll(".ahora").forEach(x=>x.remove());
+  if(vista!=="cal"||!calGeo) return;
+  const a=ahoraChile(), col=document.querySelector(`.col[data-d="${a.dia}"]`);
+  if(!col) return;
+  const {h0,h1,PPM}=calGeo; if(a.min<h0*60||a.min>h1*60) return;
+  const top=(a.min-h0*60)*PPM, d=document.createElement("div");
+  d.className="ahora"; d.style.top=top+"px"; d.innerHTML=`<span>${a.txt}</span>`; d.setAttribute("aria-label","Hora actual "+a.txt);
+  col.appendChild(d);
+  if(centrar&&!yaCentrado&&!posGuardada){ yaCentrado=true;                 // la primera vez, llevar la vista a la hora actual
+    const wk=document.querySelector(".wk"); if(wk){ wk.scrollTop=Math.max(0,top-wk.clientHeight/3);
+      wk.scrollLeft=Math.max(0,col.parentElement.offsetLeft-60); } }
+}
+setInterval(()=>ponerAhora(false),60000);
+function irA(){guardarPos();try{history.replaceState(null,"",vista==="cal"?"#calendario":dia==="todos"?location.pathname:"#"+dia)}catch(_){}}
+$("days").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;dia=b.dataset.d;irA();render();
+  const top=document.querySelector(".bar").offsetTop; if(scrollY>top) scrollTo({top});});
+$("v-list").onclick=()=>{vista="list";irA();render()};
+$("v-cal").onclick=()=>{vista="cal";irA();render()};
+// ---------- ventana con la información de una sesión ----------
+let abierta=null;
+function pintarPop(){
+  const s=porClave.get(abierta); if(!s) return;
+  const m=on(s), el=elegidas(), ya=!m?yaEn(s,el):[], cl=choques(), l=lbl(s.dia);
+  const det=f=>[f.premiere,f.idioma,f.formato,f.duracion_film&&("Duración "+f.duracion_film)].filter(Boolean).join(" · ");
+  const films=s.films.map(f=>`<li><div><b>${esc(f.titulo)}</b><span>${esc(quienF(f))}</span>${det(f)?`<span class="pop-det">${esc(det(f))}</span>`:""}
+    ${f.sinopsis?`<details class="pop-sin"${s.n===1?" open":""}><summary>Sinopsis</summary><p>${esc(f.sinopsis)}</p></details>`:""}</div>
+    ${vistas.has(f.id)?`<div class="stars" role="group" aria-label="Tu nota">Tu nota: <button type="button" class="cero" data-nota="${esc(f.id)}|0" aria-pressed="${notas[f.id]===0}" title="0 de 5">0</button>${[1,2,3,4,5].map(n=>{const v=notas[f.id];
+      const cls=v>=n?"lit":v===n-0.5?"half":"";
+      return `<span class="st ${cls}"><span class="g" aria-hidden="true">★</span><button type="button" class="h l" data-nota="${esc(f.id)}|${n-0.5}" aria-pressed="${v===n-0.5}" aria-label="${fmtNota(n-0.5)} de 5" title="${fmtNota(n-0.5)}"></button><button type="button" class="h r" data-nota="${esc(f.id)}|${n}" aria-pressed="${v===n}" aria-label="${n} de 5" title="${n}"></button></span>`}).join("")}<em>${notas[f.id]!=null?fmtNota(notas[f.id])+"/5":"sin nota"}</em></div>`:""}</div>
+    <div class="pop-fa">${s.n>1?`<button type="button" class="seenbtn" data-vf="${esc(f.id)}" aria-pressed="${vistas.has(f.id)}">${vistas.has(f.id)?"✔ Vista":"Vista"}</button>`:""}${f.url&&s.n>1?`<a href="${esc(f.url)}" target="_blank" rel="noopener">Ver ficha ↗</a>`:""}${lbURL(f)&&s.n>1?`<a href="${esc(lbApp(f))}" target="_blank" rel="noopener">Letterboxd ↗</a>`:""}</div></li>`).join("");
+  $("pop-in").innerHTML=`<p class="pop-h">${l.w} ${l.n} de noviembre · ${esc(s.hora)}–${finH(s)}</p>
+    <h3 id="pop-t">${esc(titulos(s))}</h3>
+    <div class="pop-meta"><span class="pill" style="display:inline-flex;gap:6px;align-items:center;--c:${col(s.sec)}"><i class="dot"></i>${esc(s.sec)}</span>${presente(s)?`<span class="pill cp">${ICONO_CP} Cineasta presente</span>`:""}${s.sub.map(x=>`<span class="pill">${esc(x)}</span>`).join("")}
+      ${s.acceso.map(a=>`<span class="pill ${/liberada/i.test(a)?"free":""}">${esc(a)}</span>`).join("")}
+      <span>${esc(s.sala)}</span><span>${s.est?"Duración no informada (90 min estimados)":s.dur+" min"}${MARGEN?` + ${MARGEN} min de margen`:" (bloque de la función)"}</span></div>
+    ${m&&cl.has(s.key)?'<p class="pop-warn">Choca con otra función marcada.</p>':""}
+    ${traslados().has(s.key)?`<p class="pop-warn" style="color:${traslados().get(s.key).apurado?"var(--clash)":"var(--free)"}">⇄ ${esc(textoTras(traslados().get(s.key)))}${traslados().get(s.key).apurado?" — poco tiempo para el traslado":""}.</p>`:""}
+    ${ya.length?`<p class="pop-meta">${s.n===1?"Ya la elegiste el "+esc(corto(ya[0]))+".":ya.length+" de "+s.n+" películas ya elegidas en otra función."}</p>`:""}
+    <ul class="pop-films">${films}</ul>
+    ${(()=>{const os=otrasFunciones(s);if(!os.length)return '<p class="pop-meta">No hay otras funciones de esta película.</p>';
+      return `<div class="pop-otras"><h4>Otras funciones</h4><ul>${os.map(o=>{const e=estadoOtra(o);
+        return `<li><b>${esc(diaCorto(o.t))} · ${esc(o.t.hora)}–${finH(o.t)}</b><span>${esc(o.t.sala)}</span>${o.parcial?`<span>(solo ${esc(o.parcial.map(f=>f.titulo).join(", "))})</span>`:""}<span class="${e.cls}">${esc(e.txt)}</span>${!o.ya&&(m||duda(s))?`<button type="button" data-cambio="${esc(o.t.key)}">${m?"Cambiar a esta":"Mover la duda aquí"}</button>`:""}</li>`}).join("")}</ul></div>`})()}
+    <div class="pop-acc">${m?'<button type="button" class="btn del" data-acc="t">Quitar de mi calendario</button><button type="button" class="btn" data-acc="q">Pasar a «?»</button>'
+      :duda(s)?'<button type="button" class="btn pri" data-acc="t">Confirmar en mi calendario</button><button type="button" class="btn del" data-acc="q">Quitar «?»</button>'
+      :'<button type="button" class="btn pri" data-acc="t">Agregar a mi calendario</button><button type="button" class="btn" data-acc="q">Agregar con «?»</button>'}
+      <button type="button" class="btn${vistaS(s)?" seen-on":""}" data-acc="v">${vistaS(s)?"✔ Vista · desmarcar":"Marcar como vista"}</button>
+      ${s.n===1&&s.films[0].url?`<a class="btn" href="${esc(s.films[0].url)}" target="_blank" rel="noopener">Ver ficha en el festival ↗</a>`:""}
+      ${s.n===1&&lbURL(s.films[0])?`<a class="btn" href="${esc(lbApp(s.films[0]))}" target="_blank" rel="noopener">Ver en Letterboxd ↗</a><button type="button" class="btn" data-copiar="${esc(lbURL(s.films[0]))}">Copiar enlace</button>`:""}
+      <button type="button" class="btn" data-acc="c">Cerrar</button></div>`;
+}
+function abrir(k){abierta=k;pintarPop();resaltar(document.querySelector(`#m [data-s="${CSS.escape(k)}"]`));try{$("pop").showModal()}catch(e){$("pop").setAttribute("open","")}}
+$("pop").addEventListener("click",e=>{
+  if(e.target===$("pop")){$("pop").close();return}
+  const cp=e.target.closest("[data-copiar]");
+  if(cp){const u=cp.dataset.copiar,fin=t=>{cp.textContent=t;setTimeout(()=>{cp.textContent="Copiar enlace"},2000)};
+    (navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(()=>fin("Copiado ✓"),()=>{
+      const r=document.createRange(),x=document.createElement("span");x.textContent=" "+u;cp.after(x);r.selectNodeContents(x);
+      const sel=getSelection();sel.removeAllRanges();sel.addRange(r);fin("Selecciona y copia")});return}          // clic fuera del cuadro
+  const vf=e.target.closest("[data-vf]"); if(vf){toggleVistaFilm(vf.dataset.vf);pintarPop();return}
+  const no=e.target.closest("[data-nota]"); if(no){const [id,n]=no.dataset.nota.split("|");ponerNota(id,+n);pintarPop();return}
+  const a=e.target.closest("[data-acc]"); if(!a) return;
+  const sa=porClave.get(abierta);
+  // quitar pide confirmación dentro de la ventana (el visor no permite confirm())
+  if((a.dataset.acc==="t"&&on(sa))||(a.dataset.acc==="q"&&duda(sa))){
+    $("pop").querySelector(".pop-acc").innerHTML=`<span class="seguro">¿Seguro que quieres quitar${a.dataset.acc==="q"?" el «?» de":""} esta función?</span>
+      <button type="button" class="btn del" data-acc="si-${a.dataset.acc}">Sí, quitar</button><button type="button" class="btn" data-acc="no">No</button>`;
+    $("pop").querySelector('[data-acc="no"]').focus(); return}
+  if(a.dataset.acc==="si-t"){toggle(abierta);$("pop").close();return}
+  if(a.dataset.acc==="si-q"){estado(abierta,"no");$("pop").close();return}
+  if(a.dataset.acc==="no"){pintarPop();return}
+  if(a.dataset.acc==="t"){toggle(abierta);$("pop").close()}   // agregar cierra la ventana
+  else if(a.dataset.acc==="q"){const s=porClave.get(abierta);estado(abierta,duda(s)?"no":"duda");$("pop").close()}
+  else if(a.dataset.acc==="v"){toggleVista(abierta);pintarPop()}
+  else $("pop").close();
+});
+$("pop").addEventListener("close",()=>{abierta=null;resaltar(null)});
+// al pasar sobre una función, resaltar las otras funciones de las mismas películas
+let parActual=null;
+function resaltar(el){
+  if(el===parActual) return;
+  document.querySelectorAll(".par").forEach(x=>x.classList.remove("par"));
+  parActual=el; if(!el) return;
+  const ids=new Set(el.dataset.ids.split(" "));
+  document.querySelectorAll("#m [data-ids]").forEach(x=>{
+    if(x!==el&&x.dataset.ids.split(" ").some(i=>ids.has(i))) x.classList.add("par");
+  });
+}
+$("m").addEventListener("pointerover",e=>resaltar(e.target.closest("[data-ids]")));
+$("m").addEventListener("pointerleave",()=>resaltar(null));
+$("m").addEventListener("focusin",e=>resaltar(e.target.closest("[data-ids]")));
+$("m").addEventListener("click",e=>{const c=e.target.closest("[data-s]");if(c){abrir(c.dataset.s);return}
+  const v=e.target.closest("[data-v]");if(v){toggleVista(v.dataset.v);return}
+  // en la lista, quitar (✓ o ? activos) pide un segundo toque para confirmar
+  const q=e.target.closest("[data-q]"), b=q?null:e.target.closest("[data-k]"), x=q||b;
+  if(!x) return;
+  if(x.getAttribute("aria-pressed")==="true"&&!x.dataset.seguro){
+    const antes=x.textContent; x.dataset.seguro="1"; x.classList.add("seguro"); x.textContent="¿Quitar?";
+    setTimeout(()=>{if(x.isConnected&&x.dataset.seguro){delete x.dataset.seguro;x.classList.remove("seguro");x.textContent=antes}},3000);
+    return}
+  if(q) toggleDuda(q.dataset.q); else toggle(b.dataset.k)});
+try{if(localStorage.getItem("ficvina38-ocultar")==="0")$("ocultar").checked=false}catch(e){}
+
+// tooltip del calendario: muestra las otras funciones de la película al pasar el mouse
+const tip=$("tip"); let tipK=null;
+function mostrarTip(el){
+  const s=porClave.get(el.dataset.s); if(!s){ocultarTip();return}
+  if(tipK!==s.key){
+    tipK=s.key;
+    const os=otrasFunciones(s), tr=traslados().get(s.key);
+    fantasmaDe=s.key; fantasmaMarca=on(s)||duda(s);
+    const vis=fantasmas(os);
+    const f0=s.films[0], sin=s.n===1?recorte(f0.sinopsis,230):"";
+    tip.innerHTML=`<h4>${esc(titulos(s))}</h4><div class="th">${s.n===1&&quienF(f0)?esc(quienF(f0))+" · ":""}${esc(diaCorto(s))} · ${esc(s.hora)}–${finH(s)} · ${esc(s.sala)}${tr?" · ⇄ "+esc(textoTras(tr)):""}</div>`+
+      (sin?`<p class="sin">${esc(sin)}</p>`:s.n>1?`<p class="sin">${esc(s.films.map(f=>f.titulo).join(" · "))}</p>`:"")+
+      (os.length?`<ul>${os.map(o=>{const e=estadoOtra(o);return `<li><b>${esc(diaCorto(o.t))} ${esc(o.t.hora)}</b><span>${esc(o.t.sala)}${o.parcial?" · solo "+esc(o.parcial.map(f=>f.titulo).join(", ")):""}<br><span class="${e.cls}">${esc(e.txt)}</span>${vis.has(o.t.key)?"":' <span class="fv">· fuera de la vista</span>'}</span></li>`}).join("")}</ul>`
+        :`<div class="nada">Única función: no hay otra fecha.</div>`+(os.length&&vis.size?`<div class="th" style="margin:8px 0 0">${on(s)||duda(s)?"Usa «Cambiar aquí» en el bloque punteado para pasarte a esa función.":"Usa «Ver» en el bloque punteado para abrir esa función."}</div>`:""));
+  }
+  tip.hidden=false;
+  const r=el.getBoundingClientRect(), tw=tip.offsetWidth, th=tip.offsetHeight, vw=innerWidth, vh=innerHeight;
+  let x=r.right+8; if(x+tw>vw-8) x=r.left-tw-8; if(x<8) x=Math.max(8,Math.min(vw-tw-8,r.left));
+  let y=r.top; if(y+th>vh-8) y=vh-th-8; if(y<8) y=8;
+  tip.style.left=x+"px"; tip.style.top=y+"px";
+}
+const recorte=(t,n)=>{t=(t||"").replace(/\s+/g," ").trim();if(t.length<=n)return t;const c=t.slice(0,n);return c.slice(0,Math.max(c.lastIndexOf(" "),n-30)).replace(/[,;:.\s]+$/,"")+"…"};
+// bloques fantasma: dibuja las otras funciones en su lugar del calendario mientras dure el hover
+function fantasmas(os){
+  borrarFantasmas(); const vis=new Set();
+  if(vista!=="cal"||!calGeo) return vis;
+  const {h0,h1,PPM}=calGeo;
+  for(const o of os){
+    const t=o.t, colEl=document.querySelector(`#m .col[data-d="${t.dia}"]`);
+    if(!colEl||t.min<h0*60||t.min>=h1*60) continue;
+    const e=estadoOtra(o), g=document.createElement("div");
+    g.className="ghost "+e.cls;
+    g.style.top=((t.min-h0*60)*PPM+1)+"px";
+    g.style.height=Math.max(18,Math.min(t.ocupa,h1*60-t.min)*PPM-2)+"px";
+    const accion=o.ya?"Ver":(fantasmaMarca?"Cambiar aquí":"Ver");
+    g.innerHTML=`<b>${esc(t.hora)}–${finH(t)} · otra función</b><span>${esc(t.sala)}</span><span>${esc(e.txt)}</span><button type="button" class="gbtn" data-g="${esc(t.key)}" data-from="${esc(fantasmaDe||"")}" aria-label="${esc(`${accion}: ${diaCorto(t)} ${t.hora}, ${t.sala}. ${e.txt}`)}">${esc(accion)}</button>`;
+    colEl.appendChild(g); vis.add(t.key);
+  }
+  return vis;
+}
+let fantasmaDe=null, fantasmaMarca=false;
+function accionFantasma(g){
+  const de=porClave.get(g.dataset.from),a=porClave.get(g.dataset.g); ocultarTip();
+  if(!de||!a) return;
+  if(!on(a)&&(on(de)||duda(de))) cambiarFuncion(de,a); else abrir(a.key);
+}
+function borrarFantasmas(){document.querySelectorAll("#m .ghost").forEach(g=>g.remove())}
+function ocultarTip(){clearTimeout(cambioT);tip.hidden=true;tip.classList.remove("dim");tipK=null;borrarFantasmas()}
+// Mientras hay fantasmas a la vista, cruzar otras películas camino al fantasma no los borra:
+// solo se cambia a otra película si el mouse se detiene sobre ella un momento.
+let tipT=null, cambioT=null;
+const ocultarLuego=(ms=450)=>{clearTimeout(tipT);tipT=setTimeout(ocultarTip,ms)};
+$("m").addEventListener("pointerover",e=>{if(e.pointerType==="touch")return;
+  if(e.target.closest(".gbtn")){clearTimeout(tipT);clearTimeout(cambioT);return}
+  const b=e.target.closest(".it[data-s]");
+  if(b){
+    clearTimeout(tipT);
+    if(!tipK||b.dataset.s===tipK||!document.querySelector("#m .ghost")){clearTimeout(cambioT);mostrarTip(b);return}
+    tip.hidden=true;                      // la tarjeta se va de inmediato; los fantasmas esperan un poco
+    clearTimeout(cambioT); cambioT=setTimeout(()=>mostrarTip(b),400);
+  }else if(tipK){clearTimeout(cambioT);tip.hidden=true;ocultarLuego();}});
+$("m").addEventListener("pointerleave",()=>{clearTimeout(cambioT);ocultarLuego(400)});
+$("m").addEventListener("focusin",e=>{if(e.target.closest(".gbtn"))return;const b=e.target.closest(".it[data-s]");b?mostrarTip(b):ocultarTip()});
+// el cambio se ejecuta al presionar (antes de que el foco o el puntero muevan algo)
+$("m").addEventListener("pointerdown",e=>{const g=e.target.closest(".gbtn");if(!g)return;e.preventDefault();e.stopPropagation();accionFantasma(g)},true);
+$("m").addEventListener("focusout",e=>{if(!(e.relatedTarget&&e.relatedTarget.closest&&e.relatedTarget.closest(".gbtn,.it")))ocultarTip()});
+addEventListener("scroll",ocultarTip,{passive:true,capture:true});
+$("m").addEventListener("click",e=>{
+  const g=e.target.closest(".gbtn");
+  if(g){e.stopPropagation();e.preventDefault();if(e.detail===0)accionFantasma(g);return;}   // detail 0 = teclado
+  ocultarTip();},true);
+
+// mueve la marca (o la duda) de una función a otra de la misma película, con opción de deshacer
+let toastT=null;
+function avisar(html,deshacer){
+  const t=$("toast"); t.innerHTML=html+(deshacer?'<button type="button">Deshacer</button>':"");t.hidden=false;
+  if(deshacer) t.querySelector("button").onclick=()=>{deshacer();t.hidden=true};
+  clearTimeout(toastT); toastT=setTimeout(()=>{t.hidden=true},6000);
+}
+function cambiarFuncion(de,a){
+  const antes={p:[...picks],d:[...dudas]};
+  const eraDuda=!on(de)&&duda(de);
+  const ids=new Set(a.films.map(f=>f.id));
+  de.films.forEach(f=>{if(ids.has(f.id)){picks.delete(f.key);dudas.delete(f.key)}});
+  if(!de.films.some(f=>picks.has(f.key))) de.films.forEach(f=>picks.delete(f.key));
+  a.films.forEach(f=>{if(ids.has(f.id)){dudas.delete(f.key);(eraDuda?dudas:picks).add(f.key)}});
+  guardar(); render();
+  const nuevo=document.querySelector(`#m [data-s="${CSS.escape(a.key)}"]`);
+  if(nuevo){resaltar(nuevo);try{nuevo.scrollIntoView({block:"nearest",inline:"nearest",behavior:"smooth"})}catch(e){}}
+  const ch=S.filter(t=>t!==a&&on(t)&&solapa(t,a));
+  avisar(`${esc(titulos(a))}: ${eraDuda?"duda movida":"cambiada"} al ${esc(diaCorto(a))} ${esc(a.hora)}${ch.length?` · <b>choca con ${esc(ch.map(titulos).join(", "))}</b>`:""}`,
+    ()=>{picks=new Set(antes.p);dudas=new Set(antes.d);guardar();render();if(abierta)pintarPop();});
+}
+// "Cambiar a esta": marca la otra función y desmarca la actual
+$("pop").addEventListener("click",e=>{const b=e.target.closest("[data-cambio]");if(!b)return;e.stopPropagation();
+  const de=porClave.get(abierta), a=porClave.get(b.dataset.cambio); if(!de||!a) return;
+  cambiarFuncion(de,a); abierta=a.key; pintarPop();
+},true);
+$("ocultar").addEventListener("input",()=>{try{localStorage.setItem("ficvina38-ocultar",$("ocultar").checked?"1":"0")}catch(e){}});
+["sec","sala","q","libre","solo","solovistas","ocultar"].forEach(id=>$(id).addEventListener("input",render));
+render();
+if(posGuardada){ requestAnimationFrame(()=>{ const wk=document.querySelector(".wk");
+  if(wk){wk.scrollLeft=posGuardada.wx||0; wk.scrollTop=posGuardada.wy||0;} scrollTo(0,posGuardada.y||0); yaCentrado=true; }); }
+</script>
