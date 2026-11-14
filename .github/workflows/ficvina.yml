@@ -1,0 +1,32 @@
+name: Explorar FICViña
+
+on:
+  push:
+    paths:
+      - scripts/explorar_ficvina.py
+      - scripts/ficvina.py
+      - .github/workflows/ficvina.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  explorar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/explorar_ficvina.py
+      - run: '[ -f scripts/ficvina.py ] && python scripts/ficvina.py || true'
+      - name: Guardar
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898341+github-actions[bot]@users.noreply.github.com"
+          for d in fuentes/ficvina programa-ficvina; do [ -e "$d" ] && git add "$d"; done; true
+          git diff --cached --quiet || git commit -m "Datos FICViña"
+          git pull --rebase -q || true
+          git push
