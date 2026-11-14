@@ -594,8 +594,10 @@ function fila(s,cl,el){
     trL.has(s.key)?`<span class="pill ${trL.get(s.key).apurado?"clash":"lejos"}">⇄ ${esc(textoTras(trL.get(s.key)))}</span>`:""].join("");
   const f0=s.films[0], quien=s.n===1?quienF(f0):"";
   const lbA=f=>lbURL(f)?` <a class="lb" href="${esc(lbApp(f))}" target="_blank" rel="noopener" title="Ver en Letterboxd" aria-label="Ver ${esc(f.titulo)} en Letterboxd">LB</a>`:"";
-  const titulo=s.n===1?`<a href="${esc(f0.url)}" target="_blank" rel="noopener">${esc(f0.titulo)}</a>${lbA(f0)}`:esc(titulos(s));
-  const lista=s.n>1?`<ul class="films">${s.films.map(f=>`<li><a href="${esc(f.url)}" target="_blank" rel="noopener">${esc(f.titulo)}</a>${lbA(f)}${quienF(f)?` <span>${esc(quienF(f))}</span>`:""}</li>`).join("")}</ul>`:"";
+  // sin ficha, el título va sin enlace
+  const tituloA=f=>f.url?`<a href="${esc(f.url)}" target="_blank" rel="noopener">${esc(f.titulo)}</a>`:esc(f.titulo);
+  const titulo=s.n===1?`${tituloA(f0)}${lbA(f0)}`:esc(titulos(s));
+  const lista=s.n>1?`<ul class="films">${s.films.map(f=>`<li>${tituloA(f)}${lbA(f)}${quienF(f)?` <span>${esc(quienF(f))}</span>`:""}</li>`).join("")}</ul>`:"";
   return `<div class="row${m?" on":""}${duda(s)?" duda":""}${ya.length?" ya":""}${vistaS(s)?" vista":""}" data-ids="${esc(s.films.map(f=>f.id).join(" "))}"><span class="t">${esc(s.hora)}</span>
     <span class="ttl">${titulo}</span>
     <span class="marks"><button type="button" class="mark" data-k="${esc(s.key)}" aria-pressed="${m}" aria-label="${m?"Quitar de":"Agregar a"} mi calendario: ${esc(titulos(s))}, ${esc(s.hora)}">${m?"✓":"+"}</button>

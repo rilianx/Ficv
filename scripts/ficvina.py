@@ -160,6 +160,78 @@ CHARLAS = [
 LB = {"31-minutos-la-pelicula": "31-minutos-the-movie", "a-menina-que-queria-ser-pedra": "a-menina-que-queria-ser-pedra", "baisanos": "baisanos", "ciudad-jardin": "ciudad-jardin", "decaer": "decaer", "detras-de-la-lluvia": "detras-de-la-lluvia", "el-coloquio-de-los-pajaros": "el-coloquio-de-los-pajaros", "el-cuerpo-de-cristo": "el-cuerpo-de-cristo", "el-laberinto-del-fauno": "pans-labyrinth", "el-partido": "el-partido-2026", "el-tamagochi-escarlata": "el-tamagochi-escarlata", "emechiche-el-renacer-de-los-cabeciblancos": "emechiche-el-renacer-de-los-cabeciblancos", "en-otra-palestina": "en-otra-palestina", "guerra-de-verano": "summer-war", "ixquic": "ixquic", "karmele": "karmele", "la-anatomia-de-los-caballos": "la-anatomia-de-los-caballos", "la-bola-negra": "la-bola-negra", "la-cordillera-de-los-suenos": "the-cordillera-of-dreams", "la-fabulosa-maquina-del-tiempo": "the-fabulous-time-machine", "la-frontera": "the-frontier-1991", "la-ilusion-de-un-verano-sin-fin": "la-ilusion-de-un-verano-sin-fin", "la-muerte-no-tiene-dueno": "death-has-no-master", "la-ofrenda": "la-ofrenda-2026", "la-teta-asustada": "the-milk-of-sorrow", "las-visitas-de-camilo": "las-visitas-de-camilo", "los-vencedores": "los-vencedores", "mailin": "mailin", "matapanki": "matapanki", "me-vas-a-estar-esperando": "me-vas-a-estar-esperando", "miriam": "miriam-2026", "mnema": "mnema", "motel-paraiso": "motel-paraiso-2026", "no-prendas-la-luz": "no-prendas-la-luz", "nunkui": "nunkui-2026", "o-jardim-magico": "o-jardim-magico", "ogu-y-mampato-en-rapa-nui": "ogu-y-mampato-en-rapa-nui", "olivia-y-el-terremoto-invisible": "olivia-y-el-terremoto-invisible", "pin-de-fartie": "pin-de-fartie", "pinchu-es-asi": "pinchu-es-asi", "plata-o-mierda": "plata-o-mierda", "poblacion-flotante": "floating-population", "presepio": "presepio", "quien-mato-a-gaete": "quien-mato-a-gaete", "relicto": "relicto", "siempre-soy-tu-animal-materno": "forever-your-maternal-animal", "sol-menor": "sol-menor-2025", "sorda": "deaf-2025", "tinku": "tinku-2025", "tres-tristes-tias": "tres-tristes-tias", "tv-entreaberta": "tv-entreaberta", "videoclub-2001": "videoclub-2001"}
 
 
+# Ficha: cinevina.cl no tiene página por película (salvo Karmele); se enlaza la noticia de su sección que la presenta.
+# Sin noticia → sin enlace.
+FICHA = {
+"31-minutos-la-pelicula": "https://cinevina.cl/el-cine-sale-a-la-calle-ficvina-se-toma-playas-muelle-y-centro-de-vina-del-mar/",
+"a-menina-que-queria-ser-pedra": "https://cinevina.cl/ficvina-celebra-la-imaginacion-y-la-diversidad-de-la-animacion-en-la-competencia-creando-universos/",
+"alla-en-el-cielo": "https://cinevina.cl/ficvina-presenta-doce-cortometrajes-en-la-competencia-pulso-iberoamericano/",
+"asteroide-2518": "https://cinevina.cl/ficvina-reune-cinco-miradas-sobre-el-chile-de-hoy-en-la-competencia-desde-aqui/",
+"azul-la-ultima-semilla": "https://cinevina.cl/ficvina-celebra-la-imaginacion-y-la-diversidad-de-la-animacion-en-la-competencia-creando-universos/",
+"baisanos": "https://cinevina.cl/ficvina-presenta-doce-cortometrajes-en-la-competencia-pulso-iberoamericano/",
+"caera-el-morro-y-marcharan-sus-hijos": "https://cinevina.cl/ficvina-explora-los-territorios-y-las-identidades-locales-en-la-competencia-habitar/",
+"caudal": "https://cinevina.cl/ficvina-explora-los-territorios-y-las-identidades-locales-en-la-competencia-habitar/",
+"ciudad-jardin": "https://cinevina.cl/el-cine-sale-a-la-calle-ficvina-se-toma-playas-muelle-y-centro-de-vina-del-mar/",
+"cocaina-negra": "https://cinevina.cl/ficvina-reune-cinco-miradas-sobre-el-chile-de-hoy-en-la-competencia-desde-aqui/",
+"criaturas-que-gritan": "https://cinevina.cl/ficvina-explora-los-territorios-y-las-identidades-locales-en-la-competencia-habitar/",
+"decaer": "https://cinevina.cl/ficvina-celebra-la-imaginacion-y-la-diversidad-de-la-animacion-en-la-competencia-creando-universos/",
+"el-coloquio-de-los-pajaros": "https://cinevina.cl/ficvina-reune-historias-de-resistencia-memoria-y-culturas-en-su-competencia-documental-iberoamericana/",
+"el-cuerpo-de-cristo": "https://cinevina.cl/ficvina-celebra-la-imaginacion-y-la-diversidad-de-la-animacion-en-la-competencia-creando-universos/",
+"el-laberinto-del-fauno": "https://cinevina.cl/38-ficvina-anuncia-una-america-latina-franja-especial-que-reunira-peliculas-emblematicas-en-el-teatro-municipal/",
+"el-partido": "https://cinevina.cl/el-cine-sale-a-la-calle-ficvina-se-toma-playas-muelle-y-centro-de-vina-del-mar/",
+"el-tamagochi-escarlata": "https://cinevina.cl/ficvina-celebra-la-imaginacion-y-la-diversidad-de-la-animacion-en-la-competencia-creando-universos/",
+"emechiche-el-renacer-de-los-cabeciblancos": "https://cinevina.cl/ficvina-celebra-la-imaginacion-y-la-diversidad-de-la-animacion-en-la-competencia-creando-universos/",
+"en-otra-palestina": "https://cinevina.cl/ficvina-presenta-doce-cortometrajes-en-la-competencia-pulso-iberoamericano/",
+"garantia-de-por-vida": "https://cinevina.cl/ficvina-celebra-la-imaginacion-y-la-diversidad-de-la-animacion-en-la-competencia-creando-universos/",
+"guerra-de-verano": "https://cinevina.cl/competencia-largometraje-iberamericano-de-ficcion/",
+"ixquic": "https://cinevina.cl/ficvina-presenta-doce-cortometrajes-en-la-competencia-pulso-iberoamericano/",
+"karmele": "https://cinevina.cl/karmele/",
+"la-anatomia-de-los-caballos": "https://cinevina.cl/competencia-largometraje-iberamericano-de-ficcion/",
+"la-bola-negra": "https://cinevina.cl/la-bola-negra-premiada-en-cannes-y-carta-de-espana-al-oscar-cerrara-el-38-ficvina/",
+"la-cordillera-de-los-suenos": "https://cinevina.cl/38-ficvina-anuncia-una-america-latina-franja-especial-que-reunira-peliculas-emblematicas-en-el-teatro-municipal/",
+"la-frontera": "https://cinevina.cl/ficvina-anuncia-su-38a-edicion-con-la-exhibicion-de-la-frontera-comopelicula-inaugural/",
+"la-ilusion-de-un-verano-sin-fin": "https://cinevina.cl/38-ficvina-presenta-joya-con-cinco-aclamados-estrenos-del-cine-iberoamericano/",
+"la-muerte-no-tiene-dueno": "https://cinevina.cl/38-ficvina-presenta-joya-con-cinco-aclamados-estrenos-del-cine-iberoamericano/",
+"la-ofrenda": "https://cinevina.cl/ficvina-explora-los-territorios-y-las-identidades-locales-en-la-competencia-habitar/",
+"la-procesion-de-los-ausentes": "https://cinevina.cl/ficvina-presenta-doce-cortometrajes-en-la-competencia-pulso-iberoamericano/",
+"la-teta-asustada": "https://cinevina.cl/38-ficvina-anuncia-una-america-latina-franja-especial-que-reunira-peliculas-emblematicas-en-el-teatro-municipal/",
+"las-visitas-de-camilo": "https://cinevina.cl/ficvina-presenta-doce-cortometrajes-en-la-competencia-pulso-iberoamericano/",
+"lodo": "https://cinevina.cl/ficvina-celebra-la-imaginacion-y-la-diversidad-de-la-animacion-en-la-competencia-creando-universos/",
+"los-vencedores": "https://cinevina.cl/ficvina-reune-historias-de-resistencia-memoria-y-culturas-en-su-competencia-documental-iberoamericana/",
+"lyn-mia": "https://cinevina.cl/ficvina-reune-cinco-miradas-sobre-el-chile-de-hoy-en-la-competencia-desde-aqui/",
+"mailin": "https://cinevina.cl/ficvina-reune-historias-de-resistencia-memoria-y-culturas-en-su-competencia-documental-iberoamericana/",
+"matapanki": "https://cinevina.cl/el-cine-sale-a-la-calle-ficvina-se-toma-playas-muelle-y-centro-de-vina-del-mar/",
+"mensajeras-sin-mensaje": "https://cinevina.cl/ficvina-celebra-la-imaginacion-y-la-diversidad-de-la-animacion-en-la-competencia-creando-universos/",
+"miriam": "https://cinevina.cl/ficvina-presenta-doce-cortometrajes-en-la-competencia-pulso-iberoamericano/",
+"mnema": "https://cinevina.cl/ficvina-celebra-la-imaginacion-y-la-diversidad-de-la-animacion-en-la-competencia-creando-universos/",
+"motel-paraiso": "https://cinevina.cl/38-ficvina-presenta-joya-con-cinco-aclamados-estrenos-del-cine-iberoamericano/",
+"no-prendas-la-luz": "https://cinevina.cl/ficvina-celebra-la-imaginacion-y-la-diversidad-de-la-animacion-en-la-competencia-creando-universos/",
+"norte-claro-sur-oscuro": "https://cinevina.cl/ficvina-explora-los-territorios-y-las-identidades-locales-en-la-competencia-habitar/",
+"nunkui": "https://cinevina.cl/competencia-largometraje-iberamericano-de-ficcion/",
+"o-jardim-magico": "https://cinevina.cl/ficvina-celebra-la-imaginacion-y-la-diversidad-de-la-animacion-en-la-competencia-creando-universos/",
+"pan": "https://cinevina.cl/ficvina-celebra-la-imaginacion-y-la-diversidad-de-la-animacion-en-la-competencia-creando-universos/",
+"paqarina": "https://cinevina.cl/ficvina-celebra-la-imaginacion-y-la-diversidad-de-la-animacion-en-la-competencia-creando-universos/",
+"paulina": "https://cinevina.cl/ficvina-presenta-doce-cortometrajes-en-la-competencia-pulso-iberoamericano/",
+"pin-de-fartie": "https://cinevina.cl/competencia-largometraje-iberamericano-de-ficcion/",
+"pinchu-es-asi": "https://cinevina.cl/ficvina-celebra-la-imaginacion-y-la-diversidad-de-la-animacion-en-la-competencia-creando-universos/",
+"plata-o-mierda": "https://cinevina.cl/ficvina-reune-historias-de-resistencia-memoria-y-culturas-en-su-competencia-documental-iberoamericana/",
+"poblacion-flotante": "https://cinevina.cl/ficvina-reune-cinco-miradas-sobre-el-chile-de-hoy-en-la-competencia-desde-aqui/",
+"presepio": "https://cinevina.cl/ficvina-presenta-doce-cortometrajes-en-la-competencia-pulso-iberoamericano/",
+"relicto": "https://cinevina.cl/ficvina-reune-historias-de-resistencia-memoria-y-culturas-en-su-competencia-documental-iberoamericana/",
+"replicas": "https://cinevina.cl/ficvina-reune-cinco-miradas-sobre-el-chile-de-hoy-en-la-competencia-desde-aqui/",
+"siempre-soy-tu-animal-materno": "https://cinevina.cl/38-ficvina-presenta-joya-con-cinco-aclamados-estrenos-del-cine-iberoamericano/",
+"sol-menor": "https://cinevina.cl/ficvina-presenta-doce-cortometrajes-en-la-competencia-pulso-iberoamericano/",
+"sorda": "https://cinevina.cl/38-ficvina-presenta-joya-con-cinco-aclamados-estrenos-del-cine-iberoamericano/",
+"tauromaquia": "https://cinevina.cl/ficvina-presenta-doce-cortometrajes-en-la-competencia-pulso-iberoamericano/",
+"tinku": "https://cinevina.cl/ficvina-celebra-la-imaginacion-y-la-diversidad-de-la-animacion-en-la-competencia-creando-universos/",
+"trabajo-hecho": "https://cinevina.cl/ficvina-celebra-la-imaginacion-y-la-diversidad-de-la-animacion-en-la-competencia-creando-universos/",
+"tres-tristes-tias": "https://cinevina.cl/ficvina-explora-los-territorios-y-las-identidades-locales-en-la-competencia-habitar/",
+"tv-entreaberta": "https://cinevina.cl/ficvina-celebra-la-imaginacion-y-la-diversidad-de-la-animacion-en-la-competencia-creando-universos/",
+"uatana": "https://cinevina.cl/competencia-largometraje-iberamericano-de-ficcion/",
+"videoclub-2001": "https://cinevina.cl/ficvina-presenta-doce-cortometrajes-en-la-competencia-pulso-iberoamericano/"
+}
+
+
 def slug(t):
     t = t.lower()
     for a, b in zip("áéíóúüñ", "aeiouun"):
@@ -171,7 +243,7 @@ def base(d, hora, sala, sec):
     comp = sec.startswith("Competencia")
     return {"dia": f"2026-11-{d:02d}", "hora": hora, "sala": sala,
             "seccion": "En Competencia" if comp else sec, "subseccion": sec if comp else "",
-            "acceso": LIBRE, "url": PDF, "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": ""}
+            "acceso": LIBRE, "url": "", "fuente": "pdf", "estado": "", "idioma": "", "sinopsis": "", "premiere": ""}
 
 
 def funciones():
@@ -197,6 +269,8 @@ def funciones():
         f.update(titulo=tit, direccion="", anio="", pais="", id=slug(tit), duracion=0, duracion_film="",
                  formato="Charla", sesion=tit, sinopsis=quien)
         out.append(f)
+    for f in out:
+        f["url"] = FICHA.get(f["id"], "")
     ids = [f["id"] for f in out]
     assert len(ids) == len(set(ids)), "ids repetidos"
     return sorted(out, key=lambda f: (f["dia"], f["hora"], f["sala"], f["titulo"]))
