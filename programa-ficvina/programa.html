@@ -272,8 +272,7 @@ footer a{color:var(--river)}
     <h1>38° <span>FICViña</span> · Programa</h1>
     <div class="meta">23 al 28 de noviembre de 2026 · entrada liberada · <span id="tot"></span></div>
     <div class="perfiles" role="toolbar" aria-label="Perfil"><span class="plbl">Calendario de</span>
-      <button type="button" data-p="Ignacio" aria-pressed="true">Ignacio</button>
-      <button type="button" data-p="Marian" aria-pressed="false">Marian</button>
+      <button type="button" data-p="Ignacio y Marian" aria-pressed="true">Ignacio y Marian</button>
     </div>
   </header>
   <div class="bar">
@@ -376,14 +375,14 @@ document.addEventListener("visibilitychange",()=>{if(document.visibilityState===
 addEventListener("pageshow",e=>{if(e.persisted) render()});   // volver con "atrás" desde la caché del navegador
 
 // ---------- marcadas: por perfil (Ignacio / Marian), en la base de datos del artifact (privada por persona) o en este navegador ----------
-const PERFILES=["Ignacio","Marian"];
+const PERFILES=["Ignacio y Marian"];
 const LS="ficvina38-marcadas";
 const LSV="ficvina38-vistas";
 const LSD="ficvina38-dudas", LSN="ficvina38-notas";
 let picks=new Set(), vistas=new Set();          // vistas: ids de películas ya vistas
 let dudas=new Set(), notas={};                  // dudas: funciones marcadas con "?"; notas: id película → 0..5
 const leer=(k,d)=>{try{const v=localStorage.getItem(k);return v===null?d:JSON.parse(v)}catch(e){return d}};
-let perfil=leer("ficvina38-perfil","Ignacio"); if(!PERFILES.includes(perfil)) perfil="Ignacio";
+let perfil=PERFILES[0];
 const K=k=>k+":"+perfil;
 // migración: lo que había guardado antes de existir los perfiles pasa a ser el punto de partida de ambos
 (function migrar(){
@@ -422,7 +421,7 @@ function suscribir(){
   ref=null;
   if(!dbRef) return;
   const p=perfil;
-  const r=dbRef.doc("perfiles/"+p);
+  const r=dbRef.doc("perfiles/juntos");
   let first=true;
   ref=r;
   unsub=r.onSnapshot(snap=>{
@@ -736,7 +735,7 @@ async function exportarPDF(){
     }
     doc.setTextColor(120,130,126);doc.text(lat("Bloque relleno y * = marcada · borde punteado y ? = con duda · VISTA n/5 = tu nota · <> = traslado desde otro lugar (min libres)"),W-M,H-4,{align:"right"});
     const blob=new Blob([doc.output("arraybuffer")],{type:"application/pdf"});
-    await descargas.save({filename:"calendario-"+perfil.toLowerCase()+"-ficvina38.pdf",data:blob});
+    await descargas.save({filename:"calendario-ficvina38.pdf",data:blob});
     btn.textContent="Descargar PDF";
   }catch(e){
     btn.textContent=e&&e.code==="declined"?"Descargar PDF":"No se pudo generar el PDF";

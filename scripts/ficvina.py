@@ -376,6 +376,14 @@ def html(F, fecha):
     s = reemplazar(s, '+chip("*libre","Entrada liberada","esp")+chip("*presente","Cineasta presente","esp")', "")
     s = reemplazar(s, '<label class="sololista"><input id="libre" type="checkbox"> Solo entrada liberada</label>',
                    '<input id="libre" type="checkbox" hidden>')
+    # un solo calendario compartido para los dos
+    s = reemplazar(s, '<button type="button" data-p="Ignacio" aria-pressed="true">Ignacio</button>\n      <button type="button" data-p="Marian" aria-pressed="false">Marian</button>',
+                   '<button type="button" data-p="Ignacio y Marian" aria-pressed="true">Ignacio y Marian</button>')
+    s = reemplazar(s, 'const PERFILES=["Ignacio","Marian"];', 'const PERFILES=["Ignacio y Marian"];')
+    s = reemplazar(s, 'let perfil=leer("ficv33-perfil","Ignacio"); if(!PERFILES.includes(perfil)) perfil="Ignacio";',
+                   'let perfil=PERFILES[0];')
+    s = reemplazar(s, 'dbRef.doc("perfiles/"+p)', 'dbRef.doc("perfiles/juntos")')
+    s = reemplazar(s, 'filename:"calendario-"+perfil.toLowerCase()+"-ficv33.pdf"', 'filename:"calendario-ficvina38.pdf"')
     s = s.replace("ficv33", "ficvina38").replace("de octubre", "de noviembre")
     s = reemplazar(s, '"33° FICValdivia · Calendario de "', '"38° FICViña · Calendario de "')
     assert "__" not in re.sub(r"__(proto|init)__", "", s.split("const F=")[0]), "quedó un marcador sin reemplazar"
