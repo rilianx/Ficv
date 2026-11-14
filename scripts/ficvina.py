@@ -156,6 +156,10 @@ CHARLAS = [
 ]
 
 
+# Letterboxd: slug verificado por dirección (curl a letterboxd.com/film/<slug>/ y comparar twitter:data1)
+LB = {"31-minutos-la-pelicula": "31-minutos-the-movie", "a-menina-que-queria-ser-pedra": "a-menina-que-queria-ser-pedra", "baisanos": "baisanos", "ciudad-jardin": "ciudad-jardin", "decaer": "decaer", "detras-de-la-lluvia": "detras-de-la-lluvia", "el-coloquio-de-los-pajaros": "el-coloquio-de-los-pajaros", "el-cuerpo-de-cristo": "el-cuerpo-de-cristo", "el-laberinto-del-fauno": "pans-labyrinth", "el-partido": "el-partido-2026", "el-tamagochi-escarlata": "el-tamagochi-escarlata", "emechiche-el-renacer-de-los-cabeciblancos": "emechiche-el-renacer-de-los-cabeciblancos", "en-otra-palestina": "en-otra-palestina", "guerra-de-verano": "summer-war", "ixquic": "ixquic", "karmele": "karmele", "la-anatomia-de-los-caballos": "la-anatomia-de-los-caballos", "la-bola-negra": "la-bola-negra", "la-cordillera-de-los-suenos": "the-cordillera-of-dreams", "la-fabulosa-maquina-del-tiempo": "the-fabulous-time-machine", "la-frontera": "the-frontier-1991", "la-ilusion-de-un-verano-sin-fin": "la-ilusion-de-un-verano-sin-fin", "la-muerte-no-tiene-dueno": "death-has-no-master", "la-ofrenda": "la-ofrenda-2026", "la-teta-asustada": "the-milk-of-sorrow", "las-visitas-de-camilo": "las-visitas-de-camilo", "los-vencedores": "los-vencedores", "mailin": "mailin", "matapanki": "matapanki", "me-vas-a-estar-esperando": "me-vas-a-estar-esperando", "miriam": "miriam-2026", "mnema": "mnema", "motel-paraiso": "motel-paraiso-2026", "no-prendas-la-luz": "no-prendas-la-luz", "nunkui": "nunkui-2026", "o-jardim-magico": "o-jardim-magico", "ogu-y-mampato-en-rapa-nui": "ogu-y-mampato-en-rapa-nui", "olivia-y-el-terremoto-invisible": "olivia-y-el-terremoto-invisible", "pin-de-fartie": "pin-de-fartie", "pinchu-es-asi": "pinchu-es-asi", "plata-o-mierda": "plata-o-mierda", "poblacion-flotante": "floating-population", "presepio": "presepio", "quien-mato-a-gaete": "quien-mato-a-gaete", "relicto": "relicto", "siempre-soy-tu-animal-materno": "forever-your-maternal-animal", "sol-menor": "sol-menor-2025", "sorda": "deaf-2025", "tinku": "tinku-2025", "tres-tristes-tias": "tres-tristes-tias", "tv-entreaberta": "tv-entreaberta", "videoclub-2001": "videoclub-2001"}
+
+
 def slug(t):
     t = t.lower()
     for a, b in zip("áéíóúüñ", "aeiouun"):
@@ -214,7 +218,7 @@ def html(F, fecha):
                'La duración de cada bloque es la de la película o del programa de cortos (las ceremonias suman unos 30 min); '
                'las charlas de Palacio Vergara no traen duración y se cuentan como 90 min.</footer>', s, flags=re.S)
     s = reemplazar(s, "const F=__DATA__;", "const F=" + json.dumps(F, ensure_ascii=False) + ";")
-    s = re.sub(r"const LB=\{.*?\};", "const LB={};", s, count=1, flags=re.S)
+    s = re.sub(r"const LB=\{.*?\};", lambda m: "const LB=" + json.dumps(LB, ensure_ascii=False) + ";", s, count=1, flags=re.S)
     s = re.sub(r"const PRESENTE=new Set\(\[.*?\]\);", "const PRESENTE=new Set([]);", s, count=1, flags=re.S)
     s = reemplazar(s, 'const ZONAS=[[/UACh/i,"UACh"],[/Teatro Cervantes/i,"Centro (Teatro Cervantes)"]];',
                    'const ZONAS=[[/Teatro Municipal|Cine Arte|Palacio Vergara/i,"Plaza Vergara"],[/Cinemark/i,"Cinemark (Av. Libertad)"]];')
