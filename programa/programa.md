@@ -215,6 +215,7 @@ Fuente: https://33.ficvaldivia.cl/programacion
 
 | Hora | Película | Sala | Notas |
 |---|---|---|---|
+| 10:00 | [Cine Chileno del Futuro](https://33.ficvaldivia.cl/ficha?recordId=SzU33uqizrOmsD) | Sala Paraninfo UACh | Encuentros Australes · Solo con Invitación |
 | 10:00 | [Master Class: Ampliando la visión de lo posible](https://33.ficvaldivia.cl/ficha?recordId=YLj9f2mxqs7ks2) | UST | Aula · Entrada Liberada |
 | 11:00 | [Lanzamientos: Investigación “Caliche, nitrato: una arqueología del cine pionero chileno (1897-1907)” y Web Mapa del Cine de Latinoamérica y el Caribe (1896-1930)](https://33.ficvaldivia.cl/ficha?recordId=vbOEDbuw1y1zq1) | Carpa de La Ciencia | Voces · Entrada Liberada |
 | 15:30 | [¿De quién es el mapa? Producción y circulación del cine latinoamericano hoy](https://33.ficvaldivia.cl/ficha?recordId=Y1IiBpoUW3RDxJ) | Carpa de La Ciencia | Aula · Entrada Liberada |
@@ -363,6 +364,7 @@ Fuente: https://33.ficvaldivia.cl/programacion
 
 | Hora | Película | Sala | Notas |
 |---|---|---|---|
+| 10:00 | [Cine Chileno del Futuro](https://33.ficvaldivia.cl/ficha?recordId=SzU33uqizrOmsD) | Sala Paraninfo UACh | Encuentros Australes · Solo con Invitación |
 | 11:00 | [Volver a escribir: entre el papel, archivos y pantallas.](https://33.ficvaldivia.cl/ficha?recordId=zERjkPFSRpwVND) | Carpa de La Ciencia | Voces · Entrada Liberada |
 | 15:30 | [Se está arrimando un día feliz. Estrategias de acompañamiento para la transición al mundo del trabajo](https://33.ficvaldivia.cl/ficha?recordId=umjzI6vSDIwNG4) | Carpa de La Ciencia | Aula · Entrada Liberada |
 | 18:30 | [¿Qué sostiene nuestra alimentación?](https://33.ficvaldivia.cl/ficha?recordId=sEyoEbkewJs6qa) | Carpa de La Ciencia | Kawin · Entrada Liberada |
@@ -505,6 +507,7 @@ Fuente: https://33.ficvaldivia.cl/programacion
 
 | Hora | Película | Sala | Notas |
 |---|---|---|---|
+| 10:00 | [Cine Chileno del Futuro](https://33.ficvaldivia.cl/ficha?recordId=SzU33uqizrOmsD) | Sala Paraninfo UACh | Encuentros Australes · Solo con Invitación |
 | 10:30 | [Clearance de propiedad intelectual en la cadena de valor del cine de autor.](https://33.ficvaldivia.cl/ficha?recordId=Vl5QAnBo9uJ8VO) | Centro de Extensión Los Canelos UACh | Aula · Entrada Liberada |
 | 11:00 | [Foro de estudiantes RUCA](https://33.ficvaldivia.cl/ficha?recordId=viLFNwTnriSsKl) | Carpa de La Ciencia | Aula · Entrada Liberada |
 | 15:30 | [Mediación y exhibición: metodologías y experiencias desde el cineclubismo](https://33.ficvaldivia.cl/ficha?recordId=Nxsrf4wxvTrXDo) | Carpa de La Ciencia | Voces · Entrada Liberada |
@@ -635,7 +638,7 @@ Fuente: https://33.ficvaldivia.cl/programacion
 | 12:00 | [A la sombra de la garza](https://33.ficvaldivia.cl/ficha?recordId=k3rvyYJYMubR39) | Teatro Cervantes | Muestra Cortometraje Infantil  +10 años · Entrada Liberada |
 | 12:00 | [Astral](https://33.ficvaldivia.cl/ficha?recordId=eL3dwK63kzNtCm) | Teatro Cervantes | Muestra Cortometraje Infantil  +10 años · Entrada Liberada |
 | 12:00 | [Hacia el bosque](https://33.ficvaldivia.cl/ficha?recordId=9CQBQbsREY3v1p) | Teatro Cervantes | Muestra Cortometraje Infantil +7 años, Muestra Cortometraje Infantil  +10 años · Entrada Liberada |
-| 12:00 | [IA La aparente realidad](https://33.ficvaldivia.cl/ficha?recordId=T0Wc7mQ80fwl2a) | Teatro Cervantes | Muestra Cortometraje Infantil  +10 años · Entrada Liberada |
+| 12:00 | [IA Aparente realidad](https://33.ficvaldivia.cl/ficha?recordId=T0Wc7mQ80fwl2a) | Teatro Cervantes | Muestra Cortometraje Infantil  +10 años · Entrada Liberada |
 | 12:00 | [Inflorescencia](https://33.ficvaldivia.cl/ficha?recordId=j9wAv01krX6Bdm) | Teatro Cervantes | Muestra Cortometraje Infantil  +10 años · Entrada Liberada |
 | 12:00 | [Kai-Kai Treng-Treng Filu](https://33.ficvaldivia.cl/ficha?recordId=A9QSZd2vdF2itV) | Teatro Cervantes | Muestra Cortometraje Infantil  +10 años · Entrada Liberada |
 
